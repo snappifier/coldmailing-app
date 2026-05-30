@@ -16,7 +16,7 @@ export type ImportResult =
 
 const leadFormSchema = z.object({
 	organizationName: z.string().trim().min(1, "Podaj nazwę placówki"),
-	email: z.string().trim().toLowerCase().email("Błędny email").optional().or(z.literal("")).transform((v) => (v ? v : null)),
+	email: z.string().trim().toLowerCase().pipe(z.email("Błędny email")).optional().or(z.literal("")).transform((v) => (v ? v : null)),
 	website: z.string().trim().optional().transform((v) => (v ? v : null)),
 	contactPersonName: z.string().trim().optional().transform((v) => (v ? v : null)),
 	contactRole: z.string().trim().optional().transform((v) => (v ? v : null)),

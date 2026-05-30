@@ -8,7 +8,7 @@ import {requireOrg} from "@/lib/org"
 
 export type SuppressionResult = {ok: true} | {ok: false; error: string}
 
-const emailSchema = z.string().trim().toLowerCase().email("Błędny email")
+const emailSchema = z.string().trim().toLowerCase().pipe(z.email("Błędny email"))
 
 export async function addSuppression(_prev: SuppressionResult | null, formData: FormData): Promise<SuppressionResult> {
 	const {orgId} = await requireOrg()
