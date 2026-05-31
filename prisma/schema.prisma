@@ -63,7 +63,31 @@ enum CampaignLeadStatus {
 	REPLIED
 	BOUNCED
 	UNSUBSCRIBED
+	SKIPPED
+	FAILED
 	DONE
+}
+
+enum EmailProvider {
+	GOOGLE
+}
+
+enum EmailAccountStatus {
+	CONNECTED
+	ERROR
+	DISCONNECTED
+}
+
+enum MessageDirection {
+	OUTBOUND
+	INBOUND
+}
+
+enum MessageStatus {
+	QUEUED
+	SENT
+	FAILED
+	BOUNCED
 }
 
 model Organization {
@@ -79,6 +103,8 @@ model Organization {
 	templates    Template[]
 	placeholders Placeholder[]
 	campaigns    Campaign[]
+	emailAccounts EmailAccount[]
+	messages      Message[]
 }
 
 model User {
@@ -258,12 +284,14 @@ model Campaign {
 	name           String
 	status         CampaignStatus @default(DRAFT)
 	createdById    String?
+	sendingEmailAccountId String?
 	createdAt      DateTime       @default(now())
 	updatedAt      DateTime       @updatedAt
 
 	organization  Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 	offeringLine  OfferingLine?  @relation(fields: [offeringLineId], references: [id], onDelete: SetNull)
 	createdBy     User?          @relation("CampaignCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	sendingEmailAccount   EmailAccount? @relation(fields: [sendingEmailAccountId], references: [id], onDelete: SetNull)
 	steps         SequenceStep[]
 	campaignLeads CampaignLead[]
 
@@ -291,10 +319,65 @@ model CampaignLead {
 	status      CampaignLeadStatus @default(PENDING)
 	currentStep Int                @default(0)
 	nextSendAt  DateTime?
+	lastError   String?
 	createdAt   DateTime           @default(now())
 
 	campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
 	lead     Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+	messages Message[]
 
 	@@unique([campaignId, leadId])
+}
+
+model EmailAccount {
+	id                 String             @id @default(cuid())
+	organizationId     String
+	provider           EmailProvider      @default(GOOGLE)
+	email              String
+	displayName        String?
+	accessTokenEnc     String
+	refreshTokenEnc    String
+	tokenExpiresAt     DateTime?
+	scope              String?
+	dailyLimit         Int                @default(40)
+	sendWindowStartMin Int                @default(480)
+	sendWindowEndMin   Int                @default(960)
+	sendDays           Int                @default(31)
+	timezone           String             @default("Europe/Warsaw")
+	minGapSec          Int                @default(180)
+	maxGapSec          Int                @default(600)
+	status             EmailAccountStatus @default(CONNECTED)
+	createdAt          DateTime           @default(now())
+	updatedAt          DateTime           @updatedAt
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	messages     Message[]
+	campaigns    Campaign[]
+
+	@@unique([organizationId, email])
+}
+
+model Message {
+	id             String           @id @default(cuid())
+	organizationId String
+	campaignLeadId String
+	emailAccountId String
+	direction      MessageDirection @default(OUTBOUND)
+	subject        String
+	body           String
+	intendedTo     String
+	actualTo       String
+	gmailMessageId String?
+	gmailThreadId  String?
+	status         MessageStatus    @default(QUEUED)
+	error          String?
+	sentAt         DateTime?
+	createdAt      DateTime         @default(now())
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	campaignLead CampaignLead @relation(fields: [campaignLeadId], references: [id], onDelete: Cascade)
+	emailAccount EmailAccount @relation(fields: [emailAccountId], references: [id], onDelete: Cascade)
+
+	@@index([emailAccountId, sentAt])
+	@@index([campaignLeadId])
 }
