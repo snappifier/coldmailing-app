@@ -6,6 +6,8 @@ import {encryptSecret} from "@/lib/crypto"
 export const GMAIL_SEND_SCOPE = "https://www.googleapis.com/auth/gmail.send"
 // Read-only identity scope so we can read the connected mailbox address (gmail.send alone cannot).
 export const USERINFO_EMAIL_SCOPE = "https://www.googleapis.com/auth/userinfo.email"
+// Read scope for reply detection (Phase 5a): read message metadata + history.
+export const GMAIL_READONLY_SCOPE = "https://www.googleapis.com/auth/gmail.readonly"
 
 function hmac(payload: string): string {
 	const key = process.env.TOKEN_ENCRYPTION_KEY
@@ -41,7 +43,7 @@ export function buildConsentUrl(state: string): string {
 	return client().generateAuthUrl({
 		access_type: "offline",
 		prompt: "consent",
-		scope: [GMAIL_SEND_SCOPE, USERINFO_EMAIL_SCOPE],
+		scope: [GMAIL_SEND_SCOPE, USERINFO_EMAIL_SCOPE, GMAIL_READONLY_SCOPE],
 		state,
 	})
 }
