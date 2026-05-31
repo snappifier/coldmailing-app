@@ -1,5 +1,9 @@
 @AGENTS.md
 
+## Project state (read first)
+
+Internal cold-mailing tool. Phases 0, 1, 3 are DONE + verified; Phase 2 (AI research) is parked pending prompts; Phase 4 (mailbox + sending) is next. Full state, decisions, and the step-by-step roadmap live in `docs/superpowers/ROADMAP.md` — read it before resuming. Specs in `docs/superpowers/specs/`, plans in `docs/superpowers/plans/`.
+
 ## graphify + Obsidian (knowledge persistence)
 
 Persist project knowledge to the graphify knowledge graph, which also emits an Obsidian vault. "Everything" means code AND the design/decision docs under `docs/superpowers/` (specs, plans, rationale).
