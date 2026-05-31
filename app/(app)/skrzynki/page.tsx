@@ -22,7 +22,7 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 				{accounts.map((a) => (
 					<li className="flex items-center justify-between rounded border border-zinc-200 px-3 py-2 text-sm" key={a.id}>
 						<span>
-							{a.email} <span className="text-zinc-400">· {a.status} · limit {a.dailyLimit}/dzień</span>
+							{a.email} <span className="text-zinc-400">· {a.status} · limit {a.dailyLimit}/dzień · {a.scope?.includes("gmail.readonly") ? "odpowiedzi: on" : "odpowiedzi: off (przepnij skrzynkę)"}</span>
 						</span>
 						<form
 							action={async () => {
