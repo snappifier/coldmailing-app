@@ -72,20 +72,24 @@ export async function updateLead(_prev: LeadActionResult | null, formData: FormD
 	if (!parsed.success) return {ok: false, error: parsed.error.issues[0]?.message ?? "Błędne dane"}
 
 	const data = parsed.data
-	const result = await prisma.lead.updateMany({
-		where: {id, organizationId: orgId},
-		data: {
-			organizationName: data.organizationName,
-			email: data.email,
-			website: data.website,
-			contactPersonName: data.contactPersonName,
-			contactRole: data.contactRole,
-			city: data.city,
-			honorific,
-			customFields,
-		},
-	})
-	if (result.count === 0) return {ok: false, error: "Nie znaleziono leada"}
+	try {
+		const result = await prisma.lead.updateMany({
+			where: {id, organizationId: orgId},
+			data: {
+				organizationName: data.organizationName,
+				email: data.email,
+				website: data.website,
+				contactPersonName: data.contactPersonName,
+				contactRole: data.contactRole,
+				city: data.city,
+				honorific,
+				customFields,
+			},
+		})
+		if (result.count === 0) return {ok: false, error: "Nie znaleziono leada"}
+	} catch {
+		return {ok: false, error: "Lead z tym emailem już istnieje"}
+	}
 
 	revalidatePath("/leady")
 	revalidatePath(`/leady/${id}`)
