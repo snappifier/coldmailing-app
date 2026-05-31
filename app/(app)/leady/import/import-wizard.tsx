@@ -75,6 +75,10 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				))}
 			</div>
 
+			<p className="text-xs text-zinc-500">
+				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce.
+			</p>
+
 			<label className="flex flex-col text-sm">
 				Przypisz do linii usługi
 				<select className="w-64 rounded border border-zinc-300 px-2 py-1" name="offeringLineId" defaultValue="">
@@ -95,6 +99,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				state.ok ? (
 					<p className="text-sm text-green-700">
 						Dodano {state.created}, pominięto duplikaty: {state.duplicateCount}, na suppression: {state.suppressedCount}.
+						{state.withoutEmail > 0 ? ` Uwaga: ${state.withoutEmail} bez emaila.` : ""}
 					</p>
 				) : (
 					<p className="text-sm text-red-600">{state.error}</p>

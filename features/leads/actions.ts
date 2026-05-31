@@ -11,7 +11,7 @@ import {partitionLeads} from "@/features/leads/dedupe"
 export type LeadActionResult = {ok: true} | {ok: false; error: string}
 
 export type ImportResult =
-	| {ok: true; created: number; duplicateCount: number; suppressedCount: number}
+	| {ok: true; created: number; duplicateCount: number; suppressedCount: number; withoutEmail: number}
 	| {ok: false; error: string}
 
 const leadFormSchema = z.object({
@@ -94,6 +94,8 @@ export async function importLeads(_prev: ImportResult | null, formData: FormData
 		})
 	}
 
+	const withoutEmail = toInsert.filter((l) => !l.email).length
+
 	revalidatePath("/leady")
-	return {ok: true, created: toInsert.length, duplicateCount, suppressedCount}
+	return {ok: true, created: toInsert.length, duplicateCount, suppressedCount, withoutEmail}
 }
