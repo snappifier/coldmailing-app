@@ -10,12 +10,12 @@ Last updated: 2026-05-31. This is the durable handoff: read it (plus `CLAUDE.md`
 | 1 Leads | OfferingLine, Lead, CSV/paste import (parse+map+dedupe+suppression), leads table, suppression list | DONE + verified |
 | 3 Templates+Placeholders+Campaigns | Template library, custom placeholders (+reserved-key guard), pure `renderTemplate` (built-in / `{{zwrot}}` / custom / gendered `{{a\|b}}`), editor with palette + live preview, campaigns + sequence builder + lead assignment, lead edit (honorific + customFields) | DONE + verified |
 | 2 Research AI | Multi-type research (messages/licea, audyt, ...) via Anthropic API + web | PARKED — blocked on the user authoring the research prompts |
-| 4 Mailbox + sending | Google mailbox connect, Gmail API send, Inngest sending engine | CODE COMPLETE + static-verified (tsc 0, vitest 49/49, `next build` green); live OAuth+send pending GCP creds + manual e2e |
+| 4 Mailbox + sending | Google mailbox connect, Gmail API send, Inngest sending engine | DONE + verified |
 | 5 Sequences + replies | Followup delays, reply detection, stop-on-reply, bounce/unsub | after 4 |
 | 6 Sales pipeline | Kanban by `Lead.dealStage`, activity timeline, notes | later |
 | 7 Visual design / polish | Full UI pass, dashboards, team-role UI, deliverability settings | last |
 
-Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedupe+suppression), templates/placeholders/campaigns. `tsc` 0, `vitest` 24/24, production `next build` green.
+Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedupe+suppression), templates/placeholders/campaigns, and Phase 4 mailbox connect + Gmail send (real email delivered to `SEND_OVERRIDE_TO`, `Message` SENT, `CampaignLead` DONE). `tsc` 0, `vitest` 49/49, production `next build` green.
 
 ## Stack + key decisions (current as of 2026-05-31)
 
@@ -38,7 +38,7 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 
 ## Next steps (detailed)
 
-### Phase 4 — Mailbox + sending (CODE COMPLETE — live e2e pending)
+### Phase 4 — Mailbox + sending (DONE + verified)
 - `EmailAccount` model (provider GOOGLE, encrypted OAuth tokens, dailyLimit, send-window, timezone, warmupState, status). Add Campaign sending fields (`sendingEmailAccountId`, `scheduleConfig`).
 - Connect a Google mailbox via OAuth (separate from login scope; needs `gmail.send` + read scope for replies later).
 - Gmail API send; `Message` model (OUTBOUND, gmailMessageId/threadId, status).
@@ -47,7 +47,7 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 - Token encryption at rest; minimal scopes.
 
 **Status (2026-05-31):** Implemented + committed on `master` (plan Tasks 0-11): migration `phase4_mailbox_sending` (`EmailAccount`, `Message`, enums `EmailProvider`/`EmailAccountStatus`/`MessageDirection`/`MessageStatus`, `CampaignLeadStatus` += `SKIPPED`/`FAILED`, `Campaign.sendingEmailAccountId`, `CampaignLead.lastError`); `lib/crypto.ts` AES-256-GCM; pure `features/sending/{recipient,mime,schedule}.ts` + `features/campaigns/activation.ts` (all unit-tested); `features/sending/gmail.ts` send boundary (token-refresh persistence); `features/email-accounts/*` (signed-state OAuth, queries, disconnect); `app/api/mailbox/google/{connect,callback}` routes; `features/campaigns/sending-actions.ts` (`activateCampaign`/`pauseCampaign`/`setSendingMailbox`); `lib/inngest/sending.ts` `sendCampaignEmail` worker (registered in `app/api/inngest/route.ts`); `/skrzynki` page + nav link + campaign sending controls. Gates: `tsc` 0, `vitest` 49/49, `next build` green.
-**Remaining (pending USER):** create a GCP OAuth client (type Web, Gmail API enabled, yourself as test user), set `GOOGLE_MAILBOX_CLIENT_ID`/`_SECRET` in `.env` (other Phase-4 keys already set), then run the live e2e (plan Task 12 steps 3-5): connect a mailbox at `/skrzynki`, activate the seeded campaign, confirm the email lands at `SEND_OVERRIDE_TO`, `Message` is `SENT`, `CampaignLead` is `DONE`. Inngest dev server needed locally for the worker to run. Only after that does Phase 4 become DONE + verified.
+**Live e2e (2026-05-31, done):** GCP OAuth client created, mailbox connected at `/skrzynki` (status `CONNECTED`, tokens stored as ciphertext), seeded campaign activated, real email delivered to `SEND_OVERRIDE_TO`, `Message` logged `SENT`, `CampaignLead` -> `DONE`. Ran with `npm run dev` + the Inngest dev server (`npx inngest-cli dev`). Caveat: the test mailbox's send window was temporarily widened to all-days / 24h for an immediate send -- restore conservative hours (`sendDays`=31 Mon-Fri, `sendWindowStartMin`=480, `sendWindowEndMin`=960) before real campaigns.
 **Plan deviations (intentional):** (1) pure `validateActivation` lives in `features/campaigns/activation.ts`, not inside the `use server` `sending-actions.ts` — a `use server` module may only export async functions, and this keeps the unit test off the `next-auth` import chain (which fails to resolve under vitest). (2) The consent screen requests `userinfo.email` alongside `gmail.send` so the connected mailbox address is readable (`gmail.send` alone cannot read it). (3) `planSchedule`'s day-rollover was rewritten so hitting the daily limit rolls to the next valid day (the plan draft stayed same-day); behavior locked by `features/sending/schedule.test.ts`.
 
 ### Phase 5 — Sequences + replies
