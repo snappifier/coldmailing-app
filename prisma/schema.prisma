@@ -320,6 +320,7 @@ model CampaignLead {
 	currentStep Int                @default(0)
 	nextSendAt  DateTime?
 	lastError   String?
+	repliedAt   DateTime?
 	createdAt   DateTime           @default(now())
 
 	campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
@@ -339,6 +340,7 @@ model EmailAccount {
 	refreshTokenEnc    String
 	tokenExpiresAt     DateTime?
 	scope              String?
+	lastHistoryId      String?
 	dailyLimit         Int                @default(40)
 	sendWindowStartMin Int                @default(480)
 	sendWindowEndMin   Int                @default(960)
