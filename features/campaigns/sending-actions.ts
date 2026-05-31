@@ -74,3 +74,12 @@ export async function pauseCampaign(campaignId: string): Promise<void> {
 	await prisma.campaign.updateMany({where: {id: campaignId, organizationId: orgId}, data: {status: "PAUSED"}})
 	revalidatePath(`/kampanie/${campaignId}`)
 }
+
+export async function setSendingMailbox(campaignId: string, emailAccountId: string): Promise<void> {
+	const {orgId} = await requireOrg()
+	await prisma.campaign.updateMany({
+		where: {id: campaignId, organizationId: orgId},
+		data: {sendingEmailAccountId: emailAccountId || null},
+	})
+	revalidatePath(`/kampanie/${campaignId}`)
+}

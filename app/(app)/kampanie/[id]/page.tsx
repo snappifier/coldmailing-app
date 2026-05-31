@@ -3,7 +3,9 @@ import Link from "next/link"
 import {notFound} from "next/navigation"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
+import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {SequenceAndLeads} from "./sequence-and-leads"
+import {SendingControls} from "./sending-controls"
 
 export default async function CampaignDetailPage({params}: {params: Promise<{id: string}>}) {
 	const {orgId} = await requireOrg()
@@ -18,9 +20,10 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 	})
 	if (!campaign) notFound()
 
-	const [templates, offeringLines] = await Promise.all([
+	const [templates, offeringLines, mailboxes] = await Promise.all([
 		prisma.template.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
+		listEmailAccounts(orgId),
 	])
 
 	return (
@@ -31,6 +34,11 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 			<h1 className="text-lg font-semibold">
 				{campaign.name} <span className="text-sm font-normal text-zinc-400">· {campaign.status} · {campaign._count.campaignLeads} leadów</span>
 			</h1>
+			<SendingControls
+				campaignId={campaign.id}
+				mailboxes={mailboxes.map((m) => ({id: m.id, email: m.email}))}
+				currentMailboxId={campaign.sendingEmailAccountId}
+			/>
 			<SequenceAndLeads
 				campaignId={campaign.id}
 				templates={templates}
