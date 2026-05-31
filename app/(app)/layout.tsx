@@ -13,6 +13,9 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 				<nav className="flex gap-4 text-sm">
 					<Link href="/leady">Leady</Link>
 					<Link href="/linie">Linie usług</Link>
+					<Link href="/szablony">Szablony</Link>
+					<Link href="/placeholdery">Placeholdery</Link>
+					<Link href="/kampanie">Kampanie</Link>
 					<Link href="/suppression">Suppression</Link>
 				</nav>
 				<form
