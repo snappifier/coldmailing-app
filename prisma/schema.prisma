@@ -35,6 +35,37 @@ enum SuppressionReason {
 	MANUAL
 }
 
+enum TemplateVisibility {
+	TEAM
+	PRIVATE
+}
+
+enum PlaceholderType {
+	TEXT
+	CHOICE
+}
+
+enum CampaignStatus {
+	DRAFT
+	ACTIVE
+	PAUSED
+	DONE
+}
+
+enum SequenceCondition {
+	ALWAYS
+	SEND_IF_NO_REPLY
+}
+
+enum CampaignLeadStatus {
+	PENDING
+	ACTIVE
+	REPLIED
+	BOUNCED
+	UNSUBSCRIBED
+	DONE
+}
+
 model Organization {
 	id        String   @id @default(cuid())
 	name      String
@@ -45,6 +76,9 @@ model Organization {
 	offeringLines OfferingLine[]
 	leads         Lead[]
 	suppressions  Suppression[]
+	templates    Template[]
+	placeholders Placeholder[]
+	campaigns    Campaign[]
 }
 
 model User {
@@ -59,6 +93,9 @@ model User {
 	sessions    Session[]
 	memberships Membership[]
 	ownedLeads  Lead[]       @relation("LeadOwner")
+	templates    Template[]    @relation("TemplateCreatedBy")
+	placeholders Placeholder[] @relation("PlaceholderCreatedBy")
+	campaigns    Campaign[]    @relation("CampaignCreatedBy")
 }
 
 model Account {
@@ -121,6 +158,8 @@ model OfferingLine {
 
 	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 	leads        Lead[]
+	templates Template[]
+	campaigns Campaign[]
 
 	@@unique([organizationId, name])
 }
@@ -153,6 +192,7 @@ model Lead {
 	organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 	offeringLine OfferingLine? @relation(fields: [offeringLineId], references: [id], onDelete: SetNull)
 	owner        User?         @relation("LeadOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
+	campaignLeads CampaignLead[]
 
 	@@unique([organizationId, email])
 	@@index([organizationId, dealStage])
@@ -168,4 +208,93 @@ model Suppression {
 	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 
 	@@unique([organizationId, email])
+}
+
+model Template {
+	id             String             @id @default(cuid())
+	organizationId String
+	name           String
+	subject        String
+	body           String
+	isFollowup     Boolean            @default(false)
+	offeringLineId String?
+	visibility     TemplateVisibility @default(TEAM)
+	folder         String?
+	createdById    String?
+	createdAt      DateTime           @default(now())
+	updatedAt      DateTime           @updatedAt
+
+	organization  Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	offeringLine  OfferingLine?  @relation(fields: [offeringLineId], references: [id], onDelete: SetNull)
+	createdBy     User?          @relation("TemplateCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	sequenceSteps SequenceStep[]
+
+	@@index([organizationId])
+}
+
+model Placeholder {
+	id             String          @id @default(cuid())
+	organizationId String
+	key            String
+	label          String
+	type           PlaceholderType @default(TEXT)
+	options        Json?
+	fallback       String?
+	source         String?
+	createdById    String?
+	createdAt      DateTime        @default(now())
+	updatedAt      DateTime        @updatedAt
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	createdBy    User?        @relation("PlaceholderCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+	@@unique([organizationId, key])
+}
+
+model Campaign {
+	id             String         @id @default(cuid())
+	organizationId String
+	offeringLineId String?
+	name           String
+	status         CampaignStatus @default(DRAFT)
+	createdById    String?
+	createdAt      DateTime       @default(now())
+	updatedAt      DateTime       @updatedAt
+
+	organization  Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	offeringLine  OfferingLine?  @relation(fields: [offeringLineId], references: [id], onDelete: SetNull)
+	createdBy     User?          @relation("CampaignCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	steps         SequenceStep[]
+	campaignLeads CampaignLead[]
+
+	@@unique([organizationId, name])
+}
+
+model SequenceStep {
+	id         String            @id @default(cuid())
+	campaignId String
+	order      Int
+	templateId String
+	delayDays  Int               @default(0)
+	condition  SequenceCondition @default(SEND_IF_NO_REPLY)
+
+	campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+	template Template @relation(fields: [templateId], references: [id], onDelete: Restrict)
+
+	@@unique([campaignId, order])
+}
+
+model CampaignLead {
+	id          String             @id @default(cuid())
+	campaignId  String
+	leadId      String
+	status      CampaignLeadStatus @default(PENDING)
+	currentStep Int                @default(0)
+	nextSendAt  DateTime?
+	createdAt   DateTime           @default(now())
+
+	campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+	lead     Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+	@@unique([campaignId, leadId])
 }
