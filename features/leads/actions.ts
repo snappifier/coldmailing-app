@@ -44,6 +44,54 @@ export async function deleteLead(id: string): Promise<void> {
 	revalidatePath("/leady")
 }
 
+export async function updateLead(_prev: LeadActionResult | null, formData: FormData): Promise<LeadActionResult> {
+	const {orgId} = await requireOrg()
+	const id = String(formData.get("id") ?? "")
+	if (!id) return {ok: false, error: "Brak id"}
+
+	const honorificRaw = String(formData.get("honorific") ?? "")
+	const honorific = honorificRaw === "PAN" || honorificRaw === "PANI" ? honorificRaw : null
+
+	// customFields arrive as repeated cf_key[] / cf_value[] pairs
+	const keys = formData.getAll("cf_key").map(String)
+	const values = formData.getAll("cf_value").map(String)
+	const customFields: Record<string, string> = {}
+	keys.forEach((k, i) => {
+		const trimmed = k.trim()
+		if (trimmed) customFields[trimmed] = values[i] ?? ""
+	})
+
+	const parsed = leadFormSchema.safeParse({
+		organizationName: formData.get("organizationName"),
+		email: formData.get("email"),
+		website: formData.get("website"),
+		contactPersonName: formData.get("contactPersonName"),
+		contactRole: formData.get("contactRole"),
+		city: formData.get("city"),
+	})
+	if (!parsed.success) return {ok: false, error: parsed.error.issues[0]?.message ?? "Błędne dane"}
+
+	const data = parsed.data
+	const result = await prisma.lead.updateMany({
+		where: {id, organizationId: orgId},
+		data: {
+			organizationName: data.organizationName,
+			email: data.email,
+			website: data.website,
+			contactPersonName: data.contactPersonName,
+			contactRole: data.contactRole,
+			city: data.city,
+			honorific,
+			customFields,
+		},
+	})
+	if (result.count === 0) return {ok: false, error: "Nie znaleziono leada"}
+
+	revalidatePath("/leady")
+	revalidatePath(`/leady/${id}`)
+	return {ok: true}
+}
+
 export async function importLeads(_prev: ImportResult | null, formData: FormData): Promise<ImportResult> {
 	const {orgId} = await requireOrg()
 

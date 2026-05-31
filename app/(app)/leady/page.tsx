@@ -73,7 +73,11 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 				<tbody>
 					{leads.map((lead) => (
 						<tr className="border-b border-zinc-100" key={lead.id}>
-							<td className="py-1 pr-2">{lead.organizationName}</td>
+							<td className="py-1 pr-2">
+								<a className="text-blue-600 hover:underline" href={`/leady/${lead.id}`}>
+									{lead.organizationName}
+								</a>
+							</td>
 							<td className="py-1 pr-2">{lead.email ?? "—"}</td>
 							<td className="py-1 pr-2">{lead.city ?? "—"}</td>
 							<td className="py-1 pr-2">{lead.offeringLine?.name ?? "—"}</td>
