@@ -1,0 +1,4407 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "App pages & routes",
+      "x": 0,
+      "y": 0,
+      "width": 1540,
+      "height": 1620,
+      "color": "1"
+    },
+    {
+      "id": "n_app_layout_applayout",
+      "type": "file",
+      "file": "AppLayout().md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_page_campaigndetailpage",
+      "type": "file",
+      "file": "CampaignDetailPage().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_import_page_importpage",
+      "type": "file",
+      "file": "ImportPage().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_import_import_wizard_importwizard",
+      "type": "file",
+      "file": "ImportWizard().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_lead_edit_form_leadeditform",
+      "type": "file",
+      "file": "LeadEditForm().md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_page_leadeditpage",
+      "type": "file",
+      "file": "LeadEditPage().md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leady_page_leadspage",
+      "type": "file",
+      "file": "LeadsPage().md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_logowanie_page_loginpage",
+      "type": "file",
+      "file": "LoginPage().md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_org_orgcontext",
+      "type": "file",
+      "file": "OrgContext.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholdery_placeholder_form_placeholderform",
+      "type": "file",
+      "file": "PlaceholderForm().md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_actions_placeholderresult",
+      "type": "file",
+      "file": "PlaceholderResult.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholdery_page_placeholderspage",
+      "type": "file",
+      "file": "PlaceholdersPage().md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_sequence_and_leads_sequenceandleads",
+      "type": "file",
+      "file": "SequenceAndLeads().md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_suppression_form_suppressionform",
+      "type": "file",
+      "file": "SuppressionForm().md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_page_suppressionpage",
+      "type": "file",
+      "file": "SuppressionPage().md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_actions_suppressionresult",
+      "type": "file",
+      "file": "SuppressionResult.md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_placeholders_actions_ts",
+      "type": "file",
+      "file": "actions.ts_3.md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_suppression_actions_ts",
+      "type": "file",
+      "file": "actions.ts_4.md",
+      "x": 420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_actions_addsuppression",
+      "type": "file",
+      "file": "addSuppression().md",
+      "x": 20,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_helpers_ts",
+      "type": "file",
+      "file": "auth-helpers.ts.md",
+      "x": 220,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_ts",
+      "type": "file",
+      "file": "auth.ts.md",
+      "x": 420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_actions_createplaceholder",
+      "type": "file",
+      "file": "createPlaceholder().md",
+      "x": 20,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_deletelead",
+      "type": "file",
+      "file": "deleteLead().md",
+      "x": 220,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_actions_deleteplaceholder",
+      "type": "file",
+      "file": "deletePlaceholder().md",
+      "x": 420,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_actions_emailschema",
+      "type": "file",
+      "file": "emailSchema.md",
+      "x": 20,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_helpers_ensuremembership",
+      "type": "file",
+      "file": "ensureMembership().md",
+      "x": 220,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_prisma_globalforprisma",
+      "type": "file",
+      "file": "globalForPrisma.md",
+      "x": 420,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_helpers_isemailallowed",
+      "type": "file",
+      "file": "isEmailAllowed().md",
+      "x": 20,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_layout_tsx",
+      "type": "file",
+      "file": "layout.tsx_1.md",
+      "x": 220,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_org_ts",
+      "type": "file",
+      "file": "org.ts.md",
+      "x": 420,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_kampanie_id_page_tsx",
+      "type": "file",
+      "file": "page.tsx_2.md",
+      "x": 20,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_id_page_tsx",
+      "type": "file",
+      "file": "page.tsx_5.md",
+      "x": 220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_import_page_tsx",
+      "type": "file",
+      "file": "page.tsx_4.md",
+      "x": 420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_page_tsx",
+      "type": "file",
+      "file": "page.tsx_3.md",
+      "x": 20,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_placeholdery_page_tsx",
+      "type": "file",
+      "file": "page.tsx_7.md",
+      "x": 220,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_suppression_page_tsx",
+      "type": "file",
+      "file": "page.tsx_8.md",
+      "x": 420,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_logowanie_page_tsx",
+      "type": "file",
+      "file": "page.tsx_10.md",
+      "x": 20,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_placeholdery_placeholder_form_tsx",
+      "type": "file",
+      "file": "placeholder-form.tsx.md",
+      "x": 220,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_prisma_ts",
+      "type": "file",
+      "file": "prisma.ts.md",
+      "x": 420,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_suppression_actions_removesuppression",
+      "type": "file",
+      "file": "removeSuppression().md",
+      "x": 20,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_org_requireorg",
+      "type": "file",
+      "file": "requireOrg().md",
+      "x": 220,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_api_auth_nextauth_route_ts",
+      "type": "file",
+      "file": "route.ts.md",
+      "x": 420,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_suppression_suppression_form_tsx",
+      "type": "file",
+      "file": "suppression-form.tsx.md",
+      "x": 20,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_auth_handlers_signin_signout_auth",
+      "type": "file",
+      "file": "{handlers, signIn, signOut, auth}.md",
+      "x": 220,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Decisions & cross-cutting",
+      "x": 1620,
+      "y": 0,
+      "width": 1540,
+      "height": 1520,
+      "color": "2"
+    },
+    {
+      "id": "n_doc_agents",
+      "type": "file",
+      "file": "AGENTS.md (agent rules + knowledge persistence).md",
+      "x": 1640,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_authjs5",
+      "type": "file",
+      "file": "Auth.js v5 (Google OAuth + Prisma adapter, JWT).md",
+      "x": 1840,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_claude",
+      "type": "file",
+      "file": "CLAUDE.md (project state pointer).md",
+      "x": 2040,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_convention_code_style",
+      "type": "file",
+      "file": "Code conventions (tabs, no semicolons, path comment, className first, no emoji).md",
+      "x": 1640,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_product_coldmailing_tool",
+      "type": "file",
+      "file": "Cold Mailing Tool (product).md",
+      "x": 1840,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_design_v1",
+      "type": "file",
+      "file": "Cold Mailing Tool Design v1 (spec).md",
+      "x": 2040,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cc_deliverability",
+      "type": "file",
+      "file": "Deliverability (SPFDKIMDMARC, warmup, send window).md",
+      "x": 1640,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_email_allowlist",
+      "type": "file",
+      "file": "Email allowlist + org membership gate.md",
+      "x": 1840,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ambition_saas",
+      "type": "file",
+      "file": "Eventual SaaS ambition (internal-first).md",
+      "x": 2040,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cc_gdpr_rodo",
+      "type": "file",
+      "file": "GDPRRODO (sender identity, opt-out, suppression, B2B basis).md",
+      "x": 1640,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_rule_git_user_pushes",
+      "type": "file",
+      "file": "Git work on master, Claude may commit, USER pushes (never git push).md",
+      "x": 1840,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_mechanics_first",
+      "type": "file",
+      "file": "Mechanics-first build philosophy.md",
+      "x": 2040,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_membership",
+      "type": "file",
+      "file": "Membership (user-org role OWNERADMINMEMBER).md",
+      "x": 1640,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_multitenant_ready",
+      "type": "file",
+      "file": "Multi-tenant-ready, org-scoped data model.md",
+      "x": 1840,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_nextjs16",
+      "type": "file",
+      "file": "Next.js 16 (App Router).md",
+      "x": 2040,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_nextjs_breaking",
+      "type": "file",
+      "file": "Next.js version has breaking changes vs training data.md",
+      "x": 1640,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_convention_no_emoji",
+      "type": "file",
+      "file": "No emoji anywhere (incl. commit messages).md",
+      "x": 1840,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_organization",
+      "type": "file",
+      "file": "Organization (tenant).md",
+      "x": 2040,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_practice_graphify_obsidian",
+      "type": "file",
+      "file": "Persist knowledge to graphify + Obsidian vault.md",
+      "x": 1640,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_0_foundation",
+      "type": "file",
+      "file": "Phase 0 \u2014 Foundation (DONE).md",
+      "x": 1840,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_plan_p01",
+      "type": "file",
+      "file": "Phase 0+1 Implementation Plan.md",
+      "x": 2040,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_1_leads",
+      "type": "file",
+      "file": "Phase 1 \u2014 Leads + structure (DONE).md",
+      "x": 1640,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_7_visual_design",
+      "type": "file",
+      "file": "Phase 7 \u2014 Visual design  polish.md",
+      "x": 1840,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_prisma7_neon",
+      "type": "file",
+      "file": "Prisma 7.8 + @prismaadapter-pg on Neon Postgres.md",
+      "x": 2040,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_roadmap",
+      "type": "file",
+      "file": "ROADMAP.md (state & roadmap).md",
+      "x": 1640,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_react19",
+      "type": "file",
+      "file": "React 19 (useActionState, ref-as-prop).md",
+      "x": 1840,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cc_security_tokens",
+      "type": "file",
+      "file": "Security (OAuth tokens encrypted, minimal Gmail scopes, allowlist).md",
+      "x": 2040,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_suppression",
+      "type": "file",
+      "file": "Suppression (global do-not-contact list).md",
+      "x": 1640,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_suppression_filtering",
+      "type": "file",
+      "file": "Suppression filtering on import (and later send).md",
+      "x": 1840,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_tailwind4",
+      "type": "file",
+      "file": "Tailwind CSS v4 (minimal styling in v1).md",
+      "x": 2040,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_cc_tracking_policy",
+      "type": "file",
+      "file": "Tracking policy (reply ON, open OFF, click optional).md",
+      "x": 1640,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_typescript6",
+      "type": "file",
+      "file": "TypeScript 6.md",
+      "x": 1840,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_rule_user_runs_dev",
+      "type": "file",
+      "file": "USER runs dev server; coordinate build (OFF) vs live verify (ON).md",
+      "x": 2040,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_user",
+      "type": "file",
+      "file": "User (team member via Google OAuth).md",
+      "x": 1640,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_verify_versions",
+      "type": "file",
+      "file": "Verify current library versionsbest practices in docs.md",
+      "x": 1840,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_vitest4",
+      "type": "file",
+      "file": "Vitest 4 (unit testing).md",
+      "x": 2040,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_goal_web_agency_outreach",
+      "type": "file",
+      "file": "Web-agency cold outreach to schoolsinstitutions.md",
+      "x": 1640,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_zod4",
+      "type": "file",
+      "file": "Zod 4 (validation).md",
+      "x": 1840,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_convention_zod4_idioms",
+      "type": "file",
+      "file": "Zod 4 idioms (z.email() not z.string().email()).md",
+      "x": 2040,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_require_org",
+      "type": "file",
+      "file": "requireOrg() org-scoping helper.md",
+      "x": 1640,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Leads & import feature",
+      "x": 3240,
+      "y": 0,
+      "width": 1320,
+      "height": 1320,
+      "color": "3"
+    },
+    {
+      "id": "n_leads_import_columnmapping",
+      "type": "file",
+      "file": "ColumnMapping.md",
+      "x": 3260,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_import_import_wizard_fields",
+      "type": "file",
+      "file": "FIELDS.md",
+      "x": 3460,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_importresult",
+      "type": "file",
+      "file": "ImportResult.md",
+      "x": 3660,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_leadactionresult",
+      "type": "file",
+      "file": "LeadActionResult.md",
+      "x": 3260,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_leadfieldkey",
+      "type": "file",
+      "file": "LeadFieldKey.md",
+      "x": 3460,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leady_lead_form_leadform",
+      "type": "file",
+      "file": "LeadForm().md",
+      "x": 3660,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_leadimportinput",
+      "type": "file",
+      "file": "LeadImportInput.md",
+      "x": 3260,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_dedupe_partitionresult",
+      "type": "file",
+      "file": "PartitionResult.md",
+      "x": 3460,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_lead_edit_form_props",
+      "type": "file",
+      "file": "Props_1.md",
+      "x": 3660,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_leads_actions_ts",
+      "type": "file",
+      "file": "actions.ts_1.md",
+      "x": 3260,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_dedupe_test_base",
+      "type": "file",
+      "file": "base.md",
+      "x": 3460,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_cell",
+      "type": "file",
+      "file": "cell().md",
+      "x": 3660,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_createlead",
+      "type": "file",
+      "file": "createLead().md",
+      "x": 3260,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_leads_dedupe_test_ts",
+      "type": "file",
+      "file": "dedupe.test.ts.md",
+      "x": 3460,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_leads_dedupe_ts",
+      "type": "file",
+      "file": "dedupe.ts.md",
+      "x": 3660,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_detectdelimiter",
+      "type": "file",
+      "file": "detectDelimiter().md",
+      "x": 3260,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_import_import_wizard_tsx",
+      "type": "file",
+      "file": "import-wizard.tsx.md",
+      "x": 3460,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_leads_import_test_ts",
+      "type": "file",
+      "file": "import.test.ts.md",
+      "x": 3660,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_leads_import_ts",
+      "type": "file",
+      "file": "import.ts.md",
+      "x": 3260,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_importleads",
+      "type": "file",
+      "file": "importLeads().md",
+      "x": 3460,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_id_lead_edit_form_tsx",
+      "type": "file",
+      "file": "lead-edit-form.tsx.md",
+      "x": 3660,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_leady_lead_form_tsx",
+      "type": "file",
+      "file": "lead-form.tsx.md",
+      "x": 3260,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_leadformschema",
+      "type": "file",
+      "file": "leadFormSchema.md",
+      "x": 3460,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_dedupe_test_leads",
+      "type": "file",
+      "file": "leads.md",
+      "x": 3660,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_test_leads",
+      "type": "file",
+      "file": "leads_1.md",
+      "x": 3260,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_maprowstoleads",
+      "type": "file",
+      "file": "mapRowsToLeads().md",
+      "x": 3460,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_test_mapping",
+      "type": "file",
+      "file": "mapping.md",
+      "x": 3660,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_normalizeemail",
+      "type": "file",
+      "file": "normalizeEmail().md",
+      "x": 3260,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_normalizewebsite",
+      "type": "file",
+      "file": "normalizeWebsite().md",
+      "x": 3460,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_parsehonorific",
+      "type": "file",
+      "file": "parseHonorific().md",
+      "x": 3660,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_parsetable",
+      "type": "file",
+      "file": "parseTable().md",
+      "x": 3260,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_dedupe_partitionleads",
+      "type": "file",
+      "file": "partitionLeads().md",
+      "x": 3460,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_dedupe_test_result",
+      "type": "file",
+      "file": "result.md",
+      "x": 3660,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_test_rows",
+      "type": "file",
+      "file": "rows.md",
+      "x": 3260,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_import_splitrow",
+      "type": "file",
+      "file": "splitRow().md",
+      "x": 3460,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_leads_actions_updatelead",
+      "type": "file",
+      "file": "updateLead().md",
+      "x": 3660,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Sending & architecture flows",
+      "x": 4640,
+      "y": 0,
+      "width": 1320,
+      "height": 1120,
+      "color": "4"
+    },
+    {
+      "id": "n_flow_research_fanout",
+      "type": "file",
+      "file": "AI research fan-out (Inngest one job per lead - Anthropic web).md",
+      "x": 4660,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_anthropic_sdk",
+      "type": "file",
+      "file": "Anthropic SDK (AI research, web tools, prompt caching).md",
+      "x": 4860,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_campaign",
+      "type": "file",
+      "file": "Campaign (cold-mail action, status DRAFTACTIVEPAUSEDDONE).md",
+      "x": 5060,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_campaign_lead",
+      "type": "file",
+      "file": "CampaignLead (membership + per-campaign send state).md",
+      "x": 4660,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_email_account",
+      "type": "file",
+      "file": "EmailAccount (connected sending mailbox, encrypted tokens).md",
+      "x": 4860,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_email_event",
+      "type": "file",
+      "file": "EmailEvent (opensclicksbounces log).md",
+      "x": 5060,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_flow_gmail_send",
+      "type": "file",
+      "file": "Gmail API send + Message log.md",
+      "x": 4660,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_inngest_engine",
+      "type": "file",
+      "file": "Inngest as durable scheduling engine.md",
+      "x": 4860,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_flow_sending_engine",
+      "type": "file",
+      "file": "Inngest sending engine (throttlewindowrandomized gaps).md",
+      "x": 5060,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stack_inngest4",
+      "type": "file",
+      "file": "Inngest v4 (durable background jobs).md",
+      "x": 4660,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_lead",
+      "type": "file",
+      "file": "Lead (prospect, org-global, honorificcustomFieldsdealStage).md",
+      "x": 4860,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_message",
+      "type": "file",
+      "file": "Message (outboundinbound email, gmail ids, status).md",
+      "x": 5060,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_offering_line",
+      "type": "file",
+      "file": "OfferingLine (what you sell).md",
+      "x": 4660,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_three_org_layers",
+      "type": "file",
+      "file": "OfferingLine - Campaign - Leads + sales pipeline layering.md",
+      "x": 4860,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_2_research_ai",
+      "type": "file",
+      "file": "Phase 2 \u2014 AI research (PARKED on prompts).md",
+      "x": 5060,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_4_mailbox_sending",
+      "type": "file",
+      "file": "Phase 4 \u2014 Mailbox + sending (NEXT).md",
+      "x": 4660,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_5_sequences_replies",
+      "type": "file",
+      "file": "Phase 5 \u2014 Sequences + replies.md",
+      "x": 4860,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_6_pipeline",
+      "type": "file",
+      "file": "Phase 6 \u2014 Sales pipeline (kanban).md",
+      "x": 5060,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_flow_pipeline_kanban",
+      "type": "file",
+      "file": "Pipeline kanban by dealStage + activity timeline.md",
+      "x": 4660,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_flow_reply_detection",
+      "type": "file",
+      "file": "Reply detection (Gmail watchpoll - stop-on-reply).md",
+      "x": 4860,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_module_reply_detector",
+      "type": "file",
+      "file": "ReplyDetector module interface.md",
+      "x": 5060,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_research_run",
+      "type": "file",
+      "file": "ResearchRun (BATCHSINGLE enrichment job).md",
+      "x": 4660,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_module_researcher",
+      "type": "file",
+      "file": "Researcher module interface.md",
+      "x": 4860,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_own_mailbox_sending",
+      "type": "file",
+      "file": "Send from user's own GmailWorkspace mailbox (not ESP).md",
+      "x": 5060,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_module_sender",
+      "type": "file",
+      "file": "Sender module interface.md",
+      "x": 4660,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_sequence_builder",
+      "type": "file",
+      "file": "Sequence builder + lead assignment (Phase 3 timeline only).md",
+      "x": 4860,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_sequence_step",
+      "type": "file",
+      "file": "SequenceStep (template + delayDays + condition).md",
+      "x": 5060,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_send_vs_deal_split",
+      "type": "file",
+      "file": "Split send status on CampaignLead, deal stage on Lead.md",
+      "x": 4660,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_swappable_interfaces",
+      "type": "file",
+      "file": "Swappable module interfaces (SenderReplyDetectorResearcherTemplateRenderer).md",
+      "x": 4860,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_infra_vercel_hosting",
+      "type": "file",
+      "file": "Vercel hosting assumption.md",
+      "x": 5060,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Dev dependencies & tooling",
+      "x": 6040,
+      "y": 0,
+      "width": 1320,
+      "height": 1120,
+      "color": "5"
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_tailwindcss_postcss",
+      "type": "file",
+      "file": "@tailwindcsspostcss.md",
+      "x": 6060,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_types_node",
+      "type": "file",
+      "file": "@typesnode.md",
+      "x": 6260,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_types_pg",
+      "type": "file",
+      "file": "@typespg.md",
+      "x": 6460,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_types_react",
+      "type": "file",
+      "file": "@typesreact.md",
+      "x": 6060,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_types_react_dom",
+      "type": "file",
+      "file": "@typesreact-dom.md",
+      "x": 6260,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_vitejs_plugin_react",
+      "type": "file",
+      "file": "@vitejsplugin-react.md",
+      "x": 6460,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_build",
+      "type": "file",
+      "file": "build.md",
+      "x": 6060,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_db_migrate",
+      "type": "file",
+      "file": "dbmigrate.md",
+      "x": 6260,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_db_seed",
+      "type": "file",
+      "file": "dbseed.md",
+      "x": 6460,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_db_studio",
+      "type": "file",
+      "file": "dbstudio.md",
+      "x": 6060,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_dev",
+      "type": "file",
+      "file": "dev.md",
+      "x": 6260,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies.md",
+      "x": 6460,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_dotenv",
+      "type": "file",
+      "file": "dotenv.md",
+      "x": 6060,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_eslint",
+      "type": "file",
+      "file": "eslint.md",
+      "x": 6260,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_eslint_config_next",
+      "type": "file",
+      "file": "eslint-config-next.md",
+      "x": 6460,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_lint",
+      "type": "file",
+      "file": "lint.md",
+      "x": 6060,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_name",
+      "type": "file",
+      "file": "name.md",
+      "x": 6260,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_json",
+      "type": "file",
+      "file": "package.json.md",
+      "x": 6460,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_postinstall",
+      "type": "file",
+      "file": "postinstall.md",
+      "x": 6060,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_prisma",
+      "type": "file",
+      "file": "prisma.md",
+      "x": 6260,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_private",
+      "type": "file",
+      "file": "private.md",
+      "x": 6460,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts",
+      "type": "file",
+      "file": "scripts.md",
+      "x": 6060,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_start",
+      "type": "file",
+      "file": "start.md",
+      "x": 6260,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_tailwindcss",
+      "type": "file",
+      "file": "tailwindcss.md",
+      "x": 6460,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_scripts_test",
+      "type": "file",
+      "file": "test.md",
+      "x": 6060,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_tsx",
+      "type": "file",
+      "file": "tsx.md",
+      "x": 6260,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_typescript",
+      "type": "file",
+      "file": "typescript.md",
+      "x": 6460,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_version",
+      "type": "file",
+      "file": "version.md",
+      "x": 6060,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_devdependencies_vitest",
+      "type": "file",
+      "file": "vitest.md",
+      "x": 6260,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Templates feature",
+      "x": 0,
+      "y": 1700,
+      "width": 1320,
+      "height": 1020,
+      "color": "6"
+    },
+    {
+      "id": "n_szablony_template_editor_builtin",
+      "type": "file",
+      "file": "BUILTIN.md",
+      "x": 20,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_builtin_keys",
+      "type": "file",
+      "file": "BUILTIN_KEYS.md",
+      "x": 220,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_szablony_template_editor_props",
+      "type": "file",
+      "file": "Props_2.md",
+      "x": 420,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_rendercontext",
+      "type": "file",
+      "file": "RenderContext.md",
+      "x": 20,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_renderlead",
+      "type": "file",
+      "file": "RenderLead.md",
+      "x": 220,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_renderplaceholder",
+      "type": "file",
+      "file": "RenderPlaceholder.md",
+      "x": 420,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_renderresult",
+      "type": "file",
+      "file": "RenderResult.md",
+      "x": 20,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_szablony_template_editor_templateeditor",
+      "type": "file",
+      "file": "TemplateEditor().md",
+      "x": 220,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_schema_templateinput",
+      "type": "file",
+      "file": "TemplateInput.md",
+      "x": 420,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_actions_templateresult",
+      "type": "file",
+      "file": "TemplateResult.md",
+      "x": 20,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_szablony_page_templatespage",
+      "type": "file",
+      "file": "TemplatesPage().md",
+      "x": 220,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_templates_actions_ts",
+      "type": "file",
+      "file": "actions.ts_5.md",
+      "x": 420,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_actions_createtemplate",
+      "type": "file",
+      "file": "createTemplate().md",
+      "x": 20,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_test_ctx",
+      "type": "file",
+      "file": "ctx().md",
+      "x": 220,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_actions_deletetemplate",
+      "type": "file",
+      "file": "deleteTemplate().md",
+      "x": 420,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_test_nofallback",
+      "type": "file",
+      "file": "noFallback.md",
+      "x": 20,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_test_none",
+      "type": "file",
+      "file": "none.md",
+      "x": 220,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_szablony_page_tsx",
+      "type": "file",
+      "file": "page.tsx_9.md",
+      "x": 420,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_test_r",
+      "type": "file",
+      "file": "r.md",
+      "x": 20,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_templates_render_test_ts",
+      "type": "file",
+      "file": "render.test.ts.md",
+      "x": 220,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_templates_render_ts",
+      "type": "file",
+      "file": "render.ts.md",
+      "x": 420,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_rendertemplate",
+      "type": "file",
+      "file": "renderTemplate().md",
+      "x": 20,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_resolvebuiltin",
+      "type": "file",
+      "file": "resolveBuiltin().md",
+      "x": 220,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_templates_schema_ts",
+      "type": "file",
+      "file": "schema.ts_3.md",
+      "x": 420,
+      "y": 2340,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_szablony_template_editor_tsx",
+      "type": "file",
+      "file": "template-editor.tsx.md",
+      "x": 20,
+      "y": 2420,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_schema_templateschema",
+      "type": "file",
+      "file": "templateSchema.md",
+      "x": 220,
+      "y": 2420,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_templates_render_test_withfallback",
+      "type": "file",
+      "file": "withFallback.md",
+      "x": 420,
+      "y": 2420,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Placeholder & import mechanics",
+      "x": 1620,
+      "y": 1700,
+      "width": 1100,
+      "height": 820,
+      "color": "1"
+    },
+    {
+      "id": "n_concept_builtin_placeholders",
+      "type": "file",
+      "file": "Built-in placeholders (nazwaPlacowkiosobazwrotpodpisNadawcy...).md",
+      "x": 1640,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_csv_import",
+      "type": "file",
+      "file": "CSVpaste import (parse + column map).md",
+      "x": 1840,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_custom_placeholder_resolution",
+      "type": "file",
+      "file": "Custom placeholder resolution from lead.customFields + fallback.md",
+      "x": 2040,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_normalization",
+      "type": "file",
+      "file": "Field normalization (emailwebsitehonorific).md",
+      "x": 1640,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_gendered_token",
+      "type": "file",
+      "file": "Gendered Polish token {{mascfem}} resolved by honorific.md",
+      "x": 1840,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_honorific",
+      "type": "file",
+      "file": "Honorific (PANPANI) drives zwrot + gendered forms.md",
+      "x": 2040,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_dedupe",
+      "type": "file",
+      "file": "Lead dedupe (in-batch + existing by email).md",
+      "x": 1640,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_lead_edit_customfields",
+      "type": "file",
+      "file": "Lead edit form (honorific + keyvalue customFields).md",
+      "x": 1840,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_live_preview",
+      "type": "file",
+      "file": "Live preview against a sample lead.md",
+      "x": 2040,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_missing_token_validation",
+      "type": "file",
+      "file": "Missing-token collection + pre-send validation.md",
+      "x": 1640,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_per_lead_resolution",
+      "type": "file",
+      "file": "Per-lead placeholder resolution at mass send.md",
+      "x": 1840,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_phase3_design",
+      "type": "file",
+      "file": "Phase 3 Design spec (templatesplaceholderscampaigns).md",
+      "x": 2040,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_doc_plan_p3",
+      "type": "file",
+      "file": "Phase 3 Implementation Plan.md",
+      "x": 1640,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_phase_3_templates",
+      "type": "file",
+      "file": "Phase 3 \u2014 Templates + Placeholders + Campaigns (DONE).md",
+      "x": 1840,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_placeholder",
+      "type": "file",
+      "file": "Placeholder (org-scoped custom variable, TEXTCHOICE).md",
+      "x": 2040,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_placeholder_palette",
+      "type": "file",
+      "file": "Placeholder palette (buttons insert token at cursor).md",
+      "x": 1640,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_decision_pure_logic_features",
+      "type": "file",
+      "file": "Pure, unit-tested logic in features (framework-free).md",
+      "x": 1840,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_reserved_key_guard",
+      "type": "file",
+      "file": "Reserved-key guard for custom placeholders.md",
+      "x": 2040,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_practice_tdd_pure_core",
+      "type": "file",
+      "file": "TDD for pure cores (renderTemplate, import, dedupe).md",
+      "x": 1640,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_model_template",
+      "type": "file",
+      "file": "Template (shared team library, {{tokens}}).md",
+      "x": 1840,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_render_template",
+      "type": "file",
+      "file": "renderTemplate pure renderer.md",
+      "x": 2040,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "TypeScript config",
+      "x": 3240,
+      "y": 1700,
+      "width": 1100,
+      "height": 820,
+      "color": "2"
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_paths",
+      "type": "file",
+      "file": "@.md",
+      "x": 3260,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_allowjs",
+      "type": "file",
+      "file": "allowJs.md",
+      "x": 3460,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions",
+      "type": "file",
+      "file": "compilerOptions.md",
+      "x": 3660,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_esmoduleinterop",
+      "type": "file",
+      "file": "esModuleInterop.md",
+      "x": 3260,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_exclude",
+      "type": "file",
+      "file": "exclude.md",
+      "x": 3460,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_include",
+      "type": "file",
+      "file": "include.md",
+      "x": 3660,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_incremental",
+      "type": "file",
+      "file": "incremental.md",
+      "x": 3260,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_isolatedmodules",
+      "type": "file",
+      "file": "isolatedModules.md",
+      "x": 3460,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_jsx",
+      "type": "file",
+      "file": "jsx.md",
+      "x": 3660,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_lib",
+      "type": "file",
+      "file": "lib.md",
+      "x": 3260,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_module",
+      "type": "file",
+      "file": "module.md",
+      "x": 3460,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_moduleresolution",
+      "type": "file",
+      "file": "moduleResolution.md",
+      "x": 3660,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_noemit",
+      "type": "file",
+      "file": "noEmit.md",
+      "x": 3260,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_paths",
+      "type": "file",
+      "file": "paths.md",
+      "x": 3460,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_plugins",
+      "type": "file",
+      "file": "plugins.md",
+      "x": 3660,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_resolvejsonmodule",
+      "type": "file",
+      "file": "resolveJsonModule.md",
+      "x": 3260,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_skiplibcheck",
+      "type": "file",
+      "file": "skipLibCheck.md",
+      "x": 3460,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_strict",
+      "type": "file",
+      "file": "strict.md",
+      "x": 3660,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_tsconfig_compileroptions_target",
+      "type": "file",
+      "file": "target.md",
+      "x": 3260,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_tsconfig_json",
+      "type": "file",
+      "file": "tsconfig.json.md",
+      "x": 3460,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Campaigns feature",
+      "x": 4640,
+      "y": 1700,
+      "width": 1100,
+      "height": 820,
+      "color": "3"
+    },
+    {
+      "id": "n_kampanie_campaign_form_campaignform",
+      "type": "file",
+      "file": "CampaignForm().md",
+      "x": 4660,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_schema_campaigninput",
+      "type": "file",
+      "file": "CampaignInput.md",
+      "x": 4860,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_campaignresult",
+      "type": "file",
+      "file": "CampaignResult.md",
+      "x": 5060,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_kampanie_page_campaignspage",
+      "type": "file",
+      "file": "CampaignsPage().md",
+      "x": 4660,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_id_sequence_and_leads_props",
+      "type": "file",
+      "file": "Props.md",
+      "x": 4860,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_schema_sequencestepinput",
+      "type": "file",
+      "file": "SequenceStepInput.md",
+      "x": 5060,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_stepresult",
+      "type": "file",
+      "file": "StepResult.md",
+      "x": 4660,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_campaigns_actions_ts",
+      "type": "file",
+      "file": "actions.ts.md",
+      "x": 4860,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_addsequencestep",
+      "type": "file",
+      "file": "addSequenceStep().md",
+      "x": 5060,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_assertcampaigninorg",
+      "type": "file",
+      "file": "assertCampaignInOrg().md",
+      "x": 4660,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_assignleads",
+      "type": "file",
+      "file": "assignLeads().md",
+      "x": 4860,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_kampanie_campaign_form_tsx",
+      "type": "file",
+      "file": "campaign-form.tsx.md",
+      "x": 5060,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_schema_campaignschema",
+      "type": "file",
+      "file": "campaignSchema.md",
+      "x": 4660,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_createcampaign",
+      "type": "file",
+      "file": "createCampaign().md",
+      "x": 4860,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_deletecampaign",
+      "type": "file",
+      "file": "deleteCampaign().md",
+      "x": 5060,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_actions_deletesequencestep",
+      "type": "file",
+      "file": "deleteSequenceStep().md",
+      "x": 4660,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_kampanie_page_tsx",
+      "type": "file",
+      "file": "page.tsx_1.md",
+      "x": 4860,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_campaigns_schema_ts",
+      "type": "file",
+      "file": "schema.ts.md",
+      "x": 5060,
+      "y": 2180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "type": "file",
+      "file": "sequence-and-leads.tsx.md",
+      "x": 4660,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_campaigns_schema_sequencestepschema",
+      "type": "file",
+      "file": "sequenceStepSchema.md",
+      "x": 4860,
+      "y": 2260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Runtime dependencies",
+      "x": 6040,
+      "y": 1700,
+      "width": 880,
+      "height": 620,
+      "color": "4"
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_auth_prisma_adapter",
+      "type": "file",
+      "file": "@authprisma-adapter.md",
+      "x": 6060,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_prisma_adapter_pg",
+      "type": "file",
+      "file": "@prismaadapter-pg.md",
+      "x": 6260,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_prisma_client",
+      "type": "file",
+      "file": "@prismaclient.md",
+      "x": 6460,
+      "y": 1780,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_clsx",
+      "type": "file",
+      "file": "clsx.md",
+      "x": 6060,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_cn_cn",
+      "type": "file",
+      "file": "cn().md",
+      "x": 6260,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_cn_ts",
+      "type": "file",
+      "file": "cn.ts.md",
+      "x": 6460,
+      "y": 1860,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies",
+      "type": "file",
+      "file": "dependencies.md",
+      "x": 6060,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_inngest",
+      "type": "file",
+      "file": "inngest.md",
+      "x": 6260,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_next",
+      "type": "file",
+      "file": "next.md",
+      "x": 6460,
+      "y": 1940,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_next_auth",
+      "type": "file",
+      "file": "next-auth.md",
+      "x": 6060,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_pg",
+      "type": "file",
+      "file": "pg.md",
+      "x": 6260,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_react",
+      "type": "file",
+      "file": "react.md",
+      "x": 6460,
+      "y": 2020,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_react_dom",
+      "type": "file",
+      "file": "react-dom.md",
+      "x": 6060,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_tailwind_merge",
+      "type": "file",
+      "file": "tailwind-merge.md",
+      "x": 6260,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_package_dependencies_zod",
+      "type": "file",
+      "file": "zod.md",
+      "x": 6460,
+      "y": 2100,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Offering lines feature",
+      "x": 0,
+      "y": 2800,
+      "width": 880,
+      "height": 620,
+      "color": "5"
+    },
+    {
+      "id": "n_offering_lines_actions_actionresult",
+      "type": "file",
+      "file": "ActionResult.md",
+      "x": 20,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_linie_offering_line_form_offeringlineform",
+      "type": "file",
+      "file": "OfferingLineForm().md",
+      "x": 220,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_schema_offeringlineinput",
+      "type": "file",
+      "file": "OfferingLineInput.md",
+      "x": 420,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_linie_page_offeringlinespage",
+      "type": "file",
+      "file": "OfferingLinesPage().md",
+      "x": 20,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_offering_lines_actions_ts",
+      "type": "file",
+      "file": "actions.ts_2.md",
+      "x": 220,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_actions_createofferingline",
+      "type": "file",
+      "file": "createOfferingLine().md",
+      "x": 420,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_actions_deleteofferingline",
+      "type": "file",
+      "file": "deleteOfferingLine().md",
+      "x": 20,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_linie_offering_line_form_tsx",
+      "type": "file",
+      "file": "offering-line-form.tsx.md",
+      "x": 220,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_schema_offeringlineschema",
+      "type": "file",
+      "file": "offeringLineSchema.md",
+      "x": 420,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_app_linie_page_tsx",
+      "type": "file",
+      "file": "page.tsx_6.md",
+      "x": 20,
+      "y": 3120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_schema_test_parsed",
+      "type": "file",
+      "file": "parsed.md",
+      "x": 220,
+      "y": 3120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_offering_lines_schema_test_result",
+      "type": "file",
+      "file": "result_1.md",
+      "x": 420,
+      "y": 3120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_offering_lines_schema_test_ts",
+      "type": "file",
+      "file": "schema.test.ts.md",
+      "x": 20,
+      "y": 3200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_offering_lines_schema_ts",
+      "type": "file",
+      "file": "schema.ts_1.md",
+      "x": 220,
+      "y": 3200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g11",
+      "type": "group",
+      "label": "Inngest wiring",
+      "x": 1620,
+      "y": 2800,
+      "width": 660,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_lib_inngest_client_ts",
+      "type": "file",
+      "file": "client.ts.md",
+      "x": 1640,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_inngest_functions_ts",
+      "type": "file",
+      "file": "functions.ts.md",
+      "x": 1840,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_inngest_functions_helloworld",
+      "type": "file",
+      "file": "helloWorld.md",
+      "x": 2040,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_inngest_client_inngest",
+      "type": "file",
+      "file": "inngest_1.md",
+      "x": 1640,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_api_inngest_route_ts",
+      "type": "file",
+      "file": "route.ts_1.md",
+      "x": 1840,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_inngest_route_get_post_put",
+      "type": "file",
+      "file": "{GET, POST, PUT}.md",
+      "x": 2040,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g12",
+      "type": "group",
+      "label": "Placeholder schema",
+      "x": 3240,
+      "y": 2800,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_placeholders_schema_placeholderinput",
+      "type": "file",
+      "file": "PlaceholderInput.md",
+      "x": 3260,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_schema_reserved_keys",
+      "type": "file",
+      "file": "RESERVED_KEYS.md",
+      "x": 3460,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_schema_test_p",
+      "type": "file",
+      "file": "p.md",
+      "x": 3660,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_placeholders_schema_placeholderschema",
+      "type": "file",
+      "file": "placeholderSchema.md",
+      "x": 3260,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_placeholders_schema_test_ts",
+      "type": "file",
+      "file": "schema.test.ts_1.md",
+      "x": 3460,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_features_placeholders_schema_ts",
+      "type": "file",
+      "file": "schema.ts_2.md",
+      "x": 3660,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "Root layout",
+      "x": 4640,
+      "y": 2800,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_app_layout_rootlayout",
+      "type": "file",
+      "file": "RootLayout().md",
+      "x": 4660,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_layout_tsx",
+      "type": "file",
+      "file": "layout.tsx.md",
+      "x": 4860,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_layout_metadata",
+      "type": "file",
+      "file": "metadata.md",
+      "x": 5060,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "Prisma seed",
+      "x": 6040,
+      "y": 2800,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_prisma_seed_main",
+      "type": "file",
+      "file": "main().md",
+      "x": 6060,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_seed_prisma",
+      "type": "file",
+      "file": "prisma_1.md",
+      "x": 6260,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_seed_ts",
+      "type": "file",
+      "file": "seed.ts.md",
+      "x": 6460,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g15",
+      "type": "group",
+      "label": "Auth type augmentation",
+      "x": 0,
+      "y": 3500,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_types_next_auth_d_jwt",
+      "type": "file",
+      "file": "JWT.md",
+      "x": 20,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_types_next_auth_d_session",
+      "type": "file",
+      "file": "Session.md",
+      "x": 220,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_types_next_auth_d_ts",
+      "type": "file",
+      "file": "next-auth.d.ts.md",
+      "x": 420,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g16",
+      "type": "group",
+      "label": "Home redirect",
+      "x": 1620,
+      "y": 3500,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_app_page_home",
+      "type": "file",
+      "file": "Home().md",
+      "x": 1640,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_page_tsx",
+      "type": "file",
+      "file": "page.tsx.md",
+      "x": 1840,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g17",
+      "type": "group",
+      "label": "ESLint config",
+      "x": 3240,
+      "y": 3500,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_eslint_config_mjs",
+      "type": "file",
+      "file": "eslint.config.mjs.md",
+      "x": 3260,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_eslint_config_eslintconfig",
+      "type": "file",
+      "file": "eslintConfig.md",
+      "x": 3460,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g18",
+      "type": "group",
+      "label": "Next.js config",
+      "x": 4640,
+      "y": 3500,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_next_config_ts",
+      "type": "file",
+      "file": "next.config.ts.md",
+      "x": 4660,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coldmailing_app_next_config_nextconfig",
+      "type": "file",
+      "file": "nextConfig.md",
+      "x": 4860,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g19",
+      "type": "group",
+      "label": "PostCSS config",
+      "x": 6040,
+      "y": 3500,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_coldmailing_app_postcss_config_config",
+      "type": "file",
+      "file": "config.md",
+      "x": 6060,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_postcss_config_mjs",
+      "type": "file",
+      "file": "postcss.config.mjs.md",
+      "x": 6260,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g20",
+      "type": "group",
+      "label": "Next env types",
+      "x": 0,
+      "y": 3980,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_next_env_d_ts",
+      "type": "file",
+      "file": "next-env.d.ts.md",
+      "x": 20,
+      "y": 4060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g21",
+      "type": "group",
+      "label": "Prisma config",
+      "x": 1620,
+      "y": 3980,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_prisma_config_ts",
+      "type": "file",
+      "file": "prisma.config.ts.md",
+      "x": 1640,
+      "y": 4060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g22",
+      "type": "group",
+      "label": "Vitest config",
+      "x": 3240,
+      "y": 3980,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_vitest_config_ts",
+      "type": "file",
+      "file": "vitest.config.ts.md",
+      "x": 3260,
+      "y": 4060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g23",
+      "type": "group",
+      "label": "Readme",
+      "x": 4640,
+      "y": 3980,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_doc_readme",
+      "type": "file",
+      "file": "README.md",
+      "x": 4660,
+      "y": 4060,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_eslint_config_mjs_coldmailing_app_eslint_config_eslintconfig",
+      "fromNode": "n_eslint_config_mjs",
+      "toNode": "n_coldmailing_app_eslint_config_eslintconfig",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_next_config_ts_coldmailing_app_next_config_nextconfig",
+      "fromNode": "n_next_config_ts",
+      "toNode": "n_coldmailing_app_next_config_nextconfig",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_name",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_version",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_version",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_private",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_private",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_scripts",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_scripts",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_dependencies",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_dependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_coldmailing_app_package_devdependencies",
+      "fromNode": "n_package_json",
+      "toNode": "n_coldmailing_app_package_devdependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_dev",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_dev",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_build",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_build",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_start",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_start",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_lint",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_lint",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_postinstall",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_postinstall",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_test",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_test",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_db_migrate",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_db_migrate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_db_seed",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_db_seed",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_scripts_coldmailing_app_package_scripts_db_studio",
+      "fromNode": "n_coldmailing_app_package_scripts",
+      "toNode": "n_coldmailing_app_package_scripts_db_studio",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_auth_prisma_adapter",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_auth_prisma_adapter",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_prisma_adapter_pg",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_prisma_adapter_pg",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_prisma_client",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_prisma_client",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_clsx",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_clsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_inngest",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_inngest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_next",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_next",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_next_auth",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_next_auth",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_pg",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_pg",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_react",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_react",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_react_dom",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_react_dom",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_tailwind_merge",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_tailwind_merge",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_coldmailing_app_package_dependencies_zod",
+      "fromNode": "n_coldmailing_app_package_dependencies",
+      "toNode": "n_coldmailing_app_package_dependencies_zod",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_dependencies_clsx_lib_cn_cn",
+      "fromNode": "n_coldmailing_app_package_dependencies_clsx",
+      "toNode": "n_lib_cn_cn",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_tailwindcss_postcss",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_tailwindcss_postcss",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_types_node",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_types_node",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_types_pg",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_types_pg",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_types_react",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_types_react",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_types_react_dom",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_types_react_dom",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_vitejs_plugin_react",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_vitejs_plugin_react",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_dotenv",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_dotenv",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_eslint",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_eslint",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_eslint_config_next",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_eslint_config_next",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_prisma",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_prisma",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_tailwindcss",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_tailwindcss",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_tsx",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_tsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_typescript",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_typescript",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_package_devdependencies_coldmailing_app_package_devdependencies_vitest",
+      "fromNode": "n_coldmailing_app_package_devdependencies",
+      "toNode": "n_coldmailing_app_package_devdependencies_vitest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_postcss_config_mjs_coldmailing_app_postcss_config_config",
+      "fromNode": "n_postcss_config_mjs",
+      "toNode": "n_coldmailing_app_postcss_config_config",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_tsconfig_json_coldmailing_app_tsconfig_compileroptions",
+      "fromNode": "n_tsconfig_json",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_tsconfig_json_coldmailing_app_tsconfig_include",
+      "fromNode": "n_tsconfig_json",
+      "toNode": "n_coldmailing_app_tsconfig_include",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_tsconfig_json_coldmailing_app_tsconfig_exclude",
+      "fromNode": "n_tsconfig_json",
+      "toNode": "n_coldmailing_app_tsconfig_exclude",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_target",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_target",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_lib",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_lib",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_allowjs",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_allowjs",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_skiplibcheck",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_skiplibcheck",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_strict",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_strict",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_noemit",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_noemit",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_esmoduleinterop",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_esmoduleinterop",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_module",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_module",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_moduleresolution",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_moduleresolution",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_resolvejsonmodule",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_resolvejsonmodule",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_isolatedmodules",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_isolatedmodules",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_jsx",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_jsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_incremental",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_incremental",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_plugins",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_plugins",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_coldmailing_app_tsconfig_compileroptions_paths",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions",
+      "toNode": "n_coldmailing_app_tsconfig_compileroptions_paths",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_coldmailing_app_tsconfig_compileroptions_paths_coldmailing_app_tsconfig_paths",
+      "fromNode": "n_coldmailing_app_tsconfig_compileroptions_paths",
+      "toNode": "n_coldmailing_app_tsconfig_paths",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_layout_tsx_app_layout_metadata",
+      "fromNode": "n_app_layout_tsx",
+      "toNode": "n_app_layout_metadata",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_layout_tsx_app_layout_rootlayout",
+      "fromNode": "n_app_layout_tsx",
+      "toNode": "n_app_layout_rootlayout",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_page_tsx_app_page_home",
+      "fromNode": "n_app_page_tsx",
+      "toNode": "n_app_page_home",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_layout_tsx_lib_auth_ts",
+      "fromNode": "n_app_app_layout_tsx",
+      "toNode": "n_lib_auth_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_layout_tsx_app_layout_applayout",
+      "fromNode": "n_app_app_layout_tsx",
+      "toNode": "n_app_layout_applayout",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_campaign_form_tsx_features_campaigns_actions_ts",
+      "fromNode": "n_app_app_kampanie_campaign_form_tsx",
+      "toNode": "n_features_campaigns_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_campaign_form_tsx_campaigns_actions_createcampaign",
+      "fromNode": "n_app_app_kampanie_campaign_form_tsx",
+      "toNode": "n_campaigns_actions_createcampaign",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_campaign_form_tsx_campaigns_actions_campaignresult",
+      "fromNode": "n_app_app_kampanie_campaign_form_tsx",
+      "toNode": "n_campaigns_actions_campaignresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_campaign_form_tsx_kampanie_campaign_form_campaignform",
+      "fromNode": "n_app_app_kampanie_campaign_form_tsx",
+      "toNode": "n_kampanie_campaign_form_campaignform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_campaign_form_tsx_app_app_kampanie_page_tsx",
+      "fromNode": "n_app_app_kampanie_campaign_form_tsx",
+      "toNode": "n_app_app_kampanie_page_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_kampanie_campaign_form_campaignform_app_app_kampanie_page_tsx",
+      "fromNode": "n_kampanie_campaign_form_campaignform",
+      "toNode": "n_app_app_kampanie_page_tsx",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_features_campaigns_actions_ts",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_features_campaigns_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_campaigns_actions_deletecampaign",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_campaigns_actions_deletecampaign",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_page_tsx_kampanie_page_campaignspage",
+      "fromNode": "n_app_app_kampanie_page_tsx",
+      "toNode": "n_kampanie_page_campaignspage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_kampanie_page_campaignspage_lib_org_requireorg",
+      "fromNode": "n_kampanie_page_campaignspage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_app_app_kampanie_id_sequence_and_leads_tsx",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_id_sequence_and_leads_sequenceandleads",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_id_sequence_and_leads_sequenceandleads",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_page_tsx_id_page_campaigndetailpage",
+      "fromNode": "n_app_app_kampanie_id_page_tsx",
+      "toNode": "n_id_page_campaigndetailpage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_id_page_campaigndetailpage_lib_org_requireorg",
+      "fromNode": "n_id_page_campaigndetailpage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_features_campaigns_actions_ts",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_features_campaigns_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_campaigns_actions_addsequencestep",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_campaigns_actions_addsequencestep",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_campaigns_actions_assignleads",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_campaigns_actions_assignleads",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_campaigns_actions_deletesequencestep",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_campaigns_actions_deletesequencestep",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_campaigns_actions_stepresult",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_campaigns_actions_stepresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_id_sequence_and_leads_props",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_id_sequence_and_leads_props",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_kampanie_id_sequence_and_leads_tsx_id_sequence_and_leads_sequenceandleads",
+      "fromNode": "n_app_app_kampanie_id_sequence_and_leads_tsx",
+      "toNode": "n_id_sequence_and_leads_sequenceandleads",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_lead_form_tsx_features_leads_actions_ts",
+      "fromNode": "n_app_app_leady_lead_form_tsx",
+      "toNode": "n_features_leads_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_lead_form_tsx_leads_actions_createlead",
+      "fromNode": "n_app_app_leady_lead_form_tsx",
+      "toNode": "n_leads_actions_createlead",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_lead_form_tsx_leads_actions_leadactionresult",
+      "fromNode": "n_app_app_leady_lead_form_tsx",
+      "toNode": "n_leads_actions_leadactionresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_lead_form_tsx_leady_lead_form_leadform",
+      "fromNode": "n_app_app_leady_lead_form_tsx",
+      "toNode": "n_leady_lead_form_leadform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_lead_form_tsx_app_app_leady_page_tsx",
+      "fromNode": "n_app_app_leady_lead_form_tsx",
+      "toNode": "n_app_app_leady_page_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_leady_lead_form_leadform_app_app_leady_page_tsx",
+      "fromNode": "n_leady_lead_form_leadform",
+      "toNode": "n_app_app_leady_page_tsx",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_features_leads_actions_ts",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_features_leads_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_leads_actions_deletelead",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_leads_actions_deletelead",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_page_tsx_leady_page_leadspage",
+      "fromNode": "n_app_app_leady_page_tsx",
+      "toNode": "n_leady_page_leadspage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_leady_page_leadspage_lib_org_requireorg",
+      "fromNode": "n_leady_page_leadspage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_features_leads_import_ts",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_features_leads_import_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_leads_import_parsetable",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_leads_import_parsetable",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_features_leads_actions_ts",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_features_leads_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_leads_actions_importleads",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_leads_actions_importleads",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_leads_actions_importresult",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_leads_actions_importresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_import_import_wizard_fields",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_import_import_wizard_fields",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_import_import_wizard_importwizard",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_import_import_wizard_importwizard",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_import_wizard_tsx_app_app_leady_import_page_tsx",
+      "fromNode": "n_app_app_leady_import_import_wizard_tsx",
+      "toNode": "n_app_app_leady_import_page_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_import_import_wizard_importwizard_app_app_leady_import_page_tsx",
+      "fromNode": "n_import_import_wizard_importwizard",
+      "toNode": "n_app_app_leady_import_page_tsx",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_leady_import_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_leady_import_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_leady_import_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_import_page_tsx_import_page_importpage",
+      "fromNode": "n_app_app_leady_import_page_tsx",
+      "toNode": "n_import_page_importpage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_import_page_importpage_lib_org_requireorg",
+      "fromNode": "n_import_page_importpage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_features_leads_actions_ts",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_features_leads_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_leads_actions_updatelead",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_leads_actions_updatelead",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_leads_actions_leadactionresult",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_leads_actions_leadactionresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_id_lead_edit_form_props",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_id_lead_edit_form_props",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_id_lead_edit_form_leadeditform",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_id_lead_edit_form_leadeditform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_lead_edit_form_tsx_app_app_leady_id_page_tsx",
+      "fromNode": "n_app_app_leady_id_lead_edit_form_tsx",
+      "toNode": "n_app_app_leady_id_page_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_id_lead_edit_form_leadeditform_app_app_leady_id_page_tsx",
+      "fromNode": "n_id_lead_edit_form_leadeditform",
+      "toNode": "n_app_app_leady_id_page_tsx",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_leady_id_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_leady_id_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_leady_id_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_leady_id_page_tsx_id_page_leadeditpage",
+      "fromNode": "n_app_app_leady_id_page_tsx",
+      "toNode": "n_id_page_leadeditpage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_id_page_leadeditpage_lib_org_requireorg",
+      "fromNode": "n_id_page_leadeditpage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_offering_line_form_tsx_features_offering_lines_actions_ts",
+      "fromNode": "n_app_app_linie_offering_line_form_tsx",
+      "toNode": "n_features_offering_lines_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_offering_line_form_tsx_offering_lines_actions_createofferingline",
+      "fromNode": "n_app_app_linie_offering_line_form_tsx",
+      "toNode": "n_offering_lines_actions_createofferingline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_offering_line_form_tsx_offering_lines_actions_actionresult",
+      "fromNode": "n_app_app_linie_offering_line_form_tsx",
+      "toNode": "n_offering_lines_actions_actionresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_offering_line_form_tsx_linie_offering_line_form_offeringlineform",
+      "fromNode": "n_app_app_linie_offering_line_form_tsx",
+      "toNode": "n_linie_offering_line_form_offeringlineform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_offering_line_form_tsx_app_app_linie_page_tsx",
+      "fromNode": "n_app_app_linie_offering_line_form_tsx",
+      "toNode": "n_app_app_linie_page_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_linie_offering_line_form_offeringlineform_app_app_linie_page_tsx",
+      "fromNode": "n_linie_offering_line_form_offeringlineform",
+      "toNode": "n_app_app_linie_page_tsx",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_features_offering_lines_actions_ts",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_features_offering_lines_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_offering_lines_actions_deleteofferingline",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_offering_lines_actions_deleteofferingline",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_linie_page_tsx_linie_page_offeringlinespage",
+      "fromNode": "n_app_app_linie_page_tsx",
+      "toNode": "n_linie_page_offeringlinespage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_linie_page_offeringlinespage_lib_org_requireorg",
+      "fromNode": "n_linie_page_offeringlinespage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_features_placeholders_actions_ts",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_features_placeholders_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_placeholders_actions_deleteplaceholder",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_placeholders_actions_deleteplaceholder",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_app_app_placeholdery_placeholder_form_tsx",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_app_app_placeholdery_placeholder_form_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_placeholdery_placeholder_form_placeholderform",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_placeholdery_placeholder_form_placeholderform",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_page_tsx_placeholdery_page_placeholderspage",
+      "fromNode": "n_app_app_placeholdery_page_tsx",
+      "toNode": "n_placeholdery_page_placeholderspage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_placeholdery_page_placeholderspage_lib_org_requireorg",
+      "fromNode": "n_placeholdery_page_placeholderspage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_placeholder_form_tsx_features_placeholders_actions_ts",
+      "fromNode": "n_app_app_placeholdery_placeholder_form_tsx",
+      "toNode": "n_features_placeholders_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_placeholder_form_tsx_placeholders_actions_createplaceholder",
+      "fromNode": "n_app_app_placeholdery_placeholder_form_tsx",
+      "toNode": "n_placeholders_actions_createplaceholder",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_placeholder_form_tsx_placeholders_actions_placeholderresult",
+      "fromNode": "n_app_app_placeholdery_placeholder_form_tsx",
+      "toNode": "n_placeholders_actions_placeholderresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_placeholdery_placeholder_form_tsx_placeholdery_placeholder_form_placeholderform",
+      "fromNode": "n_app_app_placeholdery_placeholder_form_tsx",
+      "toNode": "n_placeholdery_placeholder_form_placeholderform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_features_suppression_actions_ts",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_features_suppression_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_suppression_actions_removesuppression",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_suppression_actions_removesuppression",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_app_app_suppression_suppression_form_tsx",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_app_app_suppression_suppression_form_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_suppression_suppression_form_suppressionform",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_suppression_suppression_form_suppressionform",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_page_tsx_suppression_page_suppressionpage",
+      "fromNode": "n_app_app_suppression_page_tsx",
+      "toNode": "n_suppression_page_suppressionpage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_suppression_page_suppressionpage_lib_org_requireorg",
+      "fromNode": "n_suppression_page_suppressionpage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_suppression_form_tsx_features_suppression_actions_ts",
+      "fromNode": "n_app_app_suppression_suppression_form_tsx",
+      "toNode": "n_features_suppression_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_suppression_form_tsx_suppression_actions_addsuppression",
+      "fromNode": "n_app_app_suppression_suppression_form_tsx",
+      "toNode": "n_suppression_actions_addsuppression",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_suppression_form_tsx_suppression_actions_suppressionresult",
+      "fromNode": "n_app_app_suppression_suppression_form_tsx",
+      "toNode": "n_suppression_actions_suppressionresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_suppression_suppression_form_tsx_suppression_suppression_form_suppressionform",
+      "fromNode": "n_app_app_suppression_suppression_form_tsx",
+      "toNode": "n_suppression_suppression_form_suppressionform",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_lib_auth_ts",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_lib_auth_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_lib_prisma_ts",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_lib_prisma_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_lib_org_ts",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_lib_org_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_lib_org_requireorg",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_lib_org_requireorg",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_features_templates_actions_ts",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_features_templates_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_templates_actions_deletetemplate",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_templates_actions_deletetemplate",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_app_app_szablony_template_editor_tsx",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_app_app_szablony_template_editor_tsx",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_szablony_template_editor_templateeditor",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_szablony_template_editor_templateeditor",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_features_templates_render_ts",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_features_templates_render_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_templates_render_renderlead",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_templates_render_renderlead",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_page_tsx_szablony_page_templatespage",
+      "fromNode": "n_app_app_szablony_page_tsx",
+      "toNode": "n_szablony_page_templatespage",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_szablony_page_templatespage_lib_org_requireorg",
+      "fromNode": "n_szablony_page_templatespage",
+      "toNode": "n_lib_org_requireorg",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_features_templates_actions_ts",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_features_templates_actions_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_templates_actions_createtemplate",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_templates_actions_createtemplate",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_templates_actions_templateresult",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_templates_actions_templateresult",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_features_templates_render_ts",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_features_templates_render_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_templates_render_rendertemplate",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_templates_render_rendertemplate",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_templates_render_renderlead",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_templates_render_renderlead",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_templates_render_renderplaceholder",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_templates_render_renderplaceholder",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_szablony_template_editor_builtin",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_szablony_template_editor_builtin",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_szablony_template_editor_props",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_szablony_template_editor_props",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_app_app_szablony_template_editor_tsx_szablony_template_editor_templateeditor",
+      "fromNode": "n_app_app_szablony_template_editor_tsx",
+      "toNode": "n_szablony_template_editor_templateeditor",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_szablony_template_editor_templateeditor_templates_render_rendertemplate",
+      "fromNode": "n_szablony_template_editor_templateeditor",
+      "toNode": "n_templates_render_rendertemplate",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_app_api_auth_nextauth_route_ts_lib_auth_ts",
+      "fromNode": "n_app_api_auth_nextauth_route_ts",
+      "toNode": "n_lib_auth_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_api_inngest_route_ts_lib_inngest_client_ts",
+      "fromNode": "n_app_api_inngest_route_ts",
+      "toNode": "n_lib_inngest_client_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_app_api_inngest_route_ts_inngest_client_inngest",
+      "fromNode": "n_app_api_inngest_route_ts",
+      "toNode": "n_inngest_client_inngest",
+      "label": "imports [EXTRACTED]"
+    }
+  ]
+}
