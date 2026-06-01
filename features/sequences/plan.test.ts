@@ -47,4 +47,8 @@ describe("planNext", () => {
 		]
 		expect(planNext({steps: gapped, currentStep: 1, repliedAt: null})).toEqual({done: false, nextOrder: 2, delayDays: 1})
 	})
+	it("finishes DONE for a single-step sequence past the last step", () => {
+		const single: StepDef[] = [{order: 0, condition: "SEND_IF_NO_REPLY", delayDays: 0}]
+		expect(planNext({steps: single, currentStep: 1, repliedAt: null})).toEqual({done: true, finalStatus: "DONE"})
+	})
 })

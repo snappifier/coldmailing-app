@@ -18,9 +18,10 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 	const {orgId} = await requireOrg()
 	const campaign = await prisma.campaign.findFirst({
 		where: {id: campaignId, organizationId: orgId},
-		select: {id: true, sendingEmailAccountId: true},
+		select: {id: true, status: true, sendingEmailAccountId: true},
 	})
 	if (!campaign) return {ok: false, error: "Kampania nie istnieje"}
+	if (campaign.status === "ACTIVE") return {ok: false, error: "Kampania jest juz aktywna"}
 
 	const stepZero = await prisma.sequenceStep.findFirst({where: {campaignId, order: 0}, select: {id: true}})
 	const maxOrderAgg = await prisma.sequenceStep.aggregate({where: {campaignId}, _max: {order: true}})

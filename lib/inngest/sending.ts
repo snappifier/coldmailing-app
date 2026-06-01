@@ -153,6 +153,7 @@ export const runLeadSequence = inngest.createFunction(
 			await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: plan.nextOrder, nextSendAt: slot}})
 			cursor = plan.nextOrder
 		}
+		await finalizeLead(campaignLeadId)
 		return {finalized: false, exhausted: true}
 	},
 )
