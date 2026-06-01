@@ -7,12 +7,12 @@ import {resolveRecipient} from "@/features/sending/recipient"
 import {isWithinWindow, nextWindowOpen, scheduleFollowupSlot} from "@/features/sending/schedule"
 import {decideStep, planNext, type StepDef} from "@/features/sequences/plan"
 
-const HARD_STOP = ["SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED", "DONE"]
+const HARD_STOP = ["PENDING", "SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED", "DONE"]
 
 // Mark DONE only if still in-sequence; REPLIED (and other terminal statuses) win and are left as-is.
 async function finalizeLead(campaignLeadId: string): Promise<void> {
 	await prisma.campaignLead.updateMany({
-		where: {id: campaignLeadId, status: {notIn: ["REPLIED", "SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED"]}},
+		where: {id: campaignLeadId, status: {notIn: ["REPLIED", "SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED", "DONE"]}},
 		data: {status: "DONE"},
 	})
 }
