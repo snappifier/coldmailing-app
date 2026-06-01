@@ -1,6 +1,6 @@
 // features/sending/schedule.test.ts
 import {describe, it, expect} from "vitest"
-import {localParts, isWithinWindow, nextWindowOpen, planSchedule} from "@/features/sending/schedule"
+import {localParts, isWithinWindow, nextWindowOpen, planSchedule, scheduleFollowupSlot} from "@/features/sending/schedule"
 
 const TZ = "Europe/Warsaw"
 const acct = {timezone: TZ, sendWindowStartMin: 480, sendWindowEndMin: 960, sendDays: 31, dailyLimit: 3, minGapSec: 300, maxGapSec: 300}
@@ -62,5 +62,27 @@ describe("planSchedule", () => {
 		const plan = planSchedule({leadIds: ["a", "b"], now, account: acct, sentTodayCount: 2, rng})
 		// only 1 slot left today (limit 3 - 2) -> 2nd lead rolls to next day
 		expect(localParts(plan[1].nextSendAt, TZ)).toEqual({weekdayIso: 2, minutes: 480})
+	})
+})
+
+describe("scheduleFollowupSlot", () => {
+	const rng0 = () => 0 // gap = minGapSec (300s)
+
+	it("adds delay + gap and stays within the window", () => {
+		const now = new Date("2026-06-01T06:00:00Z") // Mon 08:00 local
+		const slot = scheduleFollowupSlot(now, 0, acct, rng0)
+		expect(slot.toISOString()).toBe("2026-06-01T06:05:00.000Z") // +300s, still in window
+	})
+
+	it("applies whole-day delays", () => {
+		const now = new Date("2026-06-01T06:00:00Z") // Mon 08:00 local
+		const slot = scheduleFollowupSlot(now, 2, acct, rng0) // Wed 08:05 local
+		expect(localParts(slot, TZ)).toEqual({weekdayIso: 3, minutes: 485})
+	})
+
+	it("snaps a weekend landing to Monday open", () => {
+		const now = new Date("2026-06-04T06:00:00Z") // Thu 08:00 local
+		const slot = scheduleFollowupSlot(now, 2, acct, rng0) // Sat -> Mon 08:00
+		expect(localParts(slot, TZ)).toEqual({weekdayIso: 1, minutes: 480})
 	})
 })

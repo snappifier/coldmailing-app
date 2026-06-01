@@ -105,3 +105,13 @@ export function planSchedule(input: PlanInput): PlannedSend[] {
 	}
 	return out
 }
+
+// The slot for a followup step: delayDays after `now`, plus a random gap in [minGapSec, maxGapSec]
+// (so concurrent followups do not bunch under concurrency:1), snapped forward into the next open
+// send-window. Daily-limit deferral is handled at send time by the worker (mirrors planSchedule's
+// division of labor). Deterministic given `now` and `rng`.
+export function scheduleFollowupSlot(now: Date, delayDays: number, account: PacingAccount, rng: () => number): Date {
+	const gapSec = account.minGapSec + Math.floor(rng() * (account.maxGapSec - account.minGapSec + 1))
+	const base = new Date(now.getTime() + delayDays * 86_400_000 + gapSec * 1000)
+	return nextWindowOpen(base, account.timezone, account.sendWindowStartMin, account.sendWindowEndMin, account.sendDays)
+}
