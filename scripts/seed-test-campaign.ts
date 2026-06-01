@@ -26,6 +26,9 @@ async function main() {
 		process.exit(1)
 	}
 
+	// Optional arg "always" sets step 1's condition to ALWAYS (scenario C); default SEND_IF_NO_REPLY.
+	const step1Condition = process.argv[2] === "always" ? "ALWAYS" : "SEND_IF_NO_REPLY"
+
 	const lead = await prisma.lead.upsert({
 		where: {organizationId_email: {organizationId: org.id, email: "lead5b@example.com"}},
 		create: {organizationId: org.id, organizationName: "Test Liceum 5b", email: "lead5b@example.com", honorific: "PANI"},
@@ -48,8 +51,8 @@ async function main() {
 	})
 	await prisma.sequenceStep.upsert({
 		where: {campaignId_order: {campaignId: campaign.id, order: 1}},
-		create: {campaignId: campaign.id, order: 1, templateId: t1.id, condition: "SEND_IF_NO_REPLY", delayDays: 0},
-		update: {templateId: t1.id, condition: "SEND_IF_NO_REPLY", delayDays: 0},
+		create: {campaignId: campaign.id, order: 1, templateId: t1.id, condition: step1Condition, delayDays: 0},
+		update: {templateId: t1.id, condition: step1Condition, delayDays: 0},
 	})
 
 	const cl = await prisma.campaignLead.upsert({
@@ -60,7 +63,7 @@ async function main() {
 	await prisma.message.deleteMany({where: {campaignLeadId: cl.id}})
 
 	console.log(`Mailbox:  ${mailbox.email} (${mailbox.id})`)
-	console.log(`Campaign: "${campaign.name}" (${campaign.id}) status=DRAFT, 2 steps (0,1 = SEND_IF_NO_REPLY, delay 0)`)
+	console.log(`Campaign: "${campaign.name}" (${campaign.id}) status=DRAFT, steps: 0=SEND_IF_NO_REPLY, 1=${step1Condition} (delay 0)`)
 	console.log(`Lead:     ${lead.organizationName} (${lead.id}) -> CampaignLead ${cl.id} = PENDING`)
 	console.log(`Ready. Run 'npx tsx scripts/test-mode.ts on' then Activate "Test 5b" in the app.`)
 }
