@@ -23,8 +23,17 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 	if (!campaign) return {ok: false, error: "Kampania nie istnieje"}
 
 	const stepZero = await prisma.sequenceStep.findFirst({where: {campaignId, order: 0}, select: {id: true}})
+	const maxOrderAgg = await prisma.sequenceStep.aggregate({where: {campaignId}, _max: {order: true}})
+	const maxOrder = maxOrderAgg._max.order ?? 0
+
 	const pendingLeads = await prisma.campaignLead.findMany({
 		where: {campaignId, status: "PENDING"},
+		select: {id: true},
+		orderBy: {createdAt: "asc"},
+	})
+	// Resume: leads still mid-sequence from a previously paused campaign (a step remains).
+	const inflightLeads = await prisma.campaignLead.findMany({
+		where: {campaignId, status: {in: ["ACTIVE", "REPLIED"]}, currentStep: {lte: maxOrder}},
 		select: {id: true},
 		orderBy: {createdAt: "asc"},
 	})
@@ -33,6 +42,7 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 		sendingEmailAccountId: campaign.sendingEmailAccountId,
 		hasStepZero: Boolean(stepZero),
 		pendingLeadCount: pendingLeads.length,
+		inflightLeadCount: inflightLeads.length,
 	})
 	if (!check.ok) return check
 
@@ -46,11 +56,13 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 		where: {emailAccountId: account.id, status: "SENT", sentAt: {gte: startOfLocalDayUTC(now, account.timezone)}},
 	})
 
-	const plan = planSchedule({
-		leadIds: pendingLeads.map((l) => l.id),
+	// Stagger the first send for new (PENDING) leads; resume in-flight leads at the next open slots.
+	const plan = planSchedule({leadIds: pendingLeads.map((l) => l.id), now, account, sentTodayCount, rng: Math.random})
+	const resumePlan = planSchedule({
+		leadIds: inflightLeads.map((l) => l.id),
 		now,
 		account,
-		sentTodayCount,
+		sentTodayCount: sentTodayCount + plan.length,
 		rng: Math.random,
 	})
 
@@ -59,10 +71,15 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 		...plan.map((p) =>
 			prisma.campaignLead.update({where: {id: p.leadId}, data: {status: "ACTIVE", currentStep: 0, nextSendAt: p.nextSendAt}}),
 		),
+		// Resumed leads keep their status + currentStep; only the next slot is refreshed.
+		...resumePlan.map((p) => prisma.campaignLead.update({where: {id: p.leadId}, data: {nextSendAt: p.nextSendAt}})),
 	])
 
 	await inngest.send(
-		plan.map((p) => ({name: "campaign/lead.start", data: {campaignLeadId: p.leadId, campaignId, emailAccountId: account.id}})),
+		[...plan, ...resumePlan].map((p) => ({
+			name: "campaign/lead.start",
+			data: {campaignLeadId: p.leadId, campaignId, emailAccountId: account.id},
+		})),
 	)
 
 	revalidatePath(`/kampanie/${campaignId}`)
@@ -71,7 +88,9 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 
 export async function pauseCampaign(campaignId: string): Promise<void> {
 	const {orgId} = await requireOrg()
-	await prisma.campaign.updateMany({where: {id: campaignId, organizationId: orgId}, data: {status: "PAUSED"}})
+	const res = await prisma.campaign.updateMany({where: {id: campaignId, organizationId: orgId}, data: {status: "PAUSED"}})
+	// Cancel in-flight orchestrators for this campaign (runLeadSequence cancelOn campaign/paused).
+	if (res.count > 0) await inngest.send({name: "campaign/paused", data: {campaignId}})
 	revalidatePath(`/kampanie/${campaignId}`)
 }
 
