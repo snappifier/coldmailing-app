@@ -12,7 +12,7 @@ const prisma = new PrismaClient({
 })
 
 const MODES = {
-	on: {sendDays: 127, sendWindowStartMin: 0, sendWindowEndMin: 1440, minGapSec: 60, maxGapSec: 90},
+	on: {sendDays: 127, sendWindowStartMin: 0, sendWindowEndMin: 1440, minGapSec: 120, maxGapSec: 180},
 	off: {sendDays: 31, sendWindowStartMin: 480, sendWindowEndMin: 960, minGapSec: 180, maxGapSec: 600},
 }
 
@@ -20,7 +20,7 @@ async function main() {
 	const mode = process.argv[2]
 	if (mode !== "on" && mode !== "off") {
 		console.error("Usage: npx tsx scripts/test-mode.ts on|off")
-		console.error("  on  = 24/7 window + 60-90s gap (test pacing: time to reply/pause between steps)")
+		console.error("  on  = 24/7 window + 120-180s gap (test pacing: time to reply/pause between steps)")
 		console.error("  off = Mon-Fri 08-16 + 180-600s gap (conservative; restore before real campaigns)")
 		process.exit(1)
 	}
