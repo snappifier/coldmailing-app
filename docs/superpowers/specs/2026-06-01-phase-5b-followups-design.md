@@ -3,7 +3,7 @@
 - Date: 2026-06-01
 - Phase: 5b (second sub-phase of Phase 5 "Sequences + replies")
 - Depends on: Phase 4 (Gmail send boundary, `Message`, Inngest sending engine, `CampaignLead.status`/`currentStep`/`nextSendAt`) and Phase 5a (reply detection: `CampaignLead.repliedAt`/`REPLIED`, `campaign/lead.replied` event)
-- Status: Design approved in brainstorm; pending written-spec review
+- Status: Implemented and verified — tsc 0, vitest 74/74 (incl. a mutation-proven orchestrator integration test), `next build` green. Live Gmail send+reply e2e not run (optional; 5a reply detection is already e2e-verified and 5b only reads `repliedAt`). See the plan and commits `ec1694b`..`f5e4597`.
 
 ## 1. Purpose & scope
 
@@ -49,7 +49,7 @@ Either way the orchestrator is the state machine; only the throttle location dif
 1. Reload `CampaignLead` (+`campaign`, +`lead`) and the sending `EmailAccount`.
 2. **Guard / stop:** stop if the campaign is not `ACTIVE`, the account is not `CONNECTED`, or the lead is in a hard-stop status (`PENDING`/`SKIPPED`/`FAILED`/`BOUNCED`/`UNSUBSCRIBED`). `REPLIED` is **not** a stop — `ALWAYS` steps still run.
 3. `step = steps.find(order === cursor)`. If none → finalize (§5).
-4. `decideStep(step, repliedAt)` (§4): `SEND` (ALWAYS, or SEND_IF_NO_REPLY with no reply) or `SKIP`.
+4. `decideStep(step.condition, repliedAt)` (§4): `SEND` (ALWAYS, or SEND_IF_NO_REPLY with no reply) or `SKIP`.
 5. **If SEND:** apply the Phase 4 gates — send-window (defer to `nextWindowOpen` if closed), daily-limit (defer to next valid day if hit), suppression (→ `SKIPPED`, stop), missing email (→ `SKIPPED`, stop). Render the step's template (built-in/`{{zwrot}}`/custom/gendered, via existing `renderTemplate`), resolve recipient (`SEND_OVERRIDE_TO` honored), `step.run("gmail-send")`, log `Message(OUTBOUND, SENT)`. On send error after retries → `FAILED` + `lastError`, stop.
 6. Persist `currentStep = cursor + 1` (in the same durable step as the success log, mirroring today's code).
 7. **`planNext({steps, currentStep, repliedAt})`** (§4): either `done` (finalize, §5) or `{nextOrder, delayDays}`.
@@ -65,7 +65,7 @@ type NextPlan =
 	| {done: false; nextOrder: number; delayDays: number}
 
 // SEND if ALWAYS, or SEND_IF_NO_REPLY with no reply yet; otherwise SKIP.
-function decideStep(step: StepDef, repliedAt: Date | null): "SEND" | "SKIP"
+function decideStep(condition: SequenceCondition, repliedAt: Date | null): "SEND" | "SKIP"
 
 // After advancing past the processed step (currentStep already incremented),
 // decide whether the sequence is finished (+terminal status) or what comes next.
@@ -100,7 +100,7 @@ lead is already `REPLIED`, so this only misses logging a second inbound `Message
 
 ## 7. Pause / resume / disconnect (in-flight followups)
 
-- **Pause:** `pauseCampaign` sets `PAUSED` and emits `campaign/paused { campaignId }`. `runLeadSequence` declares `cancelOn: [{event: "campaign/paused", match: "data.campaignId"}]`, so sleeping orchestrators for that campaign cancel cleanly. (Verify `cancelOn` match/`if` semantics in Inngest v4 — Task 0.)
+- **Pause:** `pauseCampaign` sets `PAUSED` and emits `campaign/paused { campaignId }`. `runLeadSequence` declares `cancelOn: [{event: "campaign/paused", if: "async.data.campaignId == event.data.campaignId"}]` (the non-deprecated `if` form; `match` is `@deprecated` in inngest 4.5.0), so sleeping orchestrators for that campaign cancel cleanly.
 - **Resume:** `activateCampaign` on a `PAUSED → ACTIVE` transition re-emits `campaign/lead.start` for in-sequence leads — status `ACTIVE` or `REPLIED` **and a step still remains** (`currentStep ≤ max(order)`), which excludes finalized leads (a finalized `REPLIED`/`DONE` lead has `currentStep > max(order)`). Resume from the persisted `currentStep`, with `nextSendAt` recomputed to the next open slot. (Today `activateCampaign` only seeds `PENDING` leads; extend it to also resume in-flight leads. Initial activation of a `DRAFT` campaign is unchanged.) The orchestrator's own `decideStep`/`planNext` then correctly skips `SEND_IF_NO_REPLY` for a resumed `REPLIED` lead and only fires remaining `ALWAYS` steps.
 - **Disconnect:** the `CONNECTED` guard already stops the orchestrator if the mailbox is gone (5a's cascade note: disconnect deletes `Message`s and nulls `Campaign.sendingEmailAccountId`).
 - **Idempotency (optional hardening):** declare the orchestrator a singleton per `campaignLeadId` (verify Inngest v4 `singleton`) to prevent a stale sleeping run and a resumed run from double-sending. In practice `cancelOn` firing before resume is sufficient; singleton is belt-and-suspenders.
