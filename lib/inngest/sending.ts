@@ -22,7 +22,7 @@ export const runLeadSequence = inngest.createFunction(
 		id: "run-lead-sequence",
 		triggers: {event: "campaign/lead.start"},
 		concurrency: {limit: 1, key: "event.data.emailAccountId"},
-		cancelOn: [{event: "campaign/paused", match: "data.campaignId"}],
+		cancelOn: [{event: "campaign/paused", if: "async.data.campaignId == event.data.campaignId"}],
 		singleton: {key: "event.data.campaignLeadId", mode: "cancel"},
 		retries: 3,
 	},
