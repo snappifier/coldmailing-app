@@ -62,7 +62,7 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 	])
 
 	await inngest.send(
-		plan.map((p) => ({name: "campaign/lead.send", data: {campaignLeadId: p.leadId, emailAccountId: account.id}})),
+		plan.map((p) => ({name: "campaign/lead.start", data: {campaignLeadId: p.leadId, campaignId, emailAccountId: account.id}})),
 	)
 
 	revalidatePath(`/kampanie/${campaignId}`)
