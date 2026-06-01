@@ -807,7 +807,7 @@
       "source_file": "app/(app)/kampanie/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_app_kampanie_id_page_tsx",
-      "community": 0,
+      "community": 49,
       "norm_label": "page.tsx"
     },
     {
@@ -816,7 +816,7 @@
       "source_file": "app/(app)/kampanie/[id]/page.tsx",
       "source_location": "L10",
       "id": "id_page_campaigndetailpage",
-      "community": 0,
+      "community": 49,
       "norm_label": "campaigndetailpage()"
     },
     {
@@ -825,7 +825,7 @@
       "source_file": "app/(app)/kampanie/[id]/sending-controls.tsx",
       "source_location": "L1",
       "id": "app_app_kampanie_id_sending_controls_tsx",
-      "community": 11,
+      "community": 89,
       "norm_label": "sending-controls.tsx"
     },
     {
@@ -834,7 +834,7 @@
       "source_file": "app/(app)/kampanie/[id]/sending-controls.tsx",
       "source_location": "L8",
       "id": "id_sending_controls_props",
-      "community": 11,
+      "community": 89,
       "norm_label": "props"
     },
     {
@@ -843,7 +843,7 @@
       "source_file": "app/(app)/kampanie/[id]/sending-controls.tsx",
       "source_location": "L14",
       "id": "id_sending_controls_sendingcontrols",
-      "community": 11,
+      "community": 89,
       "norm_label": "sendingcontrols()"
     },
     {
@@ -870,7 +870,7 @@
       "source_file": "app/(app)/kampanie/[id]/sequence-and-leads.tsx",
       "source_location": "L14",
       "id": "id_sequence_and_leads_sequenceandleads",
-      "community": 8,
+      "community": 49,
       "norm_label": "sequenceandleads()"
     },
     {
@@ -1005,7 +1005,7 @@
       "source_file": "app/(app)/linie/offering-line-form.tsx",
       "source_location": "L1",
       "id": "app_app_linie_offering_line_form_tsx",
-      "community": 10,
+      "community": 0,
       "norm_label": "offering-line-form.tsx"
     },
     {
@@ -1014,7 +1014,7 @@
       "source_file": "app/(app)/linie/offering-line-form.tsx",
       "source_location": "L7",
       "id": "linie_offering_line_form_offeringlineform",
-      "community": 10,
+      "community": 0,
       "norm_label": "offeringlineform()"
     },
     {
@@ -1023,7 +1023,7 @@
       "source_file": "app/(app)/linie/page.tsx",
       "source_location": "L1",
       "id": "app_app_linie_page_tsx",
-      "community": 10,
+      "community": 0,
       "norm_label": "page.tsx"
     },
     {
@@ -1032,7 +1032,7 @@
       "source_file": "app/(app)/linie/page.tsx",
       "source_location": "L7",
       "id": "linie_page_offeringlinespage",
-      "community": 10,
+      "community": 0,
       "norm_label": "offeringlinespage()"
     },
     {
@@ -1077,7 +1077,7 @@
       "source_file": "app/(app)/skrzynki/page.tsx",
       "source_location": "L1",
       "id": "app_app_skrzynki_page_tsx",
-      "community": 0,
+      "community": 49,
       "norm_label": "page.tsx"
     },
     {
@@ -1086,7 +1086,7 @@
       "source_file": "app/(app)/skrzynki/page.tsx",
       "source_location": "L6",
       "id": "skrzynki_page_skrzynkipage",
-      "community": 0,
+      "community": 49,
       "norm_label": "skrzynkipage()"
     },
     {
@@ -1194,7 +1194,7 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L1",
       "id": "app_api_inngest_route_ts",
-      "community": 42,
+      "community": 88,
       "norm_label": "route.ts"
     },
     {
@@ -1203,7 +1203,7 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L8",
       "id": "inngest_route_get_post_put",
-      "community": 42,
+      "community": 88,
       "norm_label": "{get, post, put}"
     },
     {
@@ -1347,7 +1347,7 @@
       "source_file": "features/campaigns/activation.test.ts",
       "source_location": "L1",
       "id": "features_campaigns_activation_test_ts",
-      "community": 11,
+      "community": 89,
       "norm_label": "activation.test.ts"
     },
     {
@@ -1356,7 +1356,7 @@
       "source_file": "features/campaigns/activation.ts",
       "source_location": "L1",
       "id": "features_campaigns_activation_ts",
-      "community": 11,
+      "community": 89,
       "norm_label": "activation.ts"
     },
     {
@@ -1365,7 +1365,7 @@
       "source_file": "features/campaigns/activation.ts",
       "source_location": "L2",
       "id": "campaigns_activation_activateresult",
-      "community": 11,
+      "community": 89,
       "norm_label": "activateresult"
     },
     {
@@ -1374,16 +1374,16 @@
       "source_file": "features/campaigns/activation.ts",
       "source_location": "L4",
       "id": "campaigns_activation_activationfacts",
-      "community": 11,
+      "community": 89,
       "norm_label": "activationfacts"
     },
     {
       "label": "validateActivation()",
       "file_type": "code",
       "source_file": "features/campaigns/activation.ts",
-      "source_location": "L11",
+      "source_location": "L12",
       "id": "campaigns_activation_validateactivation",
-      "community": 11,
+      "community": 89,
       "norm_label": "validateactivation()"
     },
     {
@@ -1437,7 +1437,7 @@
       "source_file": "features/campaigns/sending-actions.ts",
       "source_location": "L1",
       "id": "features_campaigns_sending_actions_ts",
-      "community": 11,
+      "community": 89,
       "norm_label": "sending-actions.ts"
     },
     {
@@ -1446,7 +1446,7 @@
       "source_file": "features/campaigns/sending-actions.ts",
       "source_location": "L11",
       "id": "campaigns_sending_actions_startoflocaldayutc",
-      "community": 11,
+      "community": 89,
       "norm_label": "startoflocaldayutc()"
     },
     {
@@ -1455,25 +1455,25 @@
       "source_file": "features/campaigns/sending-actions.ts",
       "source_location": "L17",
       "id": "campaigns_sending_actions_activatecampaign",
-      "community": 11,
+      "community": 89,
       "norm_label": "activatecampaign()"
     },
     {
       "label": "pauseCampaign()",
       "file_type": "code",
       "source_file": "features/campaigns/sending-actions.ts",
-      "source_location": "L72",
+      "source_location": "L90",
       "id": "campaigns_sending_actions_pausecampaign",
-      "community": 11,
+      "community": 89,
       "norm_label": "pausecampaign()"
     },
     {
       "label": "setSendingMailbox()",
       "file_type": "code",
       "source_file": "features/campaigns/sending-actions.ts",
-      "source_location": "L78",
+      "source_location": "L98",
       "id": "campaigns_sending_actions_setsendingmailbox",
-      "community": 11,
+      "community": 89,
       "norm_label": "setsendingmailbox()"
     },
     {
@@ -1482,7 +1482,7 @@
       "source_file": "features/email-accounts/actions.ts",
       "source_location": "L1",
       "id": "features_email_accounts_actions_ts",
-      "community": 0,
+      "community": 49,
       "norm_label": "actions.ts"
     },
     {
@@ -1491,7 +1491,7 @@
       "source_file": "features/email-accounts/actions.ts",
       "source_location": "L8",
       "id": "email_accounts_actions_disconnectemailaccount",
-      "community": 0,
+      "community": 49,
       "norm_label": "disconnectemailaccount()"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_file": "features/email-accounts/queries.ts",
       "source_location": "L1",
       "id": "features_email_accounts_queries_ts",
-      "community": 0,
+      "community": 49,
       "norm_label": "queries.ts"
     },
     {
@@ -1599,7 +1599,7 @@
       "source_file": "features/email-accounts/queries.ts",
       "source_location": "L4",
       "id": "email_accounts_queries_listemailaccounts",
-      "community": 0,
+      "community": 49,
       "norm_label": "listemailaccounts()"
     },
     {
@@ -1887,7 +1887,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L1",
       "id": "features_offering_lines_actions_ts",
-      "community": 10,
+      "community": 0,
       "norm_label": "actions.ts"
     },
     {
@@ -1896,7 +1896,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L9",
       "id": "offering_lines_actions_actionresult",
-      "community": 10,
+      "community": 0,
       "norm_label": "actionresult"
     },
     {
@@ -1905,7 +1905,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L11",
       "id": "offering_lines_actions_createofferingline",
-      "community": 10,
+      "community": 0,
       "norm_label": "createofferingline()"
     },
     {
@@ -1914,7 +1914,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L33",
       "id": "offering_lines_actions_deleteofferingline",
-      "community": 10,
+      "community": 0,
       "norm_label": "deleteofferingline()"
     },
     {
@@ -2274,7 +2274,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L1",
       "id": "features_replies_queries_ts",
-      "community": 42,
+      "community": 88,
       "norm_label": "queries.ts"
     },
     {
@@ -2283,7 +2283,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L5",
       "id": "replies_queries_gettrackedthreads",
-      "community": 42,
+      "community": 88,
       "norm_label": "gettrackedthreads()"
     },
     {
@@ -2292,7 +2292,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L22",
       "id": "replies_queries_recordreplyinput",
-      "community": 42,
+      "community": 88,
       "norm_label": "recordreplyinput"
     },
     {
@@ -2301,7 +2301,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L34",
       "id": "replies_queries_recordreply",
-      "community": 42,
+      "community": 88,
       "norm_label": "recordreply()"
     },
     {
@@ -2517,7 +2517,7 @@
       "source_file": "features/sending/recipient.test.ts",
       "source_location": "L1",
       "id": "features_sending_recipient_test_ts",
-      "community": 42,
+      "community": 90,
       "norm_label": "recipient.test.ts"
     },
     {
@@ -2526,7 +2526,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L1",
       "id": "features_sending_recipient_ts",
-      "community": 42,
+      "community": 90,
       "norm_label": "recipient.ts"
     },
     {
@@ -2535,7 +2535,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L2",
       "id": "sending_recipient_resolvedrecipient",
-      "community": 42,
+      "community": 90,
       "norm_label": "resolvedrecipient"
     },
     {
@@ -2544,7 +2544,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L8",
       "id": "sending_recipient_resolverecipient",
-      "community": 42,
+      "community": 90,
       "norm_label": "resolverecipient()"
     },
     {
@@ -2609,6 +2609,24 @@
       "id": "sending_schedule_test_plan",
       "community": 11,
       "norm_label": "plan"
+    },
+    {
+      "label": "rng0()",
+      "file_type": "code",
+      "source_file": "features/sending/schedule.test.ts",
+      "source_location": "L69",
+      "id": "sending_schedule_test_rng0",
+      "community": 11,
+      "norm_label": "rng0()"
+    },
+    {
+      "label": "slot",
+      "file_type": "code",
+      "source_file": "features/sending/schedule.test.ts",
+      "source_location": "L73",
+      "id": "sending_schedule_test_slot",
+      "community": 11,
+      "norm_label": "slot"
     },
     {
       "label": "schedule.ts",
@@ -2717,6 +2735,132 @@
       "id": "sending_schedule_planschedule",
       "community": 11,
       "norm_label": "planschedule()"
+    },
+    {
+      "label": "scheduleFollowupSlot()",
+      "file_type": "code",
+      "source_file": "features/sending/schedule.ts",
+      "source_location": "L113",
+      "id": "sending_schedule_schedulefollowupslot",
+      "community": 11,
+      "norm_label": "schedulefollowupslot()"
+    },
+    {
+      "label": "plan.test.ts",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L1",
+      "id": "features_sequences_plan_test_ts",
+      "community": 86,
+      "norm_label": "plan.test.ts"
+    },
+    {
+      "label": "NOW",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L5",
+      "id": "sequences_plan_test_now",
+      "community": 86,
+      "norm_label": "now"
+    },
+    {
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L6",
+      "id": "sequences_plan_test_steps",
+      "community": 86,
+      "norm_label": "steps"
+    },
+    {
+      "label": "noAlways",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L34",
+      "id": "sequences_plan_test_noalways",
+      "community": 86,
+      "norm_label": "noalways"
+    },
+    {
+      "label": "gapped",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L44",
+      "id": "sequences_plan_test_gapped",
+      "community": 86,
+      "norm_label": "gapped"
+    },
+    {
+      "label": "single",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L51",
+      "id": "sequences_plan_test_single",
+      "community": 86,
+      "norm_label": "single"
+    },
+    {
+      "label": "plan.ts",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L1",
+      "id": "features_sequences_plan_ts",
+      "community": 86,
+      "norm_label": "plan.ts"
+    },
+    {
+      "label": "SequenceCondition",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L2",
+      "id": "sequences_plan_sequencecondition",
+      "community": 86,
+      "norm_label": "sequencecondition"
+    },
+    {
+      "label": "StepDef",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L4",
+      "id": "sequences_plan_stepdef",
+      "community": 86,
+      "norm_label": "stepdef"
+    },
+    {
+      "label": "SendDecision",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L10",
+      "id": "sequences_plan_senddecision",
+      "community": 86,
+      "norm_label": "senddecision"
+    },
+    {
+      "label": "decideStep()",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L13",
+      "id": "sequences_plan_decidestep",
+      "community": 86,
+      "norm_label": "decidestep()"
+    },
+    {
+      "label": "NextPlan",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L18",
+      "id": "sequences_plan_nextplan",
+      "community": 86,
+      "norm_label": "nextplan"
+    },
+    {
+      "label": "planNext()",
+      "file_type": "code",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L26",
+      "id": "sequences_plan_plannext",
+      "community": 86,
+      "norm_label": "plannext()"
     },
     {
       "label": "actions.ts",
@@ -4767,7 +4911,7 @@
       "source_file": "generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L302",
       "id": "internal_prismanamespace_boolean",
-      "community": 11,
+      "community": 89,
       "norm_label": "boolean"
     },
     {
@@ -21687,7 +21831,7 @@
       "source_file": "lib/inngest/client.ts",
       "source_location": "L1",
       "id": "lib_inngest_client_ts",
-      "community": 42,
+      "community": 88,
       "norm_label": "client.ts"
     },
     {
@@ -21696,7 +21840,7 @@
       "source_file": "lib/inngest/client.ts",
       "source_location": "L7",
       "id": "inngest_client_inngest",
-      "community": 42,
+      "community": 88,
       "norm_label": "inngest"
     },
     {
@@ -21705,7 +21849,7 @@
       "source_file": "lib/inngest/functions.ts",
       "source_location": "L1",
       "id": "lib_inngest_functions_ts",
-      "community": 42,
+      "community": 88,
       "norm_label": "functions.ts"
     },
     {
@@ -21714,7 +21858,7 @@
       "source_file": "lib/inngest/functions.ts",
       "source_location": "L4",
       "id": "inngest_functions_helloworld",
-      "community": 42,
+      "community": 88,
       "norm_label": "helloworld"
     },
     {
@@ -21723,7 +21867,7 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L1",
       "id": "lib_inngest_replies_ts",
-      "community": 42,
+      "community": 88,
       "norm_label": "replies.ts"
     },
     {
@@ -21732,7 +21876,7 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L9",
       "id": "inngest_replies_scanmailboxesforreplies",
-      "community": 42,
+      "community": 88,
       "norm_label": "scanmailboxesforreplies"
     },
     {
@@ -21741,8 +21885,62 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L24",
       "id": "inngest_replies_pollmailboxreplies",
-      "community": 42,
+      "community": 88,
       "norm_label": "pollmailboxreplies"
+    },
+    {
+      "label": "sending.test.ts",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L1",
+      "id": "lib_inngest_sending_test_ts",
+      "community": 86,
+      "norm_label": "sending.test.ts"
+    },
+    {
+      "label": "h",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L4",
+      "id": "inngest_sending_test_h",
+      "community": 86,
+      "norm_label": "h"
+    },
+    {
+      "label": "LEAD_ENTITY",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L13",
+      "id": "inngest_sending_test_lead_entity",
+      "community": 86,
+      "norm_label": "lead_entity"
+    },
+    {
+      "label": "blocked",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L35",
+      "id": "inngest_sending_test_blocked",
+      "community": 86,
+      "norm_label": "blocked"
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L50",
+      "id": "inngest_sending_test_step",
+      "community": 86,
+      "norm_label": "step()"
+    },
+    {
+      "label": "tools()",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L54",
+      "id": "inngest_sending_test_tools",
+      "community": 86,
+      "norm_label": "tools()"
     },
     {
       "label": "sending.ts",
@@ -21750,17 +21948,53 @@
       "source_file": "lib/inngest/sending.ts",
       "source_location": "L1",
       "id": "lib_inngest_sending_ts",
-      "community": 42,
+      "community": 86,
       "norm_label": "sending.ts"
     },
     {
-      "label": "sendCampaignEmail",
+      "label": "HARD_STOP",
       "file_type": "code",
       "source_file": "lib/inngest/sending.ts",
-      "source_location": "L9",
-      "id": "inngest_sending_sendcampaignemail",
-      "community": 42,
-      "norm_label": "sendcampaignemail"
+      "source_location": "L10",
+      "id": "inngest_sending_hard_stop",
+      "community": 86,
+      "norm_label": "hard_stop"
+    },
+    {
+      "label": "finalizeLead()",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L13",
+      "id": "inngest_sending_finalizelead",
+      "community": 86,
+      "norm_label": "finalizelead()"
+    },
+    {
+      "label": "SequenceStepTools",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L20",
+      "id": "inngest_sending_sequencesteptools",
+      "community": 86,
+      "norm_label": "sequencesteptools"
+    },
+    {
+      "label": "runLeadSequenceHandler()",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L25",
+      "id": "inngest_sending_runleadsequencehandler",
+      "community": 86,
+      "norm_label": "runleadsequencehandler()"
+    },
+    {
+      "label": "runLeadSequence",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L154",
+      "id": "inngest_sending_runleadsequence",
+      "community": 88,
+      "norm_label": "runleadsequence"
     },
     {
       "label": "seed.ts",
@@ -21937,7 +22171,7 @@
       "label": "Where we are",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L5",
+      "source_location": "L7",
       "id": "superpowers_roadmap_where_we_are",
       "community": 47,
       "norm_label": "where we are"
@@ -21946,7 +22180,7 @@
       "label": "Stack + key decisions (current as of 2026-05-31)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L20",
+      "source_location": "L22",
       "id": "superpowers_roadmap_stack_key_decisions_current_as_of_2026_05_31",
       "community": 47,
       "norm_label": "stack + key decisions (current as of 2026-05-31)"
@@ -21955,7 +22189,7 @@
       "label": "Standing rules (enforced; see CLAUDE.md / AGENTS.md)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L27",
+      "source_location": "L29",
       "id": "superpowers_roadmap_standing_rules_enforced_see_claude_md_agents_md",
       "community": 47,
       "norm_label": "standing rules (enforced; see claude.md / agents.md)"
@@ -21964,7 +22198,7 @@
       "label": "Test data currently in Neon (sample \u2014 can be wiped for a clean slate)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L35",
+      "source_location": "L37",
       "id": "superpowers_roadmap_test_data_currently_in_neon_sample_can_be_wiped_for_a_clean_slate",
       "community": 47,
       "norm_label": "test data currently in neon (sample \u2014 can be wiped for a clean slate)"
@@ -21973,7 +22207,7 @@
       "label": "Next steps (detailed)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L39",
+      "source_location": "L41",
       "id": "superpowers_roadmap_next_steps_detailed",
       "community": 47,
       "norm_label": "next steps (detailed)"
@@ -21982,25 +22216,25 @@
       "label": "Phase 4 \u2014 Mailbox + sending (DONE + verified)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L41",
+      "source_location": "L43",
       "id": "superpowers_roadmap_phase_4_mailbox_sending_done_verified",
       "community": 47,
       "norm_label": "phase 4 \u2014 mailbox + sending (done + verified)"
     },
     {
-      "label": "Phase 5 \u2014 Sequences + replies",
+      "label": "Phase 5 \u2014 Sequences + replies (decomposed into 5a / 5b / 5c)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L53",
-      "id": "superpowers_roadmap_phase_5_sequences_replies",
+      "source_location": "L55",
+      "id": "superpowers_roadmap_phase_5_sequences_replies_decomposed_into_5a_5b_5c",
       "community": 47,
-      "norm_label": "phase 5 \u2014 sequences + replies"
+      "norm_label": "phase 5 \u2014 sequences + replies (decomposed into 5a / 5b / 5c)"
     },
     {
       "label": "Phase 2 \u2014 Research AI (when prompts exist)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L58",
+      "source_location": "L70",
       "id": "superpowers_roadmap_phase_2_research_ai_when_prompts_exist",
       "community": 47,
       "norm_label": "phase 2 \u2014 research ai (when prompts exist)"
@@ -22009,7 +22243,7 @@
       "label": "Phase 6 \u2014 Sales pipeline",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L62",
+      "source_location": "L74",
       "id": "superpowers_roadmap_phase_6_sales_pipeline",
       "community": 47,
       "norm_label": "phase 6 \u2014 sales pipeline"
@@ -22018,7 +22252,7 @@
       "label": "Phase 7 \u2014 Visual design / polish",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L65",
+      "source_location": "L77",
       "id": "superpowers_roadmap_phase_7_visual_design_polish",
       "community": 47,
       "norm_label": "phase 7 \u2014 visual design / polish"
@@ -22027,7 +22261,7 @@
       "label": "Cross-cutting before launch",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L68",
+      "source_location": "L80",
       "id": "superpowers_roadmap_cross_cutting_before_launch",
       "community": 47,
       "norm_label": "cross-cutting before launch"
@@ -22036,10 +22270,19 @@
       "label": "How to resume",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L73",
+      "source_location": "L85",
       "id": "superpowers_roadmap_how_to_resume",
       "community": 47,
       "norm_label": "how to resume"
+    },
+    {
+      "label": "Local dev gotchas (this machine)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/ROADMAP.md",
+      "source_location": "L91",
+      "id": "superpowers_roadmap_local_dev_gotchas_this_machine",
+      "community": 47,
+      "norm_label": "local dev gotchas (this machine)"
     },
     {
       "label": "2026-05-30-phase-0-1-foundation-leads.md",
@@ -24076,6 +24319,231 @@
       "norm_label": "self-review"
     },
     {
+      "label": "2026-06-01-phase-5b-followups.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_plans_2026_06_01_phase_5b_followups_md",
+      "community": 85,
+      "norm_label": "2026-06-01-phase-5b-followups.md"
+    },
+    {
+      "label": "Phase 5b \u2014 Followups / multi-step sequences \u2014 Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L1",
+      "id": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "community": 85,
+      "norm_label": "phase 5b \u2014 followups / multi-step sequences \u2014 implementation plan"
+    },
+    {
+      "label": "File structure (decomposition)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L13",
+      "id": "plans_2026_06_01_phase_5b_followups_file_structure_decomposition",
+      "community": 85,
+      "norm_label": "file structure (decomposition)"
+    },
+    {
+      "label": "Task 0: Verification notes (no code)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L24",
+      "id": "plans_2026_06_01_phase_5b_followups_task_0_verification_notes_no_code",
+      "community": 85,
+      "norm_label": "task 0: verification notes (no code)"
+    },
+    {
+      "label": "Task 1: Pure sequence decisions \u2014 `features/sequences/plan.ts`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L44",
+      "id": "plans_2026_06_01_phase_5b_followups_task_1_pure_sequence_decisions_features_sequences_plan_ts",
+      "community": 85,
+      "norm_label": "task 1: pure sequence decisions \u2014 `features/sequences/plan.ts`"
+    },
+    {
+      "label": "code:ts (// features/sequences/plan.test.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L52",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_1",
+      "community": 85,
+      "norm_label": "code:ts (// features/sequences/plan.test.ts)"
+    },
+    {
+      "label": "code:ts (// features/sequences/plan.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L112",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_2",
+      "community": 85,
+      "norm_label": "code:ts (// features/sequences/plan.ts)"
+    },
+    {
+      "label": "code:bash (git add features/sequences/plan.ts features/sequences/plan.t)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L156",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_3",
+      "community": 85,
+      "norm_label": "code:bash (git add features/sequences/plan.ts features/sequences/plan.t)"
+    },
+    {
+      "label": "Task 2: Pure followup slot \u2014 `features/sending/schedule.ts`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L163",
+      "id": "plans_2026_06_01_phase_5b_followups_task_2_pure_followup_slot_features_sending_schedule_ts",
+      "community": 85,
+      "norm_label": "task 2: pure followup slot \u2014 `features/sending/schedule.ts`"
+    },
+    {
+      "label": "code:ts (// add to features/sending/schedule.test.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L171",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_4",
+      "community": 85,
+      "norm_label": "code:ts (// add to features/sending/schedule.test.ts)"
+    },
+    {
+      "label": "code:ts (// The slot for a followup step: delayDays after `now`, plus)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L207",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_5",
+      "community": 85,
+      "norm_label": "code:ts (// the slot for a followup step: delaydays after `now`, plus)"
+    },
+    {
+      "label": "code:bash (git add features/sending/schedule.ts features/sending/schedu)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L226",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_6",
+      "community": 85,
+      "norm_label": "code:bash (git add features/sending/schedule.ts features/sending/schedu)"
+    },
+    {
+      "label": "Task 3: Orchestrator \u2014 replace `sendCampaignEmail` with `runLeadSequence`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L233",
+      "id": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "community": 85,
+      "norm_label": "task 3: orchestrator \u2014 replace `sendcampaignemail` with `runleadsequence`"
+    },
+    {
+      "label": "code:ts (// lib/inngest/sending.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L244",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_7",
+      "community": 85,
+      "norm_label": "code:ts (// lib/inngest/sending.ts)"
+    },
+    {
+      "label": "code:ts (// app/api/inngest/route.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L409",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_8",
+      "community": 85,
+      "norm_label": "code:ts (// app/api/inngest/route.ts)"
+    },
+    {
+      "label": "code:ts (await inngest.send()",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L424",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_9",
+      "community": 85,
+      "norm_label": "code:ts (await inngest.send()"
+    },
+    {
+      "label": "code:bash (git add lib/inngest/sending.ts app/api/inngest/route.ts feat)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L437",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_10",
+      "community": 85,
+      "norm_label": "code:bash (git add lib/inngest/sending.ts app/api/inngest/route.ts feat)"
+    },
+    {
+      "label": "Task 4: Pause / resume of in-flight followups",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L444",
+      "id": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "community": 85,
+      "norm_label": "task 4: pause / resume of in-flight followups"
+    },
+    {
+      "label": "code:ts (// features/campaigns/activation.test.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L455",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_11",
+      "community": 85,
+      "norm_label": "code:ts (// features/campaigns/activation.test.ts)"
+    },
+    {
+      "label": "code:ts (// features/campaigns/activation.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L489",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_12",
+      "community": 85,
+      "norm_label": "code:ts (// features/campaigns/activation.ts)"
+    },
+    {
+      "label": "code:ts (export async function activateCampaign(campaignId: string): )",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L518",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_13",
+      "community": 85,
+      "norm_label": "code:ts (export async function activatecampaign(campaignid: string): )"
+    },
+    {
+      "label": "code:bash (git add features/campaigns/activation.ts features/campaigns/)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L607",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_14",
+      "community": 85,
+      "norm_label": "code:bash (git add features/campaigns/activation.ts features/campaigns/)"
+    },
+    {
+      "label": "Task 5: Full gates, live e2e, housekeeping",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L614",
+      "id": "plans_2026_06_01_phase_5b_followups_task_5_full_gates_live_e2e_housekeeping",
+      "community": 85,
+      "norm_label": "task 5: full gates, live e2e, housekeeping"
+    },
+    {
+      "label": "code:bash (git add docs/superpowers/ROADMAP.md graphify-out)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L650",
+      "id": "plans_2026_06_01_phase_5b_followups_codeblock_15",
+      "community": 85,
+      "norm_label": "code:bash (git add docs/superpowers/roadmap.md graphify-out)"
+    },
+    {
+      "label": "Self-review notes (spec coverage)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L657",
+      "id": "plans_2026_06_01_phase_5b_followups_self_review_notes_spec_coverage",
+      "community": 85,
+      "norm_label": "self-review notes (spec coverage)"
+    },
+    {
       "label": "2026-05-30-coldmailing-tool-design.md",
       "file_type": "document",
       "source_file": "docs/superpowers/specs/2026-05-30-coldmailing-tool-design.md",
@@ -24749,6 +25217,177 @@
       "id": "specs_2026_05_31_phase_5a_reply_detection_design_11_out_of_scope_explicit",
       "community": 70,
       "norm_label": "11. out of scope (explicit)"
+    },
+    {
+      "label": "2026-06-01-phase-5b-followups-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_specs_2026_06_01_phase_5b_followups_design_md",
+      "community": 87,
+      "norm_label": "2026-06-01-phase-5b-followups-design.md"
+    },
+    {
+      "label": "Cold Mailing Tool \u2014 Phase 5b: Followups / multi-step sequences (Design)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L1",
+      "id": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "community": 87,
+      "norm_label": "cold mailing tool \u2014 phase 5b: followups / multi-step sequences (design)"
+    },
+    {
+      "label": "1. Purpose & scope",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L8",
+      "id": "specs_2026_06_01_phase_5b_followups_design_1_purpose_scope",
+      "community": 87,
+      "norm_label": "1. purpose & scope"
+    },
+    {
+      "label": "2. Decisions locked (from brainstorm)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L25",
+      "id": "specs_2026_06_01_phase_5b_followups_design_2_decisions_locked_from_brainstorm",
+      "community": 87,
+      "norm_label": "2. decisions locked (from brainstorm)"
+    },
+    {
+      "label": "3. Orchestration architecture",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L33",
+      "id": "specs_2026_06_01_phase_5b_followups_design_3_orchestration_architecture",
+      "community": 87,
+      "norm_label": "3. orchestration architecture"
+    },
+    {
+      "label": "4. Pure decision module (unit-tested) \u2014 `features/sequences/plan.ts`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L58",
+      "id": "specs_2026_06_01_phase_5b_followups_design_4_pure_decision_module_unit_tested_features_sequences_plan_ts",
+      "community": 87,
+      "norm_label": "4. pure decision module (unit-tested) \u2014 `features/sequences/plan.ts`"
+    },
+    {
+      "label": "code:block1 (type StepDef = {order: number; condition: \"ALWAYS\" | \"SEND_I)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L60",
+      "id": "specs_2026_06_01_phase_5b_followups_design_codeblock_1",
+      "community": 87,
+      "norm_label": "code:block1 (type stepdef = {order: number; condition: \"always\" | \"send_i)"
+    },
+    {
+      "label": "5. Status lifecycle",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L82",
+      "id": "specs_2026_06_01_phase_5b_followups_design_5_status_lifecycle",
+      "community": 87,
+      "norm_label": "5. status lifecycle"
+    },
+    {
+      "label": "6. Reply detection across standalone threads (verified \u2014 no 5a change)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L90",
+      "id": "specs_2026_06_01_phase_5b_followups_design_6_reply_detection_across_standalone_threads_verified_no_5a_change",
+      "community": 87,
+      "norm_label": "6. reply detection across standalone threads (verified \u2014 no 5a change)"
+    },
+    {
+      "label": "7. Pause / resume / disconnect (in-flight followups)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L101",
+      "id": "specs_2026_06_01_phase_5b_followups_design_7_pause_resume_disconnect_in_flight_followups",
+      "community": 87,
+      "norm_label": "7. pause / resume / disconnect (in-flight followups)"
+    },
+    {
+      "label": "8. Deliverability \u2014 `scheduleFollowupSlot` (extends `features/sending/schedule.ts`)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L108",
+      "id": "specs_2026_06_01_phase_5b_followups_design_8_deliverability_schedulefollowupslot_extends_features_sending_schedule_ts",
+      "community": 87,
+      "norm_label": "8. deliverability \u2014 `schedulefollowupslot` (extends `features/sending/schedule.ts`)"
+    },
+    {
+      "label": "9. Error handling / edge cases",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L116",
+      "id": "specs_2026_06_01_phase_5b_followups_design_9_error_handling_edge_cases",
+      "community": 87,
+      "norm_label": "9. error handling / edge cases"
+    },
+    {
+      "label": "10. Testing strategy",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L125",
+      "id": "specs_2026_06_01_phase_5b_followups_design_10_testing_strategy",
+      "community": 87,
+      "norm_label": "10. testing strategy"
+    },
+    {
+      "label": "11. Verification gates (read official docs before coding \u2014 standing rule)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L133",
+      "id": "specs_2026_06_01_phase_5b_followups_design_11_verification_gates_read_official_docs_before_coding_standing_rule",
+      "community": 87,
+      "norm_label": "11. verification gates (read official docs before coding \u2014 standing rule)"
+    },
+    {
+      "label": "12. New / changed files (proposed)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L139",
+      "id": "specs_2026_06_01_phase_5b_followups_design_12_new_changed_files_proposed",
+      "community": 87,
+      "norm_label": "12. new / changed files (proposed)"
+    },
+    {
+      "label": "code:block2 (features/sequences/plan.ts                # NEW: decideStep )",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L141",
+      "id": "specs_2026_06_01_phase_5b_followups_design_codeblock_2",
+      "community": 87,
+      "norm_label": "code:block2 (features/sequences/plan.ts                # new: decidestep )"
+    },
+    {
+      "label": "13. Out of scope (explicit)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L151",
+      "id": "specs_2026_06_01_phase_5b_followups_design_13_out_of_scope_explicit",
+      "community": 87,
+      "norm_label": "13. out of scope (explicit)"
+    },
+    {
+      "label": "sendCampaignEmail",
+      "file_type": "code",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L9",
+      "community": 88,
+      "norm_label": "sendcampaignemail",
+      "id": "inngest_sending_sendcampaignemail"
+    },
+    {
+      "label": "Phase 5 \u2014 Sequences + replies",
+      "file_type": "document",
+      "source_file": "docs/superpowers/ROADMAP.md",
+      "source_location": "L53",
+      "community": 47,
+      "norm_label": "phase 5 \u2014 sequences + replies",
+      "id": "superpowers_roadmap_phase_5_sequences_replies"
     },
     {
       "label": "Phase 4 \u2014 Mailbox + sending (CODE COMPLETE \u2014 live e2e pending)",
@@ -25444,7 +26083,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 6,
       "norm_label": "sequencestep (template + delaydays + condition)",
       "id": "model_sequence_step"
     },
@@ -25483,7 +26122,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 6,
       "norm_label": "template (shared team library, {{tokens}})",
       "id": "model_template"
     },
@@ -25795,7 +26434,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 6,
       "norm_label": "sequence builder + lead assignment (phase 3 timeline only)",
       "id": "concept_sequence_builder"
     },
@@ -28367,9 +29006,9 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_inngest_route_ts",
-      "target": "inngest_sending_sendcampaignemail"
+      "target": "inngest_sending_runleadsequence",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -28378,9 +29017,9 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_inngest_route_ts",
-      "target": "lib_inngest_replies_ts",
-      "confidence_score": 1.0
+      "target": "lib_inngest_replies_ts"
     },
     {
       "relation": "imports",
@@ -28389,9 +29028,9 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_inngest_route_ts",
-      "target": "inngest_replies_scanmailboxesforreplies",
-      "confidence_score": 1.0
+      "target": "inngest_replies_scanmailboxesforreplies"
     },
     {
       "relation": "imports",
@@ -28400,9 +29039,9 @@
       "source_file": "app/api/inngest/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_inngest_route_ts",
-      "target": "inngest_replies_pollmailboxreplies",
-      "confidence_score": 1.0
+      "target": "inngest_replies_pollmailboxreplies"
     },
     {
       "relation": "contains",
@@ -28413,6 +29052,17 @@
       "confidence_score": 1.0,
       "source": "app_api_inngest_route_ts",
       "target": "inngest_route_get_post_put"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/inngest/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_inngest_route_ts",
+      "target": "inngest_sending_sendcampaignemail"
     },
     {
       "relation": "imports_from",
@@ -30591,9 +31241,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "features_replies_gmail_history_ts",
-      "confidence_score": 1.0
+      "target": "features_replies_gmail_history_ts"
     },
     {
       "relation": "calls",
@@ -30635,9 +31285,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "replies_gmail_history_getprofilehistoryid",
-      "confidence_score": 1.0
+      "target": "replies_gmail_history_getprofilehistoryid"
     },
     {
       "relation": "imports",
@@ -30646,9 +31296,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "replies_gmail_history_listaddedsince",
-      "confidence_score": 1.0
+      "target": "replies_gmail_history_listaddedsince"
     },
     {
       "relation": "imports_from",
@@ -30739,9 +31389,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "features_replies_match_ts",
-      "confidence_score": 1.0
+      "target": "features_replies_match_ts"
     },
     {
       "relation": "imports",
@@ -30750,9 +31400,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "replies_match_matchreplies",
-      "confidence_score": 1.0
+      "target": "replies_match_matchreplies"
     },
     {
       "relation": "imports_from",
@@ -30761,9 +31411,9 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_replies_queries_ts",
-      "target": "lib_prisma_ts",
-      "confidence_score": 1.0
+      "target": "lib_prisma_ts"
     },
     {
       "relation": "contains",
@@ -30771,9 +31421,9 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_replies_queries_ts",
-      "target": "replies_queries_gettrackedthreads",
-      "confidence_score": 1.0
+      "target": "replies_queries_gettrackedthreads"
     },
     {
       "relation": "contains",
@@ -30781,9 +31431,9 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_replies_queries_ts",
-      "target": "replies_queries_recordreplyinput",
-      "confidence_score": 1.0
+      "target": "replies_queries_recordreplyinput"
     },
     {
       "relation": "contains",
@@ -30791,9 +31441,9 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_replies_queries_ts",
-      "target": "replies_queries_recordreply",
-      "confidence_score": 1.0
+      "target": "replies_queries_recordreply"
     },
     {
       "relation": "imports_from",
@@ -30802,9 +31452,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "features_replies_queries_ts",
-      "confidence_score": 1.0
+      "target": "features_replies_queries_ts"
     },
     {
       "relation": "imports",
@@ -30813,9 +31463,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "replies_queries_gettrackedthreads",
-      "confidence_score": 1.0
+      "target": "replies_queries_gettrackedthreads"
     },
     {
       "relation": "imports",
@@ -30824,9 +31474,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "replies_queries_recordreply",
-      "confidence_score": 1.0
+      "target": "replies_queries_recordreply"
     },
     {
       "relation": "contains",
@@ -31270,6 +31920,17 @@
       "target": "sending_recipient_resolverecipient"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "sending_recipient_resolverecipient"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -31323,6 +31984,17 @@
       "confidence_score": 1.0,
       "source": "features_sending_schedule_test_ts",
       "target": "sending_schedule_planschedule"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sending/schedule.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_sending_schedule_test_ts",
+      "target": "sending_schedule_schedulefollowupslot",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -31385,6 +32057,26 @@
       "target": "sending_schedule_test_plan"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sending/schedule.test.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "features_sending_schedule_test_ts",
+      "target": "sending_schedule_test_rng0",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sending/schedule.test.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "features_sending_schedule_test_ts",
+      "target": "sending_schedule_test_slot",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -31393,6 +32085,17 @@
       "source_location": "L103",
       "weight": 1.0,
       "source": "sending_schedule_planschedule",
+      "target": "sending_schedule_test_rng"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "features/sending/schedule.ts",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "sending_schedule_schedulefollowupslot",
       "target": "sending_schedule_test_rng"
     },
     {
@@ -31506,6 +32209,16 @@
       "target": "sending_schedule_planschedule"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sending/schedule.ts",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "features_sending_schedule_ts",
+      "target": "sending_schedule_schedulefollowupslot",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -31586,6 +32299,17 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "sending_schedule_iswithinwindow"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "features/sending/schedule.ts",
       "source_location": "L47",
       "weight": 1.0,
@@ -31616,6 +32340,17 @@
       "target": "sending_schedule_nextwindowopen"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sending/schedule.ts",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "sending_schedule_schedulefollowupslot",
+      "target": "sending_schedule_nextwindowopen",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -31630,12 +32365,254 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "sending_schedule_nextwindowopen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "features/sending/schedule.ts",
       "source_location": "L82",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "sending_schedule_planschedule",
       "target": "sending_schedule_localdaykey"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "sending_schedule_schedulefollowupslot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "features_sequences_plan_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_decidestep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_plannext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_stepdef",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_test_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_test_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_test_noalways",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_test_gapped",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.test.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "features_sequences_plan_test_ts",
+      "target": "sequences_plan_test_single",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_sequencecondition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_stepdef",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_senddecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_decidestep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_nextplan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sequences/plan.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "features_sequences_plan_ts",
+      "target": "sequences_plan_plannext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "features_sequences_plan_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "sequences_plan_stepdef",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "sequences_plan_decidestep",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "sequences_plan_decidestep"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "sequences_plan_plannext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "sequences_plan_plannext"
     },
     {
       "relation": "imports_from",
@@ -32023,6 +33000,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_inngest_sending_ts",
+      "target": "templates_render_rendertemplate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
       "target": "templates_render_rendertemplate"
     },
     {
@@ -53212,9 +54200,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "lib_prisma_ts",
-      "confidence_score": 1.0
+      "target": "lib_prisma_ts"
     },
     {
       "relation": "imports_from",
@@ -53255,9 +54243,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "lib_inngest_client_ts",
-      "confidence_score": 1.0
+      "target": "lib_inngest_client_ts"
     },
     {
       "relation": "imports_from",
@@ -53288,9 +54276,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "inngest_client_inngest",
-      "confidence_score": 1.0
+      "target": "inngest_client_inngest"
     },
     {
       "relation": "imports",
@@ -53319,9 +54307,9 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "inngest_replies_scanmailboxesforreplies",
-      "confidence_score": 1.0
+      "target": "inngest_replies_scanmailboxesforreplies"
     },
     {
       "relation": "contains",
@@ -53329,8 +54317,141 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_inngest_replies_ts",
-      "target": "inngest_replies_pollmailboxreplies",
+      "target": "inngest_replies_pollmailboxreplies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_test_h",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_test_lead_entity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_test_blocked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "lib_inngest_sending_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_runleadsequencehandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_sequencesteptools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_test_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.test.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_test_ts",
+      "target": "inngest_sending_test_tools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "inngest_sending_hard_stop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "inngest_sending_finalizelead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "inngest_sending_sequencesteptools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "inngest_sending_runleadsequencehandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "lib_inngest_sending_ts",
+      "target": "inngest_sending_runleadsequence",
       "confidence_score": 1.0
     },
     {
@@ -53342,6 +54463,17 @@
       "confidence_score": 1.0,
       "source": "lib_inngest_sending_ts",
       "target": "inngest_sending_sendcampaignemail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/sending.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "inngest_sending_runleadsequencehandler",
+      "target": "inngest_sending_finalizelead",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -53547,11 +54679,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "superpowers_roadmap_next_steps_detailed",
-      "target": "superpowers_roadmap_phase_5_sequences_replies"
+      "target": "superpowers_roadmap_phase_5_sequences_replies_decomposed_into_5a_5b_5c",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -53597,11 +54729,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/ROADMAP.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "superpowers_roadmap_next_steps_detailed",
+      "target": "superpowers_roadmap_phase_5_sequences_replies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/ROADMAP.md",
       "source_location": "L41",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "superpowers_roadmap_next_steps_detailed",
       "target": "superpowers_roadmap_phase_4_mailbox_sending_code_complete_live_e2e_pending"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/ROADMAP.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "superpowers_roadmap_how_to_resume",
+      "target": "superpowers_roadmap_local_dev_gotchas_this_machine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -55826,6 +56978,246 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_06_01_phase_5b_followups_md",
+      "target": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_file_structure_decomposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_0_verification_notes_no_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_1_pure_sequence_decisions_features_sequences_plan_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_2_pure_followup_slot_features_sending_schedule_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L444",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L614",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_task_5_full_gates_live_e2e_housekeeping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L657",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_phase_5b_followups_multi_step_sequences_implementation_plan",
+      "target": "plans_2026_06_01_phase_5b_followups_self_review_notes_spec_coverage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_1_pure_sequence_decisions_features_sequences_plan_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_1_pure_sequence_decisions_features_sequences_plan_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_1_pure_sequence_decisions_features_sequences_plan_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_2_pure_followup_slot_features_sending_schedule_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_2_pure_followup_slot_features_sending_schedule_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L226",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_2_pure_followup_slot_features_sending_schedule_ts",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L244",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_7",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L409",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L424",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_3_orchestrator_replace_sendcampaignemail_with_runleadsequence",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_10",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L455",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_11",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L489",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_12",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L518",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_13",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L607",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_4_pause_resume_of_in_flight_followups",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_14",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-01-phase-5b-followups.md",
+      "source_location": "L650",
+      "weight": 1.0,
+      "source": "plans_2026_06_01_phase_5b_followups_task_5_full_gates_live_e2e_housekeeping",
+      "target": "plans_2026_06_01_phase_5b_followups_codeblock_15",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/specs/2026-05-30-coldmailing-tool-design.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -56532,6 +57924,166 @@
       "confidence_score": 1.0,
       "source": "specs_2026_05_31_phase_5a_reply_detection_design_10_new_changed_files_proposed",
       "target": "specs_2026_05_31_phase_5a_reply_detection_design_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_06_01_phase_5b_followups_design_md",
+      "target": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_1_purpose_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_2_decisions_locked_from_brainstorm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_3_orchestration_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_4_pure_decision_module_unit_tested_features_sequences_plan_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_5_status_lifecycle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_6_reply_detection_across_standalone_threads_verified_no_5a_change",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_7_pause_resume_disconnect_in_flight_followups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_8_deliverability_schedulefollowupslot_extends_features_sending_schedule_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_9_error_handling_edge_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_10_testing_strategy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_11_verification_gates_read_official_docs_before_coding_standing_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_12_new_changed_files_proposed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_cold_mailing_tool_phase_5b_followups_multi_step_sequences_design",
+      "target": "specs_2026_06_01_phase_5b_followups_design_13_out_of_scope_explicit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_4_pure_decision_module_unit_tested_features_sequences_plan_ts",
+      "target": "specs_2026_06_01_phase_5b_followups_design_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-01-phase-5b-followups-design.md",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "specs_2026_06_01_phase_5b_followups_design_12_new_changed_files_proposed",
+      "target": "specs_2026_06_01_phase_5b_followups_design_codeblock_2",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -58134,5 +59686,5 @@
       "source_file": "docs/superpowers/specs/2026-05-31-phase-3-templates-placeholders-campaigns-design.md"
     }
   ],
-  "built_at_commit": "108e60a4741edd54746c5605b6d741a5f2be6a5e"
+  "built_at_commit": "0839dc597ff075449b9142994669e529f5906ce4"
 }
