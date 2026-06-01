@@ -111,4 +111,18 @@ describe("runLeadSequenceHandler", () => {
 		expect(h.sendEmail).toHaveBeenCalledTimes(1)
 		expect(h.cLead.status).toBe("ACTIVE")
 	})
+
+	it("resumes mid-sequence from the persisted currentStep without resending earlier steps", async () => {
+		h.steps = [
+			{order: 0, condition: "SEND_IF_NO_REPLY", delayDays: 0, template: {subject: "step0", body: "b0"}},
+			{order: 1, condition: "SEND_IF_NO_REPLY", delayDays: 0, template: {subject: "step1", body: "b1"}},
+		]
+		h.cLead.currentStep = 1 // step 0 already sent before a pause; resumed here
+		await runLeadSequenceHandler("cl1", tools())
+		expect(h.sendEmail).toHaveBeenCalledTimes(1)
+		expect(h.messages).toHaveLength(1)
+		expect(h.messages[0].subject).toBe("step1")
+		expect(h.cLead.status).toBe("DONE")
+		expect(h.cLead.currentStep).toBe(2)
+	})
 })
