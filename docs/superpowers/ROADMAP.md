@@ -1,6 +1,8 @@
 # Cold Mailing Tool — State & Roadmap
 
-Last updated: 2026-05-31. This is the durable handoff: read it (plus `CLAUDE.md` + `AGENTS.md`) to resume after a context reset.
+Last updated: 2026-06-01. This is the durable handoff: read it (plus `CLAUDE.md` + `AGENTS.md`) to resume after a context reset.
+
+**▶ NEXT TASK: Phase 5b — Followups / multi-step sequences.** Same flow as 5a: brainstorming skill -> spec -> plan -> subagent-driven execution. Full detail in the "Phase 5b" section below. Everything before it (Phases 0/1/3/4 and 5a) is DONE + verified.
 
 ## Where we are
 
@@ -34,7 +36,7 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 
 ## Test data currently in Neon (sample — can be wiped for a clean slate)
 
-1 lead (I LO Zamość, honorific PANI, customFields.branza=liceum), 1 offering line (Strony dla szkół), 1 suppression (blok@szkola.pl), 1 placeholder (`branza`), 1 template (Audyt LO), 1 campaign (Kampania LO Q2: 1 sequence step + 1 assigned lead).
+1 offering line (Strony dla szkół), 1 suppression (blok@szkola.pl), 1 placeholder (`branza`), 1 template (Audyt LO), 1 lead (I LO Zamość, honorific PANI, email `sekretariat@1lo.com.pl`, customFields.branza=liceum), 1 campaign (Kampania LO Q2: 1 sequence step at `order 0`, mailbox set). 1 connected `EmailAccount` (`snappifyacc@gmail.com`, status CONNECTED, scope incl. `gmail.send`+`gmail.readonly`+`userinfo.email`, window Mon-Fri 08-16). After the 5a e2e the lead's `CampaignLead` is `REPLIED` (+`repliedAt`), with 1 OUTBOUND `Message` (SENT) + 1 INBOUND `Message` on the same Gmail thread. To re-test send/reply: reset the `CampaignLead` (`status=PENDING`, `currentStep=0`, `nextSendAt=null`, `repliedAt=null`) and re-activate the campaign. `SEND_OVERRIDE_TO=nzzhry@gmail.com` (all outbound reroutes there).
 
 ## Next steps (detailed)
 
@@ -54,7 +56,12 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 
 **5a Reply detection + stop-on-reply (DONE + verified).** Committed on `master` (spec `docs/superpowers/specs/2026-05-31-phase-5a-reply-detection-design.md`, plan `docs/superpowers/plans/2026-05-31-phase-5a-reply-detection.md`): migration `phase5a_reply_detection` (`EmailAccount.lastHistoryId`, `CampaignLead.repliedAt`); `gmail.readonly` added to mailbox consent; pure `features/replies/match.ts` (matchReplies, tested); `features/replies/gmail-history.ts` (History API delta boundary, mocked test, 404-expired handling); `features/replies/queries.ts` (tracked threads + atomic recordReply); `lib/inngest/replies.ts` `scanMailboxesForReplies` (5-min cron, fan-out to CONNECTED + readonly mailboxes) + `pollMailboxReplies` (per-mailbox concurrency; `step.sendEvent`/`step.run` durable; baseline/rebaseline cursor; emits `campaign/lead.replied`); `/skrzynki` per-mailbox reply on/off hint. Gates: `tsc` 0, `vitest` 57/57, `next build` green. Mechanism = polling Gmail History API (chosen over watch+Pub/Sub: professional + near-realtime + no 7-day renewal + works on localhost). **Live e2e (2026-06-01, done):** re-consented the mailbox with `gmail.readonly`, activated a fresh send, replied from `nzzhry`; the poller matched the reply on the sent thread -> `CampaignLead` `REPLIED` (+`repliedAt`), inbound `Message` logged, `campaign/lead.replied` emitted. (Debug note: disconnecting a mailbox cascade-deletes its `Message` rows and nulls `Campaign.sendingEmailAccountId`, so a tracked thread requires a send from the *currently* connected mailbox.) Minor: inbound `Message.body` stores the sender `from` (metadata-only fetch, no snippet) — refine when the Phase 6 timeline lands.
 
-**5b Followups / multi-step sequences (NEXT).** Steps 1..N via Inngest delays (`step.sleep`); `SEND_IF_NO_REPLY` consumes the `campaign/lead.replied` event from 5a (`step.waitForEvent`) so stop-on-reply works without rework.
+**5b Followups / multi-step sequences (NEXT — START HERE).**
+- **Goal:** send sequence steps `1..N` (not just step 0) on a delay, honoring each step's `condition`, with stop-on-reply already wired via 5a's `campaign/lead.replied` event.
+- **Build on:** `SequenceStep` (`order`, `templateId`, `delayDays`, `condition` = `ALWAYS` | `SEND_IF_NO_REPLY`); `CampaignLead` (`currentStep`, `status`, `repliedAt`). The Phase 4 worker `lib/inngest/sending.ts` `sendCampaignEmail` currently sends ONLY `order: 0` then sets `DONE` (`currentStep=1`). 5a's `pollMailboxReplies` emits `campaign/lead.replied {campaignLeadId}` and sets `REPLIED`.
+- **Likely approach (confirm in brainstorm):** after a step sends, schedule the next `SequenceStep` (by `order`) after `step.sleep(delayDays)`. For `SEND_IF_NO_REPLY` steps, race the delay against the reply via `step.waitForEvent("campaign/lead.replied", {timeout: <delayDays>, if/match on data.campaignLeadId})` — reply first => stop (lead already `REPLIED`); timeout => send. Advance `currentStep`; mark `DONE` after the last step. Reuse the send path (render + `sendEmail` + `Message` log). Decide whether to thread followups into the SAME Gmail thread (set `threadId` + `In-Reply-To`/`References` — needs a small `mime.ts`/`gmail.ts` extension) vs new emails.
+- **Open design questions for brainstorm:** one long-lived durable function looping all steps vs event-per-step; how the mailbox daily-limit/send-window applies to followups; threading headers; behavior of in-flight followups on pause / reply / disconnect.
+- **Process:** brainstorming skill -> spec in `docs/superpowers/specs/` -> plan in `docs/superpowers/plans/` -> subagent-driven execution (same as 5a). Branch: work on `master`; the USER pushes.
 
 **5c Bounce + unsubscribe + RODO.** Bounce/auto-reply classification -> auto-add to `Suppression`; unsubscribe link + sender identity (RODO).
 
@@ -74,7 +81,13 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 - Tracking policy: reply-detection ON, open OFF, click optional (custom subdomain).
 
 ## How to resume
-1. Read `CLAUDE.md`, `AGENTS.md`, this file.
+1. Read `CLAUDE.md`, `AGENTS.md`, this file. **Next task = Phase 5b followups** (see that section; start with the brainstorming skill).
 2. Specs in `docs/superpowers/specs/`, plans in `docs/superpowers/plans/`.
 3. Knowledge graph in `graphify-out/` — `graphify query "<question>"`, `graphify path "<A>" "<B>"`, `graphify explain "<concept>"`; `GRAPH_REPORT.md` for architecture; Obsidian vault for navigation.
 4. Migrations: `npx prisma migrate dev`. Tests: `npx vitest run`. Types: `npx tsc --noEmit`. App: the user runs `npm run dev`.
+
+### Local dev gotchas (this machine)
+- **Port:** another Next app squats `:3000`, so coldmailing's `npm run dev` may bind `:3001`. But `GOOGLE_MAILBOX_REDIRECT_URI` (and the GCP OAuth client's Authorized redirect URI) are set for **`:3000`**, and mailbox OAuth uses that fixed env redirect (login is host-relative, so it works on any port). Keep coldmailing on `:3000` (free the port first), or align `.env` redirect + the GCP entry + the actual port to one value — otherwise `redirect_uri_mismatch`. `.env` is loaded at dev-server start, so **restart after editing `.env`**.
+- **Inngest:** local runs need the Inngest dev server (`npx inngest-cli dev`, UI at `:8288`). Cron/event functions can be triggered via the panel's "Invoke".
+- **Disconnect cascade:** deleting an `EmailAccount` (the disconnect action) cascade-deletes its `Message` rows and nulls `Campaign.sendingEmailAccountId`. Reply detection needs an OUTBOUND `Message` (a send) from the *currently connected* mailbox.
+- **Send window:** if widened for an immediate test, restore Mon-Fri 08-16 (`sendDays=31`, `sendWindowStartMin=480`, `sendWindowEndMin=960`).
