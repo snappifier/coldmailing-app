@@ -483,7 +483,7 @@ git commit -m "$(printf 'feat: fetch inbound snippet + classification headers\n\
 Add (keep the existing `getTrackedThreads`; you may remove `recordReply` once the poller no longer calls it):
 
 ```ts
-import type {InboundKind, Prisma} from "@/generated/prisma/client"
+import type {InboundKind} from "@/generated/prisma/client"
 
 export interface RecordInboundInput {
 	organizationId: string
@@ -501,8 +501,8 @@ export interface RecordInboundInput {
 
 // Persist the inbound message with its classification and apply the per-type side effects atomically.
 export async function recordInbound(input: RecordInboundInput): Promise<void> {
-	const ops: Prisma.PrismaPromise<unknown>[] = [
-		prisma.message.create({
+	await prisma.$transaction(async (tx) => {
+		await tx.message.create({
 			data: {
 				organizationId: input.organizationId,
 				campaignLeadId: input.campaignLeadId,
@@ -516,25 +516,22 @@ export async function recordInbound(input: RecordInboundInput): Promise<void> {
 				gmailMessageId: input.gmailMessageId,
 				gmailThreadId: input.gmailThreadId,
 			},
-		}),
-	]
-	if (input.kind === "BOUNCE") {
-		ops.push(prisma.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "BOUNCED"}}))
-	} else if (input.kind === "REPLY" || input.kind === "OPT_OUT_SUSPECT") {
-		ops.push(prisma.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "REPLIED", repliedAt: new Date()}}))
-	}
-	// AUTO_REPLY: record only, no status change.
-	if (input.autoSuppress && input.leadEmail) {
-		ops.push(
-			prisma.suppression.upsert({
+		})
+		if (input.kind === "BOUNCE") {
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "BOUNCED"}})
+		} else if (input.kind === "REPLY" || input.kind === "OPT_OUT_SUSPECT") {
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "REPLIED", repliedAt: new Date()}})
+		}
+		// AUTO_REPLY: record only, no status change.
+		if (input.autoSuppress && input.leadEmail) {
+			await tx.suppression.upsert({
 				where: {organizationId_email: {organizationId: input.organizationId, email: input.leadEmail}},
 				update: {},
 				create: {organizationId: input.organizationId, email: input.leadEmail, reason: "UNSUBSCRIBED"},
-			}),
-			prisma.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "UNSUBSCRIBED"}}),
-		)
-	}
-	await prisma.$transaction(ops)
+			})
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "UNSUBSCRIBED"}})
+		}
+	})
 }
 ```
 
