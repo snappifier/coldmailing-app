@@ -18,6 +18,7 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 					<Link href="/kampanie">Kampanie</Link>
 					<Link href="/skrzynki">Skrzynki</Link>
 					<Link href="/suppression">Suppression</Link>
+					<Link href="/ustawienia">Ustawienia</Link>
 				</nav>
 				<form
 					action={async () => {
