@@ -1,6 +1,9 @@
 // features/replies/optout/keyword.ts
 import type {OptOutDetector, OptOutResult} from "@/features/replies/optout/types"
 
+// NOTE: substring match with no negation parsing -- e.g. "prosze nie pisac po angielsku" falsely
+// matches "nie pisac". Acceptable in SUGGEST mode (a human reviews the badge); the LLM detector is
+// the path to fewer false positives. Short bare stems ("wypisz", "nie pisac") carry this risk.
 // All entries are pre-normalized (lowercase, no diacritics, l for the Polish stroked-l).
 const PHRASES = [
 	"nie jestem zainteresowany",
