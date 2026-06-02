@@ -41,7 +41,7 @@ export async function markDoNotContact(campaignLeadId: string): Promise<void> {
 	if (cl.lead.email) {
 		await prisma.suppression.upsert({
 			where: {organizationId_email: {organizationId: orgId, email: cl.lead.email}},
-			update: {},
+			update: {reason: isBounce ? "BOUNCED" : "UNSUBSCRIBED"},
 			create: {organizationId: orgId, email: cl.lead.email, reason: isBounce ? "BOUNCED" : "UNSUBSCRIBED"},
 		})
 	}
