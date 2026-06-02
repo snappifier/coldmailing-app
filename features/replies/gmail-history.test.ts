@@ -4,7 +4,7 @@ import {describe, it, expect, vi, beforeAll} from "vitest"
 const getProfile = vi.fn(async () => ({data: {historyId: "1000"}}))
 const historyList = vi.fn()
 const messagesGet = vi.fn(async ({id}: {id: string}) => ({
-	data: {labelIds: ["INBOX"], payload: {headers: [{name: "From", value: `s-${id}@szkola.pl`}, {name: "Subject", value: `Re ${id}`}]}},
+	data: {labelIds: ["INBOX"], snippet: `snippet-${id}`, payload: {headers: [{name: "From", value: `s-${id}@szkola.pl`}, {name: "Subject", value: `Re ${id}`}]}},
 }))
 const setCredentials = vi.fn()
 const on = vi.fn()
@@ -52,8 +52,8 @@ describe("listAddedSince", () => {
 		expect(res.expired).toBe(false)
 		expect(res.newHistoryId).toBe("1200")
 		expect(res.added).toEqual([
-			{gmailMessageId: "m1", threadId: "t-1", from: "s-m1@szkola.pl", subject: "Re m1", labelIds: ["INBOX"]},
-			{gmailMessageId: "m2", threadId: "t-2", from: "s-m2@szkola.pl", subject: "Re m2", labelIds: ["INBOX"]},
+			{gmailMessageId: "m1", threadId: "t-1", from: "s-m1@szkola.pl", subject: "Re m1", labelIds: ["INBOX"], snippet: "snippet-m1", autoSubmitted: null, precedence: null, failedRecipients: null},
+			{gmailMessageId: "m2", threadId: "t-2", from: "s-m2@szkola.pl", subject: "Re m2", labelIds: ["INBOX"], snippet: "snippet-m2", autoSubmitted: null, precedence: null, failedRecipients: null},
 		])
 	})
 

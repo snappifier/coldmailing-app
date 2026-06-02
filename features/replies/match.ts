@@ -4,6 +4,10 @@ export interface AddedMessage {
 	threadId: string
 	from: string
 	labelIds: string[]
+	snippet: string
+	autoSubmitted: string | null
+	precedence: string | null
+	failedRecipients: string | null
 }
 
 export interface MatchInput {

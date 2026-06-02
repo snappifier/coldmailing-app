@@ -36,11 +36,25 @@ export async function listAddedSince(account: SendableAccount, startHistoryId: s
 					const id = m.message?.id
 					const threadId = m.message?.threadId
 					if (!id || !threadId) continue
-					const meta = await gmail.users.messages.get({userId: "me", id, format: "metadata", metadataHeaders: ["From", "Subject"]})
+					const meta = await gmail.users.messages.get({
+						userId: "me",
+						id,
+						format: "metadata",
+						metadataHeaders: ["From", "Subject", "Auto-Submitted", "Precedence", "X-Failed-Recipients"],
+					})
 					const headers = meta.data.payload?.headers ?? []
-					const from = headers.find((x) => x.name === "From")?.value ?? ""
-					const subject = headers.find((x) => x.name === "Subject")?.value ?? ""
-					added.push({gmailMessageId: id, threadId, from, subject, labelIds: meta.data.labelIds ?? []})
+					const hv = (name: string) => headers.find((x) => x.name?.toLowerCase() === name.toLowerCase())?.value ?? null
+					added.push({
+						gmailMessageId: id,
+						threadId,
+						from: hv("From") ?? "",
+						subject: hv("Subject") ?? "",
+						labelIds: meta.data.labelIds ?? [],
+						snippet: meta.data.snippet ?? "",
+						autoSubmitted: hv("Auto-Submitted"),
+						precedence: hv("Precedence"),
+						failedRecipients: hv("X-Failed-Recipients"),
+					})
 				}
 			}
 			pageToken = res.data.nextPageToken ?? undefined
