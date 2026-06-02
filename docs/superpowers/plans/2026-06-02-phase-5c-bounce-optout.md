@@ -308,7 +308,7 @@ Then **invoke the `claude-api` skill** (or read `node_modules/@anthropic-ai/sdk/
 // features/replies/optout/llm.test.ts
 import {describe, it, expect, vi, beforeEach} from "vitest"
 
-const create = vi.fn()
+const {create} = vi.hoisted(() => ({create: vi.fn()}))
 vi.mock("@anthropic-ai/sdk", () => ({
 	default: class {
 		messages = {create}
@@ -360,7 +360,7 @@ export const llmDetector: OptOutDetector = {
 			const res = await client.messages.create({
 				model: "claude-haiku-4-5",
 				max_tokens: 64,
-				system: [{type: "text", text: SYSTEM, cache_control: {type: "ephemeral"}}],
+				system: SYSTEM,
 				messages: [{role: "user", content: text.slice(0, 4000)}],
 			})
 			const block = res.content.find((b) => b.type === "text")
