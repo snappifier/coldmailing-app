@@ -29,4 +29,16 @@ describe("classifyInbound", () => {
 	it("Auto-Submitted 'no' is still a REPLY", () => {
 		expect(classifyInbound({...base, autoSubmitted: "no"})).toBe("REPLY")
 	})
+	it("BOUNCE from postmaster", () => {
+		expect(classifyInbound({...base, from: "postmaster@mx.example.com"})).toBe("BOUNCE")
+	})
+	it("BOUNCE via returned-mail subject", () => {
+		expect(classifyInbound({...base, subject: "Returned mail: User unknown"})).toBe("BOUNCE")
+	})
+	it("AUTO_REPLY via Precedence junk", () => {
+		expect(classifyInbound({...base, precedence: "junk"})).toBe("AUTO_REPLY")
+	})
+	it("AUTO_REPLY via Polish 'nieobecny' subject", () => {
+		expect(classifyInbound({...base, subject: "Jestem nieobecny do 5 czerwca"})).toBe("AUTO_REPLY")
+	})
 })

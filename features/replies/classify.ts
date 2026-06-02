@@ -12,7 +12,7 @@ export interface InboundFacts {
 
 const BOUNCE_FROM = /mailer-daemon|postmaster/i
 const BOUNCE_SUBJECT = /delivery status notification|undelivered|delivery failed|delivery has failed|failure notice|returned mail|nie dostarczono/i
-const AUTO_SUBJECT = /out of office|automatyczna odpowied|autoreply|auto-reply|nieobecno/i
+const AUTO_SUBJECT = /out of office|automatyczna odpowied|autoreply|auto-reply|nieobecn/i
 const AUTO_PRECEDENCE = /auto_reply|bulk|junk/i
 
 // Deterministic, header-based classification. OPT_OUT is a later refinement of REPLY (the detector).
