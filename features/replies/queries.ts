@@ -2,14 +2,14 @@
 import {prisma} from "@/lib/prisma"
 import type {InboundKind} from "@/generated/prisma/client"
 
-// threadId -> campaignLeadId for this mailbox's outbound messages whose lead has not replied/unsubscribed.
+// threadId -> campaignLeadId for this mailbox's outbound messages whose lead is not terminal (replied/unsubscribed/bounced).
 export async function getTrackedThreads(emailAccountId: string): Promise<Record<string, string>> {
 	const rows = await prisma.message.findMany({
 		where: {
 			emailAccountId,
 			direction: "OUTBOUND",
 			gmailThreadId: {not: null},
-			campaignLead: {status: {notIn: ["REPLIED", "UNSUBSCRIBED"]}},
+			campaignLead: {status: {notIn: ["REPLIED", "UNSUBSCRIBED", "BOUNCED"]}},
 		},
 		select: {gmailThreadId: true, campaignLeadId: true},
 	})

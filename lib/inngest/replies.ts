@@ -70,6 +70,7 @@ export const pollMailboxReplies = inngest.createFunction(
 			let kind: "REPLY" | "BOUNCE" | "AUTO_REPLY" | "OPT_OUT_SUSPECT" = base
 			let autoSuppress = false
 			if (base === "REPLY" && mode !== "OFF") {
+				// Detects on the Gmail snippet (~100-150 chars); an opt-out phrase deep in a long body may be missed -- the LLM detector mitigates.
 				const verdict = await step.run(`detect-${match.campaignLeadId}`, () => detector.detect(msg.snippet))
 				if (verdict.optOut) {
 					kind = "OPT_OUT_SUSPECT"
