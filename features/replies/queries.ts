@@ -1,5 +1,6 @@
 // features/replies/queries.ts
 import {prisma} from "@/lib/prisma"
+import type {InboundKind} from "@/generated/prisma/client"
 
 // threadId -> campaignLeadId for this mailbox's outbound messages whose lead has not replied/unsubscribed.
 export async function getTrackedThreads(emailAccountId: string): Promise<Record<string, string>> {
@@ -19,34 +20,51 @@ export async function getTrackedThreads(emailAccountId: string): Promise<Record<
 	return map
 }
 
-export interface RecordReplyInput {
+export interface RecordInboundInput {
 	organizationId: string
 	campaignLeadId: string
 	emailAccountId: string
 	mailboxEmail: string
 	gmailMessageId: string
 	gmailThreadId: string
-	from: string
+	kind: InboundKind
 	subject: string
+	snippet: string
+	autoSuppress: boolean
+	leadEmail: string | null
 }
 
-// Log the inbound reply and flip the lead to REPLIED, atomically.
-export async function recordReply(input: RecordReplyInput): Promise<void> {
-	await prisma.$transaction([
-		prisma.message.create({
+// Persist the inbound message with its classification and apply the per-type side effects atomically.
+export async function recordInbound(input: RecordInboundInput): Promise<void> {
+	await prisma.$transaction(async (tx) => {
+		await tx.message.create({
 			data: {
 				organizationId: input.organizationId,
 				campaignLeadId: input.campaignLeadId,
 				emailAccountId: input.emailAccountId,
 				direction: "INBOUND",
+				inboundKind: input.kind,
 				subject: input.subject,
-				body: input.from,
+				body: input.snippet,
 				intendedTo: input.mailboxEmail,
 				actualTo: input.mailboxEmail,
 				gmailMessageId: input.gmailMessageId,
 				gmailThreadId: input.gmailThreadId,
 			},
-		}),
-		prisma.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "REPLIED", repliedAt: new Date()}}),
-	])
+		})
+		if (input.kind === "BOUNCE") {
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "BOUNCED"}})
+		} else if (input.kind === "REPLY" || input.kind === "OPT_OUT_SUSPECT") {
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "REPLIED", repliedAt: new Date()}})
+		}
+		// AUTO_REPLY: record only, no status change.
+		if (input.autoSuppress && input.leadEmail) {
+			await tx.suppression.upsert({
+				where: {organizationId_email: {organizationId: input.organizationId, email: input.leadEmail}},
+				update: {},
+				create: {organizationId: input.organizationId, email: input.leadEmail, reason: "UNSUBSCRIBED"},
+			})
+			await tx.campaignLead.update({where: {id: input.campaignLeadId}, data: {status: "UNSUBSCRIBED"}})
+		}
+	})
 }

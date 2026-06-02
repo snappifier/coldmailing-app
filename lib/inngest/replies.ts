@@ -2,8 +2,10 @@
 import {inngest} from "@/lib/inngest/client"
 import {prisma} from "@/lib/prisma"
 import {getProfileHistoryId, listAddedSince} from "@/features/replies/gmail-history"
-import {getTrackedThreads, recordReply} from "@/features/replies/queries"
+import {getTrackedThreads, recordInbound} from "@/features/replies/queries"
 import {matchReplies} from "@/features/replies/match"
+import {classifyInbound} from "@/features/replies/classify"
+import {getDetector} from "@/features/replies/optout"
 
 // Every 5 minutes: fan out one poll per connected mailbox that granted the read scope.
 export const scanMailboxesForReplies = inngest.createFunction(
@@ -50,21 +52,49 @@ export const pollMailboxReplies = inngest.createFunction(
 		const trackedThreads = await getTrackedThreads(account.id)
 		const matches = matchReplies({mailboxEmail: account.email, added: result.added, trackedThreads})
 
+		const org = await prisma.organization.findUnique({where: {id: account.organizationId}, select: {optOutMode: true, optOutDetector: true}})
+		const mode = org?.optOutMode ?? "OFF"
+		const detector = getDetector(org?.optOutDetector ?? "KEYWORD")
+
 		for (const match of matches) {
 			const msg = result.added.find((a) => a.gmailMessageId === match.gmailMessageId)
+			if (!msg) continue
+			const base = classifyInbound({
+				from: msg.from,
+				subject: msg.subject,
+				labelIds: msg.labelIds,
+				autoSubmitted: msg.autoSubmitted,
+				precedence: msg.precedence,
+				failedRecipients: msg.failedRecipients,
+			})
+			let kind: "REPLY" | "BOUNCE" | "AUTO_REPLY" | "OPT_OUT_SUSPECT" = base
+			let autoSuppress = false
+			if (base === "REPLY" && mode !== "OFF") {
+				const verdict = await step.run(`detect-${match.campaignLeadId}`, () => detector.detect(msg.snippet))
+				if (verdict.optOut) {
+					kind = "OPT_OUT_SUSPECT"
+					autoSuppress = mode === "AUTO"
+				}
+			}
+			const lead = await prisma.campaignLead.findUnique({where: {id: match.campaignLeadId}, include: {lead: {select: {email: true}}}})
 			await step.run(`record-${match.campaignLeadId}`, () =>
-				recordReply({
+				recordInbound({
 					organizationId: account.organizationId,
 					campaignLeadId: match.campaignLeadId,
 					emailAccountId: account.id,
 					mailboxEmail: account.email,
 					gmailMessageId: match.gmailMessageId,
 					gmailThreadId: match.threadId,
-					from: msg?.from ?? "",
-					subject: msg?.subject ?? "",
+					kind,
+					subject: msg.subject,
+					snippet: msg.snippet,
+					autoSuppress,
+					leadEmail: lead?.lead.email ?? null,
 				}),
 			)
-			await step.sendEvent(`replied-${match.campaignLeadId}`, {name: "campaign/lead.replied", data: {campaignLeadId: match.campaignLeadId}})
+			if (kind === "REPLY" || kind === "OPT_OUT_SUSPECT") {
+				await step.sendEvent(`replied-${match.campaignLeadId}`, {name: "campaign/lead.replied", data: {campaignLeadId: match.campaignLeadId}})
+			}
 		}
 
 		if (result.newHistoryId) {
