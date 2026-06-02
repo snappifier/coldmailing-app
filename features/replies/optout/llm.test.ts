@@ -29,4 +29,22 @@ describe("llmDetector", () => {
 		create.mockRejectedValue(new Error("boom"))
 		expect(await llmDetector.detect("cokolwiek")).toEqual({optOut: false, score: 0})
 	})
+	it("coerces a string optOut to a boolean", async () => {
+		create.mockResolvedValue({content: [{type: "text", text: '{"optOut": "true", "score": 0.5}'}]})
+		const r = await llmDetector.detect("x")
+		expect(r.optOut).toBe(true)
+		expect(typeof r.optOut).toBe("boolean")
+	})
+	it("falls back to score 1 when score is absent but optOut is true", async () => {
+		create.mockResolvedValue({content: [{type: "text", text: '{"optOut": true}'}]})
+		expect(await llmDetector.detect("x")).toEqual({optOut: true, score: 1})
+	})
+	it("falls back to score 0 when both fields are absent", async () => {
+		create.mockResolvedValue({content: [{type: "text", text: "{}"}]})
+		expect(await llmDetector.detect("x")).toEqual({optOut: false, score: 0})
+	})
+	it("fails safe when the model returns non-JSON", async () => {
+		create.mockResolvedValue({content: [{type: "text", text: "Nie potrafie tego sklasyfikowac."}]})
+		expect(await llmDetector.detect("x")).toEqual({optOut: false, score: 0})
+	})
 })
