@@ -31,7 +31,8 @@ export function SettingsForm({optOutMode, optOutDetector}: Props) {
 			<button className="w-32 rounded bg-zinc-900 px-3 py-1.5 text-white disabled:opacity-50" type="submit" disabled={pending}>
 				Zapisz
 			</button>
-			{state?.ok ? <span className="text-green-700">Zapisano.</span> : null}
+			{state?.ok === true ? <span className="text-green-700">Zapisano.</span> : null}
+			{state?.ok === false ? <span className="text-red-700">Nie udało się zapisać.</span> : null}
 		</form>
 	)
 }
