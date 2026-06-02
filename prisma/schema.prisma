@@ -90,11 +90,32 @@ enum MessageStatus {
 	BOUNCED
 }
 
+enum OptOutMode {
+	OFF
+	SUGGEST
+	AUTO
+}
+
+enum OptOutDetector {
+	KEYWORD
+	LLM
+}
+
+enum InboundKind {
+	REPLY
+	BOUNCE
+	AUTO_REPLY
+	OPT_OUT_SUSPECT
+}
+
 model Organization {
 	id        String   @id @default(cuid())
 	name      String
 	createdAt DateTime @default(now())
 	updatedAt DateTime @updatedAt
+
+	optOutMode     OptOutMode     @default(OFF)
+	optOutDetector OptOutDetector @default(KEYWORD)
 
 	memberships   Membership[]
 	offeringLines OfferingLine[]
@@ -365,6 +386,7 @@ model Message {
 	campaignLeadId String
 	emailAccountId String
 	direction      MessageDirection @default(OUTBOUND)
+	inboundKind InboundKind?
 	subject        String
 	body           String
 	intendedTo     String
