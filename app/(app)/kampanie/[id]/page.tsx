@@ -6,6 +6,7 @@ import {requireOrg} from "@/lib/org"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {SequenceAndLeads} from "./sequence-and-leads"
 import {SendingControls} from "./sending-controls"
+import {LeadInbox} from "./lead-inbox"
 
 export default async function CampaignDetailPage({params}: {params: Promise<{id: string}>}) {
 	const {orgId} = await requireOrg()
@@ -19,6 +20,17 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 		},
 	})
 	if (!campaign) notFound()
+
+	const leads = await prisma.campaignLead.findMany({
+		where: {campaignId: id, messages: {some: {direction: "INBOUND"}}},
+		select: {
+			id: true,
+			status: true,
+			lead: {select: {organizationName: true}},
+			messages: {where: {direction: "INBOUND"}, orderBy: {createdAt: "desc"}, take: 1, select: {inboundKind: true, body: true}},
+		},
+		orderBy: {createdAt: "asc"},
+	})
 
 	const [templates, offeringLines, mailboxes] = await Promise.all([
 		prisma.template.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
@@ -51,6 +63,18 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 					templateName: s.template.name,
 				}))}
 			/>
+			<div>
+				<h2 className="mb-2 text-sm font-semibold text-zinc-700">Przychodzące</h2>
+				<LeadInbox
+					rows={leads.map((l) => ({
+						id: l.id,
+						org: l.lead.organizationName,
+						status: l.status,
+						inboundKind: l.messages[0]?.inboundKind ?? null,
+						snippet: l.messages[0]?.body ?? null,
+					}))}
+				/>
+			</div>
 		</section>
 	)
 }

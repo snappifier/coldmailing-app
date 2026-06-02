@@ -29,3 +29,22 @@ export async function removeSuppression(id: string): Promise<void> {
 	await prisma.suppression.deleteMany({where: {id, organizationId: orgId}})
 	revalidatePath("/suppression")
 }
+
+export async function markDoNotContact(campaignLeadId: string): Promise<void> {
+	const {orgId} = await requireOrg()
+	const cl = await prisma.campaignLead.findFirst({
+		where: {id: campaignLeadId, campaign: {organizationId: orgId}},
+		include: {lead: {select: {email: true}}, messages: {where: {direction: "INBOUND"}, orderBy: {createdAt: "desc"}, take: 1, select: {inboundKind: true}}},
+	})
+	if (!cl) return
+	const isBounce = cl.messages[0]?.inboundKind === "BOUNCE"
+	if (cl.lead.email) {
+		await prisma.suppression.upsert({
+			where: {organizationId_email: {organizationId: orgId, email: cl.lead.email}},
+			update: {},
+			create: {organizationId: orgId, email: cl.lead.email, reason: isBounce ? "BOUNCED" : "UNSUBSCRIBED"},
+		})
+	}
+	await prisma.campaignLead.update({where: {id: cl.id}, data: {status: isBounce ? "BOUNCED" : "UNSUBSCRIBED"}})
+	revalidatePath(`/kampanie/${cl.campaignId}`)
+}
