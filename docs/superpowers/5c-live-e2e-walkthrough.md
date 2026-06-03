@@ -1,6 +1,27 @@
 # Phase 5c — Live e2e walkthrough (user-run, step by step)
 
-> **For the assistant resuming after a `/clear`:** Phase 5c (smarter inbound: bounce + opt-out + RODO) is implemented and verified at the code/test/build level (`tsc` 0, `vitest` 99/99, `next build` green — see ROADMAP). What remains is this **live Gmail e2e**, which the user runs on their machine. Walk the user through it **one scenario at a time**, wait for their result before moving on, and offer to fix anything that misbehaves. Keep it friendly and concrete (the user appreciated that style for the 5b e2e). Start with Scenario A (opt-out SUGGEST) — it is the highest-value, easiest path.
+> **For the assistant resuming after a `/clear`:** Phase 5c (smarter inbound: bounce + opt-out + RODO) is implemented and verified at the code/test/build level (`tsc` 0, `vitest` 99/99, `next build` green — see ROADMAP). What remains is this **live Gmail e2e**, which the user runs on their machine. Walk the user through it **one scenario at a time**, wait for their result before moving on, and offer to fix anything that misbehaves. Keep it friendly and concrete (the user appreciated that style for the 5b e2e). Scenarios A + B passed on 2026-06-03 (see **Status** section below) -- resume at **Scenario C**.
+
+## Status — updated 2026-06-03 (RESUME HERE)
+- **Scenario A (opt-out SUGGEST): PASS.** Reply "nie jestem zainteresowany" -> badge "mozliwa rezygnacja" + status REPLIED -> click "Nie kontaktowac" -> Suppression UNSUBSCRIBED + CampaignLead UNSUBSCRIBED. Verified in DB.
+- **Scenario B (opt-out AUTO): PASS**, including the fully-automatic cron path (cron -> fan-out -> poll -> classify REPLY -> keyword detector -> auto-suppress, with NO click and NO manual trigger). Bonus: lead went UNSUBSCRIBED at currentStep 1, so krok-1 self-stopped (HARD_STOP).
+- **Scenario C (auto-reply / OOO ignored): NOT YET RUN -> start here next.**
+- **Scenario D (bounce): NOT YET RUN (optional).**
+- Env left as: `test-mode ON` (24/7), org `optOutMode = AUTO`, detector = keyword. Run `test-mode off` before any real campaign.
+
+### Cron gotcha found + fixed (important)
+The local Inngest dev server got into a state where `scan-mailboxes-for-replies` cron runs piled up in **QUEUED** and never executed (34 stacked over the session), so replies were never scanned automatically. Event-triggered functions (`poll-mailbox-replies`, `run-lead-sequence`) ran fine. **Restarting `inngest-cli dev` fixed it** (in-memory state reset; the cron then executed on schedule and captured the reply end-to-end). This is a dev-server artifact, NOT a 5c code bug -- the classify/detect/record pipeline is correct (proven by trace + the post-restart automatic run). **Before launch: confirm the cron actually executes on Inngest Cloud.** If replies stop being detected locally: panel `:8288` -> Runs -> if `scan-mailboxes-for-replies` is QUEUED, restart Inngest.
+
+### Deterministic poll trigger + diagnostics (scripts/, committed)
+When you don't want to wait for the 5-min cron, fire the poll directly:
+- `diag-trigger-poll.ts` -- sends `campaign/mailbox.poll` straight to the dev server so `poll-mailbox-replies` runs NOW (bypasses the cron). Reliable way to force a scan in testing.
+- `diag-5c.ts` -- dumps org opt-out mode, mailbox cursor (`lastHistoryId`), lead status, messages, suppression.
+- `diag-inbox.ts` -- lists recent mailbox messages and flags tracked threads.
+- `diag-poll-trace.ts <historyId>` -- runs the REAL fetch+match+classify pipeline from a given cursor (to see exactly where a reply is lost).
+- `diag-set-cursor.ts <historyId>` / `diag-baseline.ts` -- rewind / read the reply-scan cursor.
+- `diag-reset-suppression.ts` -- clears the lead5b suppression. **Needed between runs:** `seed-test-campaign.ts` does NOT clear suppressions, and a suppressed lead will NOT send (HARD_STOP). Reset = `seed-test-campaign.ts` + `diag-reset-suppression.ts`.
+
+**Cursor pitfall (learned the hard way):** `messages.get().historyId` is the id of the *last record that modified* a message, NOT its *messageAdded* id -- do NOT anchor the scan cursor on it (it can sit past the reply). Anchor on a profile historyId captured before the reply (`diag-baseline.ts`), or just let the cron poll from its stored cursor.
 
 ## What 5c added (so you know what we're verifying)
 Every inbound email is now classified: **bounce** → lead `BOUNCED` (no longer counted as a reply — the 5a bug fix); **auto-reply / OOO** → ignored (sequence continues); **opt-out** ("nie zainteresowany") → detected by a keyword (default) or LLM detector, gated by a per-org mode **OFF / SUGGEST / AUTO** set at `/ustawienia`. Plus a manual **„Nie kontaktować"** button + a leads/replies list on the campaign page. Suppress/bounce flips the lead to a HARD_STOP status, so in-flight followups self-stop.
