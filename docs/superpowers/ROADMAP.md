@@ -2,7 +2,7 @@
 
 Last updated: 2026-06-01. This is the durable handoff: read it (plus `CLAUDE.md` + `AGENTS.md`) to resume after a context reset.
 
-**▶ NEXT TASK: Phase 6 — Sales pipeline** (Kanban by `Lead.dealStage`, activity timeline, notes). Same flow: brainstorming skill -> spec -> plan -> subagent-driven execution. Phases 0/1/3/4, 5a, 5b and 5c are DONE + verified at the code/test/build level (5b's full live Gmail e2e done; **5c's live e2e — bounce + opt-out — is user-run and pending**). Deferred 5c items + the flagged poller-idempotency fix live in the "Phase 5c" line below.
+**▶ NEXT TASK: Phase 6 — Sales pipeline** (Kanban by `Lead.dealStage`, activity timeline, notes). Same flow: brainstorming skill -> spec -> plan -> subagent-driven execution. Phases 0/1/3/4, 5a, 5b and 5c are DONE + verified at the code/test/build level (5b's full live Gmail e2e done; **5c's live e2e — bounce + opt-out — is user-run and pending**). Deferred 5c items + the flagged poller-idempotency fix live in the "Phase 5c" line below. **To run the pending 5c live e2e, follow `docs/superpowers/5c-live-e2e-walkthrough.md` and walk the user through it one scenario at a time (start with Scenario A — opt-out SUGGEST).**
 
 ## Where we are
 
@@ -83,7 +83,7 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 - Tracking policy: reply-detection ON, open OFF, click optional (custom subdomain).
 
 ## How to resume
-1. Read `CLAUDE.md`, `AGENTS.md`, this file. **Next task = Phase 6 (sales pipeline)** — or run the pending 5c live e2e first (see the Phase 5c line). Start with the brainstorming skill.
+1. Read `CLAUDE.md`, `AGENTS.md`, this file. **Next task = Phase 6 (sales pipeline)** — or run the pending 5c live e2e first: follow `docs/superpowers/5c-live-e2e-walkthrough.md` and guide the user step by step. Start with the brainstorming skill (for Phase 6).
 2. Specs in `docs/superpowers/specs/`, plans in `docs/superpowers/plans/`.
 3. Knowledge graph in `graphify-out/` — `graphify query "<question>"`, `graphify path "<A>" "<B>"`, `graphify explain "<concept>"`; `GRAPH_REPORT.md` for architecture; Obsidian vault for navigation.
 4. Migrations: `npx prisma migrate dev`. Tests: `npx vitest run`. Types: `npx tsc --noEmit`. App: the user runs `npm run dev`.
