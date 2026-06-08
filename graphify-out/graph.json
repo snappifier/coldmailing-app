@@ -1095,7 +1095,7 @@
       "source_file": "app/(app)/kampanie/[id]/sequence-and-leads.tsx",
       "source_location": "L14",
       "id": "id_sequence_and_leads_sequenceandleads",
-      "community": 10,
+      "community": 8,
       "norm_label": "sequenceandleads()"
     },
     {
@@ -1131,7 +1131,7 @@
       "source_file": "app/(app)/leady/lead-form.tsx",
       "source_location": "L1",
       "id": "app_app_leady_lead_form_tsx",
-      "community": 2,
+      "community": 109,
       "norm_label": "lead-form.tsx"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_file": "app/(app)/leady/lead-form.tsx",
       "source_location": "L7",
       "id": "leady_lead_form_leadform",
-      "community": 2,
+      "community": 109,
       "norm_label": "leadform()"
     },
     {
@@ -1149,7 +1149,7 @@
       "source_file": "app/(app)/leady/page.tsx",
       "source_location": "L1",
       "id": "app_app_leady_page_tsx",
-      "community": 2,
+      "community": 109,
       "norm_label": "page.tsx"
     },
     {
@@ -1185,7 +1185,7 @@
       "source_file": "app/(app)/leady/import/import-wizard.tsx",
       "source_location": "L21",
       "id": "import_import_wizard_importwizard",
-      "community": 2,
+      "community": 10,
       "norm_label": "importwizard()"
     },
     {
@@ -1338,7 +1338,7 @@
       "source_file": "app/(app)/leady/[id]/uruchom-research.tsx",
       "source_location": "L27",
       "id": "id_uruchom_research_uruchomresearch",
-      "community": 113,
+      "community": 45,
       "norm_label": "uruchomresearch()"
     },
     {
@@ -1428,7 +1428,7 @@
       "source_file": "app/(app)/pipeline/page.tsx",
       "source_location": "L1",
       "id": "app_app_pipeline_page_tsx",
-      "community": 14,
+      "community": 45,
       "norm_label": "page.tsx"
     },
     {
@@ -1437,7 +1437,7 @@
       "source_file": "app/(app)/pipeline/page.tsx",
       "source_location": "L8",
       "id": "pipeline_page_pipelinepage",
-      "community": 14,
+      "community": 45,
       "norm_label": "pipelinepage()"
     },
     {
@@ -1446,7 +1446,7 @@
       "source_file": "app/(app)/placeholdery/page.tsx",
       "source_location": "L1",
       "id": "app_app_placeholdery_page_tsx",
-      "community": 10,
+      "community": 141,
       "norm_label": "page.tsx"
     },
     {
@@ -1455,7 +1455,7 @@
       "source_file": "app/(app)/placeholdery/page.tsx",
       "source_location": "L7",
       "id": "placeholdery_page_placeholderspage",
-      "community": 10,
+      "community": 141,
       "norm_label": "placeholderspage()"
     },
     {
@@ -1464,7 +1464,7 @@
       "source_file": "app/(app)/placeholdery/placeholder-form.tsx",
       "source_location": "L1",
       "id": "app_app_placeholdery_placeholder_form_tsx",
-      "community": 10,
+      "community": 141,
       "norm_label": "placeholder-form.tsx"
     },
     {
@@ -1473,7 +1473,7 @@
       "source_file": "app/(app)/placeholdery/placeholder-form.tsx",
       "source_location": "L7",
       "id": "placeholdery_placeholder_form_placeholderform",
-      "community": 10,
+      "community": 141,
       "norm_label": "placeholderform()"
     },
     {
@@ -1536,7 +1536,7 @@
       "source_file": "app/(app)/szablony/page.tsx",
       "source_location": "L1",
       "id": "app_app_szablony_page_tsx",
-      "community": 5,
+      "community": 146,
       "norm_label": "page.tsx"
     },
     {
@@ -1545,7 +1545,7 @@
       "source_file": "app/(app)/szablony/page.tsx",
       "source_location": "L9",
       "id": "szablony_page_templatespage",
-      "community": 5,
+      "community": 146,
       "norm_label": "templatespage()"
     },
     {
@@ -1554,7 +1554,7 @@
       "source_file": "app/(app)/szablony/template-editor.tsx",
       "source_location": "L1",
       "id": "app_app_szablony_template_editor_tsx",
-      "community": 5,
+      "community": 146,
       "norm_label": "template-editor.tsx"
     },
     {
@@ -1563,7 +1563,7 @@
       "source_file": "app/(app)/szablony/template-editor.tsx",
       "source_location": "L8",
       "id": "szablony_template_editor_builtin",
-      "community": 5,
+      "community": 146,
       "norm_label": "builtin"
     },
     {
@@ -1572,7 +1572,7 @@
       "source_file": "app/(app)/szablony/template-editor.tsx",
       "source_location": "L10",
       "id": "szablony_template_editor_props",
-      "community": 5,
+      "community": 146,
       "norm_label": "props"
     },
     {
@@ -1581,7 +1581,7 @@
       "source_file": "app/(app)/szablony/template-editor.tsx",
       "source_location": "L18",
       "id": "szablony_template_editor_templateeditor",
-      "community": 5,
+      "community": 146,
       "norm_label": "templateeditor()"
     },
     {
@@ -2094,7 +2094,7 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L28",
       "id": "leads_actions_createlead",
-      "community": 2,
+      "community": 109,
       "norm_label": "createlead()"
     },
     {
@@ -2103,7 +2103,7 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L42",
       "id": "leads_actions_deletelead",
-      "community": 2,
+      "community": 109,
       "norm_label": "deletelead()"
     },
     {
@@ -2589,7 +2589,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L1",
       "id": "features_pipeline_group_test_ts",
-      "community": 14,
+      "community": 45,
       "norm_label": "group.test.ts"
     },
     {
@@ -2598,7 +2598,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L6",
       "id": "pipeline_group_test_lead",
-      "community": 14,
+      "community": 45,
       "norm_label": "lead()"
     },
     {
@@ -2607,7 +2607,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L10",
       "id": "pipeline_group_test_cols",
-      "community": 14,
+      "community": 45,
       "norm_label": "cols"
     },
     {
@@ -2616,7 +2616,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L16",
       "id": "pipeline_group_test_bystage",
-      "community": 14,
+      "community": 45,
       "norm_label": "bystage"
     },
     {
@@ -2625,7 +2625,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L1",
       "id": "features_pipeline_group_ts",
-      "community": 14,
+      "community": 45,
       "norm_label": "group.ts"
     },
     {
@@ -2634,7 +2634,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L5",
       "id": "pipeline_group_stagecolumn",
-      "community": 14,
+      "community": 45,
       "norm_label": "stagecolumn"
     },
     {
@@ -2643,7 +2643,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L10",
       "id": "pipeline_group_groupleadsbystage",
-      "community": 14,
+      "community": 45,
       "norm_label": "groupleadsbystage()"
     },
     {
@@ -2661,7 +2661,7 @@
       "source_file": "features/pipeline/queries.ts",
       "source_location": "L6",
       "id": "pipeline_queries_getpipelineleads",
-      "community": 14,
+      "community": 45,
       "norm_label": "getpipelineleads()"
     },
     {
@@ -2679,7 +2679,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L1",
       "id": "features_pipeline_timeline_test_ts",
-      "community": 45,
+      "community": 86,
       "norm_label": "timeline.test.ts"
     },
     {
@@ -2688,7 +2688,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L5",
       "id": "pipeline_timeline_test_d",
-      "community": 45,
+      "community": 86,
       "norm_label": "d()"
     },
     {
@@ -2697,7 +2697,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L9",
       "id": "pipeline_timeline_test_item",
-      "community": 45,
+      "community": 86,
       "norm_label": "item"
     },
     {
@@ -2706,7 +2706,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L14",
       "id": "pipeline_timeline_test_mk",
-      "community": 45,
+      "community": 86,
       "norm_label": "mk()"
     },
     {
@@ -2715,7 +2715,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L37",
       "id": "pipeline_timeline_test_acts",
-      "community": 45,
+      "community": 86,
       "norm_label": "acts"
     },
     {
@@ -2724,7 +2724,7 @@
       "source_file": "features/pipeline/timeline.test.ts",
       "source_location": "L38",
       "id": "pipeline_timeline_test_msgs",
-      "community": 45,
+      "community": 86,
       "norm_label": "msgs"
     },
     {
@@ -2733,7 +2733,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L1",
       "id": "features_pipeline_timeline_ts",
-      "community": 45,
+      "community": 86,
       "norm_label": "timeline.ts"
     },
     {
@@ -2742,7 +2742,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L6",
       "id": "pipeline_timeline_messagelike",
-      "community": 45,
+      "community": 86,
       "norm_label": "messagelike"
     },
     {
@@ -2751,7 +2751,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L15",
       "id": "pipeline_timeline_activitylike",
-      "community": 45,
+      "community": 86,
       "norm_label": "activitylike"
     },
     {
@@ -2760,7 +2760,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L24",
       "id": "pipeline_timeline_inbound_title",
-      "community": 45,
+      "community": 86,
       "norm_label": "inbound_title"
     },
     {
@@ -2769,7 +2769,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L31",
       "id": "pipeline_timeline_manual_label",
-      "community": 45,
+      "community": 86,
       "norm_label": "manual_label"
     },
     {
@@ -2778,7 +2778,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L39",
       "id": "pipeline_timeline_messagetotimelineitem",
-      "community": 45,
+      "community": 86,
       "norm_label": "messagetotimelineitem()"
     },
     {
@@ -2787,7 +2787,7 @@
       "source_file": "features/pipeline/timeline.ts",
       "source_location": "L47",
       "id": "pipeline_timeline_activitytotimelineitem",
-      "community": 45,
+      "community": 86,
       "norm_label": "activitytotimelineitem()"
     },
     {
@@ -2814,7 +2814,7 @@
       "source_file": "features/pipeline/types.ts",
       "source_location": "L4",
       "id": "pipeline_types_stage_order",
-      "community": 14,
+      "community": 45,
       "norm_label": "stage_order"
     },
     {
@@ -2850,7 +2850,7 @@
       "source_file": "features/pipeline/validation.test.ts",
       "source_location": "L1",
       "id": "features_pipeline_validation_test_ts",
-      "community": 45,
+      "community": 147,
       "norm_label": "validation.test.ts"
     },
     {
@@ -2859,7 +2859,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L1",
       "id": "features_pipeline_validation_ts",
-      "community": 45,
+      "community": 147,
       "norm_label": "validation.ts"
     },
     {
@@ -2868,7 +2868,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L4",
       "id": "pipeline_validation_manual_activity_kinds",
-      "community": 45,
+      "community": 147,
       "norm_label": "manual_activity_kinds"
     },
     {
@@ -2877,7 +2877,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L6",
       "id": "pipeline_validation_addactivityschema",
-      "community": 45,
+      "community": 147,
       "norm_label": "addactivityschema"
     },
     {
@@ -2886,7 +2886,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L12",
       "id": "pipeline_validation_addactivityinput",
-      "community": 45,
+      "community": 147,
       "norm_label": "addactivityinput"
     },
     {
@@ -2895,7 +2895,7 @@
       "source_file": "features/placeholders/actions.ts",
       "source_location": "L1",
       "id": "features_placeholders_actions_ts",
-      "community": 10,
+      "community": 141,
       "norm_label": "actions.ts"
     },
     {
@@ -2904,7 +2904,7 @@
       "source_file": "features/placeholders/actions.ts",
       "source_location": "L9",
       "id": "placeholders_actions_placeholderresult",
-      "community": 10,
+      "community": 141,
       "norm_label": "placeholderresult"
     },
     {
@@ -2913,7 +2913,7 @@
       "source_file": "features/placeholders/actions.ts",
       "source_location": "L11",
       "id": "placeholders_actions_createplaceholder",
-      "community": 10,
+      "community": 141,
       "norm_label": "createplaceholder()"
     },
     {
@@ -2922,7 +2922,7 @@
       "source_file": "features/placeholders/actions.ts",
       "source_location": "L36",
       "id": "placeholders_actions_deleteplaceholder",
-      "community": 10,
+      "community": 141,
       "norm_label": "deleteplaceholder()"
     },
     {
@@ -3246,7 +3246,7 @@
       "source_file": "features/replies/queries.test.ts",
       "source_location": "L1",
       "id": "features_replies_queries_test_ts",
-      "community": 139,
+      "community": 117,
       "norm_label": "queries.test.ts"
     },
     {
@@ -3255,7 +3255,7 @@
       "source_file": "features/replies/queries.test.ts",
       "source_location": "L5",
       "id": "replies_queries_test_tx",
-      "community": 139,
+      "community": 117,
       "norm_label": "tx"
     },
     {
@@ -3264,7 +3264,7 @@
       "source_file": "features/replies/queries.test.ts",
       "source_location": "L27",
       "id": "replies_queries_test_baseinput",
-      "community": 139,
+      "community": 117,
       "norm_label": "baseinput"
     },
     {
@@ -3273,7 +3273,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L1",
       "id": "features_replies_queries_ts",
-      "community": 139,
+      "community": 117,
       "norm_label": "queries.ts"
     },
     {
@@ -3291,7 +3291,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L23",
       "id": "replies_queries_recordinboundinput",
-      "community": 139,
+      "community": 117,
       "norm_label": "recordinboundinput"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_file": "features/replies/queries.ts",
       "source_location": "L38",
       "id": "replies_queries_recordinbound",
-      "community": 139,
+      "community": 117,
       "norm_label": "recordinbound()"
     },
     {
@@ -3318,7 +3318,7 @@
       "source_file": "features/replies/optout/index.ts",
       "source_location": "L8",
       "id": "optout_index_getdetector",
-      "community": 94,
+      "community": 117,
       "norm_label": "getdetector()"
     },
     {
@@ -3642,7 +3642,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L1",
       "id": "features_research_apply_ts",
-      "community": 111,
+      "community": 113,
       "norm_label": "apply.ts"
     },
     {
@@ -3651,7 +3651,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L6",
       "id": "research_apply_column_targets",
-      "community": 111,
+      "community": 113,
       "norm_label": "column_targets"
     },
     {
@@ -3660,7 +3660,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L8",
       "id": "research_apply_leadfields",
-      "community": 111,
+      "community": 113,
       "norm_label": "leadfields"
     },
     {
@@ -3669,7 +3669,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L24",
       "id": "research_apply_applyargs",
-      "community": 111,
+      "community": 113,
       "norm_label": "applyargs"
     },
     {
@@ -3678,7 +3678,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L32",
       "id": "research_apply_computeapply",
-      "community": 111,
+      "community": 113,
       "norm_label": "computeapply()"
     },
     {
@@ -3696,7 +3696,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L72",
       "id": "research_apply_coerce",
-      "community": 111,
+      "community": 113,
       "norm_label": "coerce()"
     },
     {
@@ -3705,7 +3705,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L106",
       "id": "research_apply_normalizegender",
-      "community": 111,
+      "community": 113,
       "norm_label": "normalizegender()"
     },
     {
@@ -3714,7 +3714,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L113",
       "id": "research_apply_currentfor",
-      "community": 111,
+      "community": 113,
       "norm_label": "currentfor()"
     },
     {
@@ -3723,7 +3723,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L124",
       "id": "research_apply_samevalue",
-      "community": 111,
+      "community": 113,
       "norm_label": "samevalue()"
     },
     {
@@ -3786,7 +3786,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L37",
       "id": "research_batch_actions_previewbatch",
-      "community": 84,
+      "community": 116,
       "norm_label": "previewbatch()"
     },
     {
@@ -3966,7 +3966,7 @@
       "source_file": "features/research/batch-select.test.ts",
       "source_location": "L1",
       "id": "features_research_batch_select_test_ts",
-      "community": 84,
+      "community": 116,
       "norm_label": "batch-select.test.ts"
     },
     {
@@ -3975,7 +3975,7 @@
       "source_file": "features/research/batch-select.test.ts",
       "source_location": "L15",
       "id": "research_batch_select_test_where",
-      "community": 84,
+      "community": 116,
       "norm_label": "where"
     },
     {
@@ -3984,7 +3984,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L1",
       "id": "features_research_batch_select_ts",
-      "community": 84,
+      "community": 116,
       "norm_label": "batch-select.ts"
     },
     {
@@ -3993,7 +3993,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L4",
       "id": "research_batch_select_batchcriteria",
-      "community": 84,
+      "community": 116,
       "norm_label": "batchcriteria"
     },
     {
@@ -4002,7 +4002,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L9",
       "id": "research_batch_select_buildleadwhere",
-      "community": 84,
+      "community": 116,
       "norm_label": "buildleadwhere()"
     },
     {
@@ -4031,6 +4031,69 @@
       "id": "research_engine_runresearch",
       "community": 114,
       "norm_label": "runresearch()"
+    },
+    {
+      "label": "lead-context.test.ts",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L1",
+      "id": "features_research_lead_context_test_ts",
+      "community": 139,
+      "norm_label": "lead-context.test.ts"
+    },
+    {
+      "label": "empty",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L5",
+      "id": "research_lead_context_test_empty",
+      "community": 139,
+      "norm_label": "empty"
+    },
+    {
+      "label": "block",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L13",
+      "id": "research_lead_context_test_block",
+      "community": 139,
+      "norm_label": "block"
+    },
+    {
+      "label": "lead-context.ts",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L1",
+      "id": "features_research_lead_context_ts",
+      "community": 139,
+      "norm_label": "lead-context.ts"
+    },
+    {
+      "label": "LeadContextInput",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L2",
+      "id": "research_lead_context_leadcontextinput",
+      "community": 139,
+      "norm_label": "leadcontextinput"
+    },
+    {
+      "label": "present()",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L14",
+      "id": "research_lead_context_present",
+      "community": 139,
+      "norm_label": "present()"
+    },
+    {
+      "label": "buildLeadContextBlock()",
+      "file_type": "code",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L20",
+      "id": "research_lead_context_buildleadcontextblock",
+      "community": 139,
+      "norm_label": "buildleadcontextblock()"
     },
     {
       "label": "model.test.ts",
@@ -4209,7 +4272,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L1",
       "id": "features_research_types_ts",
-      "community": 111,
+      "community": 113,
       "norm_label": "types.ts"
     },
     {
@@ -4218,7 +4281,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L2",
       "id": "research_types_researchfindings",
-      "community": 111,
+      "community": 113,
       "norm_label": "researchfindings"
     },
     {
@@ -4227,7 +4290,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L4",
       "id": "research_types_appliedfield",
-      "community": 111,
+      "community": 113,
       "norm_label": "appliedfield"
     },
     {
@@ -4245,7 +4308,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L13",
       "id": "research_types_skippedfield",
-      "community": 111,
+      "community": 113,
       "norm_label": "skippedfield"
     },
     {
@@ -4254,7 +4317,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L18",
       "id": "research_types_researchdiff",
-      "community": 111,
+      "community": 113,
       "norm_label": "researchdiff"
     },
     {
@@ -4263,7 +4326,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L23",
       "id": "research_types_engineresult",
-      "community": 111,
+      "community": 114,
       "norm_label": "engineresult"
     },
     {
@@ -4423,7 +4486,7 @@
       "label": "OutputField",
       "file_type": "code",
       "source_file": "features/research-types/schema.ts",
-      "source_location": "L68",
+      "source_location": "L72",
       "id": "research_types_schema_outputfield",
       "community": 114,
       "norm_label": "outputfield"
@@ -4432,7 +4495,7 @@
       "label": "ResearchTypeInput",
       "file_type": "code",
       "source_file": "features/research-types/schema.ts",
-      "source_location": "L69",
+      "source_location": "L73",
       "id": "research_types_schema_researchtypeinput",
       "community": 99,
       "norm_label": "researchtypeinput"
@@ -4740,7 +4803,7 @@
       "source_file": "features/sending/recipient.test.ts",
       "source_location": "L1",
       "id": "features_sending_recipient_test_ts",
-      "community": 122,
+      "community": 148,
       "norm_label": "recipient.test.ts"
     },
     {
@@ -4749,7 +4812,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L1",
       "id": "features_sending_recipient_ts",
-      "community": 122,
+      "community": 148,
       "norm_label": "recipient.ts"
     },
     {
@@ -4758,7 +4821,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L2",
       "id": "sending_recipient_resolvedrecipient",
-      "community": 122,
+      "community": 148,
       "norm_label": "resolvedrecipient"
     },
     {
@@ -4767,7 +4830,7 @@
       "source_file": "features/sending/recipient.ts",
       "source_location": "L8",
       "id": "sending_recipient_resolverecipient",
-      "community": 122,
+      "community": 148,
       "norm_label": "resolverecipient()"
     },
     {
@@ -4974,7 +5037,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L1",
       "id": "features_sequences_plan_test_ts",
-      "community": 86,
+      "community": 122,
       "norm_label": "plan.test.ts"
     },
     {
@@ -4983,7 +5046,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L5",
       "id": "sequences_plan_test_now",
-      "community": 86,
+      "community": 122,
       "norm_label": "now"
     },
     {
@@ -4992,7 +5055,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L6",
       "id": "sequences_plan_test_steps",
-      "community": 86,
+      "community": 122,
       "norm_label": "steps"
     },
     {
@@ -5001,7 +5064,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L34",
       "id": "sequences_plan_test_noalways",
-      "community": 86,
+      "community": 122,
       "norm_label": "noalways"
     },
     {
@@ -5010,7 +5073,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L44",
       "id": "sequences_plan_test_gapped",
-      "community": 86,
+      "community": 122,
       "norm_label": "gapped"
     },
     {
@@ -5019,7 +5082,7 @@
       "source_file": "features/sequences/plan.test.ts",
       "source_location": "L51",
       "id": "sequences_plan_test_single",
-      "community": 86,
+      "community": 122,
       "norm_label": "single"
     },
     {
@@ -5028,7 +5091,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L1",
       "id": "features_sequences_plan_ts",
-      "community": 86,
+      "community": 122,
       "norm_label": "plan.ts"
     },
     {
@@ -5037,7 +5100,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L2",
       "id": "sequences_plan_sequencecondition",
-      "community": 86,
+      "community": 122,
       "norm_label": "sequencecondition"
     },
     {
@@ -5046,7 +5109,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L4",
       "id": "sequences_plan_stepdef",
-      "community": 86,
+      "community": 122,
       "norm_label": "stepdef"
     },
     {
@@ -5055,7 +5118,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L10",
       "id": "sequences_plan_senddecision",
-      "community": 86,
+      "community": 122,
       "norm_label": "senddecision"
     },
     {
@@ -5073,7 +5136,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L18",
       "id": "sequences_plan_nextplan",
-      "community": 86,
+      "community": 122,
       "norm_label": "nextplan"
     },
     {
@@ -5082,7 +5145,7 @@
       "source_file": "features/sequences/plan.ts",
       "source_location": "L26",
       "id": "sequences_plan_plannext",
-      "community": 86,
+      "community": 122,
       "norm_label": "plannext()"
     },
     {
@@ -5145,7 +5208,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L1",
       "id": "features_templates_actions_ts",
-      "community": 5,
+      "community": 146,
       "norm_label": "actions.ts"
     },
     {
@@ -5154,7 +5217,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L9",
       "id": "templates_actions_templateresult",
-      "community": 5,
+      "community": 146,
       "norm_label": "templateresult"
     },
     {
@@ -5163,7 +5226,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L11",
       "id": "templates_actions_createtemplate",
-      "community": 5,
+      "community": 146,
       "norm_label": "createtemplate()"
     },
     {
@@ -5172,7 +5235,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L28",
       "id": "templates_actions_deletetemplate",
-      "community": 5,
+      "community": 146,
       "norm_label": "deletetemplate()"
     },
     {
@@ -5244,7 +5307,7 @@
       "source_file": "features/templates/render.ts",
       "source_location": "L2",
       "id": "templates_render_renderlead",
-      "community": 5,
+      "community": 146,
       "norm_label": "renderlead"
     },
     {
@@ -5253,7 +5316,7 @@
       "source_file": "features/templates/render.ts",
       "source_location": "L12",
       "id": "templates_render_renderplaceholder",
-      "community": 5,
+      "community": 146,
       "norm_label": "renderplaceholder"
     },
     {
@@ -5523,7 +5586,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L1",
       "id": "generated_prisma_client_ts",
-      "community": 135,
+      "community": 100,
       "norm_label": "client.ts"
     },
     {
@@ -5541,7 +5604,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L48",
       "id": "prisma_client_organization",
-      "community": 135,
+      "community": 100,
       "norm_label": "organization"
     },
     {
@@ -5550,7 +5613,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L53",
       "id": "prisma_client_user",
-      "community": 135,
+      "community": 100,
       "norm_label": "user"
     },
     {
@@ -5559,7 +5622,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L58",
       "id": "prisma_client_account",
-      "community": 135,
+      "community": 100,
       "norm_label": "account"
     },
     {
@@ -5568,7 +5631,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L63",
       "id": "prisma_client_session",
-      "community": 135,
+      "community": 100,
       "norm_label": "session"
     },
     {
@@ -5577,7 +5640,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L68",
       "id": "prisma_client_verificationtoken",
-      "community": 135,
+      "community": 100,
       "norm_label": "verificationtoken"
     },
     {
@@ -5586,7 +5649,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L73",
       "id": "prisma_client_membership",
-      "community": 135,
+      "community": 100,
       "norm_label": "membership"
     },
     {
@@ -5595,7 +5658,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L78",
       "id": "prisma_client_offeringline",
-      "community": 135,
+      "community": 100,
       "norm_label": "offeringline"
     },
     {
@@ -5604,7 +5667,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L83",
       "id": "prisma_client_lead",
-      "community": 135,
+      "community": 100,
       "norm_label": "lead"
     },
     {
@@ -5613,7 +5676,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L88",
       "id": "prisma_client_suppression",
-      "community": 135,
+      "community": 100,
       "norm_label": "suppression"
     },
     {
@@ -5622,7 +5685,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L93",
       "id": "prisma_client_template",
-      "community": 135,
+      "community": 100,
       "norm_label": "template"
     },
     {
@@ -5631,7 +5694,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L98",
       "id": "prisma_client_placeholder",
-      "community": 135,
+      "community": 100,
       "norm_label": "placeholder"
     },
     {
@@ -5640,7 +5703,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L103",
       "id": "prisma_client_researchtype",
-      "community": 135,
+      "community": 100,
       "norm_label": "researchtype"
     },
     {
@@ -5649,7 +5712,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L108",
       "id": "prisma_client_researchrun",
-      "community": 135,
+      "community": 100,
       "norm_label": "researchrun"
     },
     {
@@ -5658,7 +5721,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L113",
       "id": "prisma_client_researchbatch",
-      "community": 135,
+      "community": 100,
       "norm_label": "researchbatch"
     },
     {
@@ -5667,7 +5730,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L118",
       "id": "prisma_client_campaign",
-      "community": 135,
+      "community": 100,
       "norm_label": "campaign"
     },
     {
@@ -5676,7 +5739,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L123",
       "id": "prisma_client_sequencestep",
-      "community": 135,
+      "community": 100,
       "norm_label": "sequencestep"
     },
     {
@@ -5685,7 +5748,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L128",
       "id": "prisma_client_campaignlead",
-      "community": 135,
+      "community": 100,
       "norm_label": "campaignlead"
     },
     {
@@ -5694,7 +5757,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L133",
       "id": "prisma_client_emailaccount",
-      "community": 135,
+      "community": 100,
       "norm_label": "emailaccount"
     },
     {
@@ -5703,7 +5766,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L138",
       "id": "prisma_client_message",
-      "community": 135,
+      "community": 100,
       "norm_label": "message"
     },
     {
@@ -5712,7 +5775,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L143",
       "id": "prisma_client_leadactivity",
-      "community": 135,
+      "community": 100,
       "norm_label": "leadactivity"
     },
     {
@@ -7105,7 +7168,7 @@
       "label": "ResearchRunStatus",
       "file_type": "code",
       "source_file": "generated/prisma/enums.ts",
-      "source_location": "L168",
+      "source_location": "L169",
       "id": "prisma_enums_researchrunstatus",
       "community": 92,
       "norm_label": "researchrunstatus"
@@ -7114,7 +7177,7 @@
       "label": "ResearchApplyMode",
       "file_type": "code",
       "source_file": "generated/prisma/enums.ts",
-      "source_location": "L179",
+      "source_location": "L180",
       "id": "prisma_enums_researchapplymode",
       "community": 92,
       "norm_label": "researchapplymode"
@@ -7123,7 +7186,7 @@
       "label": "ResearchBatchStatus",
       "file_type": "code",
       "source_file": "generated/prisma/enums.ts",
-      "source_location": "L187",
+      "source_location": "L188",
       "id": "prisma_enums_researchbatchstatus",
       "community": 92,
       "norm_label": "researchbatchstatus"
@@ -7132,7 +7195,7 @@
       "label": "LeadActivityKind",
       "file_type": "code",
       "source_file": "generated/prisma/enums.ts",
-      "source_location": "L198",
+      "source_location": "L199",
       "id": "prisma_enums_leadactivitykind",
       "community": 92,
       "norm_label": "leadactivitykind"
@@ -30093,7 +30156,7 @@
       "source_file": "lib/org.ts",
       "source_location": "L1",
       "id": "lib_org_ts",
-      "community": 10,
+      "community": 110,
       "norm_label": "org.ts"
     },
     {
@@ -30102,7 +30165,7 @@
       "source_file": "lib/org.ts",
       "source_location": "L5",
       "id": "lib_org_orgcontext",
-      "community": 10,
+      "community": 110,
       "norm_label": "orgcontext"
     },
     {
@@ -30120,7 +30183,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L1",
       "id": "lib_prisma_ts",
-      "community": 49,
+      "community": 10,
       "norm_label": "prisma.ts"
     },
     {
@@ -30129,7 +30192,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L5",
       "id": "lib_prisma_globalforprisma",
-      "community": 49,
+      "community": 10,
       "norm_label": "globalforprisma"
     },
     {
@@ -30174,7 +30237,7 @@
       "source_file": "lib/inngest/replies.ts",
       "source_location": "L1",
       "id": "lib_inngest_replies_ts",
-      "community": 88,
+      "community": 117,
       "norm_label": "replies.ts"
     },
     {
@@ -30201,7 +30264,7 @@
       "source_file": "lib/inngest/research-batch.test.ts",
       "source_location": "L1",
       "id": "lib_inngest_research_batch_test_ts",
-      "community": 88,
+      "community": 116,
       "norm_label": "research-batch.test.ts"
     },
     {
@@ -30210,7 +30273,7 @@
       "source_file": "lib/inngest/research-batch.test.ts",
       "source_location": "L4",
       "id": "inngest_research_batch_test_h",
-      "community": 88,
+      "community": 116,
       "norm_label": "h"
     },
     {
@@ -30219,7 +30282,7 @@
       "source_file": "lib/inngest/research-batch.test.ts",
       "source_location": "L40",
       "id": "inngest_research_batch_test_tools",
-      "community": 88,
+      "community": 116,
       "norm_label": "tools()"
     },
     {
@@ -30228,7 +30291,7 @@
       "source_file": "lib/inngest/research-batch.ts",
       "source_location": "L1",
       "id": "lib_inngest_research_batch_ts",
-      "community": 88,
+      "community": 116,
       "norm_label": "research-batch.ts"
     },
     {
@@ -30237,7 +30300,7 @@
       "source_file": "lib/inngest/research-batch.ts",
       "source_location": "L10",
       "id": "inngest_research_batch_batchtools",
-      "community": 88,
+      "community": 116,
       "norm_label": "batchtools"
     },
     {
@@ -30271,7 +30334,7 @@
       "label": "emailTakenFor()",
       "file_type": "code",
       "source_file": "lib/inngest/research.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "inngest_research_emailtakenfor",
       "community": 89,
       "norm_label": "emailtakenfor()"
@@ -30280,9 +30343,9 @@
       "label": "runResearchFn",
       "file_type": "code",
       "source_file": "lib/inngest/research.ts",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "inngest_research_runresearchfn",
-      "community": 114,
+      "community": 88,
       "norm_label": "runresearchfn"
     },
     {
@@ -30399,7 +30462,7 @@
       "source_file": "lib/inngest/sending.ts",
       "source_location": "L160",
       "id": "inngest_sending_runleadsequence",
-      "community": 122,
+      "community": 88,
       "norm_label": "runleadsequence"
     },
     {
@@ -30570,7 +30633,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L1",
       "id": "scripts_diag_set_cursor_ts",
-      "community": 135,
+      "community": 100,
       "norm_label": "diag-set-cursor.ts"
     },
     {
@@ -30579,7 +30642,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L6",
       "id": "scripts_diag_set_cursor_prisma",
-      "community": 135,
+      "community": 100,
       "norm_label": "prisma"
     },
     {
@@ -30588,7 +30651,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L8",
       "id": "scripts_diag_set_cursor_main",
-      "community": 135,
+      "community": 100,
       "norm_label": "main()"
     },
     {
@@ -30660,7 +30723,7 @@
       "source_file": "scripts/seed-test-campaign.ts",
       "source_location": "L1",
       "id": "scripts_seed_test_campaign_ts",
-      "community": 100,
+      "community": 149,
       "norm_label": "seed-test-campaign.ts"
     },
     {
@@ -30669,7 +30732,7 @@
       "source_file": "scripts/seed-test-campaign.ts",
       "source_location": "L10",
       "id": "scripts_seed_test_campaign_prisma",
-      "community": 100,
+      "community": 149,
       "norm_label": "prisma"
     },
     {
@@ -30678,7 +30741,7 @@
       "source_file": "scripts/seed-test-campaign.ts",
       "source_location": "L14",
       "id": "scripts_seed_test_campaign_ensuretemplate",
-      "community": 100,
+      "community": 149,
       "norm_label": "ensuretemplate()"
     },
     {
@@ -30687,7 +30750,7 @@
       "source_file": "scripts/seed-test-campaign.ts",
       "source_location": "L20",
       "id": "scripts_seed_test_campaign_main",
-      "community": 100,
+      "community": 149,
       "norm_label": "main()"
     },
     {
@@ -31117,7 +31180,7 @@
       "label": "Phase 6 \u2014 Sales pipeline (DONE + verified, 2026-06-08)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L80",
+      "source_location": "L81",
       "id": "superpowers_roadmap_phase_6_sales_pipeline_done_verified_2026_06_08",
       "community": 47,
       "norm_label": "phase 6 \u2014 sales pipeline (done + verified, 2026-06-08)"
@@ -31126,7 +31189,7 @@
       "label": "Phase 7 \u2014 Visual design / polish",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L83",
+      "source_location": "L84",
       "id": "superpowers_roadmap_phase_7_visual_design_polish",
       "community": 47,
       "norm_label": "phase 7 \u2014 visual design / polish"
@@ -31135,7 +31198,7 @@
       "label": "Cross-cutting before launch",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L86",
+      "source_location": "L87",
       "id": "superpowers_roadmap_cross_cutting_before_launch",
       "community": 47,
       "norm_label": "cross-cutting before launch"
@@ -31144,7 +31207,7 @@
       "label": "How to resume",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L91",
+      "source_location": "L92",
       "id": "superpowers_roadmap_how_to_resume",
       "community": 47,
       "norm_label": "how to resume"
@@ -31153,7 +31216,7 @@
       "label": "Local dev gotchas (this machine)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L97",
+      "source_location": "L98",
       "id": "superpowers_roadmap_local_dev_gotchas_this_machine",
       "community": 47,
       "norm_label": "local dev gotchas (this machine)"
@@ -35785,6 +35848,330 @@
       "norm_label": "self-review"
     },
     {
+      "label": "2026-06-08-phase-2d-2-content-writing.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_plans_2026_06_08_phase_2d_2_content_writing_md",
+      "community": 14,
+      "norm_label": "2026-06-08-phase-2d-2-content-writing.md"
+    },
+    {
+      "label": "Phase 2d-2 \u2014 AI Content Writing Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L1",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "community": 14,
+      "norm_label": "phase 2d-2 \u2014 ai content writing implementation plan"
+    },
+    {
+      "label": "File Structure",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L13",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_file_structure",
+      "community": 14,
+      "norm_label": "file structure"
+    },
+    {
+      "label": "Task 1: Migration \u2014 `CONTENT` enum value",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L26",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_1_migration_content_enum_value",
+      "community": 14,
+      "norm_label": "task 1: migration \u2014 `content` enum value"
+    },
+    {
+      "label": "code:prisma (enum ResearchTypeKind {)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L35",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_1",
+      "community": 14,
+      "norm_label": "code:prisma (enum researchtypekind {)"
+    },
+    {
+      "label": "code:bash (git add prisma/schema.prisma prisma/migrations)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L61",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_2",
+      "community": 14,
+      "norm_label": "code:bash (git add prisma/schema.prisma prisma/migrations)"
+    },
+    {
+      "label": "Task 2: Pure `buildLeadContextBlock`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L68",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_2_pure_buildleadcontextblock",
+      "community": 14,
+      "norm_label": "task 2: pure `buildleadcontextblock`"
+    },
+    {
+      "label": "code:ts (// features/research/lead-context.test.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L76",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_3",
+      "community": 14,
+      "norm_label": "code:ts (// features/research/lead-context.test.ts)"
+    },
+    {
+      "label": "code:ts (// features/research/lead-context.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L110",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_4",
+      "community": 14,
+      "norm_label": "code:ts (// features/research/lead-context.ts)"
+    },
+    {
+      "label": "code:bash (git add features/research/lead-context.ts features/research/)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L159",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_5",
+      "community": 14,
+      "norm_label": "code:bash (git add features/research/lead-context.ts features/research/)"
+    },
+    {
+      "label": "Task 3: Append the context block in `runResearchFn` (CONTENT only)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L166",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "community": 14,
+      "norm_label": "task 3: append the context block in `runresearchfn` (content only)"
+    },
+    {
+      "label": "code:ts (import {buildLeadContextBlock} from \"@/features/research/lea)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L175",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_6",
+      "community": 14,
+      "norm_label": "code:ts (import {buildleadcontextblock} from \"@/features/research/lea)"
+    },
+    {
+      "label": "code:ts (const result = await step.run(\"anthropic\", () => {)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L183",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_7",
+      "community": 14,
+      "norm_label": "code:ts (const result = await step.run(\"anthropic\", () => {)"
+    },
+    {
+      "label": "code:ts (const result = await step.run(\"anthropic\", () => {)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L192",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_8",
+      "community": 14,
+      "norm_label": "code:ts (const result = await step.run(\"anthropic\", () => {)"
+    },
+    {
+      "label": "code:bash (git add lib/inngest/research.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L213",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_9",
+      "community": 14,
+      "norm_label": "code:bash (git add lib/inngest/research.ts)"
+    },
+    {
+      "label": "Task 4: `kind` enum += CONTENT + CONTENT refine",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L220",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "community": 14,
+      "norm_label": "task 4: `kind` enum += content + content refine"
+    },
+    {
+      "label": "code:ts (kind: z.enum([\"RESEARCH\", \"SCORING\", \"CONTENT\"]).default(\"RE)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L230",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_10",
+      "community": 14,
+      "norm_label": "code:ts (kind: z.enum([\"research\", \"scoring\", \"content\"]).default(\"re)"
+    },
+    {
+      "label": "code:ts (.refine((d) => d.kind !== \"CONTENT\" || d.outputFields.some(()",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L236",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_11",
+      "community": 14,
+      "norm_label": "code:ts (.refine((d) => d.kind !== \"content\" || d.outputfields.some(()"
+    },
+    {
+      "label": "code:ts (it(\"rejects a CONTENT type without an aiHook or CUSTOM outpu)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L247",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_12",
+      "community": 14,
+      "norm_label": "code:ts (it(\"rejects a content type without an aihook or custom outpu)"
+    },
+    {
+      "label": "code:bash (git add features/research-types/schema.ts features/research-)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L274",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_13",
+      "community": 14,
+      "norm_label": "code:bash (git add features/research-types/schema.ts features/research-)"
+    },
+    {
+      "label": "Task 5: UI \u2014 selector option, badge, picker labels",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L281",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "community": 14,
+      "norm_label": "task 5: ui \u2014 selector option, badge, picker labels"
+    },
+    {
+      "label": "code:ts (kind: \"RESEARCH\" | \"SCORING\" | \"CONTENT\")",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L293",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_14",
+      "community": 14,
+      "norm_label": "code:ts (kind: \"research\" | \"scoring\" | \"content\")"
+    },
+    {
+      "label": "code:tsx (<option value=\"SCORING\">Ocena (scoring)</option>)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L300",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_15",
+      "community": 14,
+      "norm_label": "code:tsx (<option value=\"scoring\">ocena (scoring)</option>)"
+    },
+    {
+      "label": "code:tsx (<option value=\"SCORING\">Ocena (scoring)</option>)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L304",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_16",
+      "community": 14,
+      "norm_label": "code:tsx (<option value=\"scoring\">ocena (scoring)</option>)"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? <span className=\"ml-1 rounded bg-amb)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L314",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_17",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? <span classname=\"ml-1 rounded bg-amb)"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? <span className=\"ml-1 rounded bg-amb)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L318",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_18",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? <span classname=\"ml-1 rounded bg-amb)"
+    },
+    {
+      "label": "code:ts (kind: \"RESEARCH\" | \"SCORING\" | \"CONTENT\")",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L327",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_19",
+      "community": 14,
+      "norm_label": "code:ts (kind: \"research\" | \"scoring\" | \"content\")"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? \"[Ocena] \" : \"\"})",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L334",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_20",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? \"[ocena] \" : \"\"})"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? \"[Ocena] \" : t.kind === \"CONTENT\" ? )",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L338",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_21",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? \"[ocena] \" : t.kind === \"content\" ? )"
+    },
+    {
+      "label": "code:ts (kind: \"RESEARCH\" | \"SCORING\" | \"CONTENT\")",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L346",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_22",
+      "community": 14,
+      "norm_label": "code:ts (kind: \"research\" | \"scoring\" | \"content\")"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? \"[Ocena] \" : \"\"})",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L353",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_23",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? \"[ocena] \" : \"\"})"
+    },
+    {
+      "label": "code:tsx ({t.kind === \"SCORING\" ? \"[Ocena] \" : t.kind === \"CONTENT\" ? )",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L357",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_24",
+      "community": 14,
+      "norm_label": "code:tsx ({t.kind === \"scoring\" ? \"[ocena] \" : t.kind === \"content\" ? )"
+    },
+    {
+      "label": "code:bash (git add \"app/(app)/badania/research-type-form.tsx\" \"app/(app)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L368",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_25",
+      "community": 14,
+      "norm_label": "code:bash (git add \"app/(app)/badania/research-type-form.tsx\" \"app/(app)"
+    },
+    {
+      "label": "Task 6: Full gates + ROADMAP + graph",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L375",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_task_6_full_gates_roadmap_graph",
+      "community": 14,
+      "norm_label": "task 6: full gates + roadmap + graph"
+    },
+    {
+      "label": "code:bash (git add docs/superpowers/ROADMAP.md graphify-out)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L406",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_26",
+      "community": 14,
+      "norm_label": "code:bash (git add docs/superpowers/roadmap.md graphify-out)"
+    },
+    {
+      "label": "Self-Review",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L413",
+      "id": "plans_2026_06_08_phase_2d_2_content_writing_self_review",
+      "community": 14,
+      "norm_label": "self-review"
+    },
+    {
       "label": "2026-06-08-phase-6-sales-pipeline.md",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-06-08-phase-6-sales-pipeline.md",
@@ -37720,6 +38107,105 @@
       "norm_label": "risks / notes"
     },
     {
+      "label": "2026-06-08-phase-2d-2-content-writing-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_specs_2026_06_08_phase_2d_2_content_writing_design_md",
+      "community": 111,
+      "norm_label": "2026-06-08-phase-2d-2-content-writing-design.md"
+    },
+    {
+      "label": "Phase 2d-2 \u2014 AI content writing (hook + placeholder fields) \u2014 Design",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L1",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "community": 111,
+      "norm_label": "phase 2d-2 \u2014 ai content writing (hook + placeholder fields) \u2014 design"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L9",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_goal",
+      "community": 111,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Key decisions (from the brainstorm)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L17",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_key_decisions_from_the_brainstorm",
+      "community": 111,
+      "norm_label": "key decisions (from the brainstorm)"
+    },
+    {
+      "label": "Data model (migration `phase2d2_content`)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L27",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_data_model_migration_phase2d2_content",
+      "community": 111,
+      "norm_label": "data model (migration `phase2d2_content`)"
+    },
+    {
+      "label": "Prompt context block (the only real engine change)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L34",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_prompt_context_block_the_only_real_engine_change",
+      "community": 111,
+      "norm_label": "prompt context block (the only real engine change)"
+    },
+    {
+      "label": "Config + validation (2a)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L54",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_config_validation_2a",
+      "community": 111,
+      "norm_label": "config + validation (2a)"
+    },
+    {
+      "label": "UX / reuse",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L65",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_ux_reuse",
+      "community": 111,
+      "norm_label": "ux / reuse"
+    },
+    {
+      "label": "Modules / files",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L74",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_modules_files",
+      "community": 111,
+      "norm_label": "modules / files"
+    },
+    {
+      "label": "Testing",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L87",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_testing",
+      "community": 111,
+      "norm_label": "testing"
+    },
+    {
+      "label": "Risks / notes",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L97",
+      "id": "specs_2026_06_08_phase_2d_2_content_writing_design_risks_notes",
+      "community": 111,
+      "norm_label": "risks / notes"
+    },
+    {
       "label": "2026-06-08-phase-6-sales-pipeline-design.md",
       "file_type": "document",
       "source_file": "docs/superpowers/specs/2026-06-08-phase-6-sales-pipeline-design.md",
@@ -37895,7 +38381,7 @@
       "file_type": "code",
       "source_file": "features/replies/queries.ts",
       "source_location": "L22",
-      "community": 139,
+      "community": 117,
       "norm_label": "recordreplyinput",
       "id": "replies_queries_recordreplyinput"
     },
@@ -37904,7 +38390,7 @@
       "file_type": "code",
       "source_file": "features/replies/queries.ts",
       "source_location": "L34",
-      "community": 139,
+      "community": 117,
       "norm_label": "recordreply()",
       "id": "replies_queries_recordreply"
     },
@@ -37913,7 +38399,7 @@
       "file_type": "code",
       "source_file": "lib/inngest/sending.ts",
       "source_location": "L9",
-      "community": 122,
+      "community": 88,
       "norm_label": "sendcampaignemail",
       "id": "inngest_sending_sendcampaignemail"
     },
@@ -38620,7 +39106,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 3,
       "norm_label": "sequencestep (template + delaydays + condition)",
       "id": "model_sequence_step"
     },
@@ -38659,7 +39145,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 3,
       "norm_label": "template (shared team library, {{tokens}})",
       "id": "model_template"
     },
@@ -38971,7 +39457,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 3,
       "norm_label": "sequence builder + lead assignment (phase 3 timeline only)",
       "id": "concept_sequence_builder"
     },
@@ -39114,7 +39600,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 48,
+      "community": 50,
       "norm_label": "security (oauth tokens encrypted, minimal gmail scopes, allowlist)",
       "id": "cc_security_tokens"
     },
@@ -44391,9 +44877,9 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_actions_ts",
-      "target": "features_leads_score_fields_ts",
-      "confidence_score": 1.0
+      "target": "features_leads_score_fields_ts"
     },
     {
       "relation": "imports",
@@ -44402,9 +44888,9 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_actions_ts",
-      "target": "leads_score_fields_parsescorefields",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_parsescorefields"
     },
     {
       "relation": "contains",
@@ -44959,9 +45445,9 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_test_ts",
-      "target": "features_leads_score_fields_ts",
-      "confidence_score": 1.0
+      "target": "features_leads_score_fields_ts"
     },
     {
       "relation": "imports",
@@ -44970,9 +45456,9 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_test_ts",
-      "target": "leads_score_fields_parsescorefields",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_parsescorefields"
     },
     {
       "relation": "contains",
@@ -44980,9 +45466,9 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_test_ts",
-      "target": "leads_score_fields_test_from",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_test_from"
     },
     {
       "relation": "contains",
@@ -44990,9 +45476,9 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_test_ts",
-      "target": "leads_score_fields_test_r",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_test_r"
     },
     {
       "relation": "contains",
@@ -45000,9 +45486,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_ts",
-      "target": "leads_score_fields_scorefields",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_scorefields"
     },
     {
       "relation": "contains",
@@ -45010,9 +45496,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_ts",
-      "target": "leads_score_fields_clampint",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_clampint"
     },
     {
       "relation": "contains",
@@ -45020,9 +45506,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_ts",
-      "target": "leads_score_fields_text",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_text"
     },
     {
       "relation": "contains",
@@ -45030,9 +45516,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_score_fields_ts",
-      "target": "leads_score_fields_parsescorefields",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_parsescorefields"
     },
     {
       "relation": "calls",
@@ -45041,9 +45527,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "leads_score_fields_parsescorefields",
-      "target": "leads_score_fields_clampint",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_clampint"
     },
     {
       "relation": "calls",
@@ -45052,9 +45538,9 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "leads_score_fields_parsescorefields",
-      "target": "leads_score_fields_text",
-      "confidence_score": 1.0
+      "target": "leads_score_fields_text"
     },
     {
       "relation": "imports_from",
@@ -47756,9 +48242,9 @@
       "source_file": "features/research/apply.test.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_research_apply_test_ts",
-      "target": "research_apply_test_high",
-      "confidence_score": 1.0
+      "target": "research_apply_test_high"
     },
     {
       "relation": "contains",
@@ -47766,9 +48252,9 @@
       "source_file": "features/research/apply.test.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_research_apply_test_ts",
-      "target": "research_apply_test_low",
-      "confidence_score": 1.0
+      "target": "research_apply_test_low"
     },
     {
       "relation": "contains",
@@ -47776,9 +48262,9 @@
       "source_file": "features/research/apply.test.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_research_apply_test_ts",
-      "target": "research_apply_test_round",
-      "confidence_score": 1.0
+      "target": "research_apply_test_round"
     },
     {
       "relation": "contains",
@@ -47786,9 +48272,9 @@
       "source_file": "features/research/apply.test.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_research_apply_test_ts",
-      "target": "research_apply_test_set",
-      "confidence_score": 1.0
+      "target": "research_apply_test_set"
     },
     {
       "relation": "contains",
@@ -48936,6 +49422,111 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_research_lead_context_test_ts",
+      "target": "features_research_lead_context_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_research_lead_context_test_ts",
+      "target": "research_lead_context_buildleadcontextblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "features_research_lead_context_test_ts",
+      "target": "research_lead_context_test_empty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.test.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "features_research_lead_context_test_ts",
+      "target": "research_lead_context_test_block",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "features_research_lead_context_ts",
+      "target": "research_lead_context_leadcontextinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "features_research_lead_context_ts",
+      "target": "research_lead_context_present",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "features_research_lead_context_ts",
+      "target": "research_lead_context_buildleadcontextblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/research.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_research_ts",
+      "target": "features_research_lead_context_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/research/lead-context.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "research_lead_context_buildleadcontextblock",
+      "target": "research_lead_context_present",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/inngest/research.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_inngest_research_ts",
+      "target": "research_lead_context_buildleadcontextblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "features/research/model.test.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -49818,9 +50409,9 @@
       "source_file": "features/research-types/targets.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_research_types_targets_test_ts",
-      "target": "research_types_targets_lead_targets",
-      "confidence_score": 1.0
+      "target": "research_types_targets_lead_targets"
     },
     {
       "relation": "contains",
@@ -52695,9 +53286,9 @@
       "source_file": "generated/prisma/commonInputTypes.ts",
       "source_location": "L389",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_commoninputtypes_ts",
-      "target": "prisma_commoninputtypes_enumresearchtypekindfilter",
-      "confidence_score": 1.0
+      "target": "prisma_commoninputtypes_enumresearchtypekindfilter"
     },
     {
       "relation": "contains",
@@ -52725,9 +53316,9 @@
       "source_file": "generated/prisma/commonInputTypes.ts",
       "source_location": "L423",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_commoninputtypes_ts",
-      "target": "prisma_commoninputtypes_enumresearchtypekindwithaggregatesfilter",
-      "confidence_score": 1.0
+      "target": "prisma_commoninputtypes_enumresearchtypekindwithaggregatesfilter"
     },
     {
       "relation": "contains",
@@ -53355,9 +53946,9 @@
       "source_file": "generated/prisma/commonInputTypes.ts",
       "source_location": "L1028",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_commoninputtypes_ts",
-      "target": "prisma_commoninputtypes_nestedenumresearchtypekindfilter",
-      "confidence_score": 1.0
+      "target": "prisma_commoninputtypes_nestedenumresearchtypekindfilter"
     },
     {
       "relation": "contains",
@@ -53385,9 +53976,9 @@
       "source_file": "generated/prisma/commonInputTypes.ts",
       "source_location": "L1059",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_commoninputtypes_ts",
-      "target": "prisma_commoninputtypes_nestedenumresearchtypekindwithaggregatesfilter",
-      "confidence_score": 1.0
+      "target": "prisma_commoninputtypes_nestedenumresearchtypekindwithaggregatesfilter"
     },
     {
       "relation": "contains",
@@ -53855,9 +54446,9 @@
       "source_file": "generated/prisma/enums.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_enums_ts",
-      "target": "prisma_enums_researchtypekind",
-      "confidence_score": 1.0
+      "target": "prisma_enums_researchtypekind"
     },
     {
       "relation": "contains",
@@ -55468,9 +56059,9 @@
       "source_file": "generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L2510",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_internal_prismanamespace_ts",
-      "target": "internal_prismanamespace_enumresearchtypekindfieldrefinput",
-      "confidence_score": 1.0
+      "target": "internal_prismanamespace_enumresearchtypekindfieldrefinput"
     },
     {
       "relation": "contains",
@@ -55478,9 +56069,9 @@
       "source_file": "generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L2517",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_internal_prismanamespace_ts",
-      "target": "internal_prismanamespace_listenumresearchtypekindfieldrefinput",
-      "confidence_score": 1.0
+      "target": "internal_prismanamespace_listenumresearchtypekindfieldrefinput"
     },
     {
       "relation": "contains",
@@ -72689,9 +73280,9 @@
       "source_file": "generated/prisma/models/ResearchType.ts",
       "source_location": "L557",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generated_prisma_models_researchtype_ts",
-      "target": "models_researchtype_enumresearchtypekindfieldupdateoperationsinput",
-      "confidence_score": 1.0
+      "target": "models_researchtype_enumresearchtypekindfieldupdateoperationsinput"
     },
     {
       "relation": "contains",
@@ -85255,9 +85846,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_06_08_phase_2d_1_scoring_md",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan"
     },
     {
       "relation": "contains",
@@ -85265,9 +85856,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_file_structure",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_file_structure"
     },
     {
       "relation": "contains",
@@ -85275,9 +85866,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema"
     },
     {
       "relation": "contains",
@@ -85285,9 +85876,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion"
     },
     {
       "relation": "contains",
@@ -85295,9 +85886,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions"
     },
     {
       "relation": "contains",
@@ -85305,9 +85896,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L309",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form"
     },
     {
       "relation": "contains",
@@ -85315,9 +85906,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L365",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_5_ocena_badge_on_badania",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_5_ocena_badge_on_badania"
     },
     {
       "relation": "contains",
@@ -85325,9 +85916,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L403",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_6_pure_parsescorefields",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_6_pure_parsescorefields"
     },
     {
       "relation": "contains",
@@ -85335,9 +85926,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L495",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override"
     },
     {
       "relation": "contains",
@@ -85345,9 +85936,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L629",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter"
     },
     {
       "relation": "contains",
@@ -85355,9 +85946,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L706",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge"
     },
     {
       "relation": "contains",
@@ -85365,9 +85956,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L777",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers"
     },
     {
       "relation": "contains",
@@ -85375,9 +85966,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L871",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_task_11_full_gates_roadmap_graph",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_task_11_full_gates_roadmap_graph"
     },
     {
       "relation": "contains",
@@ -85385,9 +85976,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L909",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_phase_2d_1_lead_scoring_implementation_plan",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_self_review",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_self_review"
     },
     {
       "relation": "contains",
@@ -85395,9 +85986,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_1",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_1"
     },
     {
       "relation": "contains",
@@ -85405,9 +85996,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_2",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_2"
     },
     {
       "relation": "contains",
@@ -85415,9 +86006,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_3",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_3"
     },
     {
       "relation": "contains",
@@ -85425,9 +86016,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_1_migration_schema",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_4",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_4"
     },
     {
       "relation": "contains",
@@ -85435,9 +86026,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_5",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_5"
     },
     {
       "relation": "contains",
@@ -85445,9 +86036,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_6",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_6"
     },
     {
       "relation": "contains",
@@ -85455,9 +86046,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L143",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_7",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_7"
     },
     {
       "relation": "contains",
@@ -85465,9 +86056,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_8",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_8"
     },
     {
       "relation": "contains",
@@ -85475,9 +86066,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_9",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_9"
     },
     {
       "relation": "contains",
@@ -85485,9 +86076,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_10",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_10"
     },
     {
       "relation": "contains",
@@ -85495,9 +86086,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L177",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_11",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_11"
     },
     {
       "relation": "contains",
@@ -85505,9 +86096,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_12",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_12"
     },
     {
       "relation": "contains",
@@ -85515,9 +86106,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L207",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_2_score_output_target_engine_coercion",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_13",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_13"
     },
     {
       "relation": "contains",
@@ -85525,9 +86116,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_14",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_14"
     },
     {
       "relation": "contains",
@@ -85535,9 +86126,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L231",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_15",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_15"
     },
     {
       "relation": "contains",
@@ -85545,9 +86136,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_16",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_16"
     },
     {
       "relation": "contains",
@@ -85555,9 +86146,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L282",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_17",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_17"
     },
     {
       "relation": "contains",
@@ -85565,9 +86156,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_3_kind_in_the_research_type_schema_actions",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_18",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_18"
     },
     {
       "relation": "contains",
@@ -85575,9 +86166,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L319",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_19",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_19"
     },
     {
       "relation": "contains",
@@ -85585,9 +86176,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L327",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_20",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_20"
     },
     {
       "relation": "contains",
@@ -85595,9 +86186,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L342",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_21",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_21"
     },
     {
       "relation": "contains",
@@ -85605,9 +86196,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L358",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_4_kind_selector_in_the_research_type_form",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_22",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_22"
     },
     {
       "relation": "contains",
@@ -85615,9 +86206,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L374",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_5_ocena_badge_on_badania",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_23",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_23"
     },
     {
       "relation": "contains",
@@ -85625,9 +86216,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_5_ocena_badge_on_badania",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_24",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_24"
     },
     {
       "relation": "contains",
@@ -85635,9 +86226,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_5_ocena_badge_on_badania",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_25",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_25"
     },
     {
       "relation": "contains",
@@ -85645,9 +86236,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L411",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_6_pure_parsescorefields",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_26",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_26"
     },
     {
       "relation": "contains",
@@ -85655,9 +86246,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L447",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_6_pure_parsescorefields",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_27",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_27"
     },
     {
       "relation": "contains",
@@ -85665,9 +86256,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L488",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_6_pure_parsescorefields",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_28",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_28"
     },
     {
       "relation": "contains",
@@ -85675,9 +86266,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L508",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_29",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_29"
     },
     {
       "relation": "contains",
@@ -85685,9 +86276,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L514",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_30",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_30"
     },
     {
       "relation": "contains",
@@ -85695,9 +86286,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L523",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_31",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_31"
     },
     {
       "relation": "contains",
@@ -85705,9 +86296,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L537",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_32",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_32"
     },
     {
       "relation": "contains",
@@ -85715,9 +86306,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L557",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_33",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_33"
     },
     {
       "relation": "contains",
@@ -85725,9 +86316,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L586",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_34",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_34"
     },
     {
       "relation": "contains",
@@ -85735,9 +86326,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L606",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_35",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_35"
     },
     {
       "relation": "contains",
@@ -85745,9 +86336,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L612",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_36",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_36"
     },
     {
       "relation": "contains",
@@ -85755,9 +86346,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L622",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_7_editable_score_fields_on_the_lead_card_override",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_37",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_37"
     },
     {
       "relation": "contains",
@@ -85765,9 +86356,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L638",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_38",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_38"
     },
     {
       "relation": "contains",
@@ -85775,9 +86366,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L646",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_39",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_39"
     },
     {
       "relation": "contains",
@@ -85785,9 +86376,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L653",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_40",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_40"
     },
     {
       "relation": "contains",
@@ -85795,9 +86386,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L662",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_41",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_41"
     },
     {
       "relation": "contains",
@@ -85805,9 +86396,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L668",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_42",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_42"
     },
     {
       "relation": "contains",
@@ -85815,9 +86406,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L676",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_43",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_43"
     },
     {
       "relation": "contains",
@@ -85825,9 +86416,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L682",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_44",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_44"
     },
     {
       "relation": "contains",
@@ -85835,9 +86426,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L688",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_45",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_45"
     },
     {
       "relation": "contains",
@@ -85845,9 +86436,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L699",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_8_leady_score_column_sort_min_score_filter",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_46",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_46"
     },
     {
       "relation": "contains",
@@ -85855,9 +86446,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L717",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_47",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_47"
     },
     {
       "relation": "contains",
@@ -85865,9 +86456,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L725",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_48",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_48"
     },
     {
       "relation": "contains",
@@ -85875,9 +86466,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L738",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_49",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_49"
     },
     {
       "relation": "contains",
@@ -85885,9 +86476,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L748",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_50",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_50"
     },
     {
       "relation": "contains",
@@ -85895,9 +86486,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L757",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_51",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_51"
     },
     {
       "relation": "contains",
@@ -85905,9 +86496,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L770",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_9_pipeline_score_badge",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_52",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_52"
     },
     {
       "relation": "contains",
@@ -85915,9 +86506,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L789",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_53",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_53"
     },
     {
       "relation": "contains",
@@ -85925,9 +86516,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L799",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_54",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_54"
     },
     {
       "relation": "contains",
@@ -85935,9 +86526,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L807",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_55",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_55"
     },
     {
       "relation": "contains",
@@ -85945,9 +86536,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L818",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_56",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_56"
     },
     {
       "relation": "contains",
@@ -85955,9 +86546,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L826",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_57",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_57"
     },
     {
       "relation": "contains",
@@ -85965,9 +86556,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L836",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_58",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_58"
     },
     {
       "relation": "contains",
@@ -85975,9 +86566,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L844",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_59",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_59"
     },
     {
       "relation": "contains",
@@ -85985,9 +86576,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L855",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_60",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_60"
     },
     {
       "relation": "contains",
@@ -85995,9 +86586,9 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L864",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_10_ocena_labels_in_the_run_batch_pickers",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_61",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_61"
     },
     {
       "relation": "contains",
@@ -86005,8 +86596,358 @@
       "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-1-scoring.md",
       "source_location": "L902",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_08_phase_2d_1_scoring_task_11_full_gates_roadmap_graph",
-      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_62",
+      "target": "plans_2026_06_08_phase_2d_1_scoring_codeblock_62"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_06_08_phase_2d_2_content_writing_md",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_file_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_1_migration_content_enum_value",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_2_pure_buildleadcontextblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L220",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L281",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L375",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_task_6_full_gates_roadmap_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L413",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_phase_2d_2_ai_content_writing_implementation_plan",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_self_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_1_migration_content_enum_value",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_1_migration_content_enum_value",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_2_pure_buildleadcontextblock",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_2_pure_buildleadcontextblock",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_2_pure_buildleadcontextblock",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_7",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_3_append_the_context_block_in_runresearchfn_content_only",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_10",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L236",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_11",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_12",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L274",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_4_kind_enum_content_content_refine",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_13",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L293",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_14",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L300",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_15",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_16",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_17",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_18",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L327",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_19",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L334",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_20",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L338",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_21",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L346",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_22",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L353",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_23",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L357",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_24",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L368",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_5_ui_selector_option_badge_picker_labels",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_25",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-08-phase-2d-2-content-writing.md",
+      "source_location": "L406",
+      "weight": 1.0,
+      "source": "plans_2026_06_08_phase_2d_2_content_writing_task_6_full_gates_roadmap_graph",
+      "target": "plans_2026_06_08_phase_2d_2_content_writing_codeblock_26",
       "confidence_score": 1.0
     },
     {
@@ -87905,9 +88846,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_06_08_phase_2d_1_scoring_design_md",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design"
     },
     {
       "relation": "contains",
@@ -87915,9 +88856,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_goal",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_goal"
     },
     {
       "relation": "contains",
@@ -87925,9 +88866,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_key_decisions_from_the_brainstorm",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_key_decisions_from_the_brainstorm"
     },
     {
       "relation": "contains",
@@ -87935,9 +88876,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_data_model_migration_phase2d_scoring",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_data_model_migration_phase2d_scoring"
     },
     {
       "relation": "contains",
@@ -87945,9 +88886,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_scoring_as_a_research_type_variant_2a_config",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_scoring_as_a_research_type_variant_2a_config"
     },
     {
       "relation": "contains",
@@ -87955,9 +88896,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_engine_shared_with_2b_2c_only_the_score_target_is_new",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_engine_shared_with_2b_2c_only_the_score_target_is_new"
     },
     {
       "relation": "contains",
@@ -87965,9 +88906,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_run_batch_pickers_labels_only",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_run_batch_pickers_labels_only"
     },
     {
       "relation": "contains",
@@ -87975,9 +88916,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_ui_surfacing_manual_override",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_ui_surfacing_manual_override"
     },
     {
       "relation": "contains",
@@ -87985,9 +88926,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_modules_files",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_modules_files"
     },
     {
       "relation": "contains",
@@ -87995,9 +88936,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_testing",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_testing"
     },
     {
       "relation": "contains",
@@ -88005,9 +88946,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_error_handling_edge_cases",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_error_handling_edge_cases"
     },
     {
       "relation": "contains",
@@ -88015,9 +88956,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_phase_2d_1_lead_scoring_prioritization_design",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_risks_notes",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_risks_notes"
     },
     {
       "relation": "contains",
@@ -88025,9 +88966,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_ui_surfacing_manual_override",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_lead_card_leady_id",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_lead_card_leady_id"
     },
     {
       "relation": "contains",
@@ -88035,9 +88976,9 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_ui_surfacing_manual_override",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_leady_list",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_leady_list"
     },
     {
       "relation": "contains",
@@ -88045,8 +88986,108 @@
       "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-1-scoring-design.md",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_08_phase_2d_1_scoring_design_ui_surfacing_manual_override",
-      "target": "specs_2026_06_08_phase_2d_1_scoring_design_pipeline",
+      "target": "specs_2026_06_08_phase_2d_1_scoring_design_pipeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_06_08_phase_2d_2_content_writing_design_md",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_goal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_key_decisions_from_the_brainstorm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_data_model_migration_phase2d2_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_prompt_context_block_the_only_real_engine_change",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_config_validation_2a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_ux_reuse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_modules_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-08-phase-2d-2-content-writing-design.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "specs_2026_06_08_phase_2d_2_content_writing_design_phase_2d_2_ai_content_writing_hook_placeholder_fields_design",
+      "target": "specs_2026_06_08_phase_2d_2_content_writing_design_risks_notes",
       "confidence_score": 1.0
     },
     {
@@ -89790,5 +90831,5 @@
       "source_file": "docs/superpowers/specs/2026-05-31-phase-3-templates-placeholders-campaigns-design.md"
     }
   ],
-  "built_at_commit": "1968695092ab7136a021137194b8aece96ef5d24"
+  "built_at_commit": "546ad7abd1646d843aaad5acaa3ce03d9061b96f"
 }
