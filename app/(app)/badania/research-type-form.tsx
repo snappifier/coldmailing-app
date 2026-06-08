@@ -33,6 +33,7 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 	const initialFields = initial?.outputFields?.length ? initial.outputFields : [{...EMPTY_FIELD}]
 	const [rows, setRows] = useState<Row[]>(() => initialFields.map((field, idx) => ({id: idx, field})))
 	const [seq, setSeq] = useState(initialFields.length)
+	const [kind, setKind] = useState<Initial["kind"]>(initial?.kind ?? "RESEARCH")
 
 	useEffect(() => {
 		if (state?.ok) router.push("/badania")
@@ -64,12 +65,16 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 
 			<label className="flex flex-col gap-1 text-sm">
 				<span className="font-medium">Rodzaj</span>
-				<select className="rounded border border-zinc-300 px-2 py-1" name="kind" defaultValue={initial?.kind ?? "RESEARCH"}>
+				<select className="rounded border border-zinc-300 px-2 py-1" name="kind" value={kind} onChange={(e) => setKind(e.target.value as Initial["kind"])}>
 					<option value="RESEARCH">Research (zbieranie danych)</option>
 					<option value="SCORING">Ocena (scoring)</option>
-						<option value="CONTENT">Treść (content)</option>
+					<option value="CONTENT">Treść (content)</option>
 				</select>
-				<span className="text-xs text-zinc-500">Typ oceny powinien mieć pole z celem score (0-100), opcjonalnie priority (1-5) i uzasadnienie (np. aiNotes).</span>
+				{kind === "SCORING" ? (
+					<span className="text-xs text-zinc-500">Typ oceny musi mieć pole z celem score (0-100); opcjonalnie priority (1-5) i uzasadnienie (np. aiNotes).</span>
+				) : kind === "CONTENT" ? (
+					<span className="text-xs text-zinc-500">Typ treści musi mieć pole z celem aiHook lub pole własne (CUSTOM); opcjonalnie włącz web search, by odświeżyć research.</span>
+				) : null}
 			</label>
 
 			<label className="flex flex-col gap-1 text-sm">
