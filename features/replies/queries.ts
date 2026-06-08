@@ -37,6 +37,8 @@ export interface RecordInboundInput {
 // Persist the inbound message with its classification and apply the per-type side effects atomically.
 export async function recordInbound(input: RecordInboundInput): Promise<void> {
 	await prisma.$transaction(async (tx) => {
+		const existing = await tx.message.findFirst({where: {gmailMessageId: input.gmailMessageId, direction: "INBOUND"}, select: {id: true}})
+		if (existing) return
 		await tx.message.create({
 			data: {
 				organizationId: input.organizationId,
