@@ -17,7 +17,7 @@ interface DiffField {
 	reason?: string
 }
 interface RunView {
-	status: "QUEUED" | "RUNNING" | "DONE" | "FAILED"
+	status: "QUEUED" | "RUNNING" | "DONE" | "FAILED" | "CANCELLED"
 	error: string | null
 	diff: {applied: DiffField[]; proposed: DiffField[]; skipped: DiffField[]} | null
 }

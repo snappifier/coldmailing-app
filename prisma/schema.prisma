@@ -129,6 +129,7 @@ model Organization {
 	leadActivities LeadActivity[]
 	researchTypes  ResearchType[]
 	researchRuns   ResearchRun[]
+	researchBatches ResearchBatch[]
 }
 
 model User {
@@ -148,6 +149,7 @@ model User {
 	campaigns    Campaign[]    @relation("CampaignCreatedBy")
 	researchTypes ResearchType[] @relation("ResearchTypeCreatedBy")
 	researchRuns ResearchRun[] @relation("ResearchRunCreatedBy")
+	researchBatches ResearchBatch[] @relation("ResearchBatchCreatedBy")
 }
 
 model Account {
@@ -320,6 +322,7 @@ model ResearchType {
 	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 	createdBy    User?        @relation("ResearchTypeCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
 	runs         ResearchRun[]
+	batches      ResearchBatch[]
 
 	@@unique([organizationId, name])
 }
@@ -329,11 +332,20 @@ enum ResearchRunStatus {
 	RUNNING
 	DONE
 	FAILED
+	CANCELLED
 }
 
 enum ResearchApplyMode {
 	AUTO
 	MANUAL
+}
+
+enum ResearchBatchStatus {
+	QUEUED
+	RUNNING
+	DONE
+	PARTIAL
+	CANCELLED
 }
 
 model ResearchRun {
@@ -347,6 +359,11 @@ model ResearchRun {
 	status           ResearchRunStatus @default(QUEUED)
 	findings         Json?
 	diff             Json?
+	batchId                  String?
+	promptSnapshot           String?
+	outputFieldsSnapshot     Json?
+	webSearchEnabledSnapshot Boolean?
+	modelIdSnapshot          String?
 	error            String?
 	createdById      String?
 	createdAt        DateTime          @default(now())
@@ -357,8 +374,38 @@ model ResearchRun {
 	lead         Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
 	researchType ResearchType? @relation(fields: [researchTypeId], references: [id], onDelete: SetNull)
 	createdBy    User?         @relation("ResearchRunCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	batch        ResearchBatch? @relation(fields: [batchId], references: [id], onDelete: SetNull)
 
 	@@index([organizationId, leadId])
+	@@index([organizationId, batchId])
+}
+
+model ResearchBatch {
+	id                   String              @id @default(cuid())
+	organizationId       String
+	researchTypeId       String?
+	researchTypeName     String
+	promptSnapshot       String
+	outputFieldsSnapshot Json
+	modelIdSnapshot      String?
+	webSearchEnabled     Boolean
+	mode                 ResearchApplyMode   @default(AUTO)
+	status               ResearchBatchStatus @default(QUEUED)
+	criteria             Json
+	includeRecent        Boolean             @default(false)
+	total                Int                 @default(0)
+	createdById          String?
+	createdAt            DateTime            @default(now())
+	updatedAt            DateTime            @updatedAt
+	startedAt            DateTime?
+	completedAt          DateTime?
+
+	organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	researchType ResearchType? @relation(fields: [researchTypeId], references: [id], onDelete: SetNull)
+	createdBy    User?         @relation("ResearchBatchCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	runs         ResearchRun[]
+
+	@@index([organizationId, createdAt])
 }
 
 model Campaign {
