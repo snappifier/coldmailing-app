@@ -12,9 +12,10 @@ interface RunArgs {
 	inputSchema: object
 	modelId: string | null
 	webSearchEnabled: boolean
+	system?: string
 }
 
-export async function runResearch({renderedPrompt, inputSchema, modelId, webSearchEnabled}: RunArgs): Promise<EngineResult> {
+export async function runResearch({renderedPrompt, inputSchema, modelId, webSearchEnabled, system}: RunArgs): Promise<EngineResult> {
 	if (!process.env.ANTHROPIC_API_KEY) return {ok: false, error: "Brak ANTHROPIC_API_KEY"}
 
 	const client = new Anthropic()
@@ -33,7 +34,7 @@ export async function runResearch({renderedPrompt, inputSchema, modelId, webSear
 			const res = await client.messages.create({
 				model,
 				max_tokens: 16000,
-				system: SYSTEM,
+				system: system ?? SYSTEM,
 				tools: tools as Anthropic.Messages.ToolUnion[],
 				messages,
 				...tuningForModel(model),
