@@ -50,6 +50,16 @@ export async function runResearch({renderedPrompt, inputSchema, modelId, webSear
 		}
 		return {ok: false, error: "Przekroczono limit iteracji researchu"}
 	} catch (e) {
+		// Anthropic has no balance API, so a low/empty key budget only surfaces when a call
+		// actually fails on billing -> turn that into a clear, distinct warning.
+		if (e instanceof Anthropic.RateLimitError) return {ok: false, error: "Limit zapytań Anthropic przekroczony — spróbuj ponownie później."}
+		if (e instanceof Anthropic.APIError) {
+			const type = (e as {type?: string}).type
+			if (type === "billing_error" || /credit|balance|billing|insufficient|budget/i.test(e.message)) {
+				return {ok: false, error: "Środki/budżet na kluczu API Anthropic wyczerpane lub przekroczony limit wydatków — uzupełnij w konsoli Anthropic."}
+			}
+			return {ok: false, error: `Błąd API Anthropic (${e.status}): ${e.message}`}
+		}
 		return {ok: false, error: e instanceof Error ? e.message : "Błąd API"}
 	}
 }
