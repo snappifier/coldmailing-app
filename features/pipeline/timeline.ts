@@ -33,6 +33,7 @@ const MANUAL_LABEL: Record<Exclude<LeadActivityKind, "STAGE_CHANGE">, string> = 
 	CALL: "Telefon",
 	MEETING: "Spotkanie",
 	OFFER_SENT: "Oferta wysłana",
+	RESEARCH: "Research",
 }
 
 export function messageToTimelineItem(m: MessageLike): TimelineItem {

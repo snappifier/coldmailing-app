@@ -128,6 +128,7 @@ model Organization {
 	messages       Message[]
 	leadActivities LeadActivity[]
 	researchTypes  ResearchType[]
+	researchRuns   ResearchRun[]
 }
 
 model User {
@@ -146,6 +147,7 @@ model User {
 	placeholders Placeholder[] @relation("PlaceholderCreatedBy")
 	campaigns    Campaign[]    @relation("CampaignCreatedBy")
 	researchTypes ResearchType[] @relation("ResearchTypeCreatedBy")
+	researchRuns ResearchRun[] @relation("ResearchRunCreatedBy")
 }
 
 model Account {
@@ -244,6 +246,7 @@ model Lead {
 	owner        User?         @relation("LeadOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
 	campaignLeads CampaignLead[]
 	activities    LeadActivity[]
+	researchRuns  ResearchRun[]
 
 	@@unique([organizationId, email])
 	@@index([organizationId, dealStage])
@@ -316,8 +319,46 @@ model ResearchType {
 
 	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 	createdBy    User?        @relation("ResearchTypeCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+	runs         ResearchRun[]
 
 	@@unique([organizationId, name])
+}
+
+enum ResearchRunStatus {
+	QUEUED
+	RUNNING
+	DONE
+	FAILED
+}
+
+enum ResearchApplyMode {
+	AUTO
+	MANUAL
+}
+
+model ResearchRun {
+	id               String            @id @default(cuid())
+	organizationId   String
+	leadId           String
+	researchTypeId   String?
+	researchTypeName String
+	modelId          String?
+	mode             ResearchApplyMode @default(AUTO)
+	status           ResearchRunStatus @default(QUEUED)
+	findings         Json?
+	diff             Json?
+	error            String?
+	createdById      String?
+	createdAt        DateTime          @default(now())
+	updatedAt        DateTime          @updatedAt
+	completedAt      DateTime?
+
+	organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	lead         Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+	researchType ResearchType? @relation(fields: [researchTypeId], references: [id], onDelete: SetNull)
+	createdBy    User?         @relation("ResearchRunCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+	@@index([organizationId, leadId])
 }
 
 model Campaign {
@@ -434,6 +475,7 @@ enum LeadActivityKind {
 	MEETING
 	OFFER_SENT
 	STAGE_CHANGE
+	RESEARCH
 }
 
 model LeadActivity {

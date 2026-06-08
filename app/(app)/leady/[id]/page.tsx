@@ -5,9 +5,11 @@ import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {getLeadTimeline} from "@/features/pipeline/queries"
 import {STAGE_LABEL} from "@/features/pipeline/types"
+import {listResearchTypes} from "@/features/research-types/queries"
 import {LeadEditForm} from "./lead-edit-form"
 import {LeadTimeline} from "./timeline"
 import {ActivityForm} from "./activity-form"
+import {UruchomResearch} from "./uruchom-research"
 
 export default async function LeadEditPage({params}: {params: Promise<{id: string}>}) {
 	const {orgId} = await requireOrg()
@@ -18,6 +20,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 	const cf = (lead.customFields as Record<string, unknown> | null) ?? {}
 	const customFields = Object.entries(cf).map(([key, value]) => ({key, value: String(value ?? "")}))
 	const timeline = await getLeadTimeline(orgId, id)
+	const researchTypes = await listResearchTypes(orgId)
 
 	return (
 		<section className="flex flex-col gap-6">
@@ -47,6 +50,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 					/>
 				</div>
 				<div className="flex flex-col gap-3">
+					<UruchomResearch leadId={lead.id} types={researchTypes.map((t) => ({id: t.id, name: t.name}))} />
 					<h2 className="text-sm font-semibold text-zinc-500">Oś czasu</h2>
 					<ActivityForm leadId={lead.id} />
 					<LeadTimeline items={timeline} />

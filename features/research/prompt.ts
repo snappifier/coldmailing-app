@@ -8,7 +8,7 @@ interface PromptLead {
 	website: string | null
 	aiHook: string | null
 	honorific: "PAN" | "PANI" | null
-	customFields: Record<string, unknown> | null
+	customFields: unknown
 }
 
 export function leadToRenderContext(lead: PromptLead, senderName: string, placeholders: RenderPlaceholder[]): RenderContext {
@@ -19,7 +19,7 @@ export function leadToRenderContext(lead: PromptLead, senderName: string, placeh
 		website: lead.website,
 		aiHook: lead.aiHook,
 		honorific: lead.honorific,
-		customFields: lead.customFields,
+		customFields: (lead.customFields as Record<string, unknown> | null) ?? null,
 	}
 	return {lead: renderLead, senderName, placeholders}
 }
