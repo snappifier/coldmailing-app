@@ -80,9 +80,9 @@
     "semantic_hash": "b1a51438b272a3960ad2d53c62089e61"
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\leady\\page.tsx": {
-    "mtime": 1780232728.8717716,
-    "ast_hash": "9ecae822a3b9574e739cc40ff01d39e5",
-    "semantic_hash": "9ecae822a3b9574e739cc40ff01d39e5"
+    "mtime": 1780928023.6927152,
+    "ast_hash": "4a8dd577389e45e466cf85ea08e1dce1",
+    "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\leady\\import\\import-wizard.tsx": {
     "mtime": 1780226076.3085718,
@@ -150,8 +150,8 @@
     "semantic_hash": "822023cfc8ef05cdffd08a876e69161d"
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\api\\inngest\\route.ts": {
-    "mtime": 1780924100.1997747,
-    "ast_hash": "5a63a054f5cdef633781e5270bf65f75",
+    "mtime": 1780927918.335198,
+    "ast_hash": "665f0c673170e6f8d70addc461f15fa6",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\logowanie\\page.tsx": {
@@ -320,8 +320,8 @@
     "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\ROADMAP.md": {
-    "mtime": 1780925106.805647,
-    "ast_hash": "9de9f1e13241226c5937a3a275d7d834",
+    "mtime": 1780926576.1475973,
+    "ast_hash": "275f0973e386b08f422e781397c7fe2a",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\plans\\2026-05-30-phase-0-1-foundation-leads.md": {
@@ -440,122 +440,122 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\browser.ts": {
-    "mtime": 1780924660.192361,
-    "ast_hash": "05c9fac650a1827432c5716a70e34ed9",
+    "mtime": 1780927530.1124387,
+    "ast_hash": "02b012f7d82d4067c9640db6734732a8",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\client.ts": {
-    "mtime": 1780924660.192361,
-    "ast_hash": "04835b28b7df92253d4ceb48f2986ad2",
+    "mtime": 1780927530.1124387,
+    "ast_hash": "470e00706fb6319638d2fd4f7dc9a1c9",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\commonInputTypes.ts": {
-    "mtime": 1780924660.194361,
-    "ast_hash": "39395e2dba6c6f59fb427f5988634330",
+    "mtime": 1780927530.1124387,
+    "ast_hash": "91d57b495c1e7dd201f889160d18e1ac",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\enums.ts": {
-    "mtime": 1780924660.1933606,
-    "ast_hash": "0bd53992a2192c6e16da04ce01ed4c18",
+    "mtime": 1780927530.1124387,
+    "ast_hash": "4333eca786bfa308cf0264311174be07",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models.ts": {
-    "mtime": 1780924660.1933606,
-    "ast_hash": "cd6ae6a2f824de76d6330e1b1de9251b",
+    "mtime": 1780927530.1124387,
+    "ast_hash": "feb1888caf851893a6c14aa51059c474",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\internal\\class.ts": {
-    "mtime": 1780924660.19936,
-    "ast_hash": "4c275e908cb3fb3bdffe14ec38f48341",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "22218fae678209b5aa8f2468cc8c05e2",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\internal\\prismaNamespace.ts": {
-    "mtime": 1780924660.19936,
-    "ast_hash": "5652b405a6c01302be5aa59a50d957ef",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "62dc5f522cbc4a916312d59a9a515bc9",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts": {
-    "mtime": 1780924660.19936,
-    "ast_hash": "0290f12cdf2c8365ff8c688e279500fa",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "f02e3a75ba19cdbe8e5a91f405ffad9a",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Account.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "8127c79f7d05359eeaf6ce4e4c484671",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Campaign.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "31fec8e3353bb92cf54d8287c45887bb",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\CampaignLead.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1254926,
     "ast_hash": "26106e63a4b1ccea3cc515dec7edb11d",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\EmailAccount.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1254926,
     "ast_hash": "c8f7c1f909ff3281ef9444ac494dff7c",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Lead.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "78f7cb5befd8ecc112a75d3755ae3806",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Membership.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "c784070a65d3545ba0c85239f694060e",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Message.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1254926,
     "ast_hash": "f1043cc4a378c15cd6d6fe14b77066ed",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\OfferingLine.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "c36108ae5539b8b4e68da71587ac70b5",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Organization.ts": {
-    "mtime": 1780924660.2073598,
-    "ast_hash": "558b4c6ffb9c4be2c18b33b508481ca9",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "164d95473b3d47bf3b27b250dd0598c0",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Placeholder.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "32ab7ceaf0b23f4025a1792e2cd34d61",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\SequenceStep.ts": {
-    "mtime": 1780924660.2073598,
-    "ast_hash": "eb44494dfd18992d3dc8eee888abf5a6",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "2abae3fbe5cf81295b0088aaebb7b32b",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Session.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "d869ae2a7ac94b6ddceaa8b8c58ef4f4",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Suppression.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "debdb760dfa6addb69e01a216ca09253",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\Template.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "2ba893872d8c3b134fd729e1ae6c8c02",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\User.ts": {
-    "mtime": 1780924660.2073598,
-    "ast_hash": "76f207ae68e02fd0ad37fa9a44e544cc",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "f66170de8ab0a6f9ba6535c11ab64762",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\VerificationToken.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1244836,
     "ast_hash": "570669f728195dd68bddd52f45586118",
     "semantic_hash": ""
   },
@@ -780,8 +780,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\badania\\page.tsx": {
-    "mtime": 1780920571.9145,
-    "ast_hash": "b5489d84239dd5d7b6e05ff68b4e68f6",
+    "mtime": 1780928108.8746397,
+    "ast_hash": "1869fb5a52a51abadb5eadb7b9de0c35",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\badania\\research-type-form.tsx": {
@@ -905,13 +905,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\LeadActivity.ts": {
-    "mtime": 1780924660.2073598,
+    "mtime": 1780927530.1254926,
     "ast_hash": "35ecc7fc1a294d6b9f1a62e80881bbae",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\ResearchType.ts": {
-    "mtime": 1780924660.2073598,
-    "ast_hash": "57f57235905f3b867d7645379d94642f",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "c7bda37796df086c8210479d77919b25",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\prisma\\migrations\\20260608092524_phase6_pipeline\\migration.sql": {
@@ -1020,13 +1020,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\leady\\[id]\\uruchom-research.tsx": {
-    "mtime": 1780924919.7155674,
-    "ast_hash": "deb7398be4a2e887b4c3b76c6c3543f2",
+    "mtime": 1780927537.609543,
+    "ast_hash": "186d39393c6ee60f362f42ac5d9cd03e",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\actions.ts": {
-    "mtime": 1780924113.8453014,
-    "ast_hash": "fae197214488d5c4a7e7128a5847ad9c",
+    "mtime": 1780927686.026745,
+    "ast_hash": "b96fe7cd28740fe4dcc7a927e6224e6d",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\apply.test.ts": {
@@ -1040,8 +1040,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\engine.ts": {
-    "mtime": 1780925652.5048907,
-    "ast_hash": "dc7097c8cd3f7cc230352f10b79d706d",
+    "mtime": 1780927766.611619,
+    "ast_hash": "39b5fd7786697e4c6c63b4cb0904e879",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\model.test.ts": {
@@ -1080,13 +1080,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\ResearchRun.ts": {
-    "mtime": 1780924660.2073598,
-    "ast_hash": "3e8f8459e449264e0be9c33444ffee30",
+    "mtime": 1780927530.1244836,
+    "ast_hash": "6f795132d53c6ec5fa342ed53f052ae1",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\lib\\inngest\\research.ts": {
-    "mtime": 1780924913.1230416,
-    "ast_hash": "32a923c2831e76aa981c5c911e421224",
+    "mtime": 1780927788.011953,
+    "ast_hash": "d37b43d8f240e0bd7791788e412d515a",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\prisma\\migrations\\20260608130722_phase2b_research_runs\\migration.sql": {
@@ -1102,6 +1102,101 @@
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\specs\\2026-06-08-phase-2b-research-engine-design.md": {
     "mtime": 1780923353.3573256,
     "ast_hash": "25d6831551d05df1ead3fbd83046bb28",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\badania\\batches\\[id]\\batch-view.tsx": {
+    "mtime": 1780928878.652311,
+    "ast_hash": "8806d9cbf7337a2e01a666d980ebdbc1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\badania\\batches\\[id]\\page.tsx": {
+    "mtime": 1780928048.7921233,
+    "ast_hash": "0a7783e76a73b7040ea692305028e556",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\leady\\batch-research-launcher.tsx": {
+    "mtime": 1780928006.8192182,
+    "ast_hash": "f6c55e7f44e14341b182a2461973730b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\apply-confirm.test.ts": {
+    "mtime": 1780927654.4856193,
+    "ast_hash": "c81bfaf3621968adc10e597c54109fd1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\apply-confirm.ts": {
+    "mtime": 1780927640.9833975,
+    "ast_hash": "1da6ca4f0b6b30c70c517bae700b9a17",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-actions.ts": {
+    "mtime": 1780928821.517951,
+    "ast_hash": "a9422f80db417765f6f257024df1b2db",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-dedupe.test.ts": {
+    "mtime": 1780927596.8160176,
+    "ast_hash": "ef760d4b4a62014ef7fd57e31de8bf8a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-dedupe.ts": {
+    "mtime": 1780927589.525675,
+    "ast_hash": "a85ec6ef1ddab3c4bce62513418424fe",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-progress.test.ts": {
+    "mtime": 1780927612.0169685,
+    "ast_hash": "fb796c7acf2b3f3b95981ae7dff1996a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-progress.ts": {
+    "mtime": 1780928837.1223228,
+    "ast_hash": "9e94b8de5e9b6dfc6af337b116a73e79",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-queries.ts": {
+    "mtime": 1780927941.6046388,
+    "ast_hash": "7bc2cf713070deff2d2abc0aeb3eba29",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-select.test.ts": {
+    "mtime": 1780927584.479,
+    "ast_hash": "63ab3d25f3d9a9761a644f37dca5e99f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\research\\batch-select.ts": {
+    "mtime": 1780927575.0469844,
+    "ast_hash": "361bf6eb1332c88425c0bd7cd4ea7f1d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\generated\\prisma\\models\\ResearchBatch.ts": {
+    "mtime": 1780927530.1244836,
+    "ast_hash": "61fe92c2307689c3e75e77aeee61c801",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\lib\\inngest\\research-batch.test.ts": {
+    "mtime": 1780928805.8571892,
+    "ast_hash": "b5bac9c40c12d0bb7550587fdeaf4b73",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\lib\\inngest\\research-batch.ts": {
+    "mtime": 1780928739.5145106,
+    "ast_hash": "45d72fdc82f0ea3c145722347e7233fb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\prisma\\migrations\\20260608140504_phase2c_research_batches\\migration.sql": {
+    "mtime": 1780927504.84133,
+    "ast_hash": "ba2a67ba15440b715e406ec70886f930",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\plans\\2026-06-08-phase-2c-batch-research.md": {
+    "mtime": 1780927322.675916,
+    "ast_hash": "f92d34b6f74497870bb30ecb37f82ad9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\specs\\2026-06-08-phase-2c-batch-research-design.md": {
+    "mtime": 1780926497.9181778,
+    "ast_hash": "d57ebd5da83859ec3684efb0cf08c4f2",
     "semantic_hash": ""
   }
 }
