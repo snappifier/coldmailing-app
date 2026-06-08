@@ -62,4 +62,17 @@ describe("researchTypeSchema", () => {
 		]
 		expect(researchTypeSchema.safeParse({...valid, outputFields: fields}).success).toBe(false)
 	})
+
+	it("defaults kind to RESEARCH", () => {
+		expect(researchTypeSchema.parse(valid).kind).toBe("RESEARCH")
+	})
+
+	it("rejects a SCORING type without a score output", () => {
+		expect(researchTypeSchema.safeParse({...valid, kind: "SCORING"}).success).toBe(false)
+	})
+
+	it("accepts a SCORING type with a score output", () => {
+		const fields = [{key: "ocena", label: "Ocena", target: "score", type: "NUMBER"}]
+		expect(researchTypeSchema.safeParse({...valid, kind: "SCORING", outputFields: fields}).success).toBe(true)
+	})
 })

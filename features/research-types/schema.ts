@@ -46,6 +46,7 @@ export const researchTypeSchema = z
 			.optional()
 			.transform((v) => (v ? v : null)),
 		webSearchEnabled: z.boolean().default(false),
+		kind: z.enum(["RESEARCH", "SCORING"]).default("RESEARCH"),
 		outputFields: z.array(outputFieldSchema).min(1, "Dodaj co najmniej jedno pole wyjściowe"),
 	})
 	.refine((d) => new Set(d.outputFields.map((f) => f.key)).size === d.outputFields.length, {
@@ -59,6 +60,10 @@ export const researchTypeSchema = z
 		},
 		{message: "Każde pole Lead można zmapować tylko raz", path: ["outputFields"]},
 	)
+	.refine((d) => d.kind !== "SCORING" || d.outputFields.some((f) => f.target === "score"), {
+		message: "Typ oceny musi mieć pole z celem 'score'",
+		path: ["outputFields"],
+	})
 
 export type OutputField = z.infer<typeof outputFieldSchema>
 export type ResearchTypeInput = z.infer<typeof researchTypeSchema>

@@ -20,6 +20,7 @@ function parseForm(formData: FormData) {
 		prompt: formData.get("prompt") ?? "",
 		modelId: formData.get("modelId") ?? undefined,
 		webSearchEnabled: formData.get("webSearchEnabled") === "true",
+		kind: formData.get("kind") ?? undefined,
 		outputFields,
 	})
 }
@@ -38,6 +39,7 @@ export async function createResearchType(_prev: ResearchTypeResult | null, formD
 				prompt: parsed.data.prompt,
 				modelId: parsed.data.modelId,
 				webSearchEnabled: parsed.data.webSearchEnabled,
+				kind: parsed.data.kind,
 				outputFields: parsed.data.outputFields,
 			},
 		})
@@ -61,6 +63,7 @@ export async function updateResearchType(id: string, _prev: ResearchTypeResult |
 				prompt: parsed.data.prompt,
 				modelId: parsed.data.modelId,
 				webSearchEnabled: parsed.data.webSearchEnabled,
+				kind: parsed.data.kind,
 				outputFields: parsed.data.outputFields,
 			},
 		})
