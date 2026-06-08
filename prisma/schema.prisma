@@ -479,6 +479,7 @@ model SequenceStep {
 	templateId String
 	delayDays  Int               @default(0)
 	condition  SequenceCondition @default(SEND_IF_NO_REPLY)
+	useLeadDraft Boolean         @default(false)
 
 	campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
 	template Template @relation(fields: [templateId], references: [id], onDelete: Restrict)
