@@ -125,7 +125,8 @@ model Organization {
 	placeholders Placeholder[]
 	campaigns    Campaign[]
 	emailAccounts EmailAccount[]
-	messages      Message[]
+	messages       Message[]
+	leadActivities LeadActivity[]
 }
 
 model User {
@@ -240,6 +241,7 @@ model Lead {
 	offeringLine OfferingLine? @relation(fields: [offeringLineId], references: [id], onDelete: SetNull)
 	owner        User?         @relation("LeadOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
 	campaignLeads CampaignLead[]
+	activities    LeadActivity[]
 
 	@@unique([organizationId, email])
 	@@index([organizationId, dealStage])
@@ -404,4 +406,30 @@ model Message {
 
 	@@index([emailAccountId, sentAt])
 	@@index([campaignLeadId])
+}
+
+enum LeadActivityKind {
+	NOTE
+	CALL
+	MEETING
+	OFFER_SENT
+	STAGE_CHANGE
+}
+
+model LeadActivity {
+	id             String           @id @default(cuid())
+	organizationId String
+	leadId         String
+	kind           LeadActivityKind
+	body           String?
+	fromStage      DealStage?
+	toStage        DealStage?
+	authorUserId   String?
+	createdAt      DateTime         @default(now())
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	lead         Lead         @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+	@@index([leadId, createdAt])
+	@@index([organizationId])
 }
