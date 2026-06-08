@@ -138,7 +138,10 @@ Mirror the Placeholder stack exactly:
   of each. `createResearchType` / `updateResearchType(id, ...)` / `deleteResearchType(id)`. Adapt
   FormData -> object (JSON.parse `outputFields`, coerce `webSearchEnabled`), `safeParse`, return
   `{ok:false,error}` on failure, try/catch the unique-name DB error -> "Typ researchu o tej nazwie już
-  istnieje", `revalidatePath("/badania")`, `redirect("/badania")` on create/update success.
+  istnieje", `revalidatePath("/badania")`, and return `{ok:true}` on create/update success. The client
+  form navigates to `/badania` via `useRouter().push` in an effect watching the `{ok:true}` result
+  (no existing action in this codebase uses `redirect()`; client navigation avoids a Next-version
+  redirect-in-action quirk while keeping `useActionState` for inline error display).
 - `features/research-types/queries.ts` — `listResearchTypes(orgId)`, `getResearchType(orgId, id)`,
   org-scoped on every call.
 - `app/(app)/badania/page.tsx` — server: list (name, output-field count, model, web-search badge),
@@ -158,7 +161,8 @@ Mirror the Placeholder stack exactly:
 1. User fills the form at `/badania/nowy` (or `/badania/[id]`).
 2. Client serializes `outputFields` to JSON (hidden input) + scalar fields; posts to the bound action.
 3. Action `requireOrg()` -> adapt FormData -> `researchTypeSchema.safeParse` -> on success
-   `prisma.researchType.create/update` (org-scoped) -> `revalidatePath` + `redirect("/badania")`.
+   `prisma.researchType.create/update` (org-scoped) -> `revalidatePath("/badania")` + return
+   `{ok:true}`; the client form then `router.push("/badania")`.
 4. 2b (future) reads a `ResearchType`, renders `prompt` per lead via the `{{token}}` engine in
    `features/templates/render.ts`, asks Anthropic for structured output shaped by `outputFields`, then
    coerces + writes each value to its `target` Lead column (or `customFields[key]`).

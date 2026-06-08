@@ -19,34 +19,42 @@ interface Initial {
 	outputFields: OutputField[]
 }
 
+interface Row {
+	id: number
+	field: OutputField
+}
+
 const EMPTY_FIELD: OutputField = {key: "", label: "", target: "CUSTOM", type: "TEXT", required: false, description: null}
 
 export function ResearchTypeForm({action, initial}: {action: Action; initial?: Initial}) {
 	const router = useRouter()
 	const [state, formAction, pending] = useActionState<ResearchTypeResult | null, FormData>(action, null)
-	const [fields, setFields] = useState<OutputField[]>(initial?.outputFields?.length ? initial.outputFields : [{...EMPTY_FIELD}])
+	const initialFields = initial?.outputFields?.length ? initial.outputFields : [{...EMPTY_FIELD}]
+	const [rows, setRows] = useState<Row[]>(() => initialFields.map((field, idx) => ({id: idx, field})))
+	const [seq, setSeq] = useState(initialFields.length)
 
 	useEffect(() => {
 		if (state?.ok) router.push("/badania")
 	}, [state, router])
 
 	function update(i: number, patch: Partial<OutputField>) {
-		setFields((prev) => prev.map((f, idx) => (idx === i ? {...f, ...patch} : f)))
+		setRows((prev) => prev.map((r, idx) => (idx === i ? {...r, field: {...r.field, ...patch}} : r)))
 	}
 	function setTarget(i: number, target: Target) {
 		const derived = derivedTypeForTarget(target)
 		update(i, {target, type: derived ?? "TEXT"})
 	}
 	function addField() {
-		setFields((prev) => [...prev, {...EMPTY_FIELD}])
+		setRows((prev) => [...prev, {id: seq, field: {...EMPTY_FIELD}}])
+		setSeq((s) => s + 1)
 	}
 	function removeField(i: number) {
-		setFields((prev) => (prev.length > 1 ? prev.filter((_, idx) => idx !== i) : prev))
+		setRows((prev) => (prev.length > 1 ? prev.filter((_, idx) => idx !== i) : prev))
 	}
 
 	return (
 		<form className="flex max-w-3xl flex-col gap-4" action={formAction}>
-			<input name="outputFields" type="hidden" value={JSON.stringify(fields)} />
+			<input name="outputFields" type="hidden" value={JSON.stringify(rows.map((r) => r.field))} />
 
 			<label className="flex flex-col gap-1 text-sm">
 				<span className="font-medium">Nazwa</span>
@@ -79,10 +87,11 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 
 			<div className="flex flex-col gap-2">
 				<span className="text-sm font-medium">Pola wyjściowe</span>
-				{fields.map((f, i) => {
+				{rows.map((r, i) => {
+					const f = r.field
 					const locked = f.target !== "CUSTOM"
 					return (
-						<div className="flex flex-col gap-2 rounded border border-zinc-300 p-3" key={i}>
+						<div className="flex flex-col gap-2 rounded border border-zinc-300 p-3" key={r.id}>
 							<div className="flex flex-wrap items-end gap-2 text-sm">
 								<label className="flex flex-col gap-1">
 									<span className="text-xs text-zinc-500">Etykieta</span>
