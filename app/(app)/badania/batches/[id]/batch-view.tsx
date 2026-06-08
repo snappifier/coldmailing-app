@@ -1,0 +1,154 @@
+"use client"
+// app/(app)/badania/batches/[id]/batch-view.tsx
+
+import {useEffect, useRef, useState} from "react"
+import {useRouter} from "next/navigation"
+import {getBatch, cancelBatch, resumeFailed, applyBatch} from "@/features/research/batch-actions"
+import {confirmResearchApply} from "@/features/research/actions"
+
+type Batch = NonNullable<Awaited<ReturnType<typeof getBatch>>>
+
+const STATUS_LABEL: Record<string, string> = {
+	QUEUED: "W kolejce",
+	RUNNING: "W toku",
+	DONE: "Zakończone",
+	PARTIAL: "Częściowe (błędy)",
+	CANCELLED: "Anulowane",
+	FAILED: "Błąd",
+}
+
+export function BatchView({batchId, initial}: {batchId: string; initial: Batch}) {
+	const router = useRouter()
+	const [batch, setBatch] = useState<Batch>(initial)
+	const [busy, setBusy] = useState(false)
+	const [msg, setMsg] = useState<string | null>(null)
+	const timer = useRef<ReturnType<typeof setInterval> | null>(null)
+
+	useEffect(() => {
+		function isTerminal(s: string) {
+			return s === "DONE" || s === "PARTIAL" || s === "CANCELLED"
+		}
+		timer.current = setInterval(async () => {
+			const b = await getBatch(batchId)
+			if (!b) return
+			setBatch(b)
+			if (isTerminal(b.status) && timer.current) clearInterval(timer.current)
+		}, 2000)
+		return () => {
+			if (timer.current) clearInterval(timer.current)
+		}
+	}, [batchId])
+
+	async function onCancel() {
+		setBusy(true)
+		setMsg(null)
+		const res = await cancelBatch(batchId)
+		setBusy(false)
+		if (!res.ok) setMsg(res.error)
+		else router.refresh()
+	}
+
+	async function onResume() {
+		setBusy(true)
+		setMsg(null)
+		const res = await resumeFailed(batchId)
+		setBusy(false)
+		setMsg(res.ok ? "Ponowiono nieudane." : res.error)
+	}
+
+	async function onApplyAll() {
+		setBusy(true)
+		setMsg(null)
+		const res = await applyBatch(batchId)
+		setBusy(false)
+		if (!res.ok) setMsg(res.error)
+		else setMsg(`Zastosowano ${res.applied} pól${res.emailCollisions ? `, pominięto ${res.emailCollisions} kolizji email` : ""}.`)
+	}
+
+	async function onApplyRow(runId: string) {
+		setBusy(true)
+		setMsg(null)
+		const res = await confirmResearchApply(runId)
+		setBusy(false)
+		if (!res.ok) setMsg(res.error)
+	}
+
+	const c = batch.counts
+	const isTerminal = batch.status === "DONE" || batch.status === "PARTIAL" || batch.status === "CANCELLED"
+
+	return (
+		<div className="flex flex-col gap-4">
+			<div className="flex flex-wrap items-center gap-3">
+				<h1 className="text-lg font-semibold">{batch.name}</h1>
+				<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">{STATUS_LABEL[batch.status] ?? batch.status}</span>
+				<span className="text-xs text-zinc-500">{batch.mode === "MANUAL" ? "Ręczne zatwierdzenie" : "Auto"}</span>
+			</div>
+
+			<p className="text-sm text-zinc-600">
+				Łącznie {batch.total} · DONE {c.DONE} · w toku {c.RUNNING} · w kolejce {c.QUEUED} · błędy {c.FAILED}
+				{c.CANCELLED ? ` · anulowane ${c.CANCELLED}` : ""}
+			</p>
+
+			<div className="flex flex-wrap gap-2 text-sm">
+				{!isTerminal ? (
+					<button className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onCancel}>
+						Anuluj badanie
+					</button>
+				) : null}
+				{c.FAILED > 0 && batch.status !== "CANCELLED" ? (
+					<button className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onResume}>
+						Wznów nieudane ({c.FAILED})
+					</button>
+				) : null}
+				{batch.mode === "MANUAL" ? (
+					<button className="rounded bg-amber-600 px-3 py-1 text-white disabled:opacity-50" type="button" disabled={busy || c.DONE === 0} onClick={onApplyAll}>
+						Zatwierdź wszystko
+					</button>
+				) : null}
+			</div>
+			{msg ? <p className="text-sm text-zinc-700">{msg}</p> : null}
+
+			<table className="w-full border-collapse text-sm">
+				<thead>
+					<tr className="border-b border-zinc-300 text-left text-zinc-500">
+						<th className="py-1 pr-2">Lead</th>
+						<th className="py-1 pr-2">Status</th>
+						<th className="py-1 pr-2">Zastosowane</th>
+						<th className="py-1 pr-2">Propozycje</th>
+						<th className="py-1 pr-2">Błąd</th>
+						<th className="py-1 pr-2"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{batch.rows.map((r) => (
+						<tr className="border-b border-zinc-100" key={r.runId}>
+							<td className="py-1 pr-2">
+								<a className="text-blue-600 hover:underline" href={`/leady/${r.leadId}`}>
+									{r.leadName}
+								</a>
+							</td>
+							<td className="py-1 pr-2">{STATUS_LABEL[r.status] ?? r.status}</td>
+							<td className="py-1 pr-2">{r.applied}</td>
+							<td className="py-1 pr-2">{r.proposed}</td>
+							<td className="py-1 pr-2 text-red-600">{r.error ?? ""}</td>
+							<td className="py-1 pr-2 text-right">
+								{batch.mode === "MANUAL" && r.status === "DONE" && r.proposed > 0 ? (
+									<button className="text-amber-700 disabled:opacity-50" type="button" disabled={busy} onClick={() => onApplyRow(r.runId)}>
+										Zastosuj
+									</button>
+								) : null}
+							</td>
+						</tr>
+					))}
+					{batch.rows.length === 0 ? (
+						<tr>
+							<td className="py-2 text-zinc-500" colSpan={6}>
+								Brak uruchomień.
+							</td>
+						</tr>
+					) : null}
+				</tbody>
+			</table>
+		</div>
+	)
+}
