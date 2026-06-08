@@ -1,16 +1,16 @@
 # Graph Report - coldmailing-app  (2026-06-08)
 
 ## Corpus Check
-- 228 files · ~259,094 words
+- 233 files · ~265,928 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 4188 nodes · 4860 edges · 136 communities (128 shown, 8 thin omitted)
+- 4301 nodes · 4977 edges · 147 communities (140 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 17 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a2315426`
+- Built from commit: `19686950`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -146,6 +146,17 @@
 - [[_COMMUNITY_Community 133|Community 133]]
 - [[_COMMUNITY_Community 134|Community 134]]
 - [[_COMMUNITY_Community 135|Community 135]]
+- [[_COMMUNITY_Community 136|Community 136]]
+- [[_COMMUNITY_Community 137|Community 137]]
+- [[_COMMUNITY_Community 138|Community 138]]
+- [[_COMMUNITY_Community 139|Community 139]]
+- [[_COMMUNITY_Community 140|Community 140]]
+- [[_COMMUNITY_Community 141|Community 141]]
+- [[_COMMUNITY_Community 142|Community 142]]
+- [[_COMMUNITY_Community 143|Community 143]]
+- [[_COMMUNITY_Community 144|Community 144]]
+- [[_COMMUNITY_Community 145|Community 145]]
+- [[_COMMUNITY_Community 146|Community 146]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `requireOrg()` - 81 edges
@@ -155,40 +166,40 @@
 5. `Phase 2c — Batch Research (Inngest fan-out) Implementation Plan` - 16 edges
 6. `Cold Mailing Tool — Phase 5c: Smarter inbound (bounce + opt-out + RODO) (Design)` - 15 edges
 7. `PrismaClient` - 14 edges
-8. `Cold Mailing Tool — Phase 5b: Followups / multi-step sequences (Design)` - 14 edges
-9. `Phase 5c — Live e2e walkthrough (user-run, step by step)` - 13 edges
-10. `Phase 5c — Smarter inbound (bounce + opt-out + RODO) — Implementation Plan` - 13 edges
+8. `Phase 2d-1 — Lead Scoring Implementation Plan` - 14 edges
+9. `Cold Mailing Tool — Phase 5b: Followups / multi-step sequences (Design)` - 14 edges
+10. `Phase 5c — Live e2e walkthrough (user-run, step by step)` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CampaignsPage()` --calls--> `requireOrg()`  [EXTRACTED]
   app/(app)/kampanie/page.tsx → lib/org.ts
 - `OfferingLinesPage()` --calls--> `requireOrg()`  [EXTRACTED]
   app/(app)/linie/page.tsx → lib/org.ts
-- `SuppressionPage()` --calls--> `requireOrg()`  [EXTRACTED]
-  app/(app)/suppression/page.tsx → lib/org.ts
 - `TemplatesPage()` --calls--> `requireOrg()`  [EXTRACTED]
   app/(app)/szablony/page.tsx → lib/org.ts
 - `cn()` --calls--> `clsx`  [INFERRED]
   lib/cn.ts → package.json
+- `ResearchTypesPage()` --calls--> `requireOrg()`  [EXTRACTED]
+  app/(app)/badania/page.tsx → lib/org.ts
 
 ## Hyperedges (group relationships)
 - **All roadmap phases (0-7)** — phase_0_foundation, phase_1_leads, phase_2_research_ai, phase_3_templates, phase_4_mailbox_sending, phase_5_sequences_replies, phase_6_pipeline, phase_7_visual_design [INFERRED 0.85]
 - **Sending pipeline participants** — model_email_account, model_campaign_lead, flow_sending_engine, flow_gmail_send, model_message [INFERRED 0.85]
 - **Placeholder-resolution participants** — concept_render_template, concept_builtin_placeholders, concept_custom_placeholder_resolution, concept_gendered_token, concept_honorific [INFERRED 0.85]
 
-## Communities (136 total, 8 thin omitted)
+## Communities (147 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.21
-Nodes (10): BADGE, LeadInbox(), Row, addSuppression(), emailSchema, markDoNotContact(), removeSuppression(), SuppressionResult (+2 more)
+Cohesion: 0.12
+Nodes (15): Data model (migration `phase2d_scoring`), Engine (shared with 2b/2c — only the `score` target is new), Error handling / edge cases, Goal, Key decisions (from the brainstorm), Lead card `/leady/[id]`, `/leady` list, Modules / files (+7 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.14
 Nodes (20): Code conventions (tabs, no semicolons, path comment, className first, no emoji), No emoji anywhere (incl. commit messages), Zod 4 idioms (z.email() not z.string().email()), Mechanics-first build philosophy, Next.js version has breaking changes vs training data, Verify current library versions/best practices in docs, AGENTS.md (agent rules + knowledge persistence), CLAUDE.md (project state pointer) (+12 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.10
-Nodes (28): LeadEditForm(), Props, FIELDS, createLead(), importLeads(), ImportResult, LeadActionResult, leadFormSchema (+20 more)
+Cohesion: 0.08
+Nodes (36): LeadEditForm(), Props, FIELDS, ImportWizard(), createLead(), deleteLead(), importLeads(), ImportResult (+28 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.31
@@ -199,8 +210,8 @@ Cohesion: 0.04
 Nodes (44): dependencies, @anthropic-ai/sdk, @auth/prisma-adapter, clsx, googleapis, inngest, next, next-auth (+36 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.12
-Nodes (17): buildResearchPrompt(), leadToRenderContext(), PromptLead, ctx, lead, out, TemplateEditor(), BUILTIN_KEYS (+9 more)
+Cohesion: 0.10
+Nodes (23): buildResearchPrompt(), leadToRenderContext(), PromptLead, ctx, lead, out, TemplatesPage(), BUILTIN (+15 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.14
@@ -219,8 +230,8 @@ Cohesion: 0.01
 Nodes (208): AggregateOrganization, DateTimeFieldUpdateOperationsInput, EnumOptOutDetectorFieldUpdateOperationsInput, EnumOptOutModeFieldUpdateOperationsInput, GetOrganizationAggregateType, GetOrganizationGroupByPayload, Organization$campaignsArgs, Organization$emailAccountsArgs (+200 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.13
-Nodes (19): disconnectEmailAccount(), listEmailAccounts(), CampaignDetailPage(), SendingControls(), SequenceAndLeads(), ImportWizard(), ImportPage(), OrgContext (+11 more)
+Cohesion: 0.12
+Nodes (23): disconnectEmailAccount(), listEmailAccounts(), BADGE, LeadInbox(), Row, CampaignDetailPage(), SequenceAndLeads(), ImportPage() (+15 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.16
@@ -231,8 +242,8 @@ Cohesion: 0.02
 Nodes (130): AggregateResearchBatch, EnumResearchBatchStatusFieldUpdateOperationsInput, GetResearchBatchAggregateType, GetResearchBatchGroupByPayload, IntFieldUpdateOperationsInput, Prisma__ResearchBatchClient, ResearchBatch$createdByArgs, ResearchBatch$researchTypeArgs (+122 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.67
-Nodes (3): ensureTemplate(), main(), prisma
+Cohesion: 0.25
+Nodes (7): groupLeadsByStage(), StageColumn, byStage, cols, PipelinePage(), getPipelineLeads(), STAGE_ORDER
 
 ### Community 15 - "Community 15"
 Cohesion: 0.01
@@ -240,7 +251,7 @@ Nodes (151): AggregateCampaign, Campaign$campaignLeadsArgs, Campaign$createdByAr
 
 ### Community 24 - "Community 24"
 Cohesion: 0.01
-Nodes (164): AccountScalarFieldEnum, Args, At, AtLeast, AtLoose, AtStrict, BatchPayload, BooleanFieldRefInput (+156 more)
+Nodes (166): AccountScalarFieldEnum, Args, At, AtLeast, AtLoose, AtStrict, BatchPayload, BooleanFieldRefInput (+158 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.01
@@ -283,8 +294,8 @@ Cohesion: 0.02
 Nodes (92): AggregateMembership, EnumRoleFieldUpdateOperationsInput, GetMembershipAggregateType, GetMembershipGroupByPayload, MembershipAggregateArgs, MembershipCountAggregateInputType, MembershipCountAggregateOutputType, MembershipCountArgs (+84 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.02
-Nodes (131): BoolFilter, BoolNullableFilter, BoolNullableWithAggregatesFilter, BoolWithAggregatesFilter, DateTimeFilter, DateTimeNullableFilter, DateTimeNullableWithAggregatesFilter, DateTimeWithAggregatesFilter (+123 more)
+Cohesion: 0.01
+Nodes (135): BoolFilter, BoolNullableFilter, BoolNullableWithAggregatesFilter, BoolWithAggregatesFilter, DateTimeFilter, DateTimeNullableFilter, DateTimeNullableWithAggregatesFilter, DateTimeWithAggregatesFilter (+127 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.02
@@ -324,7 +335,7 @@ Nodes (18): 10. New / changed files (proposed), 11. Verification gates (read off
 
 ### Community 45 - "Community 45"
 Cohesion: 0.09
-Nodes (25): ActivityForm(), LeadEditPage(), LeadTimeline(), MANUAL, addLeadActivity(), deleteLeadActivity(), moveLeadStage(), PipelineActionResult (+17 more)
+Nodes (28): ActivityForm(), LeadTimeline(), MANUAL, addLeadActivity(), deleteLeadActivity(), moveLeadStage(), PipelineActionResult, PipelineBoard() (+20 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.13
@@ -339,8 +350,8 @@ Cohesion: 0.26
 Nodes (12): Eventual SaaS ambition (internal-first), Security (OAuth tokens encrypted, minimal Gmail scopes, allowlist), Email allowlist + org membership gate, requireOrg() org-scoping helper, Multi-tenant-ready, org-scoped data model, Web-agency cold outreach to schools/institutions, Membership (user-org role OWNER/ADMIN/MEMBER), Organization (tenant) (+4 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.12
-Nodes (12): {handlers, signIn, signOut, auth}, ensureMembership(), isEmailAllowed(), globalForPrisma, TemplatesPage(), BUILTIN, Props, createTemplate() (+4 more)
+Cohesion: 0.21
+Nodes (4): {handlers, signIn, signOut, auth}, ensureMembership(), isEmailAllowed(), globalForPrisma
 
 ### Community 50 - "Community 50"
 Cohesion: 0.25
@@ -471,28 +482,28 @@ Cohesion: 0.50
 Nodes (4): code:tsx (// app/(app)/skrzynki/page.tsx), code:ts (export async function setSendingMailbox(campaignId: string, ), code:bash (git add "app/(app)/skrzynki" "app/(app)/kampanie" features/c), Task 11: Minimal UI — mailbox page + campaign controls
 
 ### Community 84 - "Community 84"
-Cohesion: 0.18
-Nodes (12): BatchActionResult, normalizeCriteria(), previewBatch(), recentLeadIds(), startBatch(), StartBatchResult, BatchDisplayStatus, deriveBatchStatus() (+4 more)
+Cohesion: 0.11
+Nodes (24): Batch, BatchView(), isTerminal(), STATUS_LABEL, BatchPage(), BatchResearchLauncher(), TypeOption, applyBatch() (+16 more)
 
 ### Community 85 - "Community 85"
 Cohesion: 0.08
 Nodes (23): code:ts (// features/sequences/plan.test.ts), code:bash (git add lib/inngest/sending.ts app/api/inngest/route.ts feat), code:ts (// features/campaigns/activation.test.ts), code:ts (// features/campaigns/activation.ts), code:ts (export async function activateCampaign(campaignId: string): ), code:bash (git add features/campaigns/activation.ts features/campaigns/), code:bash (git add docs/superpowers/ROADMAP.md graphify-out), code:ts (// features/sequences/plan.ts) (+15 more)
 
 ### Community 86 - "Community 86"
-Cohesion: 0.18
-Nodes (14): finalizeLead(), HARD_STOP, runLeadSequenceHandler(), decideStep(), NextPlan, planNext(), SendDecision, SequenceCondition (+6 more)
+Cohesion: 0.20
+Nodes (10): NextPlan, planNext(), SendDecision, SequenceCondition, StepDef, gapped, noAlways, NOW (+2 more)
 
 ### Community 87 - "Community 87"
 Cohesion: 0.12
 Nodes (16): 10. Testing strategy, 11. Verification gates (read official docs before coding — standing rule), 12. New / changed files (proposed), 13. Out of scope (explicit), 1. Purpose & scope, 2. Decisions locked (from brainstorm), 3. Orchestration architecture, 4. Pure decision module (unit-tested) — `features/sequences/plan.ts` (+8 more)
 
 ### Community 88 - "Community 88"
-Cohesion: 0.23
-Nodes (9): inngest, helloWorld, pollMailboxReplies, scanMailboxesForReplies, runResearchBatchFn, runResearchFn, {GET, POST, PUT}, runLeadSequence (+1 more)
+Cohesion: 0.25
+Nodes (8): inngest, helloWorld, pollMailboxReplies, scanMailboxesForReplies, BatchTools, runResearchBatchFn, h, {GET, POST, PUT}
 
 ### Community 89 - "Community 89"
-Cohesion: 0.25
-Nodes (10): ActivateResult, ActivationFacts, validateActivation(), activateCampaign(), pauseCampaign(), setSendingMailbox(), startOfLocalDayUTC(), Props (+2 more)
+Cohesion: 0.23
+Nodes (11): ActivateResult, ActivationFacts, validateActivation(), activateCampaign(), pauseCampaign(), setSendingMailbox(), startOfLocalDayUTC(), Props (+3 more)
 
 ### Community 90 - "Community 90"
 Cohesion: 0.04
@@ -503,16 +514,16 @@ Cohesion: 0.10
 Nodes (20): 10. Error handling / edge cases, 11. Testing strategy, 12. Verification gates (read official docs before coding — standing rule), 13. New / changed files (proposed), 14. Out of scope (explicit), 1. Purpose & scope, 2. Decisions locked (from brainstorm), 3. Classification pipeline (extends the 5a poller) (+12 more)
 
 ### Community 92 - "Community 92"
-Cohesion: 0.10
-Nodes (20): CampaignLeadStatus, CampaignStatus, DealStage, EmailAccountStatus, EmailProvider, Honorific, InboundKind, LeadActivityKind (+12 more)
+Cohesion: 0.09
+Nodes (21): CampaignLeadStatus, CampaignStatus, DealStage, EmailAccountStatus, EmailProvider, Honorific, InboundKind, LeadActivityKind (+13 more)
 
 ### Community 93 - "Community 93"
 Cohesion: 0.01
 Nodes (141): AggregateResearchRun, EnumResearchApplyModeFieldUpdateOperationsInput, EnumResearchRunStatusFieldUpdateOperationsInput, GetResearchRunAggregateType, GetResearchRunGroupByPayload, NullableBoolFieldUpdateOperationsInput, Prisma__ResearchRunClient, ResearchRun$batchArgs (+133 more)
 
 ### Community 94 - "Community 94"
-Cohesion: 0.29
-Nodes (6): keywordDetector, PHRASES, llmDetector, {create}, OptOutDetector, OptOutResult
+Cohesion: 0.26
+Nodes (7): getDetector(), keywordDetector, PHRASES, llmDetector, {create}, OptOutDetector, OptOutResult
 
 ### Community 95 - "Community 95"
 Cohesion: 0.31
@@ -524,7 +535,7 @@ Nodes (92): AggregateLeadActivity, EnumLeadActivityKindFieldUpdateOperationsInpu
 
 ### Community 97 - "Community 97"
 Cohesion: 0.02
-Nodes (118): AggregateResearchType, GetResearchTypeAggregateType, GetResearchTypeGroupByPayload, Prisma__ResearchTypeClient, ResearchType$batchesArgs, ResearchType$createdByArgs, ResearchType$runsArgs, ResearchTypeAggregateArgs (+110 more)
+Nodes (119): AggregateResearchType, EnumResearchTypeKindFieldUpdateOperationsInput, GetResearchTypeAggregateType, GetResearchTypeGroupByPayload, Prisma__ResearchTypeClient, ResearchType$batchesArgs, ResearchType$createdByArgs, ResearchType$runsArgs (+111 more)
 
 ### Community 98 - "Community 98"
 Cohesion: 0.05
@@ -532,11 +543,11 @@ Nodes (39): code:ts (// features/research/model.test.ts), code:bash (git add fea
 
 ### Community 99 - "Community 99"
 Cohesion: 0.13
-Nodes (21): Action, EMPTY_FIELD, Initial, MODEL_OPTIONS, Row, FIELD_TYPES, OutputField, outputFieldSchema (+13 more)
+Nodes (20): Action, EMPTY_FIELD, Initial, MODEL_OPTIONS, Row, FIELD_TYPES, outputFieldSchema, ResearchTypeInput (+12 more)
 
 ### Community 100 - "Community 100"
-Cohesion: 0.05
-Nodes (31): Account, Campaign, CampaignLead, EmailAccount, Lead, LeadActivity, Membership, Message (+23 more)
+Cohesion: 0.07
+Nodes (13): PrismaClient, prisma, prisma, prisma, inngest, prisma, prisma, ensureTemplate() (+5 more)
 
 ### Community 101 - "Community 101"
 Cohesion: 0.05
@@ -571,16 +582,16 @@ Cohesion: 0.13
 Nodes (14): code:prisma (enum ResearchBatchStatus { QUEUED RUNNING DONE PARTIAL CANCE), Data model (migration `phase2c_research_batches`), Engine robustness (shared fix, benefits 2b too), Error handling, Fan-out (durable orchestrator), Goal, Guards, Lead selection + UI (+6 more)
 
 ### Community 109 - "Community 109"
-Cohesion: 0.13
-Nodes (17): ResearchTypesPage(), ResearchTypeForm(), EditResearchTypePage(), deleteLead(), BatchResearchLauncher(), TypeOption, LeadForm(), LeadsPage() (+9 more)
+Cohesion: 0.17
+Nodes (13): ResearchTypesPage(), ResearchTypeForm(), EditResearchTypePage(), LeadEditPage(), LeadsPage(), listResearchBatches(), createResearchType(), deleteResearchType() (+5 more)
 
 ### Community 110 - "Community 110"
 Cohesion: 0.22
 Nodes (9): OfferingLineForm(), OfferingLinesPage(), ActionResult, createOfferingLine(), deleteOfferingLine(), OfferingLineInput, offeringLineSchema, parsed (+1 more)
 
 ### Community 111 - "Community 111"
-Cohesion: 0.13
-Nodes (19): ApplyArgs, coerce(), COLUMN_TARGETS, computeApply(), currentFor(), LeadFields, normalizeGender(), sameValue() (+11 more)
+Cohesion: 0.20
+Nodes (13): ApplyArgs, coerce(), COLUMN_TARGETS, computeApply(), currentFor(), LeadFields, normalizeGender(), sameValue() (+5 more)
 
 ### Community 112 - "Community 112"
 Cohesion: 0.14
@@ -591,28 +602,28 @@ Cohesion: 0.17
 Nodes (14): DiffField, RunView, TypeOption, UruchomResearch(), ApplyResult, confirmResearchApply(), getResearchRun(), startResearch() (+6 more)
 
 ### Community 114 - "Community 114"
-Cohesion: 0.25
-Nodes (8): RunArgs, runResearch(), resolveModel(), tuningForModel(), buildFindingsSchema(), FindingsSchema, propertyFor(), s
+Cohesion: 0.21
+Nodes (10): runResearchFn, RunArgs, runResearch(), resolveModel(), tuningForModel(), buildFindingsSchema(), FindingsSchema, propertyFor() (+2 more)
 
 ### Community 115 - "Community 115"
-Cohesion: 0.21
-Nodes (11): ActivityLike, activityToTimelineItem(), INBOUND_TITLE, MANUAL_LABEL, MessageLike, messageToTimelineItem(), acts, d() (+3 more)
+Cohesion: 0.18
+Nodes (10): byKey, d, {data, customFields}, emptyLead, FIELDS, high, low, reasons (+2 more)
 
 ### Community 116 - "Community 116"
-Cohesion: 0.29
-Nodes (7): BatchTools, runResearchBatchHandler(), h, capBatch(), partitionCandidates(), ids, res
+Cohesion: 0.43
+Nodes (5): runResearchBatchHandler(), capBatch(), partitionCandidates(), ids, res
 
 ### Community 117 - "Community 117"
-Cohesion: 0.12
-Nodes (21): getDetector(), classifyInbound(), DeterministicKind, InboundFacts, base, listAddedSince(), AddedMessage, MatchInput (+13 more)
+Cohesion: 0.16
+Nodes (14): classifyInbound(), DeterministicKind, InboundFacts, base, listAddedSince(), AddedMessage, MatchInput, matchReplies() (+6 more)
 
 ### Community 118 - "Community 118"
 Cohesion: 0.17
 Nodes (12): code:prisma (enum ResearchRunStatus {), code:tsx (interface RunView {), code:bash (git add prisma/schema.prisma prisma/migrations app/(app)/lea), code:prisma (enum ResearchBatchStatus {), code:prisma (batchId                  String?), code:prisma (batch        ResearchBatch? @relation(fields: [batchId], ref), code:prisma (@@index([organizationId, leadId])), code:prisma (model ResearchBatch {) (+4 more)
 
 ### Community 119 - "Community 119"
-Cohesion: 0.25
-Nodes (9): Batch, BatchView(), isTerminal(), STATUS_LABEL, BatchPage(), applyBatch(), cancelBatch(), getBatch() (+1 more)
+Cohesion: 0.20
+Nodes (9): code:ts (// features/leads/score-fields.test.ts), code:ts (// features/leads/score-fields.ts), code:bash (git add features/leads/score-fields.ts features/leads/score-), code:bash (git add docs/superpowers/ROADMAP.md graphify-out), File Structure, Phase 2d-1 — Lead Scoring Implementation Plan, Self-Review, Task 11: Full gates + ROADMAP + graph (+1 more)
 
 ### Community 120 - "Community 120"
 Cohesion: 0.25
@@ -623,8 +634,8 @@ Cohesion: 0.22
 Nodes (8): code:ts (// app/api/inngest/route.ts), code:bash (git add app/api/inngest/route.ts), code:bash (git add docs/superpowers/ROADMAP.md graphify-out), File Structure, Phase 2c — Batch Research (Inngest fan-out) Implementation Plan, Self-Review (run after the plan is written, before execution), Task 13: Full gate run + ROADMAP update, Task 8: Register the orchestrator
 
 ### Community 122 - "Community 122"
-Cohesion: 0.25
-Nodes (5): handleLeadSequenceFailure(), SequenceStepTools, blocked, h, LEAD_ENTITY
+Cohesion: 0.15
+Nodes (13): finalizeLead(), handleLeadSequenceFailure(), HARD_STOP, runLeadSequence, runLeadSequenceHandler(), sendCampaignEmail, SequenceStepTools, blocked (+5 more)
 
 ### Community 123 - "Community 123"
 Cohesion: 0.33
@@ -637,6 +648,10 @@ Nodes (6): code:tsx ("use client"), code:tsx (import {listResearchTypes} from "@
 ### Community 125 - "Community 125"
 Cohesion: 0.40
 Nodes (5): code:tsx (import {listResearchBatches} from "@/features/research/batch), code:tsx (const [types, batches] = await Promise.all([listResearchType), code:tsx (<div className="flex flex-col gap-2">), code:bash (git add app/(app)/badania/page.tsx), Task 12: Recent-batches list on `/badania`
+
+### Community 126 - "Community 126"
+Cohesion: 0.20
+Nodes (10): code:ts (const emptyLead = {contactPersonName: null, honorific: null,), code:ts ({key: "ocena", label: "Ocena", target: "score", type: "NUMBE), code:ts (it("score: AUTO clamps 0-100, rounds, fills empty; a set sco), code:bash (git add features/research-types/targets.ts features/research), code:ts (score: "NUMBER",), code:ts (it("exposes score as a NUMBER target", () => {), code:ts (const COLUMN_TARGETS = new Set(["contactPersonName", "contac), code:ts (score: number | null) (+2 more)
 
 ### Community 127 - "Community 127"
 Cohesion: 0.50
@@ -670,25 +685,69 @@ Nodes (4): code:ts (// features/research/batch-queries.ts), code:ts ("use server
 Cohesion: 0.50
 Nodes (4): code:tsx (// app/(app)/badania/batches/[id]/page.tsx), code:tsx ("use client"), code:bash (git add "app/(app)/badania/batches/[id]/page.tsx" "app/(app)), Task 11: Batch detail page + view
 
+### Community 135 - "Community 135"
+Cohesion: 0.07
+Nodes (23): Account, Campaign, CampaignLead, EmailAccount, Lead, LeadActivity, Membership, Message (+15 more)
+
+### Community 136 - "Community 136"
+Cohesion: 0.20
+Nodes (10): code:ts (import {parseScoreFields} from "@/features/leads/score-field), code:ts (const scoreFields = parseScoreFields((name) => {), code:ts (honorific,), code:ts (lead: {), code:tsx (<div className="flex flex-wrap gap-3">), code:tsx (lead={{), code:tsx (<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs tex), code:tsx (<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs tex) (+2 more)
+
+### Community 137 - "Community 137"
+Cohesion: 0.20
+Nodes (10): code:tsx (export default async function LeadsPage({searchParams}: {sea), code:tsx (const minScoreNum = minScore ? Number(minScore) : NaN), code:tsx (const orderBy: Prisma.LeadOrderByWithRelationInput =), code:tsx (<input className="w-28 rounded border border-zinc-300 px-2 p), code:tsx (<option value="score">Score</option>), code:tsx (<th className="py-1 pr-2">Score</th>), code:tsx (<td className="py-1 pr-2">{lead.score ?? "—"}</td>), code:tsx (<td className="py-2 text-zinc-500" colSpan={7}>) (+2 more)
+
+### Community 138 - "Community 138"
+Cohesion: 0.20
+Nodes (9): code:ts (interface TypeOption {), code:tsx (<option key={t.id} value={t.id}>), code:tsx (<option key={t.id} value={t.id}>), code:ts (interface TypeOption {), code:tsx (<option key={t.id} value={t.id}>), code:tsx (<option key={t.id} value={t.id}>), code:tsx (<BatchResearchLauncher types={researchTypes.map((t) => ({id:), code:bash (git add "app/(app)/leady/[id]/uruchom-research.tsx" "app/(ap) (+1 more)
+
+### Community 139 - "Community 139"
+Cohesion: 0.29
+Nodes (6): recordInbound(), RecordInboundInput, recordReply(), RecordReplyInput, baseInput, tx
+
+### Community 140 - "Community 140"
+Cohesion: 0.29
+Nodes (7): code:ts (score: number | null), code:ts (select: {), code:ts (lineName: l.offeringLine?.name ?? null,), code:tsx (<div className="mt-1 flex items-center justify-between text-), code:tsx (<div className="mt-1 flex items-center justify-between text-), code:bash (git add features/pipeline/types.ts features/pipeline/queries), Task 9: `/pipeline` score badge
+
+### Community 141 - "Community 141"
+Cohesion: 0.40
+Nodes (4): PlaceholderInput, placeholderSchema, RESERVED_KEYS, p
+
+### Community 142 - "Community 142"
+Cohesion: 0.33
+Nodes (5): code:ts (kind: z.enum(["RESEARCH", "SCORING"]).default("RESEARCH"),), code:ts (it("defaults kind to RESEARCH", () => {), code:ts (return researchTypeSchema.safeParse({), code:bash (git add features/research-types/schema.ts features/research-), Task 3: `kind` in the research-type schema + actions
+
+### Community 143 - "Community 143"
+Cohesion: 0.40
+Nodes (5): code:prisma (enum ResearchTypeKind {), code:prisma (kind             ResearchTypeKind @default(RESEARCH)), code:prisma (score             Int?), code:bash (git add prisma/schema.prisma prisma/migrations), Task 1: Migration + schema
+
+### Community 144 - "Community 144"
+Cohesion: 0.40
+Nodes (5): code:ts (kind: "RESEARCH" | "SCORING"), code:tsx (<label className="flex flex-col gap-1 text-sm">), code:ts (const initial = {), code:bash (git add "app/(app)/badania/research-type-form.tsx" "app/(app), Task 4: `kind` selector in the research-type form
+
+### Community 145 - "Community 145"
+Cohesion: 0.50
+Nodes (4): code:tsx (<Link className="font-medium underline" href={`/badania/${t.), code:tsx (<Link className="font-medium underline" href={`/badania/${t.), code:bash (git add "app/(app)/badania/page.tsx"), Task 5: "Ocena" badge on `/badania`
+
 ## Knowledge Gaps
-- **3458 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+3453 more)
+- **3546 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+3541 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `activateCampaign()` connect `Community 89` to `Community 10`, `Community 11`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `Boolean` connect `Community 89` to `Community 24`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `planSchedule()` connect `Community 11` to `Community 89`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `activateCampaign()` connect `Community 89` to `Community 10`, `Community 11`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `requireOrg()` connect `Community 10` to `Community 2`, `Community 5`, `Community 8`, `Community 107`, `Community 45`, `Community 109`, `Community 110`, `Community 14`, `Community 113`, `Community 84`, `Community 89`, `Community 95`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _3471 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _3559 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.14210526315789473 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.10317460317460317 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07535460992907801 - nodes in this community are weakly interconnected._
