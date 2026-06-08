@@ -12,6 +12,7 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 			<header className="flex items-center justify-between border-b border-zinc-200 px-4 py-3">
 				<nav className="flex gap-4 text-sm">
 					<Link href="/leady">Leady</Link>
+					<Link href="/pipeline">Pipeline</Link>
 					<Link href="/linie">Linie usług</Link>
 					<Link href="/szablony">Szablony</Link>
 					<Link href="/placeholdery">Placeholdery</Link>
