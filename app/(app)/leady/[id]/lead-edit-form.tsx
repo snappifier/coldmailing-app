@@ -14,6 +14,11 @@ interface Props {
 		contactRole: string | null
 		city: string | null
 		honorific: "PAN" | "PANI" | null
+		score: number | null
+		priority: number | null
+		siteQuality: number | null
+		aiHook: string | null
+		aiNotes: string | null
 	}
 	customFields: {key: string; value: string}[]
 }
@@ -56,6 +61,29 @@ export function LeadEditForm({lead, customFields}: Props) {
 					<option value="PAN">Pan</option>
 					<option value="PANI">Pani</option>
 				</select>
+			</label>
+
+			<div className="flex flex-wrap gap-3">
+				<label className="flex flex-col text-sm">
+					Score (0-100)
+					<input className="w-24 rounded border border-zinc-300 px-2 py-1" name="score" type="number" min={0} max={100} defaultValue={lead.score ?? ""} />
+				</label>
+				<label className="flex flex-col text-sm">
+					Priorytet (1-5)
+					<input className="w-20 rounded border border-zinc-300 px-2 py-1" name="priority" type="number" min={1} max={5} defaultValue={lead.priority ?? ""} />
+				</label>
+				<label className="flex flex-col text-sm">
+					Jakość strony (1-5)
+					<input className="w-24 rounded border border-zinc-300 px-2 py-1" name="siteQuality" type="number" min={1} max={5} defaultValue={lead.siteQuality ?? ""} />
+				</label>
+			</div>
+			<label className="flex flex-col text-sm">
+				Hook AI
+				<input className="rounded border border-zinc-300 px-2 py-1" name="aiHook" defaultValue={lead.aiHook ?? ""} />
+			</label>
+			<label className="flex flex-col text-sm">
+				Uzasadnienie / notatki AI
+				<textarea className="min-h-20 rounded border border-zinc-300 px-2 py-1" name="aiNotes" defaultValue={lead.aiNotes ?? ""} />
 			</label>
 
 			<fieldset className="flex flex-col gap-2 rounded border border-zinc-200 p-2">

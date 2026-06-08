@@ -30,6 +30,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 			<div className="flex items-center gap-3">
 				<h1 className="text-lg font-semibold">{lead.organizationName}</h1>
 				<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">Etap: {STAGE_LABEL[lead.dealStage]}</span>
+					<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">Ocena: {lead.score ?? "—"} / prio {lead.priority ?? "—"}</span>
 			</div>
 
 			<div className="grid gap-8 md:grid-cols-2">
@@ -45,6 +46,11 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 							contactRole: lead.contactRole,
 							city: lead.city,
 							honorific: lead.honorific,
+							score: lead.score,
+							priority: lead.priority,
+							siteQuality: lead.siteQuality,
+							aiHook: lead.aiHook,
+							aiNotes: lead.aiNotes,
 						}}
 						customFields={customFields}
 					/>

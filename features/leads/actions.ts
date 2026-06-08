@@ -7,6 +7,7 @@ import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {parseTable, mapRowsToLeads, type ColumnMapping} from "@/features/leads/import"
 import {partitionLeads} from "@/features/leads/dedupe"
+import {parseScoreFields} from "@/features/leads/score-fields"
 
 export type LeadActionResult = {ok: true} | {ok: false; error: string}
 
@@ -52,6 +53,11 @@ export async function updateLead(_prev: LeadActionResult | null, formData: FormD
 	const honorificRaw = String(formData.get("honorific") ?? "")
 	const honorific = honorificRaw === "PAN" || honorificRaw === "PANI" ? honorificRaw : null
 
+	const scoreFields = parseScoreFields((name) => {
+		const v = formData.get(name)
+		return v === null ? null : String(v)
+	})
+
 	// customFields arrive as repeated cf_key[] / cf_value[] pairs
 	const keys = formData.getAll("cf_key").map(String)
 	const values = formData.getAll("cf_value").map(String)
@@ -83,6 +89,11 @@ export async function updateLead(_prev: LeadActionResult | null, formData: FormD
 				contactRole: data.contactRole,
 				city: data.city,
 				honorific,
+				score: scoreFields.score,
+				priority: scoreFields.priority,
+				siteQuality: scoreFields.siteQuality,
+				aiHook: scoreFields.aiHook,
+				aiNotes: scoreFields.aiNotes,
 				customFields,
 			},
 		})
