@@ -6,6 +6,7 @@ import {renderTemplate, type RenderLead} from "@/features/templates/render"
 import {resolveRecipient} from "@/features/sending/recipient"
 import {isWithinWindow, nextWindowOpen, scheduleFollowupSlot} from "@/features/sending/schedule"
 import {decideStep, planNext, type StepDef} from "@/features/sequences/plan"
+import {resolveDraftDecision} from "@/features/sequences/draft-send"
 
 const HARD_STOP = ["PENDING", "SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED", "DONE"]
 
@@ -30,6 +31,7 @@ export async function handleLeadSequenceFailure(campaignLeadId: string | undefin
 export interface SequenceStepTools {
 	sleepUntil: (id: string, time: Date) => Promise<void>
 	run: <T>(id: string, fn: () => Promise<T> | T) => Promise<T>
+	waitForEvent: (id: string, opts: {event: string; timeout: string; if: string}) => Promise<unknown>
 }
 
 export async function runLeadSequenceHandler(campaignLeadId: string, step: SequenceStepTools) {
@@ -99,40 +101,80 @@ export async function runLeadSequenceHandler(campaignLeadId: string, step: Seque
 				return {skipped: "suppressed"}
 			}
 
-			const renderLead: RenderLead = {
-				organizationName: cl.lead.organizationName,
-				contactPersonName: cl.lead.contactPersonName,
-				city: cl.lead.city,
-				website: cl.lead.website,
-				aiHook: cl.lead.aiHook,
-				honorific: cl.lead.honorific,
-				customFields: (cl.lead.customFields as Record<string, unknown> | null) ?? null,
+			// Content source: rendered template (default) or the lead's AI draft (opt-in per step).
+			let subject: string
+			let body: string
+			let draftNotReady = false
+			if (sequenceStep.useLeadDraft) {
+				const loadDraft = () =>
+					prisma.leadDraft.findUnique({
+						where: {organizationId_leadId: {organizationId: cl.campaign.organizationId, leadId: cl.leadId}},
+						select: {status: true, subject: true, body: true},
+					})
+				let draft = await loadDraft()
+				let decision = resolveDraftDecision(true, draft)
+				if (decision === "wait") {
+					// Defer until the draft is generated/saved; matched to this run's lead.
+					await step.waitForEvent(`wait-draft-${order}`, {
+						event: "research/draft.ready",
+						timeout: "7d",
+						if: "async.data.leadId == event.data.leadId",
+					})
+					draft = await loadDraft()
+					decision = resolveDraftDecision(true, draft)
+				}
+				if (decision === "draft" && draft) {
+					// Verbatim: the draft is already fully written, personalized text.
+					subject = draft.subject
+					body = draft.body
+				} else {
+					// Still not ready after the wait window -> skip this step (advance, do not send).
+					subject = ""
+					body = ""
+					draftNotReady = true
+				}
+			} else {
+				const renderLead: RenderLead = {
+					organizationName: cl.lead.organizationName,
+					contactPersonName: cl.lead.contactPersonName,
+					city: cl.lead.city,
+					website: cl.lead.website,
+					aiHook: cl.lead.aiHook,
+					honorific: cl.lead.honorific,
+					customFields: (cl.lead.customFields as Record<string, unknown> | null) ?? null,
+				}
+				const ctx = {lead: renderLead, senderName: account.displayName ?? "", placeholders}
+				subject = renderTemplate(sequenceStep.template.subject, ctx).rendered
+				body = renderTemplate(sequenceStep.template.body, ctx).rendered
 			}
-			const ctx = {lead: renderLead, senderName: account.displayName ?? "", placeholders}
-			const subject = renderTemplate(sequenceStep.template.subject, ctx).rendered
-			const body = renderTemplate(sequenceStep.template.body, ctx).rendered
-			const {to} = resolveRecipient(cl.lead.email, process.env.SEND_OVERRIDE_TO)
 
-			// Let send/log errors propagate so Inngest retries the step; FAILED is set by onFailure once retries are exhausted (setting it here would HARD_STOP the retry).
-			const ids = await step.run(`gmail-send-${order}`, () => sendEmail(account, {to, subject, text: body}))
-			await step.run(`log-${order}`, async () => {
-				await prisma.message.create({
-					data: {
-						organizationId: cl.campaign.organizationId,
-						campaignLeadId: cl.id,
-						emailAccountId: account.id,
-						subject,
-						body,
-						intendedTo: cl.lead.email!,
-						actualTo: to,
-						gmailMessageId: ids.gmailMessageId,
-						gmailThreadId: ids.gmailThreadId,
-						status: "SENT",
-						sentAt: new Date(),
-					},
-				})
+			if (draftNotReady) {
+				// Draft never became ready within the wait window -> skip this step, advance.
 				await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
-			})
+			} else {
+				const {to} = resolveRecipient(cl.lead.email, process.env.SEND_OVERRIDE_TO)
+
+				// Let send/log errors propagate so Inngest retries the step; FAILED is set by onFailure once retries are exhausted (setting it here would HARD_STOP the retry).
+				const ids = await step.run(`gmail-send-${order}`, () => sendEmail(account, {to, subject, text: body}))
+				await step.run(`log-${order}`, async () => {
+					await prisma.message.create({
+						data: {
+							organizationId: cl.campaign.organizationId,
+							campaignLeadId: cl.id,
+							emailAccountId: account.id,
+							subject,
+							body,
+							intendedTo: cl.lead.email!,
+							actualTo: to,
+							gmailMessageId: ids.gmailMessageId,
+							gmailThreadId: ids.gmailThreadId,
+							status: "SENT",
+							sentAt: new Date(),
+						},
+					})
+					await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
+				})
+			}
 		} else {
 			// SKIP: advance without sending.
 			await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
@@ -174,6 +216,8 @@ export const runLeadSequence = inngest.createFunction(
 			sleepUntil: (id, time) => step.sleepUntil(id, time),
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			run: (id, fn) => (step.run as any)(id, fn),
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			waitForEvent: (id, opts) => (step.waitForEvent as any)(id, opts),
 		}
 		return runLeadSequenceHandler(campaignLeadId, tools)
 	},

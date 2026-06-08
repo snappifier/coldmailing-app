@@ -7,6 +7,7 @@ const h = vi.hoisted(() => ({
 	account: null as any,
 	steps: [] as any[],
 	messages: [] as any[],
+	draft: null as any,
 	sendEmail: vi.fn(async () => ({gmailMessageId: "gm", gmailThreadId: "gt"})),
 }))
 
@@ -42,31 +43,37 @@ vi.mock("@/lib/prisma", () => ({
 		emailAccount: {findUnique: vi.fn(async () => h.account)},
 		message: {count: vi.fn(async () => 0), create: vi.fn(async ({data}: any) => {h.messages.push(data)})},
 		suppression: {findUnique: vi.fn(async () => null)},
+		leadDraft: {findUnique: vi.fn(async () => h.draft)},
 	},
 }))
 
 import {runLeadSequenceHandler, handleLeadSequenceFailure, type SequenceStepTools} from "@/lib/inngest/sending"
 import {prisma} from "@/lib/prisma"
 
-function step(order: number, condition: "ALWAYS" | "SEND_IF_NO_REPLY", delayDays: number) {
-	return {order, condition, delayDays, template: {subject: "S", body: "B"}}
+function step(order: number, condition: "ALWAYS" | "SEND_IF_NO_REPLY", delayDays: number, useLeadDraft = false) {
+	return {order, condition, delayDays, useLeadDraft, template: {subject: "S", body: "B"}}
 }
 
-function tools(onSleep?: (id: string) => void): SequenceStepTools {
+function tools(onSleep?: (id: string) => void, onWait?: () => void): SequenceStepTools {
 	return {
 		sleepUntil: async (id) => {
 			if (onSleep) onSleep(id)
 		},
 		run: async (_id, fn) => fn(),
+		waitForEvent: async (_id) => {
+			if (onWait) onWait()
+			return null
+		},
 	}
 }
 
 beforeEach(() => {
-	h.cLead = {id: "cl1", campaignId: "camp1", status: "ACTIVE", currentStep: 0, nextSendAt: new Date("2026-06-01T06:00:00Z"), repliedAt: null}
+	h.cLead = {id: "cl1", campaignId: "camp1", leadId: "lead1", status: "ACTIVE", currentStep: 0, nextSendAt: new Date("2026-06-01T06:00:00Z"), repliedAt: null}
 	h.campaign = {status: "ACTIVE", organizationId: "org1", sendingEmailAccountId: "acc1"}
 	// all-day, all-week window + high daily limit so window/limit gates never defer in tests
 	h.account = {id: "acc1", status: "CONNECTED", displayName: "Test", timezone: "Europe/Warsaw", sendWindowStartMin: 0, sendWindowEndMin: 1440, sendDays: 127, dailyLimit: 100, minGapSec: 0, maxGapSec: 0}
 	h.steps = []
+	h.draft = null
 	h.messages.length = 0
 	h.sendEmail.mockClear()
 })
@@ -153,5 +160,50 @@ describe("runLeadSequenceHandler", () => {
 		expect(h.messages[0].subject).toBe("step1")
 		expect(h.cLead.status).toBe("DONE")
 		expect(h.cLead.currentStep).toBe(2)
+	})
+
+	it("sends the lead draft verbatim when useLeadDraft and the draft is DONE", async () => {
+		h.steps = [step(0, "ALWAYS", 0, true)]
+		h.draft = {status: "DONE", subject: "DRAFT SUBJ", body: "DRAFT BODY"}
+		await runLeadSequenceHandler("cl1", tools())
+		expect(h.sendEmail).toHaveBeenCalledTimes(1)
+		expect(h.messages).toHaveLength(1)
+		expect(h.messages[0].subject).toBe("DRAFT SUBJ")
+		expect(h.messages[0].body).toBe("DRAFT BODY")
+		expect(h.cLead.status).toBe("DONE")
+	})
+
+	it("waits for the draft, then sends it once it becomes ready", async () => {
+		h.steps = [step(0, "ALWAYS", 0, true)]
+		h.draft = null // not ready when the step first fires
+		await runLeadSequenceHandler("cl1", tools(undefined, () => {
+			h.draft = {status: "DONE", subject: "READY SUBJ", body: "READY BODY"}
+		}))
+		expect(h.sendEmail).toHaveBeenCalledTimes(1)
+		expect(h.messages[0].subject).toBe("READY SUBJ")
+		expect(h.cLead.status).toBe("DONE")
+	})
+
+	it("advances without sending when the draft never becomes ready (wait times out)", async () => {
+		h.steps = [step(0, "ALWAYS", 0, true)]
+		h.draft = null // stays null through the wait
+		await runLeadSequenceHandler("cl1", tools())
+		expect(h.sendEmail).not.toHaveBeenCalled()
+		expect(h.messages).toHaveLength(0)
+		expect(h.cLead.currentStep).toBe(1)
+		expect(h.cLead.status).toBe("DONE") // only step skipped -> finalized
+	})
+
+	it("never queries the draft or waits when useLeadDraft is false (regression guard)", async () => {
+		;(prisma.leadDraft.findUnique as any).mockClear()
+		h.steps = [step(0, "ALWAYS", 0, false)]
+		const waitSpy = vi.fn(async () => null)
+		const t = tools()
+		t.waitForEvent = waitSpy
+		await runLeadSequenceHandler("cl1", t)
+		expect(h.sendEmail).toHaveBeenCalledTimes(1)
+		expect(h.messages[0].subject).toBe("S") // rendered template, not a draft
+		expect(waitSpy).not.toHaveBeenCalled()
+		expect((prisma.leadDraft.findUnique as any).mock.calls).toHaveLength(0)
 	})
 })
