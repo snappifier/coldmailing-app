@@ -233,6 +233,7 @@ model Lead {
 	schoolType        String?
 	honorific         Honorific?
 	siteQuality       Int?
+	score             Int?
 	priority          Int?
 	aiHook            String?
 	aiNotes           String?
@@ -307,6 +308,11 @@ model Placeholder {
 	@@unique([organizationId, key])
 }
 
+enum ResearchTypeKind {
+	RESEARCH
+	SCORING
+}
+
 model ResearchType {
 	id               String   @id @default(cuid())
 	organizationId   String
@@ -315,6 +321,7 @@ model ResearchType {
 	outputFields     Json
 	modelId          String?
 	webSearchEnabled Boolean  @default(false)
+	kind             ResearchTypeKind @default(RESEARCH)
 	createdById      String?
 	createdAt        DateTime @default(now())
 	updatedAt        DateTime @updatedAt
