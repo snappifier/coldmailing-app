@@ -46,3 +46,6 @@ next-env.d.ts
 
 # IDE
 /.idea
+
+# superpowers brainstorm/visual-companion scratch
+.superpowers/
