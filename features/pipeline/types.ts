@@ -28,6 +28,7 @@ export interface PipelineLead {
 	city: string | null
 	dealStage: DealStage
 	lineName: string | null
+	score: number | null
 	sequenceStatus: CampaignLeadStatus | null
 	lastActivityAt: Date | null
 }

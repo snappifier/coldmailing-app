@@ -18,6 +18,7 @@ export function LeadCard({lead}: {lead: PipelineLead}) {
 			<div className="text-zinc-500">{sub || "—"}</div>
 			<div className="mt-1 flex items-center justify-between text-[10px] text-zinc-400">
 				<span>{lead.sequenceStatus ?? ""}</span>
+					<span>{lead.score != null ? `score ${lead.score}` : ""}</span>
 				<span>{lead.lastActivityAt ? new Date(lead.lastActivityAt).toLocaleDateString("pl-PL") : ""}</span>
 			</div>
 		</div>

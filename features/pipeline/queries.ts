@@ -11,6 +11,7 @@ export async function getPipelineLeads(organizationId: string, opts: {offeringLi
 			id: true,
 			organizationName: true,
 			city: true,
+			score: true,
 			dealStage: true,
 			offeringLine: {select: {name: true}},
 			campaignLeads: {orderBy: {createdAt: "desc"}, take: 1, select: {status: true}},
@@ -23,6 +24,7 @@ export async function getPipelineLeads(organizationId: string, opts: {offeringLi
 		city: l.city,
 		dealStage: l.dealStage,
 		lineName: l.offeringLine?.name ?? null,
+		score: l.score,
 		sequenceStatus: l.campaignLeads[0]?.status ?? null,
 		lastActivityAt: l.activities[0]?.createdAt ?? null,
 	}))
