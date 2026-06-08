@@ -5,5 +5,6 @@ import {helloWorld} from "@/lib/inngest/functions"
 import {runLeadSequence} from "@/lib/inngest/sending"
 import {scanMailboxesForReplies, pollMailboxReplies} from "@/lib/inngest/replies"
 import {runResearchFn} from "@/lib/inngest/research"
+import {runResearchBatchFn} from "@/lib/inngest/research-batch"
 
-export const {GET, POST, PUT} = serve({client: inngest, functions: [helloWorld, runLeadSequence, scanMailboxesForReplies, pollMailboxReplies, runResearchFn]})
+export const {GET, POST, PUT} = serve({client: inngest, functions: [helloWorld, runLeadSequence, scanMailboxesForReplies, pollMailboxReplies, runResearchFn, runResearchBatchFn]})
