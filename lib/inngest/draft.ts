@@ -53,6 +53,7 @@ export const runDraftFn = inngest.createFunction(
 			return {ok: false}
 		}
 		await step.run("save", () => prisma.leadDraft.update({where: {id: draftId}, data: {subject: out.subject, body: out.body, status: "DONE", error: null}}))
+		await step.sendEvent("draft-ready", {name: "research/draft.ready", data: {leadId: lead.id, organizationId: draft.organizationId}})
 		return {ok: true}
 	},
 )

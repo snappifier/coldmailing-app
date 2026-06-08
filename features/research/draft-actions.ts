@@ -42,6 +42,7 @@ export async function saveDraft(leadId: string, subject: string, body: string): 
 		create: {organizationId: orgId, leadId, subject: subject.trim(), body: body.trim(), status: "DONE", sourceTypeName: "(ręczny)", createdById: userId},
 		update: {subject: subject.trim(), body: body.trim(), status: "DONE", error: null},
 	})
+	await inngest.send({name: "research/draft.ready", data: {leadId, organizationId: orgId}})
 	revalidatePath(`/leady/${leadId}`)
 	return {ok: true}
 }

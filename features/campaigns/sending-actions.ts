@@ -29,13 +29,13 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 
 	const pendingLeads = await prisma.campaignLead.findMany({
 		where: {campaignId, status: "PENDING"},
-		select: {id: true},
+		select: {id: true, leadId: true},
 		orderBy: {createdAt: "asc"},
 	})
 	// Resume: leads still mid-sequence from a previously paused campaign (a step remains).
 	const inflightLeads = await prisma.campaignLead.findMany({
 		where: {campaignId, status: {in: ["ACTIVE", "REPLIED"]}, currentStep: {lte: maxOrder}},
-		select: {id: true},
+		select: {id: true, leadId: true},
 		orderBy: {createdAt: "asc"},
 	})
 
@@ -76,10 +76,14 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 		...resumePlan.map((p) => prisma.campaignLead.update({where: {id: p.leadId}, data: {nextSendAt: p.nextSendAt}})),
 	])
 
+	const leadIdByCampaignLead = new Map<string, string>()
+	for (const l of [...pendingLeads, ...inflightLeads]) leadIdByCampaignLead.set(l.id, l.leadId)
+
 	await inngest.send(
 		[...plan, ...resumePlan].map((p) => ({
 			name: "campaign/lead.start",
-			data: {campaignLeadId: p.leadId, campaignId, emailAccountId: account.id},
+			// p.leadId is the campaignLead id (planner naming); leadId is the real Lead.id (for waitForEvent match on draft steps).
+			data: {campaignLeadId: p.leadId, campaignId, emailAccountId: account.id, leadId: leadIdByCampaignLead.get(p.leadId)!},
 		})),
 	)
 
