@@ -8,7 +8,7 @@ import {previewBatch, startBatch, type PreviewResult} from "@/features/research/
 interface TypeOption {
 	id: string
 	name: string
-	kind: "RESEARCH" | "SCORING" | "CONTENT"
+	kind: "RESEARCH" | "SCORING" | "CONTENT" | "DRAFT"
 }
 
 export function BatchResearchLauncher({types, criteria}: {types: TypeOption[]; criteria: {offeringLineId?: string; q?: string}}) {

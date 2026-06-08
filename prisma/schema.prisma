@@ -130,6 +130,7 @@ model Organization {
 	researchTypes  ResearchType[]
 	researchRuns   ResearchRun[]
 	researchBatches ResearchBatch[]
+	leadDrafts     LeadDraft[]
 }
 
 model User {
@@ -150,6 +151,7 @@ model User {
 	researchTypes ResearchType[] @relation("ResearchTypeCreatedBy")
 	researchRuns ResearchRun[] @relation("ResearchRunCreatedBy")
 	researchBatches ResearchBatch[] @relation("ResearchBatchCreatedBy")
+	leadDrafts LeadDraft[] @relation("LeadDraftCreatedBy")
 }
 
 model Account {
@@ -250,6 +252,7 @@ model Lead {
 	campaignLeads CampaignLead[]
 	activities    LeadActivity[]
 	researchRuns  ResearchRun[]
+	drafts        LeadDraft[]
 
 	@@unique([organizationId, email])
 	@@index([organizationId, dealStage])
@@ -312,6 +315,14 @@ enum ResearchTypeKind {
 	RESEARCH
 	SCORING
 	CONTENT
+	DRAFT
+}
+
+enum DraftStatus {
+	QUEUED
+	RUNNING
+	DONE
+	FAILED
 }
 
 model ResearchType {
@@ -331,6 +342,7 @@ model ResearchType {
 	createdBy    User?        @relation("ResearchTypeCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
 	runs         ResearchRun[]
 	batches      ResearchBatch[]
+	drafts       LeadDraft[]
 
 	@@unique([organizationId, name])
 }
@@ -414,6 +426,29 @@ model ResearchBatch {
 	runs         ResearchRun[]
 
 	@@index([organizationId, createdAt])
+}
+
+model LeadDraft {
+	id             String      @id @default(cuid())
+	organizationId String
+	leadId         String
+	subject        String      @default("")
+	body           String      @default("")
+	status         DraftStatus @default(QUEUED)
+	error          String?
+	sourceTypeId   String?
+	sourceTypeName String
+	createdById    String?
+	createdAt      DateTime    @default(now())
+	updatedAt      DateTime    @updatedAt
+
+	organization Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	lead         Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+	sourceType   ResearchType? @relation(fields: [sourceTypeId], references: [id], onDelete: SetNull)
+	createdBy    User?         @relation("LeadDraftCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+	@@unique([organizationId, leadId])
+	@@index([organizationId, leadId])
 }
 
 model Campaign {

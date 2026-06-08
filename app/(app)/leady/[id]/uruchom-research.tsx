@@ -9,7 +9,7 @@ import {startResearch, getResearchRun, confirmResearchApply} from "@/features/re
 interface TypeOption {
 	id: string
 	name: string
-	kind: "RESEARCH" | "SCORING" | "CONTENT"
+	kind: "RESEARCH" | "SCORING" | "CONTENT" | "DRAFT"
 }
 interface DiffField {
 	key: string

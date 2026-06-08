@@ -13,7 +13,7 @@ type Action = (prev: ResearchTypeResult | null, formData: FormData) => Promise<R
 
 interface Initial {
 	name: string
-	kind: "RESEARCH" | "SCORING" | "CONTENT"
+	kind: "RESEARCH" | "SCORING" | "CONTENT" | "DRAFT"
 	prompt: string
 	modelId: string
 	webSearchEnabled: boolean
