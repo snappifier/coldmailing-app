@@ -4,7 +4,9 @@ import type {Prisma} from "@/generated/prisma/client"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteLead} from "@/features/leads/actions"
+import {listResearchTypes} from "@/features/research-types/queries"
 import {LeadForm} from "./lead-form"
+import {BatchResearchLauncher} from "./batch-research-launcher"
 
 export default async function LeadsPage({searchParams}: {searchParams: Promise<{q?: string; line?: string; sort?: string}>}) {
 	const {orgId} = await requireOrg()
@@ -23,9 +25,10 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 	const orderBy: Prisma.LeadOrderByWithRelationInput =
 		sort === "priority" ? {priority: "desc"} : sort === "name" ? {organizationName: "asc"} : {createdAt: "desc"}
 
-	const [leads, offeringLines] = await Promise.all([
+	const [leads, offeringLines, researchTypes] = await Promise.all([
 		prisma.lead.findMany({where, orderBy, take: 500, include: {offeringLine: {select: {name: true}}}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
+		listResearchTypes(orgId),
 	])
 
 	return (
@@ -38,6 +41,8 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 			</div>
 
 			<LeadForm offeringLines={offeringLines} />
+
+			<BatchResearchLauncher types={researchTypes.map((t) => ({id: t.id, name: t.name}))} criteria={{offeringLineId: line, q}} />
 
 			<form className="flex flex-wrap gap-2 text-sm">
 				<input className="rounded border border-zinc-300 px-2 py-1" name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
