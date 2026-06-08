@@ -127,6 +127,7 @@ model Organization {
 	emailAccounts EmailAccount[]
 	messages       Message[]
 	leadActivities LeadActivity[]
+	researchTypes  ResearchType[]
 }
 
 model User {
@@ -144,6 +145,7 @@ model User {
 	templates    Template[]    @relation("TemplateCreatedBy")
 	placeholders Placeholder[] @relation("PlaceholderCreatedBy")
 	campaigns    Campaign[]    @relation("CampaignCreatedBy")
+	researchTypes ResearchType[] @relation("ResearchTypeCreatedBy")
 }
 
 model Account {
@@ -298,6 +300,24 @@ model Placeholder {
 	createdBy    User?        @relation("PlaceholderCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
 
 	@@unique([organizationId, key])
+}
+
+model ResearchType {
+	id               String   @id @default(cuid())
+	organizationId   String
+	name             String
+	prompt           String
+	outputFields     Json
+	modelId          String?
+	webSearchEnabled Boolean  @default(false)
+	createdById      String?
+	createdAt        DateTime @default(now())
+	updatedAt        DateTime @updatedAt
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	createdBy    User?        @relation("ResearchTypeCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+	@@unique([organizationId, name])
 }
 
 model Campaign {

@@ -16,6 +16,7 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 					<Link href="/linie">Linie usług</Link>
 					<Link href="/szablony">Szablony</Link>
 					<Link href="/placeholdery">Placeholdery</Link>
+						<Link href="/badania">Badania</Link>
 					<Link href="/kampanie">Kampanie</Link>
 					<Link href="/skrzynki">Skrzynki</Link>
 					<Link href="/suppression">Suppression</Link>
