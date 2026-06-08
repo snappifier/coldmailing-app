@@ -11,6 +11,7 @@ export const sequenceStepSchema = z.object({
 	templateId: z.string().trim().min(1, "Wybierz szablon"),
 	delayDays: z.coerce.number().int().min(0).max(365),
 	condition: z.enum(["ALWAYS", "SEND_IF_NO_REPLY"]),
+	useLeadDraft: z.coerce.boolean().default(false),
 })
 
 export type CampaignInput = z.infer<typeof campaignSchema>

@@ -61,6 +61,7 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 					delayDays: s.delayDays,
 					condition: s.condition,
 					templateName: s.template.name,
+					useLeadDraft: s.useLeadDraft,
 				}))}
 			/>
 			<div>

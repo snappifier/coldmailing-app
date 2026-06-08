@@ -8,7 +8,7 @@ interface Props {
 	campaignId: string
 	templates: {id: string; name: string}[]
 	offeringLines: {id: string; name: string}[]
-	steps: {id: string; order: number; delayDays: number; condition: string; templateName: string}[]
+	steps: {id: string; order: number; delayDays: number; condition: string; templateName: string; useLeadDraft: boolean}[]
 }
 
 export function SequenceAndLeads({campaignId, templates, offeringLines, steps}: Props) {
@@ -23,7 +23,8 @@ export function SequenceAndLeads({campaignId, templates, offeringLines, steps}: 
 					{steps.map((s) => (
 						<li className="flex items-center justify-between border-b border-zinc-100 py-1" key={s.id}>
 							<span>
-								#{s.order + 1} · {s.templateName} · po {s.delayDays} dniach · {s.condition}
+								#{s.order + 1} · {s.useLeadDraft ? "draft AI" : s.templateName} · po {s.delayDays} dniach · {s.condition}
+								{s.useLeadDraft ? <span className="ml-1 rounded bg-violet-100 px-1 text-xs text-violet-700">draft</span> : null}
 							</span>
 							<form action={deleteSequenceStep.bind(null, s.id, campaignId)}>
 								<button className="text-red-600" type="submit">
@@ -49,6 +50,10 @@ export function SequenceAndLeads({campaignId, templates, offeringLines, steps}: 
 						<option value="ALWAYS">ALWAYS</option>
 						<option value="SEND_IF_NO_REPLY">SEND_IF_NO_REPLY</option>
 					</select>
+					<label className="flex items-center gap-1 text-sm text-zinc-700">
+						<input type="checkbox" name="useLeadDraft" />
+						Wyślij draft AI (zamiast szablonu)
+					</label>
 					<button className="rounded bg-zinc-900 px-3 py-1.5 text-sm text-white disabled:opacity-50" type="submit" disabled={stepPending}>
 						Dodaj krok
 					</button>

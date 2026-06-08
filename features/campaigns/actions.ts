@@ -56,6 +56,7 @@ export async function addSequenceStep(_prev: StepResult | null, formData: FormDa
 			templateId: parsed.data.templateId,
 			delayDays: parsed.data.delayDays,
 			condition: parsed.data.condition,
+			useLeadDraft: parsed.data.useLeadDraft,
 		},
 	})
 	revalidatePath(`/kampanie/${parsed.data.campaignId}`)
