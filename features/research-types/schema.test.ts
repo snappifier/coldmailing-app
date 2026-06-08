@@ -90,4 +90,12 @@ describe("researchTypeSchema", () => {
 		const fields = [{key: "ps", label: "PS", target: "CUSTOM", type: "TEXT"}]
 		expect(researchTypeSchema.safeParse({...valid, kind: "CONTENT", outputFields: fields}).success).toBe(true)
 	})
+
+	it("accepts a DRAFT type with no output fields", () => {
+		expect(researchTypeSchema.safeParse({name: "Mail", prompt: "napisz maila", kind: "DRAFT", outputFields: []}).success).toBe(true)
+	})
+
+	it("rejects a non-DRAFT type with no output fields", () => {
+		expect(researchTypeSchema.safeParse({name: "X", prompt: "p", kind: "RESEARCH", outputFields: []}).success).toBe(false)
+	})
 })

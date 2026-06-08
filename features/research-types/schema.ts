@@ -46,8 +46,12 @@ export const researchTypeSchema = z
 			.optional()
 			.transform((v) => (v ? v : null)),
 		webSearchEnabled: z.boolean().default(false),
-		kind: z.enum(["RESEARCH", "SCORING", "CONTENT"]).default("RESEARCH"),
-		outputFields: z.array(outputFieldSchema).min(1, "Dodaj co najmniej jedno pole wyjściowe"),
+		kind: z.enum(["RESEARCH", "SCORING", "CONTENT", "DRAFT"]).default("RESEARCH"),
+		outputFields: z.array(outputFieldSchema).default([]),
+	})
+	.refine((d) => d.kind === "DRAFT" || d.outputFields.length >= 1, {
+		message: "Dodaj co najmniej jedno pole wyjściowe",
+		path: ["outputFields"],
 	})
 	.refine((d) => new Set(d.outputFields.map((f) => f.key)).size === d.outputFields.length, {
 		message: "Klucze pól muszą być unikalne",
