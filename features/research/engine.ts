@@ -20,7 +20,7 @@ export async function runResearch({renderedPrompt, inputSchema, modelId, webSear
 	const client = new Anthropic()
 	const model = resolveModel(modelId)
 
-	const tools: unknown[] = [{name: SUBMIT_TOOL, description: "Zgłoś zebrane wyniki researchu zgodnie ze schematem.", input_schema: inputSchema}]
+	const tools: unknown[] = [{name: SUBMIT_TOOL, description: "Zgłoś zebrane wyniki researchu zgodnie ze schematem.", input_schema: inputSchema, strict: true}]
 	if (webSearchEnabled) {
 		tools.push({type: "web_search_20260209", name: "web_search"})
 		tools.push({type: "web_fetch_20260209", name: "web_fetch"})
@@ -32,7 +32,7 @@ export async function runResearch({renderedPrompt, inputSchema, modelId, webSear
 		for (let i = 0; i < 12; i++) {
 			const res = await client.messages.create({
 				model,
-				max_tokens: 8000,
+				max_tokens: 16000,
 				system: SYSTEM,
 				tools: tools as Anthropic.Messages.ToolUnion[],
 				messages,
@@ -44,6 +44,8 @@ export async function runResearch({renderedPrompt, inputSchema, modelId, webSear
 				return {ok: true, findings: (submit.input ?? {}) as Record<string, unknown>}
 			}
 			if (res.stop_reason === "end_turn") return {ok: false, error: "Model nie zwrócił wyników (brak submit_findings)"}
+			// pause_turn (server-side web_search/web_fetch loop hit its limit) or any other stop:
+			// append the assistant turn and re-send so the server-side tool loop resumes.
 			messages.push({role: "assistant", content: res.content})
 		}
 		return {ok: false, error: "Przekroczono limit iteracji researchu"}

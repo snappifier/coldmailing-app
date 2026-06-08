@@ -70,9 +70,14 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 
 	async function onApply() {
 		if (!runId) return
+		setError(null)
 		setBusy(true)
-		await confirmResearchApply(runId)
+		const result = await confirmResearchApply(runId)
 		setBusy(false)
+		if (!result.ok) {
+			setError(result.error)
+			return
+		}
 		setRun((r) => (r && r.diff ? {...r, diff: {...r.diff, proposed: []}} : r))
 		router.refresh()
 	}

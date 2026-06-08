@@ -24,8 +24,8 @@ export const runResearchFn = inngest.createFunction(
 	async ({event, step}) => {
 		const {runId} = event.data as {runId: string}
 		const run = await prisma.researchRun.findUnique({where: {id: runId}, include: {lead: true, researchType: true}})
-		if (!run || !run.lead || !run.researchType) {
-			if (run) await prisma.researchRun.update({where: {id: runId}, data: {status: "FAILED", error: "Brak typu researchu lub leada", completedAt: new Date()}})
+		if (!run || !run.lead || !run.researchType || run.researchType.organizationId !== run.organizationId || run.lead.organizationId !== run.organizationId) {
+			if (run) await prisma.researchRun.update({where: {id: runId}, data: {status: "FAILED", error: "Brak typu/leada lub niezgodność organizacji", completedAt: new Date()}})
 			return {skipped: true}
 		}
 		const researchType = run.researchType
