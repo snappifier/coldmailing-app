@@ -56,7 +56,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 					/>
 				</div>
 				<div className="flex flex-col gap-3">
-					<UruchomResearch leadId={lead.id} types={researchTypes.map((t) => ({id: t.id, name: t.name}))} />
+					<UruchomResearch leadId={lead.id} types={researchTypes.map((t) => ({id: t.id, name: t.name, kind: t.kind}))} />
 					<h2 className="text-sm font-semibold text-zinc-500">Oś czasu</h2>
 					<ActivityForm leadId={lead.id} />
 					<LeadTimeline items={timeline} />

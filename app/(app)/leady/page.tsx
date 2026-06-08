@@ -44,7 +44,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 
 			<LeadForm offeringLines={offeringLines} />
 
-			<BatchResearchLauncher types={researchTypes.map((t) => ({id: t.id, name: t.name}))} criteria={{offeringLineId: line, q}} />
+			<BatchResearchLauncher types={researchTypes.map((t) => ({id: t.id, name: t.name, kind: t.kind}))} criteria={{offeringLineId: line, q}} />
 
 			<form className="flex flex-wrap gap-2 text-sm">
 				<input className="rounded border border-zinc-300 px-2 py-1" name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />

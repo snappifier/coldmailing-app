@@ -3,11 +3,13 @@
 
 import {useEffect, useRef, useState} from "react"
 import {useRouter} from "next/navigation"
+import Link from "next/link"
 import {startResearch, getResearchRun, confirmResearchApply} from "@/features/research/actions"
 
 interface TypeOption {
 	id: string
 	name: string
+	kind: "RESEARCH" | "SCORING"
 }
 interface DiffField {
 	key: string
@@ -90,9 +92,9 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 			{types.length === 0 ? (
 				<p className="text-sm text-zinc-500">
 					Brak typów researchu. Dodaj w{" "}
-					<a className="underline" href="/badania">
+					<Link className="underline" href="/badania">
 						Badania
-					</a>
+					</Link>
 					.
 				</p>
 			) : (
@@ -101,6 +103,7 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 						<select className="rounded border border-zinc-300 px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
 							{types.map((t) => (
 								<option key={t.id} value={t.id}>
+									{t.kind === "SCORING" ? "[Ocena] " : ""}
 									{t.name}
 								</option>
 							))}
