@@ -13,10 +13,10 @@ const h = vi.hoisted(() => ({
 vi.mock("@/lib/prisma", () => ({
 	prisma: {
 		researchBatch: {
-			findUnique: vi.fn(async () => h.batch),
+			findFirst: vi.fn(async () => h.batch),
 			update: vi.fn(async (args: any) => {
 				h.updateArgs = args
-				Object.assign(h.batch, args.data)
+				if (h.batch) Object.assign(h.batch, args.data)
 				return h.batch
 			}),
 		},
@@ -62,7 +62,7 @@ beforeEach(() => {
 
 describe("runResearchBatchHandler", () => {
 	it("creates a run per candidate, sets RUNNING+total, fans out one event per run", async () => {
-		const res = await runResearchBatchHandler("b1", tools())
+		const res = await runResearchBatchHandler("b1", "org1", tools())
 		expect(h.created).toHaveLength(3)
 		expect(h.created[0]).toMatchObject({organizationId: "org1", leadId: "a", batchId: "b1", mode: "AUTO", status: "QUEUED", promptSnapshot: "P", webSearchEnabledSnapshot: true})
 		expect(h.batch.status).toBe("RUNNING")
@@ -74,20 +74,20 @@ describe("runResearchBatchHandler", () => {
 
 	it("dedups recently-researched leads unless includeRecent", async () => {
 		h.recent = [{leadId: "b"}]
-		await runResearchBatchHandler("b1", tools())
+		await runResearchBatchHandler("b1", "org1", tools())
 		expect(h.created.map((r: any) => r.leadId)).toEqual(["a", "c"])
 	})
 
 	it("ignores recent dedup when includeRecent is true", async () => {
 		h.batch.includeRecent = true
 		h.recent = [{leadId: "b"}]
-		await runResearchBatchHandler("b1", tools())
+		await runResearchBatchHandler("b1", "org1", tools())
 		expect(h.created).toHaveLength(3)
 	})
 
 	it("finalizes an empty batch DONE without fanning out", async () => {
 		h.candidates = []
-		const res = await runResearchBatchHandler("b1", tools())
+		const res = await runResearchBatchHandler("b1", "org1", tools())
 		expect(h.created).toHaveLength(0)
 		expect(h.sent).toHaveLength(0)
 		expect(h.batch.status).toBe("DONE")
@@ -96,14 +96,14 @@ describe("runResearchBatchHandler", () => {
 
 	it("skips a cancelled batch", async () => {
 		h.batch.status = "CANCELLED"
-		const res = await runResearchBatchHandler("b1", tools())
+		const res = await runResearchBatchHandler("b1", "org1", tools())
 		expect(res).toEqual({skipped: "cancelled"})
 		expect(h.created).toHaveLength(0)
 	})
 
 	it("skips a missing batch", async () => {
 		h.batch = null
-		const res = await runResearchBatchHandler("missing", tools())
+		const res = await runResearchBatchHandler("missing", "org1", tools())
 		expect(res).toEqual({skipped: "no-batch"})
 	})
 })

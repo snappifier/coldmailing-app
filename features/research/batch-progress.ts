@@ -13,6 +13,9 @@ export type BatchDisplayStatus = "QUEUED" | "RUNNING" | "DONE" | "PARTIAL" | "CA
 
 // The batch row is only ever persisted as QUEUED / RUNNING / CANCELLED (and DONE for the empty-batch
 // shortcut). Terminal DONE/PARTIAL are derived from run-status counts at read time (no write-back).
+// `total` is the run-row count the orchestrator wrote (mark-running step); the batch is considered
+// finished once the terminal-run count reaches it. resumeFailed flips runs back to QUEUED, which
+// lowers the terminal count below total and correctly returns the batch to RUNNING.
 export function deriveBatchStatus(persisted: ResearchBatchStatus, counts: RunStatusCounts, total: number): BatchDisplayStatus {
 	if (persisted === "CANCELLED") return "CANCELLED"
 	if (persisted === "QUEUED") return "QUEUED"

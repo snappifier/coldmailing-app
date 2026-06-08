@@ -119,7 +119,7 @@ export async function cancelBatch(batchId: string): Promise<BatchActionResult> {
 	const batch = await prisma.researchBatch.findFirst({where: {id: batchId, organizationId: orgId}, select: {id: true}})
 	if (!batch) return {ok: false, error: "Nie znaleziono badania"}
 	await prisma.$transaction([
-		prisma.researchBatch.update({where: {id: batchId}, data: {status: "CANCELLED", completedAt: new Date()}}),
+		prisma.researchBatch.update({where: {id: batchId, organizationId: orgId}, data: {status: "CANCELLED", completedAt: new Date()}}),
 		prisma.researchRun.updateMany({where: {batchId, organizationId: orgId, status: "QUEUED"}, data: {status: "CANCELLED", completedAt: new Date()}}),
 	])
 	await inngest.send({name: "research/batch.cancelled", data: {batchId}})
@@ -136,7 +136,7 @@ export async function resumeFailed(batchId: string): Promise<BatchActionResult> 
 	if (failed.length === 0) return {ok: true}
 	await prisma.$transaction([
 		prisma.researchRun.updateMany({where: {id: {in: failed.map((f) => f.id)}, organizationId: orgId}, data: {status: "QUEUED", error: null, completedAt: null}}),
-		prisma.researchBatch.update({where: {id: batchId}, data: {status: "RUNNING"}}),
+		prisma.researchBatch.update({where: {id: batchId, organizationId: orgId}, data: {status: "RUNNING"}}),
 	])
 	await inngest.send(failed.map((f) => ({name: "research/run.requested", data: {runId: f.id, organizationId: orgId}})))
 	revalidatePath(`/badania/batches/${batchId}`)

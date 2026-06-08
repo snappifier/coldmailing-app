@@ -1,8 +1,7 @@
 "use client"
 // app/(app)/badania/batches/[id]/batch-view.tsx
 
-import {useEffect, useRef, useState} from "react"
-import {useRouter} from "next/navigation"
+import {useCallback, useEffect, useRef, useState} from "react"
 import {getBatch, cancelBatch, resumeFailed, applyBatch} from "@/features/research/batch-actions"
 import {confirmResearchApply} from "@/features/research/actions"
 
@@ -17,25 +16,40 @@ const STATUS_LABEL: Record<string, string> = {
 	FAILED: "Błąd",
 }
 
+function isTerminal(s: string) {
+	return s === "DONE" || s === "PARTIAL" || s === "CANCELLED"
+}
+
 export function BatchView({batchId, initial}: {batchId: string; initial: Batch}) {
-	const router = useRouter()
 	const [batch, setBatch] = useState<Batch>(initial)
 	const [busy, setBusy] = useState(false)
 	const [msg, setMsg] = useState<string | null>(null)
-	const timer = useRef<ReturnType<typeof setInterval> | null>(null)
+	const mounted = useRef(true)
 
+	// Immediately re-fetch + update local state (the source of truth this component renders).
+	const refresh = useCallback(async () => {
+		const b = await getBatch(batchId)
+		if (b && mounted.current) setBatch(b)
+	}, [batchId])
+
+	// Self-scheduling poll: await each fetch before scheduling the next so slow responses can never
+	// stack up and overwrite fresher state. Stops once the batch reaches a terminal status.
 	useEffect(() => {
-		function isTerminal(s: string) {
-			return s === "DONE" || s === "PARTIAL" || s === "CANCELLED"
-		}
-		timer.current = setInterval(async () => {
+		mounted.current = true
+		let handle: ReturnType<typeof setTimeout> | null = null
+		async function tick() {
 			const b = await getBatch(batchId)
-			if (!b) return
-			setBatch(b)
-			if (isTerminal(b.status) && timer.current) clearInterval(timer.current)
-		}, 2000)
+			if (!mounted.current) return
+			if (b) {
+				setBatch(b)
+				if (isTerminal(b.status)) return
+			}
+			handle = setTimeout(tick, 2000)
+		}
+		handle = setTimeout(tick, 2000)
 		return () => {
-			if (timer.current) clearInterval(timer.current)
+			mounted.current = false
+			if (handle) clearTimeout(handle)
 		}
 	}, [batchId])
 
@@ -43,38 +57,42 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 		setBusy(true)
 		setMsg(null)
 		const res = await cancelBatch(batchId)
-		setBusy(false)
 		if (!res.ok) setMsg(res.error)
-		else router.refresh()
+		else await refresh()
+		setBusy(false)
 	}
 
 	async function onResume() {
 		setBusy(true)
 		setMsg(null)
 		const res = await resumeFailed(batchId)
+		if (!res.ok) setMsg(res.error)
+		else {
+			setMsg("Ponowiono nieudane.")
+			await refresh()
+		}
 		setBusy(false)
-		setMsg(res.ok ? "Ponowiono nieudane." : res.error)
 	}
 
 	async function onApplyAll() {
 		setBusy(true)
 		setMsg(null)
 		const res = await applyBatch(batchId)
-		setBusy(false)
 		if (!res.ok) setMsg(res.error)
 		else setMsg(`Zastosowano ${res.applied} pól${res.emailCollisions ? `, pominięto ${res.emailCollisions} kolizji email` : ""}.`)
+		setBusy(false)
 	}
 
 	async function onApplyRow(runId: string) {
 		setBusy(true)
 		setMsg(null)
 		const res = await confirmResearchApply(runId)
-		setBusy(false)
 		if (!res.ok) setMsg(res.error)
+		setBusy(false)
 	}
 
 	const c = batch.counts
-	const isTerminal = batch.status === "DONE" || batch.status === "PARTIAL" || batch.status === "CANCELLED"
+	const terminal = isTerminal(batch.status)
 
 	return (
 		<div className="flex flex-col gap-4">
@@ -90,7 +108,7 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 			</p>
 
 			<div className="flex flex-wrap gap-2 text-sm">
-				{!isTerminal ? (
+				{!terminal ? (
 					<button className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onCancel}>
 						Anuluj badanie
 					</button>

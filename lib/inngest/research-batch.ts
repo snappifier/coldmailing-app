@@ -12,8 +12,10 @@ export interface BatchTools {
 	sendEvent: (id: string, events: {name: string; data: Record<string, unknown>}[]) => Promise<void>
 }
 
-export async function runResearchBatchHandler(batchId: string, step: BatchTools) {
-	const batch = await prisma.researchBatch.findUnique({where: {id: batchId}})
+export async function runResearchBatchHandler(batchId: string, organizationId: string, step: BatchTools) {
+	// Org-scoped load: the event's organizationId (set by the org-scoped startBatch) must match the
+	// batch row -- defense-in-depth so a forged/mismatched event cannot drive another org's batch.
+	const batch = await prisma.researchBatch.findFirst({where: {id: batchId, organizationId}})
 	if (!batch) return {skipped: "no-batch"}
 	if (batch.status === "CANCELLED") return {skipped: "cancelled"}
 
@@ -36,7 +38,9 @@ export async function runResearchBatchHandler(batchId: string, step: BatchTools)
 
 	const {capped} = capBatch(toQueue)
 	if (capped.length === 0) {
-		await prisma.researchBatch.update({where: {id: batchId}, data: {status: "DONE", total: 0, startedAt: new Date(), completedAt: new Date()}})
+		await step.run("finalize-empty", () =>
+			prisma.researchBatch.update({where: {id: batchId, organizationId: batch.organizationId}, data: {status: "DONE", total: 0, startedAt: new Date(), completedAt: new Date()}}),
+		)
 		return {total: 0}
 	}
 
@@ -59,8 +63,12 @@ export async function runResearchBatchHandler(batchId: string, step: BatchTools)
 		}),
 	)
 
+	// total is the count of run rows created for this batch; deriveBatchStatus relies on it matching
+	// the eventual sum of terminal-status runs to flip the batch DONE/PARTIAL at read time.
 	const runs = await step.run("load-run-ids", () => prisma.researchRun.findMany({where: {batchId}, select: {id: true}}))
-	await prisma.researchBatch.update({where: {id: batchId}, data: {status: "RUNNING", total: runs.length, startedAt: new Date()}})
+	await step.run("mark-running", () =>
+		prisma.researchBatch.update({where: {id: batchId, organizationId: batch.organizationId}, data: {status: "RUNNING", total: runs.length, startedAt: new Date()}}),
+	)
 	await step.sendEvent(
 		"fan-out-runs",
 		runs.map((r) => ({name: "research/run.requested", data: {runId: r.id, organizationId: batch.organizationId}})),
@@ -77,7 +85,7 @@ export const runResearchBatchFn = inngest.createFunction(
 		retries: 2,
 	},
 	async ({event, step}) => {
-		const {batchId} = event.data as {batchId: string; organizationId: string}
+		const {batchId, organizationId} = event.data as {batchId: string; organizationId: string}
 		const tools: BatchTools = {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			run: (id, fn) => (step.run as any)(id, fn),
@@ -85,6 +93,6 @@ export const runResearchBatchFn = inngest.createFunction(
 				await step.sendEvent(id, events as Parameters<typeof step.sendEvent>[1])
 			},
 		}
-		return runResearchBatchHandler(batchId, tools)
+		return runResearchBatchHandler(batchId, organizationId, tools)
 	},
 )
