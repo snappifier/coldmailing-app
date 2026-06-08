@@ -311,6 +311,7 @@ model Placeholder {
 enum ResearchTypeKind {
 	RESEARCH
 	SCORING
+	CONTENT
 }
 
 model ResearchType {
