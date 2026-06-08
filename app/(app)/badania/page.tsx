@@ -2,11 +2,12 @@
 import Link from "next/link"
 import {requireOrg} from "@/lib/org"
 import {listResearchTypes} from "@/features/research-types/queries"
+import {listResearchBatches} from "@/features/research/batch-queries"
 import {deleteResearchType} from "@/features/research-types/actions"
 
 export default async function ResearchTypesPage() {
 	const {orgId} = await requireOrg()
-	const types = await listResearchTypes(orgId)
+	const [types, batches] = await Promise.all([listResearchTypes(orgId), listResearchBatches(orgId)])
 
 	return (
 		<section className="flex flex-col gap-4">
@@ -43,6 +44,23 @@ export default async function ResearchTypesPage() {
 				})}
 				{types.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak typów researchu.</li> : null}
 			</ul>
+
+			<div className="flex flex-col gap-2">
+				<h2 className="text-sm font-semibold text-zinc-500">Ostatnie badania zbiorcze</h2>
+				<ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+					{batches.map((b) => (
+						<li className="flex items-center justify-between py-2 text-sm" key={b.id}>
+							<Link className="underline" href={`/badania/batches/${b.id}`}>
+								{b.researchTypeName}
+							</Link>
+							<span className="text-zinc-400">
+								{b.total} leadów · {b.mode === "MANUAL" ? "ręczne" : "auto"} · {b.createdAt.toLocaleDateString("pl-PL")}
+							</span>
+						</li>
+					))}
+					{batches.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak badań zbiorczych.</li> : null}
+				</ul>
+			</div>
 		</section>
 	)
 }
