@@ -14,6 +14,7 @@ export default async function EditResearchTypePage({params}: {params: Promise<{i
 
 	const initial = {
 		name: type.name,
+		kind: type.kind,
 		prompt: type.prompt,
 		modelId: type.modelId ?? "",
 		webSearchEnabled: type.webSearchEnabled,
