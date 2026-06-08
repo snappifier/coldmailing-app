@@ -13,7 +13,7 @@ type Action = (prev: ResearchTypeResult | null, formData: FormData) => Promise<R
 
 interface Initial {
 	name: string
-	kind: "RESEARCH" | "SCORING"
+	kind: "RESEARCH" | "SCORING" | "CONTENT"
 	prompt: string
 	modelId: string
 	webSearchEnabled: boolean
@@ -67,6 +67,7 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 				<select className="rounded border border-zinc-300 px-2 py-1" name="kind" defaultValue={initial?.kind ?? "RESEARCH"}>
 					<option value="RESEARCH">Research (zbieranie danych)</option>
 					<option value="SCORING">Ocena (scoring)</option>
+						<option value="CONTENT">Treść (content)</option>
 				</select>
 				<span className="text-xs text-zinc-500">Typ oceny powinien mieć pole z celem score (0-100), opcjonalnie priority (1-5) i uzasadnienie (np. aiNotes).</span>
 			</label>

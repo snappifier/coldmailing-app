@@ -8,7 +8,7 @@ import {previewBatch, startBatch, type PreviewResult} from "@/features/research/
 interface TypeOption {
 	id: string
 	name: string
-	kind: "RESEARCH" | "SCORING"
+	kind: "RESEARCH" | "SCORING" | "CONTENT"
 }
 
 export function BatchResearchLauncher({types, criteria}: {types: TypeOption[]; criteria: {offeringLineId?: string; q?: string}}) {
@@ -63,7 +63,7 @@ export function BatchResearchLauncher({types, criteria}: {types: TypeOption[]; c
 						<select className="rounded border border-zinc-300 px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
 							{types.map((t) => (
 								<option key={t.id} value={t.id}>
-									{t.kind === "SCORING" ? "[Ocena] " : ""}
+									{t.kind === "SCORING" ? "[Ocena] " : t.kind === "CONTENT" ? "[Treść] " : ""}
 								{t.name}
 								</option>
 							))}

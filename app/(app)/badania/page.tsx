@@ -29,7 +29,8 @@ export default async function ResearchTypesPage() {
 								<Link className="font-medium underline" href={`/badania/${t.id}`}>
 									{t.name}
 								</Link>
-								{t.kind === "SCORING" ? <span className="ml-1 rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-700">Ocena</span> : null}{" "}
+								{t.kind === "SCORING" ? <span className="ml-1 rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-700">Ocena</span> : null}
+							{t.kind === "CONTENT" ? <span className="ml-1 rounded bg-sky-100 px-1.5 py-0.5 text-xs text-sky-700">Treść</span> : null}{" "}
 								<span className="text-zinc-400">
 									({count} pól{t.webSearchEnabled ? ", web" : ""}
 									{t.modelId ? `, ${t.modelId}` : ""})
