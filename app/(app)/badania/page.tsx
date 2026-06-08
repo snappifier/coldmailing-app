@@ -28,7 +28,8 @@ export default async function ResearchTypesPage() {
 							<span>
 								<Link className="font-medium underline" href={`/badania/${t.id}`}>
 									{t.name}
-								</Link>{" "}
+								</Link>
+								{t.kind === "SCORING" ? <span className="ml-1 rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-700">Ocena</span> : null}{" "}
 								<span className="text-zinc-400">
 									({count} pól{t.webSearchEnabled ? ", web" : ""}
 									{t.modelId ? `, ${t.modelId}` : ""})
