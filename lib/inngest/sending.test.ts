@@ -45,7 +45,8 @@ vi.mock("@/lib/prisma", () => ({
 	},
 }))
 
-import {runLeadSequenceHandler, type SequenceStepTools} from "@/lib/inngest/sending"
+import {runLeadSequenceHandler, handleLeadSequenceFailure, type SequenceStepTools} from "@/lib/inngest/sending"
+import {prisma} from "@/lib/prisma"
 
 function step(order: number, condition: "ALWAYS" | "SEND_IF_NO_REPLY", delayDays: number) {
 	return {order, condition, delayDays, template: {subject: "S", body: "B"}}
@@ -68,6 +69,27 @@ beforeEach(() => {
 	h.steps = []
 	h.messages.length = 0
 	h.sendEmail.mockClear()
+})
+
+describe("handleLeadSequenceFailure", () => {
+	it("marks an in-sequence lead FAILED", async () => {
+		h.cLead.status = "ACTIVE"
+		await handleLeadSequenceFailure("cl1", new Error("smtp down"))
+		expect(h.cLead.status).toBe("FAILED")
+		expect(h.cLead.lastError).toContain("smtp down")
+	})
+
+	it("does NOT stomp a terminal status", async () => {
+		h.cLead.status = "REPLIED"
+		await handleLeadSequenceFailure("cl1", new Error("x"))
+		expect(h.cLead.status).toBe("REPLIED")
+	})
+
+	it("no-ops when campaignLeadId is undefined", async () => {
+		vi.clearAllMocks()
+		await handleLeadSequenceFailure(undefined, new Error("x"))
+		expect((prisma.campaignLead.updateMany as any).mock.calls).toHaveLength(0)
+	})
 })
 
 describe("runLeadSequenceHandler", () => {

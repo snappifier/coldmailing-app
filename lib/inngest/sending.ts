@@ -17,6 +17,16 @@ async function finalizeLead(campaignLeadId: string): Promise<void> {
 	})
 }
 
+// Set FAILED only after Inngest has exhausted retries (called from onFailure). Guarded so a
+// terminal status (a reply that landed, etc.) is never stomped.
+export async function handleLeadSequenceFailure(campaignLeadId: string | undefined, error: unknown): Promise<void> {
+	if (!campaignLeadId) return
+	await prisma.campaignLead.updateMany({
+		where: {id: campaignLeadId, status: {notIn: ["REPLIED", "UNSUBSCRIBED", "BOUNCED", "DONE"]}},
+		data: {status: "FAILED", lastError: String(error).slice(0, 500)},
+	})
+}
+
 export interface SequenceStepTools {
 	sleepUntil: (id: string, time: Date) => Promise<void>
 	run: <T>(id: string, fn: () => Promise<T> | T) => Promise<T>
@@ -155,14 +165,8 @@ export const runLeadSequence = inngest.createFunction(
 		cancelOn: [{event: "campaign/paused", if: "async.data.campaignId == event.data.campaignId"}],
 		singleton: {key: "event.data.campaignLeadId", mode: "cancel"},
 		retries: 3,
-		onFailure: async ({event, error}: {event: {data: {event: {data: {campaignLeadId?: string}}}}; error: unknown}) => {
-			const campaignLeadId = event.data.event.data.campaignLeadId
-			if (!campaignLeadId) return
-			await prisma.campaignLead.updateMany({
-				where: {id: campaignLeadId, status: {notIn: ["REPLIED", "UNSUBSCRIBED", "BOUNCED", "DONE"]}},
-				data: {status: "FAILED", lastError: String(error).slice(0, 500)},
-			})
-		},
+		onFailure: async ({event, error}: {event: {data: {event: {data: {campaignLeadId?: string}}}}; error: unknown}) =>
+			handleLeadSequenceFailure(event.data.event.data.campaignLeadId, error),
 	},
 	async ({event, step}) => {
 		const {campaignLeadId} = event.data as {campaignLeadId: string; campaignId: string; emailAccountId: string}
