@@ -5,7 +5,7 @@ import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {inngest} from "@/lib/inngest/client"
-import {toLeadUpdate} from "@/features/research/apply"
+import {applyProposedToLead} from "@/features/research/apply-confirm"
 import type {ProposedField} from "@/features/research/types"
 
 export type StartResult = {ok: true; runId: string} | {ok: false; error: string}
@@ -38,21 +38,9 @@ export async function confirmResearchApply(runId: string): Promise<ApplyResult> 
 	if (!run || !run.lead || run.status !== "DONE" || !run.diff) return {ok: false, error: "Brak wyników do zastosowania"}
 
 	const diff = run.diff as unknown as {proposed?: ProposedField[]}
-	let proposed = diff.proposed ?? []
-	if (proposed.length === 0) return {ok: true}
-
-	const emailItem = proposed.find((p) => p.target === "email")
-	if (emailItem && typeof emailItem.value === "string") {
-		const taken = await prisma.lead.findFirst({where: {organizationId: orgId, email: emailItem.value, id: {not: run.leadId}}, select: {id: true}})
-		if (taken) proposed = proposed.filter((p) => p.target !== "email")
-	}
-
+	const proposed = diff.proposed ?? []
 	const existing = (run.lead.customFields as Record<string, string> | null) ?? {}
-	const {data, customFields} = toLeadUpdate(proposed, existing)
-	await prisma.$transaction([
-		prisma.lead.updateMany({where: {id: run.leadId, organizationId: orgId}, data: {...data, customFields}}),
-		prisma.leadActivity.create({data: {organizationId: orgId, leadId: run.leadId, kind: "RESEARCH", body: `Zastosowano propozycje researchu (${proposed.length})`, authorUserId: userId}}),
-	])
+	await applyProposedToLead({orgId, userId, runId: run.id, leadId: run.leadId, existingCustom: existing, proposed})
 	revalidatePath(`/leady/${run.leadId}`)
 	return {ok: true}
 }
