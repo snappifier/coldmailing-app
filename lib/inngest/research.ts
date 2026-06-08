@@ -5,6 +5,7 @@ import {buildFindingsSchema} from "@/features/research/schema-build"
 import {computeApply, toLeadUpdate} from "@/features/research/apply"
 import {buildResearchPrompt, leadToRenderContext} from "@/features/research/prompt"
 import {runResearch} from "@/features/research/engine"
+import {buildLeadContextBlock} from "@/features/research/lead-context"
 import {resolveModel} from "@/features/research/model"
 import type {OutputField} from "@/features/research-types/schema"
 import type {Prisma} from "@/generated/prisma/client"
@@ -60,7 +61,12 @@ export const runResearchFn = inngest.createFunction(
 
 		const result = await step.run("anthropic", () => {
 			const ctx = leadToRenderContext(lead, "", placeholders)
-			return runResearch({renderedPrompt: buildResearchPrompt(prompt, ctx), inputSchema: buildFindingsSchema(fields), modelId, webSearchEnabled})
+			const base = buildResearchPrompt(prompt, ctx)
+			// CONTENT types get the lead's prior research appended so the model can reuse it (and decide
+			// whether to web-search). kind is read live from the type; RESEARCH/SCORING get no block.
+			const contextBlock = researchType.kind === "CONTENT" ? buildLeadContextBlock(lead) : ""
+			const renderedPrompt = contextBlock ? `${base}\n\n${contextBlock}` : base
+			return runResearch({renderedPrompt, inputSchema: buildFindingsSchema(fields), modelId, webSearchEnabled})
 		})
 
 		if (!result.ok) {
