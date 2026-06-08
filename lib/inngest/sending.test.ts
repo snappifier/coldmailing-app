@@ -112,6 +112,13 @@ describe("runLeadSequenceHandler", () => {
 		expect(h.cLead.status).toBe("ACTIVE")
 	})
 
+	it("propagates send error (does NOT stomp status to FAILED) so Inngest can retry", async () => {
+		h.steps = [step(0, "SEND_IF_NO_REPLY", 0)]
+		h.sendEmail.mockRejectedValueOnce(new Error("smtp down"))
+		await expect(runLeadSequenceHandler("cl1", tools())).rejects.toThrow("smtp down")
+		expect(h.cLead.status).toBe("ACTIVE")
+	})
+
 	it("resumes mid-sequence from the persisted currentStep without resending earlier steps", async () => {
 		h.steps = [
 			{order: 0, condition: "SEND_IF_NO_REPLY", delayDays: 0, template: {subject: "step0", body: "b0"}},

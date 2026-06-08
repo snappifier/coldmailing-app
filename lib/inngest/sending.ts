@@ -103,30 +103,26 @@ export async function runLeadSequenceHandler(campaignLeadId: string, step: Seque
 			const body = renderTemplate(sequenceStep.template.body, ctx).rendered
 			const {to} = resolveRecipient(cl.lead.email, process.env.SEND_OVERRIDE_TO)
 
-			try {
-				const ids = await step.run(`gmail-send-${order}`, () => sendEmail(account, {to, subject, text: body}))
-				await step.run(`log-${order}`, async () => {
-					await prisma.message.create({
-						data: {
-							organizationId: cl.campaign.organizationId,
-							campaignLeadId: cl.id,
-							emailAccountId: account.id,
-							subject,
-							body,
-							intendedTo: cl.lead.email!,
-							actualTo: to,
-							gmailMessageId: ids.gmailMessageId,
-							gmailThreadId: ids.gmailThreadId,
-							status: "SENT",
-							sentAt: new Date(),
-						},
-					})
-					await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
+			// Let send/log errors propagate so Inngest retries the step; FAILED is set by onFailure once retries are exhausted (setting it here would HARD_STOP the retry).
+			const ids = await step.run(`gmail-send-${order}`, () => sendEmail(account, {to, subject, text: body}))
+			await step.run(`log-${order}`, async () => {
+				await prisma.message.create({
+					data: {
+						organizationId: cl.campaign.organizationId,
+						campaignLeadId: cl.id,
+						emailAccountId: account.id,
+						subject,
+						body,
+						intendedTo: cl.lead.email!,
+						actualTo: to,
+						gmailMessageId: ids.gmailMessageId,
+						gmailThreadId: ids.gmailThreadId,
+						status: "SENT",
+						sentAt: new Date(),
+					},
 				})
-			} catch (err) {
-				await prisma.campaignLead.update({where: {id: cl.id}, data: {status: "FAILED", lastError: String(err).slice(0, 500)}})
-				throw err // surface to Inngest after retries
-			}
+				await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
+			})
 		} else {
 			// SKIP: advance without sending.
 			await prisma.campaignLead.update({where: {id: cl.id}, data: {currentStep: order + 1}})
@@ -159,6 +155,14 @@ export const runLeadSequence = inngest.createFunction(
 		cancelOn: [{event: "campaign/paused", if: "async.data.campaignId == event.data.campaignId"}],
 		singleton: {key: "event.data.campaignLeadId", mode: "cancel"},
 		retries: 3,
+		onFailure: async ({event, error}: {event: {data: {event: {data: {campaignLeadId?: string}}}}; error: unknown}) => {
+			const campaignLeadId = event.data.event.data.campaignLeadId
+			if (!campaignLeadId) return
+			await prisma.campaignLead.updateMany({
+				where: {id: campaignLeadId, status: {notIn: ["REPLIED", "UNSUBSCRIBED", "BOUNCED", "DONE"]}},
+				data: {status: "FAILED", lastError: String(error).slice(0, 500)},
+			})
+		},
 	},
 	async ({event, step}) => {
 		const {campaignLeadId} = event.data as {campaignLeadId: string; campaignId: string; emailAccountId: string}
