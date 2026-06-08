@@ -9,6 +9,7 @@ export const LEAD_TARGETS = {
 	aiNotes: "TEXT",
 	siteQuality: "NUMBER",
 	priority: "NUMBER",
+	score: "NUMBER",
 	city: "TEXT",
 	region: "TEXT",
 	schoolType: "TEXT",

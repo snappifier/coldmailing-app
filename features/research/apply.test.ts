@@ -8,9 +8,10 @@ const FIELDS = [
 	{key: "jakosc", label: "Jakość", target: "siteQuality", type: "NUMBER", required: false, description: null},
 	{key: "mail", label: "Email", target: "email", type: "EMAIL", required: false, description: null},
 	{key: "tel", label: "Tel", target: "CUSTOM", type: "TEXT", required: false, description: null},
+	{key: "ocena", label: "Ocena", target: "score", type: "NUMBER", required: false, description: null},
 ] as never
 
-const emptyLead = {contactPersonName: null, honorific: null, siteQuality: null, priority: null, email: null, contactRole: null, city: null, region: null, schoolType: null, aiHook: null, aiNotes: null, customFields: null}
+const emptyLead = {contactPersonName: null, honorific: null, siteQuality: null, priority: null, score: null, email: null, contactRole: null, city: null, region: null, schoolType: null, aiHook: null, aiNotes: null, customFields: null}
 
 describe("computeApply", () => {
 	it("AUTO: empties applied, normalizes gender, clamps number, lowercases email", () => {
@@ -42,6 +43,18 @@ describe("computeApply", () => {
 		expect(reasons.mail).toBeTruthy()
 		expect(reasons.plec).toBeTruthy()
 		expect(reasons.imie).toBeTruthy()
+	})
+
+	it("score: AUTO clamps 0-100, rounds, fills empty; a set score becomes a proposal", () => {
+		const high = computeApply({lead: emptyLead, fields: FIELDS, mode: "AUTO", emailTaken: false, findings: {ocena: 150}})
+		expect(high.applied.find((a) => a.key === "ocena")?.value).toBe(100)
+		const low = computeApply({lead: emptyLead, fields: FIELDS, mode: "AUTO", emailTaken: false, findings: {ocena: -5}})
+		expect(low.applied.find((a) => a.key === "ocena")?.value).toBe(0)
+		const round = computeApply({lead: emptyLead, fields: FIELDS, mode: "AUTO", emailTaken: false, findings: {ocena: 73.6}})
+		expect(round.applied.find((a) => a.key === "ocena")?.value).toBe(74)
+		const set = computeApply({lead: {...emptyLead, score: 40}, fields: FIELDS, mode: "AUTO", emailTaken: false, findings: {ocena: 90}})
+		expect(set.applied.find((a) => a.key === "ocena")).toBeUndefined()
+		expect(set.proposed.find((p) => p.key === "ocena")).toMatchObject({value: 90, current: 40})
 	})
 
 	it("toLeadUpdate routes columns vs customFields and merges", () => {

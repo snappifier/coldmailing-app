@@ -1,6 +1,6 @@
 // features/research-types/targets.test.ts
 import {describe, it, expect} from "vitest"
-import {derivedTypeForTarget, CUSTOM_TYPES, TARGET_OPTIONS} from "@/features/research-types/targets"
+import {derivedTypeForTarget, CUSTOM_TYPES, TARGET_OPTIONS, LEAD_TARGETS} from "@/features/research-types/targets"
 
 describe("targets", () => {
 	it("derives the locked type from a known Lead target", () => {
@@ -18,5 +18,11 @@ describe("targets", () => {
 		expect(TARGET_OPTIONS).toContain("CUSTOM")
 		expect(TARGET_OPTIONS).toContain("honorific")
 		expect((CUSTOM_TYPES as readonly string[]).includes("GENDER")).toBe(false)
+	})
+
+	it("exposes score as a NUMBER target", () => {
+		expect(LEAD_TARGETS.score).toBe("NUMBER")
+		expect(derivedTypeForTarget("score")).toBe("NUMBER")
+		expect(TARGET_OPTIONS).toContain("score")
 	})
 })

@@ -3,7 +3,7 @@ import type {OutputField} from "@/features/research-types/schema"
 import type {AppliedField, ProposedField, ResearchDiff, SkippedField} from "@/features/research/types"
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const COLUMN_TARGETS = new Set(["contactPersonName", "contactRole", "honorific", "aiHook", "aiNotes", "siteQuality", "priority", "city", "region", "schoolType", "email"])
+const COLUMN_TARGETS = new Set(["contactPersonName", "contactRole", "honorific", "aiHook", "aiNotes", "siteQuality", "priority", "score", "city", "region", "schoolType", "email"])
 
 interface LeadFields {
 	contactPersonName: string | null
@@ -15,6 +15,7 @@ interface LeadFields {
 	honorific: string | null
 	siteQuality: number | null
 	priority: number | null
+	score: number | null
 	aiHook: string | null
 	aiNotes: string | null
 	customFields: unknown
@@ -79,6 +80,11 @@ function coerce(field: OutputField, raw: unknown): {value: string | number} | {s
 		case "honorific": {
 			const g = normalizeGender(raw)
 			return g ? {value: g} : {skip: "nierozpoznana płeć"}
+		}
+		case "score": {
+			const n = typeof raw === "number" ? raw : Number(String(raw).trim())
+			if (!Number.isFinite(n)) return {skip: "nie liczba"}
+			return {value: Math.max(0, Math.min(100, Math.round(n)))}
 		}
 		case "siteQuality":
 		case "priority": {
