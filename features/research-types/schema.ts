@@ -46,7 +46,7 @@ export const researchTypeSchema = z
 			.optional()
 			.transform((v) => (v ? v : null)),
 		webSearchEnabled: z.boolean().default(false),
-		kind: z.enum(["RESEARCH", "SCORING"]).default("RESEARCH"),
+		kind: z.enum(["RESEARCH", "SCORING", "CONTENT"]).default("RESEARCH"),
 		outputFields: z.array(outputFieldSchema).min(1, "Dodaj co najmniej jedno pole wyjściowe"),
 	})
 	.refine((d) => new Set(d.outputFields.map((f) => f.key)).size === d.outputFields.length, {
@@ -62,6 +62,10 @@ export const researchTypeSchema = z
 	)
 	.refine((d) => d.kind !== "SCORING" || d.outputFields.some((f) => f.target === "score"), {
 		message: "Typ oceny musi mieć pole z celem 'score'",
+		path: ["outputFields"],
+	})
+	.refine((d) => d.kind !== "CONTENT" || d.outputFields.some((f) => f.target === "aiHook" || f.target === "CUSTOM"), {
+		message: "Typ treści musi mieć pole z celem 'aiHook' lub pole własne (CUSTOM)",
 		path: ["outputFields"],
 	})
 

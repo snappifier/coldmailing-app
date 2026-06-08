@@ -75,4 +75,19 @@ describe("researchTypeSchema", () => {
 		const fields = [{key: "ocena", label: "Ocena", target: "score", type: "NUMBER"}]
 		expect(researchTypeSchema.safeParse({...valid, kind: "SCORING", outputFields: fields}).success).toBe(true)
 	})
+
+	it("rejects a CONTENT type without an aiHook or CUSTOM output", () => {
+		const fields = [{key: "miasto", label: "Miasto", target: "city", type: "TEXT"}]
+		expect(researchTypeSchema.safeParse({...valid, kind: "CONTENT", outputFields: fields}).success).toBe(false)
+	})
+
+	it("accepts a CONTENT type with an aiHook output", () => {
+		const fields = [{key: "hak", label: "Hook", target: "aiHook", type: "TEXT"}]
+		expect(researchTypeSchema.safeParse({...valid, kind: "CONTENT", outputFields: fields}).success).toBe(true)
+	})
+
+	it("accepts a CONTENT type with only a CUSTOM output", () => {
+		const fields = [{key: "ps", label: "PS", target: "CUSTOM", type: "TEXT"}]
+		expect(researchTypeSchema.safeParse({...valid, kind: "CONTENT", outputFields: fields}).success).toBe(true)
+	})
 })
