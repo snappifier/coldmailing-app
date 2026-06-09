@@ -119,6 +119,7 @@ model Organization {
 	senderSignature String        @default("")
 
 	memberships   Membership[]
+	invitations    Invitation[]
 	offeringLines OfferingLine[]
 	leads         Lead[]
 	suppressions  Suppression[]
@@ -153,6 +154,7 @@ model User {
 	researchRuns ResearchRun[] @relation("ResearchRunCreatedBy")
 	researchBatches ResearchBatch[] @relation("ResearchBatchCreatedBy")
 	leadDrafts LeadDraft[] @relation("LeadDraftCreatedBy")
+	invitationsSent Invitation[] @relation("InvitationInvitedBy")
 }
 
 model Account {
@@ -202,6 +204,20 @@ model Membership {
 	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 
 	@@unique([userId, organizationId])
+}
+
+model Invitation {
+	id             String   @id @default(cuid())
+	organizationId String
+	email          String
+	role           Role     @default(MEMBER)
+	invitedById    String?
+	createdAt      DateTime @default(now())
+
+	organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+	invitedBy    User?        @relation("InvitationInvitedBy", fields: [invitedById], references: [id], onDelete: SetNull)
+
+	@@unique([organizationId, email])
 }
 
 model OfferingLine {
