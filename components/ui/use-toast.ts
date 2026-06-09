@@ -1,5 +1,5 @@
-// components/ui/use-toast.ts
 "use client"
+// components/ui/use-toast.ts
 import {createContext, useContext} from "react"
 
 export type ToastFn = (title: string, variant?: "success" | "neutral") => void
