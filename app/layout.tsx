@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	description: "Wewnętrzne narzędzie do cold-mailingu",
 }
 
+// No-flash theme bootstrap: mirrors features/theme/resolve.ts resolveInitialTheme (stored "dark"/"light", else "light"). Keep the two in sync.
 const themeScript = `(function(){try{var t=localStorage.getItem("theme");document.documentElement.dataset.theme=(t==="dark"||t==="light")?t:"light";}catch(e){document.documentElement.dataset.theme="light";}})();`
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {

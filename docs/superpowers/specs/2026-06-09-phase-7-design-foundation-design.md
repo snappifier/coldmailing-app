@@ -23,7 +23,7 @@ density; motion = **ease-out** entrances (≤300ms), snappy micro-interactions, 
 **IN (this sub-project):**
 - Design tokens in `globals.css` (Tailwind v4 `@theme inline` + per-theme CSS vars), values from the sketch.
 - Fonts via `next/font` (self-hosted Inter + Geist Mono; removes the sketch's CDN dependency).
-- Theme mechanism: `data-theme` on `<html>`, no-flash inline script, `prefers-color-scheme` default, a
+- Theme mechanism: `data-theme` on `<html>`, no-flash inline script, a **light default during migration**, a
   `ThemeToggle`, `localStorage` persistence.
 - Primitive library in `components/ui/*` (list + APIs below), built on `cn()` (`lib/cn.ts`).
 - Global scaffolding: `ToastProvider` + `useToast`, `ConfirmDialog` + `useConfirm`, route-level
@@ -93,7 +93,7 @@ the sketch.
 
 - `app/layout.tsx`: load `Inter` + `Geist_Mono` via `next/font/google`, expose `--font-inter` / `--font-geist-mono`
   on `<html className={...variable}>`. Add the no-flash theme script in `<head>` (reads `localStorage.theme`
-  else `prefers-color-scheme`, sets `documentElement.dataset.theme`). `<body>` drops the hardcoded
+  else `light` (deliberate light default during migration so un-converted pages stay readable; the script mirrors `resolveInitialTheme`), sets `documentElement.dataset.theme`). `<body>` drops the hardcoded
   `bg-white text-zinc-900` (now from tokens).
 - `components/ui/theme-toggle.tsx` (client): toggles `data-theme` + persists.
 
