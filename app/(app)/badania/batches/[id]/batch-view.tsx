@@ -4,6 +4,8 @@
 import {useCallback, useEffect, useRef, useState} from "react"
 import {getBatch, cancelBatch, resumeFailed, applyBatch} from "@/features/research/batch-actions"
 import {confirmResearchApply} from "@/features/research/actions"
+import {useConfirm} from "@/components/ui/use-confirm"
+import {useToast} from "@/components/ui/use-toast"
 
 type Batch = NonNullable<Awaited<ReturnType<typeof getBatch>>>
 
@@ -25,6 +27,8 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 	const [busy, setBusy] = useState(false)
 	const [msg, setMsg] = useState<string | null>(null)
 	const mounted = useRef(true)
+	const ask = useConfirm()
+	const notify = useToast()
 
 	// Immediately re-fetch + update local state (the source of truth this component renders).
 	const refresh = useCallback(async () => {
@@ -54,11 +58,15 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 	}, [batchId])
 
 	async function onCancel() {
+		if (!(await ask({title: "Anulować badanie zbiorcze?", body: "Oczekujące zadania zostaną anulowane.", confirmLabel: "Anuluj badanie", cancelLabel: "Anuluj", danger: false}))) return
 		setBusy(true)
 		setMsg(null)
 		const res = await cancelBatch(batchId)
 		if (!res.ok) setMsg(res.error)
-		else await refresh()
+		else {
+			notify("Anulowano badanie")
+			await refresh()
+		}
 		setBusy(false)
 	}
 
