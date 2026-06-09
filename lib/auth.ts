@@ -3,7 +3,7 @@ import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 import {PrismaAdapter} from "@auth/prisma-adapter"
 import {prisma} from "@/lib/prisma"
-import {ensureMembership, isEmailAllowed} from "@/lib/auth-helpers"
+import {ensureMembership, isSignInAllowed} from "@/lib/auth-helpers"
 import type {Role} from "@/generated/prisma/client"
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
@@ -12,8 +12,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
 	pages: {signIn: "/logowanie"},
 	providers: [Google],
 	callbacks: {
-		signIn({user}) {
-			return isEmailAllowed(user.email)
+		async signIn({user}) {
+			return isSignInAllowed(user.email)
 		},
 		async jwt({token, user}) {
 			if (user?.id && user.email) {
