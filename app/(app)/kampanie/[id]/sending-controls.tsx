@@ -4,6 +4,7 @@
 import {useActionState} from "react"
 import {activateCampaign, pauseCampaign, setSendingMailbox} from "@/features/campaigns/sending-actions"
 import type {ActivateResult} from "@/features/campaigns/activation"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 interface Props {
 	campaignId: string
@@ -42,11 +43,9 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props
 						Aktywuj wysyłkę
 					</button>
 				</form>
-				<form action={pauseCampaign.bind(null, campaignId)}>
-					<button className="rounded border border-border px-3 py-1.5 text-sm" type="submit">
-						Pauza
-					</button>
-				</form>
+				<ConfirmButton action={pauseCampaign.bind(null, campaignId)} confirm={{title: "Wstrzymać kampanię?", body: "Wysyłka zostanie zatrzymana, a trwające sekwencje przerwane. Możesz wznowić później.", confirmLabel: "Wstrzymaj", danger: false}} variant="secondary" size="md" toast="Wstrzymano kampanię">
+					Pauza
+				</ConfirmButton>
 			</div>
 			{activateState && !activateState.ok ? <p className="mt-2 text-sm text-danger">{activateState.error}</p> : null}
 			{activateState && activateState.ok ? <p className="mt-2 text-sm text-success">Wysyłka aktywowana.</p> : null}

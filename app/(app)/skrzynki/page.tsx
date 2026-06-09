@@ -2,6 +2,7 @@
 import {requireOrg} from "@/lib/org"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {disconnectEmailAccount} from "@/features/email-accounts/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 export default async function SkrzynkiPage({searchParams}: {searchParams: Promise<{connected?: string; error?: string}>}) {
 	const {orgId} = await requireOrg()
@@ -24,16 +25,9 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 						<span>
 							{a.email} <span className="text-fg-faint">· {a.status} · limit {a.dailyLimit}/dzień · {a.scope?.includes("gmail.readonly") ? "odpowiedzi: on" : "odpowiedzi: off (przepnij skrzynkę)"}</span>
 						</span>
-						<form
-							action={async () => {
-								"use server"
-								await disconnectEmailAccount(a.id)
-							}}
-						>
-							<button className="text-danger" type="submit">
-								Odłącz
-							</button>
-						</form>
+						<ConfirmButton action={disconnectEmailAccount.bind(null, a.id)} confirm={{title: "Odłączyć skrzynkę?", body: "Odłączenie usuwa też historię wiadomości tej skrzynki i wyłącza wykrywanie odpowiedzi. Tej operacji nie można cofnąć.", confirmLabel: "Odłącz", danger: true}} toast="Odłączono skrzynkę">
+							Odłącz
+						</ConfirmButton>
 					</li>
 				))}
 				{accounts.length === 0 ? <li className="text-sm text-fg-muted">Brak połączonych skrzynek.</li> : null}
