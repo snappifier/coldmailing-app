@@ -148,6 +148,10 @@ drafts, templates, placeholders, offering lines, campaigns create/delete/steps/a
 ## Risks / notes
 
 - **JWT staleness is deliberate:** enforcement is DB-fresh; only UI visibility lags until re-login. Document in code.
+- **Removed-member session persistence (accepted):** a removed member's EXISTING JWT session keeps MEMBER-level
+  (ungated) access until the token expires (Auth.js default 30 d) — new sign-ins are blocked immediately and every
+  gated action is blocked immediately (fresh check). Fine for an internal tool; if ever needed, shorten
+  `session.maxAge` or add a membership check to `requireOrg`.
 - The `signIn` callback becomes async + DB-touching (runs once per sign-in — negligible).
 - `OWNER_EMAIL` must remain set in env (bootstrap + recovery); the last-owner guard prevents a zero-owner org.
   Corner case, by design: a removed member whose e-mail equals `OWNER_EMAIL` can sign back in and is re-created
