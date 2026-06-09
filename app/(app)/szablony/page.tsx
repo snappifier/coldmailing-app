@@ -1,21 +1,26 @@
 // app/(app)/szablony/page.tsx
-import {auth} from "@/lib/auth"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteTemplate} from "@/features/templates/actions"
+import {resolveSenderName} from "@/features/templates/sender"
 import {TemplateEditor} from "./template-editor"
 import type {RenderLead} from "@/features/templates/render"
 
 export default async function TemplatesPage() {
 	const {orgId} = await requireOrg()
-	const session = await auth()
 
-	const [templates, offeringLines, placeholders, lead] = await Promise.all([
+	const [templates, offeringLines, placeholders, lead, org, mailbox] = await Promise.all([
 		prisma.template.findMany({where: {organizationId: orgId}, orderBy: {createdAt: "desc"}, include: {offeringLine: {select: {name: true}}, _count: {select: {sequenceSteps: true}}}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		prisma.placeholder.findMany({where: {organizationId: orgId}, orderBy: {key: "asc"}}),
 		prisma.lead.findMany({where: {organizationId: orgId}, orderBy: {createdAt: "asc"}, take: 1}),
+		prisma.organization.findUnique({where: {id: orgId}, select: {senderSignature: true}}),
+		prisma.emailAccount.findFirst({where: {organizationId: orgId, status: "CONNECTED"}, orderBy: {createdAt: "asc"}, select: {displayName: true}}),
 	])
+
+	const senderSignature = org?.senderSignature ?? ""
+	const previewMailboxName = mailbox?.displayName ?? null
+	const senderName = resolveSenderName({signature: senderSignature, fallback: previewMailboxName})
 
 	const sampleLead: RenderLead | null = lead[0]
 		? {
@@ -37,7 +42,9 @@ export default async function TemplatesPage() {
 				customPlaceholders={placeholders.map((p) => ({key: p.key, source: p.source, fallback: p.fallback}))}
 				customKeys={placeholders.map((p) => p.key)}
 				sampleLead={sampleLead}
-				senderName={session?.user?.name ?? "Zespół"}
+				senderName={senderName}
+				signatureSet={senderSignature.trim() !== ""}
+				previewMailboxName={previewMailboxName}
 			/>
 
 			<div>

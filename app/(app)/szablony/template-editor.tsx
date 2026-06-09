@@ -13,9 +13,11 @@ interface Props {
 	customKeys: string[]
 	sampleLead: RenderLead | null
 	senderName: string
+	signatureSet: boolean
+	previewMailboxName: string | null
 }
 
-export function TemplateEditor({offeringLines, customPlaceholders, customKeys, sampleLead, senderName}: Props) {
+export function TemplateEditor({offeringLines, customPlaceholders, customKeys, sampleLead, senderName, signatureSet, previewMailboxName}: Props) {
 	const [state, action, pending] = useActionState<TemplateResult | null, FormData>(createTemplate, null)
 	const [subject, setSubject] = useState("")
 	const [body, setBody] = useState("")
@@ -103,6 +105,11 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 
 			<div className="flex flex-col gap-2">
 				<h2 className="text-sm font-semibold text-zinc-700">Podgląd {sampleLead ? `(${sampleLead.organizationName})` : "(brak leadów)"}</h2>
+				{!signatureSet ? (
+					<p className="text-xs text-amber-700">
+						Podpis nadawcy nieustawiony w Ustawieniach — podgląd i wysyłka użyją nazwy skrzynki ({previewMailboxName ?? "—"}). Ustaw podpis, aby był spójny.
+					</p>
+				) : null}
 				<div className="rounded border border-zinc-200 p-3 text-sm">
 					<p className="font-medium">{preview?.subject.rendered || "—"}</p>
 					<hr className="my-2 border-zinc-100" />
