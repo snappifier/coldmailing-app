@@ -12,8 +12,8 @@ const DETECTORS = ["KEYWORD", "LLM"]
 
 export async function getOrgSettings() {
 	const {orgId} = await requireOrg()
-	const org = await prisma.organization.findUnique({where: {id: orgId}, select: {optOutMode: true, optOutDetector: true, senderSignature: true}})
-	return {optOutMode: org?.optOutMode ?? "OFF", optOutDetector: org?.optOutDetector ?? "KEYWORD", senderSignature: org?.senderSignature ?? ""}
+	const org = await prisma.organization.findUnique({where: {id: orgId}, select: {name: true, optOutMode: true, optOutDetector: true, senderSignature: true}})
+	return {name: org?.name ?? "", optOutMode: org?.optOutMode ?? "OFF", optOutDetector: org?.optOutDetector ?? "KEYWORD", senderSignature: org?.senderSignature ?? ""}
 }
 
 export async function setOrgInboundSettings(_prev: unknown, formData: FormData): Promise<{ok: boolean}> {
@@ -33,6 +33,15 @@ export async function setSenderSignature(_prev: unknown, formData: FormData): Pr
 	const {orgId} = await requireOrg()
 	const senderSignature = sanitizeSignature(String(formData.get("senderSignature") ?? ""))
 	await prisma.organization.update({where: {id: orgId}, data: {senderSignature}})
+	revalidatePath("/ustawienia")
+	return {ok: true}
+}
+
+export async function setOrgName(_prev: unknown, formData: FormData): Promise<{ok: boolean}> {
+	const {orgId} = await requireOrg()
+	const name = String(formData.get("name") ?? "").trim().slice(0, 120)
+	if (!name) return {ok: false}
+	await prisma.organization.update({where: {id: orgId}, data: {name}})
 	revalidatePath("/ustawienia")
 	return {ok: true}
 }
