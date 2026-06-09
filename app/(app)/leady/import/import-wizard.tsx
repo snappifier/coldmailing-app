@@ -1,11 +1,11 @@
 "use client"
 // app/(app)/leady/import/import-wizard.tsx
 
-import {useActionState, useMemo, useState} from "react"
-import {parseTable} from "@/features/leads/import"
+import {useMemo, useState, useActionState} from "react"
+import {parseTable, defaultCustomKey, type LeadFieldKey} from "@/features/leads/import"
 import {importLeads, type ImportResult} from "@/features/leads/actions"
 
-const FIELDS: {key: string; label: string}[] = [
+const FIELDS: {key: LeadFieldKey; label: string}[] = [
 	{key: "organizationName", label: "Nazwa placówki *"},
 	{key: "email", label: "Email"},
 	{key: "website", label: "WWW"},
@@ -18,14 +18,26 @@ const FIELDS: {key: string; label: string}[] = [
 	{key: "honorific", label: "Zwrot (Pan/Pani)"},
 ]
 
+type Target = {kind: "ignore"} | {kind: "field"; field: LeadFieldKey} | {kind: "custom"; key: string}
+
 export function ImportWizard({offeringLines}: {offeringLines: {id: string; name: string}[]}) {
 	const [text, setText] = useState("")
 	const [hasHeader, setHasHeader] = useState(true)
+	const [targets, setTargets] = useState<Record<number, Target>>({})
 	const [state, action, pending] = useActionState<ImportResult | null, FormData>(importLeads, null)
 
-	const rows = useMemo(() => (text.trim() ? parseTable(text).slice(0, 5) : []), [text])
-	const columnCount = rows.reduce((max, r) => Math.max(max, r.length), 0)
-	const columnOptions = Array.from({length: columnCount}, (_, i) => i)
+	const allRows = useMemo(() => (text.trim() ? parseTable(text) : []), [text])
+	const previewRows = allRows.slice(0, 5)
+	const columnCount = allRows.reduce((max, r) => Math.max(max, r.length), 0)
+	const headers = hasHeader ? allRows[0] ?? [] : []
+
+	const targetOf = (i: number): Target => targets[i] ?? {kind: "ignore"}
+	const selValue = (t: Target) => (t.kind === "field" ? `field:${t.field}` : t.kind === "custom" ? "custom" : "")
+	function onSelect(i: number, value: string) {
+		if (value === "custom") setTargets({...targets, [i]: {kind: "custom", key: defaultCustomKey(headers[i] ?? null, i)}})
+		else if (value.startsWith("field:")) setTargets({...targets, [i]: {kind: "field", field: value.slice(6) as LeadFieldKey}})
+		else setTargets({...targets, [i]: {kind: "ignore"}})
+	}
 
 	return (
 		<form className="flex flex-col gap-4" action={action}>
@@ -41,11 +53,11 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				Pierwszy wiersz to nagłówki
 			</label>
 
-			{rows.length > 0 ? (
+			{previewRows.length > 0 ? (
 				<div className="overflow-x-auto">
 					<table className="border-collapse text-xs">
 						<tbody>
-							{rows.map((r, ri) => (
+							{previewRows.map((r, ri) => (
 								<tr key={ri} className="border-b border-border">
 									{r.map((c, ci) => (
 										<td className="border border-border px-2 py-1" key={ci}>
@@ -59,24 +71,39 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				</div>
 			) : null}
 
-			<div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-				{FIELDS.map((field) => (
-					<label className="flex flex-col text-xs" key={field.key}>
-						{field.label}
-						<select className="rounded border border-border px-1 py-1" name={`mapping_${field.key}`} defaultValue="">
-							<option value="">—</option>
-							{columnOptions.map((i) => (
-								<option key={i} value={i}>
-									Kolumna {i + 1}
-								</option>
-							))}
-						</select>
-					</label>
-				))}
-			</div>
+			{columnCount > 0 ? (
+				<div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+					{Array.from({length: columnCount}, (_, i) => {
+						const t = targetOf(i)
+						return (
+							<div className="flex flex-col gap-1 text-xs" key={i}>
+								<span className="truncate text-fg-muted">{headers[i]?.trim() || `Kolumna ${i + 1}`}</span>
+								<select className="rounded border border-border px-1 py-1" name={`target_${i}`} value={selValue(t)} onChange={(e) => onSelect(i, e.target.value)}>
+									<option value="">— ignoruj —</option>
+									{FIELDS.map((f) => (
+										<option key={f.key} value={`field:${f.key}`}>
+											{f.label}
+										</option>
+									))}
+									<option value="custom">Pole własne</option>
+								</select>
+								{t.kind === "custom" ? (
+									<input
+										className="rounded border border-dashed border-border px-1 py-1"
+										name={`customkey_${i}`}
+										placeholder="klucz pola"
+										value={t.key}
+										onChange={(e) => setTargets({...targets, [i]: {kind: "custom", key: e.target.value}})}
+									/>
+								) : null}
+							</div>
+						)
+					})}
+				</div>
+			) : null}
 
 			<p className="text-xs text-fg-muted">
-				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce.
+				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce. Kolumny ustawione na „Pole własne" trafią do pól własnych leada.
 			</p>
 
 			<label className="flex flex-col text-sm">
