@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deliverability settings — mock</title>
+<style>
+	:root{
+		--bg:#08090a; --bg-glow:#0e1014;
+		--s1:#131316; --s2:#1a1a1f; --s3:#212127;
+		--border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.15);
+		--fg:#f3f3f4; --muted:#9a9aa3; --faint:#66666f;
+		--accent:#7c86dd; --accent-quiet:rgba(124,134,221,.15);
+		--success:#3ddc97; --success-quiet:rgba(61,220,151,.13);
+		--warning:#f5c451; --warning-quiet:rgba(245,196,81,.13);
+		--danger:#ff6b6b;
+		--primary-bg:#fafafa; --primary-fg:#0a0a0b;
+	}
+	*{box-sizing:border-box}
+	body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,var(--bg-glow),var(--bg));color:var(--fg);
+		font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.006em;padding:26px 22px 60px}
+	.wrap{max-width:720px;margin:0 auto}
+	h1{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+	.card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:16px}
+	.chead{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+	.chead .mail{font-size:14px;font-weight:600}
+	.pill{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;display:inline-flex;align-items:center;gap:5px}
+	.pill.ok{background:var(--success-quiet);color:var(--success)}
+	.pill.acc{background:var(--accent-quiet);color:var(--accent)}
+	.dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+	.spacer{flex:1}
+	.btn{font-size:12px;font-weight:500;border-radius:6px;padding:6px 11px;border:1px solid var(--border);background:var(--s2);color:var(--fg);cursor:default}
+	.btn.primary{background:var(--primary-bg);color:var(--primary-fg);border-color:transparent}
+	.btn.danger{background:rgba(255,107,107,.12);color:var(--danger);border-color:transparent}
+	.btn.sm{padding:4px 9px;font-size:11px}
+	.sec{display:flex;flex-direction:column;gap:11px;border-top:1px solid var(--border);padding-top:14px}
+	.sec h3{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:0}
+	.row{display:flex;gap:14px;flex-wrap:wrap}
+	.fld{display:flex;flex-direction:column;gap:5px}
+	.fld label{font-size:12px;font-weight:500;color:var(--fg)}
+	.fld .hint{font-size:11px;color:var(--faint)}
+	.inp{background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--fg);font-size:13px;padding:7px 9px}
+	.inp.num{width:84px}
+	.inp.time{width:92px}
+	.inp.sel{min-width:170px}
+	.range{display:flex;align-items:center;gap:7px}
+	.days{display:flex;gap:6px}
+	.day{font-size:12px;font-weight:600;width:34px;height:30px;display:grid;place-items:center;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--faint)}
+	.day.on{background:var(--accent-quiet);border-color:var(--accent);color:var(--accent)}
+	.health{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:12.5px}
+	.health .k{color:var(--muted)}
+	.health .v{color:var(--fg);display:flex;align-items:center;gap:6px}
+	.health .v.ok{color:var(--success)}
+	details{border:1px solid var(--border);border-radius:7px;background:var(--s2);padding:0}
+	summary{cursor:pointer;list-style:none;padding:11px 13px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+	summary::-webkit-details-marker{display:none}
+	summary .tw{font-size:10px;color:var(--faint);margin-left:auto}
+	.guide{padding:0 13px 13px;display:flex;flex-direction:column;gap:9px}
+	.guide p{margin:0;font-size:12px;color:var(--muted);line-height:1.55}
+	.grec{display:flex;gap:9px;font-size:12px;align-items:flex-start}
+	.grec b{color:var(--fg);flex:none;width:54px}
+	.grec span{color:var(--muted);line-height:1.5}
+	.tag{font-size:10px;color:var(--faint);font-weight:600;border:1px dashed var(--border-strong);border-radius:999px;padding:1px 7px}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<h1>Skrzynki wysyłkowe</h1>
+	<div class="card">
+		<div class="chead">
+			<span class="mail">snappifyacc@gmail.com</span>
+			<span class="pill ok"><span class="dot"></span>Połączona</span>
+			<span class="pill acc">odpowiedzi: on</span>
+			<span class="spacer"></span>
+			<span class="btn danger sm">Odłącz</span>
+		</div>
+
+		<div class="sec">
+			<h3>Wysyłka i pacing</h3>
+			<div class="row">
+				<div class="fld">
+					<label>Dzienny limit</label>
+					<div class="range"><input class="inp num" value="40" /><span class="hint">maili / dzień</span></div>
+				</div>
+				<div class="fld">
+					<label>Okno wysyłki</label>
+					<div class="range"><input class="inp time" value="08:00" /><span class="hint">–</span><input class="inp time" value="16:00" /></div>
+				</div>
+				<div class="fld">
+					<label>Strefa czasowa</label>
+					<select class="inp sel"><option>Europe/Warsaw</option></select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="fld">
+					<label>Dni wysyłki</label>
+					<div class="days">
+						<span class="day on">Pn</span><span class="day on">Wt</span><span class="day on">Śr</span><span class="day on">Cz</span><span class="day on">Pt</span><span class="day">Sb</span><span class="day">Nd</span>
+					</div>
+				</div>
+				<div class="fld">
+					<label>Odstęp między mailami</label>
+					<div class="range"><input class="inp num" value="180" /><span class="hint">–</span><input class="inp num" value="600" /><span class="hint">s (losowo)</span></div>
+				</div>
+			</div>
+			<div><span class="btn primary">Zapisz ustawienia</span></div>
+		</div>
+
+		<div class="sec">
+			<h3>Stan skrzynki</h3>
+			<div class="health">
+				<span class="k">Połączenie</span><span class="v ok"><span class="dot"></span>Aktywne</span>
+				<span class="k">Wykrywanie odpowiedzi</span><span class="v ok">Włączone (gmail.readonly)</span>
+				<span class="k">Token dostępu</span><span class="v">Ważny · odświeżany automatycznie</span>
+			</div>
+		</div>
+
+		<div class="sec">
+			<h3>Dostarczalność</h3>
+			<details open>
+				<summary>SPF · DKIM · DMARC <span class="tag">gmail.com</span><span class="tw">zwiń</span></summary>
+				<div class="guide">
+					<p>Adres @gmail.com: rekordy uwierzytelniania nadawcy są zarządzane przez Google — nie musisz nic konfigurować. Poniższe ma znaczenie, gdy podłączysz skrzynkę na własnej domenie (Google Workspace).</p>
+					<div class="grec"><b>SPF</b><span>Wskazuje, że Google może wysyłać w imieniu Twojej domeny. Rekord TXT: <code>v=spf1 include:_spf.google.com ~all</code>.</span></div>
+					<div class="grec"><b>DKIM</b><span>Podpisuje wiadomości kluczem domeny. Włącz w Google Workspace → Apps → Gmail → Authenticate email i dodaj rekord do DNS.</span></div>
+					<div class="grec"><b>DMARC</b><span>Mówi odbiorcom, co robić z niezgodną pocztą. Zacznij od <code>v=DMARC1; p=none; rua=...</code> i zaostrzaj do <code>quarantine</code>/<code>reject</code>.</span></div>
+				</div>
+			</details>
+		</div>
+	</div>
+</div>
+</body>
+</html>

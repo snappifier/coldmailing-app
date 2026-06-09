@@ -6,6 +6,12 @@
 			"runtimeExecutable": "python",
 			"runtimeArgs": ["-m", "http.server", "4599", "--directory", "docs/superpowers/design/import-mock"],
 			"port": 4599
+		},
+		{
+			"name": "deliverability-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4601", "--directory", "docs/superpowers/design/deliverability-mock"],
+			"port": 4601
 		}
 	]
 }
