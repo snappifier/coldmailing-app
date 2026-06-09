@@ -7,6 +7,9 @@ import {cn} from "@/lib/cn"
 import {isNavActive} from "@/features/nav/active"
 import {signOutAction} from "@/features/auth/actions"
 import {NAV_GROUPS, SETTINGS_ITEM, type NavItem} from "./nav-items"
+import {hasRole} from "@/features/team/roles"
+import {ROLE_LABEL} from "@/features/enums/labels"
+import type {Role} from "@/generated/prisma/client"
 import {ThemeToggle} from "@/components/ui/theme-toggle"
 import {ChevronLeftIcon, LogOutIcon} from "@/components/ui/icons"
 
@@ -54,6 +57,8 @@ export function Sidebar({user}: {user: SidebarUser}) {
 	const collapsed = useSyncExternalStore(subscribeNav, readNavCollapsed, () => false)
 	const labelCls = collapsed ? "hidden" : "hidden lg:inline"
 	const initials = (user.name ?? user.email ?? "?").trim().slice(0, 2).toUpperCase()
+	const canSee = (item: NavItem) => !item.minRole || hasRole(user.role as Role, item.minRole)
+	const roleLabel = ROLE_LABEL[user.role as Role] ?? user.role
 
 	return (
 		<aside className={cn("sticky top-0 flex h-screen flex-none flex-col border-r border-border bg-surface-1 transition-[width] duration-200", collapsed ? "w-14" : "w-14 lg:w-[212px]")}>
@@ -63,20 +68,24 @@ export function Sidebar({user}: {user: SidebarUser}) {
 			</Link>
 
 			<nav className="flex-1 overflow-y-auto px-2 pb-2">
-				{NAV_GROUPS.map((g) => (
-					<div className="mt-3 first:mt-1" key={g.label}>
-						<div className={cn("px-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-fg-faint", labelCls)}>{g.label}</div>
-						<div className="flex flex-col gap-0.5">
-							{g.items.map((item) => (
-								<SideLink key={item.href} item={item} active={isNavActive(pathname, item.href)} labelCls={labelCls} />
-							))}
+				{NAV_GROUPS.map((g) => {
+					const visible = g.items.filter(canSee)
+					if (visible.length === 0) return null
+					return (
+						<div className="mt-3 first:mt-1" key={g.label}>
+							<div className={cn("px-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-fg-faint", labelCls)}>{g.label}</div>
+							<div className="flex flex-col gap-0.5">
+								{visible.map((item) => (
+									<SideLink key={item.href} item={item} active={isNavActive(pathname, item.href)} labelCls={labelCls} />
+								))}
+							</div>
 						</div>
-					</div>
-				))}
+					)
+				})}
 			</nav>
 
 			<div className="flex flex-col gap-1 border-t border-border p-2">
-				<SideLink item={SETTINGS_ITEM} active={isNavActive(pathname, SETTINGS_ITEM.href)} labelCls={labelCls} />
+				{canSee(SETTINGS_ITEM) ? <SideLink item={SETTINGS_ITEM} active={isNavActive(pathname, SETTINGS_ITEM.href)} labelCls={labelCls} /> : null}
 				<button
 					className="hidden items-center gap-3 rounded-md px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-surface-2 hover:text-fg lg:flex"
 					type="button"
@@ -96,7 +105,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 						<span className="grid size-7 flex-none place-items-center rounded-full bg-accent text-[10px] font-bold text-primary-fg">{initials}</span>
 						<span className={cn("min-w-0 flex-1 text-left", labelCls)}>
 							<span className="block truncate text-xs font-semibold text-fg">{user.name ?? user.email ?? "—"}</span>
-							<span className="block truncate text-[10px] text-fg-faint">{user.orgName} · {user.role}</span>
+							<span className="block truncate text-[10px] text-fg-faint">{user.orgName} · {roleLabel}</span>
 						</span>
 					</summary>
 					<div className="absolute bottom-full left-0 z-50 mb-2 w-60 rounded-lg border border-border-strong bg-surface-1 p-1.5 shadow-[0_12px_32px_-16px_rgba(0,0,0,.6)]">
@@ -106,7 +115,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 						</div>
 						<div className="flex items-center justify-between gap-2 border-t border-border px-2 py-1.5">
 							<span className="truncate text-xs text-fg-muted">{user.orgName}</span>
-							<span className="flex-none rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-semibold text-fg-muted">{user.role}</span>
+							<span className="flex-none rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-semibold text-fg-muted">{roleLabel}</span>
 						</div>
 						<form className="border-t border-border pt-1" action={signOutAction}>
 							<button className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm text-fg-muted transition-colors hover:bg-surface-2 hover:text-fg" type="submit">

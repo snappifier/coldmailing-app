@@ -3,6 +3,7 @@ import Link from "next/link"
 import {notFound} from "next/navigation"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
+import {hasRole} from "@/features/team/roles"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {getCampaignMetrics} from "@/features/metrics/queries"
 import {formatPct, formatInt} from "@/features/metrics/compute"
@@ -14,7 +15,7 @@ import {LeadInbox} from "./lead-inbox"
 import {MetricStat} from "../../dashboard-parts"
 
 export default async function CampaignDetailPage({params}: {params: Promise<{id: string}>}) {
-	const {orgId} = await requireOrg()
+	const {orgId, role} = await requireOrg()
 	const {id} = await params
 
 	const campaign = await prisma.campaign.findFirst({
@@ -69,6 +70,7 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 				campaignId={campaign.id}
 				mailboxes={mailboxes.map((m) => ({id: m.id, email: m.email}))}
 				currentMailboxId={campaign.sendingEmailAccountId}
+				canManageSending={hasRole(role, "ADMIN")}
 			/>
 			<SequenceAndLeads
 				campaignId={campaign.id}

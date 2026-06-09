@@ -12,9 +12,10 @@ interface Props {
 	campaignId: string
 	mailboxes: {id: string; email: string}[]
 	currentMailboxId: string | null
+	canManageSending: boolean
 }
 
-export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props) {
+export function SendingControls({campaignId, mailboxes, currentMailboxId, canManageSending}: Props) {
 	const [activateState, activateAction, activatePending] = useActionState<ActivateResult | null, FormData>(
 		() => activateCampaign(campaignId),
 		null,
@@ -24,23 +25,27 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props
 		<div>
 			<h2 className="mb-2 text-sm font-semibold text-fg">Wysyłka</h2>
 			<div className="flex flex-wrap items-end gap-2">
-				<form
-					className="flex items-end gap-2"
-					action={(formData) => setSendingMailbox(campaignId, String(formData.get("emailAccountId") ?? ""))}
-				>
-					<Select name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
-						<option value="">— skrzynka wysyłkowa —</option>
-						{mailboxes.map((m) => (
-							<option key={m.id} value={m.id}>
-								{m.email}
-							</option>
-						))}
-					</Select>
-					<Button type="submit">Zapisz skrzynkę</Button>
-				</form>
-				<form action={activateAction}>
-					<Button variant="primary" type="submit" disabled={activatePending}>Aktywuj wysyłkę</Button>
-				</form>
+				{canManageSending ? (
+					<>
+						<form
+							className="flex items-end gap-2"
+							action={(formData) => setSendingMailbox(campaignId, String(formData.get("emailAccountId") ?? ""))}
+						>
+							<Select name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
+								<option value="">— skrzynka wysyłkowa —</option>
+								{mailboxes.map((m) => (
+									<option key={m.id} value={m.id}>
+										{m.email}
+									</option>
+								))}
+							</Select>
+							<Button type="submit">Zapisz skrzynkę</Button>
+						</form>
+						<form action={activateAction}>
+							<Button variant="primary" type="submit" disabled={activatePending}>Aktywuj wysyłkę</Button>
+						</form>
+					</>
+				) : null}
 				<ConfirmButton action={pauseCampaign.bind(null, campaignId)} confirm={{title: "Wstrzymać kampanię?", body: "Wysyłka zostanie zatrzymana, a trwające sekwencje przerwane. Możesz wznowić później.", confirmLabel: "Wstrzymaj", danger: false}} variant="secondary" size="md" toast="Wstrzymano kampanię">
 					Pauza
 				</ConfirmButton>
