@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>coldmail — design foundation (Vercel/Linear vibe)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   DESIGN TOKENS  (these port 1:1 to Tailwind v4 @theme later)
+   ============================================================ */
+:root {
+	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+	--r-sm: 4px;
+	--r-md: 6px;
+	--r-lg: 8px;
+	--r-pill: 999px;
+
+	--space: 4px;
+	/* easing blueprint (Emil Kowalski): entrances = ease-out; on-screen movement = ease-in-out; hover = ease */
+	--ease: cubic-bezier(0.215, 0.61, 0.355, 1);          /* ease-out-cubic (default for entrances) */
+	--ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);  /* stronger settle for the body transition */
+	--ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);   /* moving/morphing on-screen elements */
+	--dur-fast: 140ms;
+	--dur: 200ms;
+	--dur-body: 240ms;
+}
+
+/* DARK (default) */
+[data-theme="dark"] {
+	color-scheme: dark;
+	--bg: #08090a;
+	--bg-glow: #0e1014;
+	--surface-1: #131316;
+	--surface-2: #1a1a1f;
+	--surface-3: #212127;
+	--border: rgba(255,255,255,.08);
+	--border-strong: rgba(255,255,255,.15);
+	--text: #f3f3f4;
+	--text-muted: #9a9aa3;
+	--text-faint: #66666f;
+	--accent: #7c86dd;
+	--accent-quiet: rgba(124,134,221,.15);
+	--primary-bg: #fafafa;
+	--primary-fg: #0a0a0b;
+	--success: #3ddc97;
+	--success-quiet: rgba(61,220,151,.13);
+	--danger: #ff6b6b;
+	--danger-quiet: rgba(255,107,107,.13);
+	--warning: #f5c451;
+	--warning-quiet: rgba(245,196,81,.13);
+	--ring: rgba(124,134,221,.55);
+	--shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 8px 30px -12px rgba(0,0,0,.6);
+}
+
+/* LIGHT */
+[data-theme="light"] {
+	color-scheme: light;
+	--bg: #fbfbfc;
+	--bg-glow: #f2f5fb;
+	--surface-1: #ffffff;
+	--surface-2: #f6f6f7;
+	--surface-3: #efeff1;
+	--border: rgba(9,9,11,.09);
+	--border-strong: rgba(9,9,11,.16);
+	--text: #18181b;
+	--text-muted: #56565e;
+	--text-faint: #9b9ba3;
+	--accent: #4f56c6;
+	--accent-quiet: rgba(79,86,198,.11);
+	--primary-bg: #18181b;
+	--primary-fg: #fafafa;
+	--success: #16a34a;
+	--success-quiet: rgba(22,163,74,.10);
+	--danger: #dc2626;
+	--danger-quiet: rgba(220,38,38,.09);
+	--warning: #b45309;
+	--warning-quiet: rgba(180,83,9,.10);
+	--ring: rgba(79,86,198,.42);
+	--shadow: 0 1px 2px rgba(9,9,11,.06), 0 8px 24px -16px rgba(9,9,11,.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+	font-family: var(--font-sans);
+	font-optical-sizing: auto;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--text);
+	background: var(--bg);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	letter-spacing: -0.006em;
+	transition: background .3s var(--ease), color .3s var(--ease);
+}
+
+/* atmospheric depth: a single quiet glow + faint grain, refined not loud */
+body::before {
+	content: "";
+	position: fixed; inset: 0; z-index: -2;
+	background: radial-gradient(70% 40% at 50% -12%, var(--bg-glow), transparent 72%);
+	opacity: .45;
+}
+
+::selection { background: var(--accent-quiet); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--r-sm); }
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar {
+	position: sticky; top: 0; z-index: 30;
+	height: 52px;
+	display: flex; align-items: center; gap: 14px;
+	padding: 0 18px;
+	border-bottom: 1px solid var(--border);
+	background: color-mix(in srgb, var(--bg) 78%, transparent);
+	backdrop-filter: blur(12px) saturate(140%);
+}
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 600; letter-spacing: -0.02em; }
+.brand .dot {
+	width: 18px; height: 18px; border-radius: 5px;
+	background: linear-gradient(140deg, var(--accent), color-mix(in srgb, var(--accent) 55%, #fff));
+	box-shadow: 0 0 0 1px var(--border-strong), 0 2px 8px -2px var(--accent);
+}
+.brand .muted { color: var(--text-faint); font-weight: 400; }
+.spacer { flex: 1; }
+
+.cmdk {
+	display: flex; align-items: center; gap: 8px;
+	height: 30px; padding: 0 8px 0 10px;
+	border: 1px solid var(--border); border-radius: var(--r-md);
+	color: var(--text-faint); background: var(--surface-1);
+	font-size: 12.5px; cursor: text; transition: border-color var(--dur);
+}
+.cmdk:hover { border-color: var(--border-strong); }
+.cmdk kbd {
+	font-family: var(--font-mono); font-size: 11px;
+	padding: 1px 5px; border-radius: 4px;
+	background: var(--surface-3); color: var(--text-muted);
+	border: 1px solid var(--border);
+}
+
+.iconbtn {
+	display: grid; place-items: center;
+	width: 30px; height: 30px;
+	border: 1px solid var(--border); border-radius: var(--r-md);
+	background: var(--surface-1); color: var(--text-muted);
+	cursor: pointer; transition: all var(--dur);
+}
+.iconbtn:hover { color: var(--text); border-color: var(--border-strong); background: var(--surface-2); }
+.iconbtn svg { width: 15px; height: 15px; }
+
+.avatar {
+	width: 28px; height: 28px; border-radius: var(--r-pill);
+	display: grid; place-items: center;
+	font-size: 12px; font-weight: 600; letter-spacing: 0;
+	color: var(--primary-fg);
+	background: linear-gradient(150deg, #8b8b94, #5a5a63);
+	border: 1px solid var(--border-strong); cursor: pointer;
+}
+
+/* ============================================================
+   SETTINGS LAYOUT  (shared shell + section nav + fluid body)
+   ============================================================ */
+.shell { max-width: 1080px; margin: 0 auto; padding: 34px 24px 80px; }
+
+.page-head { margin-bottom: 26px; opacity: 0; animation: rise .42s var(--ease) .02s forwards; }
+.page-head h1 { font-size: 21px; font-weight: 600; letter-spacing: -0.025em; }
+.page-head p { color: var(--text-muted); margin-top: 3px; font-size: 13px; }
+
+.settings { display: grid; grid-template-columns: 208px 1fr; gap: 40px; align-items: start; }
+
+/* section nav = the "steps" */
+.snav { position: sticky; top: 78px; display: flex; flex-direction: column; gap: 1px; }
+.snav button {
+	all: unset; box-sizing: border-box;
+	display: flex; align-items: center; gap: 9px;
+	padding: 7px 10px; border-radius: var(--r-md);
+	color: var(--text-muted); font-size: 13px; cursor: pointer;
+	position: relative; transition: color var(--dur), background var(--dur);
+	opacity: 0; animation: rise .42s var(--ease) forwards;
+}
+.snav button:nth-child(1){ animation-delay: .04s } .snav button:nth-child(2){ animation-delay: .08s }
+.snav button:nth-child(3){ animation-delay: .12s } .snav button:nth-child(4){ animation-delay: .16s }
+.snav button:nth-child(5){ animation-delay: .2s }
+.snav button:hover { color: var(--text); background: var(--surface-1); }
+.snav button .ic { width: 15px; height: 15px; color: currentColor; flex: none; opacity: .9; }
+.snav button[aria-current="true"] { color: var(--text); background: var(--surface-2); }
+.snav button[aria-current="true"]::before {
+	content: ""; position: absolute; left: -1px; top: 50%; translate: 0 -50%;
+	width: 2.5px; height: 15px; border-radius: 2px; background: var(--accent);
+}
+.snav .grp { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); padding: 12px 10px 5px; }
+
+/* the fluid body */
+.pane { min-height: 360px; }
+.pane.enter { animation: paneIn var(--dur-body) var(--ease-out-quart); will-change: transform, opacity; }
+@keyframes paneIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.section { display: none; }
+.section[data-active] { display: block; }
+.section h2 { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+.section > .sub { color: var(--text-muted); font-size: 13px; margin-top: 2px; margin-bottom: 18px; }
+
+/* ============================================================
+   PRIMITIVES
+   ============================================================ */
+.card {
+	background: var(--surface-1);
+	border: 1px solid var(--border);
+	border-radius: var(--r-lg);
+	box-shadow: var(--shadow);
+}
+.card + .card { margin-top: 14px; }
+.card .body { padding: 18px; }
+.card .foot {
+	display: flex; align-items: center; justify-content: space-between; gap: 12px;
+	padding: 12px 18px;
+	border-top: 1px solid var(--border);
+	background: color-mix(in srgb, var(--surface-2) 60%, transparent);
+	border-radius: 0 0 var(--r-lg) var(--r-lg);
+	font-size: 12.5px; color: var(--text-muted);
+}
+.card .title { font-weight: 550; font-size: 13.5px; }
+.card .desc { color: var(--text-muted); font-size: 12.5px; margin-top: 2px; }
+
+.field { display: flex; flex-direction: column; gap: 7px; margin-top: 14px; }
+.field:first-child { margin-top: 0; }
+.label { font-size: 12.5px; font-weight: 500; color: var(--text); }
+.hint { font-size: 12px; color: var(--text-faint); }
+
+.input, .textarea, .select {
+	width: 100%;
+	font: inherit; font-size: 13px; color: var(--text);
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	border-radius: var(--r-md);
+	padding: 8px 10px;
+	transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
+}
+.input::placeholder, .textarea::placeholder { color: var(--text-faint); }
+.input:hover, .textarea:hover, .select:hover { border-color: var(--border-strong); }
+.input:focus, .textarea:focus, .select:focus {
+	outline: none; border-color: var(--accent);
+	box-shadow: 0 0 0 3px var(--accent-quiet); background: var(--surface-1);
+}
+.textarea { resize: vertical; min-height: 92px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6; }
+.select { appearance: none; cursor: pointer;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%239a9aa3' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+	background-repeat: no-repeat; background-position: right 9px center; padding-right: 30px;
+}
+
+.btn {
+	display: inline-flex; align-items: center; gap: 7px;
+	height: 32px; padding: 0 13px;
+	font: inherit; font-size: 13px; font-weight: 500; letter-spacing: -0.01em;
+	border-radius: var(--r-md); border: 1px solid transparent;
+	cursor: pointer; user-select: none;
+	transition: transform .06s var(--ease), background var(--dur), border-color var(--dur), opacity var(--dur);
+}
+.btn:active { transform: scale(.97); }
+.btn svg { width: 14px; height: 14px; }
+.btn-primary { background: var(--primary-bg); color: var(--primary-fg); }
+.btn-primary:hover { opacity: .9; }
+.btn-secondary { background: var(--surface-2); color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { background: var(--surface-3); border-color: var(--border-strong); }
+.btn-ghost { background: transparent; color: var(--text-muted); }
+.btn-ghost:hover { background: var(--surface-2); color: var(--text); }
+.btn-danger { background: var(--danger-quiet); color: var(--danger); border-color: color-mix(in srgb, var(--danger) 30%, transparent); }
+.btn-danger:hover { background: color-mix(in srgb, var(--danger) 22%, transparent); }
+
+.badge {
+	display: inline-flex; align-items: center; gap: 5px;
+	height: 21px; padding: 0 8px;
+	font-size: 11.5px; font-weight: 500; letter-spacing: 0;
+	border-radius: var(--r-pill);
+	background: var(--surface-3); color: var(--text-muted);
+	border: 1px solid var(--border);
+}
+.badge .d { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.badge.ok { color: var(--success); background: var(--success-quiet); border-color: transparent; }
+.badge.warn { color: var(--warning); background: var(--warning-quiet); border-color: transparent; }
+.badge.bad { color: var(--danger); background: var(--danger-quiet); border-color: transparent; }
+.badge.info { color: var(--accent); background: var(--accent-quiet); border-color: transparent; }
+
+.note {
+	display: flex; gap: 9px; align-items: flex-start;
+	padding: 10px 12px; border-radius: var(--r-md);
+	font-size: 12.5px; line-height: 1.5;
+	background: var(--warning-quiet); color: var(--warning);
+	border: 1px solid color-mix(in srgb, var(--warning) 24%, transparent);
+}
+.note svg { width: 15px; height: 15px; flex: none; margin-top: 1px; }
+.note code { font-family: var(--font-mono); font-size: 11.5px; }
+
+.preview {
+	margin-top: 12px; padding: 11px 13px;
+	border: 1px dashed var(--border-strong); border-radius: var(--r-md);
+	background: var(--surface-2); font-size: 12.5px; color: var(--text-muted);
+}
+.preview .out { color: var(--text); font-family: var(--font-mono); white-space: pre-wrap; }
+
+/* table */
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th {
+	text-align: left; font-weight: 500; font-size: 11.5px; letter-spacing: .03em; text-transform: uppercase;
+	color: var(--text-faint); padding: 0 14px 9px; border-bottom: 1px solid var(--border);
+}
+.table td { padding: 11px 14px; border-bottom: 1px solid var(--border); }
+.table tbody tr { transition: background var(--dur); }
+.table tbody tr:hover { background: var(--surface-2); }
+.table tbody tr:last-child td { border-bottom: 0; }
+.mono { font-family: var(--font-mono); font-feature-settings: "tnum"; }
+.tname { font-weight: 500; }
+.tsub { color: var(--text-faint); font-size: 12px; }
+
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.row:last-child { border-bottom: 0; }
+.row .l .title { font-weight: 500; font-size: 13.5px; }
+.row .l .desc { color: var(--text-muted); font-size: 12.5px; margin-top: 2px; }
+
+/* toggle */
+.switch { width: 38px; height: 22px; border-radius: var(--r-pill); background: var(--surface-3); border: 1px solid var(--border-strong); position: relative; cursor: pointer; transition: background var(--dur); flex: none; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--text-faint); transition: all var(--dur); }
+.switch[data-on="true"] { background: var(--accent); border-color: transparent; }
+.switch[data-on="true"]::after { left: 18px; background: #fff; }
+
+.empty { text-align: center; padding: 46px 20px; }
+.empty .ic { width: 38px; height: 38px; margin: 0 auto 12px; display: grid; place-items: center; border-radius: var(--r-lg); background: var(--surface-2); border: 1px solid var(--border); color: var(--text-faint); }
+.empty h3 { font-size: 14px; font-weight: 550; }
+.empty p { color: var(--text-muted); font-size: 12.5px; margin: 4px 0 16px; }
+
+/* toast */
+.toasts { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+	display: flex; align-items: center; gap: 10px;
+	padding: 11px 13px; min-width: 240px;
+	background: var(--surface-1); border: 1px solid var(--border-strong);
+	border-radius: var(--r-md); box-shadow: var(--shadow); font-size: 13px;
+	animation: toastIn .3s var(--ease);
+}
+.toast .ic { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: var(--success-quiet); color: var(--success); flex: none; }
+.toast .ic svg { width: 11px; height: 11px; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.toast.out { animation: toastOut .2s var(--ease) forwards; }
+@keyframes toastOut { to { opacity: 0; transform: translateY(6px); } }
+
+/* dialog */
+.scrim { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.5); backdrop-filter: blur(2px); display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity var(--dur); }
+.scrim[data-open="true"] { opacity: 1; pointer-events: auto; }
+.dialog { width: 380px; max-width: calc(100vw - 32px); background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: var(--r-lg); box-shadow: 0 20px 60px -20px rgba(0,0,0,.6); padding: 18px; transform: scale(.96) translateY(6px); transition: transform var(--dur) var(--ease); }
+.scrim[data-open="true"] .dialog { transform: none; }
+.dialog h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+.dialog p { color: var(--text-muted); font-size: 13px; margin: 6px 0 18px; }
+.dialog .actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+.stack { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.divider { height: 1px; background: var(--border); margin: 18px 0; }
+.kv { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 12.5px; }
+
+/* Accessibility: honor reduced-motion — disable all motion (every animated element). */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: .01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: .01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+</style>
+</head>
+<body>
+<!-- TOP BAR -->
+<header class="topbar">
+	<div class="brand"><span class="dot"></span> coldmail <span class="muted">/ ustawienia</span></div>
+	<div class="spacer"></div>
+	<div class="cmdk">Szukaj <kbd>⌘K</kbd></div>
+	<button class="iconbtn" id="themeBtn" title="Przełącz motyw" aria-label="Przełącz motyw">
+		<svg id="themeIc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 109.8 9.8z"/></svg>
+	</button>
+	<div class="avatar" title="Konto">KS</div>
+</header>
+
+<main class="shell">
+	<div class="page-head">
+		<h1>Ustawienia</h1>
+		<p>Konfiguracja organizacji, wysyłki i zespołu.</p>
+	</div>
+
+	<div class="settings">
+		<!-- SECTION NAV (the "steps") -->
+		<nav class="snav" id="snav">
+			<button data-target="ogolne" aria-current="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 00-1.7-1l-.3-2.5h-4l-.3 2.5a7 7 0 00-1.7 1l-2.3-1-2 3.4L4.1 11a7 7 0 000 2l-2 1.5 2 3.4 2.3-1a7 7 0 001.7 1l.3 2.5h4l.3-2.5a7 7 0 001.7-1l2.3 1 2-3.4-2-1.5a7 7 0 00.1-1z"/></svg> Ogólne</button>
+			<button data-target="podpis" aria-current="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 17c3-1 4-6 6-6s2 3 4 3 3-4 3-4"/><path d="M3 20h18"/></svg> Podpis nadawcy</button>
+			<button data-target="optout" aria-current="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M5 5l14 14"/></svg> Wykrywanie rezygnacji</button>
+			<button data-target="skrzynki" aria-current="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Skrzynki</button>
+			<div class="grp">Organizacja</div>
+			<button data-target="zespol" aria-current="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0M16 6a3 3 0 010 6M21 20a5 5 0 00-4-5"/></svg> Zespół</button>
+		</nav>
+
+		<!-- FLUID BODY -->
+		<div class="pane" id="pane">
+
+			<!-- OGÓLNE -->
+			<section class="section" data-id="ogolne">
+				<h2>Ogólne</h2>
+				<p class="sub">Podstawowe dane organizacji.</p>
+				<div class="card"><div class="body">
+					<div class="field">
+						<label class="label">Nazwa organizacji</label>
+						<input class="input" value="Snappify" />
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="l"><div class="title">Tryb ciemny dla całego zespołu</div><div class="desc">Wymusza motyw niezależnie od ustawień systemu.</div></div>
+						<div class="switch" data-on="false" onclick="this.dataset.on = this.dataset.on==='true'?'false':'true'"></div>
+					</div>
+					<div class="row">
+						<div class="l"><div class="title">Śledzenie odpowiedzi</div><div class="desc">Polling Gmail History API co 5 min. <span class="badge info" style="margin-left:4px"><span class="d"></span>zalecane</span></div></div>
+						<div class="switch" data-on="true" onclick="this.dataset.on = this.dataset.on==='true'?'false':'true'"></div>
+					</div>
+				</div></div>
+			</section>
+
+			<!-- PODPIS NADAWCY (the feature we just shipped, re-skinned) -->
+			<section class="section" data-id="podpis">
+				<h2>Podpis nadawcy</h2>
+				<p class="sub">Treść tokenu <code style="font-family:var(--font-mono);font-size:12px">{{podpisNadawcy}}</code> — jedno źródło dla podglądu i wysyłki.</p>
+				<div class="card">
+					<div class="body">
+						<div class="field">
+							<label class="label">Podpis</label>
+							<textarea class="textarea" id="sigInput" placeholder="Pozdrawiam,&#10;Jan Kowalski&#10;Snappify Sp. z o.o.">Pozdrawiam,
+Krystian S.
+Snappify</textarea>
+							<div class="hint">Wstawiany dosłownie w miejsce <code style="font-family:var(--font-mono)">{{podpisNadawcy}}</code>. Maks. 2000 znaków.</div>
+						</div>
+						<div class="note" id="sigFlag" hidden>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+							<div>Nieustawiony — przy wysyłce zostanie użyta nazwa skrzynki (<strong>snappifyacc@gmail.com</strong>).</div>
+						</div>
+						<div class="preview">Podgląd: <code style="font-family:var(--font-mono)">{{podpisNadawcy}}</code> → <span class="out" id="sigPreview"></span></div>
+					</div>
+					<div class="foot">
+						<span class="kv"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Podgląd i wysyłka spójne</span>
+						<button class="btn btn-primary" onclick="toast('Zapisano podpis nadawcy')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Zapisz</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- WYKRYWANIE REZYGNACJI -->
+			<section class="section" data-id="optout">
+				<h2>Wykrywanie rezygnacji</h2>
+				<p class="sub">Jak traktować odpowiedzi sygnalizujące brak zainteresowania (RODO).</p>
+				<div class="card"><div class="body">
+					<div class="field">
+						<label class="label">Tryb</label>
+						<select class="select">
+							<option>OFF — nie wykrywaj</option>
+							<option selected>SUGGEST — flaguj, klikam ręcznie</option>
+							<option>AUTO — suppresuj automatycznie</option>
+						</select>
+						<div class="hint">SUGGEST oznacza leady jako „możliwa rezygnacja" do ręcznego potwierdzenia.</div>
+					</div>
+					<div class="field">
+						<label class="label">Metoda</label>
+						<select class="select">
+							<option selected>Lista fraz</option>
+							<option>LLM (claude-haiku-4-5)</option>
+						</select>
+					</div>
+				</div></div>
+			</section>
+
+			<!-- SKRZYNKI -->
+			<section class="section" data-id="skrzynki">
+				<h2>Skrzynki</h2>
+				<p class="sub">Połączone skrzynki i parametry wysyłki.</p>
+				<div class="card">
+					<div class="body">
+						<div class="stack" style="justify-content:space-between">
+							<div class="stack">
+								<div class="avatar" style="background:linear-gradient(150deg,#ea4335,#c5221f)">G</div>
+								<div>
+									<div class="tname">snappifyacc@gmail.com <span class="badge ok" style="margin-left:4px"><span class="d"></span>połączona</span></div>
+									<div class="tsub">Gmail API · gmail.send + readonly</div>
+								</div>
+							</div>
+							<button class="btn btn-danger" onclick="openDialog()">Odłącz</button>
+						</div>
+						<div class="divider"></div>
+						<div class="stack" style="gap:22px">
+							<div class="kv"><span class="tsub">Limit dzienny</span> <span class="mono" style="color:var(--text)">40</span></div>
+							<div class="kv"><span class="tsub">Okno</span> <span class="mono" style="color:var(--text)">Pn–Pt 08:00–16:00</span></div>
+							<div class="kv"><span class="tsub">Odstęp</span> <span class="mono" style="color:var(--text)">180–600 s</span></div>
+							<div class="kv"><span class="tsub">Dziś</span> <span class="mono" style="color:var(--text)">12 / 40</span></div>
+						</div>
+					</div>
+					<div class="foot"><span>Te parametry sterują reputacją wysyłki.</span><button class="btn btn-secondary">Edytuj wysyłkę</button></div>
+				</div>
+			</section>
+
+			<!-- ZESPÓŁ -->
+			<section class="section" data-id="zespol">
+				<h2>Zespół</h2>
+				<p class="sub">Członkowie organizacji i role.</p>
+				<div class="card"><div class="body" style="padding:6px 4px">
+					<table class="table">
+						<thead><tr><th>Osoba</th><th>Rola</th><th>Dołączył</th><th></th></tr></thead>
+						<tbody>
+							<tr>
+								<td><div class="stack"><div class="avatar" style="width:24px;height:24px;font-size:10px">KS</div><div><div class="tname">Krystian S.</div><div class="tsub">snappifyacc@gmail.com</div></div></div></td>
+								<td><span class="badge info"><span class="d"></span>Owner</span></td>
+								<td class="mono tsub">2026-05-28</td>
+								<td style="text-align:right"><button class="btn btn-ghost" style="height:26px">···</button></td>
+							</tr>
+							<tr>
+								<td><div class="stack"><div class="avatar" style="width:24px;height:24px;font-size:10px;background:linear-gradient(150deg,#6366f1,#4338ca)">AN</div><div><div class="tname">Anna N.</div><div class="tsub">anna@snappify.io</div></div></div></td>
+								<td><span class="badge"><span class="d"></span>Member</span></td>
+								<td class="mono tsub">2026-06-04</td>
+								<td style="text-align:right"><button class="btn btn-ghost" style="height:26px">···</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="foot"><span>2 członków</span><button class="btn btn-secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Zaproś</button></div>
+				</div>
+			</section>
+
+		</div>
+	</div>
+</main>
+
+<!-- CONFIRM DIALOG primitive -->
+<div class="scrim" id="scrim" data-open="false" onclick="if(event.target===this)closeDialog()">
+	<div class="dialog" role="dialog" aria-modal="true">
+		<h3>Odłączyć skrzynkę?</h3>
+		<p>Spowoduje to usunięcie powiązanych wiadomości i zatrzymanie wykrywania odpowiedzi. Tej operacji nie można cofnąć.</p>
+		<div class="actions">
+			<button class="btn btn-secondary" onclick="closeDialog()">Anuluj</button>
+			<button class="btn btn-danger" onclick="closeDialog(); toast('Skrzynka odłączona', false)">Odłącz</button>
+		</div>
+	</div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script>
+/* theme toggle (both themes shipped; dark default) */
+const root = document.documentElement, tIc = document.getElementById('themeIc');
+const sun = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+const moon = '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 109.8 9.8z"/>';
+document.getElementById('themeBtn').onclick = () => {
+	const dark = root.getAttribute('data-theme') === 'dark';
+	root.setAttribute('data-theme', dark ? 'light' : 'dark');
+	tIc.innerHTML = dark ? sun : moon;
+};
+
+/* section nav + fluid body (View Transitions when available, animated fallback otherwise) */
+const pane = document.getElementById('pane');
+const sections = [...document.querySelectorAll('.section')];
+const navBtns = [...document.querySelectorAll('#snav button')];
+function show(id, btn) {
+	sections.forEach(s => s.toggleAttribute('data-active', s.dataset.id === id));
+	navBtns.forEach(b => b.setAttribute('aria-current', String(b === btn)));
+	// Re-trigger the body's enter animation: scoped to the content, reliable cross-browser, GPU-only.
+	pane.classList.remove('enter'); void pane.offsetWidth; pane.classList.add('enter');
+}
+navBtns.forEach(b => b.onclick = () => show(b.dataset.target, b));
+show('podpis', navBtns[1]); // open the just-shipped feature by default
+
+/* sender-signature live preview + flag (mirrors the real resolveSenderName logic) */
+const sig = document.getElementById('sigInput'), flag = document.getElementById('sigFlag'), prev = document.getElementById('sigPreview');
+const MAILBOX = 'snappifyacc@gmail.com';
+function syncSig() {
+	const v = sig.value.trim();
+	flag.hidden = v !== '';
+	prev.textContent = v || MAILBOX;
+}
+sig.addEventListener('input', syncSig); syncSig();
+
+/* toast */
+function toast(msg, ok = true) {
+	const el = document.createElement('div'); el.className = 'toast';
+	el.innerHTML = '<span class="ic" style="' + (ok?'':'background:var(--surface-3);color:var(--text-muted)') + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>' + msg + '</span>';
+	document.getElementById('toasts').appendChild(el);
+	setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 200); }, 2600);
+}
+
+/* dialog */
+const scrim = document.getElementById('scrim');
+function openDialog(){ scrim.dataset.open = 'true'; }
+function closeDialog(){ scrim.dataset.open = 'false'; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDialog(); });
+</script>
+</body>
+</html>
