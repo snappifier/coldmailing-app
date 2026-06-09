@@ -33,6 +33,17 @@ describe("renderTemplate", () => {
 		expect(none.missing).toEqual(["zwrot"])
 	})
 
+	it("resolves {{podpisNadawcy}} from senderName", () => {
+		expect(renderTemplate("{{podpisNadawcy}}", ctx()).rendered).toBe("Krystian")
+		expect(renderTemplate("{{podpisNadawcy}}", ctx({senderName: "Pozdrawiam,\nZespół Acme"})).rendered).toBe("Pozdrawiam,\nZespół Acme")
+	})
+
+	it("flags {{podpisNadawcy}} as missing when senderName is empty", () => {
+		const r = renderTemplate("{{podpisNadawcy}}", ctx({senderName: ""}))
+		expect(r.rendered).toBe("[brak: podpisNadawcy]")
+		expect(r.missing).toEqual(["podpisNadawcy"])
+	})
+
 	it("resolves gendered forms by honorific", () => {
 		expect(renderTemplate("{{Szanowny|Szanowna}} Panie", ctx()).rendered).toBe("Szanowny Panie")
 		expect(renderTemplate("{{Szanowny|Szanowna}}", ctx({lead: {...ctx().lead, honorific: "PANI"}})).rendered).toBe("Szanowna")
