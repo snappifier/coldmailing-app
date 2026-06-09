@@ -40,11 +40,11 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 
 	return (
 		<section className="flex flex-col gap-4">
-			<Link className="text-sm text-blue-600" href="/kampanie">
+			<Link className="text-sm text-accent" href="/kampanie">
 				← Kampanie
 			</Link>
 			<h1 className="text-lg font-semibold">
-				{campaign.name} <span className="text-sm font-normal text-zinc-400">· {campaign.status} · {campaign._count.campaignLeads} leadów</span>
+				{campaign.name} <span className="text-sm font-normal text-fg-faint">· {campaign.status} · {campaign._count.campaignLeads} leadów</span>
 			</h1>
 			<SendingControls
 				campaignId={campaign.id}
@@ -65,7 +65,7 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 				}))}
 			/>
 			<div>
-				<h2 className="mb-2 text-sm font-semibold text-zinc-700">Przychodzące</h2>
+				<h2 className="mb-2 text-sm font-semibold text-fg">Przychodzące</h2>
 				<LeadInbox
 					rows={leads.map((l) => ({
 						id: l.id,

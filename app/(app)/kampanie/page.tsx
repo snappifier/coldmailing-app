@@ -20,25 +20,25 @@ export default async function CampaignsPage() {
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Kampanie</h1>
 			<CampaignForm offeringLines={offeringLines} />
-			<ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+			<ul className="divide-y divide-border border-y border-border">
 				{campaigns.map((c) => (
 					<li className="flex items-center justify-between py-2 text-sm" key={c.id}>
 						<span>
-							<Link className="text-blue-600 hover:underline" href={`/kampanie/${c.id}`}>
+							<Link className="text-accent hover:underline" href={`/kampanie/${c.id}`}>
 								{c.name}
 							</Link>{" "}
-							<span className="text-zinc-400">
+							<span className="text-fg-faint">
 								· {c.status} · {c._count.steps} kroków · {c._count.campaignLeads} leadów
 							</span>
 						</span>
 						<form action={deleteCampaign.bind(null, c.id)}>
-							<button className="text-red-600" type="submit">
+							<button className="text-danger" type="submit">
 								Usuń
 							</button>
 						</form>
 					</li>
 				))}
-				{campaigns.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak kampanii.</li> : null}
+				{campaigns.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak kampanii.</li> : null}
 			</ul>
 		</section>
 	)

@@ -19,13 +19,13 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props
 
 	return (
 		<div>
-			<h2 className="mb-2 text-sm font-semibold text-zinc-700">Wysyłka</h2>
+			<h2 className="mb-2 text-sm font-semibold text-fg">Wysyłka</h2>
 			<div className="flex flex-wrap items-end gap-2">
 				<form
 					className="flex items-end gap-2"
 					action={(formData) => setSendingMailbox(campaignId, String(formData.get("emailAccountId") ?? ""))}
 				>
-					<select className="rounded border border-zinc-300 px-2 py-1 text-sm" name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
+					<select className="rounded border border-border px-2 py-1 text-sm" name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
 						<option value="">— skrzynka wysyłkowa —</option>
 						{mailboxes.map((m) => (
 							<option key={m.id} value={m.id}>
@@ -33,27 +33,27 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props
 							</option>
 						))}
 					</select>
-					<button className="rounded border border-zinc-300 px-3 py-1.5 text-sm" type="submit">
+					<button className="rounded border border-border px-3 py-1.5 text-sm" type="submit">
 						Zapisz skrzynkę
 					</button>
 				</form>
 				<form action={activateAction}>
-					<button className="rounded bg-zinc-900 px-3 py-1.5 text-sm text-white disabled:opacity-50" type="submit" disabled={activatePending}>
+					<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={activatePending}>
 						Aktywuj wysyłkę
 					</button>
 				</form>
 				<form action={pauseCampaign.bind(null, campaignId)}>
-					<button className="rounded border border-zinc-300 px-3 py-1.5 text-sm" type="submit">
+					<button className="rounded border border-border px-3 py-1.5 text-sm" type="submit">
 						Pauza
 					</button>
 				</form>
 			</div>
-			{activateState && !activateState.ok ? <p className="mt-2 text-sm text-red-600">{activateState.error}</p> : null}
-			{activateState && activateState.ok ? <p className="mt-2 text-sm text-green-700">Wysyłka aktywowana.</p> : null}
+			{activateState && !activateState.ok ? <p className="mt-2 text-sm text-danger">{activateState.error}</p> : null}
+			{activateState && activateState.ok ? <p className="mt-2 text-sm text-success">Wysyłka aktywowana.</p> : null}
 			{mailboxes.length === 0 ? (
-				<p className="mt-2 text-sm text-zinc-500">
+				<p className="mt-2 text-sm text-fg-muted">
 					Brak skrzynek.{" "}
-					<a className="text-blue-600" href="/skrzynki">
+					<a className="text-accent" href="/skrzynki">
 						Połącz skrzynkę
 					</a>
 					.

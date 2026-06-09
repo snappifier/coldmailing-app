@@ -19,18 +19,18 @@ const BADGE: Record<string, string> = {
 }
 
 export function LeadInbox({rows}: {rows: Row[]}) {
-	if (rows.length === 0) return <p className="text-sm text-zinc-500">Brak leadów z przychodzącą wiadomością.</p>
+	if (rows.length === 0) return <p className="text-sm text-fg-muted">Brak leadów z przychodzącą wiadomością.</p>
 	return (
 		<ul className="flex flex-col gap-1 text-sm">
 			{rows.map((r) => (
-				<li className="flex items-center justify-between gap-3 border-b border-zinc-100 py-1" key={r.id}>
+				<li className="flex items-center justify-between gap-3 border-b border-border py-1" key={r.id}>
 					<span className="min-w-0">
 						<span className="font-medium">{r.org}</span> · {r.status}
-						{r.inboundKind ? <span className="ml-1 rounded bg-zinc-100 px-1 text-xs text-zinc-700">{BADGE[r.inboundKind] ?? r.inboundKind}</span> : null}
-						{r.snippet ? <span className="ml-2 truncate text-zinc-500">{r.snippet}</span> : null}
+						{r.inboundKind ? <span className="ml-1 rounded bg-surface-2 px-1 text-xs text-fg">{BADGE[r.inboundKind] ?? r.inboundKind}</span> : null}
+						{r.snippet ? <span className="ml-2 truncate text-fg-muted">{r.snippet}</span> : null}
 					</span>
 					<form action={markDoNotContact.bind(null, r.id)}>
-						<button className="shrink-0 text-red-600" type="submit">
+						<button className="shrink-0 text-danger" type="submit">
 							Nie kontaktować
 						</button>
 					</form>
