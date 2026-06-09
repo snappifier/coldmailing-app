@@ -1,5 +1,7 @@
 // app/(app)/skrzynki/page.tsx
-import {requireOrg} from "@/lib/org"
+import {requireOrg, currentRole} from "@/lib/org"
+import {hasRole} from "@/features/team/roles"
+import {redirect} from "next/navigation"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {disconnectEmailAccount} from "@/features/email-accounts/actions"
 import {TIMEZONES} from "@/features/email-accounts/settings"
@@ -7,7 +9,10 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {MailboxSettingsForm} from "./mailbox-settings-form"
 
 export default async function SkrzynkiPage({searchParams}: {searchParams: Promise<{connected?: string; error?: string}>}) {
-	const {orgId} = await requireOrg()
+	const ctx = await requireOrg()
+	const role = await currentRole(ctx)
+	if (!hasRole(role, "ADMIN")) redirect("/")
+	const orgId = ctx.orgId
 	const [accounts, sp] = await Promise.all([listEmailAccounts(orgId), searchParams])
 
 	return (

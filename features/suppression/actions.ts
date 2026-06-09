@@ -4,7 +4,7 @@
 import {revalidatePath} from "next/cache"
 import {z} from "zod"
 import {prisma} from "@/lib/prisma"
-import {requireOrg} from "@/lib/org"
+import {requireOrg, requireRole} from "@/lib/org"
 
 export type SuppressionResult = {ok: true} | {ok: false; error: string}
 
@@ -25,7 +25,7 @@ export async function addSuppression(_prev: SuppressionResult | null, formData: 
 }
 
 export async function removeSuppression(id: string): Promise<void> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	await prisma.suppression.deleteMany({where: {id, organizationId: orgId}})
 	revalidatePath("/suppression")
 }

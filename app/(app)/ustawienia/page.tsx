@@ -1,4 +1,7 @@
 // app/(app)/ustawienia/page.tsx
+import {requireOrg, currentRole} from "@/lib/org"
+import {hasRole} from "@/features/team/roles"
+import {redirect} from "next/navigation"
 import {getOrgSettings} from "@/features/org/settings"
 import {SettingsShell, type SettingsSection} from "./settings-shell"
 import {GeneralForm} from "./general-form"
@@ -6,6 +9,9 @@ import {SenderSignatureForm} from "./sender-signature-form"
 import {SettingsForm} from "./settings-form"
 
 export default async function SettingsPage() {
+	const ctx = await requireOrg()
+	const role = await currentRole(ctx)
+	if (!hasRole(role, "ADMIN")) redirect("/")
 	const s = await getOrgSettings()
 	const sections: SettingsSection[] = [
 		{id: "ogolne", label: "Ogólne", content: <GeneralForm name={s.name} />},

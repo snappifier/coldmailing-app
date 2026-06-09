@@ -3,11 +3,11 @@
 
 import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"
-import {requireOrg} from "@/lib/org"
+import {requireRole} from "@/lib/org"
 import {validateEmailAccountSettings, daysToMask, parseTime} from "@/features/email-accounts/settings"
 
 export async function disconnectEmailAccount(id: string): Promise<void> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	await prisma.emailAccount.deleteMany({where: {id, organizationId: orgId}})
 	revalidatePath("/skrzynki")
 }
@@ -15,7 +15,7 @@ export async function disconnectEmailAccount(id: string): Promise<void> {
 export type EmailAccountSettingsResult = {ok: true} | {ok: false; error: string}
 
 export async function updateEmailAccountSettings(_prev: EmailAccountSettingsResult | null, formData: FormData): Promise<EmailAccountSettingsResult> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	const id = String(formData.get("id") ?? "")
 	if (!id) return {ok: false, error: "Brak id"}
 

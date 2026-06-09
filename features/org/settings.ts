@@ -3,7 +3,7 @@
 
 import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"
-import {requireOrg} from "@/lib/org"
+import {requireOrg, requireRole} from "@/lib/org"
 import type {OptOutMode, OptOutDetector} from "@/generated/prisma/client"
 import {sanitizeSignature} from "@/features/templates/sender"
 
@@ -17,7 +17,7 @@ export async function getOrgSettings() {
 }
 
 export async function setOrgInboundSettings(_prev: unknown, formData: FormData): Promise<{ok: boolean}> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	const mode = String(formData.get("optOutMode"))
 	const detector = String(formData.get("optOutDetector"))
 	if (!MODES.includes(mode) || !DETECTORS.includes(detector)) return {ok: false}
@@ -30,7 +30,7 @@ export async function setOrgInboundSettings(_prev: unknown, formData: FormData):
 }
 
 export async function setSenderSignature(_prev: unknown, formData: FormData): Promise<{ok: boolean}> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	const senderSignature = sanitizeSignature(String(formData.get("senderSignature") ?? ""))
 	await prisma.organization.update({where: {id: orgId}, data: {senderSignature}})
 	revalidatePath("/ustawienia")
@@ -38,7 +38,7 @@ export async function setSenderSignature(_prev: unknown, formData: FormData): Pr
 }
 
 export async function setOrgName(_prev: unknown, formData: FormData): Promise<{ok: boolean}> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	const name = String(formData.get("name") ?? "").trim().slice(0, 120)
 	if (!name) return {ok: false}
 	await prisma.organization.update({where: {id: orgId}, data: {name}})

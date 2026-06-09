@@ -3,7 +3,7 @@
 
 import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"
-import {requireOrg} from "@/lib/org"
+import {requireOrg, requireRole} from "@/lib/org"
 import {inngest} from "@/lib/inngest/client"
 import {planSchedule} from "@/features/sending/schedule"
 import {validateActivation, type ActivateResult} from "@/features/campaigns/activation"
@@ -15,7 +15,7 @@ function startOfLocalDayUTC(now: Date, tz: string): Date {
 }
 
 export async function activateCampaign(campaignId: string): Promise<ActivateResult> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	const campaign = await prisma.campaign.findFirst({
 		where: {id: campaignId, organizationId: orgId},
 		select: {id: true, status: true, sendingEmailAccountId: true},
@@ -100,7 +100,7 @@ export async function pauseCampaign(campaignId: string): Promise<void> {
 }
 
 export async function setSendingMailbox(campaignId: string, emailAccountId: string): Promise<void> {
-	const {orgId} = await requireOrg()
+	const {orgId} = await requireRole("ADMIN")
 	await prisma.campaign.updateMany({
 		where: {id: campaignId, organizationId: orgId},
 		data: {sendingEmailAccountId: emailAccountId || null},
