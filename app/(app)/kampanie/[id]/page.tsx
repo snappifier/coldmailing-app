@@ -4,9 +4,12 @@ import {notFound} from "next/navigation"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
+import {getCampaignMetrics} from "@/features/metrics/queries"
+import {formatPct, formatInt} from "@/features/metrics/compute"
 import {SequenceAndLeads} from "./sequence-and-leads"
 import {SendingControls} from "./sending-controls"
 import {LeadInbox} from "./lead-inbox"
+import {MetricStat} from "../../dashboard-parts"
 
 export default async function CampaignDetailPage({params}: {params: Promise<{id: string}>}) {
 	const {orgId} = await requireOrg()
@@ -20,6 +23,8 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 		},
 	})
 	if (!campaign) notFound()
+
+	const metrics = await getCampaignMetrics(id, orgId)
 
 	const leads = await prisma.campaignLead.findMany({
 		where: {campaignId: id, messages: {some: {direction: "INBOUND"}}},
@@ -46,6 +51,16 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 			<h1 className="text-lg font-semibold">
 				{campaign.name} <span className="text-sm font-normal text-fg-faint">· {campaign.status} · {campaign._count.campaignLeads} leadów</span>
 			</h1>
+			{metrics ? (
+				<div className="flex flex-wrap gap-5 rounded-lg border border-border bg-surface-1 p-3.5">
+					<MetricStat label="Wysłane maile" value={formatInt(metrics.mailsSent)} />
+					<MetricStat label="Skontaktowani" value={formatInt(metrics.rates.contacted)} />
+					<MetricStat label="Odpowiedzi" value={`${formatInt(metrics.breakdown.replied)} · ${formatPct(metrics.rates.replyRate)}`} />
+					<MetricStat label="Odbicia" value={`${formatInt(metrics.breakdown.bounced)} · ${formatPct(metrics.rates.bounceRate)}`} />
+					<MetricStat label="Rezygnacje" value={`${formatInt(metrics.breakdown.unsubscribed)} · ${formatPct(metrics.rates.unsubRate)}`} />
+					<MetricStat label="Błędy" value={formatInt(metrics.breakdown.failed)} />
+				</div>
+			) : null}
 			<SendingControls
 				campaignId={campaign.id}
 				mailboxes={mailboxes.map((m) => ({id: m.id, email: m.email}))}
