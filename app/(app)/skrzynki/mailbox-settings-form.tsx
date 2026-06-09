@@ -34,7 +34,7 @@ export function MailboxSettingsForm({account, timezones}: {account: Account; tim
 			<input type="hidden" name="id" value={account.id} />
 			<div className="flex flex-wrap gap-4">
 				<Field label="Dzienny limit">
-					<div className="w-28"><Input type="number" name="dailyLimit" min={1} max={1000} defaultValue={account.dailyLimit} /></div>
+					<div className="w-28"><Input type="number" name="dailyLimit" min={1} max={1000} step={1} defaultValue={account.dailyLimit} /></div>
 				</Field>
 				<Field label="Okno wysyłki">
 					<div className="flex items-center gap-2">
@@ -63,9 +63,9 @@ export function MailboxSettingsForm({account, timezones}: {account: Account; tim
 			</Field>
 			<Field label="Odstęp między mailami" hint="Losowy odstęp (sekundy) między kolejnymi mailami.">
 				<div className="flex items-center gap-2">
-					<div className="w-24"><Input type="number" name="gapMin" min={0} max={86400} defaultValue={account.minGapSec} /></div>
+					<div className="w-24"><Input type="number" name="gapMin" min={0} max={86400} step={1} defaultValue={account.minGapSec} /></div>
 					<span className="text-fg-faint">–</span>
-					<div className="w-24"><Input type="number" name="gapMax" min={0} max={86400} defaultValue={account.maxGapSec} /></div>
+					<div className="w-24"><Input type="number" name="gapMax" min={0} max={86400} step={1} defaultValue={account.maxGapSec} /></div>
 					<span className="text-xs text-fg-faint">s</span>
 				</div>
 			</Field>
