@@ -1,6 +1,6 @@
 // features/leads/import.test.ts
 import {describe, it, expect} from "vitest"
-import {detectDelimiter, splitRow, parseTable, normalizeEmail, normalizeWebsite, parseHonorific, mapRowsToLeads} from "@/features/leads/import"
+import {detectDelimiter, splitRow, parseTable, normalizeEmail, normalizeWebsite, parseHonorific, mapRowsToLeads, buildImportSpec, defaultCustomKey} from "@/features/leads/import"
 
 describe("detectDelimiter", () => {
 	it("prefers tab, then semicolon, then comma", () => {
@@ -80,5 +80,51 @@ describe("mapRowsToLeads", () => {
 	it("requires organizationName (drops rows without it)", () => {
 		const leads = mapRowsToLeads([["", "a@b.pl"]], {organizationName: 0, email: 1}, {hasHeader: false})
 		expect(leads).toHaveLength(0)
+	})
+})
+
+describe("buildImportSpec", () => {
+	it("maps known fields (last column wins) and collects custom columns", () => {
+		const spec = buildImportSpec([
+			{kind: "field", field: "organizationName"},
+			{kind: "field", field: "email"},
+			{kind: "custom", key: "liczba_uczniow"},
+			{kind: "ignore"},
+			{kind: "field", field: "email"},
+		])
+		expect(spec.mapping).toEqual({organizationName: 0, email: 4})
+		expect(spec.customColumns).toEqual([{index: 2, key: "liczba_uczniow"}])
+	})
+	it("drops custom columns with an empty/whitespace key and trims keys", () => {
+		const spec = buildImportSpec([{kind: "custom", key: "  "}, {kind: "custom", key: " patron "}])
+		expect(spec.customColumns).toEqual([{index: 1, key: "patron"}])
+	})
+})
+
+describe("mapRowsToLeads with customColumns", () => {
+	const rows = [
+		["Nazwa", "Email", "Liczba", "Patron"],
+		["LO Rej", "a@b.pl", "612", "M. Rej"],
+		["ZSP 3", "c@d.pl", "", ""],
+	]
+	it("builds customFields and skips empty cells", () => {
+		const leads = mapRowsToLeads(rows, {organizationName: 0, email: 1}, {
+			hasHeader: true,
+			customColumns: [{index: 2, key: "liczba"}, {index: 3, key: "patron"}],
+		})
+		expect(leads[0].customFields).toEqual({liczba: "612", patron: "M. Rej"})
+		expect(leads[1].customFields).toBeNull()
+	})
+	it("sets customFields null when no customColumns", () => {
+		const leads = mapRowsToLeads(rows, {organizationName: 0}, {hasHeader: true})
+		expect(leads[0].customFields).toBeNull()
+	})
+})
+
+describe("defaultCustomKey", () => {
+	it("uses the trimmed header, else kolumna_N", () => {
+		expect(defaultCustomKey("  Liczba uczniów ", 3)).toBe("Liczba uczniów")
+		expect(defaultCustomKey(null, 3)).toBe("kolumna_4")
+		expect(defaultCustomKey("", 0)).toBe("kolumna_1")
 	})
 })

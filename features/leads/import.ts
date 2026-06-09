@@ -26,6 +26,36 @@ export interface LeadImportInput {
 	region: string | null
 	schoolType: string | null
 	honorific: Honorific | null
+	customFields: Record<string, string> | null
+}
+
+export type ColumnTarget =
+	| {kind: "ignore"}
+	| {kind: "field"; field: LeadFieldKey}
+	| {kind: "custom"; key: string}
+
+export interface ImportSpec {
+	mapping: ColumnMapping
+	customColumns: {index: number; key: string}[]
+}
+
+export function buildImportSpec(targets: ColumnTarget[]): ImportSpec {
+	const mapping: ColumnMapping = {}
+	const customColumns: {index: number; key: string}[] = []
+	targets.forEach((target, index) => {
+		if (target.kind === "field") {
+			mapping[target.field] = index
+		} else if (target.kind === "custom") {
+			const key = target.key.trim()
+			if (key) customColumns.push({index, key})
+		}
+	})
+	return {mapping, customColumns}
+}
+
+export function defaultCustomKey(header: string | null, index: number): string {
+	const h = header?.trim()
+	return h ? h : `kolumna_${index + 1}`
 }
 
 export function detectDelimiter(text: string): string {
@@ -97,13 +127,19 @@ function cell(row: string[], index: number | undefined): string {
 export function mapRowsToLeads(
 	rows: string[][],
 	mapping: ColumnMapping,
-	opts: {hasHeader: boolean},
+	opts: {hasHeader: boolean; customColumns?: {index: number; key: string}[]},
 ): LeadImportInput[] {
 	const dataRows = opts.hasHeader ? rows.slice(1) : rows
+	const customColumns = opts.customColumns ?? []
 	const leads: LeadImportInput[] = []
 	for (const row of dataRows) {
 		const organizationName = cell(row, mapping.organizationName)
 		if (!organizationName) continue
+		const cf: Record<string, string> = {}
+		for (const {index, key} of customColumns) {
+			const v = cell(row, index)
+			if (v) cf[key] = v
+		}
 		leads.push({
 			organizationName,
 			website: normalizeWebsite(cell(row, mapping.website)),
@@ -115,6 +151,7 @@ export function mapRowsToLeads(
 			region: cell(row, mapping.region) || null,
 			schoolType: cell(row, mapping.schoolType) || null,
 			honorific: parseHonorific(cell(row, mapping.honorific)),
+			customFields: Object.keys(cf).length ? cf : null,
 		})
 	}
 	return leads
