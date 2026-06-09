@@ -3,10 +3,12 @@ import {requireOrg, currentRole} from "@/lib/org"
 import {hasRole} from "@/features/team/roles"
 import {redirect} from "next/navigation"
 import {getOrgSettings} from "@/features/org/settings"
+import {listTeam} from "@/features/team/queries"
 import {SettingsShell, type SettingsSection} from "./settings-shell"
 import {GeneralForm} from "./general-form"
 import {SenderSignatureForm} from "./sender-signature-form"
 import {SettingsForm} from "./settings-form"
+import {TeamSection} from "./team-section"
 
 export default async function SettingsPage() {
 	const ctx = await requireOrg()
@@ -18,6 +20,10 @@ export default async function SettingsPage() {
 		{id: "podpis", label: "Podpis nadawcy", content: <SenderSignatureForm signature={s.senderSignature} />},
 		{id: "optout", label: "Wykrywanie rezygnacji", content: <SettingsForm optOutMode={s.optOutMode} optOutDetector={s.optOutDetector} />},
 	]
+	if (hasRole(role, "OWNER")) {
+		const team = await listTeam(ctx.orgId)
+		sections.push({id: "zespol", label: "Zespół", content: <TeamSection members={team.members} invitations={team.invitations} />})
+	}
 	return (
 		<section className="flex flex-col gap-6">
 			<div>
