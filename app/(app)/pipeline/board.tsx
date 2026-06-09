@@ -6,6 +6,7 @@ import {useState} from "react"
 import type {DealStage} from "@/generated/prisma/client"
 import {STAGE_LABEL, type PipelineLead} from "@/features/pipeline/types"
 import {moveLeadStage} from "@/features/pipeline/actions"
+import {Button} from "@/components/ui/button"
 import {LeadCard} from "./card"
 
 const CAP = 60
@@ -66,11 +67,11 @@ function Column({stage, leads, onDropLead}: {stage: DealStage; leads: PipelineLe
 						<LeadCard key={lead.id} lead={lead} />
 					))}
 					{!expanded && leads.length > CAP ? (
-						<button type="button" onClick={() => setExpanded(true)} className="text-xs text-accent">
+						<Button variant="ghost" size="sm" type="button" onClick={() => setExpanded(true)}>
 							+ {leads.length - CAP} więcej
-						</button>
+						</Button>
 					) : null}
-					{leads.length === 0 ? <div className="text-xs text-fg-faint">—</div> : null}
+					{leads.length === 0 ? <p className="text-xs text-fg-faint">Brak leadów</p> : null}
 				</>
 			) : null}
 		</div>
