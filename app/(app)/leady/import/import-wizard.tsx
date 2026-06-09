@@ -103,7 +103,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 			) : null}
 
 			<p className="text-xs text-fg-muted">
-				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce. Kolumny ustawione na „Pole własne" trafią do pól własnych leada.
+				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce. Kolumny ustawione na „Pole własne” trafią do pól własnych leada.
 			</p>
 
 			<label className="flex flex-col text-sm">
