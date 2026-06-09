@@ -11,7 +11,7 @@ export default async function BatchPage({params}: {params: Promise<{id: string}>
 
 	return (
 		<section className="flex flex-col gap-4">
-			<Link className="text-sm text-blue-600" href="/badania">
+			<Link className="text-sm text-accent" href="/badania">
 				← Badania
 			</Link>
 			<BatchView batchId={id} initial={batch} />

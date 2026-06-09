@@ -98,37 +98,37 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 		<div className="flex flex-col gap-4">
 			<div className="flex flex-wrap items-center gap-3">
 				<h1 className="text-lg font-semibold">{batch.name}</h1>
-				<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">{STATUS_LABEL[batch.status] ?? batch.status}</span>
-				<span className="text-xs text-zinc-500">{batch.mode === "MANUAL" ? "Ręczne zatwierdzenie" : "Auto"}</span>
+				<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">{STATUS_LABEL[batch.status] ?? batch.status}</span>
+				<span className="text-xs text-fg-muted">{batch.mode === "MANUAL" ? "Ręczne zatwierdzenie" : "Auto"}</span>
 			</div>
 
-			<p className="text-sm text-zinc-600">
+			<p className="text-sm text-fg-muted">
 				Łącznie {batch.total} · DONE {c.DONE} · w toku {c.RUNNING} · w kolejce {c.QUEUED} · błędy {c.FAILED}
 				{c.CANCELLED ? ` · anulowane ${c.CANCELLED}` : ""}
 			</p>
 
 			<div className="flex flex-wrap gap-2 text-sm">
 				{!terminal ? (
-					<button className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onCancel}>
+					<button className="rounded border border-border px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onCancel}>
 						Anuluj badanie
 					</button>
 				) : null}
 				{c.FAILED > 0 && batch.status !== "CANCELLED" ? (
-					<button className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onResume}>
+					<button className="rounded border border-border px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onResume}>
 						Wznów nieudane ({c.FAILED})
 					</button>
 				) : null}
 				{batch.mode === "MANUAL" ? (
-					<button className="rounded bg-amber-600 px-3 py-1 text-white disabled:opacity-50" type="button" disabled={busy || c.DONE === 0} onClick={onApplyAll}>
+					<button className="rounded bg-primary px-3 py-1 text-primary-fg disabled:opacity-50" type="button" disabled={busy || c.DONE === 0} onClick={onApplyAll}>
 						Zatwierdź wszystko
 					</button>
 				) : null}
 			</div>
-			{msg ? <p className="text-sm text-zinc-700">{msg}</p> : null}
+			{msg ? <p className="text-sm text-fg">{msg}</p> : null}
 
 			<table className="w-full border-collapse text-sm">
 				<thead>
-					<tr className="border-b border-zinc-300 text-left text-zinc-500">
+					<tr className="border-b border-border text-left text-fg-muted">
 						<th className="py-1 pr-2">Lead</th>
 						<th className="py-1 pr-2">Status</th>
 						<th className="py-1 pr-2">Zastosowane</th>
@@ -139,19 +139,19 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 				</thead>
 				<tbody>
 					{batch.rows.map((r) => (
-						<tr className="border-b border-zinc-100" key={r.runId}>
+						<tr className="border-b border-border" key={r.runId}>
 							<td className="py-1 pr-2">
-								<a className="text-blue-600 hover:underline" href={`/leady/${r.leadId}`}>
+								<a className="text-accent hover:underline" href={`/leady/${r.leadId}`}>
 									{r.leadName}
 								</a>
 							</td>
 							<td className="py-1 pr-2">{STATUS_LABEL[r.status] ?? r.status}</td>
 							<td className="py-1 pr-2">{r.applied}</td>
 							<td className="py-1 pr-2">{r.proposed}</td>
-							<td className="py-1 pr-2 text-red-600">{r.error ?? ""}</td>
+							<td className="py-1 pr-2 text-danger">{r.error ?? ""}</td>
 							<td className="py-1 pr-2 text-right">
 								{batch.mode === "MANUAL" && r.status === "DONE" && r.proposed > 0 ? (
-									<button className="text-amber-700 disabled:opacity-50" type="button" disabled={busy} onClick={() => onApplyRow(r.runId)}>
+									<button className="text-warning disabled:opacity-50" type="button" disabled={busy} onClick={() => onApplyRow(r.runId)}>
 										Zastosuj
 									</button>
 								) : null}
@@ -160,7 +160,7 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 					))}
 					{batch.rows.length === 0 ? (
 						<tr>
-							<td className="py-2 text-zinc-500" colSpan={6}>
+							<td className="py-2 text-fg-muted" colSpan={6}>
 								Brak uruchomień.
 							</td>
 						</tr>
