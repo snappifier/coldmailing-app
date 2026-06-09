@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Import customFields — porównanie</title>
+<style>
+	:root{
+		--bg:#08090a; --bg-glow:#0e1014;
+		--s1:#131316; --s2:#1a1a1f; --s3:#212127;
+		--border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.15);
+		--fg:#f3f3f4; --muted:#9a9aa3; --faint:#66666f;
+		--accent:#7c86dd; --accent-quiet:rgba(124,134,221,.15);
+		--success:#3ddc97; --success-quiet:rgba(61,220,151,.13);
+		--warning:#f5c451; --warning-quiet:rgba(245,196,81,.13);
+		--danger:#ff6b6b;
+		--primary-bg:#fafafa; --primary-fg:#0a0a0b;
+	}
+	*{box-sizing:border-box}
+	body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,var(--bg-glow),var(--bg));color:var(--fg);
+		font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.006em;padding:28px 22px 48px}
+	.wrap{max-width:1180px;margin:0 auto}
+	h1{font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 4px}
+	.sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+	.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+	@media(max-width:880px){.grid{grid-template-columns:1fr}}
+	.panel{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px}
+	.phead{display:flex;align-items:center;gap:8px}
+	.chip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--accent-quiet);color:var(--accent)}
+	.phead h2{font-size:14px;font-weight:600;margin:0}
+	.phead .tag{margin-left:auto;font-size:11px;color:var(--faint)}
+	.csv{border:1px solid var(--border);border-radius:6px;overflow:hidden;font-size:11px}
+	table{border-collapse:collapse;width:100%}
+	th,td{padding:5px 8px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+	thead th{background:var(--s2);color:var(--muted);font-weight:600;border-bottom:1px solid var(--border-strong)}
+	tbody tr:last-child td{border-bottom:none}
+	.colmap{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+	.col{display:flex;flex-direction:column;gap:4px;min-width:0}
+	.colhdr{font-size:10.5px;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+	.sel{appearance:none;background:var(--s2) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%239a9aa3' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>") no-repeat right 6px center;
+		border:1px solid var(--border);border-radius:5px;color:var(--fg);font-size:11px;padding:5px 18px 5px 7px;width:100%}
+	.sel.known{border-color:var(--accent);color:var(--accent)}
+	.sel.custom{border-color:var(--success);color:var(--success)}
+	.sel.ignore{color:var(--faint)}
+	.keyin{background:var(--s3);border:1px dashed var(--success);border-radius:5px;color:var(--fg);font-size:11px;padding:4px 6px;width:100%}
+	.keylbl{font-size:9.5px;color:var(--faint);margin-top:1px}
+	.fieldgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
+	.field{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:var(--muted)}
+	.field .sel{color:var(--fg)}
+	.checkrow{display:flex;gap:9px;align-items:flex-start;background:var(--accent-quiet);border:1px solid var(--accent);border-radius:6px;padding:10px 11px}
+	.checkrow .box{width:15px;height:15px;border-radius:4px;background:var(--accent);color:var(--primary-fg);display:grid;place-items:center;font-size:11px;flex:none;margin-top:1px}
+	.checkrow .lbl{font-size:12px;color:var(--fg)}
+	.checkrow .lbl small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+	.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+	.kpill{font-size:10.5px;padding:2px 7px;border-radius:999px;background:var(--success-quiet);color:var(--success)}
+	.note{font-size:11.5px;color:var(--faint);line-height:1.5}
+	.pm{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;border-top:1px solid var(--border);padding-top:11px}
+	.pm div{font-size:11px;line-height:1.5}
+	.pm .plus b{color:var(--success)} .pm .minus b{color:var(--warning)}
+	.legend{display:flex;gap:14px;margin:14px 2px 0;font-size:11px;color:var(--muted);flex-wrap:wrap}
+	.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<h1>Import leadów — mapowanie kolumn własnych (customFields)</h1>
+	<p class="sub">Ten sam wklejony CSV. Kolumny znane → pola leada; kolumny „dodatkowe" (Liczba uczniów, Patron, Nr rejestru) → <code>customFields</code> zamiast być porzucone.</p>
+
+	<div class="csv" style="margin-bottom:18px">
+		<table>
+			<thead><tr><th>Nazwa</th><th>Email</th><th>Miasto</th><th>Liczba uczniów</th><th>Patron</th><th>Nr rejestru</th></tr></thead>
+			<tbody>
+				<tr><td>LO im. Reja</td><td>sekretariat@rej.edu.pl</td><td>Kraków</td><td>612</td><td>M. Rej</td><td>RSPO-12345</td></tr>
+				<tr><td>ZSP nr 3</td><td>kontakt@zsp3.pl</td><td>Gdańsk</td><td>430</td><td>—</td><td>RSPO-67890</td></tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="grid">
+		<!-- VARIANT A -->
+		<div class="panel">
+			<div class="phead"><span class="chip">Wariant A</span><h2>Kolumna → cel</h2><span class="tag">przebudowa kreatora</span></div>
+			<p class="note">Pod każdą kolumną jeden wybór celu. „Pole własne" odsłania edytowalny klucz (domyślnie nagłówek). Można też <b>ignorować</b> kolumnę.</p>
+			<div class="colmap">
+				<div class="col"><span class="colhdr">Nazwa</span><select class="sel known"><option>Nazwa placówki ✓</option></select></div>
+				<div class="col"><span class="colhdr">Email</span><select class="sel known"><option>Email ✓</option></select></div>
+				<div class="col"><span class="colhdr">Miasto</span><select class="sel known"><option>Miasto ✓</option></select></div>
+				<div class="col"><span class="colhdr">Liczba uczniów</span><select class="sel custom"><option>Pole własne</option></select><input class="keyin" value="liczba_uczniow" /><span class="keylbl">klucz</span></div>
+				<div class="col"><span class="colhdr">Patron</span><select class="sel custom"><option>Pole własne</option></select><input class="keyin" value="patron" /><span class="keylbl">klucz</span></div>
+				<div class="col"><span class="colhdr">Nr rejestru</span><select class="sel ignore"><option>— ignoruj —</option></select></div>
+			</div>
+			<div class="pm">
+				<div class="plus"><b>+ Plusy</b><br>precyzja per kolumna; własny klucz; wyklucz śmieci; standardowy UX importera</div>
+				<div class="minus"><b>− Minusy</b><br>przebudowa działającego kreatora; więcej kodu (UI + mapRowsToLeads)</div>
+			</div>
+		</div>
+
+		<!-- VARIANT B -->
+		<div class="panel">
+			<div class="phead"><span class="chip">Wariant B</span><h2>Checkbox „reszta jako własne"</h2><span class="tag">minimalna zmiana</span></div>
+			<p class="note">Obecne mapowanie pól zostaje. Jeden checkbox dorzuca wszystkie niezmapowane kolumny jako <code>customFields</code> z kluczem = nagłówek.</p>
+			<div class="fieldgrid">
+				<label class="field">Nazwa placówki *<select class="sel"><option>Kolumna 1</option></select></label>
+				<label class="field">Email<select class="sel"><option>Kolumna 2</option></select></label>
+				<label class="field">Miasto<select class="sel"><option>Kolumna 3</option></select></label>
+				<label class="field">WWW<select class="sel ignore"><option>—</option></select></label>
+				<label class="field">Region<select class="sel ignore"><option>—</option></select></label>
+				<label class="field">Telefon<select class="sel ignore"><option>—</option></select></label>
+			</div>
+			<div class="checkrow">
+				<span class="box">✓</span>
+				<span class="lbl">Zaimportuj pozostałe kolumny jako pola własne (klucz = nagłówek)
+					<small>Doda kolumny niezmapowane do żadnego pola:</small>
+					<span class="tags"><span class="kpill">liczba_uczniów</span><span class="kpill">patron</span><span class="kpill">nr_rejestru</span></span>
+				</span>
+			</div>
+			<div class="pm">
+				<div class="plus"><b>+ Plusy</b><br>najmniejsza zmiana; niskie ryzyko; kreator bez przebudowy</div>
+				<div class="minus"><b>− Minusy</b><br>wszystko-albo-nic; klucz tylko z nagłówka; brak wykluczania/zmiany klucza</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="legend">
+		<span><span class="dot" style="background:var(--accent)"></span>pole znane leada</span>
+		<span><span class="dot" style="background:var(--success)"></span>pole własne (customFields)</span>
+		<span><span class="dot" style="background:var(--faint)"></span>ignorowane</span>
+	</div>
+</div>
+</body>
+</html>
