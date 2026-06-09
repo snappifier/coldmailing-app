@@ -1,6 +1,7 @@
 // app/(app)/leady/[id]/timeline.tsx
 import type {TimelineItem} from "@/features/pipeline/types"
 import {deleteLeadActivity} from "@/features/pipeline/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 const MANUAL = new Set(["NOTE", "CALL", "MEETING", "OFFER_SENT"])
 
@@ -16,11 +17,7 @@ export function LeadTimeline({items}: {items: TimelineItem[]}) {
 					</div>
 					{it.detail ? <div className="text-fg-muted">{it.detail}</div> : null}
 					{it.source === "activity" && MANUAL.has(it.kind) ? (
-						<form action={deleteLeadActivity.bind(null, it.id)}>
-							<button className="text-xs text-danger" type="submit">
-								Usuń
-							</button>
-						</form>
+						<ConfirmButton action={deleteLeadActivity.bind(null, it.id)} confirm={{title: "Usunąć wpis?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto wpis">Usuń</ConfirmButton>
 					) : null}
 				</li>
 			))}

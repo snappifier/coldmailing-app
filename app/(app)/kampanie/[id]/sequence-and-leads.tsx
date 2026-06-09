@@ -3,6 +3,7 @@
 
 import {useActionState} from "react"
 import {addSequenceStep, assignLeads, deleteSequenceStep, type StepResult} from "@/features/campaigns/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 interface Props {
 	campaignId: string
@@ -26,11 +27,7 @@ export function SequenceAndLeads({campaignId, templates, offeringLines, steps}: 
 								#{s.order + 1} · {s.useLeadDraft ? "draft AI" : s.templateName} · po {s.delayDays} dniach · {s.condition}
 								{s.useLeadDraft ? <span className="ml-1 rounded bg-violet-100 px-1 text-xs text-violet-700">draft</span> : null}
 							</span>
-							<form action={deleteSequenceStep.bind(null, s.id, campaignId)}>
-								<button className="text-danger" type="submit">
-									Usuń
-								</button>
-							</form>
+							<ConfirmButton action={deleteSequenceStep.bind(null, s.id, campaignId)} confirm={{title: "Usunąć krok sekwencji?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto krok">Usuń</ConfirmButton>
 						</li>
 					))}
 					{steps.length === 0 ? <li className="py-1 text-fg-muted">Brak kroków.</li> : null}

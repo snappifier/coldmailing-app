@@ -2,6 +2,7 @@
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteTemplate} from "@/features/templates/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 import {resolveSenderName} from "@/features/templates/sender"
 import {TemplateEditor} from "./template-editor"
 import type {RenderLead} from "@/features/templates/render"
@@ -60,11 +61,7 @@ export default async function TemplatesPage() {
 							{t._count.sequenceSteps > 0 ? (
 								<span className="text-fg-faint">w sekwencji</span>
 							) : (
-								<form action={deleteTemplate.bind(null, t.id)}>
-									<button className="text-danger" type="submit">
-										Usuń
-									</button>
-								</form>
+								<ConfirmButton action={deleteTemplate.bind(null, t.id)} confirm={{title: "Usunąć szablon?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto szablon">Usuń</ConfirmButton>
 							)}
 						</li>
 					))}

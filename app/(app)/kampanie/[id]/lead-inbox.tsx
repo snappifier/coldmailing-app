@@ -2,6 +2,7 @@
 // app/(app)/kampanie/[id]/lead-inbox.tsx
 
 import {markDoNotContact} from "@/features/suppression/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 interface Row {
 	id: string
@@ -29,11 +30,7 @@ export function LeadInbox({rows}: {rows: Row[]}) {
 						{r.inboundKind ? <span className="ml-1 rounded bg-surface-2 px-1 text-xs text-fg">{BADGE[r.inboundKind] ?? r.inboundKind}</span> : null}
 						{r.snippet ? <span className="ml-2 truncate text-fg-muted">{r.snippet}</span> : null}
 					</span>
-					<form action={markDoNotContact.bind(null, r.id)}>
-						<button className="shrink-0 text-danger" type="submit">
-							Nie kontaktować
-						</button>
-					</form>
+					<ConfirmButton action={markDoNotContact.bind(null, r.id)} confirm={{title: "Oznaczyć: nie kontaktować?", body: "Adres trafi na listę wykluczeń, a sekwencja zostanie zatrzymana.", confirmLabel: "Nie kontaktować", danger: true}} toast="Oznaczono: nie kontaktować">Nie kontaktować</ConfirmButton>
 				</li>
 			))}
 		</ul>

@@ -3,6 +3,7 @@ import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {OfferingLineForm} from "./offering-line-form"
 import {deleteOfferingLine} from "@/features/offering-lines/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 export default async function OfferingLinesPage() {
 	const {orgId} = await requireOrg()
@@ -22,11 +23,7 @@ export default async function OfferingLinesPage() {
 						<span className="text-sm">
 							{line.name} <span className="text-fg-faint">({line._count.leads} leadów)</span>
 						</span>
-						<form action={deleteOfferingLine.bind(null, line.id)}>
-							<button className="text-sm text-danger" type="submit">
-								Usuń
-							</button>
-						</form>
+						<ConfirmButton action={deleteOfferingLine.bind(null, line.id)} confirm={{title: "Usunąć linię usług?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto linię">Usuń</ConfirmButton>
 					</li>
 				))}
 				{lines.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak linii usług.</li> : null}

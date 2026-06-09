@@ -4,6 +4,7 @@ import {requireOrg} from "@/lib/org"
 import {listResearchTypes} from "@/features/research-types/queries"
 import {listResearchBatches} from "@/features/research/batch-queries"
 import {deleteResearchType} from "@/features/research-types/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 
 export default async function ResearchTypesPage() {
 	const {orgId} = await requireOrg()
@@ -37,11 +38,7 @@ export default async function ResearchTypesPage() {
 									{t.modelId ? `, ${t.modelId}` : ""})
 								</span>
 							</span>
-							<form action={deleteResearchType.bind(null, t.id)}>
-								<button className="text-danger" type="submit">
-									Usuń
-								</button>
-							</form>
+							<ConfirmButton action={deleteResearchType.bind(null, t.id)} confirm={{title: "Usunąć typ badania?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto typ badania">Usuń</ConfirmButton>
 						</li>
 					)
 				})}

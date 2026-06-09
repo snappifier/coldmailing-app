@@ -3,6 +3,7 @@ import Link from "next/link"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteCampaign} from "@/features/campaigns/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 import {CampaignForm} from "./campaign-form"
 
 export default async function CampaignsPage() {
@@ -31,11 +32,7 @@ export default async function CampaignsPage() {
 								· {c.status} · {c._count.steps} kroków · {c._count.campaignLeads} leadów
 							</span>
 						</span>
-						<form action={deleteCampaign.bind(null, c.id)}>
-							<button className="text-danger" type="submit">
-								Usuń
-							</button>
-						</form>
+						<ConfirmButton action={deleteCampaign.bind(null, c.id)} confirm={{title: "Usunąć kampanię?", body: "Kampania i jej powiązania zostaną usunięte. Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto kampanię">Usuń</ConfirmButton>
 					</li>
 				))}
 				{campaigns.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak kampanii.</li> : null}

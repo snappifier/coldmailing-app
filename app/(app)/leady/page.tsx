@@ -4,6 +4,7 @@ import type {Prisma} from "@/generated/prisma/client"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteLead} from "@/features/leads/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 import {listResearchTypes} from "@/features/research-types/queries"
 import {LeadForm} from "./lead-form"
 import {BatchResearchLauncher} from "./batch-research-launcher"
@@ -94,11 +95,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 							<td className="py-1 pr-2">{lead.dealStage}</td>
 							<td className="py-1 pr-2">{lead.score ?? "—"}</td>
 							<td className="py-1 pr-2 text-right">
-								<form action={deleteLead.bind(null, lead.id)}>
-									<button className="text-danger" type="submit">
-										Usuń
-									</button>
-								</form>
+								<ConfirmButton action={deleteLead.bind(null, lead.id)} confirm={{title: "Usunąć leada?", body: "Lead i jego dane zostaną usunięte. Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto leada">Usuń</ConfirmButton>
 							</td>
 						</tr>
 					))}

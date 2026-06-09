@@ -2,6 +2,7 @@
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deletePlaceholder} from "@/features/placeholders/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 import {PlaceholderForm} from "./placeholder-form"
 
 export default async function PlaceholdersPage() {
@@ -21,11 +22,7 @@ export default async function PlaceholdersPage() {
 						<span>
 							<code>{`{{${p.key}}}`}</code> — {p.label} <span className="text-fg-faint">({p.type})</span>
 						</span>
-						<form action={deletePlaceholder.bind(null, p.id)}>
-							<button className="text-danger" type="submit">
-								Usuń
-							</button>
-						</form>
+						<ConfirmButton action={deletePlaceholder.bind(null, p.id)} confirm={{title: "Usunąć placeholder?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto placeholder">Usuń</ConfirmButton>
 					</li>
 				))}
 				{placeholders.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak własnych placeholderów.</li> : null}

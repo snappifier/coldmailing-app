@@ -2,6 +2,7 @@
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {removeSuppression} from "@/features/suppression/actions"
+import {ConfirmButton} from "@/components/ui/confirm-button"
 import {SuppressionForm} from "./suppression-form"
 
 export default async function SuppressionPage() {
@@ -19,11 +20,7 @@ export default async function SuppressionPage() {
 						<span>
 							{e.email} <span className="text-fg-faint">({e.reason})</span>
 						</span>
-						<form action={removeSuppression.bind(null, e.id)}>
-							<button className="text-danger" type="submit">
-								Usuń
-							</button>
-						</form>
+						<ConfirmButton action={removeSuppression.bind(null, e.id)} confirm={{title: "Usunąć z listy wykluczeń?", body: "Adres będzie mógł ponownie otrzymywać wiadomości.", confirmLabel: "Usuń", danger: true}} toast="Usunięto z wykluczeń">Usuń</ConfirmButton>
 					</li>
 				))}
 				{entries.length === 0 ? <li className="py-2 text-sm text-fg-muted">Lista pusta.</li> : null}
