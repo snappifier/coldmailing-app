@@ -8,6 +8,7 @@ import {ThemeToggle} from "@/components/ui/theme-toggle"
 import {NavLink} from "./nav-link"
 
 const LINKS: [string, string][] = [
+	["/", "Pulpit"],
 	["/leady", "Leady"], ["/pipeline", "Pipeline"], ["/linie", "Linie usług"], ["/szablony", "Szablony"],
 	["/placeholdery", "Placeholdery"], ["/badania", "Badania"], ["/kampanie", "Kampanie"], ["/skrzynki", "Skrzynki"],
 	["/suppression", "Suppression"], ["/ustawienia", "Ustawienia"],
