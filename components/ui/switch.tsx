@@ -1,12 +1,13 @@
 "use client"
 // components/ui/switch.tsx
 import {cn} from "@/lib/cn"
-export function Switch({checked, onChange, className}: {checked: boolean; onChange: (v: boolean) => void; className?: string}) {
+export function Switch({checked, onChange, className, "aria-label": ariaLabel}: {checked: boolean; onChange: (v: boolean) => void; className?: string; "aria-label"?: string}) {
 	return (
 		<button
 			type="button"
 			role="switch"
 			aria-checked={checked}
+			aria-label={ariaLabel}
 			onClick={() => onChange(!checked)}
 			className={cn(
 				"relative h-[22px] w-[38px] flex-none rounded-[999px] border transition-colors duration-200",

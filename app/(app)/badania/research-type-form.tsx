@@ -6,8 +6,40 @@ import {useRouter} from "next/navigation"
 import type {ResearchTypeResult} from "@/features/research-types/actions"
 import {CUSTOM_TYPES, TARGET_OPTIONS, derivedTypeForTarget, type FieldType, type Target} from "@/features/research-types/targets"
 import type {OutputField} from "@/features/research-types/schema"
+import {Input} from "@/components/ui/input"
+import {Textarea} from "@/components/ui/textarea"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
+import {Badge} from "@/components/ui/badge"
+import {Switch} from "@/components/ui/switch"
+import {Field} from "@/components/ui/field"
 
 const MODEL_OPTIONS = ["claude-haiku-4-5", "claude-sonnet-4-6", "claude-opus-4-8"]
+
+const TARGET_LABEL: Record<string, string> = {
+	contactPersonName: "Osoba kontaktowa",
+	contactRole: "Stanowisko",
+	honorific: "Forma grzecznościowa",
+	aiHook: "Hak AI",
+	aiNotes: "Notatki AI",
+	siteQuality: "Jakość strony",
+	priority: "Priorytet",
+	score: "Ocena",
+	city: "Miasto",
+	region: "Region",
+	schoolType: "Typ szkoły",
+	email: "E-mail",
+	CUSTOM: "Pole własne",
+}
+
+const FIELD_TYPE_LABEL: Record<string, string> = {
+	TEXT: "Tekst",
+	NUMBER: "Liczba",
+	BOOLEAN: "Tak/Nie",
+	EMAIL: "E-mail",
+	ENUM: "Lista wyboru",
+	GENDER: "Płeć",
+}
 
 type Action = (prev: ResearchTypeResult | null, formData: FormData) => Promise<ResearchTypeResult>
 
@@ -34,6 +66,7 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 	const [rows, setRows] = useState<Row[]>(() => initialFields.map((field, idx) => ({id: idx, field})))
 	const [seq, setSeq] = useState(initialFields.length)
 	const [kind, setKind] = useState<Initial["kind"]>(initial?.kind ?? "RESEARCH")
+	const [webSearchEnabled, setWebSearchEnabled] = useState(initial?.webSearchEnabled ?? false)
 
 	useEffect(() => {
 		if (state?.ok) router.push("/badania")
@@ -57,51 +90,48 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 	return (
 		<form className="flex max-w-3xl flex-col gap-4" action={formAction}>
 			<input name="outputFields" type="hidden" value={kind === "DRAFT" ? "[]" : JSON.stringify(rows.map((r) => r.field))} />
+			{/* hidden mirror of the Switch so the form still submits webSearchEnabled (server reads === "true") */}
+			<input name="webSearchEnabled" type="hidden" value={webSearchEnabled ? "true" : ""} />
 
-			<label className="flex flex-col gap-1 text-sm">
-				<span className="font-medium">Nazwa</span>
-				<input className="rounded border border-border px-2 py-1" name="name" defaultValue={initial?.name ?? ""} required />
-			</label>
+			<Field label="Nazwa">
+				<Input name="name" defaultValue={initial?.name ?? ""} required />
+			</Field>
 
-			<label className="flex flex-col gap-1 text-sm">
-				<span className="font-medium">Rodzaj</span>
-				<select className="rounded border border-border px-2 py-1" name="kind" value={kind} onChange={(e) => setKind(e.target.value as Initial["kind"])}>
+			<Field label="Rodzaj">
+				<Select name="kind" value={kind} onChange={(e) => setKind(e.target.value as Initial["kind"])}>
 					<option value="RESEARCH">Research (zbieranie danych)</option>
 					<option value="SCORING">Ocena (scoring)</option>
 					<option value="CONTENT">Treść (content)</option>
-					<option value="DRAFT">Draft maila (DRAFT)</option>
-				</select>
+					<option value="DRAFT">Draft maila</option>
+				</Select>
 				{kind === "SCORING" ? (
 					<span className="text-xs text-fg-muted">Typ oceny musi mieć pole z celem score (0-100); opcjonalnie priority (1-5) i uzasadnienie (np. aiNotes).</span>
 				) : kind === "CONTENT" ? (
-					<span className="text-xs text-fg-muted">Typ treści musi mieć pole z celem aiHook lub pole własne (CUSTOM); opcjonalnie włącz web search, by odświeżyć research.</span>
+					<span className="text-xs text-fg-muted">Typ treści musi mieć pole z celem aiHook lub pole własne (Pole własne); opcjonalnie włącz wyszukiwanie w sieci, by odświeżyć badania.</span>
 				) : kind === "DRAFT" ? (
-					<span className="text-xs text-fg-muted">Typ draftu pisze cały temat i treść maila; pola wyjściowe nieużywane. Opcjonalnie włącz web search.</span>
+					<span className="text-xs text-fg-muted">Typ draftu pisze cały temat i treść maila; pola wyjściowe nieużywane. Opcjonalnie włącz wyszukiwanie w sieci.</span>
 				) : null}
-			</label>
+			</Field>
 
-			<label className="flex flex-col gap-1 text-sm">
-				<span className="font-medium">Prompt researchu</span>
-				<textarea className="min-h-32 rounded border border-border px-2 py-1 font-mono text-xs" name="prompt" defaultValue={initial?.prompt ?? ""} required />
-				<span className="text-xs text-fg-muted">Tokeny jak {"{{nazwaPlacowki}}"}, {"{{miasto}}"}, {"{{www}}"} renderują się per lead w Fazie 2b.</span>
-			</label>
+			<Field label="Prompt badania" hint={<>Tokeny jak {"{{nazwaPlacowki}}"}, {"{{miasto}}"}, {"{{www}}"} renderują się per lead w Fazie 2b.</>}>
+				<Textarea name="prompt" defaultValue={initial?.prompt ?? ""} required />
+			</Field>
 
 			<div className="flex flex-wrap items-end gap-4">
-				<label className="flex flex-col gap-1 text-sm">
-					<span className="font-medium">Model</span>
-					<select className="rounded border border-border px-2 py-1" name="modelId" defaultValue={initial?.modelId ?? ""}>
+				<Field label="Model">
+					<Select name="modelId" defaultValue={initial?.modelId ?? ""}>
 						<option value="">(domyślny)</option>
 						{MODEL_OPTIONS.map((m) => (
 							<option key={m} value={m}>
 								{m}
 							</option>
 						))}
-					</select>
-				</label>
-				<label className="flex items-center gap-2 text-sm">
-					<input name="webSearchEnabled" type="checkbox" value="true" defaultChecked={initial?.webSearchEnabled ?? false} />
-					<span>Web search włączony</span>
-				</label>
+					</Select>
+				</Field>
+				<div className="flex items-center gap-2 pb-0.5 text-sm">
+					<Switch checked={webSearchEnabled} onChange={setWebSearchEnabled} aria-label="Wyszukiwanie w sieci" />
+					<span>Wyszukiwanie w sieci włączone</span>
+				</div>
 			</div>
 
 			{kind !== "DRAFT" ? (
@@ -113,63 +143,58 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 						return (
 							<div className="flex flex-col gap-2 rounded border border-border p-3" key={r.id}>
 								<div className="flex flex-wrap items-end gap-2 text-sm">
-									<label className="flex flex-col gap-1">
-										<span className="text-xs text-fg-muted">Etykieta</span>
-										<input className="rounded border border-border px-2 py-1" value={f.label} placeholder="Imię dyrektora" onChange={(e) => update(i, {label: e.target.value})} />
-									</label>
-									<label className="flex flex-col gap-1">
-										<span className="text-xs text-fg-muted">Klucz</span>
-										<input className="rounded border border-border px-2 py-1" value={f.key} placeholder="dyrektorImie" onChange={(e) => update(i, {key: e.target.value})} />
-									</label>
-									<label className="flex flex-col gap-1">
-										<span className="text-xs text-fg-muted">Cel</span>
-										<select className="rounded border border-border px-2 py-1" value={f.target} onChange={(e) => setTarget(i, e.target.value as Target)}>
+									<Field label="Etykieta">
+										<Input value={f.label} placeholder="Imię dyrektora" onChange={(e) => update(i, {label: e.target.value})} />
+									</Field>
+									<Field label="Klucz">
+										<Input value={f.key} placeholder="dyrektorImie" onChange={(e) => update(i, {key: e.target.value})} />
+									</Field>
+									<Field label="Cel">
+										<Select value={f.target} onChange={(e) => setTarget(i, e.target.value as Target)}>
 											{TARGET_OPTIONS.map((t) => (
 												<option key={t} value={t}>
-													{t}
+													{TARGET_LABEL[t] ?? t}
 												</option>
 											))}
-										</select>
-									</label>
-									<label className="flex flex-col gap-1">
-										<span className="text-xs text-fg-muted">Typ</span>
+										</Select>
+									</Field>
+									<Field label="Typ">
 										{locked ? (
-											<span className="rounded border border-border bg-surface-2 px-2 py-1 text-fg-muted">{f.type}</span>
+											<Badge variant="neutral">{FIELD_TYPE_LABEL[f.type] ?? f.type}</Badge>
 										) : (
-											<select className="rounded border border-border px-2 py-1" value={f.type} onChange={(e) => update(i, {type: e.target.value as FieldType})}>
+											<Select value={f.type} onChange={(e) => update(i, {type: e.target.value as FieldType})}>
 												{CUSTOM_TYPES.map((t) => (
 													<option key={t} value={t}>
-														{t}
+														{FIELD_TYPE_LABEL[t] ?? t}
 													</option>
 												))}
-											</select>
+											</Select>
 										)}
-									</label>
+									</Field>
 									<label className="flex items-center gap-1">
 										<input type="checkbox" checked={f.required} onChange={(e) => update(i, {required: e.target.checked})} />
 										<span className="text-xs text-fg-muted">wymagane</span>
 									</label>
-									<button className="ml-auto text-danger" type="button" onClick={() => removeField(i)}>
+									<Button className="ml-auto" variant="ghost" size="sm" type="button" onClick={() => removeField(i)}>
 										Usuń
-									</button>
+									</Button>
 								</div>
-								<label className="flex flex-col gap-1 text-sm">
-									<span className="text-xs text-fg-muted">Opis dla AI (opcjonalnie)</span>
-									<input className="rounded border border-border px-2 py-1" value={f.description ?? ""} placeholder="np. rozpoznaj płeć po imieniu" onChange={(e) => update(i, {description: e.target.value || null})} />
-								</label>
+								<Field label="Opis dla AI (opcjonalnie)">
+									<Input value={f.description ?? ""} placeholder="np. rozpoznaj płeć po imieniu" onChange={(e) => update(i, {description: e.target.value || null})} />
+								</Field>
 							</div>
 						)
 					})}
-					<button className="self-start rounded border border-dashed border-border px-3 py-1.5 text-sm" type="button" onClick={addField}>
+					<Button className="self-start border-dashed" size="sm" type="button" onClick={addField}>
 						+ Dodaj pole
-					</button>
+					</Button>
 				</div>
 			) : null}
 
 			<div className="flex items-center gap-3">
-				<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
+				<Button variant="primary" type="submit" disabled={pending}>
 					Zapisz
-				</button>
+				</Button>
 				{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
 			</div>
 		</form>

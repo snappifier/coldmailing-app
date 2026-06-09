@@ -23,7 +23,7 @@ export default async function EditResearchTypePage({params}: {params: Promise<{i
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Edytuj typ researchu</h1>
+			<h1 className="text-lg font-semibold">Edytuj typ badania</h1>
 			<ResearchTypeForm action={updateResearchType.bind(null, id)} initial={initial} />
 		</section>
 	)

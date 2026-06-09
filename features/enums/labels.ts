@@ -22,3 +22,4 @@ export const ROLE_LABEL: Record<Role, string> = {OWNER: "Właściciel", ADMIN: "
 
 // ResearchRunStatus = QUEUED|RUNNING|DONE|FAILED|CANCELLED; ResearchBatchStatus = QUEUED|RUNNING|DONE|PARTIAL|CANCELLED
 export const RESEARCH_STATUS_LABEL: Record<ResearchRunStatus | ResearchBatchStatus, string> = {QUEUED: "W kolejce", RUNNING: "W toku", DONE: "Gotowe", FAILED: "Błąd", CANCELLED: "Anulowane", PARTIAL: "Częściowe"}
+export const RESEARCH_STATUS_VARIANT: Record<ResearchRunStatus | ResearchBatchStatus, BadgeVariant> = {QUEUED: "info", RUNNING: "info", DONE: "ok", FAILED: "bad", CANCELLED: "warn", PARTIAL: "warn"}

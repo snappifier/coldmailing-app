@@ -6,17 +6,13 @@ import {getBatch, cancelBatch, resumeFailed, applyBatch} from "@/features/resear
 import {confirmResearchApply} from "@/features/research/actions"
 import {useConfirm} from "@/components/ui/use-confirm"
 import {useToast} from "@/components/ui/use-toast"
+import {Button} from "@/components/ui/button"
+import {Badge} from "@/components/ui/badge"
+import {Table, Th, Td} from "@/components/ui/table"
+import {EmptyState} from "@/components/ui/empty-state"
+import {RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
 
 type Batch = NonNullable<Awaited<ReturnType<typeof getBatch>>>
-
-const STATUS_LABEL: Record<string, string> = {
-	QUEUED: "W kolejce",
-	RUNNING: "W toku",
-	DONE: "Zakończone",
-	PARTIAL: "Częściowe (błędy)",
-	CANCELLED: "Anulowane",
-	FAILED: "Błąd",
-}
 
 function isTerminal(s: string) {
 	return s === "DONE" || s === "PARTIAL" || s === "CANCELLED"
@@ -58,7 +54,7 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 	}, [batchId])
 
 	async function onCancel() {
-		if (!(await ask({title: "Anulować badanie zbiorcze?", body: "Oczekujące zadania zostaną anulowane.", confirmLabel: "Anuluj badanie", cancelLabel: "Anuluj", danger: false}))) return
+		if (!(await ask({title: "Anulować badanie zbiorcze?", body: "Oczekujące zadania zostaną anulowane.", confirmLabel: "Anuluj badanie", cancelLabel: "Wróć", danger: false}))) return
 		setBusy(true)
 		setMsg(null)
 		const res = await cancelBatch(batchId)
@@ -106,75 +102,74 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 		<div className="flex flex-col gap-4">
 			<div className="flex flex-wrap items-center gap-3">
 				<h1 className="text-lg font-semibold">{batch.name}</h1>
-				<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">{STATUS_LABEL[batch.status] ?? batch.status}</span>
+				<Badge variant={RESEARCH_STATUS_VARIANT[batch.status] ?? "neutral"}>{RESEARCH_STATUS_LABEL[batch.status] ?? batch.status}</Badge>
 				<span className="text-xs text-fg-muted">{batch.mode === "MANUAL" ? "Ręczne zatwierdzenie" : "Auto"}</span>
 			</div>
 
 			<p className="text-sm text-fg-muted">
-				Łącznie {batch.total} · DONE {c.DONE} · w toku {c.RUNNING} · w kolejce {c.QUEUED} · błędy {c.FAILED}
+				Łącznie {batch.total} · Gotowe {c.DONE} · w toku {c.RUNNING} · w kolejce {c.QUEUED} · błędy {c.FAILED}
 				{c.CANCELLED ? ` · anulowane ${c.CANCELLED}` : ""}
 			</p>
 
-			<div className="flex flex-wrap gap-2 text-sm">
+			<div className="flex flex-wrap gap-2">
 				{!terminal ? (
-					<button className="rounded border border-border px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onCancel}>
+					<Button type="button" disabled={busy} onClick={onCancel}>
 						Anuluj badanie
-					</button>
+					</Button>
 				) : null}
 				{c.FAILED > 0 && batch.status !== "CANCELLED" ? (
-					<button className="rounded border border-border px-3 py-1 disabled:opacity-50" type="button" disabled={busy} onClick={onResume}>
+					<Button type="button" disabled={busy} onClick={onResume}>
 						Wznów nieudane ({c.FAILED})
-					</button>
+					</Button>
 				) : null}
 				{batch.mode === "MANUAL" ? (
-					<button className="rounded bg-primary px-3 py-1 text-primary-fg disabled:opacity-50" type="button" disabled={busy || c.DONE === 0} onClick={onApplyAll}>
+					<Button variant="primary" type="button" disabled={busy || c.DONE === 0} onClick={onApplyAll}>
 						Zatwierdź wszystko
-					</button>
+					</Button>
 				) : null}
 			</div>
 			{msg ? <p className="text-sm text-fg">{msg}</p> : null}
 
-			<table className="w-full border-collapse text-sm">
-				<thead>
-					<tr className="border-b border-border text-left text-fg-muted">
-						<th className="py-1 pr-2">Lead</th>
-						<th className="py-1 pr-2">Status</th>
-						<th className="py-1 pr-2">Zastosowane</th>
-						<th className="py-1 pr-2">Propozycje</th>
-						<th className="py-1 pr-2">Błąd</th>
-						<th className="py-1 pr-2"></th>
-					</tr>
-				</thead>
-				<tbody>
-					{batch.rows.map((r) => (
-						<tr className="border-b border-border" key={r.runId}>
-							<td className="py-1 pr-2">
-								<a className="text-accent hover:underline" href={`/leady/${r.leadId}`}>
-									{r.leadName}
-								</a>
-							</td>
-							<td className="py-1 pr-2">{STATUS_LABEL[r.status] ?? r.status}</td>
-							<td className="py-1 pr-2">{r.applied}</td>
-							<td className="py-1 pr-2">{r.proposed}</td>
-							<td className="py-1 pr-2 text-danger">{r.error ?? ""}</td>
-							<td className="py-1 pr-2 text-right">
-								{batch.mode === "MANUAL" && r.status === "DONE" && r.proposed > 0 ? (
-									<button className="text-warning disabled:opacity-50" type="button" disabled={busy} onClick={() => onApplyRow(r.runId)}>
-										Zastosuj
-									</button>
-								) : null}
-							</td>
-						</tr>
-					))}
-					{batch.rows.length === 0 ? (
+			{batch.rows.length === 0 ? (
+				<EmptyState title="Brak uruchomień" description="Badanie nie uruchomiło jeszcze żadnych zadań." />
+			) : (
+				<Table>
+					<thead>
 						<tr>
-							<td className="py-2 text-fg-muted" colSpan={6}>
-								Brak uruchomień.
-							</td>
+							<Th>Lead</Th>
+							<Th>Status</Th>
+							<Th>Zastosowane</Th>
+							<Th>Propozycje</Th>
+							<Th>Błąd</Th>
+							<Th>{""}</Th>
 						</tr>
-					) : null}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{batch.rows.map((r) => (
+							<tr key={r.runId}>
+								<Td>
+									<a className="text-accent hover:underline" href={`/leady/${r.leadId}`}>
+										{r.leadName}
+									</a>
+								</Td>
+								<Td>
+									<Badge variant={RESEARCH_STATUS_VARIANT[r.status] ?? "neutral"}>{RESEARCH_STATUS_LABEL[r.status] ?? r.status}</Badge>
+								</Td>
+								<Td>{r.applied}</Td>
+								<Td>{r.proposed}</Td>
+								<Td className="text-danger">{r.error ?? ""}</Td>
+								<Td className="text-right">
+									{batch.mode === "MANUAL" && r.status === "DONE" && r.proposed > 0 ? (
+										<Button variant="ghost" size="sm" type="button" disabled={busy} onClick={() => onApplyRow(r.runId)}>
+											Zastosuj
+										</Button>
+									) : null}
+								</Td>
+							</tr>
+						))}
+					</tbody>
+				</Table>
+			)}
 		</div>
 	)
 }
