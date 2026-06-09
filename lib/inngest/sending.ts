@@ -7,6 +7,7 @@ import {resolveRecipient} from "@/features/sending/recipient"
 import {isWithinWindow, nextWindowOpen, scheduleFollowupSlot} from "@/features/sending/schedule"
 import {decideStep, planNext, type StepDef} from "@/features/sequences/plan"
 import {resolveDraftDecision} from "@/features/sequences/draft-send"
+import {resolveSenderName} from "@/features/templates/sender"
 
 const HARD_STOP = ["PENDING", "SKIPPED", "FAILED", "BOUNCED", "UNSUBSCRIBED", "DONE"]
 
@@ -48,6 +49,11 @@ export async function runLeadSequenceHandler(campaignLeadId: string, step: Seque
 		where: {organizationId: base.campaign.organizationId},
 		select: {key: true, source: true, fallback: true},
 	})
+	const org = await prisma.organization.findUnique({
+		where: {id: base.campaign.organizationId},
+		select: {senderSignature: true},
+	})
+	const senderSignature = org?.senderSignature ?? ""
 
 	let cursor = base.currentStep
 	let slot: Date = base.nextSendAt ?? new Date()
@@ -143,7 +149,7 @@ export async function runLeadSequenceHandler(campaignLeadId: string, step: Seque
 					honorific: cl.lead.honorific,
 					customFields: (cl.lead.customFields as Record<string, unknown> | null) ?? null,
 				}
-				const ctx = {lead: renderLead, senderName: account.displayName ?? "", placeholders}
+				const ctx = {lead: renderLead, senderName: resolveSenderName({signature: senderSignature, fallback: account.displayName ?? ""}), placeholders}
 				subject = renderTemplate(sequenceStep.template.subject, ctx).rendered
 				body = renderTemplate(sequenceStep.template.body, ctx).rendered
 			}

@@ -44,6 +44,7 @@ vi.mock("@/lib/prisma", () => ({
 		message: {count: vi.fn(async () => 0), create: vi.fn(async ({data}: any) => {h.messages.push(data)})},
 		suppression: {findUnique: vi.fn(async () => null)},
 		leadDraft: {findUnique: vi.fn(async () => h.draft)},
+		organization: {findUnique: vi.fn(async () => ({senderSignature: ""}))},
 	},
 }))
 
