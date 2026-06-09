@@ -31,6 +31,14 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 	const columnCount = allRows.reduce((max, r) => Math.max(max, r.length), 0)
 	const headers = hasHeader ? allRows[0] ?? [] : []
 
+	// Reset the per-column mapping when the column COUNT changes (a structural re-paste), so stale
+	// index-keyed targets can't silently point at different semantic columns. Same-shape edits keep the mapping.
+	function onText(value: string) {
+		const count = value.trim() ? parseTable(value).reduce((m, r) => Math.max(m, r.length), 0) : 0
+		if (count !== columnCount) setTargets({})
+		setText(value)
+	}
+
 	const targetOf = (i: number): Target => targets[i] ?? {kind: "ignore"}
 	const selValue = (t: Target) => (t.kind === "field" ? `field:${t.field}` : t.kind === "custom" ? "custom" : "")
 	function onSelect(i: number, value: string) {
@@ -46,7 +54,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				name="text"
 				placeholder="Wklej CSV/TSV (np. z arkusza). Pierwszy wiersz = nagłówki."
 				value={text}
-				onChange={(e) => setText(e.target.value)}
+				onChange={(e) => onText(e.target.value)}
 			/>
 			<label className="flex items-center gap-2 text-sm">
 				<input name="hasHeader" type="checkbox" checked={hasHeader} onChange={(e) => setHasHeader(e.target.checked)} />
