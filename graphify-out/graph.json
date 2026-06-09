@@ -760,7 +760,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "app_layout_rootlayout",
       "community": 13,
       "norm_label": "rootlayout()"
@@ -1221,7 +1221,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L1",
       "id": "app_app_leady_batch_research_launcher_tsx",
-      "community": 84,
+      "community": 160,
       "norm_label": "batch-research-launcher.tsx"
     },
     {
@@ -1230,7 +1230,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L8",
       "id": "leady_batch_research_launcher_typeoption",
-      "community": 84,
+      "community": 160,
       "norm_label": "typeoption"
     },
     {
@@ -1239,7 +1239,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L14",
       "id": "leady_batch_research_launcher_batchresearchlauncher",
-      "community": 84,
+      "community": 160,
       "norm_label": "batchresearchlauncher()"
     },
     {
@@ -1275,7 +1275,7 @@
       "source_file": "app/(app)/leady/page.tsx",
       "source_location": "L11",
       "id": "leady_page_leadspage",
-      "community": 2,
+      "community": 159,
       "norm_label": "leadspage()"
     },
     {
@@ -1347,7 +1347,7 @@
       "source_file": "app/(app)/leady/[id]/draft-panel.tsx",
       "source_location": "L1",
       "id": "app_app_leady_id_draft_panel_tsx",
-      "community": 45,
+      "community": 178,
       "norm_label": "draft-panel.tsx"
     },
     {
@@ -1356,7 +1356,7 @@
       "source_file": "app/(app)/leady/[id]/draft-panel.tsx",
       "source_location": "L8",
       "id": "id_draft_panel_typeoption",
-      "community": 45,
+      "community": 178,
       "norm_label": "typeoption"
     },
     {
@@ -1365,7 +1365,7 @@
       "source_file": "app/(app)/leady/[id]/draft-panel.tsx",
       "source_location": "L12",
       "id": "id_draft_panel_draftview",
-      "community": 45,
+      "community": 178,
       "norm_label": "draftview"
     },
     {
@@ -1374,7 +1374,7 @@
       "source_file": "app/(app)/leady/[id]/draft-panel.tsx",
       "source_location": "L19",
       "id": "id_draft_panel_draftpanel",
-      "community": 45,
+      "community": 178,
       "norm_label": "draftpanel()"
     },
     {
@@ -1383,7 +1383,7 @@
       "source_file": "app/(app)/leady/[id]/lead-edit-form.tsx",
       "source_location": "L1",
       "id": "app_app_leady_id_lead_edit_form_tsx",
-      "community": 2,
+      "community": 178,
       "norm_label": "lead-edit-form.tsx"
     },
     {
@@ -1392,7 +1392,7 @@
       "source_file": "app/(app)/leady/[id]/lead-edit-form.tsx",
       "source_location": "L7",
       "id": "id_lead_edit_form_props",
-      "community": 2,
+      "community": 178,
       "norm_label": "props"
     },
     {
@@ -1401,7 +1401,7 @@
       "source_file": "app/(app)/leady/[id]/lead-edit-form.tsx",
       "source_location": "L26",
       "id": "id_lead_edit_form_leadeditform",
-      "community": 2,
+      "community": 178,
       "norm_label": "leadeditform()"
     },
     {
@@ -1410,7 +1410,7 @@
       "source_file": "app/(app)/leady/[id]/page.tsx",
       "source_location": "L1",
       "id": "app_app_leady_id_page_tsx",
-      "community": 45,
+      "community": 178,
       "norm_label": "page.tsx"
     },
     {
@@ -1419,7 +1419,7 @@
       "source_file": "app/(app)/leady/[id]/page.tsx",
       "source_location": "L16",
       "id": "id_page_leadeditpage",
-      "community": 45,
+      "community": 178,
       "norm_label": "leadeditpage()"
     },
     {
@@ -1581,7 +1581,7 @@
       "source_file": "app/(app)/pipeline/page.tsx",
       "source_location": "L1",
       "id": "app_app_pipeline_page_tsx",
-      "community": 117,
+      "community": 45,
       "norm_label": "page.tsx"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_file": "app/(app)/pipeline/page.tsx",
       "source_location": "L8",
       "id": "pipeline_page_pipelinepage",
-      "community": 117,
+      "community": 45,
       "norm_label": "pipelinepage()"
     },
     {
@@ -1698,7 +1698,7 @@
       "source_file": "app/(app)/szablony/page.tsx",
       "source_location": "L9",
       "id": "szablony_page_templatespage",
-      "community": 114,
+      "community": 109,
       "norm_label": "templatespage()"
     },
     {
@@ -1779,7 +1779,7 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L1",
       "id": "app_app_ustawienia_sender_signature_form_tsx",
-      "community": 166,
+      "community": 95,
       "norm_label": "sender-signature-form.tsx"
     },
     {
@@ -1869,7 +1869,7 @@
       "source_file": "app/api/mailbox/google/callback/route.ts",
       "source_location": "L1",
       "id": "app_api_mailbox_google_callback_route_ts",
-      "community": 106,
+      "community": 180,
       "norm_label": "route.ts"
     },
     {
@@ -1878,7 +1878,7 @@
       "source_file": "app/api/mailbox/google/callback/route.ts",
       "source_location": "L6",
       "id": "callback_route_get",
-      "community": 106,
+      "community": 180,
       "norm_label": "get()"
     },
     {
@@ -1887,7 +1887,7 @@
       "source_file": "app/api/mailbox/google/connect/route.ts",
       "source_location": "L1",
       "id": "app_api_mailbox_google_connect_route_ts",
-      "community": 106,
+      "community": 180,
       "norm_label": "route.ts"
     },
     {
@@ -1896,7 +1896,7 @@
       "source_file": "app/api/mailbox/google/connect/route.ts",
       "source_location": "L6",
       "id": "connect_route_get",
-      "community": 106,
+      "community": 180,
       "norm_label": "get()"
     },
     {
@@ -2130,7 +2130,7 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L1",
       "id": "components_ui_container_tsx",
-      "community": 86,
+      "community": 10,
       "norm_label": "container.tsx"
     },
     {
@@ -2139,7 +2139,7 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L3",
       "id": "ui_container_container",
-      "community": 86,
+      "community": 10,
       "norm_label": "container()"
     },
     {
@@ -2274,7 +2274,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L1",
       "id": "components_ui_note_tsx",
-      "community": 166,
+      "community": 86,
       "norm_label": "note.tsx"
     },
     {
@@ -2283,7 +2283,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L4",
       "id": "ui_note_map",
-      "community": 166,
+      "community": 86,
       "norm_label": "map"
     },
     {
@@ -2292,7 +2292,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L9",
       "id": "ui_note_note",
-      "community": 166,
+      "community": 86,
       "norm_label": "note()"
     },
     {
@@ -2391,7 +2391,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L1",
       "id": "components_ui_textarea_tsx",
-      "community": 166,
+      "community": 95,
       "norm_label": "textarea.tsx"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L5",
       "id": "ui_textarea_textarea",
-      "community": 166,
+      "community": 95,
       "norm_label": "textarea"
     },
     {
@@ -2427,7 +2427,7 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L1",
       "id": "components_ui_toast_provider_tsx",
-      "community": 10,
+      "community": 162,
       "norm_label": "toast-provider.tsx"
     },
     {
@@ -2571,7 +2571,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L1",
       "id": "components_ui_use_toast_ts",
-      "community": 10,
+      "community": 162,
       "norm_label": "use-toast.ts"
     },
     {
@@ -2580,7 +2580,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L5",
       "id": "ui_use_toast_toastfn",
-      "community": 10,
+      "community": 162,
       "norm_label": "toastfn"
     },
     {
@@ -2589,7 +2589,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L6",
       "id": "ui_use_toast_toastcontext",
-      "community": 10,
+      "community": 162,
       "norm_label": "toastcontext"
     },
     {
@@ -2841,7 +2841,7 @@
       "source_file": "features/email-accounts/google-oauth.test.ts",
       "source_location": "L1",
       "id": "features_email_accounts_google_oauth_test_ts",
-      "community": 106,
+      "community": 180,
       "norm_label": "google-oauth.test.ts"
     },
     {
@@ -2850,7 +2850,7 @@
       "source_file": "features/email-accounts/google-oauth.test.ts",
       "source_location": "L11",
       "id": "email_accounts_google_oauth_test_s",
-      "community": 106,
+      "community": 180,
       "norm_label": "s"
     },
     {
@@ -2859,7 +2859,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L1",
       "id": "features_email_accounts_google_oauth_ts",
-      "community": 106,
+      "community": 180,
       "norm_label": "google-oauth.ts"
     },
     {
@@ -2868,7 +2868,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L12",
       "id": "email_accounts_google_oauth_hmac",
-      "community": 106,
+      "community": 180,
       "norm_label": "hmac()"
     },
     {
@@ -2877,7 +2877,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L19",
       "id": "email_accounts_google_oauth_signstate",
-      "community": 106,
+      "community": 180,
       "norm_label": "signstate()"
     },
     {
@@ -2886,7 +2886,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L24",
       "id": "email_accounts_google_oauth_verifystate",
-      "community": 106,
+      "community": 180,
       "norm_label": "verifystate()"
     },
     {
@@ -2895,7 +2895,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L34",
       "id": "email_accounts_google_oauth_client",
-      "community": 106,
+      "community": 180,
       "norm_label": "client()"
     },
     {
@@ -2904,7 +2904,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L42",
       "id": "email_accounts_google_oauth_buildconsenturl",
-      "community": 106,
+      "community": 180,
       "norm_label": "buildconsenturl()"
     },
     {
@@ -2913,7 +2913,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L51",
       "id": "email_accounts_google_oauth_exchangedmailbox",
-      "community": 106,
+      "community": 180,
       "norm_label": "exchangedmailbox"
     },
     {
@@ -2922,7 +2922,7 @@
       "source_file": "features/email-accounts/google-oauth.ts",
       "source_location": "L60",
       "id": "email_accounts_google_oauth_exchangecodetomailbox",
-      "community": 106,
+      "community": 180,
       "norm_label": "exchangecodetomailbox()"
     },
     {
@@ -3003,7 +3003,7 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L48",
       "id": "leads_actions_updatelead",
-      "community": 2,
+      "community": 178,
       "norm_label": "updatelead()"
     },
     {
@@ -3498,7 +3498,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L1",
       "id": "features_pipeline_group_test_ts",
-      "community": 117,
+      "community": 45,
       "norm_label": "group.test.ts"
     },
     {
@@ -3507,7 +3507,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L6",
       "id": "pipeline_group_test_lead",
-      "community": 117,
+      "community": 45,
       "norm_label": "lead()"
     },
     {
@@ -3516,7 +3516,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L10",
       "id": "pipeline_group_test_cols",
-      "community": 117,
+      "community": 45,
       "norm_label": "cols"
     },
     {
@@ -3525,7 +3525,7 @@
       "source_file": "features/pipeline/group.test.ts",
       "source_location": "L16",
       "id": "pipeline_group_test_bystage",
-      "community": 117,
+      "community": 45,
       "norm_label": "bystage"
     },
     {
@@ -3534,7 +3534,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L1",
       "id": "features_pipeline_group_ts",
-      "community": 117,
+      "community": 45,
       "norm_label": "group.ts"
     },
     {
@@ -3543,7 +3543,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L5",
       "id": "pipeline_group_stagecolumn",
-      "community": 117,
+      "community": 45,
       "norm_label": "stagecolumn"
     },
     {
@@ -3552,7 +3552,7 @@
       "source_file": "features/pipeline/group.ts",
       "source_location": "L10",
       "id": "pipeline_group_groupleadsbystage",
-      "community": 117,
+      "community": 45,
       "norm_label": "groupleadsbystage()"
     },
     {
@@ -3570,7 +3570,7 @@
       "source_file": "features/pipeline/queries.ts",
       "source_location": "L6",
       "id": "pipeline_queries_getpipelineleads",
-      "community": 117,
+      "community": 45,
       "norm_label": "getpipelineleads()"
     },
     {
@@ -3723,7 +3723,7 @@
       "source_file": "features/pipeline/types.ts",
       "source_location": "L4",
       "id": "pipeline_types_stage_order",
-      "community": 117,
+      "community": 45,
       "norm_label": "stage_order"
     },
     {
@@ -4029,7 +4029,7 @@
       "source_file": "features/replies/gmail-history.ts",
       "source_location": "L1",
       "id": "features_replies_gmail_history_ts",
-      "community": 149,
+      "community": 106,
       "norm_label": "gmail-history.ts"
     },
     {
@@ -4038,7 +4038,7 @@
       "source_file": "features/replies/gmail-history.ts",
       "source_location": "L6",
       "id": "replies_gmail_history_fetchedmessage",
-      "community": 149,
+      "community": 106,
       "norm_label": "fetchedmessage"
     },
     {
@@ -4047,7 +4047,7 @@
       "source_file": "features/replies/gmail-history.ts",
       "source_location": "L8",
       "id": "replies_gmail_history_historyresult",
-      "community": 149,
+      "community": 106,
       "norm_label": "historyresult"
     },
     {
@@ -4056,7 +4056,7 @@
       "source_file": "features/replies/gmail-history.ts",
       "source_location": "L14",
       "id": "replies_gmail_history_gmailfor",
-      "community": 149,
+      "community": 106,
       "norm_label": "gmailfor()"
     },
     {
@@ -4065,7 +4065,7 @@
       "source_file": "features/replies/gmail-history.ts",
       "source_location": "L18",
       "id": "replies_gmail_history_getprofilehistoryid",
-      "community": 149,
+      "community": 106,
       "norm_label": "getprofilehistoryid()"
     },
     {
@@ -4641,7 +4641,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L1",
       "id": "features_research_batch_actions_ts",
-      "community": 84,
+      "community": 160,
       "norm_label": "batch-actions.ts"
     },
     {
@@ -4650,7 +4650,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L17",
       "id": "research_batch_actions_previewresult",
-      "community": 84,
+      "community": 160,
       "norm_label": "previewresult"
     },
     {
@@ -4659,7 +4659,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L18",
       "id": "research_batch_actions_startbatchresult",
-      "community": 84,
+      "community": 160,
       "norm_label": "startbatchresult"
     },
     {
@@ -4668,7 +4668,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L19",
       "id": "research_batch_actions_batchactionresult",
-      "community": 84,
+      "community": 160,
       "norm_label": "batchactionresult"
     },
     {
@@ -4677,7 +4677,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L21",
       "id": "research_batch_actions_normalizecriteria",
-      "community": 84,
+      "community": 160,
       "norm_label": "normalizecriteria()"
     },
     {
@@ -4686,7 +4686,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L28",
       "id": "research_batch_actions_recentleadids",
-      "community": 84,
+      "community": 160,
       "norm_label": "recentleadids()"
     },
     {
@@ -4695,7 +4695,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L37",
       "id": "research_batch_actions_previewbatch",
-      "community": 84,
+      "community": 160,
       "norm_label": "previewbatch()"
     },
     {
@@ -4704,7 +4704,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L54",
       "id": "research_batch_actions_startbatch",
-      "community": 84,
+      "community": 160,
       "norm_label": "startbatch()"
     },
     {
@@ -4803,7 +4803,7 @@
       "source_file": "features/research/batch-progress.test.ts",
       "source_location": "L1",
       "id": "features_research_batch_progress_test_ts",
-      "community": 84,
+      "community": 184,
       "norm_label": "batch-progress.test.ts"
     },
     {
@@ -4812,7 +4812,7 @@
       "source_file": "features/research/batch-progress.test.ts",
       "source_location": "L5",
       "id": "research_batch_progress_test_counts",
-      "community": 84,
+      "community": 184,
       "norm_label": "counts()"
     },
     {
@@ -4821,7 +4821,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L1",
       "id": "features_research_batch_progress_ts",
-      "community": 84,
+      "community": 184,
       "norm_label": "batch-progress.ts"
     },
     {
@@ -4830,7 +4830,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L4",
       "id": "research_batch_progress_runstatuscounts",
-      "community": 84,
+      "community": 184,
       "norm_label": "runstatuscounts"
     },
     {
@@ -4839,7 +4839,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L12",
       "id": "research_batch_progress_batchdisplaystatus",
-      "community": 84,
+      "community": 184,
       "norm_label": "batchdisplaystatus"
     },
     {
@@ -4848,7 +4848,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L19",
       "id": "research_batch_progress_derivebatchstatus",
-      "community": 84,
+      "community": 184,
       "norm_label": "derivebatchstatus()"
     },
     {
@@ -4920,7 +4920,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L1",
       "id": "features_research_draft_actions_ts",
-      "community": 45,
+      "community": 178,
       "norm_label": "draft-actions.ts"
     },
     {
@@ -4929,7 +4929,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L9",
       "id": "research_draft_actions_startdraftresult",
-      "community": 45,
+      "community": 178,
       "norm_label": "startdraftresult"
     },
     {
@@ -4938,7 +4938,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L10",
       "id": "research_draft_actions_savedraftresult",
-      "community": 45,
+      "community": 178,
       "norm_label": "savedraftresult"
     },
     {
@@ -4947,7 +4947,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L12",
       "id": "research_draft_actions_startdraft",
-      "community": 45,
+      "community": 178,
       "norm_label": "startdraft()"
     },
     {
@@ -4956,7 +4956,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L31",
       "id": "research_draft_actions_getdraft",
-      "community": 45,
+      "community": 178,
       "norm_label": "getdraft()"
     },
     {
@@ -4965,7 +4965,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L36",
       "id": "research_draft_actions_savedraft",
-      "community": 45,
+      "community": 178,
       "norm_label": "savedraft()"
     },
     {
@@ -5028,7 +5028,7 @@
       "source_file": "features/research/engine.ts",
       "source_location": "L1",
       "id": "features_research_engine_ts",
-      "community": 88,
+      "community": 166,
       "norm_label": "engine.ts"
     },
     {
@@ -5037,7 +5037,7 @@
       "source_file": "features/research/engine.ts",
       "source_location": "L10",
       "id": "research_engine_runargs",
-      "community": 88,
+      "community": 166,
       "norm_label": "runargs"
     },
     {
@@ -5046,7 +5046,7 @@
       "source_file": "features/research/engine.ts",
       "source_location": "L18",
       "id": "research_engine_runresearch",
-      "community": 88,
+      "community": 166,
       "norm_label": "runresearch()"
     },
     {
@@ -5055,7 +5055,7 @@
       "source_file": "features/research/lead-context.test.ts",
       "source_location": "L1",
       "id": "features_research_lead_context_test_ts",
-      "community": 88,
+      "community": 183,
       "norm_label": "lead-context.test.ts"
     },
     {
@@ -5064,7 +5064,7 @@
       "source_file": "features/research/lead-context.test.ts",
       "source_location": "L5",
       "id": "research_lead_context_test_empty",
-      "community": 88,
+      "community": 183,
       "norm_label": "empty"
     },
     {
@@ -5073,7 +5073,7 @@
       "source_file": "features/research/lead-context.test.ts",
       "source_location": "L13",
       "id": "research_lead_context_test_block",
-      "community": 88,
+      "community": 183,
       "norm_label": "block"
     },
     {
@@ -5082,7 +5082,7 @@
       "source_file": "features/research/lead-context.ts",
       "source_location": "L1",
       "id": "features_research_lead_context_ts",
-      "community": 88,
+      "community": 183,
       "norm_label": "lead-context.ts"
     },
     {
@@ -5091,7 +5091,7 @@
       "source_file": "features/research/lead-context.ts",
       "source_location": "L2",
       "id": "research_lead_context_leadcontextinput",
-      "community": 88,
+      "community": 183,
       "norm_label": "leadcontextinput"
     },
     {
@@ -5100,7 +5100,7 @@
       "source_file": "features/research/lead-context.ts",
       "source_location": "L14",
       "id": "research_lead_context_present",
-      "community": 88,
+      "community": 183,
       "norm_label": "present()"
     },
     {
@@ -5109,7 +5109,7 @@
       "source_file": "features/research/lead-context.ts",
       "source_location": "L20",
       "id": "research_lead_context_buildleadcontextblock",
-      "community": 88,
+      "community": 183,
       "norm_label": "buildleadcontextblock()"
     },
     {
@@ -5118,7 +5118,7 @@
       "source_file": "features/research/model.test.ts",
       "source_location": "L1",
       "id": "features_research_model_test_ts",
-      "community": 88,
+      "community": 166,
       "norm_label": "model.test.ts"
     },
     {
@@ -5127,7 +5127,7 @@
       "source_file": "features/research/model.ts",
       "source_location": "L1",
       "id": "features_research_model_ts",
-      "community": 88,
+      "community": 166,
       "norm_label": "model.ts"
     },
     {
@@ -5136,7 +5136,7 @@
       "source_file": "features/research/model.ts",
       "source_location": "L4",
       "id": "research_model_resolvemodel",
-      "community": 88,
+      "community": 166,
       "norm_label": "resolvemodel()"
     },
     {
@@ -5145,7 +5145,7 @@
       "source_file": "features/research/model.ts",
       "source_location": "L9",
       "id": "research_model_tuningformodel",
-      "community": 88,
+      "community": 166,
       "norm_label": "tuningformodel()"
     },
     {
@@ -5226,7 +5226,7 @@
       "source_file": "features/research/schema-build.test.ts",
       "source_location": "L1",
       "id": "features_research_schema_build_test_ts",
-      "community": 99,
+      "community": 166,
       "norm_label": "schema-build.test.ts"
     },
     {
@@ -5235,7 +5235,7 @@
       "source_file": "features/research/schema-build.test.ts",
       "source_location": "L5",
       "id": "research_schema_build_test_f",
-      "community": 99,
+      "community": 166,
       "norm_label": "f()"
     },
     {
@@ -5244,7 +5244,7 @@
       "source_file": "features/research/schema-build.test.ts",
       "source_location": "L9",
       "id": "research_schema_build_test_s",
-      "community": 99,
+      "community": 166,
       "norm_label": "s"
     },
     {
@@ -5253,7 +5253,7 @@
       "source_file": "features/research/schema-build.ts",
       "source_location": "L1",
       "id": "features_research_schema_build_ts",
-      "community": 99,
+      "community": 166,
       "norm_label": "schema-build.ts"
     },
     {
@@ -5262,7 +5262,7 @@
       "source_file": "features/research/schema-build.ts",
       "source_location": "L4",
       "id": "research_schema_build_findingsschema",
-      "community": 99,
+      "community": 166,
       "norm_label": "findingsschema"
     },
     {
@@ -5271,7 +5271,7 @@
       "source_file": "features/research/schema-build.ts",
       "source_location": "L11",
       "id": "research_schema_build_buildfindingsschema",
-      "community": 99,
+      "community": 166,
       "norm_label": "buildfindingsschema()"
     },
     {
@@ -5280,7 +5280,7 @@
       "source_file": "features/research/schema-build.ts",
       "source_location": "L21",
       "id": "research_schema_build_propertyfor",
-      "community": 99,
+      "community": 166,
       "norm_label": "propertyfor()"
     },
     {
@@ -5361,7 +5361,7 @@
       "source_file": "features/research-types/actions.ts",
       "source_location": "L9",
       "id": "research_types_actions_researchtyperesult",
-      "community": 99,
+      "community": 159,
       "norm_label": "researchtyperesult"
     },
     {
@@ -5505,7 +5505,7 @@
       "source_file": "features/research-types/schema.ts",
       "source_location": "L76",
       "id": "research_types_schema_outputfield",
-      "community": 99,
+      "community": 166,
       "norm_label": "outputfield"
     },
     {
@@ -5685,7 +5685,7 @@
       "source_file": "features/sending/gmail.ts",
       "source_location": "L8",
       "id": "sending_gmail_sendableaccount",
-      "community": 149,
+      "community": 106,
       "norm_label": "sendableaccount"
     },
     {
@@ -5721,7 +5721,7 @@
       "source_file": "features/sending/mime.test.ts",
       "source_location": "L1",
       "id": "features_sending_mime_test_ts",
-      "community": 106,
+      "community": 181,
       "norm_label": "mime.test.ts"
     },
     {
@@ -5730,7 +5730,7 @@
       "source_file": "features/sending/mime.test.ts",
       "source_location": "L5",
       "id": "sending_mime_test_frombase64url",
-      "community": 106,
+      "community": 181,
       "norm_label": "frombase64url()"
     },
     {
@@ -5739,7 +5739,7 @@
       "source_file": "features/sending/mime.test.ts",
       "source_location": "L12",
       "id": "sending_mime_test_raw",
-      "community": 106,
+      "community": 181,
       "norm_label": "raw"
     },
     {
@@ -5748,7 +5748,7 @@
       "source_file": "features/sending/mime.test.ts",
       "source_location": "L18",
       "id": "sending_mime_test_msg",
-      "community": 106,
+      "community": 181,
       "norm_label": "msg"
     },
     {
@@ -5757,7 +5757,7 @@
       "source_file": "features/sending/mime.test.ts",
       "source_location": "L23",
       "id": "sending_mime_test_body",
-      "community": 106,
+      "community": 181,
       "norm_label": "body"
     },
     {
@@ -5766,7 +5766,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L1",
       "id": "features_sending_mime_ts",
-      "community": 106,
+      "community": 181,
       "norm_label": "mime.ts"
     },
     {
@@ -5775,7 +5775,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L2",
       "id": "sending_mime_mailinput",
-      "community": 106,
+      "community": 181,
       "norm_label": "mailinput"
     },
     {
@@ -5784,7 +5784,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L9",
       "id": "sending_mime_tobase64url",
-      "community": 106,
+      "community": 181,
       "norm_label": "tobase64url()"
     },
     {
@@ -5793,7 +5793,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L15",
       "id": "sending_mime_encodeheaderword",
-      "community": 106,
+      "community": 181,
       "norm_label": "encodeheaderword()"
     },
     {
@@ -5802,7 +5802,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L21",
       "id": "sending_mime_chunk76",
-      "community": 106,
+      "community": 181,
       "norm_label": "chunk76()"
     },
     {
@@ -5811,7 +5811,7 @@
       "source_file": "features/sending/mime.ts",
       "source_location": "L25",
       "id": "sending_mime_buildrawmessage",
-      "community": 106,
+      "community": 181,
       "norm_label": "buildrawmessage()"
     },
     {
@@ -6747,7 +6747,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L1",
       "id": "generated_prisma_client_ts",
-      "community": 135,
+      "community": 117,
       "norm_label": "client.ts"
     },
     {
@@ -6765,7 +6765,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L48",
       "id": "prisma_client_organization",
-      "community": 135,
+      "community": 117,
       "norm_label": "organization"
     },
     {
@@ -6774,7 +6774,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L53",
       "id": "prisma_client_user",
-      "community": 135,
+      "community": 117,
       "norm_label": "user"
     },
     {
@@ -6783,7 +6783,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L58",
       "id": "prisma_client_account",
-      "community": 135,
+      "community": 117,
       "norm_label": "account"
     },
     {
@@ -6792,7 +6792,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L63",
       "id": "prisma_client_session",
-      "community": 135,
+      "community": 117,
       "norm_label": "session"
     },
     {
@@ -6801,7 +6801,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L68",
       "id": "prisma_client_verificationtoken",
-      "community": 135,
+      "community": 117,
       "norm_label": "verificationtoken"
     },
     {
@@ -6810,7 +6810,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L73",
       "id": "prisma_client_membership",
-      "community": 135,
+      "community": 117,
       "norm_label": "membership"
     },
     {
@@ -6819,7 +6819,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L78",
       "id": "prisma_client_offeringline",
-      "community": 135,
+      "community": 117,
       "norm_label": "offeringline"
     },
     {
@@ -6828,7 +6828,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L83",
       "id": "prisma_client_lead",
-      "community": 135,
+      "community": 117,
       "norm_label": "lead"
     },
     {
@@ -6837,7 +6837,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L88",
       "id": "prisma_client_suppression",
-      "community": 135,
+      "community": 117,
       "norm_label": "suppression"
     },
     {
@@ -6846,7 +6846,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L93",
       "id": "prisma_client_template",
-      "community": 135,
+      "community": 117,
       "norm_label": "template"
     },
     {
@@ -6855,7 +6855,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L98",
       "id": "prisma_client_placeholder",
-      "community": 135,
+      "community": 117,
       "norm_label": "placeholder"
     },
     {
@@ -6864,7 +6864,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L103",
       "id": "prisma_client_researchtype",
-      "community": 135,
+      "community": 117,
       "norm_label": "researchtype"
     },
     {
@@ -6873,7 +6873,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L108",
       "id": "prisma_client_researchrun",
-      "community": 135,
+      "community": 117,
       "norm_label": "researchrun"
     },
     {
@@ -6882,7 +6882,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L113",
       "id": "prisma_client_researchbatch",
-      "community": 135,
+      "community": 117,
       "norm_label": "researchbatch"
     },
     {
@@ -6891,7 +6891,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L118",
       "id": "prisma_client_leaddraft",
-      "community": 135,
+      "community": 117,
       "norm_label": "leaddraft"
     },
     {
@@ -6900,7 +6900,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L123",
       "id": "prisma_client_campaign",
-      "community": 135,
+      "community": 117,
       "norm_label": "campaign"
     },
     {
@@ -6909,7 +6909,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L128",
       "id": "prisma_client_sequencestep",
-      "community": 135,
+      "community": 117,
       "norm_label": "sequencestep"
     },
     {
@@ -6918,7 +6918,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L133",
       "id": "prisma_client_campaignlead",
-      "community": 135,
+      "community": 117,
       "norm_label": "campaignlead"
     },
     {
@@ -6927,7 +6927,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L138",
       "id": "prisma_client_emailaccount",
-      "community": 135,
+      "community": 117,
       "norm_label": "emailaccount"
     },
     {
@@ -6936,7 +6936,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L143",
       "id": "prisma_client_message",
-      "community": 135,
+      "community": 117,
       "norm_label": "message"
     },
     {
@@ -6945,7 +6945,7 @@
       "source_file": "generated/prisma/client.ts",
       "source_location": "L148",
       "id": "prisma_client_leadactivity",
-      "community": 135,
+      "community": 117,
       "norm_label": "leadactivity"
     },
     {
@@ -8979,7 +8979,7 @@
       "source_file": "generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L302",
       "id": "internal_prismanamespace_boolean",
-      "community": 88,
+      "community": 166,
       "norm_label": "boolean"
     },
     {
@@ -33108,7 +33108,7 @@
       "source_file": "lib/inngest/research-batch.ts",
       "source_location": "L79",
       "id": "inngest_research_batch_runresearchbatchfn",
-      "community": 88,
+      "community": 160,
       "norm_label": "runresearchbatchfn"
     },
     {
@@ -33117,7 +33117,7 @@
       "source_file": "lib/inngest/research.ts",
       "source_location": "L1",
       "id": "lib_inngest_research_ts",
-      "community": 88,
+      "community": 166,
       "norm_label": "research.ts"
     },
     {
@@ -33126,7 +33126,7 @@
       "source_file": "lib/inngest/research.ts",
       "source_location": "L13",
       "id": "inngest_research_emailtakenfor",
-      "community": 88,
+      "community": 166,
       "norm_label": "emailtakenfor()"
     },
     {
@@ -33135,7 +33135,7 @@
       "source_file": "lib/inngest/research.ts",
       "source_location": "L23",
       "id": "inngest_research_runresearchfn",
-      "community": 88,
+      "community": 166,
       "norm_label": "runresearchfn"
     },
     {
@@ -33333,7 +33333,7 @@
       "source_file": "scripts/diag-baseline.ts",
       "source_location": "L1",
       "id": "scripts_diag_baseline_ts",
-      "community": 149,
+      "community": 106,
       "norm_label": "diag-baseline.ts"
     },
     {
@@ -33342,7 +33342,7 @@
       "source_file": "scripts/diag-baseline.ts",
       "source_location": "L8",
       "id": "scripts_diag_baseline_prisma",
-      "community": 149,
+      "community": 106,
       "norm_label": "prisma"
     },
     {
@@ -33351,7 +33351,7 @@
       "source_file": "scripts/diag-baseline.ts",
       "source_location": "L10",
       "id": "scripts_diag_baseline_main",
-      "community": 149,
+      "community": 106,
       "norm_label": "main()"
     },
     {
@@ -33441,7 +33441,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L1",
       "id": "scripts_diag_set_cursor_ts",
-      "community": 135,
+      "community": 117,
       "norm_label": "diag-set-cursor.ts"
     },
     {
@@ -33450,7 +33450,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L6",
       "id": "scripts_diag_set_cursor_prisma",
-      "community": 135,
+      "community": 117,
       "norm_label": "prisma"
     },
     {
@@ -33459,7 +33459,7 @@
       "source_file": "scripts/diag-set-cursor.ts",
       "source_location": "L8",
       "id": "scripts_diag_set_cursor_main",
-      "community": 135,
+      "community": 117,
       "norm_label": "main()"
     },
     {
@@ -33630,7 +33630,7 @@
       "source_file": "types/next-auth.d.ts",
       "source_location": "L1",
       "id": "types_next_auth_d_ts",
-      "community": 135,
+      "community": 117,
       "norm_label": "next-auth.d.ts"
     },
     {
@@ -33639,7 +33639,7 @@
       "source_file": "types/next-auth.d.ts",
       "source_location": "L6",
       "id": "types_next_auth_d_session",
-      "community": 135,
+      "community": 117,
       "norm_label": "session"
     },
     {
@@ -33648,7 +33648,7 @@
       "source_file": "types/next-auth.d.ts",
       "source_location": "L16",
       "id": "types_next_auth_d_jwt",
-      "community": 135,
+      "community": 117,
       "norm_label": "jwt"
     },
     {
@@ -34006,7 +34006,7 @@
       "label": "Cross-cutting before launch",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L99",
+      "source_location": "L101",
       "id": "superpowers_roadmap_cross_cutting_before_launch",
       "community": 47,
       "norm_label": "cross-cutting before launch"
@@ -34015,7 +34015,7 @@
       "label": "How to resume",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L104",
+      "source_location": "L106",
       "id": "superpowers_roadmap_how_to_resume",
       "community": 47,
       "norm_label": "how to resume"
@@ -34024,7 +34024,7 @@
       "label": "Local dev gotchas (this machine)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L110",
+      "source_location": "L112",
       "id": "superpowers_roadmap_local_dev_gotchas_this_machine",
       "community": 47,
       "norm_label": "local dev gotchas (this machine)"
@@ -40582,6 +40582,141 @@
       "norm_label": "self-review"
     },
     {
+      "label": "2026-06-09-phase-7-dark-ready-migration.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_plans_2026_06_09_phase_7_dark_ready_migration_md",
+      "community": 179,
+      "norm_label": "2026-06-09-phase-7-dark-ready-migration.md"
+    },
+    {
+      "label": "dark-ready token migration Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L1",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "community": 179,
+      "norm_label": "dark-ready token migration implementation plan"
+    },
+    {
+      "label": "Canonical map (apply in EVERY task)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L13",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_canonical_map_apply_in_every_task",
+      "community": 179,
+      "norm_label": "canonical map (apply in every task)"
+    },
+    {
+      "label": "code:block1 (text-zinc-700            -> text-fg)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L15",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_codeblock_1",
+      "community": 179,
+      "norm_label": "code:block1 (text-zinc-700            -> text-fg)"
+    },
+    {
+      "label": "Task 1: shell + login",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L44",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_1_shell_login",
+      "community": 179,
+      "norm_label": "task 1: shell + login"
+    },
+    {
+      "label": "Task 2: leady (list + detail)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L51",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_2_leady_list_detail",
+      "community": 179,
+      "norm_label": "task 2: leady (list + detail)"
+    },
+    {
+      "label": "Task 3: import + lines + suppression",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L58",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_3_import_lines_suppression",
+      "community": 179,
+      "norm_label": "task 3: import + lines + suppression"
+    },
+    {
+      "label": "Task 4: kampanie",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L65",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_4_kampanie",
+      "community": 179,
+      "norm_label": "task 4: kampanie"
+    },
+    {
+      "label": "Task 5: badania",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L72",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_5_badania",
+      "community": 179,
+      "norm_label": "task 5: badania"
+    },
+    {
+      "label": "Task 6: szablony + placeholdery",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L79",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_6_szablony_placeholdery",
+      "community": 179,
+      "norm_label": "task 6: szablony + placeholdery"
+    },
+    {
+      "label": "Task 7: skrzynki + pipeline",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L86",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_7_skrzynki_pipeline",
+      "community": 179,
+      "norm_label": "task 7: skrzynki + pipeline"
+    },
+    {
+      "label": "Task 8: verify dark, then flip the default theme",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L93",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_8_verify_dark_then_flip_the_default_theme",
+      "community": 179,
+      "norm_label": "task 8: verify dark, then flip the default theme"
+    },
+    {
+      "label": "code:typescript (export function resolveInitialTheme(stored: string | null): )",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L97",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_codeblock_2",
+      "community": 179,
+      "norm_label": "code:typescript (export function resolveinitialtheme(stored: string | null): )"
+    },
+    {
+      "label": "Task 9: gates + roadmap + graph",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L109",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_task_9_gates_roadmap_graph",
+      "community": 179,
+      "norm_label": "task 9: gates + roadmap + graph"
+    },
+    {
+      "label": "Self-review",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L118",
+      "id": "plans_2026_06_09_phase_7_dark_ready_migration_self_review",
+      "community": 179,
+      "norm_label": "self-review"
+    },
+    {
       "label": "2026-06-09-phase-7-design-foundation.md",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
@@ -43345,6 +43480,96 @@
       "norm_label": "risks / notes"
     },
     {
+      "label": "2026-06-09-phase-7-dark-ready-migration-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_specs_2026_06_09_phase_7_dark_ready_migration_design_md",
+      "community": 182,
+      "norm_label": "2026-06-09-phase-7-dark-ready-migration-design.md"
+    },
+    {
+      "label": "Phase 7 \u2014 dark-ready token migration \u2014 Design",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L1",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "community": 182,
+      "norm_label": "phase 7 \u2014 dark-ready token migration \u2014 design"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L8",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_goal",
+      "community": 182,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Scope",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L14",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_scope",
+      "community": 182,
+      "norm_label": "scope"
+    },
+    {
+      "label": "Canonical replacement map (apply consistently everywhere)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L23",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_canonical_replacement_map_apply_consistently_everywhere",
+      "community": 182,
+      "norm_label": "canonical replacement map (apply consistently everywhere)"
+    },
+    {
+      "label": "Resolved ambiguities (defaults \u2014 override in the fresh session if desired)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L46",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_resolved_ambiguities_defaults_override_in_the_fresh_session_if_desired",
+      "community": 182,
+      "norm_label": "resolved ambiguities (defaults \u2014 override in the fresh session if desired)"
+    },
+    {
+      "label": "Files (33 \u2014 grouped into the plan's tasks)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L69",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_files_33_grouped_into_the_plan_s_tasks",
+      "community": 182,
+      "norm_label": "files (33 \u2014 grouped into the plan's tasks)"
+    },
+    {
+      "label": "Default-theme flip (final step, after all 33 files migrate)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L82",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_default_theme_flip_final_step_after_all_33_files_migrate",
+      "community": 182,
+      "norm_label": "default-theme flip (final step, after all 33 files migrate)"
+    },
+    {
+      "label": "Testing",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L92",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_testing",
+      "community": 182,
+      "norm_label": "testing"
+    },
+    {
+      "label": "Risks / notes",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L101",
+      "id": "specs_2026_06_09_phase_7_dark_ready_migration_design_risks_notes",
+      "community": 182,
+      "norm_label": "risks / notes"
+    },
+    {
       "label": "2026-06-09-phase-7-design-foundation-design.md",
       "file_type": "document",
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
@@ -43493,7 +43718,7 @@
       "file_type": "code",
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L7",
-      "community": 166,
+      "community": 95,
       "norm_label": "props",
       "id": "ustawienia_sender_signature_form_props"
     },
@@ -45020,9 +45245,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "coldmailing_app_package_dependencies",
-      "target": "coldmailing_app_package_dependencies_geist",
-      "confidence_score": 1.0
+      "target": "coldmailing_app_package_dependencies_geist"
     },
     {
       "relation": "contains",
@@ -45050,9 +45275,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "coldmailing_app_package_dependencies",
-      "target": "coldmailing_app_package_dependencies_motion",
-      "confidence_score": 1.0
+      "target": "coldmailing_app_package_dependencies_motion"
     },
     {
       "relation": "contains",
@@ -45481,9 +45706,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout_tsx",
-      "target": "app_layout_inter",
-      "confidence_score": 1.0
+      "target": "app_layout_inter"
     },
     {
       "relation": "contains",
@@ -45512,9 +45737,9 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_not_found_tsx",
-      "target": "components_ui_empty_state_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_empty_state_tsx"
     },
     {
       "relation": "imports",
@@ -45523,9 +45748,9 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_not_found_tsx",
-      "target": "ui_empty_state_emptystate",
-      "confidence_score": 1.0
+      "target": "ui_empty_state_emptystate"
     },
     {
       "relation": "contains",
@@ -45533,9 +45758,9 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_not_found_tsx",
-      "target": "app_not_found_notfound",
-      "confidence_score": 1.0
+      "target": "app_not_found_notfound"
     },
     {
       "relation": "contains",
@@ -45543,9 +45768,9 @@
       "source_file": "app/(app)/not-found.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_not_found_tsx",
-      "target": "app_not_found_notfound",
-      "confidence_score": 1.0
+      "target": "app_not_found_notfound"
     },
     {
       "relation": "contains",
@@ -45564,9 +45789,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "components_ui_card_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_card_tsx"
     },
     {
       "relation": "imports",
@@ -45575,9 +45800,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "ui_card_card",
-      "confidence_score": 1.0
+      "target": "ui_card_card"
     },
     {
       "relation": "imports",
@@ -45586,9 +45811,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "ui_card_cardbody",
-      "confidence_score": 1.0
+      "target": "ui_card_cardbody"
     },
     {
       "relation": "imports_from",
@@ -45597,9 +45822,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "components_ui_button_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_button_tsx"
     },
     {
       "relation": "imports",
@@ -45608,9 +45833,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "contains",
@@ -45618,9 +45843,9 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_error_tsx",
-      "target": "app_error_error",
-      "confidence_score": 1.0
+      "target": "app_error_error"
     },
     {
       "relation": "imports_from",
@@ -45640,9 +45865,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "components_ui_toast_provider_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_toast_provider_tsx"
     },
     {
       "relation": "imports",
@@ -45651,9 +45876,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "ui_toast_provider_toastprovider",
-      "confidence_score": 1.0
+      "target": "ui_toast_provider_toastprovider"
     },
     {
       "relation": "imports_from",
@@ -45662,9 +45887,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "components_ui_confirm_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_confirm_tsx"
     },
     {
       "relation": "imports",
@@ -45673,9 +45898,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "ui_confirm_confirmprovider",
-      "confidence_score": 1.0
+      "target": "ui_confirm_confirmprovider"
     },
     {
       "relation": "imports_from",
@@ -45684,9 +45909,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "components_ui_container_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_container_tsx"
     },
     {
       "relation": "imports",
@@ -45695,9 +45920,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "ui_container_container",
-      "confidence_score": 1.0
+      "target": "ui_container_container"
     },
     {
       "relation": "imports_from",
@@ -45706,9 +45931,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "components_ui_theme_toggle_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_theme_toggle_tsx"
     },
     {
       "relation": "imports",
@@ -45717,9 +45942,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "ui_theme_toggle_themetoggle",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle_themetoggle"
     },
     {
       "relation": "imports_from",
@@ -45728,9 +45953,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "app_app_nav_link_tsx",
-      "confidence_score": 1.0
+      "target": "app_app_nav_link_tsx"
     },
     {
       "relation": "imports",
@@ -45739,9 +45964,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "app_nav_link_navlink",
-      "confidence_score": 1.0
+      "target": "app_nav_link_navlink"
     },
     {
       "relation": "contains",
@@ -45749,9 +45974,9 @@
       "source_file": "app/(app)/layout.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "app_layout_links",
-      "confidence_score": 1.0
+      "target": "app_layout_links"
     },
     {
       "relation": "contains",
@@ -45770,9 +45995,9 @@
       "source_file": "app/(app)/loading.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_loading_tsx",
-      "target": "components_ui_spinner_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_spinner_tsx"
     },
     {
       "relation": "imports",
@@ -45781,9 +46006,9 @@
       "source_file": "app/(app)/loading.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_loading_tsx",
-      "target": "ui_spinner_spinner",
-      "confidence_score": 1.0
+      "target": "ui_spinner_spinner"
     },
     {
       "relation": "contains",
@@ -45791,9 +46016,9 @@
       "source_file": "app/(app)/loading.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_loading_tsx",
-      "target": "app_loading_loading",
-      "confidence_score": 1.0
+      "target": "app_loading_loading"
     },
     {
       "relation": "imports_from",
@@ -45802,9 +46027,9 @@
       "source_file": "app/(app)/nav-link.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_nav_link_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -45813,9 +46038,9 @@
       "source_file": "app/(app)/nav-link.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_nav_link_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -45823,9 +46048,9 @@
       "source_file": "app/(app)/nav-link.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_nav_link_tsx",
-      "target": "app_nav_link_navlink",
-      "confidence_score": 1.0
+      "target": "app_nav_link_navlink"
     },
     {
       "relation": "calls",
@@ -45845,9 +46070,9 @@
       "source_file": "app/(app)/not-found.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_not_found_tsx",
-      "target": "components_ui_empty_state_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_empty_state_tsx"
     },
     {
       "relation": "imports",
@@ -45856,9 +46081,9 @@
       "source_file": "app/(app)/not-found.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_not_found_tsx",
-      "target": "ui_empty_state_emptystate",
-      "confidence_score": 1.0
+      "target": "ui_empty_state_emptystate"
     },
     {
       "relation": "imports_from",
@@ -49174,9 +49399,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "features_org_settings_ts",
-      "confidence_score": 1.0
+      "target": "features_org_settings_ts"
     },
     {
       "relation": "imports",
@@ -49185,9 +49410,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "org_settings_setorgname",
-      "confidence_score": 1.0
+      "target": "org_settings_setorgname"
     },
     {
       "relation": "imports_from",
@@ -49196,9 +49421,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "components_ui_field_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_field_tsx"
     },
     {
       "relation": "imports",
@@ -49207,9 +49432,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "ui_field_field",
-      "confidence_score": 1.0
+      "target": "ui_field_field"
     },
     {
       "relation": "imports_from",
@@ -49218,9 +49443,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "components_ui_input_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_input_tsx"
     },
     {
       "relation": "imports",
@@ -49229,9 +49454,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "ui_input_input",
-      "confidence_score": 1.0
+      "target": "ui_input_input"
     },
     {
       "relation": "imports_from",
@@ -49240,9 +49465,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "components_ui_button_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_button_tsx"
     },
     {
       "relation": "imports",
@@ -49251,9 +49476,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports_from",
@@ -49262,9 +49487,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "components_ui_use_toast_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_use_toast_ts"
     },
     {
       "relation": "imports",
@@ -49273,9 +49498,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "ui_use_toast_usetoast",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_usetoast"
     },
     {
       "relation": "contains",
@@ -49283,9 +49508,9 @@
       "source_file": "app/(app)/ustawienia/general-form.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_general_form_tsx",
-      "target": "ustawienia_general_form_generalform",
-      "confidence_score": 1.0
+      "target": "ustawienia_general_form_generalform"
     },
     {
       "relation": "imports_from",
@@ -49294,9 +49519,9 @@
       "source_file": "app/(app)/ustawienia/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_page_tsx",
-      "target": "app_app_ustawienia_general_form_tsx",
-      "confidence_score": 1.0
+      "target": "app_app_ustawienia_general_form_tsx"
     },
     {
       "relation": "imports",
@@ -49305,9 +49530,9 @@
       "source_file": "app/(app)/ustawienia/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_page_tsx",
-      "target": "ustawienia_general_form_generalform",
-      "confidence_score": 1.0
+      "target": "ustawienia_general_form_generalform"
     },
     {
       "relation": "calls",
@@ -49349,9 +49574,9 @@
       "source_file": "app/(app)/ustawienia/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_page_tsx",
-      "target": "app_app_ustawienia_settings_shell_tsx",
-      "confidence_score": 1.0
+      "target": "app_app_ustawienia_settings_shell_tsx"
     },
     {
       "relation": "imports",
@@ -49360,9 +49585,9 @@
       "source_file": "app/(app)/ustawienia/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_page_tsx",
-      "target": "ustawienia_settings_shell_settingsshell",
-      "confidence_score": 1.0
+      "target": "ustawienia_settings_shell_settingsshell"
     },
     {
       "relation": "imports",
@@ -49371,9 +49596,9 @@
       "source_file": "app/(app)/ustawienia/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_page_tsx",
-      "target": "ustawienia_settings_shell_settingssection",
-      "confidence_score": 1.0
+      "target": "ustawienia_settings_shell_settingssection"
     },
     {
       "relation": "imports_from",
@@ -49469,9 +49694,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "components_ui_field_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_field_tsx"
     },
     {
       "relation": "imports",
@@ -49480,9 +49705,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "ui_field_field",
-      "confidence_score": 1.0
+      "target": "ui_field_field"
     },
     {
       "relation": "imports_from",
@@ -49491,9 +49716,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "components_ui_textarea_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_textarea_tsx"
     },
     {
       "relation": "imports",
@@ -49502,9 +49727,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "ui_textarea_textarea",
-      "confidence_score": 1.0
+      "target": "ui_textarea_textarea"
     },
     {
       "relation": "imports_from",
@@ -49513,9 +49738,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "components_ui_note_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_note_tsx"
     },
     {
       "relation": "imports",
@@ -49524,9 +49749,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "ui_note_note",
-      "confidence_score": 1.0
+      "target": "ui_note_note"
     },
     {
       "relation": "imports_from",
@@ -49535,9 +49760,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "components_ui_button_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_button_tsx"
     },
     {
       "relation": "imports",
@@ -49546,9 +49771,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports_from",
@@ -49557,9 +49782,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "components_ui_use_toast_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_use_toast_ts"
     },
     {
       "relation": "imports",
@@ -49568,9 +49793,9 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_sender_signature_form_tsx",
-      "target": "ui_use_toast_usetoast",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_usetoast"
     },
     {
       "relation": "contains",
@@ -49632,9 +49857,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "components_ui_field_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_field_tsx"
     },
     {
       "relation": "imports",
@@ -49643,9 +49868,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "ui_field_field",
-      "confidence_score": 1.0
+      "target": "ui_field_field"
     },
     {
       "relation": "imports_from",
@@ -49654,9 +49879,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "components_ui_select_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_select_tsx"
     },
     {
       "relation": "imports",
@@ -49665,9 +49890,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "ui_select_select",
-      "confidence_score": 1.0
+      "target": "ui_select_select"
     },
     {
       "relation": "imports_from",
@@ -49676,9 +49901,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "components_ui_button_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_button_tsx"
     },
     {
       "relation": "imports",
@@ -49687,9 +49912,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports_from",
@@ -49698,9 +49923,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "components_ui_use_toast_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_use_toast_ts"
     },
     {
       "relation": "imports",
@@ -49709,9 +49934,9 @@
       "source_file": "app/(app)/ustawienia/settings-form.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_form_tsx",
-      "target": "ui_use_toast_usetoast",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_usetoast"
     },
     {
       "relation": "contains",
@@ -49751,9 +49976,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -49762,9 +49987,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "imports_from",
@@ -49773,9 +49998,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "components_ui_card_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_card_tsx"
     },
     {
       "relation": "imports",
@@ -49784,9 +50009,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "ui_card_card",
-      "confidence_score": 1.0
+      "target": "ui_card_card"
     },
     {
       "relation": "imports",
@@ -49795,9 +50020,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "ui_card_cardbody",
-      "confidence_score": 1.0
+      "target": "ui_card_cardbody"
     },
     {
       "relation": "contains",
@@ -49805,9 +50030,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "ustawienia_settings_shell_settingssection",
-      "confidence_score": 1.0
+      "target": "ustawienia_settings_shell_settingssection"
     },
     {
       "relation": "contains",
@@ -49815,9 +50040,9 @@
       "source_file": "app/(app)/ustawienia/settings-shell.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_ustawienia_settings_shell_tsx",
-      "target": "ustawienia_settings_shell_settingsshell",
-      "confidence_score": 1.0
+      "target": "ustawienia_settings_shell_settingsshell"
     },
     {
       "relation": "imports_from",
@@ -50218,9 +50443,9 @@
       "source_file": "components/ui/badge.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_badge_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50229,9 +50454,9 @@
       "source_file": "components/ui/badge.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_badge_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50239,9 +50464,9 @@
       "source_file": "components/ui/badge.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_badge_tsx",
-      "target": "ui_badge_badgevariant",
-      "confidence_score": 1.0
+      "target": "ui_badge_badgevariant"
     },
     {
       "relation": "contains",
@@ -50249,9 +50474,9 @@
       "source_file": "components/ui/badge.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_badge_tsx",
-      "target": "ui_badge_map",
-      "confidence_score": 1.0
+      "target": "ui_badge_map"
     },
     {
       "relation": "contains",
@@ -50259,9 +50484,9 @@
       "source_file": "components/ui/badge.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_badge_tsx",
-      "target": "ui_badge_badge",
-      "confidence_score": 1.0
+      "target": "ui_badge_badge"
     },
     {
       "relation": "calls",
@@ -50281,9 +50506,9 @@
       "source_file": "components/ui/button-variants.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_variants_test_ts",
-      "target": "components_ui_button_variants_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_button_variants_ts"
     },
     {
       "relation": "imports",
@@ -50292,9 +50517,9 @@
       "source_file": "components/ui/button-variants.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_variants_test_ts",
-      "target": "ui_button_variants_buttonvariant",
-      "confidence_score": 1.0
+      "target": "ui_button_variants_buttonvariant"
     },
     {
       "relation": "contains",
@@ -50302,9 +50527,9 @@
       "source_file": "components/ui/button-variants.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_variants_ts",
-      "target": "ui_button_variants_buttonvariant",
-      "confidence_score": 1.0
+      "target": "ui_button_variants_buttonvariant"
     },
     {
       "relation": "contains",
@@ -50312,9 +50537,9 @@
       "source_file": "components/ui/button-variants.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_variants_ts",
-      "target": "ui_button_variants_variants",
-      "confidence_score": 1.0
+      "target": "ui_button_variants_variants"
     },
     {
       "relation": "imports_from",
@@ -50323,9 +50548,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "components_ui_button_variants_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_button_variants_ts"
     },
     {
       "relation": "imports",
@@ -50334,9 +50559,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "ui_button_variants_buttonvariant",
-      "confidence_score": 1.0
+      "target": "ui_button_variants_buttonvariant"
     },
     {
       "relation": "imports_from",
@@ -50345,9 +50570,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50356,9 +50581,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50366,9 +50591,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "ui_button_props",
-      "confidence_score": 1.0
+      "target": "ui_button_props"
     },
     {
       "relation": "contains",
@@ -50376,9 +50601,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_button_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports_from",
@@ -50387,9 +50612,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "components_ui_button_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_button_tsx"
     },
     {
       "relation": "imports",
@@ -50398,9 +50623,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports_from",
@@ -50409,9 +50634,9 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_card_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50420,9 +50645,9 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_card_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50430,9 +50655,9 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_card_tsx",
-      "target": "ui_card_card",
-      "confidence_score": 1.0
+      "target": "ui_card_card"
     },
     {
       "relation": "contains",
@@ -50440,9 +50665,9 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_card_tsx",
-      "target": "ui_card_cardbody",
-      "confidence_score": 1.0
+      "target": "ui_card_cardbody"
     },
     {
       "relation": "contains",
@@ -50450,9 +50675,9 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_card_tsx",
-      "target": "ui_card_cardfooter",
-      "confidence_score": 1.0
+      "target": "ui_card_cardfooter"
     },
     {
       "relation": "calls",
@@ -50494,9 +50719,9 @@
       "source_file": "components/ui/confirm-state.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_test_ts",
-      "target": "components_ui_confirm_state_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_confirm_state_ts"
     },
     {
       "relation": "imports",
@@ -50505,9 +50730,9 @@
       "source_file": "components/ui/confirm-state.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_test_ts",
-      "target": "ui_confirm_state_defaultconfirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_defaultconfirmoptions"
     },
     {
       "relation": "contains",
@@ -50515,9 +50740,9 @@
       "source_file": "components/ui/confirm-state.test.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_test_ts",
-      "target": "ui_confirm_state_test_o",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_test_o"
     },
     {
       "relation": "contains",
@@ -50525,9 +50750,9 @@
       "source_file": "components/ui/confirm-state.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_ts",
-      "target": "ui_confirm_state_confirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_confirmoptions"
     },
     {
       "relation": "contains",
@@ -50535,9 +50760,9 @@
       "source_file": "components/ui/confirm-state.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_ts",
-      "target": "ui_confirm_state_resolvedconfirm",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_resolvedconfirm"
     },
     {
       "relation": "contains",
@@ -50545,9 +50770,9 @@
       "source_file": "components/ui/confirm-state.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_state_ts",
-      "target": "ui_confirm_state_defaultconfirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_defaultconfirmoptions"
     },
     {
       "relation": "imports_from",
@@ -50556,9 +50781,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "components_ui_confirm_state_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_confirm_state_ts"
     },
     {
       "relation": "imports_from",
@@ -50567,9 +50792,9 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_confirm_ts",
-      "target": "components_ui_confirm_state_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_confirm_state_ts"
     },
     {
       "relation": "imports",
@@ -50578,9 +50803,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_confirm_state_confirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_confirmoptions"
     },
     {
       "relation": "imports",
@@ -50589,9 +50814,9 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_confirm_ts",
-      "target": "ui_confirm_state_confirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_confirmoptions"
     },
     {
       "relation": "imports",
@@ -50600,9 +50825,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_confirm_state_resolvedconfirm",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_resolvedconfirm"
     },
     {
       "relation": "imports",
@@ -50611,9 +50836,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_confirm_state_defaultconfirmoptions",
-      "confidence_score": 1.0
+      "target": "ui_confirm_state_defaultconfirmoptions"
     },
     {
       "relation": "imports_from",
@@ -50622,9 +50847,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "components_ui_use_confirm_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_use_confirm_ts"
     },
     {
       "relation": "imports",
@@ -50633,9 +50858,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_use_confirm_confirmcontext",
-      "confidence_score": 1.0
+      "target": "ui_use_confirm_confirmcontext"
     },
     {
       "relation": "imports",
@@ -50644,9 +50869,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_use_confirm_confirmfn",
-      "confidence_score": 1.0
+      "target": "ui_use_confirm_confirmfn"
     },
     {
       "relation": "contains",
@@ -50654,9 +50879,9 @@
       "source_file": "components/ui/confirm.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_confirm_tsx",
-      "target": "ui_confirm_confirmprovider",
-      "confidence_score": 1.0
+      "target": "ui_confirm_confirmprovider"
     },
     {
       "relation": "imports_from",
@@ -50665,9 +50890,9 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_container_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50676,9 +50901,9 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_container_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50686,9 +50911,9 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_container_tsx",
-      "target": "ui_container_container",
-      "confidence_score": 1.0
+      "target": "ui_container_container"
     },
     {
       "relation": "calls",
@@ -50707,9 +50932,9 @@
       "source_file": "components/ui/empty-state.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_empty_state_tsx",
-      "target": "ui_empty_state_emptystate",
-      "confidence_score": 1.0
+      "target": "ui_empty_state_emptystate"
     },
     {
       "relation": "contains",
@@ -50717,9 +50942,9 @@
       "source_file": "components/ui/field.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_field_tsx",
-      "target": "ui_field_field",
-      "confidence_score": 1.0
+      "target": "ui_field_field"
     },
     {
       "relation": "contains",
@@ -50727,9 +50952,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_iconprops",
-      "confidence_score": 1.0
+      "target": "ui_icons_iconprops"
     },
     {
       "relation": "contains",
@@ -50737,9 +50962,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_svg",
-      "confidence_score": 1.0
+      "target": "ui_icons_svg"
     },
     {
       "relation": "contains",
@@ -50747,9 +50972,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_checkicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_checkicon"
     },
     {
       "relation": "contains",
@@ -50757,9 +50982,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_sunicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_sunicon"
     },
     {
       "relation": "contains",
@@ -50767,9 +50992,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_moonicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_moonicon"
     },
     {
       "relation": "contains",
@@ -50777,9 +51002,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_warningicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_warningicon"
     },
     {
       "relation": "contains",
@@ -50787,9 +51012,9 @@
       "source_file": "components/ui/icons.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_icons_tsx",
-      "target": "ui_icons_saveicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_saveicon"
     },
     {
       "relation": "imports_from",
@@ -50798,9 +51023,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_theme_toggle_tsx",
-      "target": "components_ui_icons_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_icons_tsx"
     },
     {
       "relation": "imports_from",
@@ -50809,9 +51034,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "components_ui_icons_tsx",
-      "confidence_score": 1.0
+      "target": "components_ui_icons_tsx"
     },
     {
       "relation": "imports",
@@ -50820,9 +51045,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "ui_icons_checkicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_checkicon"
     },
     {
       "relation": "imports",
@@ -50831,9 +51056,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_theme_toggle_tsx",
-      "target": "ui_icons_sunicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_sunicon"
     },
     {
       "relation": "imports",
@@ -50842,9 +51067,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_theme_toggle_tsx",
-      "target": "ui_icons_moonicon",
-      "confidence_score": 1.0
+      "target": "ui_icons_moonicon"
     },
     {
       "relation": "imports_from",
@@ -50853,9 +51078,9 @@
       "source_file": "components/ui/input.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_input_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50864,9 +51089,9 @@
       "source_file": "components/ui/input.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_input_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50874,9 +51099,9 @@
       "source_file": "components/ui/input.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_input_tsx",
-      "target": "ui_input_input",
-      "confidence_score": 1.0
+      "target": "ui_input_input"
     },
     {
       "relation": "imports_from",
@@ -50885,9 +51110,9 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_note_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50896,9 +51121,9 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_note_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50906,9 +51131,9 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_note_tsx",
-      "target": "ui_note_map",
-      "confidence_score": 1.0
+      "target": "ui_note_map"
     },
     {
       "relation": "contains",
@@ -50916,9 +51141,9 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_note_tsx",
-      "target": "ui_note_note",
-      "confidence_score": 1.0
+      "target": "ui_note_note"
     },
     {
       "relation": "calls",
@@ -50938,9 +51163,9 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_select_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50949,9 +51174,9 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_select_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50959,9 +51184,9 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_select_tsx",
-      "target": "ui_select_select",
-      "confidence_score": 1.0
+      "target": "ui_select_select"
     },
     {
       "relation": "imports_from",
@@ -50970,9 +51195,9 @@
       "source_file": "components/ui/spinner.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_spinner_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -50981,9 +51206,9 @@
       "source_file": "components/ui/spinner.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_spinner_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -50991,9 +51216,9 @@
       "source_file": "components/ui/spinner.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_spinner_tsx",
-      "target": "ui_spinner_spinner",
-      "confidence_score": 1.0
+      "target": "ui_spinner_spinner"
     },
     {
       "relation": "calls",
@@ -51013,9 +51238,9 @@
       "source_file": "components/ui/switch.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_switch_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -51024,9 +51249,9 @@
       "source_file": "components/ui/switch.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_switch_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -51034,9 +51259,9 @@
       "source_file": "components/ui/switch.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_switch_tsx",
-      "target": "ui_switch_switch",
-      "confidence_score": 1.0
+      "target": "ui_switch_switch"
     },
     {
       "relation": "calls",
@@ -51056,9 +51281,9 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_table_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -51067,9 +51292,9 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_table_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -51077,9 +51302,9 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_table_tsx",
-      "target": "ui_table_table",
-      "confidence_score": 1.0
+      "target": "ui_table_table"
     },
     {
       "relation": "contains",
@@ -51087,9 +51312,9 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_table_tsx",
-      "target": "ui_table_th",
-      "confidence_score": 1.0
+      "target": "ui_table_th"
     },
     {
       "relation": "contains",
@@ -51097,9 +51322,9 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_table_tsx",
-      "target": "ui_table_td",
-      "confidence_score": 1.0
+      "target": "ui_table_td"
     },
     {
       "relation": "calls",
@@ -51141,9 +51366,9 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_textarea_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -51152,9 +51377,9 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_textarea_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -51162,9 +51387,9 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_textarea_tsx",
-      "target": "ui_textarea_textarea",
-      "confidence_score": 1.0
+      "target": "ui_textarea_textarea"
     },
     {
       "relation": "contains",
@@ -51172,9 +51397,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_theme_toggle_tsx",
-      "target": "ui_theme_toggle_themetoggle",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle_themetoggle"
     },
     {
       "relation": "imports_from",
@@ -51183,9 +51408,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "components_ui_toast_reducer_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_toast_reducer_ts"
     },
     {
       "relation": "imports",
@@ -51194,9 +51419,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "ui_toast_reducer_toastreducer",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toastreducer"
     },
     {
       "relation": "imports_from",
@@ -51205,9 +51430,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "components_ui_use_toast_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_use_toast_ts"
     },
     {
       "relation": "imports",
@@ -51216,9 +51441,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "ui_use_toast_toastcontext",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_toastcontext"
     },
     {
       "relation": "imports",
@@ -51227,9 +51452,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "ui_use_toast_toastfn",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_toastfn"
     },
     {
       "relation": "imports_from",
@@ -51238,9 +51463,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "lib_cn_ts",
-      "confidence_score": 1.0
+      "target": "lib_cn_ts"
     },
     {
       "relation": "imports",
@@ -51249,9 +51474,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "lib_cn_cn",
-      "confidence_score": 1.0
+      "target": "lib_cn_cn"
     },
     {
       "relation": "contains",
@@ -51259,9 +51484,9 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_provider_tsx",
-      "target": "ui_toast_provider_toastprovider",
-      "confidence_score": 1.0
+      "target": "ui_toast_provider_toastprovider"
     },
     {
       "relation": "imports_from",
@@ -51270,9 +51495,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "components_ui_toast_reducer_ts",
-      "confidence_score": 1.0
+      "target": "components_ui_toast_reducer_ts"
     },
     {
       "relation": "imports",
@@ -51281,9 +51506,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_toastreducer",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toastreducer"
     },
     {
       "relation": "imports",
@@ -51292,9 +51517,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_toaststate",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toaststate"
     },
     {
       "relation": "contains",
@@ -51302,9 +51527,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_test_empty",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_test_empty"
     },
     {
       "relation": "contains",
@@ -51312,9 +51537,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_test_s",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_test_s"
     },
     {
       "relation": "contains",
@@ -51322,9 +51547,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_test_s1",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_test_s1"
     },
     {
       "relation": "contains",
@@ -51332,9 +51557,9 @@
       "source_file": "components/ui/toast-reducer.test.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_test_ts",
-      "target": "ui_toast_reducer_test_s2",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_test_s2"
     },
     {
       "relation": "contains",
@@ -51342,9 +51567,9 @@
       "source_file": "components/ui/toast-reducer.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_ts",
-      "target": "ui_toast_reducer_toast",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toast"
     },
     {
       "relation": "contains",
@@ -51352,9 +51577,9 @@
       "source_file": "components/ui/toast-reducer.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_ts",
-      "target": "ui_toast_reducer_toaststate",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toaststate"
     },
     {
       "relation": "contains",
@@ -51362,9 +51587,9 @@
       "source_file": "components/ui/toast-reducer.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_ts",
-      "target": "ui_toast_reducer_toastaction",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toastaction"
     },
     {
       "relation": "contains",
@@ -51372,9 +51597,9 @@
       "source_file": "components/ui/toast-reducer.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_toast_reducer_ts",
-      "target": "ui_toast_reducer_toastreducer",
-      "confidence_score": 1.0
+      "target": "ui_toast_reducer_toastreducer"
     },
     {
       "relation": "contains",
@@ -51382,9 +51607,9 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_confirm_ts",
-      "target": "ui_use_confirm_confirmfn",
-      "confidence_score": 1.0
+      "target": "ui_use_confirm_confirmfn"
     },
     {
       "relation": "contains",
@@ -51392,9 +51617,9 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_confirm_ts",
-      "target": "ui_use_confirm_confirmcontext",
-      "confidence_score": 1.0
+      "target": "ui_use_confirm_confirmcontext"
     },
     {
       "relation": "contains",
@@ -51402,9 +51627,9 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_confirm_ts",
-      "target": "ui_use_confirm_useconfirm",
-      "confidence_score": 1.0
+      "target": "ui_use_confirm_useconfirm"
     },
     {
       "relation": "contains",
@@ -51412,9 +51637,9 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_toast_ts",
-      "target": "ui_use_toast_toastfn",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_toastfn"
     },
     {
       "relation": "contains",
@@ -51422,9 +51647,9 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_toast_ts",
-      "target": "ui_use_toast_toastcontext",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_toastcontext"
     },
     {
       "relation": "contains",
@@ -51432,9 +51657,9 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_ui_use_toast_ts",
-      "target": "ui_use_toast_usetoast",
-      "confidence_score": 1.0
+      "target": "ui_use_toast_usetoast"
     },
     {
       "relation": "imports_from",
@@ -53316,9 +53541,9 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_org_settings_ts",
-      "target": "org_settings_setorgname",
-      "confidence_score": 1.0
+      "target": "org_settings_setorgname"
     },
     {
       "relation": "calls",
@@ -60179,9 +60404,9 @@
       "source_file": "features/theme/resolve.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_theme_resolve_test_ts",
-      "target": "features_theme_resolve_ts",
-      "confidence_score": 1.0
+      "target": "features_theme_resolve_ts"
     },
     {
       "relation": "imports",
@@ -60190,9 +60415,9 @@
       "source_file": "features/theme/resolve.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_theme_resolve_test_ts",
-      "target": "theme_resolve_resolveinitialtheme",
-      "confidence_score": 1.0
+      "target": "theme_resolve_resolveinitialtheme"
     },
     {
       "relation": "contains",
@@ -60200,9 +60425,9 @@
       "source_file": "features/theme/resolve.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_theme_resolve_ts",
-      "target": "theme_resolve_theme",
-      "confidence_score": 1.0
+      "target": "theme_resolve_theme"
     },
     {
       "relation": "contains",
@@ -60210,9 +60435,9 @@
       "source_file": "features/theme/resolve.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_theme_resolve_ts",
-      "target": "theme_resolve_resolveinitialtheme",
-      "confidence_score": 1.0
+      "target": "theme_resolve_resolveinitialtheme"
     },
     {
       "relation": "imports_from",
@@ -98690,12 +98915,152 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_06_09_phase_7_dark_ready_migration_md",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_canonical_map_apply_in_every_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_1_shell_login",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_2_leady_list_detail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_3_import_lines_suppression",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_4_kampanie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_5_badania",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_6_szablony_placeholdery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_7_skrzynki_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_8_verify_dark_then_flip_the_default_theme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_task_9_gates_roadmap_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_dark_ready_token_migration_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_self_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_canonical_map_apply_in_every_task",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-dark-ready-migration.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_dark_ready_migration_task_8_verify_dark_then_flip_the_default_theme",
+      "target": "plans_2026_06_09_phase_7_dark_ready_migration_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_06_09_phase_7_design_foundation_md",
-      "target": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan"
     },
     {
       "relation": "contains",
@@ -98703,9 +99068,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_token_utility_names_defined_in_task_1_used_everywhere_after",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_token_utility_names_defined_in_task_1_used_everywhere_after"
     },
     {
       "relation": "contains",
@@ -98713,9 +99078,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_file_structure",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_file_structure"
     },
     {
       "relation": "contains",
@@ -98723,9 +99088,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts"
     },
     {
       "relation": "contains",
@@ -98733,9 +99098,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map"
     },
     {
       "relation": "contains",
@@ -98743,9 +99108,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L309",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note"
     },
     {
       "relation": "contains",
@@ -98753,9 +99118,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L412",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons"
     },
     {
       "relation": "contains",
@@ -98763,9 +99128,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L523",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook"
     },
     {
       "relation": "contains",
@@ -98773,9 +99138,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L649",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook"
     },
     {
       "relation": "contains",
@@ -98783,9 +99148,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L787",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell"
     },
     {
       "relation": "contains",
@@ -98793,9 +99158,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L909",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries"
     },
     {
       "relation": "contains",
@@ -98803,9 +99168,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L971",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body"
     },
     {
       "relation": "contains",
@@ -98813,9 +99178,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_task_10_final_gates_roadmap_graph",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_task_10_final_gates_roadmap_graph"
     },
     {
       "relation": "contains",
@@ -98823,9 +99188,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_design_foundation_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_design_foundation_self_review",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_self_review"
     },
     {
       "relation": "contains",
@@ -98833,9 +99198,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_1",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_1"
     },
     {
       "relation": "contains",
@@ -98843,9 +99208,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_2",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_2"
     },
     {
       "relation": "contains",
@@ -98853,9 +99218,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_3",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_3"
     },
     {
       "relation": "contains",
@@ -98863,9 +99228,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_4",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_4"
     },
     {
       "relation": "contains",
@@ -98873,9 +99238,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_1_tokens_theme_bootstrap_fonts",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_5",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_5"
     },
     {
       "relation": "contains",
@@ -98883,9 +99248,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_6",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_6"
     },
     {
       "relation": "contains",
@@ -98893,9 +99258,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L224",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_7",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_7"
     },
     {
       "relation": "contains",
@@ -98903,9 +99268,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L245",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_8",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_8"
     },
     {
       "relation": "contains",
@@ -98913,9 +99278,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_9",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_9"
     },
     {
       "relation": "contains",
@@ -98923,9 +99288,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_2_button_badge_pure_variant_map",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_10",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_10"
     },
     {
       "relation": "contains",
@@ -98933,9 +99298,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L316",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_11",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_11"
     },
     {
       "relation": "contains",
@@ -98943,9 +99308,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L329",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_12",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_12"
     },
     {
       "relation": "contains",
@@ -98953,9 +99318,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L349",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_13",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_13"
     },
     {
       "relation": "contains",
@@ -98963,9 +99328,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L374",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_14",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_14"
     },
     {
       "relation": "contains",
@@ -98973,9 +99338,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L388",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_15",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_15"
     },
     {
       "relation": "contains",
@@ -98983,9 +99348,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L405",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_3_form_primitives_input_textarea_select_field_note",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_16",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_16"
     },
     {
       "relation": "contains",
@@ -98993,9 +99358,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L419",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_17",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_17"
     },
     {
       "relation": "contains",
@@ -99003,9 +99368,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L434",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_18",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_18"
     },
     {
       "relation": "contains",
@@ -99013,9 +99378,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L451",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_19",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_19"
     },
     {
       "relation": "contains",
@@ -99023,9 +99388,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L475",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_20",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_20"
     },
     {
       "relation": "contains",
@@ -99033,9 +99398,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L484",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_21",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_21"
     },
     {
       "relation": "contains",
@@ -99043,9 +99408,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L500",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_22",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_22"
     },
     {
       "relation": "contains",
@@ -99053,9 +99418,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L516",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_4_card_table_switch_emptystate_spinner_icons",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_23",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_23"
     },
     {
       "relation": "contains",
@@ -99063,9 +99428,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L530",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_24",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_24"
     },
     {
       "relation": "contains",
@@ -99073,9 +99438,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L556",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_25",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_25"
     },
     {
       "relation": "contains",
@@ -99083,9 +99448,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L583",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_26",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_26"
     },
     {
       "relation": "contains",
@@ -99093,9 +99458,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L599",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_27",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_27"
     },
     {
       "relation": "contains",
@@ -99103,9 +99468,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L635",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_28",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_28"
     },
     {
       "relation": "contains",
@@ -99113,9 +99478,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L642",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_5_toast_provider_reducer_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_29",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_29"
     },
     {
       "relation": "contains",
@@ -99123,9 +99488,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L656",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_30",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_30"
     },
     {
       "relation": "contains",
@@ -99133,9 +99498,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L681",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_31",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_31"
     },
     {
       "relation": "contains",
@@ -99143,9 +99508,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L709",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_32",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_32"
     },
     {
       "relation": "contains",
@@ -99153,9 +99518,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L726",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_33",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_33"
     },
     {
       "relation": "contains",
@@ -99163,9 +99528,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L780",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_6_confirmdialog_native_dialog_hook",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_34",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_34"
     },
     {
       "relation": "contains",
@@ -99173,9 +99538,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L794",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_35",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_35"
     },
     {
       "relation": "contains",
@@ -99183,9 +99548,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L803",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_36",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_36"
     },
     {
       "relation": "contains",
@@ -99193,9 +99558,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L830",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_37",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_37"
     },
     {
       "relation": "contains",
@@ -99203,9 +99568,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L851",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_38",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_38"
     },
     {
       "relation": "contains",
@@ -99213,9 +99578,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L902",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_7_container_themetoggle_navlink_wire_the_app_shell",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_39",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_39"
     },
     {
       "relation": "contains",
@@ -99223,9 +99588,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L916",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_40",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_40"
     },
     {
       "relation": "contains",
@@ -99233,9 +99598,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L925",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_41",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_41"
     },
     {
       "relation": "contains",
@@ -99243,9 +99608,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L944",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_42",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_42"
     },
     {
       "relation": "contains",
@@ -99253,9 +99618,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L953",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_43",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_43"
     },
     {
       "relation": "contains",
@@ -99263,9 +99628,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L964",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_8_route_boundaries",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_44",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_44"
     },
     {
       "relation": "contains",
@@ -99273,9 +99638,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L982",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_45",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_45"
     },
     {
       "relation": "contains",
@@ -99283,9 +99648,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L997",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_46",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_46"
     },
     {
       "relation": "contains",
@@ -99293,9 +99658,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1026",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_47",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_47"
     },
     {
       "relation": "contains",
@@ -99303,9 +99668,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1062",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_48",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_48"
     },
     {
       "relation": "contains",
@@ -99313,9 +99678,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1090",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_49",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_49"
     },
     {
       "relation": "contains",
@@ -99323,9 +99688,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_50",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_50"
     },
     {
       "relation": "contains",
@@ -99333,9 +99698,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1178",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_9_reference_surface_ustawienia_settings_shell_fluid_body",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_51",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_51"
     },
     {
       "relation": "contains",
@@ -99343,9 +99708,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_design_foundation_task_10_final_gates_roadmap_graph",
-      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_52",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_design_foundation_codeblock_52"
     },
     {
       "relation": "contains",
@@ -101600,12 +101965,102 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_06_09_phase_7_dark_ready_migration_design_md",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_goal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_canonical_replacement_map_apply_consistently_everywhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_resolved_ambiguities_defaults_override_in_the_fresh_session_if_desired",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_files_33_grouped_into_the_plan_s_tasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_default_theme_flip_final_step_after_all_33_files_migrate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-dark-ready-migration-design.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_dark_ready_migration_design_phase_7_dark_ready_token_migration_design",
+      "target": "specs_2026_06_09_phase_7_dark_ready_migration_design_risks_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_06_09_phase_7_design_foundation_design_md",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design"
     },
     {
       "relation": "contains",
@@ -101613,9 +102068,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_goal",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_goal"
     },
     {
       "relation": "contains",
@@ -101623,9 +102078,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_visual_direction_locked_via_the_sketch",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_visual_direction_locked_via_the_sketch"
     },
     {
       "relation": "contains",
@@ -101633,9 +102088,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_scope",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_scope"
     },
     {
       "relation": "contains",
@@ -101643,9 +102098,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_decisions_resolved_2026_06_09",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_decisions_resolved_2026_06_09"
     },
     {
       "relation": "contains",
@@ -101653,9 +102108,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_architecture"
     },
     {
       "relation": "contains",
@@ -101663,9 +102118,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_files_high_level_the_plan_enumerates_every_one",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_files_high_level_the_plan_enumerates_every_one"
     },
     {
       "relation": "contains",
@@ -101673,9 +102128,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_testing",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_testing"
     },
     {
       "relation": "contains",
@@ -101683,9 +102138,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_phase_7_design_foundation_design",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_risks_notes",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_risks_notes"
     },
     {
       "relation": "contains",
@@ -101693,9 +102148,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_tokens_app_globals_css",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_tokens_app_globals_css"
     },
     {
       "relation": "contains",
@@ -101703,9 +102158,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_fonts_theme_root_layout",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_fonts_theme_root_layout"
     },
     {
       "relation": "contains",
@@ -101713,9 +102168,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_primitive_library_components_ui",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_primitive_library_components_ui"
     },
     {
       "relation": "contains",
@@ -101723,9 +102178,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_scaffolding",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_scaffolding"
     },
     {
       "relation": "contains",
@@ -101733,9 +102188,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_architecture",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_reference_surface_ustawienia",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_reference_surface_ustawienia"
     },
     {
       "relation": "contains",
@@ -101743,9 +102198,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_design_foundation_design_tokens_app_globals_css",
-      "target": "specs_2026_06_09_phase_7_design_foundation_design_codeblock_1",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_design_foundation_design_codeblock_1"
     },
     {
       "relation": "references",
@@ -103348,5 +103803,5 @@
       "source_file": "docs/superpowers/specs/2026-05-31-phase-3-templates-placeholders-campaigns-design.md"
     }
   ],
-  "built_at_commit": "b862b6ce60596946609721d84c4732baabef1a98"
+  "built_at_commit": "c9a17a7766d8b219038be1fcaa226d2aa09530cc"
 }
