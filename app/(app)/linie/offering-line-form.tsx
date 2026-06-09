@@ -11,16 +11,16 @@ export function OfferingLineForm() {
 		<form className="flex flex-wrap items-end gap-2" action={action}>
 			<label className="flex flex-col text-sm">
 				Nazwa
-				<input className="rounded border border-zinc-300 px-2 py-1" name="name" required />
+				<input className="rounded border border-border px-2 py-1" name="name" required />
 			</label>
 			<label className="flex flex-col text-sm">
 				Opis
-				<input className="rounded border border-zinc-300 px-2 py-1" name="description" />
+				<input className="rounded border border-border px-2 py-1" name="description" />
 			</label>
-			<button className="rounded bg-zinc-900 px-3 py-1.5 text-sm text-white disabled:opacity-50" type="submit" disabled={pending}>
+			<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
 				Dodaj
 			</button>
-			{state && !state.ok ? <span className="text-sm text-red-600">{state.error}</span> : null}
+			{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
 		</form>
 	)
 }

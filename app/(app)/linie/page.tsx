@@ -16,20 +16,20 @@ export default async function OfferingLinesPage() {
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Linie usług</h1>
 			<OfferingLineForm />
-			<ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+			<ul className="divide-y divide-border border-y border-border">
 				{lines.map((line) => (
 					<li className="flex items-center justify-between py-2" key={line.id}>
 						<span className="text-sm">
-							{line.name} <span className="text-zinc-400">({line._count.leads} leadów)</span>
+							{line.name} <span className="text-fg-faint">({line._count.leads} leadów)</span>
 						</span>
 						<form action={deleteOfferingLine.bind(null, line.id)}>
-							<button className="text-sm text-red-600" type="submit">
+							<button className="text-sm text-danger" type="submit">
 								Usuń
 							</button>
 						</form>
 					</li>
 				))}
-				{lines.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak linii usług.</li> : null}
+				{lines.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak linii usług.</li> : null}
 			</ul>
 		</section>
 	)

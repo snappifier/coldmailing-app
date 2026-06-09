@@ -30,7 +30,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 	return (
 		<form className="flex flex-col gap-4" action={action}>
 			<textarea
-				className="h-40 rounded border border-zinc-300 p-2 font-mono text-xs"
+				className="h-40 rounded border border-border p-2 font-mono text-xs"
 				name="text"
 				placeholder="Wklej CSV/TSV (np. z arkusza). Pierwszy wiersz = nagłówki."
 				value={text}
@@ -46,9 +46,9 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 					<table className="border-collapse text-xs">
 						<tbody>
 							{rows.map((r, ri) => (
-								<tr key={ri} className="border-b border-zinc-100">
+								<tr key={ri} className="border-b border-border">
 									{r.map((c, ci) => (
-										<td className="border border-zinc-200 px-2 py-1" key={ci}>
+										<td className="border border-border px-2 py-1" key={ci}>
 											{c}
 										</td>
 									))}
@@ -63,7 +63,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				{FIELDS.map((field) => (
 					<label className="flex flex-col text-xs" key={field.key}>
 						{field.label}
-						<select className="rounded border border-zinc-300 px-1 py-1" name={`mapping_${field.key}`} defaultValue="">
+						<select className="rounded border border-border px-1 py-1" name={`mapping_${field.key}`} defaultValue="">
 							<option value="">—</option>
 							{columnOptions.map((i) => (
 								<option key={i} value={i}>
@@ -75,13 +75,13 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				))}
 			</div>
 
-			<p className="text-xs text-zinc-500">
+			<p className="text-xs text-fg-muted">
 				Wskazówka: zmapuj kolumnę Email - bez niej leady wejdą bez adresu i nie wezmą udziału w dedupe ani wysyłce.
 			</p>
 
 			<label className="flex flex-col text-sm">
 				Przypisz do linii usługi
-				<select className="w-64 rounded border border-zinc-300 px-2 py-1" name="offeringLineId" defaultValue="">
+				<select className="w-64 rounded border border-border px-2 py-1" name="offeringLineId" defaultValue="">
 					<option value="">— brak —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
@@ -91,18 +91,18 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 				</select>
 			</label>
 
-			<button className="w-40 rounded bg-zinc-900 px-3 py-2 text-sm text-white disabled:opacity-50" type="submit" disabled={pending}>
+			<button className="w-40 rounded bg-primary px-3 py-2 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
 				{pending ? "Importuję..." : "Importuj"}
 			</button>
 
 			{state ? (
 				state.ok ? (
-					<p className="text-sm text-green-700">
+					<p className="text-sm text-success">
 						Dodano {state.created}, pominięto duplikaty: {state.duplicateCount}, na suppression: {state.suppressedCount}.
 						{state.withoutEmail > 0 ? ` Uwaga: ${state.withoutEmail} bez emaila.` : ""}
 					</p>
 				) : (
-					<p className="text-sm text-red-600">{state.error}</p>
+					<p className="text-sm text-danger">{state.error}</p>
 				)
 			) : null}
 		</form>
