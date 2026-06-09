@@ -29,18 +29,18 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 
 	return (
 		<section className="flex flex-col gap-6">
-			<Link className="text-sm text-blue-600" href="/leady">
+			<Link className="text-sm text-accent" href="/leady">
 				← Leady
 			</Link>
 			<div className="flex items-center gap-3">
 				<h1 className="text-lg font-semibold">{lead.organizationName}</h1>
-				<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">Etap: {STAGE_LABEL[lead.dealStage]}</span>
-					<span className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">Ocena: {lead.score ?? "—"} / prio {lead.priority ?? "—"}</span>
+				<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">Etap: {STAGE_LABEL[lead.dealStage]}</span>
+					<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">Ocena: {lead.score ?? "—"} / prio {lead.priority ?? "—"}</span>
 			</div>
 
 			<div className="grid gap-8 md:grid-cols-2">
 				<div className="flex flex-col gap-3">
-					<h2 className="text-sm font-semibold text-zinc-500">Dane</h2>
+					<h2 className="text-sm font-semibold text-fg-muted">Dane</h2>
 					<LeadEditForm
 						lead={{
 							id: lead.id,
@@ -63,7 +63,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 				<div className="flex flex-col gap-3">
 					<UruchomResearch leadId={lead.id} types={pickTypes.map((t) => ({id: t.id, name: t.name, kind: t.kind}))} />
 					<DraftPanel leadId={lead.id} types={draftTypes.map((t) => ({id: t.id, name: t.name}))} initial={draft ? {status: draft.status, subject: draft.subject, body: draft.body, error: draft.error} : null} />
-					<h2 className="text-sm font-semibold text-zinc-500">Oś czasu</h2>
+					<h2 className="text-sm font-semibold text-fg-muted">Oś czasu</h2>
 					<ActivityForm leadId={lead.id} />
 					<LeadTimeline items={timeline} />
 				</div>

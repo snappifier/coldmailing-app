@@ -37,7 +37,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 		<section className="flex flex-col gap-4">
 			<div className="flex items-center justify-between">
 				<h1 className="text-lg font-semibold">Leady ({leads.length})</h1>
-				<Link className="text-sm text-blue-600" href="/leady/import">
+				<Link className="text-sm text-accent" href="/leady/import">
 					Import
 				</Link>
 			</div>
@@ -47,9 +47,9 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 			<BatchResearchLauncher types={researchTypes.filter((t) => t.kind !== "DRAFT").map((t) => ({id: t.id, name: t.name, kind: t.kind}))} criteria={{offeringLineId: line, q}} />
 
 			<form className="flex flex-wrap gap-2 text-sm">
-				<input className="rounded border border-zinc-300 px-2 py-1" name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
-				<input className="w-28 rounded border border-zinc-300 px-2 py-1" name="minScore" type="number" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
-					<select className="rounded border border-zinc-300 px-2 py-1" name="line" defaultValue={line ?? ""}>
+				<input className="rounded border border-border px-2 py-1" name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
+				<input className="w-28 rounded border border-border px-2 py-1" name="minScore" type="number" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
+					<select className="rounded border border-border px-2 py-1" name="line" defaultValue={line ?? ""}>
 					<option value="">— wszystkie linie —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
@@ -57,20 +57,20 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 						</option>
 					))}
 				</select>
-				<select className="rounded border border-zinc-300 px-2 py-1" name="sort" defaultValue={sort ?? ""}>
+				<select className="rounded border border-border px-2 py-1" name="sort" defaultValue={sort ?? ""}>
 					<option value="">Najnowsze</option>
 					<option value="name">Nazwa A-Z</option>
 					<option value="priority">Priorytet</option>
 					<option value="score">Score</option>
 				</select>
-				<button className="rounded border border-zinc-300 px-3 py-1" type="submit">
+				<button className="rounded border border-border px-3 py-1" type="submit">
 					Filtruj
 				</button>
 			</form>
 
 			<table className="w-full border-collapse text-sm">
 				<thead>
-					<tr className="border-b border-zinc-300 text-left text-zinc-500">
+					<tr className="border-b border-border-strong text-left text-fg-muted">
 						<th className="py-1 pr-2">Placówka</th>
 						<th className="py-1 pr-2">Email</th>
 						<th className="py-1 pr-2">Miasto</th>
@@ -82,9 +82,9 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 				</thead>
 				<tbody>
 					{leads.map((lead) => (
-						<tr className="border-b border-zinc-100" key={lead.id}>
+						<tr className="border-b border-border" key={lead.id}>
 							<td className="py-1 pr-2">
-								<a className="text-blue-600 hover:underline" href={`/leady/${lead.id}`}>
+								<a className="text-accent hover:underline" href={`/leady/${lead.id}`}>
 									{lead.organizationName}
 								</a>
 							</td>
@@ -95,7 +95,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 							<td className="py-1 pr-2">{lead.score ?? "—"}</td>
 							<td className="py-1 pr-2 text-right">
 								<form action={deleteLead.bind(null, lead.id)}>
-									<button className="text-red-600" type="submit">
+									<button className="text-danger" type="submit">
 										Usuń
 									</button>
 								</form>
@@ -104,7 +104,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 					))}
 					{leads.length === 0 ? (
 						<tr>
-							<td className="py-2 text-zinc-500" colSpan={7}>
+							<td className="py-2 text-fg-muted" colSpan={7}>
 								Brak leadów.
 							</td>
 						</tr>

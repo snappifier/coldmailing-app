@@ -87,10 +87,10 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 	const proposed = run?.diff?.proposed ?? []
 
 	return (
-		<div className="flex flex-col gap-3 rounded border border-zinc-200 p-3">
-			<h2 className="text-sm font-semibold text-zinc-500">Research AI</h2>
+		<div className="flex flex-col gap-3 rounded border border-border p-3">
+			<h2 className="text-sm font-semibold text-fg-muted">Research AI</h2>
 			{types.length === 0 ? (
-				<p className="text-sm text-zinc-500">
+				<p className="text-sm text-fg-muted">
 					Brak typów researchu. Dodaj w{" "}
 					<Link className="underline" href="/badania">
 						Badania
@@ -100,7 +100,7 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 			) : (
 				<>
 					<div className="flex flex-wrap items-end gap-2 text-sm">
-						<select className="rounded border border-zinc-300 px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
+						<select className="rounded border border-border px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
 							{types.map((t) => (
 								<option key={t.id} value={t.id}>
 									{t.kind === "SCORING" ? "[Ocena] " : t.kind === "CONTENT" ? "[Treść] " : ""}
@@ -108,22 +108,22 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 								</option>
 							))}
 						</select>
-						<select className="rounded border border-zinc-300 px-2 py-1" value={mode} onChange={(e) => setMode(e.target.value as "AUTO" | "MANUAL")}>
+						<select className="rounded border border-border px-2 py-1" value={mode} onChange={(e) => setMode(e.target.value as "AUTO" | "MANUAL")}>
 							<option value="AUTO">Auto (uzupełnij puste)</option>
 							<option value="MANUAL">Ręczne zatwierdzenie</option>
 						</select>
-						<button className="rounded bg-zinc-900 px-3 py-1.5 text-white disabled:opacity-50" type="button" disabled={busy} onClick={onRun}>
+						<button className="rounded bg-primary px-3 py-1.5 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onRun}>
 							Uruchom research
 						</button>
 					</div>
-					{error ? <p className="text-sm text-red-600">{error}</p> : null}
-					{run && (run.status === "QUEUED" || run.status === "RUNNING") ? <p className="text-sm text-zinc-500">Trwa research…</p> : null}
-					{run?.status === "FAILED" ? <p className="text-sm text-red-600">Błąd: {run.error}</p> : null}
+					{error ? <p className="text-sm text-danger">{error}</p> : null}
+					{run && (run.status === "QUEUED" || run.status === "RUNNING") ? <p className="text-sm text-fg-muted">Trwa research…</p> : null}
+					{run?.status === "FAILED" ? <p className="text-sm text-danger">Błąd: {run.error}</p> : null}
 					{run?.status === "DONE" && run.diff ? (
 						<div className="flex flex-col gap-2 text-sm">
 							{run.diff.applied.length > 0 ? (
 								<div>
-									<p className="font-medium text-green-700">Zastosowane:</p>
+									<p className="font-medium text-success">Zastosowane:</p>
 									<ul className="list-disc pl-5">
 										{run.diff.applied.map((a) => (
 											<li key={a.key}>
@@ -135,21 +135,21 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 							) : null}
 							{proposed.length > 0 ? (
 								<div>
-									<p className="font-medium text-amber-700">Propozycje (zatwierdź):</p>
+									<p className="font-medium text-warning">Propozycje (zatwierdź):</p>
 									<ul className="list-disc pl-5">
 										{proposed.map((p) => (
 											<li key={p.key}>
-												{p.label}: <span className="text-zinc-400 line-through">{String(p.current ?? "—")}</span> → {String(p.value)}
+												{p.label}: <span className="text-fg-faint line-through">{String(p.current ?? "—")}</span> → {String(p.value)}
 											</li>
 										))}
 									</ul>
-									<button className="mt-1 rounded bg-amber-600 px-3 py-1 text-white disabled:opacity-50" type="button" disabled={busy} onClick={onApply}>
+									<button className="mt-1 rounded bg-primary px-3 py-1 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onApply}>
 										Zastosuj propozycje
 									</button>
 								</div>
 							) : null}
-							{run.diff.skipped.length > 0 ? <p className="text-xs text-zinc-400">Pominięte: {run.diff.skipped.map((s) => `${s.label} (${s.reason})`).join(", ")}</p> : null}
-							{run.diff.applied.length === 0 && proposed.length === 0 ? <p className="text-sm text-zinc-500">Brak nowych danych do zastosowania.</p> : null}
+							{run.diff.skipped.length > 0 ? <p className="text-xs text-fg-faint">Pominięte: {run.diff.skipped.map((s) => `${s.label} (${s.reason})`).join(", ")}</p> : null}
+							{run.diff.applied.length === 0 && proposed.length === 0 ? <p className="text-sm text-fg-muted">Brak nowych danych do zastosowania.</p> : null}
 						</div>
 					) : null}
 				</>
