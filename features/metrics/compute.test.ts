@@ -40,9 +40,10 @@ describe("formatPct / formatInt", () => {
 		expect(formatPct(null)).toBe("—")
 	})
 	it("groups thousands with a non-breaking space", () => {
-		expect(formatInt(1312)).toBe("1 312")
+		const nbsp = String.fromCharCode(160)
+		expect(formatInt(1312)).toBe(`1${nbsp}312`)
 		expect(formatInt(42)).toBe("42")
-		expect(formatInt(1000000)).toBe("1 000 000")
+		expect(formatInt(1000000)).toBe(`1${nbsp}000${nbsp}000`)
 	})
 })
 

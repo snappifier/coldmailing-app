@@ -22,6 +22,9 @@ const KEY: Record<CampaignLeadStatus, keyof StatusBreakdown> = {
 	UNSUBSCRIBED: "unsubscribed", SKIPPED: "skipped", FAILED: "failed", DONE: "done",
 }
 
+// Non-breaking space for thousands grouping (U+00A0) so numbers never wrap mid-value.
+const NBSP = String.fromCharCode(160)
+
 export function summarizeStatuses(rows: {status: CampaignLeadStatus; count: number}[]): StatusBreakdown {
 	const b: StatusBreakdown = {pending: 0, active: 0, replied: 0, bounced: 0, unsubscribed: 0, skipped: 0, failed: 0, done: 0, total: 0}
 	for (const r of rows) {
@@ -50,7 +53,7 @@ export function formatPct(r: number | null): string {
 }
 
 export function formatInt(n: number): string {
-	return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+	return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, NBSP)
 }
 
 export function buildCampaignRows(
