@@ -36,7 +36,7 @@ function SideLink({item, active, labelCls}: {item: NavItem; active: boolean; lab
 			className={cn(
 				"relative flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
 				active
-					? "text-fg before:absolute before:bottom-1.5 before:left-0 before:top-1.5 before:w-[3px] before:rounded-r before:bg-accent"
+					? "text-fg before:absolute before:-left-2 before:bottom-1.5 before:top-1.5 before:w-[3px] before:rounded-r before:bg-accent"
 					: "text-fg-muted hover:bg-surface-2 hover:text-fg",
 			)}
 			href={item.href}
@@ -92,7 +92,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 				</div>
 
 				<details className="relative">
-					<summary className="flex cursor-pointer list-none items-center gap-2 rounded-md p-1.5 hover:bg-surface-2">
+					<summary className="flex cursor-pointer list-none items-center gap-2 rounded-md p-1.5 hover:bg-surface-2" aria-label="Menu konta">
 						<span className="grid size-7 flex-none place-items-center rounded-full bg-accent text-[10px] font-bold text-primary-fg">{initials}</span>
 						<span className={cn("min-w-0 flex-1 text-left", labelCls)}>
 							<span className="block truncate text-xs font-semibold text-fg">{user.name ?? user.email ?? "—"}</span>
