@@ -104,6 +104,14 @@ export function LeadEditForm({lead, customFields}: Props) {
 							value={row.value}
 							onChange={(e) => setRows(rows.map((r, j) => (j === i ? {...r, value: e.target.value} : r)))}
 						/>
+						<button
+							className="shrink-0 px-1 text-sm text-danger"
+							type="button"
+							aria-label="Usuń pole"
+							onClick={() => setRows(rows.filter((_, j) => j !== i))}
+						>
+							×
+						</button>
 					</div>
 				))}
 				<button className="self-start text-xs text-accent" type="button" onClick={() => setRows([...rows, {key: "", value: ""}])}>
