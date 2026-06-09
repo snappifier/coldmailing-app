@@ -3,6 +3,12 @@
 
 import {useActionState, useState} from "react"
 import {updateLead, type LeadActionResult} from "@/features/leads/actions"
+import {Input} from "@/components/ui/input"
+import {Select} from "@/components/ui/select"
+import {Textarea} from "@/components/ui/textarea"
+import {Button} from "@/components/ui/button"
+import {Field} from "@/components/ui/field"
+import {Card, CardBody} from "@/components/ui/card"
 
 interface Props {
 	lead: {
@@ -30,100 +36,90 @@ export function LeadEditForm({lead, customFields}: Props) {
 	return (
 		<form className="flex max-w-xl flex-col gap-3" action={action}>
 			<input type="hidden" name="id" value={lead.id} />
-			<label className="flex flex-col text-sm">
-				Nazwa placówki
-				<input className="rounded border border-border px-2 py-1" name="organizationName" defaultValue={lead.organizationName} required />
-			</label>
-			<label className="flex flex-col text-sm">
-				Email
-				<input className="rounded border border-border px-2 py-1" name="email" defaultValue={lead.email ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				WWW
-				<input className="rounded border border-border px-2 py-1" name="website" defaultValue={lead.website ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				Osoba
-				<input className="rounded border border-border px-2 py-1" name="contactPersonName" defaultValue={lead.contactPersonName ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				Rola
-				<input className="rounded border border-border px-2 py-1" name="contactRole" defaultValue={lead.contactRole ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				Miasto
-				<input className="rounded border border-border px-2 py-1" name="city" defaultValue={lead.city ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				Zwrot (honorific)
-				<select className="rounded border border-border px-2 py-1" name="honorific" defaultValue={lead.honorific ?? ""}>
+			<Field label="Nazwa placówki">
+				<Input name="organizationName" defaultValue={lead.organizationName} required />
+			</Field>
+			<Field label="Email">
+				<Input name="email" defaultValue={lead.email ?? ""} />
+			</Field>
+			<Field label="WWW">
+				<Input name="website" defaultValue={lead.website ?? ""} />
+			</Field>
+			<Field label="Osoba">
+				<Input name="contactPersonName" defaultValue={lead.contactPersonName ?? ""} />
+			</Field>
+			<Field label="Rola">
+				<Input name="contactRole" defaultValue={lead.contactRole ?? ""} />
+			</Field>
+			<Field label="Miasto">
+				<Input name="city" defaultValue={lead.city ?? ""} />
+			</Field>
+			<Field label="Forma grzecznościowa">
+				<Select name="honorific" defaultValue={lead.honorific ?? ""}>
 					<option value="">—</option>
 					<option value="PAN">Pan</option>
 					<option value="PANI">Pani</option>
-				</select>
-			</label>
+				</Select>
+			</Field>
 
 			<div className="flex flex-wrap gap-3">
-				<label className="flex flex-col text-sm">
-					Score (0-100)
-					<input className="w-24 rounded border border-border px-2 py-1" name="score" type="number" min={0} max={100} defaultValue={lead.score ?? ""} />
-				</label>
-				<label className="flex flex-col text-sm">
-					Priorytet (1-5)
-					<input className="w-20 rounded border border-border px-2 py-1" name="priority" type="number" min={1} max={5} defaultValue={lead.priority ?? ""} />
-				</label>
-				<label className="flex flex-col text-sm">
-					Jakość strony (1-5)
-					<input className="w-24 rounded border border-border px-2 py-1" name="siteQuality" type="number" min={1} max={5} defaultValue={lead.siteQuality ?? ""} />
-				</label>
+				<Field label="Ocena (0-100)">
+					<Input className="w-24" name="score" type="number" min={0} max={100} defaultValue={lead.score ?? ""} />
+				</Field>
+				<Field label="Priorytet (1-5)">
+					<Input className="w-20" name="priority" type="number" min={1} max={5} defaultValue={lead.priority ?? ""} />
+				</Field>
+				<Field label="Jakość strony (1-5)">
+					<Input className="w-24" name="siteQuality" type="number" min={1} max={5} defaultValue={lead.siteQuality ?? ""} />
+				</Field>
 			</div>
-			<label className="flex flex-col text-sm">
-				Hook AI
-				<input className="rounded border border-border px-2 py-1" name="aiHook" defaultValue={lead.aiHook ?? ""} />
-			</label>
-			<label className="flex flex-col text-sm">
-				Uzasadnienie / notatki AI
-				<textarea className="min-h-20 rounded border border-border px-2 py-1" name="aiNotes" defaultValue={lead.aiNotes ?? ""} />
-			</label>
+			<Field label="Hook AI">
+				<Input name="aiHook" defaultValue={lead.aiHook ?? ""} />
+			</Field>
+			<Field label="Uzasadnienie / notatki AI">
+				<Textarea name="aiNotes" defaultValue={lead.aiNotes ?? ""} />
+			</Field>
 
-			<fieldset className="flex flex-col gap-2 rounded border border-border p-2">
-				<legend className="text-xs text-fg-muted">Pola własne (customFields)</legend>
-				{rows.map((row, i) => (
-					<div className="flex gap-2" key={i}>
-						<input
-							className="w-40 rounded border border-border px-2 py-1 text-sm"
-							name="cf_key"
-							placeholder="klucz"
-							value={row.key}
-							onChange={(e) => setRows(rows.map((r, j) => (j === i ? {...r, key: e.target.value} : r)))}
-						/>
-						<input
-							className="flex-1 rounded border border-border px-2 py-1 text-sm"
-							name="cf_value"
-							placeholder="wartość"
-							value={row.value}
-							onChange={(e) => setRows(rows.map((r, j) => (j === i ? {...r, value: e.target.value} : r)))}
-						/>
-						<button
-							className="shrink-0 px-1 text-sm text-danger"
-							type="button"
-							aria-label="Usuń pole"
-							onClick={() => setRows(rows.filter((_, j) => j !== i))}
-						>
-							×
-						</button>
-					</div>
-				))}
-				<button className="self-start text-xs text-accent" type="button" onClick={() => setRows([...rows, {key: "", value: ""}])}>
-					+ dodaj pole
-				</button>
-			</fieldset>
+			<Card>
+				<CardBody className="flex flex-col gap-2">
+					<span className="text-xs text-fg-muted">Pola własne</span>
+					{rows.map((row, i) => (
+						<div className="flex gap-2" key={i}>
+							<Input
+								className="w-40"
+								name="cf_key"
+								placeholder="klucz"
+								value={row.key}
+								onChange={(e) => setRows(rows.map((r, j) => (j === i ? {...r, key: e.target.value} : r)))}
+							/>
+							<Input
+								className="flex-1"
+								name="cf_value"
+								placeholder="wartość"
+								value={row.value}
+								onChange={(e) => setRows(rows.map((r, j) => (j === i ? {...r, value: e.target.value} : r)))}
+							/>
+							<button
+								className="shrink-0 px-1 text-sm text-danger"
+								type="button"
+								aria-label="Usuń pole"
+								onClick={() => setRows(rows.filter((_, j) => j !== i))}
+							>
+								×
+							</button>
+						</div>
+					))}
+					<button className="self-start text-xs text-accent" type="button" onClick={() => setRows([...rows, {key: "", value: ""}])}>
+						+ dodaj pole
+					</button>
+				</CardBody>
+			</Card>
 
-			<button className="w-32 rounded bg-primary px-3 py-2 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
+			<Button className="w-32" variant="primary" type="submit" disabled={pending}>
 				Zapisz
-			</button>
-			{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
-			{state && state.ok ? <span className="text-sm text-success">Zapisano.</span> : null}
+			</Button>
+			{state && !state.ok ? <p className="text-sm text-danger">{state.error}</p> : null}
+			{state && state.ok ? <p className="text-sm text-success">Zapisano.</p> : null}
 		</form>
 	)
 }

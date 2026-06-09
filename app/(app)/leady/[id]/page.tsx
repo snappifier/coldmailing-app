@@ -6,6 +6,7 @@ import {requireOrg} from "@/lib/org"
 import {getLeadTimeline} from "@/features/pipeline/queries"
 import {STAGE_LABEL} from "@/features/pipeline/types"
 import {listResearchTypes} from "@/features/research-types/queries"
+import {Badge} from "@/components/ui/badge"
 import {LeadEditForm} from "./lead-edit-form"
 import {LeadTimeline} from "./timeline"
 import {ActivityForm} from "./activity-form"
@@ -34,8 +35,8 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 			</Link>
 			<div className="flex items-center gap-3">
 				<h1 className="text-lg font-semibold">{lead.organizationName}</h1>
-				<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">Etap: {STAGE_LABEL[lead.dealStage]}</span>
-					<span className="rounded bg-surface-2 px-2 py-0.5 text-xs text-fg-muted">Ocena: {lead.score ?? "—"} / prio {lead.priority ?? "—"}</span>
+				<Badge>{STAGE_LABEL[lead.dealStage]}</Badge>
+				<Badge>ocena {lead.score ?? "—"} / prio {lead.priority ?? "—"}</Badge>
 			</div>
 
 			<div className="grid gap-8 md:grid-cols-2">

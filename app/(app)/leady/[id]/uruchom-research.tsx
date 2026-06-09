@@ -5,6 +5,9 @@ import {useEffect, useRef, useState} from "react"
 import {useRouter} from "next/navigation"
 import Link from "next/link"
 import {startResearch, getResearchRun, confirmResearchApply} from "@/features/research/actions"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
+import {Spinner} from "@/components/ui/spinner"
 
 interface TypeOption {
 	id: string
@@ -88,10 +91,10 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 
 	return (
 		<div className="flex flex-col gap-3 rounded border border-border p-3">
-			<h2 className="text-sm font-semibold text-fg-muted">Research AI</h2>
+			<h2 className="text-sm font-semibold text-fg-muted">Badania AI</h2>
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
-					Brak typów researchu. Dodaj w{" "}
+					Brak typów badań. Dodaj w{" "}
 					<Link className="underline" href="/badania">
 						Badania
 					</Link>
@@ -100,24 +103,29 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 			) : (
 				<>
 					<div className="flex flex-wrap items-end gap-2 text-sm">
-						<select className="rounded border border-border px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
+						<Select value={typeId} onChange={(e) => setTypeId(e.target.value)}>
 							{types.map((t) => (
 								<option key={t.id} value={t.id}>
 									{t.kind === "SCORING" ? "[Ocena] " : t.kind === "CONTENT" ? "[Treść] " : ""}
 									{t.name}
 								</option>
 							))}
-						</select>
-						<select className="rounded border border-border px-2 py-1" value={mode} onChange={(e) => setMode(e.target.value as "AUTO" | "MANUAL")}>
+						</Select>
+						<Select value={mode} onChange={(e) => setMode(e.target.value as "AUTO" | "MANUAL")}>
 							<option value="AUTO">Auto (uzupełnij puste)</option>
 							<option value="MANUAL">Ręczne zatwierdzenie</option>
-						</select>
-						<button className="rounded bg-primary px-3 py-1.5 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onRun}>
-							Uruchom research
-						</button>
+						</Select>
+						<Button variant="primary" type="button" disabled={busy} onClick={onRun}>
+							Uruchom badania
+						</Button>
 					</div>
 					{error ? <p className="text-sm text-danger">{error}</p> : null}
-					{run && (run.status === "QUEUED" || run.status === "RUNNING") ? <p className="text-sm text-fg-muted">Trwa research…</p> : null}
+					{run && (run.status === "QUEUED" || run.status === "RUNNING") ? (
+						<p className="flex items-center gap-2 text-sm text-fg-muted">
+							<Spinner />
+							Trwa badanie…
+						</p>
+					) : null}
 					{run?.status === "FAILED" ? <p className="text-sm text-danger">Błąd: {run.error}</p> : null}
 					{run?.status === "DONE" && run.diff ? (
 						<div className="flex flex-col gap-2 text-sm">
@@ -143,9 +151,9 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 											</li>
 										))}
 									</ul>
-									<button className="mt-1 rounded bg-primary px-3 py-1 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onApply}>
+									<Button className="mt-1" variant="primary" type="button" disabled={busy} onClick={onApply}>
 										Zastosuj propozycje
-									</button>
+									</Button>
 								</div>
 							) : null}
 							{run.diff.skipped.length > 0 ? <p className="text-xs text-fg-faint">Pominięte: {run.diff.skipped.map((s) => `${s.label} (${s.reason})`).join(", ")}</p> : null}

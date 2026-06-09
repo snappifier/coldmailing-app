@@ -4,8 +4,15 @@ import type {Prisma} from "@/generated/prisma/client"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteLead} from "@/features/leads/actions"
+import {STAGE_LABEL} from "@/features/pipeline/types"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {listResearchTypes} from "@/features/research-types/queries"
+import {Input} from "@/components/ui/input"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
+import {Table, Th, Td} from "@/components/ui/table"
+import {Badge} from "@/components/ui/badge"
+import {EmptyState} from "@/components/ui/empty-state"
 import {LeadForm} from "./lead-form"
 import {BatchResearchLauncher} from "./batch-research-launcher"
 
@@ -39,7 +46,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 			<div className="flex items-center justify-between">
 				<h1 className="text-lg font-semibold">Leady ({leads.length})</h1>
 				<Link className="text-sm text-accent" href="/leady/import">
-					Import
+					Importuj
 				</Link>
 			</div>
 
@@ -48,66 +55,63 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 			<BatchResearchLauncher types={researchTypes.filter((t) => t.kind !== "DRAFT").map((t) => ({id: t.id, name: t.name, kind: t.kind}))} criteria={{offeringLineId: line, q}} />
 
 			<form className="flex flex-wrap gap-2 text-sm">
-				<input className="rounded border border-border px-2 py-1" name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
-				<input className="w-28 rounded border border-border px-2 py-1" name="minScore" type="number" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
-					<select className="rounded border border-border px-2 py-1" name="line" defaultValue={line ?? ""}>
+				<Input name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
+				<Input className="w-28" name="minScore" type="number" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
+				<Select name="line" defaultValue={line ?? ""}>
 					<option value="">— wszystkie linie —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
 							{l.name}
 						</option>
 					))}
-				</select>
-				<select className="rounded border border-border px-2 py-1" name="sort" defaultValue={sort ?? ""}>
+				</Select>
+				<Select name="sort" defaultValue={sort ?? ""}>
 					<option value="">Najnowsze</option>
 					<option value="name">Nazwa A-Z</option>
 					<option value="priority">Priorytet</option>
 					<option value="score">Score</option>
-				</select>
-				<button className="rounded border border-border px-3 py-1" type="submit">
-					Filtruj
-				</button>
+				</Select>
+				<Button type="submit">Filtruj</Button>
 			</form>
 
-			<table className="w-full border-collapse text-sm">
-				<thead>
-					<tr className="border-b border-border-strong text-left text-fg-muted">
-						<th className="py-1 pr-2">Placówka</th>
-						<th className="py-1 pr-2">Email</th>
-						<th className="py-1 pr-2">Miasto</th>
-						<th className="py-1 pr-2">Linia</th>
-						<th className="py-1 pr-2">Etap</th>
-						<th className="py-1 pr-2">Score</th>
-						<th className="py-1 pr-2"></th>
-					</tr>
-				</thead>
-				<tbody>
-					{leads.map((lead) => (
-						<tr className="border-b border-border" key={lead.id}>
-							<td className="py-1 pr-2">
-								<a className="text-accent hover:underline" href={`/leady/${lead.id}`}>
-									{lead.organizationName}
-								</a>
-							</td>
-							<td className="py-1 pr-2">{lead.email ?? "—"}</td>
-							<td className="py-1 pr-2">{lead.city ?? "—"}</td>
-							<td className="py-1 pr-2">{lead.offeringLine?.name ?? "—"}</td>
-							<td className="py-1 pr-2">{lead.dealStage}</td>
-							<td className="py-1 pr-2">{lead.score ?? "—"}</td>
-							<td className="py-1 pr-2 text-right">
-								<ConfirmButton action={deleteLead.bind(null, lead.id)} confirm={{title: "Usunąć leada?", body: "Lead i jego dane zostaną usunięte. Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto leada">Usuń</ConfirmButton>
-							</td>
-						</tr>
-					))}
-					{leads.length === 0 ? (
+			{leads.length === 0 ? (
+				<EmptyState title="Brak leadów" description="Dodaj pierwszego leada lub zmień kryteria filtra." />
+			) : (
+				<Table>
+					<thead>
 						<tr>
-							<td className="py-2 text-fg-muted" colSpan={7}>
-								Brak leadów.
-							</td>
+							<Th>Placówka</Th>
+							<Th>Email</Th>
+							<Th>Miasto</Th>
+							<Th>Linia</Th>
+							<Th>Etap</Th>
+							<Th>Score</Th>
+							<Th>{""}</Th>
 						</tr>
-					) : null}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{leads.map((lead) => (
+							<tr key={lead.id}>
+								<Td>
+									<a className="text-accent hover:underline" href={`/leady/${lead.id}`}>
+										{lead.organizationName}
+									</a>
+								</Td>
+								<Td>{lead.email ?? "—"}</Td>
+								<Td>{lead.city ?? "—"}</Td>
+								<Td>{lead.offeringLine?.name ?? "—"}</Td>
+								<Td>
+									<Badge>{STAGE_LABEL[lead.dealStage]}</Badge>
+								</Td>
+								<Td>{lead.score ?? "—"}</Td>
+								<Td className="text-right">
+									<ConfirmButton action={deleteLead.bind(null, lead.id)} confirm={{title: "Usunąć leada?", body: "Lead i jego dane zostaną usunięte. Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto leada">Usuń</ConfirmButton>
+								</Td>
+							</tr>
+						))}
+					</tbody>
+				</Table>
+			)}
 		</section>
 	)
 }

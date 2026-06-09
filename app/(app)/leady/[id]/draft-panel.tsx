@@ -4,6 +4,12 @@
 import {useEffect, useRef, useState} from "react"
 import Link from "next/link"
 import {startDraft, getDraft, saveDraft} from "@/features/research/draft-actions"
+import {Select} from "@/components/ui/select"
+import {Input} from "@/components/ui/input"
+import {Textarea} from "@/components/ui/textarea"
+import {Button} from "@/components/ui/button"
+import {Field} from "@/components/ui/field"
+import {Spinner} from "@/components/ui/spinner"
 
 interface TypeOption {
 	id: string
@@ -76,7 +82,7 @@ export function DraftPanel({leadId, types, initial}: {leadId: string; types: Typ
 			<h2 className="text-sm font-semibold text-fg-muted">Draft maila (AI)</h2>
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
-					Brak typów draftu. Dodaj typ „Draft” w{" "}
+					Brak typów draftu. Dodaj typ &bdquo;Draft&rdquo; w{" "}
 					<Link className="underline" href="/badania">
 						Badania
 					</Link>
@@ -85,33 +91,36 @@ export function DraftPanel({leadId, types, initial}: {leadId: string; types: Typ
 			) : (
 				<>
 					<div className="flex flex-wrap items-end gap-2 text-sm">
-						<select className="rounded border border-border px-2 py-1" value={typeId} onChange={(e) => setTypeId(e.target.value)}>
+						<Select value={typeId} onChange={(e) => setTypeId(e.target.value)}>
 							{types.map((t) => (
 								<option key={t.id} value={t.id}>
 									{t.name}
 								</option>
 							))}
-						</select>
-						<button className="rounded bg-primary px-3 py-1.5 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onGenerate}>
+						</Select>
+						<Button variant="primary" type="button" disabled={busy} onClick={onGenerate}>
 							Generuj draft
-						</button>
+						</Button>
 					</div>
 					{msg ? <p className="text-sm text-fg">{msg}</p> : null}
-					{draft && (draft.status === "QUEUED" || draft.status === "RUNNING") ? <p className="text-sm text-fg-muted">Generowanie draftu…</p> : null}
+					{draft && (draft.status === "QUEUED" || draft.status === "RUNNING") ? (
+						<p className="flex items-center gap-2 text-sm text-fg-muted">
+							<Spinner />
+							Generowanie draftu…
+						</p>
+					) : null}
 					{draft?.status === "FAILED" ? <p className="text-sm text-danger">Błąd: {draft.error}</p> : null}
 					{draft && draft.status === "DONE" ? (
 						<div className="flex flex-col gap-2 text-sm">
-							<label className="flex flex-col gap-1">
-								<span className="text-xs text-fg-muted">Temat</span>
-								<input className="rounded border border-border px-2 py-1" value={subject} onChange={(e) => setSubject(e.target.value)} />
-							</label>
-							<label className="flex flex-col gap-1">
-								<span className="text-xs text-fg-muted">Treść</span>
-								<textarea className="min-h-40 rounded border border-border px-2 py-1" value={body} onChange={(e) => setBody(e.target.value)} />
-							</label>
-							<button className="self-start rounded bg-primary px-3 py-1 text-primary-fg disabled:opacity-50" type="button" disabled={busy} onClick={onSave}>
+							<Field label="Temat">
+								<Input value={subject} onChange={(e) => setSubject(e.target.value)} />
+							</Field>
+							<Field label="Treść">
+								<Textarea className="min-h-40" value={body} onChange={(e) => setBody(e.target.value)} />
+							</Field>
+							<Button className="self-start" variant="primary" type="button" disabled={busy} onClick={onSave}>
 								Zapisz draft
-							</button>
+							</Button>
 						</div>
 					) : null}
 				</>
