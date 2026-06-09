@@ -36,6 +36,18 @@
 			"runtimeExecutable": "python",
 			"runtimeArgs": ["-m", "http.server", "4609", "--directory", "docs/superpowers/design/shell-mock-refine"],
 			"port": 4609
+		},
+		{
+			"name": "polish-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4611", "--directory", "docs/superpowers/design/polish-mock"],
+			"port": 4611
+		},
+		{
+			"name": "list-style-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4613", "--directory", "docs/superpowers/design/list-style-mock"],
+			"port": 4613
 		}
 	]
 }
