@@ -1,7 +1,7 @@
 // components/ui/badge.tsx
 import {cn} from "@/lib/cn"
 
-type BadgeVariant = "neutral" | "ok" | "warn" | "bad" | "info"
+export type BadgeVariant = "neutral" | "ok" | "warn" | "bad" | "info"
 
 const MAP: Record<BadgeVariant, string> = {
 	neutral: "bg-surface-3 text-fg-muted border border-border",
