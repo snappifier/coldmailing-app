@@ -12,6 +12,18 @@
 			"runtimeExecutable": "python",
 			"runtimeArgs": ["-m", "http.server", "4601", "--directory", "docs/superpowers/design/deliverability-mock"],
 			"port": 4601
+		},
+		{
+			"name": "dashboards-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4603", "--directory", "docs/superpowers/design/dashboards-mock"],
+			"port": 4603
+		},
+		{
+			"name": "dashboards-rate-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4605", "--directory", "docs/superpowers/design/dashboards-rate-mock"],
+			"port": 4605
 		}
 	]
 }

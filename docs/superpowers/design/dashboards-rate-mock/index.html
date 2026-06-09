@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mianownik wskaźników — porównanie</title>
+<style>
+	:root{
+		--bg:#08090a; --bg-glow:#0e1014;
+		--s1:#131316; --s2:#1a1a1f; --s3:#212127;
+		--border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.15);
+		--fg:#f3f3f4; --muted:#9a9aa3; --faint:#66666f;
+		--accent:#7c86dd; --accent-quiet:rgba(124,134,221,.15);
+		--success:#3ddc97; --success-quiet:rgba(61,220,151,.13);
+		--warning:#f5c451; --warning-quiet:rgba(245,196,81,.13);
+		--danger:#ff6b6b;
+	}
+	*{box-sizing:border-box}
+	body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,var(--bg-glow),var(--bg));color:var(--fg);
+		font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.006em;padding:26px 22px 50px}
+	.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+	h1{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:0}
+	.sub{color:var(--muted);font-size:13px;margin:-8px 0 0}
+	.scn{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:15px;display:flex;flex-direction:column;gap:12px}
+	.scn h2{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:0}
+	.stack{display:flex;height:26px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+	.seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#0a0a0b}
+	.seg.c{background:var(--accent)} .seg.p{background:var(--s3);color:var(--muted)} .seg.s{background:#3a3a42;color:var(--muted)} .seg.f{background:var(--danger);opacity:.7;color:#0a0a0b}
+	.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+	.legend b{color:var(--fg);font-variant-numeric:tabular-nums}
+	.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:middle}
+	.events{display:flex;gap:18px;font-size:13px;border-top:1px solid var(--border);padding-top:11px}
+	.events b{font-variant-numeric:tabular-nums}
+	.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+	@media(max-width:680px){.cols{grid-template-columns:1fr}}
+	.panel{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:15px;display:flex;flex-direction:column;gap:12px}
+	.panel.rec{border-color:var(--accent)}
+	.phead{display:flex;align-items:baseline;gap:8px}
+	.phead .tag{font-size:10.5px;font-weight:700;color:var(--accent)}
+	.phead h3{font-size:14px;font-weight:600;margin:0}
+	.phead .den{margin-left:auto;font-size:11.5px;color:var(--faint)}
+	.rec .phead .tag{color:var(--success)}
+	.metric{display:flex;align-items:baseline;justify-content:space-between;font-size:13px;border-bottom:1px solid var(--border);padding-bottom:9px}
+	.metric:last-child{border-bottom:none;padding-bottom:0}
+	.metric .nm{color:var(--muted)}
+	.metric .pct{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+	.metric .frac{font-size:11px;color:var(--faint);margin-left:7px}
+	.note{font-size:11.5px;line-height:1.5;color:var(--muted);border-top:1px solid var(--border);padding-top:10px}
+	.note.good{color:var(--success)} .note.warn{color:var(--warning)}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<h1>Mianownik wskaźników — ta sama kampania, dwa sposoby liczenia</h1>
+	<p class="sub">Identyczne liczby zdarzeń. Różni się tylko to, przez co dzielimy.</p>
+
+	<div class="scn">
+		<h2>Kampania (600 przypisanych leadów)</h2>
+		<div class="stack">
+			<div class="seg c" style="width:66.7%">Skontaktowani 400</div>
+			<div class="seg p" style="width:30%">PENDING 180</div>
+			<div class="seg s" style="width:1.7%"></div>
+			<div class="seg f" style="width:1.6%"></div>
+		</div>
+		<div class="legend">
+			<span><span class="dot" style="background:var(--accent)"></span>Skontaktowani (min. 1 mail) <b>400</b></span>
+			<span><span class="dot" style="background:var(--s3)"></span>PENDING (niewysłane) <b>180</b></span>
+			<span><span class="dot" style="background:#3a3a42"></span>SKIPPED <b>10</b></span>
+			<span><span class="dot" style="background:var(--danger)"></span>FAILED <b>10</b></span>
+		</div>
+		<div class="events">
+			<span>Odpowiedzi <b>28</b></span><span>Odbicia <b>6</b></span><span>Rezygnacje <b>4</b></span>
+		</div>
+	</div>
+
+	<div class="cols">
+		<div class="panel rec">
+			<div class="phead"><span class="tag">A · REKOMENDACJA</span><h3>Do skontaktowanych</h3><span class="den">÷ 400</span></div>
+			<div class="metric"><span class="nm">Wskaźnik odpowiedzi</span><span><span class="pct">7,0%</span><span class="frac">28/400</span></span></div>
+			<div class="metric"><span class="nm">Odbicia</span><span><span class="pct">1,5%</span><span class="frac">6/400</span></span></div>
+			<div class="metric"><span class="nm">Rezygnacje</span><span><span class="pct">1,0%</span><span class="frac">4/400</span></span></div>
+			<p class="note good">Liczy tylko leady, do których faktycznie wyszedł mail. Wskaźnik stabilny od początku — nie spada sztucznie, gdy w kampanii czeka 180 jeszcze niewysłanych.</p>
+		</div>
+		<div class="panel">
+			<div class="phead"><span class="tag">B</span><h3>Do wszystkich przypisanych</h3><span class="den">÷ 600</span></div>
+			<div class="metric"><span class="nm">Wskaźnik odpowiedzi</span><span><span class="pct">4,7%</span><span class="frac">28/600</span></span></div>
+			<div class="metric"><span class="nm">Odbicia</span><span><span class="pct">1,0%</span><span class="frac">6/600</span></span></div>
+			<div class="metric"><span class="nm">Rezygnacje</span><span><span class="pct">0,7%</span><span class="frac">4/600</span></span></div>
+			<p class="note warn">Dzieli przez wszystkich przypisanych, w tym 180 niewysłanych + 20 SKIPPED/FAILED. Wskaźniki zaniżone, dopóki kampania się nie rozkręci; rosną w czasie nawet bez zmiany skuteczności.</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
