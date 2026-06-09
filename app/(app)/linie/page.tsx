@@ -4,6 +4,8 @@ import {requireOrg} from "@/lib/org"
 import {OfferingLineForm} from "./offering-line-form"
 import {deleteOfferingLine} from "@/features/offering-lines/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"
+import {Card} from "@/components/ui/card"
+import {EmptyState} from "@/components/ui/empty-state"
 
 export default async function OfferingLinesPage() {
 	const {orgId} = await requireOrg()
@@ -17,17 +19,25 @@ export default async function OfferingLinesPage() {
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Linie usług</h1>
 			<OfferingLineForm />
-			<ul className="divide-y divide-border border-y border-border">
-				{lines.map((line) => (
-					<li className="flex items-center justify-between py-2" key={line.id}>
-						<span className="text-sm">
-							{line.name} <span className="text-fg-faint">({line._count.leads} leadów)</span>
-						</span>
-						<ConfirmButton action={deleteOfferingLine.bind(null, line.id)} confirm={{title: "Usunąć linię usług?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto linię">Usuń</ConfirmButton>
-					</li>
-				))}
-				{lines.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak linii usług.</li> : null}
-			</ul>
+			{lines.length === 0 ? (
+				<EmptyState title="Brak linii usług" description="Dodaj pierwszą linię usług powyżej." />
+			) : (
+				<div className="flex flex-col gap-2">
+					{lines.map((line) => (
+						<Card key={line.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+							<div className="min-w-0">
+								<div className="flex items-center gap-2 text-sm font-semibold text-fg">
+									<span className="truncate">{line.name}</span>
+								</div>
+								<p className="mt-0.5 text-[12px] text-fg-faint">{[line.description, `${line._count.leads} leadów`].filter(Boolean).join(" · ")}</p>
+							</div>
+							<div className="flex-none">
+								<ConfirmButton action={deleteOfferingLine.bind(null, line.id)} confirm={{title: "Usunąć linię usług?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto linię">Usuń</ConfirmButton>
+							</div>
+						</Card>
+					))}
+				</div>
+			)}
 		</section>
 	)
 }

@@ -4,6 +4,9 @@ import {requireOrg} from "@/lib/org"
 import {deleteTemplate} from "@/features/templates/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {resolveSenderName} from "@/features/templates/sender"
+import {Card} from "@/components/ui/card"
+import {Badge} from "@/components/ui/badge"
+import {EmptyState} from "@/components/ui/empty-state"
 import {TemplateEditor} from "./template-editor"
 import type {RenderLead} from "@/features/templates/render"
 
@@ -50,23 +53,36 @@ export default async function TemplatesPage() {
 
 			<div>
 				<h2 className="mb-2 text-sm font-semibold text-fg">Biblioteka ({templates.length})</h2>
-				<ul className="divide-y divide-border border-y border-border">
-					{templates.map((t) => (
-						<li className="flex items-center justify-between py-2 text-sm" key={t.id}>
-							<span>
-								{t.name} <span className="text-fg-faint">· {t.subject}</span>
-								{t.isFollowup ? <span className="ml-1 text-fg-faint">(follow-up)</span> : null}
-								{t.offeringLine ? <span className="ml-1 text-fg-faint">· {t.offeringLine.name}</span> : null}
-							</span>
-							{t._count.sequenceSteps > 0 ? (
-								<span className="text-fg-faint">w sekwencji</span>
-							) : (
-								<ConfirmButton action={deleteTemplate.bind(null, t.id)} confirm={{title: "Usunąć szablon?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto szablon">Usuń</ConfirmButton>
-							)}
-						</li>
-					))}
-					{templates.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak szablonów.</li> : null}
-				</ul>
+				{templates.length === 0 ? (
+					<EmptyState title="Brak szablonów" description="Utwórz pierwszy szablon powyżej." />
+				) : (
+					<div className="flex flex-col gap-2">
+						{templates.map((t) => {
+							const metaParts: string[] = []
+							if (t.subject) metaParts.push(t.subject)
+							if (t.offeringLine) metaParts.push(t.offeringLine.name)
+							const metaLine = metaParts.join(" · ")
+							return (
+								<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+									<div className="min-w-0">
+										<div className="flex items-center gap-2 text-sm font-semibold text-fg">
+											<span className="truncate">{t.name}</span>
+											{t.isFollowup ? <Badge variant="info">Follow-up</Badge> : null}
+										</div>
+										{metaLine ? <p className="mt-0.5 text-[12px] text-fg-faint">{metaLine}</p> : null}
+									</div>
+									<div className="flex-none">
+										{t._count.sequenceSteps > 0 ? (
+											<span className="text-xs text-fg-faint">w sekwencji</span>
+										) : (
+											<ConfirmButton action={deleteTemplate.bind(null, t.id)} confirm={{title: "Usunąć szablon?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto szablon">Usuń</ConfirmButton>
+										)}
+									</div>
+								</Card>
+							)
+						})}
+					</div>
+				)}
 			</div>
 		</section>
 	)

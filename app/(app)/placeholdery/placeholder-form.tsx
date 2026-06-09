@@ -3,25 +3,29 @@
 
 import {useActionState} from "react"
 import {createPlaceholder, type PlaceholderResult} from "@/features/placeholders/actions"
+import {Input} from "@/components/ui/input"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
+import {PLACEHOLDER_TYPE_LABEL} from "@/features/enums/labels"
 
 export function PlaceholderForm() {
 	const [state, action, pending] = useActionState<PlaceholderResult | null, FormData>(createPlaceholder, null)
 
 	return (
 		<form className="flex flex-wrap items-end gap-2 border-b border-border pb-4" action={action}>
-			<input className="rounded border border-border px-2 py-1 text-sm" name="key" placeholder="klucz (np. branza)" required />
-			<input className="rounded border border-border px-2 py-1 text-sm" name="label" placeholder="Etykieta" required />
-			<select className="rounded border border-border px-2 py-1 text-sm" name="type" defaultValue="TEXT">
-				<option value="TEXT">TEXT</option>
-				<option value="CHOICE">CHOICE</option>
-			</select>
-			<input className="rounded border border-border px-2 py-1 text-sm" name="options" placeholder="opcje CHOICE: a, b, c" />
-			<input className="rounded border border-border px-2 py-1 text-sm" name="fallback" placeholder="fallback" />
-			<input className="rounded border border-border px-2 py-1 text-sm" name="source" placeholder="source (opcjonalnie)" />
-			<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
+			<Input className="w-36" name="key" placeholder="klucz (np. branza)" required />
+			<Input className="w-36" name="label" placeholder="Etykieta" required />
+			<Select className="w-36" name="type" defaultValue="TEXT">
+				<option value="TEXT">{PLACEHOLDER_TYPE_LABEL["TEXT"]}</option>
+				<option value="CHOICE">{PLACEHOLDER_TYPE_LABEL["CHOICE"]}</option>
+			</Select>
+			<Input className="w-48" name="options" placeholder="opcje listy wyboru: a, b, c" />
+			<Input className="w-32" name="fallback" placeholder="fallback" />
+			<Input className="w-40" name="source" placeholder="source (opcjonalnie)" />
+			<Button variant="primary" type="submit" disabled={pending}>
 				Dodaj
-			</button>
-			{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
+			</Button>
+			{state && !state.ok ? <p className="text-sm text-danger">{state.error}</p> : null}
 		</form>
 	)
 }

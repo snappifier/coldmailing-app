@@ -3,6 +3,8 @@
 
 import {useActionState} from "react"
 import {createOfferingLine, type ActionResult} from "@/features/offering-lines/actions"
+import {Input} from "@/components/ui/input"
+import {Button} from "@/components/ui/button"
 
 export function OfferingLineForm() {
 	const [state, action, pending] = useActionState<ActionResult | null, FormData>(createOfferingLine, null)
@@ -11,16 +13,16 @@ export function OfferingLineForm() {
 		<form className="flex flex-wrap items-end gap-2" action={action}>
 			<label className="flex flex-col text-sm">
 				Nazwa
-				<input className="rounded border border-border px-2 py-1" name="name" required />
+				<Input name="name" required />
 			</label>
 			<label className="flex flex-col text-sm">
 				Opis
-				<input className="rounded border border-border px-2 py-1" name="description" />
+				<Input name="description" />
 			</label>
-			<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
+			<Button variant="primary" type="submit" disabled={pending}>
 				Dodaj
-			</button>
-			{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
+			</Button>
+			{state && !state.ok ? <p className="text-sm text-danger">{state.error}</p> : null}
 		</form>
 	)
 }

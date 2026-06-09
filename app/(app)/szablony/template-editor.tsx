@@ -4,6 +4,10 @@
 import {useActionState, useRef, useState} from "react"
 import {createTemplate, type TemplateResult} from "@/features/templates/actions"
 import {renderTemplate, type RenderLead, type RenderPlaceholder} from "@/features/templates/render"
+import {Input} from "@/components/ui/input"
+import {Textarea} from "@/components/ui/textarea"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
 
 const BUILTIN = ["nazwaPlacowki", "osoba", "miasto", "www", "hookAI", "zwrot", "podpisNadawcy"]
 
@@ -54,19 +58,18 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 	return (
 		<div className="grid gap-6 lg:grid-cols-2">
 			<form className="flex flex-col gap-3" action={action}>
-				<input className="rounded border border-border px-2 py-1 text-sm" name="name" placeholder="Nazwa szablonu" required />
+				<Input name="name" placeholder="Nazwa szablonu" required />
 				<div className="flex flex-wrap gap-1">
 					{[...BUILTIN, ...customKeys].map((k) => (
-						<button className="rounded border border-border px-2 py-0.5 text-xs hover:bg-surface-2" key={k} type="button" onClick={() => insert(`{{${k}}}`)}>
+						<Button className="font-mono" key={k} variant="ghost" size="sm" type="button" onClick={() => insert(`{{${k}}}`)}>
 							{`{{${k}}}`}
-						</button>
+						</Button>
 					))}
-					<button className="rounded border border-border px-2 py-0.5 text-xs hover:bg-surface-2" type="button" onClick={() => insert("{{Szanowny|Szanowna}}")}>
+					<Button className="font-mono" variant="ghost" size="sm" type="button" onClick={() => insert("{{Szanowny|Szanowna}}")}>
 						{"{{Szanowny|Szanowna}}"}
-					</button>
+					</Button>
 				</div>
-				<textarea
-					className="rounded border border-border p-2 text-sm"
+				<Textarea
 					name="subject"
 					placeholder="Temat"
 					value={subject}
@@ -75,8 +78,8 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 					onChange={(e) => setSubject(e.target.value)}
 					required
 				/>
-				<textarea
-					className="h-48 rounded border border-border p-2 text-sm"
+				<Textarea
+					className="h-48"
 					name="body"
 					placeholder="Treść wiadomości"
 					value={body}
@@ -86,21 +89,21 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 					required
 				/>
 				<label className="flex items-center gap-2 text-sm">
-					<input name="isFollowup" type="checkbox" /> To follow-up
+					<input name="isFollowup" type="checkbox" /> Wiadomość follow-up
 				</label>
-				<select className="rounded border border-border px-2 py-1 text-sm" name="offeringLineId" defaultValue="">
+				<Select name="offeringLineId" defaultValue="">
 					<option value="">— linia usługi —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
 							{l.name}
 						</option>
 					))}
-				</select>
-				<button className="w-40 rounded bg-primary px-3 py-2 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
+				</Select>
+				<Button className="w-40" variant="primary" type="submit" disabled={pending}>
 					Zapisz szablon
-				</button>
-				{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
-				{state && state.ok ? <span className="text-sm text-success">Zapisano.</span> : null}
+				</Button>
+				{state && !state.ok ? <p className="text-sm text-danger">{state.error}</p> : null}
+				{state && state.ok ? <p className="text-sm text-success">Zapisano.</p> : null}
 			</form>
 
 			<div className="flex flex-col gap-2">
