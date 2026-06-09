@@ -48,12 +48,12 @@ function Column({stage, leads, onDropLead}: {stage: DealStage; leads: PipelineLe
 				const id = e.dataTransfer.getData("text/plain")
 				if (id) onDropLead(stage, id)
 			}}
-			className={`flex w-56 shrink-0 flex-col gap-2 rounded-lg p-2 ${over ? "bg-blue-50" : "bg-zinc-100"}`}
+			className={`flex w-56 shrink-0 flex-col gap-2 rounded-lg p-2 ${over ? "bg-accent-quiet" : "bg-surface-2"}`}
 		>
 			<button
 				type="button"
 				onClick={() => collapsible && setOpen(!open)}
-				className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-zinc-500"
+				className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-fg-muted"
 			>
 				<span>
 					{STAGE_LABEL[stage]} · {leads.length}
@@ -66,11 +66,11 @@ function Column({stage, leads, onDropLead}: {stage: DealStage; leads: PipelineLe
 						<LeadCard key={lead.id} lead={lead} />
 					))}
 					{!expanded && leads.length > CAP ? (
-						<button type="button" onClick={() => setExpanded(true)} className="text-xs text-blue-600">
+						<button type="button" onClick={() => setExpanded(true)} className="text-xs text-accent">
 							+ {leads.length - CAP} więcej
 						</button>
 					) : null}
-					{leads.length === 0 ? <div className="text-xs text-zinc-400">—</div> : null}
+					{leads.length === 0 ? <div className="text-xs text-fg-faint">—</div> : null}
 				</>
 			) : null}
 		</div>

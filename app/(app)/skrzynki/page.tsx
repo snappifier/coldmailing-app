@@ -10,19 +10,19 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 	return (
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Skrzynki wysyłkowe</h1>
-			{sp.connected ? <p className="text-sm text-green-700">Skrzynka połączona.</p> : null}
-			{sp.error === "oauth" ? <p className="text-sm text-red-600">Połączenie odrzucone lub nieprawidłowy stan.</p> : null}
-			{sp.error === "exchange" ? <p className="text-sm text-red-600">Nie udało się dokończyć połączenia. Spróbuj ponownie.</p> : null}
+			{sp.connected ? <p className="text-sm text-success">Skrzynka połączona.</p> : null}
+			{sp.error === "oauth" ? <p className="text-sm text-danger">Połączenie odrzucone lub nieprawidłowy stan.</p> : null}
+			{sp.error === "exchange" ? <p className="text-sm text-danger">Nie udało się dokończyć połączenia. Spróbuj ponownie.</p> : null}
 			<div>
-				<a className="inline-block rounded bg-zinc-900 px-3 py-1.5 text-sm text-white" href="/api/mailbox/google/connect">
+				<a className="inline-block rounded bg-primary px-3 py-1.5 text-sm text-primary-fg" href="/api/mailbox/google/connect">
 					Połącz skrzynkę Google
 				</a>
 			</div>
 			<ul className="flex flex-col gap-2">
 				{accounts.map((a) => (
-					<li className="flex items-center justify-between rounded border border-zinc-200 px-3 py-2 text-sm" key={a.id}>
+					<li className="flex items-center justify-between rounded border border-border px-3 py-2 text-sm" key={a.id}>
 						<span>
-							{a.email} <span className="text-zinc-400">· {a.status} · limit {a.dailyLimit}/dzień · {a.scope?.includes("gmail.readonly") ? "odpowiedzi: on" : "odpowiedzi: off (przepnij skrzynkę)"}</span>
+							{a.email} <span className="text-fg-faint">· {a.status} · limit {a.dailyLimit}/dzień · {a.scope?.includes("gmail.readonly") ? "odpowiedzi: on" : "odpowiedzi: off (przepnij skrzynkę)"}</span>
 						</span>
 						<form
 							action={async () => {
@@ -30,13 +30,13 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 								await disconnectEmailAccount(a.id)
 							}}
 						>
-							<button className="text-red-600" type="submit">
+							<button className="text-danger" type="submit">
 								Odłącz
 							</button>
 						</form>
 					</li>
 				))}
-				{accounts.length === 0 ? <li className="text-sm text-zinc-500">Brak połączonych skrzynek.</li> : null}
+				{accounts.length === 0 ? <li className="text-sm text-fg-muted">Brak połączonych skrzynek.</li> : null}
 			</ul>
 		</section>
 	)

@@ -18,7 +18,7 @@ export default async function PipelinePage({searchParams}: {searchParams: Promis
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Pipeline ({leads.length})</h1>
 			<form className="flex gap-2 text-sm">
-				<select className="rounded border border-zinc-300 px-2 py-1" name="line" defaultValue={line ?? ""}>
+				<select className="rounded border border-border px-2 py-1" name="line" defaultValue={line ?? ""}>
 					<option value="">— wszystkie linie —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
@@ -26,7 +26,7 @@ export default async function PipelinePage({searchParams}: {searchParams: Promis
 						</option>
 					))}
 				</select>
-				<button className="rounded border border-zinc-300 px-3 py-1" type="submit">
+				<button className="rounded border border-border px-3 py-1" type="submit">
 					Filtruj
 				</button>
 			</form>
