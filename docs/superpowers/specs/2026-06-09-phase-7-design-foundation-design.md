@@ -42,17 +42,15 @@ density; motion = **ease-out** entrances (≤300ms), snappy micro-interactions, 
 - "Skrzynki" / "Zespół" settings sections (those are `deliverability-settings` / `team-role-ui`).
 - Real settings sub-routes (we use client-side sections now; routes can come with the shell sub-project).
 
-## Decisions to confirm at review
+## Decisions (resolved 2026-06-09)
 
-1. **Reference surface depth.** Proposed: rebuild `/ustawienia` WITH the section-nav + fluid-body shell
-   (showcases the motion you designed). Alternative (leaner, closer to "pure plumbing"): only migrate the
-   existing `/ustawienia` forms onto primitives, defer the section-nav+fluid-body to the shell sub-project.
-2. **Motion library.** Proposed: add **`motion`** (the Motion library, `motion/react`) for the fluid-body
-   transition (`AnimatePresence`) + a `useReducedMotion` hook; CSS + easing tokens for all primitive
-   micro-interactions. Alternative (no new dep): do the fluid body with a CSS keyframe re-trigger (like the
-   sketch) / the View Transitions API.
-3. **Theme mechanism.** Proposed: hand-rolled (~15-line no-flash inline script + toggle + `localStorage`),
-   no dependency. Alternative: `next-themes` (handles SSR/flash for you, small dep).
+1. **Reference surface depth → full shell + fluid body.** `/ustawienia` is rebuilt WITH the section-nav +
+   fluid-body shell (showcases the designed motion; validates the system end-to-end).
+2. **Motion library → add `motion`.** Motion (`motion/react`) drives the fluid-body transition
+   (`AnimatePresence`) + `useReducedMotion`; CSS + easing tokens handle primitive micro-interactions. Verify
+   the current `motion` package version + import path against the official docs before installing.
+3. **Theme mechanism → hand-rolled.** ~15-line no-flash inline `<head>` script + `ThemeToggle` +
+   `localStorage`; no dependency.
 
 ## Architecture
 
