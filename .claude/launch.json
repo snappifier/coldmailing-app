@@ -24,6 +24,12 @@
 			"runtimeExecutable": "python",
 			"runtimeArgs": ["-m", "http.server", "4605", "--directory", "docs/superpowers/design/dashboards-rate-mock"],
 			"port": 4605
+		},
+		{
+			"name": "shell-mock",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4607", "--directory", "docs/superpowers/design/shell-mock"],
+			"port": 4607
 		}
 	]
 }

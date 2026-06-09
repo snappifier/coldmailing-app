@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Powłoka i nawigacja — warianty</title>
+<style>
+	:root{
+		--bg:#08090a; --bg-glow:#0e1014;
+		--s1:#131316; --s2:#1a1a1f; --s3:#212127;
+		--border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.15);
+		--fg:#f3f3f4; --muted:#9a9aa3; --faint:#66666f;
+		--accent:#7c86dd; --accent-quiet:rgba(124,134,221,.15);
+		--success:#3ddc97;
+	}
+	*{box-sizing:border-box}
+	body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,var(--bg-glow),var(--bg));color:var(--fg);
+		font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.006em;padding:22px 20px 40px}
+	.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+	h1{font-size:17px;font-weight:600;margin:0}
+	.note{font-size:12.5px;color:var(--muted);margin:-12px 0 0}
+	.variant{display:flex;flex-direction:column;gap:8px}
+	.vlabel{display:flex;align-items:baseline;gap:9px}
+	.vlabel .tag{font-size:11px;font-weight:700;color:var(--accent)}
+	.vlabel h2{font-size:14px;font-weight:600;margin:0}
+	.vlabel .desc{font-size:11.5px;color:var(--faint)}
+	.frame{height:300px;border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+	.titlebar{height:26px;background:var(--s2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 10px;flex:none}
+	.dot{width:8px;height:8px;border-radius:50%;background:var(--s3)}
+	.app{flex:1;display:flex;min-height:0}
+	/* shared nav atoms */
+	.brand{font-size:13px;font-weight:700;letter-spacing:-.02em}
+	.brand .dotmark{color:var(--accent)}
+	.link{font-size:12.5px;color:var(--muted);padding:5px 9px;border-radius:6px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+	.link.active{background:var(--s2);color:var(--fg);font-weight:500}
+	.ico{width:15px;height:15px;flex:none;color:currentColor}
+	.grouplbl{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:0 9px;margin:9px 0 3px}
+	.acct{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;background:var(--s2)}
+	.avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#4f56c6);flex:none;display:grid;place-items:center;font-size:10px;font-weight:700;color:#0a0a0b}
+	.acct .nm{font-size:11.5px;font-weight:600;line-height:1.1}
+	.acct .sub{font-size:10px;color:var(--faint)}
+	.role{font-size:9px;font-weight:700;color:var(--success);border:1px solid rgba(61,220,151,.3);border-radius:999px;padding:0 5px}
+	.content{flex:1;padding:16px;min-width:0;overflow:hidden}
+	.content h3{font-size:14px;font-weight:600;margin:0 0 10px}
+	.skel{height:11px;border-radius:4px;background:var(--s2);margin-bottom:8px}
+	.toggle{width:30px;height:17px;border-radius:999px;background:var(--s3);position:relative;flex:none}
+	.toggle::after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:var(--accent)}
+	.chev{font-size:9px;color:var(--faint)}
+
+	/* A: left sidebar grouped */
+	.sideA{width:188px;background:var(--s1);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:11px 8px;flex:none}
+	.sideA .top{display:flex;align-items:center;justify-content:space-between;padding:0 6px 4px}
+	.sideA .nav{flex:1;overflow:hidden}
+	.sideA .foot{border-top:1px solid var(--border);padding-top:8px;display:flex;flex-direction:column;gap:6px}
+
+	/* B: top bar */
+	.barB{height:46px;background:var(--s1);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px;padding:0 14px;flex:none}
+	.barB .spacer{flex:1}
+	.pill{font-size:12px;color:var(--muted);padding:5px 9px;border-radius:6px;display:flex;align-items:center;gap:5px}
+
+	/* C: icon rail */
+	.railC{width:52px;background:var(--s1);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:5px;padding:11px 0;flex:none}
+	.railC .ibtn{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;color:var(--muted)}
+	.railC .ibtn.active{background:var(--accent-quiet);color:var(--accent)}
+	.railC .grow{flex:1}
+	.expandC{width:150px;background:var(--s1);border-right:1px solid var(--border);padding:11px 8px;flex:none;display:flex;flex-direction:column}
+	.cap{font-size:9.5px;color:var(--faint);margin:0 0 6px;padding:0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<h1>Powłoka i nawigacja — 3 warianty</h1>
+	<p class="note">11 sekcji: Pulpit, Leady, Pipeline, Linie usług, Szablony, Placeholdery, Badania, Kampanie, Skrzynki, Suppression, Ustawienia. Menu konta pokazuje użytkownika + organizację + rolę.</p>
+
+	<!-- VARIANT A -->
+	<div class="variant">
+		<div class="vlabel"><span class="tag">A</span><h2>Lewy sidebar z grupami</h2><span class="desc">Stały panel po lewej, linki pogrupowane; konto na dole. Mobile: chowa się w szufladę.</span></div>
+		<div class="frame">
+			<div class="titlebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+			<div class="app">
+				<div class="sideA">
+					<div class="top"><span class="brand">cold<span class="dotmark">·</span>mail</span><span class="toggle"></span></div>
+					<div class="nav">
+						<div class="grouplbl">Sprzedaż</div>
+						<div class="link active">Pulpit</div><div class="link">Leady</div><div class="link">Pipeline</div>
+						<div class="grouplbl">Treści</div>
+						<div class="link">Linie usług</div><div class="link">Szablony</div><div class="link">Placeholdery</div>
+						<div class="grouplbl">Wysyłka</div>
+						<div class="link">Badania</div><div class="link">Kampanie</div><div class="link">Skrzynki</div><div class="link">Suppression</div>
+					</div>
+					<div class="foot">
+						<div class="link">Ustawienia</div>
+						<div class="acct"><span class="avatar">JK</span><span><span class="nm">Jan Kowalski</span><span class="sub">Acme · <span class="role">OWNER</span></span></span></div>
+					</div>
+				</div>
+				<div class="content">
+					<h3>Pulpit</h3>
+					<div class="skel" style="width:70%"></div><div class="skel" style="width:90%"></div><div class="skel" style="width:55%"></div><div class="skel" style="width:80%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- VARIANT B -->
+	<div class="variant">
+		<div class="vlabel"><span class="tag">B</span><h2>Górny pasek + grupy w rozwijankach</h2><span class="desc">Pozostaje przy obecnym układzie, ale uporządkowany: główne linki inline, reszta pod „▾", konto po prawej.</span></div>
+		<div class="frame">
+			<div class="titlebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+			<div class="app" style="flex-direction:column">
+				<div class="barB">
+					<span class="brand">cold<span class="dotmark">·</span>mail</span>
+					<div class="link active">Pulpit</div><div class="link">Leady</div><div class="link">Pipeline</div><div class="link">Kampanie</div>
+					<div class="pill">Treści <span class="chev">▾</span></div>
+					<div class="pill">Wysyłka <span class="chev">▾</span></div>
+					<span class="spacer"></span>
+					<span class="toggle"></span>
+					<div class="acct"><span class="avatar">JK</span><span><span class="nm">Jan Kowalski</span><span class="sub">Acme · <span class="role">OWNER</span></span></span> <span class="chev">▾</span></div>
+				</div>
+				<div class="content">
+					<h3>Pulpit</h3>
+					<div class="skel" style="width:70%"></div><div class="skel" style="width:90%"></div><div class="skel" style="width:55%"></div><div class="skel" style="width:80%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- VARIANT C -->
+	<div class="variant">
+		<div class="vlabel"><span class="tag">C</span><h2>Wąski rail z ikonami + panel etykiet</h2><span class="desc">Kompaktowy rail ikon (Linear-style), obok panel z nazwami sekcji. Można zwinąć do samych ikon.</span></div>
+		<div class="frame">
+			<div class="titlebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+			<div class="app">
+				<div class="railC">
+					<div class="ibtn active">◧</div><div class="ibtn">☰</div><div class="ibtn">◳</div><div class="ibtn">✎</div><div class="ibtn">⚑</div>
+					<div class="grow"></div>
+					<div class="ibtn">⚙</div><span class="avatar" title="Jan Kowalski · Acme · OWNER">JK</span>
+				</div>
+				<div class="expandC">
+					<p class="cap">Sprzedaż</p>
+					<div class="link active">Pulpit</div><div class="link">Leady</div><div class="link">Pipeline</div>
+					<p class="cap" style="margin-top:8px">Treści</p>
+					<div class="link">Szablony</div><div class="link">Placeholdery</div>
+					<p class="cap" style="margin-top:8px">Wysyłka</p>
+					<div class="link">Kampanie</div><div class="link">Skrzynki</div>
+				</div>
+				<div class="content">
+					<h3>Pulpit</h3>
+					<div class="skel" style="width:70%"></div><div class="skel" style="width:90%"></div><div class="skel" style="width:55%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
