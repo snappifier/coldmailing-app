@@ -6,6 +6,8 @@ import {requireOrg} from "@/lib/org"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {getCampaignMetrics} from "@/features/metrics/queries"
 import {formatPct, formatInt} from "@/features/metrics/compute"
+import {Badge} from "@/components/ui/badge"
+import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
 import {SequenceAndLeads} from "./sequence-and-leads"
 import {SendingControls} from "./sending-controls"
 import {LeadInbox} from "./lead-inbox"
@@ -49,7 +51,9 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 				← Kampanie
 			</Link>
 			<h1 className="text-lg font-semibold">
-				{campaign.name} <span className="text-sm font-normal text-fg-faint">· {campaign.status} · {campaign._count.campaignLeads} leadów</span>
+				{campaign.name}{" "}
+				<Badge variant={CAMPAIGN_STATUS_VARIANT[campaign.status]}>{CAMPAIGN_STATUS_LABEL[campaign.status]}</Badge>{" "}
+				<span className="text-sm font-normal text-fg-faint">· {campaign._count.campaignLeads} leadów</span>
 			</h1>
 			{metrics ? (
 				<div className="flex flex-wrap gap-5 rounded-lg border border-border bg-surface-1 p-3.5">

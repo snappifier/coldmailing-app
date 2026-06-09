@@ -5,6 +5,8 @@ import {useActionState} from "react"
 import {activateCampaign, pauseCampaign, setSendingMailbox} from "@/features/campaigns/sending-actions"
 import type {ActivateResult} from "@/features/campaigns/activation"
 import {ConfirmButton} from "@/components/ui/confirm-button"
+import {Select} from "@/components/ui/select"
+import {Button} from "@/components/ui/button"
 
 interface Props {
 	campaignId: string
@@ -26,22 +28,18 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId}: Props
 					className="flex items-end gap-2"
 					action={(formData) => setSendingMailbox(campaignId, String(formData.get("emailAccountId") ?? ""))}
 				>
-					<select className="rounded border border-border px-2 py-1 text-sm" name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
+					<Select name="emailAccountId" defaultValue={currentMailboxId ?? ""}>
 						<option value="">— skrzynka wysyłkowa —</option>
 						{mailboxes.map((m) => (
 							<option key={m.id} value={m.id}>
 								{m.email}
 							</option>
 						))}
-					</select>
-					<button className="rounded border border-border px-3 py-1.5 text-sm" type="submit">
-						Zapisz skrzynkę
-					</button>
+					</Select>
+					<Button type="submit">Zapisz skrzynkę</Button>
 				</form>
 				<form action={activateAction}>
-					<button className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={activatePending}>
-						Aktywuj wysyłkę
-					</button>
+					<Button variant="primary" type="submit" disabled={activatePending}>Aktywuj wysyłkę</Button>
 				</form>
 				<ConfirmButton action={pauseCampaign.bind(null, campaignId)} confirm={{title: "Wstrzymać kampanię?", body: "Wysyłka zostanie zatrzymana, a trwające sekwencje przerwane. Możesz wznowić później.", confirmLabel: "Wstrzymaj", danger: false}} variant="secondary" size="md" toast="Wstrzymano kampanię">
 					Pauza
