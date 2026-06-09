@@ -315,8 +315,8 @@
     "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\ROADMAP.md": {
-    "mtime": 1781023236.5273576,
-    "ast_hash": "6d7ee622e3afa5fd50082837cacb525b",
+    "mtime": 1781024754.0689473,
+    "ast_hash": "67cf4c540d48eeb57fc5f5860799ecb3",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\plans\\2026-05-30-phase-0-1-foundation-leads.md": {
@@ -1550,8 +1550,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\.claude\\launch.json": {
-    "mtime": 1781022266.348959,
-    "ast_hash": "898605d29f80fa8d40a02fb705a4765e",
+    "mtime": 1781024252.6959338,
+    "ast_hash": "d1daaa3567913fcbbad0a0606cbcc3e3",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\design\\import-mock\\index.html": {
@@ -1687,6 +1687,21 @@
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\specs\\2026-06-09-phase-7-shell-and-nav-redesign-design.md": {
     "mtime": 1781021605.5470014,
     "ast_hash": "52147d5957624e6d702313905a837b44",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\design\\list-style-mock\\index.html": {
+    "mtime": 1781024245.4615228,
+    "ast_hash": "c319e7d7dce8a3590c1f27511bfc034a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\design\\polish-mock\\index.html": {
+    "mtime": 1781024028.1005578,
+    "ast_hash": "f830cc86577fa40bdd5c605662a726ce",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\docs\\superpowers\\specs\\2026-06-09-phase-7-page-level-visual-pass-design.md": {
+    "mtime": 1781024663.3328822,
+    "ast_hash": "3d22503f2c67486ac0a342b87dd26f2b",
     "semantic_hash": ""
   }
 }
