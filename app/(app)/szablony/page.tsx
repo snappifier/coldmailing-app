@@ -48,27 +48,27 @@ export default async function TemplatesPage() {
 			/>
 
 			<div>
-				<h2 className="mb-2 text-sm font-semibold text-zinc-700">Biblioteka ({templates.length})</h2>
-				<ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+				<h2 className="mb-2 text-sm font-semibold text-fg">Biblioteka ({templates.length})</h2>
+				<ul className="divide-y divide-border border-y border-border">
 					{templates.map((t) => (
 						<li className="flex items-center justify-between py-2 text-sm" key={t.id}>
 							<span>
-								{t.name} <span className="text-zinc-400">· {t.subject}</span>
-								{t.isFollowup ? <span className="ml-1 text-zinc-400">(follow-up)</span> : null}
-								{t.offeringLine ? <span className="ml-1 text-zinc-400">· {t.offeringLine.name}</span> : null}
+								{t.name} <span className="text-fg-faint">· {t.subject}</span>
+								{t.isFollowup ? <span className="ml-1 text-fg-faint">(follow-up)</span> : null}
+								{t.offeringLine ? <span className="ml-1 text-fg-faint">· {t.offeringLine.name}</span> : null}
 							</span>
 							{t._count.sequenceSteps > 0 ? (
-								<span className="text-zinc-400">w sekwencji</span>
+								<span className="text-fg-faint">w sekwencji</span>
 							) : (
 								<form action={deleteTemplate.bind(null, t.id)}>
-									<button className="text-red-600" type="submit">
+									<button className="text-danger" type="submit">
 										Usuń
 									</button>
 								</form>
 							)}
 						</li>
 					))}
-					{templates.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak szablonów.</li> : null}
+					{templates.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak szablonów.</li> : null}
 				</ul>
 			</div>
 		</section>

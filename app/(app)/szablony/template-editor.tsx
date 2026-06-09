@@ -54,19 +54,19 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 	return (
 		<div className="grid gap-6 lg:grid-cols-2">
 			<form className="flex flex-col gap-3" action={action}>
-				<input className="rounded border border-zinc-300 px-2 py-1 text-sm" name="name" placeholder="Nazwa szablonu" required />
+				<input className="rounded border border-border px-2 py-1 text-sm" name="name" placeholder="Nazwa szablonu" required />
 				<div className="flex flex-wrap gap-1">
 					{[...BUILTIN, ...customKeys].map((k) => (
-						<button className="rounded border border-zinc-300 px-2 py-0.5 text-xs hover:bg-zinc-50" key={k} type="button" onClick={() => insert(`{{${k}}}`)}>
+						<button className="rounded border border-border px-2 py-0.5 text-xs hover:bg-surface-2" key={k} type="button" onClick={() => insert(`{{${k}}}`)}>
 							{`{{${k}}}`}
 						</button>
 					))}
-					<button className="rounded border border-zinc-300 px-2 py-0.5 text-xs hover:bg-zinc-50" type="button" onClick={() => insert("{{Szanowny|Szanowna}}")}>
+					<button className="rounded border border-border px-2 py-0.5 text-xs hover:bg-surface-2" type="button" onClick={() => insert("{{Szanowny|Szanowna}}")}>
 						{"{{Szanowny|Szanowna}}"}
 					</button>
 				</div>
 				<textarea
-					className="rounded border border-zinc-300 p-2 text-sm"
+					className="rounded border border-border p-2 text-sm"
 					name="subject"
 					placeholder="Temat"
 					value={subject}
@@ -76,7 +76,7 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 					required
 				/>
 				<textarea
-					className="h-48 rounded border border-zinc-300 p-2 text-sm"
+					className="h-48 rounded border border-border p-2 text-sm"
 					name="body"
 					placeholder="Treść wiadomości"
 					value={body}
@@ -88,7 +88,7 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 				<label className="flex items-center gap-2 text-sm">
 					<input name="isFollowup" type="checkbox" /> To follow-up
 				</label>
-				<select className="rounded border border-zinc-300 px-2 py-1 text-sm" name="offeringLineId" defaultValue="">
+				<select className="rounded border border-border px-2 py-1 text-sm" name="offeringLineId" defaultValue="">
 					<option value="">— linia usługi —</option>
 					{offeringLines.map((l) => (
 						<option key={l.id} value={l.id}>
@@ -96,29 +96,29 @@ export function TemplateEditor({offeringLines, customPlaceholders, customKeys, s
 						</option>
 					))}
 				</select>
-				<button className="w-40 rounded bg-zinc-900 px-3 py-2 text-sm text-white disabled:opacity-50" type="submit" disabled={pending}>
+				<button className="w-40 rounded bg-primary px-3 py-2 text-sm text-primary-fg disabled:opacity-50" type="submit" disabled={pending}>
 					Zapisz szablon
 				</button>
-				{state && !state.ok ? <span className="text-sm text-red-600">{state.error}</span> : null}
-				{state && state.ok ? <span className="text-sm text-green-700">Zapisano.</span> : null}
+				{state && !state.ok ? <span className="text-sm text-danger">{state.error}</span> : null}
+				{state && state.ok ? <span className="text-sm text-success">Zapisano.</span> : null}
 			</form>
 
 			<div className="flex flex-col gap-2">
-				<h2 className="text-sm font-semibold text-zinc-700">Podgląd {sampleLead ? `(${sampleLead.organizationName})` : "(brak leadów)"}</h2>
+				<h2 className="text-sm font-semibold text-fg">Podgląd {sampleLead ? `(${sampleLead.organizationName})` : "(brak leadów)"}</h2>
 				{!signatureSet ? (
-					<p className="text-xs text-amber-700">
+					<p className="text-xs text-warning">
 						Podpis nadawcy nieustawiony w Ustawieniach — podgląd i wysyłka użyją nazwy skrzynki ({previewMailboxName ?? "—"}). Ustaw podpis, aby był spójny.
 					</p>
 				) : null}
-				<div className="rounded border border-zinc-200 p-3 text-sm">
+				<div className="rounded border border-border p-3 text-sm">
 					<p className="font-medium">{preview?.subject.rendered || "—"}</p>
-					<hr className="my-2 border-zinc-100" />
+					<hr className="my-2 border-border" />
 					<p className="whitespace-pre-wrap">{preview?.body.rendered || "—"}</p>
 				</div>
 				{missing.length > 0 ? (
-					<p className="text-xs text-amber-700">Nierozwiązane / braki: {missing.join(", ")}</p>
+					<p className="text-xs text-warning">Nierozwiązane / braki: {missing.join(", ")}</p>
 				) : (
-					<p className="text-xs text-green-700">Wszystkie tokeny rozwiązane dla tego leada.</p>
+					<p className="text-xs text-success">Wszystkie tokeny rozwiązane dla tego leada.</p>
 				)}
 			</div>
 		</div>

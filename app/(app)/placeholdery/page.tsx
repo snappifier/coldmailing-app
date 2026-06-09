@@ -11,24 +11,24 @@ export default async function PlaceholdersPage() {
 	return (
 		<section className="flex flex-col gap-4">
 			<h1 className="text-lg font-semibold">Placeholdery</h1>
-			<p className="text-sm text-zinc-600">
+			<p className="text-sm text-fg-muted">
 				Wbudowane (zawsze dostępne): nazwaPlacowki, osoba, miasto, www, hookAI, zwrot, podpisNadawcy. Poniżej dodajesz własne.
 			</p>
 			<PlaceholderForm />
-			<ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+			<ul className="divide-y divide-border border-y border-border">
 				{placeholders.map((p) => (
 					<li className="flex items-center justify-between py-2 text-sm" key={p.id}>
 						<span>
-							<code>{`{{${p.key}}}`}</code> — {p.label} <span className="text-zinc-400">({p.type})</span>
+							<code>{`{{${p.key}}}`}</code> — {p.label} <span className="text-fg-faint">({p.type})</span>
 						</span>
 						<form action={deletePlaceholder.bind(null, p.id)}>
-							<button className="text-red-600" type="submit">
+							<button className="text-danger" type="submit">
 								Usuń
 							</button>
 						</form>
 					</li>
 				))}
-				{placeholders.length === 0 ? <li className="py-2 text-sm text-zinc-500">Brak własnych placeholderów.</li> : null}
+				{placeholders.length === 0 ? <li className="py-2 text-sm text-fg-muted">Brak własnych placeholderów.</li> : null}
 			</ul>
 		</section>
 	)
