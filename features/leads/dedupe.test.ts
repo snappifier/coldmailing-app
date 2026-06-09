@@ -13,6 +13,7 @@ describe("partitionLeads", () => {
 		region: null,
 		schoolType: null,
 		honorific: null,
+		customFields: null,
 	}
 
 	it("splits into insert/duplicate/suppressed by email", () => {

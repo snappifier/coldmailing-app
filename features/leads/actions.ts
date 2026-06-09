@@ -5,7 +5,7 @@ import {revalidatePath} from "next/cache"
 import {z} from "zod"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
-import {parseTable, mapRowsToLeads, type ColumnMapping} from "@/features/leads/import"
+import {parseTable, mapRowsToLeads, buildImportSpec, type ColumnTarget, type LeadFieldKey} from "@/features/leads/import"
 import {partitionLeads} from "@/features/leads/dedupe"
 import {parseScoreFields} from "@/features/leads/score-fields"
 
@@ -115,30 +115,26 @@ export async function importLeads(_prev: ImportResult | null, formData: FormData
 	const offeringLineId = String(formData.get("offeringLineId") ?? "") || null
 	if (!text.trim()) return {ok: false, error: "Wklej dane do importu"}
 
-	// Column mapping arrives as mapping_<field>=<columnIndex> ("" = unmapped)
-	const fields = [
-		"organizationName",
-		"website",
-		"contactPersonName",
-		"contactRole",
-		"email",
-		"phone",
-		"city",
-		"region",
-		"schoolType",
-		"honorific",
-	] as const
-	const mapping: ColumnMapping = {}
-	for (const field of fields) {
-		const raw = formData.get(`mapping_${field}`)
-		if (raw !== null && raw !== "") mapping[field] = Number(raw)
+	// Per-column targets arrive as target_<i>="" | "field:<key>" | "custom" with customkey_<i> for custom columns.
+	const rows = parseTable(text)
+	const columnCount = rows.reduce((max, r) => Math.max(max, r.length), 0)
+	const targets: ColumnTarget[] = []
+	for (let i = 0; i < columnCount; i++) {
+		const raw = String(formData.get(`target_${i}`) ?? "")
+		if (raw === "custom") {
+			targets.push({kind: "custom", key: String(formData.get(`customkey_${i}`) ?? "")})
+		} else if (raw.startsWith("field:")) {
+			targets.push({kind: "field", field: raw.slice(6) as LeadFieldKey})
+		} else {
+			targets.push({kind: "ignore"})
+		}
 	}
+	const {mapping, customColumns} = buildImportSpec(targets)
 	if (mapping.organizationName === undefined) {
 		return {ok: false, error: "Zmapuj kolumnę z nazwą placówki"}
 	}
 
-	const rows = parseTable(text)
-	const leads = mapRowsToLeads(rows, mapping, {hasHeader})
+	const leads = mapRowsToLeads(rows, mapping, {hasHeader, customColumns})
 	if (leads.length === 0) return {ok: false, error: "Brak wierszy z nazwą placówki"}
 
 	const emails = leads.map((l) => l.email).filter((e): e is string => !!e)
@@ -153,7 +149,7 @@ export async function importLeads(_prev: ImportResult | null, formData: FormData
 
 	if (toInsert.length > 0) {
 		await prisma.lead.createMany({
-			data: toInsert.map((l) => ({...l, organizationId: orgId, offeringLineId})),
+			data: toInsert.map((l) => ({...l, customFields: l.customFields ?? undefined, organizationId: orgId, offeringLineId})),
 		})
 	}
 
