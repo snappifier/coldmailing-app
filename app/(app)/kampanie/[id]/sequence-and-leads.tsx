@@ -48,7 +48,7 @@ export function SequenceAndLeads({campaignId, templates, offeringLines, steps}: 
 							</option>
 						))}
 					</Select>
-					<Input name="delayDays" type="number" min={0} defaultValue={0} placeholder="dni" className="w-28" />
+					<Input className="w-28" name="delayDays" type="number" min={0} defaultValue={0} placeholder="dni" />
 					<Select name="condition" defaultValue="SEND_IF_NO_REPLY">
 						<option value="ALWAYS">{CONDITION_LABEL["ALWAYS"]}</option>
 						<option value="SEND_IF_NO_REPLY">{CONDITION_LABEL["SEND_IF_NO_REPLY"]}</option>
