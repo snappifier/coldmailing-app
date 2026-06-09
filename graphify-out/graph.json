@@ -834,7 +834,7 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L1",
       "id": "app_app_error_tsx",
-      "community": 107,
+      "community": 86,
       "norm_label": "error.tsx"
     },
     {
@@ -843,7 +843,7 @@
       "source_file": "app/(app)/error.tsx",
       "source_location": "L5",
       "id": "app_error_error",
-      "community": 107,
+      "community": 86,
       "norm_label": "error()"
     },
     {
@@ -1248,7 +1248,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L1",
       "id": "app_app_leady_batch_research_launcher_tsx",
-      "community": 160,
+      "community": 184,
       "norm_label": "batch-research-launcher.tsx"
     },
     {
@@ -1257,7 +1257,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L8",
       "id": "leady_batch_research_launcher_typeoption",
-      "community": 160,
+      "community": 184,
       "norm_label": "typeoption"
     },
     {
@@ -1266,7 +1266,7 @@
       "source_file": "app/(app)/leady/batch-research-launcher.tsx",
       "source_location": "L14",
       "id": "leady_batch_research_launcher_batchresearchlauncher",
-      "community": 160,
+      "community": 184,
       "norm_label": "batchresearchlauncher()"
     },
     {
@@ -1275,7 +1275,7 @@
       "source_file": "app/(app)/leady/lead-form.tsx",
       "source_location": "L1",
       "id": "app_app_leady_lead_form_tsx",
-      "community": 2,
+      "community": 159,
       "norm_label": "lead-form.tsx"
     },
     {
@@ -1284,7 +1284,7 @@
       "source_file": "app/(app)/leady/lead-form.tsx",
       "source_location": "L7",
       "id": "leady_lead_form_leadform",
-      "community": 2,
+      "community": 159,
       "norm_label": "leadform()"
     },
     {
@@ -1338,7 +1338,7 @@
       "source_file": "app/(app)/leady/import/import-wizard.tsx",
       "source_location": "L23",
       "id": "import_import_wizard_importwizard",
-      "community": 2,
+      "community": 141,
       "norm_label": "importwizard()"
     },
     {
@@ -1347,7 +1347,7 @@
       "source_file": "app/(app)/leady/import/page.tsx",
       "source_location": "L1",
       "id": "app_app_leady_import_page_tsx",
-      "community": 110,
+      "community": 141,
       "norm_label": "page.tsx"
     },
     {
@@ -1356,7 +1356,7 @@
       "source_file": "app/(app)/leady/import/page.tsx",
       "source_location": "L6",
       "id": "import_page_importpage",
-      "community": 110,
+      "community": 141,
       "norm_label": "importpage()"
     },
     {
@@ -1437,7 +1437,7 @@
       "source_file": "app/(app)/leady/[id]/lead-edit-form.tsx",
       "source_location": "L26",
       "id": "id_lead_edit_form_leadeditform",
-      "community": 2,
+      "community": 45,
       "norm_label": "leadeditform()"
     },
     {
@@ -1455,7 +1455,7 @@
       "source_file": "app/(app)/leady/[id]/page.tsx",
       "source_location": "L16",
       "id": "id_page_leadeditpage",
-      "community": 45,
+      "community": 178,
       "norm_label": "leadeditpage()"
     },
     {
@@ -1527,7 +1527,7 @@
       "source_file": "app/(app)/leady/[id]/uruchom-research.tsx",
       "source_location": "L27",
       "id": "id_uruchom_research_uruchomresearch",
-      "community": 45,
+      "community": 113,
       "norm_label": "uruchomresearch()"
     },
     {
@@ -1536,7 +1536,7 @@
       "source_file": "app/(app)/linie/offering-line-form.tsx",
       "source_location": "L1",
       "id": "app_app_linie_offering_line_form_tsx",
-      "community": 49,
+      "community": 141,
       "norm_label": "offering-line-form.tsx"
     },
     {
@@ -1545,7 +1545,7 @@
       "source_file": "app/(app)/linie/offering-line-form.tsx",
       "source_location": "L7",
       "id": "linie_offering_line_form_offeringlineform",
-      "community": 49,
+      "community": 141,
       "norm_label": "offeringlineform()"
     },
     {
@@ -1554,7 +1554,7 @@
       "source_file": "app/(app)/linie/page.tsx",
       "source_location": "L1",
       "id": "app_app_linie_page_tsx",
-      "community": 49,
+      "community": 141,
       "norm_label": "page.tsx"
     },
     {
@@ -1563,7 +1563,7 @@
       "source_file": "app/(app)/linie/page.tsx",
       "source_location": "L8",
       "id": "linie_page_offeringlinespage",
-      "community": 49,
+      "community": 141,
       "norm_label": "offeringlinespage()"
     },
     {
@@ -1666,6 +1666,42 @@
       "norm_label": "placeholderform()"
     },
     {
+      "label": "mailbox-settings-form.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L1",
+      "id": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "community": 107,
+      "norm_label": "mailbox-settings-form.tsx"
+    },
+    {
+      "label": "DAY_LABELS",
+      "file_type": "code",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L12",
+      "id": "skrzynki_mailbox_settings_form_day_labels",
+      "community": 107,
+      "norm_label": "day_labels"
+    },
+    {
+      "label": "Account",
+      "file_type": "code",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L14",
+      "id": "skrzynki_mailbox_settings_form_account",
+      "community": 107,
+      "norm_label": "account"
+    },
+    {
+      "label": "MailboxSettingsForm()",
+      "file_type": "code",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L25",
+      "id": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "community": 107,
+      "norm_label": "mailboxsettingsform()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(app)/skrzynki/page.tsx",
@@ -1678,7 +1714,7 @@
       "label": "SkrzynkiPage()",
       "file_type": "code",
       "source_file": "app/(app)/skrzynki/page.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "id": "skrzynki_page_skrzynkipage",
       "community": 110,
       "norm_label": "skrzynkipage()"
@@ -1725,7 +1761,7 @@
       "source_file": "app/(app)/szablony/page.tsx",
       "source_location": "L1",
       "id": "app_app_szablony_page_tsx",
-      "community": 159,
+      "community": 141,
       "norm_label": "page.tsx"
     },
     {
@@ -1734,7 +1770,7 @@
       "source_file": "app/(app)/szablony/page.tsx",
       "source_location": "L10",
       "id": "szablony_page_templatespage",
-      "community": 159,
+      "community": 141,
       "norm_label": "templatespage()"
     },
     {
@@ -1815,7 +1851,7 @@
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L1",
       "id": "app_app_ustawienia_sender_signature_form_tsx",
-      "community": 187,
+      "community": 95,
       "norm_label": "sender-signature-form.tsx"
     },
     {
@@ -1995,7 +2031,7 @@
       "source_file": "components/ui/button-variants.test.ts",
       "source_location": "L1",
       "id": "components_ui_button_variants_test_ts",
-      "community": 107,
+      "community": 120,
       "norm_label": "button-variants.test.ts"
     },
     {
@@ -2004,7 +2040,7 @@
       "source_file": "components/ui/button-variants.ts",
       "source_location": "L1",
       "id": "components_ui_button_variants_ts",
-      "community": 107,
+      "community": 120,
       "norm_label": "button-variants.ts"
     },
     {
@@ -2013,7 +2049,7 @@
       "source_file": "components/ui/button-variants.ts",
       "source_location": "L2",
       "id": "ui_button_variants_buttonvariant",
-      "community": 107,
+      "community": 120,
       "norm_label": "buttonvariant"
     },
     {
@@ -2022,7 +2058,7 @@
       "source_file": "components/ui/button-variants.ts",
       "source_location": "L4",
       "id": "ui_button_variants_variants",
-      "community": 107,
+      "community": 120,
       "norm_label": "variants"
     },
     {
@@ -2031,7 +2067,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L1",
       "id": "components_ui_button_tsx",
-      "community": 107,
+      "community": 120,
       "norm_label": "button.tsx"
     },
     {
@@ -2040,7 +2076,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L6",
       "id": "ui_button_props",
-      "community": 107,
+      "community": 120,
       "norm_label": "props"
     },
     {
@@ -2049,7 +2085,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L11",
       "id": "ui_button_button",
-      "community": 107,
+      "community": 120,
       "norm_label": "button"
     },
     {
@@ -2058,7 +2094,7 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L1",
       "id": "components_ui_card_tsx",
-      "community": 107,
+      "community": 86,
       "norm_label": "card.tsx"
     },
     {
@@ -2067,7 +2103,7 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L3",
       "id": "ui_card_card",
-      "community": 107,
+      "community": 86,
       "norm_label": "card()"
     },
     {
@@ -2076,7 +2112,7 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L6",
       "id": "ui_card_cardbody",
-      "community": 107,
+      "community": 86,
       "norm_label": "cardbody()"
     },
     {
@@ -2085,7 +2121,7 @@
       "source_file": "components/ui/card.tsx",
       "source_location": "L9",
       "id": "ui_card_cardfooter",
-      "community": 107,
+      "community": 86,
       "norm_label": "cardfooter()"
     },
     {
@@ -2094,7 +2130,7 @@
       "source_file": "components/ui/confirm-button.tsx",
       "source_location": "L1",
       "id": "components_ui_confirm_button_tsx",
-      "community": 159,
+      "community": 120,
       "norm_label": "confirm-button.tsx"
     },
     {
@@ -2103,7 +2139,7 @@
       "source_file": "components/ui/confirm-button.tsx",
       "source_location": "L11",
       "id": "ui_confirm_button_props",
-      "community": 159,
+      "community": 120,
       "norm_label": "props"
     },
     {
@@ -2112,7 +2148,7 @@
       "source_file": "components/ui/confirm-button.tsx",
       "source_location": "L21",
       "id": "ui_confirm_button_confirmbutton",
-      "community": 159,
+      "community": 110,
       "norm_label": "confirmbutton()"
     },
     {
@@ -2193,7 +2229,7 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L1",
       "id": "components_ui_container_tsx",
-      "community": 10,
+      "community": 86,
       "norm_label": "container.tsx"
     },
     {
@@ -2202,7 +2238,7 @@
       "source_file": "components/ui/container.tsx",
       "source_location": "L3",
       "id": "ui_container_container",
-      "community": 10,
+      "community": 86,
       "norm_label": "container()"
     },
     {
@@ -2337,7 +2373,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L1",
       "id": "components_ui_note_tsx",
-      "community": 187,
+      "community": 86,
       "norm_label": "note.tsx"
     },
     {
@@ -2346,7 +2382,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L4",
       "id": "ui_note_map",
-      "community": 187,
+      "community": 86,
       "norm_label": "map"
     },
     {
@@ -2355,7 +2391,7 @@
       "source_file": "components/ui/note.tsx",
       "source_location": "L9",
       "id": "ui_note_note",
-      "community": 187,
+      "community": 86,
       "norm_label": "note()"
     },
     {
@@ -2454,7 +2490,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L1",
       "id": "components_ui_textarea_tsx",
-      "community": 187,
+      "community": 95,
       "norm_label": "textarea.tsx"
     },
     {
@@ -2463,7 +2499,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L5",
       "id": "ui_textarea_textarea",
-      "community": 187,
+      "community": 95,
       "norm_label": "textarea"
     },
     {
@@ -2490,7 +2526,7 @@
       "source_file": "components/ui/toast-provider.tsx",
       "source_location": "L1",
       "id": "components_ui_toast_provider_tsx",
-      "community": 162,
+      "community": 10,
       "norm_label": "toast-provider.tsx"
     },
     {
@@ -2625,7 +2661,7 @@
       "source_file": "components/ui/use-confirm.ts",
       "source_location": "L9",
       "id": "ui_use_confirm_useconfirm",
-      "community": 159,
+      "community": 184,
       "norm_label": "useconfirm()"
     },
     {
@@ -2634,7 +2670,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L1",
       "id": "components_ui_use_toast_ts",
-      "community": 162,
+      "community": 10,
       "norm_label": "use-toast.ts"
     },
     {
@@ -2643,7 +2679,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L5",
       "id": "ui_use_toast_toastfn",
-      "community": 162,
+      "community": 10,
       "norm_label": "toastfn"
     },
     {
@@ -2652,7 +2688,7 @@
       "source_file": "components/ui/use-toast.ts",
       "source_location": "L6",
       "id": "ui_use_toast_toastcontext",
-      "community": 162,
+      "community": 10,
       "norm_label": "toastcontext"
     },
     {
@@ -2886,17 +2922,35 @@
       "source_file": "features/email-accounts/actions.ts",
       "source_location": "L1",
       "id": "features_email_accounts_actions_ts",
-      "community": 110,
+      "community": 107,
       "norm_label": "actions.ts"
     },
     {
       "label": "disconnectEmailAccount()",
       "file_type": "code",
       "source_file": "features/email-accounts/actions.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "email_accounts_actions_disconnectemailaccount",
       "community": 110,
       "norm_label": "disconnectemailaccount()"
+    },
+    {
+      "label": "EmailAccountSettingsResult",
+      "file_type": "code",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L15",
+      "id": "email_accounts_actions_emailaccountsettingsresult",
+      "community": 107,
+      "norm_label": "emailaccountsettingsresult"
+    },
+    {
+      "label": "updateEmailAccountSettings()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L17",
+      "id": "email_accounts_actions_updateemailaccountsettings",
+      "community": 107,
+      "norm_label": "updateemailaccountsettings()"
     },
     {
       "label": "google-oauth.test.ts",
@@ -3007,6 +3061,123 @@
       "norm_label": "listemailaccounts()"
     },
     {
+      "label": "settings.test.ts",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L1",
+      "id": "features_email_accounts_settings_test_ts",
+      "community": 107,
+      "norm_label": "settings.test.ts"
+    },
+    {
+      "label": "ok",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L40",
+      "id": "email_accounts_settings_test_ok",
+      "community": 107,
+      "norm_label": "ok"
+    },
+    {
+      "label": "r",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L42",
+      "id": "email_accounts_settings_test_r",
+      "community": 107,
+      "norm_label": "r"
+    },
+    {
+      "label": "settings.ts",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L1",
+      "id": "features_email_accounts_settings_ts",
+      "community": 107,
+      "norm_label": "settings.ts"
+    },
+    {
+      "label": "TIMEZONES",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L2",
+      "id": "email_accounts_settings_timezones",
+      "community": 110,
+      "norm_label": "timezones"
+    },
+    {
+      "label": "parseTime()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L13",
+      "id": "email_accounts_settings_parsetime",
+      "community": 107,
+      "norm_label": "parsetime()"
+    },
+    {
+      "label": "formatTime()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L19",
+      "id": "email_accounts_settings_formattime",
+      "community": 107,
+      "norm_label": "formattime()"
+    },
+    {
+      "label": "maskToDays()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L25",
+      "id": "email_accounts_settings_masktodays",
+      "community": 107,
+      "norm_label": "masktodays()"
+    },
+    {
+      "label": "daysToMask()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L29",
+      "id": "email_accounts_settings_daystomask",
+      "community": 107,
+      "norm_label": "daystomask()"
+    },
+    {
+      "label": "isValidTimezone()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L33",
+      "id": "email_accounts_settings_isvalidtimezone",
+      "community": 107,
+      "norm_label": "isvalidtimezone()"
+    },
+    {
+      "label": "SettingsInput",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L42",
+      "id": "email_accounts_settings_settingsinput",
+      "community": 107,
+      "norm_label": "settingsinput"
+    },
+    {
+      "label": "SettingsFields",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L52",
+      "id": "email_accounts_settings_settingsfields",
+      "community": 107,
+      "norm_label": "settingsfields"
+    },
+    {
+      "label": "validateEmailAccountSettings()",
+      "file_type": "code",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L62",
+      "id": "email_accounts_settings_validateemailaccountsettings",
+      "community": 107,
+      "norm_label": "validateemailaccountsettings()"
+    },
+    {
       "label": "actions.ts",
       "file_type": "code",
       "source_file": "features/leads/actions.ts",
@@ -3048,7 +3219,7 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L28",
       "id": "leads_actions_createlead",
-      "community": 2,
+      "community": 159,
       "norm_label": "createlead()"
     },
     {
@@ -3336,7 +3507,7 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L1",
       "id": "features_leads_score_fields_test_ts",
-      "community": 2,
+      "community": 187,
       "norm_label": "score-fields.test.ts"
     },
     {
@@ -3345,7 +3516,7 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L5",
       "id": "leads_score_fields_test_from",
-      "community": 2,
+      "community": 187,
       "norm_label": "from()"
     },
     {
@@ -3354,7 +3525,7 @@
       "source_file": "features/leads/score-fields.test.ts",
       "source_location": "L11",
       "id": "leads_score_fields_test_r",
-      "community": 2,
+      "community": 187,
       "norm_label": "r"
     },
     {
@@ -3363,7 +3534,7 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L1",
       "id": "features_leads_score_fields_ts",
-      "community": 2,
+      "community": 187,
       "norm_label": "score-fields.ts"
     },
     {
@@ -3372,7 +3543,7 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L2",
       "id": "leads_score_fields_scorefields",
-      "community": 2,
+      "community": 187,
       "norm_label": "scorefields"
     },
     {
@@ -3381,7 +3552,7 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L10",
       "id": "leads_score_fields_clampint",
-      "community": 2,
+      "community": 187,
       "norm_label": "clampint()"
     },
     {
@@ -3390,7 +3561,7 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L18",
       "id": "leads_score_fields_text",
-      "community": 2,
+      "community": 187,
       "norm_label": "text()"
     },
     {
@@ -3399,7 +3570,7 @@
       "source_file": "features/leads/score-fields.ts",
       "source_location": "L23",
       "id": "leads_score_fields_parsescorefields",
-      "community": 2,
+      "community": 187,
       "norm_label": "parsescorefields()"
     },
     {
@@ -3408,7 +3579,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L1",
       "id": "features_offering_lines_actions_ts",
-      "community": 49,
+      "community": 141,
       "norm_label": "actions.ts"
     },
     {
@@ -3417,7 +3588,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L9",
       "id": "offering_lines_actions_actionresult",
-      "community": 49,
+      "community": 141,
       "norm_label": "actionresult"
     },
     {
@@ -3426,7 +3597,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L11",
       "id": "offering_lines_actions_createofferingline",
-      "community": 49,
+      "community": 141,
       "norm_label": "createofferingline()"
     },
     {
@@ -3435,7 +3606,7 @@
       "source_file": "features/offering-lines/actions.ts",
       "source_location": "L33",
       "id": "offering_lines_actions_deleteofferingline",
-      "community": 49,
+      "community": 141,
       "norm_label": "deleteofferingline()"
     },
     {
@@ -3444,7 +3615,7 @@
       "source_file": "features/offering-lines/schema.test.ts",
       "source_location": "L1",
       "id": "features_offering_lines_schema_test_ts",
-      "community": 49,
+      "community": 189,
       "norm_label": "schema.test.ts"
     },
     {
@@ -3453,7 +3624,7 @@
       "source_file": "features/offering-lines/schema.test.ts",
       "source_location": "L7",
       "id": "offering_lines_schema_test_parsed",
-      "community": 49,
+      "community": 189,
       "norm_label": "parsed"
     },
     {
@@ -3462,7 +3633,7 @@
       "source_file": "features/offering-lines/schema.test.ts",
       "source_location": "L13",
       "id": "offering_lines_schema_test_result",
-      "community": 49,
+      "community": 189,
       "norm_label": "result"
     },
     {
@@ -3471,7 +3642,7 @@
       "source_file": "features/offering-lines/schema.ts",
       "source_location": "L1",
       "id": "features_offering_lines_schema_ts",
-      "community": 49,
+      "community": 189,
       "norm_label": "schema.ts"
     },
     {
@@ -3480,7 +3651,7 @@
       "source_file": "features/offering-lines/schema.ts",
       "source_location": "L4",
       "id": "offering_lines_schema_offeringlineschema",
-      "community": 49,
+      "community": 189,
       "norm_label": "offeringlineschema"
     },
     {
@@ -3489,7 +3660,7 @@
       "source_file": "features/offering-lines/schema.ts",
       "source_location": "L14",
       "id": "offering_lines_schema_offeringlineinput",
-      "community": 49,
+      "community": 189,
       "norm_label": "offeringlineinput"
     },
     {
@@ -3498,7 +3669,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L1",
       "id": "features_org_settings_ts",
-      "community": 185,
+      "community": 95,
       "norm_label": "settings.ts"
     },
     {
@@ -3507,7 +3678,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L10",
       "id": "org_settings_modes",
-      "community": 185,
+      "community": 95,
       "norm_label": "modes"
     },
     {
@@ -3516,7 +3687,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L11",
       "id": "org_settings_detectors",
-      "community": 185,
+      "community": 95,
       "norm_label": "detectors"
     },
     {
@@ -3534,7 +3705,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L19",
       "id": "org_settings_setorginboundsettings",
-      "community": 185,
+      "community": 95,
       "norm_label": "setorginboundsettings()"
     },
     {
@@ -3543,7 +3714,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L32",
       "id": "org_settings_setsendersignature",
-      "community": 185,
+      "community": 95,
       "norm_label": "setsendersignature()"
     },
     {
@@ -3552,7 +3723,7 @@
       "source_file": "features/org/settings.ts",
       "source_location": "L40",
       "id": "org_settings_setorgname",
-      "community": 185,
+      "community": 95,
       "norm_label": "setorgname()"
     },
     {
@@ -3867,7 +4038,7 @@
       "source_file": "features/pipeline/validation.test.ts",
       "source_location": "L1",
       "id": "features_pipeline_validation_test_ts",
-      "community": 176,
+      "community": 45,
       "norm_label": "validation.test.ts"
     },
     {
@@ -3876,7 +4047,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L1",
       "id": "features_pipeline_validation_ts",
-      "community": 176,
+      "community": 45,
       "norm_label": "validation.ts"
     },
     {
@@ -3885,7 +4056,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L4",
       "id": "pipeline_validation_manual_activity_kinds",
-      "community": 176,
+      "community": 45,
       "norm_label": "manual_activity_kinds"
     },
     {
@@ -3894,7 +4065,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L6",
       "id": "pipeline_validation_addactivityschema",
-      "community": 176,
+      "community": 45,
       "norm_label": "addactivityschema"
     },
     {
@@ -3903,7 +4074,7 @@
       "source_file": "features/pipeline/validation.ts",
       "source_location": "L12",
       "id": "pipeline_validation_addactivityinput",
-      "community": 176,
+      "community": 45,
       "norm_label": "addactivityinput"
     },
     {
@@ -3948,7 +4119,7 @@
       "source_file": "features/placeholders/schema.test.ts",
       "source_location": "L1",
       "id": "features_placeholders_schema_test_ts",
-      "community": 141,
+      "community": 190,
       "norm_label": "schema.test.ts"
     },
     {
@@ -3957,7 +4128,7 @@
       "source_file": "features/placeholders/schema.test.ts",
       "source_location": "L7",
       "id": "placeholders_schema_test_p",
-      "community": 141,
+      "community": 190,
       "norm_label": "p"
     },
     {
@@ -3966,7 +4137,7 @@
       "source_file": "features/placeholders/schema.ts",
       "source_location": "L1",
       "id": "features_placeholders_schema_ts",
-      "community": 141,
+      "community": 190,
       "norm_label": "schema.ts"
     },
     {
@@ -3975,7 +4146,7 @@
       "source_file": "features/placeholders/schema.ts",
       "source_location": "L4",
       "id": "placeholders_schema_reserved_keys",
-      "community": 141,
+      "community": 190,
       "norm_label": "reserved_keys"
     },
     {
@@ -3984,7 +4155,7 @@
       "source_file": "features/placeholders/schema.ts",
       "source_location": "L6",
       "id": "placeholders_schema_placeholderschema",
-      "community": 141,
+      "community": 190,
       "norm_label": "placeholderschema"
     },
     {
@@ -3993,7 +4164,7 @@
       "source_file": "features/placeholders/schema.ts",
       "source_location": "L26",
       "id": "placeholders_schema_placeholderinput",
-      "community": 141,
+      "community": 190,
       "norm_label": "placeholderinput"
     },
     {
@@ -4659,7 +4830,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L1",
       "id": "features_research_apply_ts",
-      "community": 183,
+      "community": 113,
       "norm_label": "apply.ts"
     },
     {
@@ -4668,7 +4839,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L6",
       "id": "research_apply_column_targets",
-      "community": 183,
+      "community": 113,
       "norm_label": "column_targets"
     },
     {
@@ -4677,7 +4848,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L8",
       "id": "research_apply_leadfields",
-      "community": 183,
+      "community": 113,
       "norm_label": "leadfields"
     },
     {
@@ -4686,7 +4857,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L24",
       "id": "research_apply_applyargs",
-      "community": 183,
+      "community": 113,
       "norm_label": "applyargs"
     },
     {
@@ -4695,7 +4866,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L32",
       "id": "research_apply_computeapply",
-      "community": 183,
+      "community": 113,
       "norm_label": "computeapply()"
     },
     {
@@ -4713,7 +4884,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L72",
       "id": "research_apply_coerce",
-      "community": 183,
+      "community": 113,
       "norm_label": "coerce()"
     },
     {
@@ -4722,7 +4893,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L106",
       "id": "research_apply_normalizegender",
-      "community": 183,
+      "community": 113,
       "norm_label": "normalizegender()"
     },
     {
@@ -4731,7 +4902,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L113",
       "id": "research_apply_currentfor",
-      "community": 183,
+      "community": 113,
       "norm_label": "currentfor()"
     },
     {
@@ -4740,7 +4911,7 @@
       "source_file": "features/research/apply.ts",
       "source_location": "L124",
       "id": "research_apply_samevalue",
-      "community": 183,
+      "community": 113,
       "norm_label": "samevalue()"
     },
     {
@@ -4749,7 +4920,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L1",
       "id": "features_research_batch_actions_ts",
-      "community": 160,
+      "community": 184,
       "norm_label": "batch-actions.ts"
     },
     {
@@ -4758,7 +4929,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L17",
       "id": "research_batch_actions_previewresult",
-      "community": 160,
+      "community": 184,
       "norm_label": "previewresult"
     },
     {
@@ -4767,7 +4938,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L18",
       "id": "research_batch_actions_startbatchresult",
-      "community": 160,
+      "community": 184,
       "norm_label": "startbatchresult"
     },
     {
@@ -4776,7 +4947,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L19",
       "id": "research_batch_actions_batchactionresult",
-      "community": 160,
+      "community": 184,
       "norm_label": "batchactionresult"
     },
     {
@@ -4785,7 +4956,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L21",
       "id": "research_batch_actions_normalizecriteria",
-      "community": 160,
+      "community": 184,
       "norm_label": "normalizecriteria()"
     },
     {
@@ -4794,7 +4965,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L28",
       "id": "research_batch_actions_recentleadids",
-      "community": 160,
+      "community": 184,
       "norm_label": "recentleadids()"
     },
     {
@@ -4803,7 +4974,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L37",
       "id": "research_batch_actions_previewbatch",
-      "community": 160,
+      "community": 88,
       "norm_label": "previewbatch()"
     },
     {
@@ -4812,7 +4983,7 @@
       "source_file": "features/research/batch-actions.ts",
       "source_location": "L54",
       "id": "research_batch_actions_startbatch",
-      "community": 160,
+      "community": 184,
       "norm_label": "startbatch()"
     },
     {
@@ -4911,7 +5082,7 @@
       "source_file": "features/research/batch-progress.test.ts",
       "source_location": "L1",
       "id": "features_research_batch_progress_test_ts",
-      "community": 189,
+      "community": 184,
       "norm_label": "batch-progress.test.ts"
     },
     {
@@ -4920,7 +5091,7 @@
       "source_file": "features/research/batch-progress.test.ts",
       "source_location": "L5",
       "id": "research_batch_progress_test_counts",
-      "community": 189,
+      "community": 184,
       "norm_label": "counts()"
     },
     {
@@ -4929,7 +5100,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L1",
       "id": "features_research_batch_progress_ts",
-      "community": 189,
+      "community": 184,
       "norm_label": "batch-progress.ts"
     },
     {
@@ -4938,7 +5109,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L4",
       "id": "research_batch_progress_runstatuscounts",
-      "community": 189,
+      "community": 184,
       "norm_label": "runstatuscounts"
     },
     {
@@ -4947,7 +5118,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L12",
       "id": "research_batch_progress_batchdisplaystatus",
-      "community": 189,
+      "community": 184,
       "norm_label": "batchdisplaystatus"
     },
     {
@@ -4956,7 +5127,7 @@
       "source_file": "features/research/batch-progress.ts",
       "source_location": "L19",
       "id": "research_batch_progress_derivebatchstatus",
-      "community": 189,
+      "community": 184,
       "norm_label": "derivebatchstatus()"
     },
     {
@@ -4983,7 +5154,7 @@
       "source_file": "features/research/batch-select.test.ts",
       "source_location": "L1",
       "id": "features_research_batch_select_test_ts",
-      "community": 160,
+      "community": 88,
       "norm_label": "batch-select.test.ts"
     },
     {
@@ -4992,7 +5163,7 @@
       "source_file": "features/research/batch-select.test.ts",
       "source_location": "L15",
       "id": "research_batch_select_test_where",
-      "community": 160,
+      "community": 88,
       "norm_label": "where"
     },
     {
@@ -5001,7 +5172,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L1",
       "id": "features_research_batch_select_ts",
-      "community": 160,
+      "community": 88,
       "norm_label": "batch-select.ts"
     },
     {
@@ -5010,7 +5181,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L4",
       "id": "research_batch_select_batchcriteria",
-      "community": 160,
+      "community": 88,
       "norm_label": "batchcriteria"
     },
     {
@@ -5019,7 +5190,7 @@
       "source_file": "features/research/batch-select.ts",
       "source_location": "L9",
       "id": "research_batch_select_buildleadwhere",
-      "community": 160,
+      "community": 88,
       "norm_label": "buildleadwhere()"
     },
     {
@@ -5064,7 +5235,7 @@
       "source_file": "features/research/draft-actions.ts",
       "source_location": "L31",
       "id": "research_draft_actions_getdraft",
-      "community": 45,
+      "community": 178,
       "norm_label": "getdraft()"
     },
     {
@@ -5397,7 +5568,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L1",
       "id": "features_research_types_ts",
-      "community": 183,
+      "community": 113,
       "norm_label": "types.ts"
     },
     {
@@ -5406,7 +5577,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L2",
       "id": "research_types_researchfindings",
-      "community": 183,
+      "community": 113,
       "norm_label": "researchfindings"
     },
     {
@@ -5415,7 +5586,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L4",
       "id": "research_types_appliedfield",
-      "community": 183,
+      "community": 113,
       "norm_label": "appliedfield"
     },
     {
@@ -5433,7 +5604,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L13",
       "id": "research_types_skippedfield",
-      "community": 183,
+      "community": 113,
       "norm_label": "skippedfield"
     },
     {
@@ -5442,7 +5613,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L18",
       "id": "research_types_researchdiff",
-      "community": 183,
+      "community": 113,
       "norm_label": "researchdiff"
     },
     {
@@ -5451,7 +5622,7 @@
       "source_file": "features/research/types.ts",
       "source_location": "L23",
       "id": "research_types_engineresult",
-      "community": 183,
+      "community": 113,
       "norm_label": "engineresult"
     },
     {
@@ -6162,7 +6333,7 @@
       "source_file": "features/sequences/draft-send.test.ts",
       "source_location": "L1",
       "id": "features_sequences_draft_send_test_ts",
-      "community": 122,
+      "community": 192,
       "norm_label": "draft-send.test.ts"
     },
     {
@@ -6171,7 +6342,7 @@
       "source_file": "features/sequences/draft-send.test.ts",
       "source_location": "L5",
       "id": "sequences_draft_send_test_done",
-      "community": 122,
+      "community": 192,
       "norm_label": "done"
     },
     {
@@ -6180,7 +6351,7 @@
       "source_file": "features/sequences/draft-send.ts",
       "source_location": "L1",
       "id": "features_sequences_draft_send_ts",
-      "community": 122,
+      "community": 192,
       "norm_label": "draft-send.ts"
     },
     {
@@ -6189,7 +6360,7 @@
       "source_file": "features/sequences/draft-send.ts",
       "source_location": "L3",
       "id": "sequences_draft_send_draftdecision",
-      "community": 122,
+      "community": 192,
       "norm_label": "draftdecision"
     },
     {
@@ -6198,7 +6369,7 @@
       "source_file": "features/sequences/draft-send.ts",
       "source_location": "L5",
       "id": "sequences_draft_send_draftforsend",
-      "community": 122,
+      "community": 192,
       "norm_label": "draftforsend"
     },
     {
@@ -6207,7 +6378,7 @@
       "source_file": "features/sequences/draft-send.ts",
       "source_location": "L15",
       "id": "sequences_draft_send_resolvedraftdecision",
-      "community": 122,
+      "community": 192,
       "norm_label": "resolvedraftdecision()"
     },
     {
@@ -6387,7 +6558,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L1",
       "id": "features_templates_actions_ts",
-      "community": 190,
+      "community": 141,
       "norm_label": "actions.ts"
     },
     {
@@ -6405,7 +6576,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L11",
       "id": "templates_actions_createtemplate",
-      "community": 190,
+      "community": 141,
       "norm_label": "createtemplate()"
     },
     {
@@ -6414,7 +6585,7 @@
       "source_file": "features/templates/actions.ts",
       "source_location": "L28",
       "id": "templates_actions_deletetemplate",
-      "community": 190,
+      "community": 141,
       "norm_label": "deletetemplate()"
     },
     {
@@ -6549,7 +6720,7 @@
       "source_file": "features/templates/schema.ts",
       "source_location": "L1",
       "id": "features_templates_schema_ts",
-      "community": 190,
+      "community": 141,
       "norm_label": "schema.ts"
     },
     {
@@ -6558,7 +6729,7 @@
       "source_file": "features/templates/schema.ts",
       "source_location": "L4",
       "id": "templates_schema_templateschema",
-      "community": 190,
+      "community": 141,
       "norm_label": "templateschema"
     },
     {
@@ -6567,7 +6738,7 @@
       "source_file": "features/templates/schema.ts",
       "source_location": "L14",
       "id": "templates_schema_templateinput",
-      "community": 190,
+      "community": 141,
       "norm_label": "templateinput"
     },
     {
@@ -9087,7 +9258,7 @@
       "source_file": "generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L302",
       "id": "internal_prismanamespace_boolean",
-      "community": 166,
+      "community": 89,
       "norm_label": "boolean"
     },
     {
@@ -33036,7 +33207,7 @@
       "source_file": "lib/org.ts",
       "source_location": "L1",
       "id": "lib_org_ts",
-      "community": 110,
+      "community": 141,
       "norm_label": "org.ts"
     },
     {
@@ -33045,7 +33216,7 @@
       "source_file": "lib/org.ts",
       "source_location": "L5",
       "id": "lib_org_orgcontext",
-      "community": 110,
+      "community": 141,
       "norm_label": "orgcontext"
     },
     {
@@ -33054,7 +33225,7 @@
       "source_file": "lib/org.ts",
       "source_location": "L11",
       "id": "lib_org_requireorg",
-      "community": 110,
+      "community": 141,
       "norm_label": "requireorg()"
     },
     {
@@ -33234,7 +33405,7 @@
       "source_file": "lib/inngest/research.ts",
       "source_location": "L13",
       "id": "inngest_research_emailtakenfor",
-      "community": 166,
+      "community": 89,
       "norm_label": "emailtakenfor()"
     },
     {
@@ -33252,7 +33423,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L1",
       "id": "lib_inngest_sending_test_ts",
-      "community": 122,
+      "community": 183,
       "norm_label": "sending.test.ts"
     },
     {
@@ -33261,7 +33432,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L4",
       "id": "inngest_sending_test_h",
-      "community": 122,
+      "community": 183,
       "norm_label": "h"
     },
     {
@@ -33270,7 +33441,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L14",
       "id": "inngest_sending_test_lead_entity",
-      "community": 122,
+      "community": 183,
       "norm_label": "lead_entity"
     },
     {
@@ -33279,7 +33450,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L36",
       "id": "inngest_sending_test_blocked",
-      "community": 122,
+      "community": 183,
       "norm_label": "blocked"
     },
     {
@@ -33288,7 +33459,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L54",
       "id": "inngest_sending_test_step",
-      "community": 122,
+      "community": 183,
       "norm_label": "step()"
     },
     {
@@ -33297,7 +33468,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L58",
       "id": "inngest_sending_test_tools",
-      "community": 122,
+      "community": 183,
       "norm_label": "tools()"
     },
     {
@@ -33306,7 +33477,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L201",
       "id": "inngest_sending_test_waitspy",
-      "community": 122,
+      "community": 183,
       "norm_label": "waitspy"
     },
     {
@@ -33315,7 +33486,7 @@
       "source_file": "lib/inngest/sending.test.ts",
       "source_location": "L202",
       "id": "inngest_sending_test_t",
-      "community": 122,
+      "community": 183,
       "norm_label": "t"
     },
     {
@@ -33351,7 +33522,7 @@
       "source_file": "lib/inngest/sending.ts",
       "source_location": "L24",
       "id": "inngest_sending_handleleadsequencefailure",
-      "community": 122,
+      "community": 183,
       "norm_label": "handleleadsequencefailure()"
     },
     {
@@ -33360,7 +33531,7 @@
       "source_file": "lib/inngest/sending.ts",
       "source_location": "L32",
       "id": "inngest_sending_sequencesteptools",
-      "community": 122,
+      "community": 183,
       "norm_label": "sequencesteptools"
     },
     {
@@ -33387,7 +33558,7 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L1",
       "id": "prisma_seed_ts",
-      "community": 117,
+      "community": 135,
       "norm_label": "seed.ts"
     },
     {
@@ -33396,7 +33567,7 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L6",
       "id": "prisma_seed_prisma",
-      "community": 117,
+      "community": 135,
       "norm_label": "prisma"
     },
     {
@@ -33405,7 +33576,7 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L10",
       "id": "prisma_seed_main",
-      "community": 117,
+      "community": 135,
       "norm_label": "main()"
     },
     {
@@ -33675,7 +33846,7 @@
       "source_file": "scripts/test-ids.ts",
       "source_location": "L1",
       "id": "scripts_test_ids_ts",
-      "community": 135,
+      "community": 117,
       "norm_label": "test-ids.ts"
     },
     {
@@ -33684,7 +33855,7 @@
       "source_file": "scripts/test-ids.ts",
       "source_location": "L8",
       "id": "scripts_test_ids_prisma",
-      "community": 135,
+      "community": 117,
       "norm_label": "prisma"
     },
     {
@@ -33693,7 +33864,7 @@
       "source_file": "scripts/test-ids.ts",
       "source_location": "L12",
       "id": "scripts_test_ids_main",
-      "community": 135,
+      "community": 117,
       "norm_label": "main()"
     },
     {
@@ -34114,7 +34285,7 @@
       "label": "Cross-cutting before launch",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L105",
+      "source_location": "L107",
       "id": "superpowers_roadmap_cross_cutting_before_launch",
       "community": 47,
       "norm_label": "cross-cutting before launch"
@@ -34123,7 +34294,7 @@
       "label": "How to resume",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L110",
+      "source_location": "L112",
       "id": "superpowers_roadmap_how_to_resume",
       "community": 47,
       "norm_label": "how to resume"
@@ -34132,7 +34303,7 @@
       "label": "Local dev gotchas (this machine)",
       "file_type": "document",
       "source_file": "docs/superpowers/ROADMAP.md",
-      "source_location": "L116",
+      "source_location": "L118",
       "id": "superpowers_roadmap_local_dev_gotchas_this_machine",
       "community": 47,
       "norm_label": "local dev gotchas (this machine)"
@@ -40825,6 +40996,159 @@
       "norm_label": "self-review"
     },
     {
+      "label": "2026-06-09-phase-7-deliverability-settings.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_plans_2026_06_09_phase_7_deliverability_settings_md",
+      "community": 160,
+      "norm_label": "2026-06-09-phase-7-deliverability-settings.md"
+    },
+    {
+      "label": "deliverability-settings Implementation Plan",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L1",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "community": 160,
+      "norm_label": "deliverability-settings implementation plan"
+    },
+    {
+      "label": "Task 1: Pure conversion + validation logic (TDD)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L15",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_task_1_pure_conversion_validation_logic_tdd",
+      "community": 160,
+      "norm_label": "task 1: pure conversion + validation logic (tdd)"
+    },
+    {
+      "label": "code:ts (// features/email-accounts/settings.test.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L23",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_1",
+      "community": 160,
+      "norm_label": "code:ts (// features/email-accounts/settings.test.ts)"
+    },
+    {
+      "label": "code:ts (// features/email-accounts/settings.ts)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L92",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_2",
+      "community": 160,
+      "norm_label": "code:ts (// features/email-accounts/settings.ts)"
+    },
+    {
+      "label": "code:bash (git add features/email-accounts/settings.ts features/email-a)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L179",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_3",
+      "community": 160,
+      "norm_label": "code:bash (git add features/email-accounts/settings.ts features/email-a)"
+    },
+    {
+      "label": "Task 2: Action + query",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L186",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_task_2_action_query",
+      "community": 160,
+      "norm_label": "task 2: action + query"
+    },
+    {
+      "label": "code:ts (import {validateEmailAccountSettings, daysToMask, parseTime})",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L194",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_4",
+      "community": 160,
+      "norm_label": "code:ts (import {validateemailaccountsettings, daystomask, parsetime})"
+    },
+    {
+      "label": "code:ts (select: {id: true, email: true, displayName: true, status: t)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L225",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_5",
+      "community": 160,
+      "norm_label": "code:ts (select: {id: true, email: true, displayname: true, status: t)"
+    },
+    {
+      "label": "code:bash (git add features/email-accounts/actions.ts features/email-ac)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L232",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_6",
+      "community": 160,
+      "norm_label": "code:bash (git add features/email-accounts/actions.ts features/email-ac)"
+    },
+    {
+      "label": "Task 3: Settings form + /skrzynki cards",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L239",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_task_3_settings_form_skrzynki_cards",
+      "community": 160,
+      "norm_label": "task 3: settings form + /skrzynki cards"
+    },
+    {
+      "label": "code:tsx (\"use client\")",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L247",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_7",
+      "community": 160,
+      "norm_label": "code:tsx (\"use client\")"
+    },
+    {
+      "label": "code:tsx (// app/(app)/skrzynki/page.tsx)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L328",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_8",
+      "community": 160,
+      "norm_label": "code:tsx (// app/(app)/skrzynki/page.tsx)"
+    },
+    {
+      "label": "code:bash (git add \"app/(app)/skrzynki/mailbox-settings-form.tsx\" \"app/)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L381",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_9",
+      "community": 160,
+      "norm_label": "code:bash (git add \"app/(app)/skrzynki/mailbox-settings-form.tsx\" \"app/)"
+    },
+    {
+      "label": "Task 4: Gates + roadmap + graph",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L388",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_task_4_gates_roadmap_graph",
+      "community": 160,
+      "norm_label": "task 4: gates + roadmap + graph"
+    },
+    {
+      "label": "code:bash (git add docs/superpowers/ROADMAP.md graphify-out)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L399",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_10",
+      "community": 160,
+      "norm_label": "code:bash (git add docs/superpowers/roadmap.md graphify-out)"
+    },
+    {
+      "label": "Self-review",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L406",
+      "id": "plans_2026_06_09_phase_7_deliverability_settings_self_review",
+      "community": 160,
+      "norm_label": "self-review"
+    },
+    {
       "label": "2026-06-09-phase-7-design-foundation.md",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
@@ -44065,6 +44389,123 @@
       "norm_label": "risks / notes"
     },
     {
+      "label": "2026-06-09-phase-7-deliverability-settings-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L1",
+      "id": "docs_superpowers_specs_2026_06_09_phase_7_deliverability_settings_design_md",
+      "community": 176,
+      "norm_label": "2026-06-09-phase-7-deliverability-settings-design.md"
+    },
+    {
+      "label": "Phase 7 \u2014 deliverability-settings \u2014 Design",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L1",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "community": 176,
+      "norm_label": "phase 7 \u2014 deliverability-settings \u2014 design"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L9",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_goal",
+      "community": 176,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Scope",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L15",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_scope",
+      "community": 176,
+      "norm_label": "scope"
+    },
+    {
+      "label": "Data model",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L24",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_data_model",
+      "community": 176,
+      "norm_label": "data model"
+    },
+    {
+      "label": "Pure logic \u2014 `features/email-accounts/settings.ts` (unit-tested)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L32",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_pure_logic_features_email_accounts_settings_ts_unit_tested",
+      "community": 176,
+      "norm_label": "pure logic \u2014 `features/email-accounts/settings.ts` (unit-tested)"
+    },
+    {
+      "label": "code:ts (export const TIMEZONES: string[]   // curated: Europe/Warsaw)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L34",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_codeblock_1",
+      "community": 176,
+      "norm_label": "code:ts (export const timezones: string[]   // curated: europe/warsaw)"
+    },
+    {
+      "label": "Action \u2014 `features/email-accounts/actions.ts` (add to the existing `use server` module)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L70",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_action_features_email_accounts_actions_ts_add_to_the_existing_use_server_module",
+      "community": 176,
+      "norm_label": "action \u2014 `features/email-accounts/actions.ts` (add to the existing `use server` module)"
+    },
+    {
+      "label": "code:ts (export type EmailAccountSettingsResult = {ok: true} | {ok: f)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L72",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_codeblock_2",
+      "community": 176,
+      "norm_label": "code:ts (export type emailaccountsettingsresult = {ok: true} | {ok: f)"
+    },
+    {
+      "label": "Query \u2014 `features/email-accounts/queries.ts`",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L89",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_query_features_email_accounts_queries_ts",
+      "community": 176,
+      "norm_label": "query \u2014 `features/email-accounts/queries.ts`"
+    },
+    {
+      "label": "UI",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L94",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_ui",
+      "community": 176,
+      "norm_label": "ui"
+    },
+    {
+      "label": "Testing",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L115",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_testing",
+      "community": 176,
+      "norm_label": "testing"
+    },
+    {
+      "label": "Risks / notes",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L125",
+      "id": "specs_2026_06_09_phase_7_deliverability_settings_design_risks_notes",
+      "community": 176,
+      "norm_label": "risks / notes"
+    },
+    {
       "label": "2026-06-09-phase-7-design-foundation-design.md",
       "file_type": "document",
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
@@ -44456,7 +44897,7 @@
       "file_type": "code",
       "source_file": "app/(app)/ustawienia/sender-signature-form.tsx",
       "source_location": "L7",
-      "community": 187,
+      "community": 95,
       "norm_label": "props",
       "id": "ustawienia_sender_signature_form_props"
     },
@@ -45738,7 +46179,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 48,
+      "community": 50,
       "norm_label": "security (oauth tokens encrypted, minimal gmail scopes, allowlist)",
       "id": "cc_security_tokens"
     },
@@ -46444,9 +46885,9 @@
       "source_file": ".claude/launch.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_launch_json",
-      "target": "claude_launch_version",
-      "confidence_score": 1.0
+      "target": "claude_launch_version"
     },
     {
       "relation": "contains",
@@ -46454,9 +46895,9 @@
       "source_file": ".claude/launch.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_launch_json",
-      "target": "claude_launch_configurations",
-      "confidence_score": 1.0
+      "target": "claude_launch_configurations"
     },
     {
       "relation": "contains",
@@ -48538,9 +48979,9 @@
       "source_file": "app/(app)/leady/import/import-wizard.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_leady_import_import_wizard_tsx",
-      "target": "leads_import_defaultcustomkey",
-      "confidence_score": 1.0
+      "target": "leads_import_defaultcustomkey"
     },
     {
       "relation": "imports",
@@ -48549,9 +48990,9 @@
       "source_file": "app/(app)/leady/import/import-wizard.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_leady_import_import_wizard_tsx",
-      "target": "leads_import_leadfieldkey",
-      "confidence_score": 1.0
+      "target": "leads_import_leadfieldkey"
     },
     {
       "relation": "imports_from",
@@ -48602,9 +49043,9 @@
       "source_file": "app/(app)/leady/import/import-wizard.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_leady_import_import_wizard_tsx",
-      "target": "import_import_wizard_target",
-      "confidence_score": 1.0
+      "target": "import_import_wizard_target"
     },
     {
       "relation": "contains",
@@ -49929,6 +50370,267 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "features_email_accounts_actions_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "email_accounts_actions_updateemailaccountsettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "email_accounts_actions_emailaccountsettingsresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "features_email_accounts_settings_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "email_accounts_settings_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "email_accounts_settings_masktodays",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "components_ui_field_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "ui_field_field",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "components_ui_input_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "ui_input_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "components_ui_select_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "ui_select_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "components_ui_button_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "components_ui_use_toast_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "ui_use_toast_usetoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "skrzynki_mailbox_settings_form_day_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "skrzynki_mailbox_settings_form_account",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "target": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_page_tsx",
+      "target": "app_app_skrzynki_mailbox_settings_form_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_page_tsx",
+      "target": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "target": "ui_use_toast_usetoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "target": "email_accounts_settings_masktodays"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(app)/skrzynki/mailbox-settings-form.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "skrzynki_mailbox_settings_form_mailboxsettingsform",
+      "target": "email_accounts_settings_formattime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(app)/skrzynki/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -49990,6 +50692,28 @@
       "confidence_score": 1.0,
       "source": "app_app_skrzynki_page_tsx",
       "target": "email_accounts_actions_disconnectemailaccount"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_page_tsx",
+      "target": "features_email_accounts_settings_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/skrzynki/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_app_skrzynki_page_tsx",
+      "target": "email_accounts_settings_timezones",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -53542,6 +54266,50 @@
       "target": "lib_org_requireorg"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "features_email_accounts_settings_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "email_accounts_settings_validateemailaccountsettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "email_accounts_settings_daystomask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "email_accounts_settings_parsetime",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "features/email-accounts/actions.ts",
@@ -53550,6 +54318,26 @@
       "confidence_score": 1.0,
       "source": "features_email_accounts_actions_ts",
       "target": "email_accounts_actions_disconnectemailaccount"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "email_accounts_actions_emailaccountsettingsresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "features_email_accounts_actions_ts",
+      "target": "email_accounts_actions_updateemailaccountsettings",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -53561,6 +54349,50 @@
       "weight": 1.0,
       "source": "email_accounts_actions_disconnectemailaccount",
       "target": "lib_org_requireorg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "email_accounts_actions_updateemailaccountsettings",
+      "target": "lib_org_requireorg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "email_accounts_actions_updateemailaccountsettings",
+      "target": "email_accounts_settings_validateemailaccountsettings"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "email_accounts_actions_updateemailaccountsettings",
+      "target": "email_accounts_settings_parsetime"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "features/email-accounts/actions.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "email_accounts_actions_updateemailaccountsettings",
+      "target": "email_accounts_settings_daystomask"
     },
     {
       "relation": "imports_from",
@@ -53777,6 +54609,204 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "features_email_accounts_settings_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_parsetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_masktodays",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_daystomask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_isvalidtimezone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_validateemailaccountsettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_test_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.test.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_test_ts",
+      "target": "email_accounts_settings_test_r",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_timezones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_parsetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_masktodays",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_daystomask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_isvalidtimezone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_settingsinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_settingsfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "features_email_accounts_settings_ts",
+      "target": "email_accounts_settings_validateemailaccountsettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/email-accounts/settings.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "email_accounts_settings_validateemailaccountsettings",
+      "target": "email_accounts_settings_isvalidtimezone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "features/leads/actions.ts",
       "source_location": "L6",
       "weight": 1.0,
@@ -53846,9 +54876,9 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_actions_ts",
-      "target": "leads_import_buildimportspec",
-      "confidence_score": 1.0
+      "target": "leads_import_buildimportspec"
     },
     {
       "relation": "imports",
@@ -53857,9 +54887,9 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_actions_ts",
-      "target": "leads_import_columntarget",
-      "confidence_score": 1.0
+      "target": "leads_import_columntarget"
     },
     {
       "relation": "imports",
@@ -53868,9 +54898,9 @@
       "source_file": "features/leads/actions.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_actions_ts",
-      "target": "leads_import_leadfieldkey",
-      "confidence_score": 1.0
+      "target": "leads_import_leadfieldkey"
     },
     {
       "relation": "imports_from",
@@ -54285,9 +55315,9 @@
       "source_file": "features/leads/import.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_test_ts",
-      "target": "leads_import_buildimportspec",
-      "confidence_score": 1.0
+      "target": "leads_import_buildimportspec"
     },
     {
       "relation": "imports",
@@ -54296,9 +55326,9 @@
       "source_file": "features/leads/import.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_test_ts",
-      "target": "leads_import_defaultcustomkey",
-      "confidence_score": 1.0
+      "target": "leads_import_defaultcustomkey"
     },
     {
       "relation": "contains",
@@ -54336,9 +55366,9 @@
       "source_file": "features/leads/import.test.ts",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_test_ts",
-      "target": "leads_import_test_spec",
-      "confidence_score": 1.0
+      "target": "leads_import_test_spec"
     },
     {
       "relation": "imports_from",
@@ -54387,9 +55417,9 @@
       "source_file": "features/leads/import.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_ts",
-      "target": "leads_import_columntarget",
-      "confidence_score": 1.0
+      "target": "leads_import_columntarget"
     },
     {
       "relation": "contains",
@@ -54397,9 +55427,9 @@
       "source_file": "features/leads/import.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_ts",
-      "target": "leads_import_importspec",
-      "confidence_score": 1.0
+      "target": "leads_import_importspec"
     },
     {
       "relation": "contains",
@@ -54407,9 +55437,9 @@
       "source_file": "features/leads/import.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_ts",
-      "target": "leads_import_buildimportspec",
-      "confidence_score": 1.0
+      "target": "leads_import_buildimportspec"
     },
     {
       "relation": "contains",
@@ -54417,9 +55447,9 @@
       "source_file": "features/leads/import.ts",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_leads_import_ts",
-      "target": "leads_import_defaultcustomkey",
-      "confidence_score": 1.0
+      "target": "leads_import_defaultcustomkey"
     },
     {
       "relation": "contains",
@@ -100465,6 +101495,166 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_plans_2026_06_09_phase_7_deliverability_settings_md",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_task_1_pure_conversion_validation_logic_tdd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_task_2_action_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_task_3_settings_form_skrzynki_cards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L388",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_task_4_gates_roadmap_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L406",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_deliverability_settings_implementation_plan",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_self_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_1_pure_conversion_validation_logic_tdd",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_1_pure_conversion_validation_logic_tdd",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_1_pure_conversion_validation_logic_tdd",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_2_action_query",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_2_action_query",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L232",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_2_action_query",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_3_settings_form_skrzynki_cards",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_7",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L328",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_3_settings_form_skrzynki_cards",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L381",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_3_settings_form_skrzynki_cards",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-06-09-phase-7-deliverability-settings.md",
+      "source_location": "L399",
+      "weight": 1.0,
+      "source": "plans_2026_06_09_phase_7_deliverability_settings_task_4_gates_roadmap_graph",
+      "target": "plans_2026_06_09_phase_7_deliverability_settings_codeblock_10",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-design-foundation.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -101338,9 +102528,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_plans_2026_06_09_phase_7_import_customfields_mapping_md",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan"
     },
     {
       "relation": "contains",
@@ -101348,9 +102538,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd"
     },
     {
       "relation": "contains",
@@ -101358,9 +102548,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_2_wire_importleads_to_column_targets",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_2_wire_importleads_to_column_targets"
     },
     {
       "relation": "contains",
@@ -101368,9 +102558,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L221",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_3_column_target_wizard",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_3_column_target_wizard"
     },
     {
       "relation": "contains",
@@ -101378,9 +102568,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L379",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_4_remove_row_button_on_the_customfields_editor",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_4_remove_row_button_on_the_customfields_editor"
     },
     {
       "relation": "contains",
@@ -101388,9 +102578,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L409",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_5_gates_roadmap_graph",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_task_5_gates_roadmap_graph"
     },
     {
       "relation": "contains",
@@ -101398,9 +102588,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L427",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_import_customfields_mapping_implementation_plan",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_self_review",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_self_review"
     },
     {
       "relation": "contains",
@@ -101408,9 +102598,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_1",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_1"
     },
     {
       "relation": "contains",
@@ -101418,9 +102608,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_2",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_2"
     },
     {
       "relation": "contains",
@@ -101428,9 +102618,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_3",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_3"
     },
     {
       "relation": "contains",
@@ -101438,9 +102628,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_4",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_4"
     },
     {
       "relation": "contains",
@@ -101448,9 +102638,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_1_pure_import_logic_tdd",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_5",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_5"
     },
     {
       "relation": "contains",
@@ -101458,9 +102648,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_2_wire_importleads_to_column_targets",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_6",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_6"
     },
     {
       "relation": "contains",
@@ -101468,9 +102658,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_2_wire_importleads_to_column_targets",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_7",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_7"
     },
     {
       "relation": "contains",
@@ -101478,9 +102668,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_2_wire_importleads_to_column_targets",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_8",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_8"
     },
     {
       "relation": "contains",
@@ -101488,9 +102678,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_3_column_target_wizard",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_9",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_9"
     },
     {
       "relation": "contains",
@@ -101498,9 +102688,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L372",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_3_column_target_wizard",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_10",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_10"
     },
     {
       "relation": "contains",
@@ -101508,9 +102698,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L386",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_4_remove_row_button_on_the_customfields_editor",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_11",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_11"
     },
     {
       "relation": "contains",
@@ -101518,9 +102708,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L402",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_4_remove_row_button_on_the_customfields_editor",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_12",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_12"
     },
     {
       "relation": "contains",
@@ -101528,9 +102718,9 @@
       "source_file": "docs/superpowers/plans/2026-06-09-phase-7-import-customfields-mapping.md",
       "source_location": "L420",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_2026_06_09_phase_7_import_customfields_mapping_task_5_gates_roadmap_graph",
-      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_13",
-      "confidence_score": 1.0
+      "target": "plans_2026_06_09_phase_7_import_customfields_mapping_codeblock_13"
     },
     {
       "relation": "contains",
@@ -103875,6 +105065,126 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_superpowers_specs_2026_06_09_phase_7_deliverability_settings_design_md",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_goal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_scope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_data_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_pure_logic_features_email_accounts_settings_ts_unit_tested",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_action_features_email_accounts_actions_ts_add_to_the_existing_use_server_module",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_query_features_email_accounts_queries_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_phase_7_deliverability_settings_design",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_risks_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_pure_logic_features_email_accounts_settings_ts_unit_tested",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-06-09-phase-7-deliverability-settings-design.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "specs_2026_06_09_phase_7_deliverability_settings_design_action_features_email_accounts_actions_ts_add_to_the_existing_use_server_module",
+      "target": "specs_2026_06_09_phase_7_deliverability_settings_design_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-design-foundation-design.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -104138,9 +105448,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_superpowers_specs_2026_06_09_phase_7_import_customfields_mapping_design_md",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design"
     },
     {
       "relation": "contains",
@@ -104148,9 +105458,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_goal",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_goal"
     },
     {
       "relation": "contains",
@@ -104158,9 +105468,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_scope",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_scope"
     },
     {
       "relation": "contains",
@@ -104168,9 +105478,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_data_model",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_data_model"
     },
     {
       "relation": "contains",
@@ -104178,9 +105488,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_pure_logic_features_leads_import_ts_testable_tdd_against_import_test_ts",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_pure_logic_features_leads_import_ts_testable_tdd_against_import_test_ts"
     },
     {
       "relation": "contains",
@@ -104188,9 +105498,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_wizard_ui_app_app_leady_import_import_wizard_tsx_column_centric_rewrite",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_wizard_ui_app_app_leady_import_import_wizard_tsx_column_centric_rewrite"
     },
     {
       "relation": "contains",
@@ -104198,9 +105508,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_action_features_leads_actions_ts_importleads",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_action_features_leads_actions_ts_importleads"
     },
     {
       "relation": "contains",
@@ -104208,9 +105518,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_remove_row_button_app_app_leady_id_lead_edit_form_tsx",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_remove_row_button_app_app_leady_id_lead_edit_form_tsx"
     },
     {
       "relation": "contains",
@@ -104218,9 +105528,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_testing",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_testing"
     },
     {
       "relation": "contains",
@@ -104228,9 +105538,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_phase_7_import_customfields_mapping_design",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_risks_notes",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_risks_notes"
     },
     {
       "relation": "contains",
@@ -104238,9 +105548,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_data_model",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_1",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_1"
     },
     {
       "relation": "contains",
@@ -104248,9 +105558,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_pure_logic_features_leads_import_ts_testable_tdd_against_import_test_ts",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_2",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_2"
     },
     {
       "relation": "contains",
@@ -104258,9 +105568,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_pure_logic_features_leads_import_ts_testable_tdd_against_import_test_ts",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_3",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_3"
     },
     {
       "relation": "contains",
@@ -104268,9 +105578,9 @@
       "source_file": "docs/superpowers/specs/2026-06-09-phase-7-import-customfields-mapping-design.md",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_2026_06_09_phase_7_import_customfields_mapping_design_pure_logic_features_leads_import_ts_testable_tdd_against_import_test_ts",
-      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_4",
-      "confidence_score": 1.0
+      "target": "specs_2026_06_09_phase_7_import_customfields_mapping_design_codeblock_4"
     },
     {
       "relation": "references",
@@ -105873,5 +107183,5 @@
       "source_file": "docs/superpowers/specs/2026-05-31-phase-3-templates-placeholders-campaigns-design.md"
     }
   ],
-  "built_at_commit": "af9d0860742376cb34e5d5130eaf8c1847f26080"
+  "built_at_commit": "a704b1c35cdaaac7b1fe9eae88286d397f2ec0f3"
 }
