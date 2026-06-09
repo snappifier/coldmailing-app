@@ -30,6 +30,12 @@
 			"runtimeExecutable": "python",
 			"runtimeArgs": ["-m", "http.server", "4607", "--directory", "docs/superpowers/design/shell-mock"],
 			"port": 4607
+		},
+		{
+			"name": "shell-mock-refine",
+			"runtimeExecutable": "python",
+			"runtimeArgs": ["-m", "http.server", "4609", "--directory", "docs/superpowers/design/shell-mock-refine"],
+			"port": 4609
 		}
 	]
 }
