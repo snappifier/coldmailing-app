@@ -116,6 +116,7 @@ model Organization {
 
 	optOutMode     OptOutMode     @default(OFF)
 	optOutDetector OptOutDetector @default(KEYWORD)
+	senderSignature String        @default("")
 
 	memberships   Membership[]
 	offeringLines OfferingLine[]
