@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 	description: "Wewnętrzne narzędzie do cold-mailingu",
 }
 
-// No-flash theme bootstrap: mirrors features/theme/resolve.ts resolveInitialTheme (stored "dark"/"light", else "light"). Keep the two in sync.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");document.documentElement.dataset.theme=(t==="dark"||t==="light")?t:"light";}catch(e){document.documentElement.dataset.theme="light";}})();`
+// No-flash theme bootstrap: mirrors features/theme/resolve.ts resolveInitialTheme (stored "dark"/"light", else "dark"). Keep the two in sync.
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");document.documentElement.dataset.theme=(t==="dark"||t==="light")?t:"dark";}catch(e){document.documentElement.dataset.theme="dark";}})();`
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
 	return (
-		<html lang="pl" data-theme="light" className={`h-full antialiased ${inter.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+		<html lang="pl" data-theme="dark" className={`h-full antialiased ${inter.variable} ${GeistMono.variable}`} suppressHydrationWarning>
 			<body className="min-h-full font-sans bg-bg text-fg">
 				<script suppressHydrationWarning dangerouslySetInnerHTML={{__html: themeScript}} />
 				{children}

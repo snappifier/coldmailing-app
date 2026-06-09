@@ -7,8 +7,8 @@ describe("resolveInitialTheme", () => {
 		expect(resolveInitialTheme("dark")).toBe("dark")
 		expect(resolveInitialTheme("light")).toBe("light")
 	})
-	it("defaults to light during migration when nothing is stored", () => {
-		expect(resolveInitialTheme(null)).toBe("light")
-		expect(resolveInitialTheme("bogus")).toBe("light")
+	it("defaults to dark when nothing is stored", () => {
+		expect(resolveInitialTheme(null)).toBe("dark")
+		expect(resolveInitialTheme("bogus")).toBe("dark")
 	})
 })
