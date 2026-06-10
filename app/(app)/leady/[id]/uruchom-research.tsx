@@ -91,7 +91,6 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 
 	return (
 		<div className="flex flex-col gap-3 rounded border border-border p-3">
-			<h2 className="text-sm font-semibold text-fg-muted">Badania AI</h2>
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
 					Brak typów badań. Dodaj w{" "}

@@ -79,7 +79,6 @@ export function DraftPanel({leadId, types, initial}: {leadId: string; types: Typ
 
 	return (
 		<div className="flex flex-col gap-3 rounded border border-border p-3">
-			<h2 className="text-sm font-semibold text-fg-muted">Draft maila (AI)</h2>
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
 					Brak typów draftu. Dodaj typ &bdquo;Draft&rdquo; w{" "}
