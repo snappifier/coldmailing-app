@@ -23,6 +23,9 @@ const leadFormSchema = z.object({
 	contactRole: z.string().trim().optional().transform((v) => (v ? v : null)),
 	city: z.string().trim().optional().transform((v) => (v ? v : null)),
 	offeringLineId: z.string().trim().optional().transform((v) => (v ? v : null)),
+	honorific: z.string().trim().optional().transform((v) => (v === "PAN" || v === "PANI" ? (v as "PAN" | "PANI") : null)),
+	phone: z.string().trim().optional().transform((v) => (v ? v : null)),
+	region: z.string().trim().optional().transform((v) => (v ? v : null)),
 })
 
 export async function createLead(_prev: LeadActionResult | null, formData: FormData): Promise<LeadActionResult> {

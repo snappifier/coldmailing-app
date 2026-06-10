@@ -13,7 +13,8 @@ import {Button} from "@/components/ui/button"
 import {Table, Th, Td} from "@/components/ui/table"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
-import {LeadForm} from "./lead-form"
+import {PageHeader} from "@/components/ui/page-header"
+import {LeadCreateButton} from "./lead-create-button"
 import {BatchResearchLauncher} from "./batch-research-launcher"
 
 export default async function LeadsPage({searchParams}: {searchParams: Promise<{q?: string; line?: string; sort?: string; minScore?: string}>}) {
@@ -35,22 +36,27 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 	const orderBy: Prisma.LeadOrderByWithRelationInput =
 		sort === "priority" ? {priority: "desc"} : sort === "score" ? {score: {sort: "desc", nulls: "last"}} : sort === "name" ? {organizationName: "asc"} : {createdAt: "desc"}
 
-	const [leads, offeringLines, researchTypes] = await Promise.all([
+	const [leads, offeringLines, researchTypes, total, inCampaigns] = await Promise.all([
 		prisma.lead.findMany({where, orderBy, take: 500, include: {offeringLine: {select: {name: true}}}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		listResearchTypes(orgId),
+		prisma.lead.count({where: {organizationId: orgId}}),
+		prisma.lead.count({where: {organizationId: orgId, campaignLeads: {some: {}}}}),
 	])
 
 	return (
 		<section className="flex flex-col gap-4">
-			<div className="flex items-center justify-between">
-				<h1 className="text-lg font-semibold">Leady ({leads.length})</h1>
-				<Link className="text-sm text-accent" href="/leady/import">
-					Importuj
-				</Link>
-			</div>
-
-			<LeadForm offeringLines={offeringLines} />
+			<PageHeader
+				title="Leady"
+				description="Baza placówek z importem CSV, badaniami AI i przypisaniem do kampanii."
+				meta={`${total} leadów · ${inCampaigns} w kampaniach`}
+				action={
+					<span className="flex gap-2">
+						<Link className="text-sm text-accent" href="/leady/import">Importuj</Link>
+						<LeadCreateButton offeringLines={offeringLines} />
+					</span>
+				}
+			/>
 
 			<BatchResearchLauncher types={researchTypes.filter((t) => t.kind !== "DRAFT").map((t) => ({id: t.id, name: t.name, kind: t.kind}))} criteria={{offeringLineId: line, q}} />
 
@@ -75,7 +81,11 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 			</form>
 
 			{leads.length === 0 ? (
-				<EmptyState title="Brak leadów" description="Dodaj pierwszego leada lub zmień kryteria filtra." />
+				<EmptyState
+					title="Brak leadów"
+					description="Dodaj pierwszego leada lub zmień kryteria filtra."
+					action={<LeadCreateButton offeringLines={offeringLines} variant="secondary" />}
+				/>
 			) : (
 				<Table>
 					<thead>
