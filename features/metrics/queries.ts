@@ -67,7 +67,8 @@ export interface RecentReply {
 }
 
 export async function getDailySends(orgId: string, days = 30, now = new Date()): Promise<DailyCount[]> {
-	const since = new Date(now.getTime() - days * 86_400_000)
+	// (days - 1): the bucket window is `days` calendar days INCLUSIVE of today, so the oldest bucket starts now-(days-1)d.
+	const since = new Date(now.getTime() - (days - 1) * 86_400_000)
 	const msgs = await prisma.message.findMany({
 		where: {organizationId: orgId, direction: "OUTBOUND", status: "SENT", sentAt: {gte: since}},
 		select: {sentAt: true},
