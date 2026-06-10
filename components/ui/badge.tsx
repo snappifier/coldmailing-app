@@ -8,7 +8,7 @@ const MAP: Record<BadgeVariant, string> = {
 	ok: "bg-success-quiet text-success",
 	warn: "bg-warning-quiet text-warning",
 	bad: "bg-danger-quiet text-danger",
-	info: "bg-accent-quiet text-accent",
+	info: "bg-surface-3 text-fg border border-border",
 }
 
 export function Badge({variant = "neutral", dot, className, children}: {variant?: BadgeVariant; dot?: boolean; className?: string; children: React.ReactNode}) {
