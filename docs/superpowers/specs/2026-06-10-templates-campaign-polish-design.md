@@ -109,7 +109,7 @@ Read mode (one Card row per step): number chip (`#1` in a `size-[16px+] rounded-
 
 - TDD for `planSwap` (+~4 tests) and Zod schema edge (delayDays negative rejected) if the existing actions' schemas are tested — follow the existing test pattern in `features/`.
 - Gates: `tsc` 0, `vitest` green (count grows by the new pure tests), `eslint` clean on touched dirs, `npx next build` (coordinate: dev server must be OFF).
-- Guard greps: accent allowlist grows by EXACTLY one site (campaign tab underline `border-accent` or equivalent in `campaign-tabs.tsx`); re-run the design-refinement guards (`bg-glow`, `0_0_0_3px`, `shadow-[` all still zero).
+- Guard greps: accent allowlist grows by EXACTLY two sites — the campaign tab underline (`border-accent` in `campaign-tabs.tsx`) and the templates rail active kreska (`before:bg-accent` in `templates-shell.tsx`, the §1.1 settings-shell idiom); re-run the design-refinement guards (`bg-glow`, `0_0_0_3px`, `shadow-[` all still zero).
 - Form-contract diff: templates form gains only `templateId`; add-step form unchanged; new update/move actions are net-new names.
 - Manual smoke list for the user (:3000, both themes): edit a template used by a sequence (the impossible-today case), switch rail items with unsaved changes (dirty dialog), create from „+ Nowy szablon", campaign tabs incl. counter, inline step edit on an ACTIVE campaign, reorder arrows disabled on ACTIVE + enabled after Pauza, table row hover on /leady, day-chip Tab focus on /skrzynki.
 
