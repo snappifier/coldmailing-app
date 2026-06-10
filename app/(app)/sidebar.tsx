@@ -46,7 +46,7 @@ function SideLink({item, active, labelCls}: {item: NavItem; active: boolean; lab
 			title={item.label}
 			aria-current={active ? "page" : undefined}
 		>
-			<Icon className={cn("size-[18px] flex-none", active && "text-accent")} />
+			<Icon className="size-[18px] flex-none" />
 			<span className={cn("truncate", labelCls)}>{item.label}</span>
 		</Link>
 	)
@@ -102,7 +102,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 
 				<details className="relative">
 					<summary className="flex cursor-pointer list-none items-center gap-2 rounded-md p-1.5 hover:bg-surface-2" aria-label="Menu konta">
-						<span className="grid size-7 flex-none place-items-center rounded-full bg-accent text-[10px] font-bold text-primary-fg">{initials}</span>
+						<span className="grid size-7 flex-none place-items-center rounded-full bg-surface-3 text-[10px] font-bold text-fg">{initials}</span>
 						<span className={cn("min-w-0 flex-1 text-left", labelCls)}>
 							<span className="block truncate text-xs font-semibold text-fg">{user.name ?? user.email ?? "—"}</span>
 							<span className="block truncate text-[10px] text-fg-faint">{user.orgName} · {roleLabel}</span>
