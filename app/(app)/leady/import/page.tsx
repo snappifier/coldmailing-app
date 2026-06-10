@@ -1,6 +1,8 @@
 // app/(app)/leady/import/page.tsx
+import Link from "next/link"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
+import {PageHeader} from "@/components/ui/page-header"
 import {ImportWizard} from "./import-wizard"
 
 export default async function ImportPage() {
@@ -12,7 +14,11 @@ export default async function ImportPage() {
 	})
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Import leadów</h1>
+			<PageHeader
+				title="Import leadów"
+				description="Wklej dane z arkusza, zmapuj kolumny i zaimportuj."
+				action={<Link className="text-sm text-accent hover:underline" href="/leady">← Leady</Link>}
+			/>
 			<ImportWizard offeringLines={offeringLines} />
 		</section>
 	)
