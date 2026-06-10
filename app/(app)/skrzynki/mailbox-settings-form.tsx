@@ -56,7 +56,7 @@ export function MailboxSettingsForm({account, timezones}: {account: Account; tim
 					{DAY_LABELS.map((label, i) => (
 						<label className="cursor-pointer" key={label}>
 							<input className="peer sr-only" type="checkbox" name={`day_${i}`} defaultChecked={days[i]} />
-							<span className="grid h-8 w-9 place-items-center rounded-md border border-border bg-surface-2 text-xs font-semibold text-fg-faint peer-checked:border-accent peer-checked:bg-accent-quiet peer-checked:text-accent">{label}</span>
+							<span className="grid h-8 w-9 place-items-center rounded-md border border-border bg-surface-2 text-xs font-semibold text-fg-faint peer-checked:border-accent peer-checked:bg-accent-quiet peer-checked:text-accent peer-focus-visible:[outline:2px_solid_var(--ring)] peer-focus-visible:outline-offset-2">{label}</span>
 						</label>
 					))}
 				</div>

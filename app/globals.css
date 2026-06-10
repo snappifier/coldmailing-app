@@ -8,7 +8,7 @@
 :root {
 	--bg: #fbfbfc;
 	--surface-1: #ffffff; --surface-2: #f6f6f7; --surface-3: #efeff1;
-	--border: rgba(9,9,11,.09); --border-strong: rgba(9,9,11,.16); --border-focus: rgba(9,9,11,.45);
+	--border: rgba(9,9,11,.09); --border-strong: rgba(9,9,11,.16); --border-focus: rgba(9,9,11,.55);
 	--text: #18181b; --text-muted: #56565e; --text-faint: #9b9ba3;
 	--accent: #5e6ad2; --accent-quiet: rgba(94,106,210,.10);
 	--primary-bg: #18181b; --primary-fg: #fafafa;

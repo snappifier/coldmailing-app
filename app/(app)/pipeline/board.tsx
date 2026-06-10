@@ -49,7 +49,7 @@ function Column({stage, leads, onDropLead}: {stage: DealStage; leads: PipelineLe
 				const id = e.dataTransfer.getData("text/plain")
 				if (id) onDropLead(stage, id)
 			}}
-			className={`flex w-56 shrink-0 flex-col gap-2 rounded-lg p-2 ${over ? "bg-surface-3" : "bg-surface-2"}`}
+			className={`flex w-56 shrink-0 flex-col gap-2 rounded-lg p-2 ${over ? "bg-surface-3 ring-1 ring-border-strong" : "bg-surface-2"}`}
 		>
 			<button
 				type="button"
