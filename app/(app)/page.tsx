@@ -89,7 +89,7 @@ export default async function DashboardPage() {
 							<tbody>
 								{m.campaigns.map((c) => (
 									<tr className="border-b border-border last:border-b-0" key={c.id}>
-										<td className="py-2 pr-3"><Link className="font-medium text-fg hover:underline underline-offset-2" href={`/kampanie/${c.id}`}>{c.name}</Link></td>
+										<td className="py-2 pr-3"><Link className="text-fg font-medium hover:underline underline-offset-2" href={`/kampanie/${c.id}`}>{c.name}</Link></td>
 										<td className="py-2 pr-3"><Badge variant={CAMPAIGN_STATUS_VARIANT[c.status as CampaignStatus]}>{CAMPAIGN_STATUS_LABEL[c.status as CampaignStatus]}</Badge></td>
 										<td className="py-2 pr-3 text-right tabular-nums">{formatInt(c.contacted)}</td>
 										<td className="py-2 pr-3">

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 /* Docs hold literal class strings (plan "Old:" blocks, mocks) - keep them out of content scanning */
 @source not "../docs";
+@source not "../graphify-out";
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
