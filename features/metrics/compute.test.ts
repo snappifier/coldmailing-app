@@ -1,6 +1,6 @@
 // features/metrics/compute.test.ts
 import {describe, it, expect} from "vitest"
-import {summarizeStatuses, contacted, rate, computeRates, formatPct, formatInt, buildCampaignRows, orderFunnel} from "@/features/metrics/compute"
+import {summarizeStatuses, contacted, rate, computeRates, formatPct, formatInt, buildCampaignRows, orderFunnel, bucketDaily, relativeTimePl, buildSparklinePath} from "@/features/metrics/compute"
 
 describe("summarizeStatuses", () => {
 	it("buckets counts, defaults missing to 0, sums total", () => {
@@ -65,5 +65,64 @@ describe("orderFunnel", () => {
 		expect(f.map((x) => x.stage)).toEqual(["NEW", "AUDIT", "PROPOSAL", "MEETING", "OFFER", "WON", "LOST"])
 		expect(f[0]).toEqual({stage: "NEW", count: 120})
 		expect(f.find((x) => x.stage === "AUDIT")).toEqual({stage: "AUDIT", count: 0})
+	})
+})
+
+describe("bucketDaily", () => {
+	const tz = "Europe/Warsaw"
+	const now = new Date("2026-06-10T12:00:00Z")
+	it("zero-fills the trailing window and counts per local day", () => {
+		const dates = [new Date("2026-06-10T08:00:00Z"), new Date("2026-06-10T09:30:00Z"), new Date("2026-06-09T15:00:00Z")]
+		const out = bucketDaily(dates, 3, now, tz)
+		expect(out).toHaveLength(3)
+		expect(out[0]).toEqual({date: "2026-06-08", count: 0})
+		expect(out[1]).toEqual({date: "2026-06-09", count: 1})
+		expect(out[2]).toEqual({date: "2026-06-10", count: 2})
+	})
+	it("ignores dates outside the window and handles empty input", () => {
+		expect(bucketDaily([], 2, now, tz).map((d) => d.count)).toEqual([0, 0])
+		const out = bucketDaily([new Date("2026-05-01T10:00:00Z")], 2, now, tz)
+		expect(out.map((d) => d.count)).toEqual([0, 0])
+	})
+	it("buckets by the tz-local calendar day (UTC evening = next PL day)", () => {
+		const out = bucketDaily([new Date("2026-06-09T22:30:00Z")], 2, now, tz)
+		expect(out[1]).toEqual({date: "2026-06-10", count: 1})
+	})
+})
+
+describe("relativeTimePl", () => {
+	const now = new Date("2026-06-10T12:00:00Z")
+	it("formats minutes, hours, yesterday, days", () => {
+		expect(relativeTimePl(new Date("2026-06-10T11:59:40Z"), now)).toBe("teraz")
+		expect(relativeTimePl(new Date("2026-06-10T11:48:00Z"), now)).toBe("12 min")
+		expect(relativeTimePl(new Date("2026-06-10T09:00:00Z"), now)).toBe("3 godz.")
+		expect(relativeTimePl(new Date("2026-06-09T10:00:00Z"), now)).toBe("wczoraj")
+		expect(relativeTimePl(new Date("2026-06-07T10:00:00Z"), now)).toBe("3 dni")
+	})
+	it("clamps future dates to teraz", () => {
+		expect(relativeTimePl(new Date("2026-06-10T13:00:00Z"), now)).toBe("teraz")
+	})
+})
+
+describe("buildSparklinePath", () => {
+	it("returns empty strings and null end for no data", () => {
+		expect(buildSparklinePath([], 600, 64)).toEqual({line: "", area: "", end: null})
+	})
+	it("scales the peak to the top padding and closes the area", () => {
+		const {line, area, end} = buildSparklinePath([0, 5, 10], 600, 64, 4)
+		expect(line.startsWith("M0 60")).toBe(true)
+		expect(line).toContain("L300 32")
+		expect(line).toContain("L600 4")
+		expect(area.endsWith("L600 64 L0 64 Z")).toBe(true)
+		expect(end).toEqual({x: 600, y: 4})
+	})
+	it("renders all-zero data as a flat bottom line (max guard)", () => {
+		const {line} = buildSparklinePath([0, 0], 600, 64, 4)
+		expect(line).toBe("M0 60 L600 60")
+	})
+	it("handles a single point", () => {
+		const {line, end} = buildSparklinePath([3], 600, 64, 4)
+		expect(line).toBe("M600 4")
+		expect(end).toEqual({x: 600, y: 4})
 	})
 })
