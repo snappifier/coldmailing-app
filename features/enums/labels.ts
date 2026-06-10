@@ -1,5 +1,5 @@
 // features/enums/labels.ts
-import type {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus} from "@/generated/prisma/client"
+import type {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus, EmailAccountStatus} from "@/generated/prisma/client"
 import type {BadgeVariant} from "@/components/ui/badge"
 
 export const CAMPAIGN_STATUS_LABEL: Record<CampaignStatus, string> = {DRAFT: "Szkic", ACTIVE: "Aktywna", PAUSED: "Wstrzymana", DONE: "Zakończona"}
@@ -19,6 +19,9 @@ export const RESEARCH_KIND_VARIANT: Record<ResearchTypeKind, BadgeVariant> = {RE
 export const PLACEHOLDER_TYPE_LABEL: Record<PlaceholderType, string> = {TEXT: "Tekst", CHOICE: "Wybór"}
 
 export const ROLE_LABEL: Record<Role, string> = {OWNER: "Właściciel", ADMIN: "Administrator", MEMBER: "Członek"}
+
+export const EMAIL_ACCOUNT_STATUS_LABEL: Record<EmailAccountStatus, string> = {CONNECTED: "Połączona", ERROR: "Błąd", DISCONNECTED: "Odłączona"}
+export const EMAIL_ACCOUNT_STATUS_VARIANT: Record<EmailAccountStatus, BadgeVariant> = {CONNECTED: "ok", ERROR: "bad", DISCONNECTED: "neutral"}
 
 // ResearchRunStatus = QUEUED|RUNNING|DONE|FAILED|CANCELLED; ResearchBatchStatus = QUEUED|RUNNING|DONE|PARTIAL|CANCELLED
 export const RESEARCH_STATUS_LABEL: Record<ResearchRunStatus | ResearchBatchStatus, string> = {QUEUED: "W kolejce", RUNNING: "W toku", DONE: "Gotowe", FAILED: "Błąd", CANCELLED: "Anulowane", PARTIAL: "Częściowe"}

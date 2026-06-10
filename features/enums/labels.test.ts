@@ -1,7 +1,7 @@
 // features/enums/labels.test.ts
 import {describe, it, expect} from "vitest"
-import {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus} from "@/generated/prisma/client"
-import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT, LEAD_STATUS_LABEL, LEAD_STATUS_VARIANT, CONDITION_LABEL, INBOUND_KIND_LABEL, INBOUND_KIND_VARIANT, RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, PLACEHOLDER_TYPE_LABEL, ROLE_LABEL, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
+import {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus, EmailAccountStatus} from "@/generated/prisma/client"
+import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT, LEAD_STATUS_LABEL, LEAD_STATUS_VARIANT, CONDITION_LABEL, INBOUND_KIND_LABEL, INBOUND_KIND_VARIANT, RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, PLACEHOLDER_TYPE_LABEL, ROLE_LABEL, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT, EMAIL_ACCOUNT_STATUS_LABEL, EMAIL_ACCOUNT_STATUS_VARIANT} from "@/features/enums/labels"
 
 function total(enumObj: Record<string, string>, map: Record<string, string>) {
 	for (const v of Object.values(enumObj)) {
@@ -21,6 +21,7 @@ describe("enum labels", () => {
 		total(Role, ROLE_LABEL)
 		total(ResearchRunStatus, RESEARCH_STATUS_LABEL)
 		total(ResearchBatchStatus, RESEARCH_STATUS_LABEL)
+		total(EmailAccountStatus, EMAIL_ACCOUNT_STATUS_LABEL)
 	})
 	it("variant maps are total over their enum", () => {
 		total(CampaignStatus, CAMPAIGN_STATUS_VARIANT)
@@ -29,6 +30,7 @@ describe("enum labels", () => {
 		total(ResearchTypeKind, RESEARCH_KIND_VARIANT)
 		total(ResearchRunStatus, RESEARCH_STATUS_VARIANT)
 		total(ResearchBatchStatus, RESEARCH_STATUS_VARIANT)
+		total(EmailAccountStatus, EMAIL_ACCOUNT_STATUS_VARIANT)
 	})
 	it("spot-checks labels + variants", () => {
 		expect(CAMPAIGN_STATUS_LABEL.ACTIVE).toBe("Aktywna")
