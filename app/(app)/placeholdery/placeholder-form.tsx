@@ -1,29 +1,56 @@
 "use client"
 // app/(app)/placeholdery/placeholder-form.tsx
 
-import {useActionState} from "react"
+import {useActionState, useRef} from "react"
 import {createPlaceholder, type PlaceholderResult} from "@/features/placeholders/actions"
 import {Input} from "@/components/ui/input"
 import {Select} from "@/components/ui/select"
 import {Button} from "@/components/ui/button"
+import {Field} from "@/components/ui/field"
+import {useToast} from "@/components/ui/use-toast"
 import {PLACEHOLDER_TYPE_LABEL} from "@/features/enums/labels"
 
-export function PlaceholderForm() {
-	const [state, action, pending] = useActionState<PlaceholderResult | null, FormData>(createPlaceholder, null)
+export function PlaceholderForm({onSuccess}: {onSuccess?: () => void}) {
+	const formRef = useRef<HTMLFormElement>(null)
+	const toast = useToast()
+	const [state, action, pending] = useActionState<PlaceholderResult | null, FormData>(
+		async (prev, formData) => {
+			const res = await createPlaceholder(prev, formData)
+			if (res.ok) {
+				toast("Dodano placeholder")
+				formRef.current?.reset()
+				onSuccess?.()
+			}
+			return res
+		},
+		null,
+	)
 
 	return (
-		<form className="flex flex-wrap items-end gap-2 border-b border-border pb-4" action={action}>
-			<Input className="w-36" name="key" placeholder="klucz (np. branza)" required />
-			<Input className="w-36" name="label" placeholder="Etykieta" required />
-			<Select className="w-36" name="type" defaultValue="TEXT">
-				<option value="TEXT">{PLACEHOLDER_TYPE_LABEL["TEXT"]}</option>
-				<option value="CHOICE">{PLACEHOLDER_TYPE_LABEL["CHOICE"]}</option>
-			</Select>
-			<Input className="w-48" name="options" placeholder="opcje listy wyboru: a, b, c" />
-			<Input className="w-32" name="fallback" placeholder="fallback" />
-			<Input className="w-40" name="source" placeholder="source (opcjonalnie)" />
+		<form className="flex flex-col gap-3" ref={formRef} action={action}>
+			<Field label="Klucz">
+				<Input name="key" placeholder="np. branza" required />
+			</Field>
+			<Field label="Etykieta">
+				<Input name="label" required />
+			</Field>
+			<Field label="Typ">
+				<Select name="type" defaultValue="TEXT">
+					<option value="TEXT">{PLACEHOLDER_TYPE_LABEL["TEXT"]}</option>
+					<option value="CHOICE">{PLACEHOLDER_TYPE_LABEL["CHOICE"]}</option>
+				</Select>
+			</Field>
+			<Field label="Opcje">
+				<Input name="options" placeholder="opcje listy wyboru: a, b, c" />
+			</Field>
+			<Field label="Fallback">
+				<Input name="fallback" />
+			</Field>
+			<Field label="Źródło">
+				<Input name="source" placeholder="source (opcjonalnie)" />
+			</Field>
 			<Button variant="primary" type="submit" disabled={pending}>
-				Dodaj
+				Dodaj placeholder
 			</Button>
 			{state && !state.ok ? <p className="text-sm text-danger">{state.error}</p> : null}
 		</form>

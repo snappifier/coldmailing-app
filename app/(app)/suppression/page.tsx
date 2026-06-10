@@ -5,7 +5,8 @@ import {removeSuppression} from "@/features/suppression/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {EmptyState} from "@/components/ui/empty-state"
-import {SuppressionForm} from "./suppression-form"
+import {PageHeader} from "@/components/ui/page-header"
+import {SuppressionCreateButton} from "./suppression-create-button"
 
 export default async function SuppressionPage() {
 	const {orgId} = await requireOrg()
@@ -13,11 +14,14 @@ export default async function SuppressionPage() {
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Wykluczenia ({entries.length})</h1>
-			<p className="text-sm text-fg-muted">Adresy z tej listy są pomijane przy imporcie i (później) przy wysyłce.</p>
-			<SuppressionForm />
+			<PageHeader
+				title="Wykluczenia"
+				description="Adresy, do których nigdy nie wysyłamy."
+				meta={`${entries.length} wykluczeń`}
+				action={<SuppressionCreateButton />}
+			/>
 			{entries.length === 0 ? (
-				<EmptyState title="Brak wykluczeń" description="Żaden adres nie został jeszcze wykluczony." />
+				<EmptyState title="Brak wykluczeń" description="Żaden adres nie został jeszcze wykluczony." action={<SuppressionCreateButton variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{entries.map((e) => (

@@ -1,11 +1,12 @@
 // app/(app)/linie/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
-import {OfferingLineForm} from "./offering-line-form"
 import {deleteOfferingLine} from "@/features/offering-lines/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {EmptyState} from "@/components/ui/empty-state"
+import {PageHeader} from "@/components/ui/page-header"
+import {LiniaCreateButton} from "./linia-create-button"
 
 export default async function OfferingLinesPage() {
 	const {orgId} = await requireOrg()
@@ -17,10 +18,14 @@ export default async function OfferingLinesPage() {
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Linie usług</h1>
-			<OfferingLineForm />
+			<PageHeader
+				title="Linie usług"
+				description="Oferty, do których przypisujesz leady i kampanie."
+				meta={`${lines.length} linii`}
+				action={<LiniaCreateButton />}
+			/>
 			{lines.length === 0 ? (
-				<EmptyState title="Brak linii usług" description="Dodaj pierwszą linię usług powyżej." />
+				<EmptyState title="Brak linii usług" description="Dodaj pierwszą linię usług." action={<LiniaCreateButton variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{lines.map((line) => (

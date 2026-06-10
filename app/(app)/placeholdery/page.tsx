@@ -6,8 +6,9 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {PageHeader} from "@/components/ui/page-header"
 import {PLACEHOLDER_TYPE_LABEL} from "@/features/enums/labels"
-import {PlaceholderForm} from "./placeholder-form"
+import {PlaceholderCreateButton} from "./placeholder-create-button"
 
 export default async function PlaceholdersPage() {
 	const {orgId} = await requireOrg()
@@ -15,13 +16,17 @@ export default async function PlaceholdersPage() {
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Placeholdery</h1>
+			<PageHeader
+				title="Placeholdery"
+				description="Własne pola podstawiane w szablonach."
+				meta={`${placeholders.length} placeholderów`}
+				action={<PlaceholderCreateButton />}
+			/>
 			<p className="text-sm text-fg-muted">
 				Wbudowane (zawsze dostępne): nazwaPlacowki, osoba, miasto, www, hookAI, zwrot, podpisNadawcy. Poniżej dodajesz własne.
 			</p>
-			<PlaceholderForm />
 			{placeholders.length === 0 ? (
-				<EmptyState title="Brak własnych placeholderów" description="Dodaj pierwszy placeholder powyżej." />
+				<EmptyState title="Brak własnych placeholderów" description="Dodaj pierwszy placeholder." action={<PlaceholderCreateButton variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{placeholders.map((p) => {

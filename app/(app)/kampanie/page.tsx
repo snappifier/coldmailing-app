@@ -7,8 +7,9 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {PageHeader} from "@/components/ui/page-header"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
-import {CampaignForm} from "./campaign-form"
+import {KampaniaCreateButton} from "./kampania-create-button"
 
 export default async function CampaignsPage() {
 	const {orgId} = await requireOrg()
@@ -21,12 +22,18 @@ export default async function CampaignsPage() {
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 	])
 
+	const activeCount = campaigns.filter((c) => c.status === "ACTIVE").length
+
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Kampanie</h1>
-			<CampaignForm offeringLines={offeringLines} />
+			<PageHeader
+				title="Kampanie"
+				description="Sekwencje wysyłkowe powiązane z liniami usług."
+				meta={`${campaigns.length} kampanii · ${activeCount} aktywnych`}
+				action={<KampaniaCreateButton offeringLines={offeringLines} />}
+			/>
 			{campaigns.length === 0 ? (
-				<EmptyState title="Brak kampanii" description="Utwórz pierwszą kampanię powyżej." />
+				<EmptyState title="Brak kampanii" description="Utwórz pierwszą kampanię." action={<KampaniaCreateButton offeringLines={offeringLines} variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{campaigns.map((c) => (
