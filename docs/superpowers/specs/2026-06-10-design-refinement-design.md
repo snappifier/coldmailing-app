@@ -15,7 +15,7 @@ This is a pure-presentation change: zero behavior, server, schema, or form-contr
 ## Decisions (user-picked)
 
 1. **Direction:** mono UI (mock variant A). Links, badges, progress, charts lose color; only statuses (success/danger/warning) stay colored.
-2. **Accent surface ("mega minimal"):** accent appears ONLY on: logo dot, active-tab bar (sidebar + settings-section rail), Switch ON + checked day chips, and the keyboard `:focus-visible` outline (transient, a11y).
+2. **Accent surface ("mega minimal"):** accent appears ONLY on: logo dot, active-tab bar (sidebar + settings-section rail), Switch ON + checked day chips, and the keyboard `:focus-visible` outline on buttons/links (transient, a11y; suppressed on form controls — see §4 correction).
 3. **Accent color:** Linear indigo — light theme `#5E6AD2`, dark theme `#828FFF` (Linear's own dark-mode lift of the same brand hue).
 4. **Input focus:** variant 1 — 1px border brightens to a neutral "border-focus" color + background lifts surface-2 → surface-1. No box-shadow of any kind.
 
@@ -93,8 +93,9 @@ In all three primitives:
 - `focus:border-accent` → `focus:border-border-focus`.
 - `focus:bg-surface-1` stays; hover `border-border-strong` stays.
 - Transition property list drops `box-shadow`: `transition-[border-color,background] duration-150`.
+- `focus:outline-none` → `focus:outline-hidden` (same visual, plus a forced-colors fallback outline for Windows High Contrast).
 
-Keyboard navigation keeps the global `:focus-visible` 2px accent outline (unchanged rule, new hue via token).
+Correction (found in review): on Input/Select/Textarea the global `:focus-visible` ring is intentionally SUPPRESSED by the outline utility (utilities layer beats the base-layer rule) — and that is the only coherent option, because text controls match `:focus-visible` on mouse focus too, which would repaint the accent ring on every click. Keyboard and mouse share the hairline treatment on form controls; the global 2px accent `:focus-visible` outline remains the keyboard indicator for buttons and links only.
 
 ## 5. Shadow scale + Confirm entrance (Modal / Confirm / Toast / dropdown)
 
