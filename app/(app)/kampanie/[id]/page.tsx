@@ -48,7 +48,7 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 
 	return (
 		<section className="flex flex-col gap-4">
-			<Link className="text-sm text-accent" href="/kampanie">
+			<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/kampanie">
 				← Kampanie
 			</Link>
 			<h1 className="text-lg font-semibold">

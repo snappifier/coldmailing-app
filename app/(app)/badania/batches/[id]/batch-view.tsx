@@ -148,7 +148,7 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 						{batch.rows.map((r) => (
 							<tr key={r.runId}>
 								<Td>
-									<a className="text-accent hover:underline" href={`/leady/${r.leadId}`}>
+									<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${r.leadId}`}>
 										{r.leadName}
 									</a>
 								</Td>

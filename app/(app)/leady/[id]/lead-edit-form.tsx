@@ -109,7 +109,7 @@ export function LeadEditForm({lead, customFields}: Props) {
 							</button>
 						</div>
 					))}
-					<button className="self-start text-xs text-accent" type="button" onClick={() => setRows([...rows, {key: "", value: ""}])}>
+					<button className="self-start text-xs text-fg-muted hover:text-fg hover:underline underline-offset-2" type="button" onClick={() => setRows([...rows, {key: "", value: ""}])}>
 						+ dodaj pole
 					</button>
 				</CardBody>

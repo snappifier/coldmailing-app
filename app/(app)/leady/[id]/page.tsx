@@ -33,7 +33,7 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 	return (
 		<section className="flex flex-col gap-6">
 			<div className="border-b border-border pb-4">
-				<Link className="text-sm text-accent" href="/leady">
+				<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/leady">
 					← Leady
 				</Link>
 				<div className="mt-2 flex items-center gap-3">

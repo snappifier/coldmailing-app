@@ -42,7 +42,7 @@ export default async function ResearchTypesPage() {
 							<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 								<div className="min-w-0">
 									<div className="flex items-center gap-2 text-sm font-semibold text-fg">
-										<Link className="truncate hover:text-accent" href={`/badania/${t.id}`}>{t.name}</Link>
+										<Link className="truncate hover:underline underline-offset-2" href={`/badania/${t.id}`}>{t.name}</Link>
 										<Badge variant={RESEARCH_KIND_VARIANT[t.kind]}>{RESEARCH_KIND_LABEL[t.kind]}</Badge>
 									</div>
 									<p className="mt-0.5 text-[12px] text-fg-faint">
@@ -69,7 +69,7 @@ export default async function ResearchTypesPage() {
 							<Card key={b.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 								<div className="min-w-0">
 									<div className="flex items-center gap-2 text-sm font-semibold text-fg">
-										<Link className="truncate hover:text-accent" href={`/badania/batches/${b.id}`}>{b.researchTypeName}</Link>
+										<Link className="truncate hover:underline underline-offset-2" href={`/badania/batches/${b.id}`}>{b.researchTypeName}</Link>
 										<Badge variant={RESEARCH_STATUS_VARIANT[b.status]}>{RESEARCH_STATUS_LABEL[b.status]}</Badge>
 									</div>
 									<p className="mt-0.5 text-[12px] text-fg-faint">

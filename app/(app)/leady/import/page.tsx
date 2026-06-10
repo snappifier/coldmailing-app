@@ -17,7 +17,7 @@ export default async function ImportPage() {
 			<PageHeader
 				title="Import leadów"
 				description="Wklej dane z arkusza, zmapuj kolumny i zaimportuj."
-				action={<Link className="text-sm text-accent hover:underline" href="/leady">← Leady</Link>}
+				action={<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/leady">← Leady</Link>}
 			/>
 			<ImportWizard offeringLines={offeringLines} />
 		</section>

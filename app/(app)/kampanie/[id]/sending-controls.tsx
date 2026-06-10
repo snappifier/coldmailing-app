@@ -55,7 +55,7 @@ export function SendingControls({campaignId, mailboxes, currentMailboxId, canMan
 			{mailboxes.length === 0 ? (
 				<p className="mt-2 text-sm text-fg-muted">
 					Brak skrzynek.{" "}
-					<a className="text-accent" href="/skrzynki">
+					<a className="text-fg underline underline-offset-2" href="/skrzynki">
 						Połącz skrzynkę
 					</a>
 					.

@@ -45,7 +45,7 @@ export default async function TemplatesPage() {
 				title="Szablony"
 				description="Treści maili z placeholderami i podglądem."
 				meta={`${templates.length} szablonów`}
-				action={<a className="text-sm text-accent hover:underline" href="#edytor">Nowy szablon</a>}
+				action={<a className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="#edytor">Nowy szablon</a>}
 			/>
 			<div id="edytor">
 				<TemplateEditor

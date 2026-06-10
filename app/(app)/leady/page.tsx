@@ -52,7 +52,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 				meta={`${total} leadów · ${inCampaigns} w kampaniach`}
 				action={
 					<span className="flex gap-2">
-						<Link className="text-sm text-accent" href="/leady/import">Importuj</Link>
+						<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/leady/import">Importuj</Link>
 						<LeadCreateButton offeringLines={offeringLines} />
 					</span>
 				}
@@ -103,7 +103,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 						{leads.map((lead) => (
 							<tr key={lead.id}>
 								<Td>
-									<a className="text-accent hover:underline" href={`/leady/${lead.id}`}>
+									<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${lead.id}`}>
 										{lead.organizationName}
 									</a>
 								</Td>

@@ -40,7 +40,7 @@ export default async function CampaignsPage() {
 						<Card key={c.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 							<div className="min-w-0">
 								<div className="flex items-center gap-2 text-sm font-semibold text-fg">
-									<Link className="truncate hover:text-accent" href={`/kampanie/${c.id}`}>{c.name}</Link>
+									<Link className="truncate hover:underline underline-offset-2" href={`/kampanie/${c.id}`}>{c.name}</Link>
 									<Badge variant={CAMPAIGN_STATUS_VARIANT[c.status]}>{CAMPAIGN_STATUS_LABEL[c.status]}</Badge>
 								</div>
 								<p className="mt-0.5 text-[12px] text-fg-faint">{c._count.steps} kroków · {c._count.campaignLeads} leadów</p>

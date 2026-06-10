@@ -181,7 +181,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 							</p>
 						) : null}
 						<div className="flex items-center justify-between gap-3">
-							<Link className="text-sm text-accent hover:underline" href="/leady">Anuluj</Link>
+							<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/leady">Anuluj</Link>
 							<Button
 								variant="primary"
 								type="button"

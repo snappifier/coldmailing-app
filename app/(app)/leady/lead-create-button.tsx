@@ -80,7 +80,7 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 				footer={
 					<>
 						{step === 0 ? (
-							<Link className="text-[11.5px] text-accent hover:underline" href="/leady/import" onClick={close}>Importuj z CSV →</Link>
+							<Link className="text-[11.5px] text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/leady/import" onClick={close}>Importuj z CSV →</Link>
 						) : <span />}
 						<span className="flex gap-2">
 							{step === 0 ? (
