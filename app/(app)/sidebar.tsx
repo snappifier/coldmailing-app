@@ -108,7 +108,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 							<span className="block truncate text-[10px] text-fg-faint">{user.orgName} · {roleLabel}</span>
 						</span>
 					</summary>
-					<div className="absolute bottom-full left-0 z-50 mb-2 w-60 rounded-lg border border-border-strong bg-surface-1 p-1.5 shadow-[0_12px_32px_-16px_rgba(0,0,0,.6)]">
+					<div className="absolute bottom-full left-0 z-50 mb-2 w-60 rounded-lg border border-border-strong bg-surface-1 p-1.5 shadow-pop">
 						<div className="px-2 py-1.5">
 							<div className="truncate text-sm font-semibold text-fg">{user.name ?? "—"}</div>
 							<div className="truncate text-xs text-fg-muted">{user.email ?? ""}</div>

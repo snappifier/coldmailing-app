@@ -19,7 +19,7 @@ export function ToastProvider({children}: {children: React.ReactNode}) {
 			{children}
 			<div className="fixed bottom-[18px] right-[18px] z-[60] flex flex-col gap-2">
 				{state.toasts.map((t) => (
-					<div key={t.id} className="flex min-w-[240px] items-center gap-2.5 rounded-md border border-border-strong bg-surface-1 px-3 py-2.5 text-[13px] text-fg shadow-[0_8px_24px_-16px_rgba(0,0,0,.4)] [animation:toastIn_.3s_var(--ease-out)]">
+					<div key={t.id} className="flex min-w-[240px] items-center gap-2.5 rounded-md border border-border-strong bg-surface-1 px-3 py-2.5 text-[13px] text-fg shadow-pop [animation:toastIn_.3s_var(--ease-out)]">
 						<span className={cn("grid size-[18px] flex-none place-items-center rounded-full", t.variant === "success" ? "bg-success-quiet text-success" : "bg-surface-3 text-fg-muted")}>
 							<CheckIcon className="size-3" />
 						</span>

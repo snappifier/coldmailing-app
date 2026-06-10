@@ -39,7 +39,7 @@ export function Modal({open, onClose, title, children, footer, width = 420}: {op
 			<AnimatePresence onExitComplete={() => {if (!openRef.current) ref.current?.close()}}>
 				{open ? (
 					<motion.div
-						className="overflow-hidden rounded-lg border border-border-strong bg-surface-1 text-fg shadow-[0_24px_64px_-24px_rgba(0,0,0,.8)]"
+						className="overflow-hidden rounded-lg border border-border-strong bg-surface-1 text-fg shadow-modal"
 						layout={!reduce}
 						initial={reduce ? false : {opacity: 0, scale: 0.96, y: 8}}
 						animate={{opacity: 1, scale: 1, y: 0}}

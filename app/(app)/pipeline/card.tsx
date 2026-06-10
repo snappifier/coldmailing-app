@@ -14,7 +14,7 @@ export function LeadCard({lead}: {lead: PipelineLead}) {
 			draggable
 			onDragStart={(e) => e.dataTransfer.setData("text/plain", lead.id)}
 			onClick={() => router.push(`/leady/${lead.id}`)}
-			className="cursor-pointer rounded-lg border border-border bg-surface-1 p-2 text-xs shadow-[0_1px_2px_rgba(9,9,11,.04)] hover:border-border-strong"
+			className="cursor-pointer rounded-lg border border-border bg-surface-1 p-2 text-xs shadow-card hover:border-border-strong"
 		>
 			<div className="font-semibold">{lead.organizationName}</div>
 			<div className="text-fg-muted">{sub || "—"}</div>

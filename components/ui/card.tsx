@@ -1,7 +1,7 @@
 // components/ui/card.tsx
 import {cn} from "@/lib/cn"
 export function Card({className, children}: {className?: string; children: React.ReactNode}) {
-	return <div className={cn("rounded-lg border border-border bg-surface-1 shadow-[0_1px_2px_rgba(9,9,11,.04)]", className)}>{children}</div>
+	return <div className={cn("rounded-lg border border-border bg-surface-1 shadow-card", className)}>{children}</div>
 }
 export function CardBody({className, children}: {className?: string; children: React.ReactNode}) {
 	return <div className={cn("p-[18px]", className)}>{children}</div>
