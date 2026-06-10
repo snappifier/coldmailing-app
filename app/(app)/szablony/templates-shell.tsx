@@ -99,7 +99,7 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 	)
 
 	async function switchTo(id: string | null) {
-		if (id === effectiveId) return
+		if (id !== null && id === effectiveId) return
 		if (dirty && !(await ask({title: "Porzucić niezapisane zmiany?", confirmLabel: "Porzuć", cancelLabel: "Wróć", danger: false}))) return
 		const next = id ? (templates.find((t) => t.id === id) ?? null) : null
 		const d = next ? toDraft(next) : EMPTY
