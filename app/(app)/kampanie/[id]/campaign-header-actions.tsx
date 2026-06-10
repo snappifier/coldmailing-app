@@ -6,6 +6,7 @@ import {activateCampaign, pauseCampaign} from "@/features/campaigns/sending-acti
 import type {ActivateResult} from "@/features/campaigns/activation"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Button} from "@/components/ui/button"
+import {useToast} from "@/components/ui/use-toast"
 
 interface Props {
 	campaignId: string
@@ -15,7 +16,12 @@ interface Props {
 }
 
 export function CampaignHeaderActions({campaignId, status, canManageSending, hasMailbox}: Props) {
-	const [state, action, pending] = useActionState<ActivateResult | null, FormData>(() => activateCampaign(campaignId), null)
+	const toast = useToast()
+	const [state, action, pending] = useActionState<ActivateResult | null, FormData>(async () => {
+		const res = await activateCampaign(campaignId)
+		if (res?.ok) toast("Aktywowano wysyłkę")
+		return res
+	}, null)
 
 	return (
 		<div className="flex flex-none items-center gap-3">

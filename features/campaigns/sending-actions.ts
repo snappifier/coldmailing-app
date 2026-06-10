@@ -93,7 +93,7 @@ export async function activateCampaign(campaignId: string): Promise<ActivateResu
 
 export async function pauseCampaign(campaignId: string): Promise<void> {
 	const {orgId} = await requireOrg()
-	const res = await prisma.campaign.updateMany({where: {id: campaignId, organizationId: orgId}, data: {status: "PAUSED"}})
+	const res = await prisma.campaign.updateMany({where: {id: campaignId, organizationId: orgId, status: "ACTIVE"}, data: {status: "PAUSED"}})
 	// Cancel in-flight orchestrators for this campaign (runLeadSequence cancelOn campaign/paused).
 	if (res.count > 0) await inngest.send({name: "campaign/paused", data: {campaignId}})
 	revalidatePath(`/kampanie/${campaignId}`)
