@@ -27,7 +27,7 @@ Unlike previous polish rounds this one ADDS behavior: three new org-scoped serve
 
 Three zones on one page, below the existing `PageHeader`:
 
-- **Rail** (left): the template list. Each item: name + one-line mini-meta (`offeringLine.name` and/or `w sekwencji`, `text-[10px] text-fg-faint`). Active item = `bg-surface-2 text-fg` + accent kreska (`before:` 3px bar — same idiom as settings-shell). An item being edited with unsaved changes shows an amber dirty dot (`bg-warning` `size-[5px]` rounded, right-aligned). Empty rail (zero templates) renders nothing; the editor opens in "new" mode.
+- **Rail** (left): the template list. Each item: name + one-line mini-meta (`offeringLine.name` and/or `w sekwencji`, `text-[10px] text-fg-faint`). Active item = `bg-surface-2 text-fg` + accent kreska (`before:` 3px bar — same idiom as settings-shell). An item being edited with unsaved changes shows an amber dirty dot (`bg-warning` `size-[5px]` rounded, right-aligned). Empty rail (zero templates) shows a one-line helper („Brak szablonów — utwórz pierwszy obok."); the editor opens in "new" mode.
 - **Editor** (middle): the form, §1.2.
 - **Preview** (right): §1.3.
 
@@ -43,7 +43,7 @@ One `<form>`, same field names as today (form contract preserved; `templateId` i
 
 - Uppercase Field labels (lead-detail idiom): Nazwa (`Input name`), paleta (the existing ghost-button mono chips + insert-at-caret logic, unchanged), Temat (`Textarea subject`, unchanged), Treść (`Textarea body h-48`), Follow-up: the native checkbox upgrades to `Switch` + `<input type=hidden>` mirror (the proven badania pattern; submitted value contract identical), Linia (`Select offeringLineId`).
 - Footer: primary submit — label „Zapisz szablon" (new mode) / „Zapisz zmiany" (edit mode) — plus, in edit mode only, `ConfirmButton` Usuń (reuses `deleteTemplate`); when the template is used by sequences (`_count.sequenceSteps > 0`) the delete button is replaced by the caption „w sekwencji" (same rule as the old list). The old standalone „Biblioteka" list section is REMOVED — the rail replaces it, delete moves here.
-- Result handling: success → `useToast` („Zapisano szablon") + in new mode reset to a fresh form; error stays inline (`text-danger`). The current inline „Zapisano." paragraph goes away.
+- Result handling: success → `useToast` („Zapisano szablon"); in new mode the just-created template becomes the selection (snapshot = saved draft — shipped behavior, better than the originally drafted reset-to-fresh); error stays inline (`text-danger`). The current inline „Zapisano." paragraph goes away.
 
 ### 1.3 Preview
 
@@ -73,7 +73,7 @@ Client component `campaign-tabs.tsx` (one consumer — NO new generic primitive;
 - Tab list: „Sekwencja" / „Leady i wysyłka" / „Przychodzące" (+ count suffix `text-fg-faint` when > 0). Active tab: `text-fg` + 2px accent underline (`border-b-2 border-accent` or `after:` bar). Inactive: `text-fg-muted hover:text-fg`. **This adds one entry to the accent allowlist** — it is literally the user's „kreska zaznaczająca aktywną zakładkę".
 - Tab 1 **Sekwencja**: step cards (§2.3) + the add-step form below them (same fields/names as today).
 - Tab 2 **Leady i wysyłka**: the mailbox `Select` + „Zapisz skrzynkę" form (ADMIN-gated as today, moved out of the old „Wysyłka" section; the standalone Aktywuj button moves to the header) and the „Przypisz leady" form (unchanged contract). The „Brak skrzynek → Połącz skrzynkę" note stays here.
-- Tab 3 **Przychodzące**: the `LeadInbox` rows, visually aligned to Card rows (avatar-less; keep current content + `markDoNotContact`).
+- Tab 3 **Przychodzące**: the `LeadInbox` rows as-is (the Card-row restyle clause was dropped at plan stage — known cosmetic debt; current border-row treatment stays). Content + `markDoNotContact` unchanged.
 - Server actions revalidate the page; tab state lives in the client component so it survives refreshes of server content.
 
 ### 2.3 Step cards: edit + reorder
