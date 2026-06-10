@@ -98,7 +98,7 @@ export async function updateSequenceStep(_prev: StepResult | null, formData: For
 	if (!parsed.success) return {ok: false, error: parsed.error.issues[0]?.message ?? "Błędne dane"}
 	await assertCampaignInOrg(parsed.data.campaignId, orgId)
 
-	await prisma.sequenceStep.updateMany({
+	const res = await prisma.sequenceStep.updateMany({
 		where: {id: parsed.data.stepId, campaignId: parsed.data.campaignId},
 		data: {
 			templateId: parsed.data.templateId,
@@ -107,6 +107,7 @@ export async function updateSequenceStep(_prev: StepResult | null, formData: For
 			useLeadDraft: parsed.data.useLeadDraft,
 		},
 	})
+	if (res.count === 0) return {ok: false, error: "Nie znaleziono kroku"}
 	revalidatePath(`/kampanie/${parsed.data.campaignId}`)
 	return {ok: true}
 }
@@ -114,6 +115,9 @@ export async function updateSequenceStep(_prev: StepResult | null, formData: For
 // Reorder is gated to non-ACTIVE campaigns: the sending engine's cursor is gap-safe
 // (steps.find(s => s.order >= currentStep)), so moving a step across a lead's cursor
 // on an ACTIVE campaign could re-send or skip it. Field edits carry no such risk.
+// Spec-accepted residual: the cursor is positional and survives pause, so reordering
+// across an in-flight lead's cursor while PAUSED can still re-send/skip after resume -
+// realistic reorders happen on DRAFT campaigns before any sends.
 export async function moveSequenceStep(stepId: string, dir: "up" | "down", campaignId: string): Promise<StepResult> {
 	const {orgId} = await requireOrg()
 	const campaign = await prisma.campaign.findFirst({where: {id: campaignId, organizationId: orgId}, select: {status: true}})
@@ -125,11 +129,16 @@ export async function moveSequenceStep(stepId: string, dir: "up" | "down", campa
 	if (!plan) return {ok: false, error: "Nie można przesunąć kroku"}
 
 	// @@unique([campaignId, order]) forbids a direct two-row swap - park one row on -1 first.
-	await prisma.$transaction([
-		prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: -1}}),
-		prisma.sequenceStep.update({where: {id: plan.b.id}, data: {order: plan.b.order}}),
-		prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: plan.a.order}}),
-	])
+	try {
+		await prisma.$transaction([
+			prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: -1}}),
+			prisma.sequenceStep.update({where: {id: plan.b.id}, data: {order: plan.b.order}}),
+			prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: plan.a.order}}),
+		])
+	} catch {
+		// A concurrent move invalidated the plan; the unique constraint aborted the whole tx.
+		return {ok: false, error: "Kolejność zmieniła się w międzyczasie — odśwież i spróbuj ponownie"}
+	}
 	revalidatePath(`/kampanie/${campaignId}`)
 	return {ok: true}
 }
