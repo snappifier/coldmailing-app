@@ -36,7 +36,7 @@ export interface SequenceStepTools {
 }
 
 export async function runLeadSequenceHandler(campaignLeadId: string, step: SequenceStepTools) {
-	// Steps + placeholders loaded once; mid-flight sequence edits are not picked up (accepted, see spec).
+	// Top-level reads re-execute on every Inngest replay, so step edits ARE picked up at each wake-up; the cursor find below is gap-safe. Reordering is gated to non-ACTIVE campaigns at the action layer (round-2 polish spec).
 	const base = await prisma.campaignLead.findUnique({where: {id: campaignLeadId}, include: {campaign: true}})
 	if (!base) return {skipped: "no-lead"}
 	const steps = await prisma.sequenceStep.findMany({

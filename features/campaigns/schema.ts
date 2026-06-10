@@ -14,5 +14,9 @@ export const sequenceStepSchema = z.object({
 	useLeadDraft: z.coerce.boolean().default(false),
 })
 
+export const updateSequenceStepSchema = sequenceStepSchema.extend({
+	stepId: z.string().trim().min(1),
+})
+
 export type CampaignInput = z.infer<typeof campaignSchema>
 export type SequenceStepInput = z.infer<typeof sequenceStepSchema>

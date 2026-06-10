@@ -4,7 +4,8 @@
 import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
-import {campaignSchema, sequenceStepSchema} from "@/features/campaigns/schema"
+import {campaignSchema, sequenceStepSchema, updateSequenceStepSchema} from "@/features/campaigns/schema"
+import {planSwap} from "@/features/campaigns/reorder"
 
 export type CampaignResult = {ok: true; id: string} | {ok: false; error: string}
 export type StepResult = {ok: true} | {ok: false; error: string}
@@ -87,6 +88,48 @@ export async function assignLeads(_prev: StepResult | null, formData: FormData):
 		data: leads.map((l) => ({campaignId, leadId: l.id})),
 		skipDuplicates: true,
 	})
+	revalidatePath(`/kampanie/${campaignId}`)
+	return {ok: true}
+}
+
+export async function updateSequenceStep(_prev: StepResult | null, formData: FormData): Promise<StepResult> {
+	const {orgId} = await requireOrg()
+	const parsed = updateSequenceStepSchema.safeParse(Object.fromEntries(formData))
+	if (!parsed.success) return {ok: false, error: parsed.error.issues[0]?.message ?? "Błędne dane"}
+	await assertCampaignInOrg(parsed.data.campaignId, orgId)
+
+	await prisma.sequenceStep.updateMany({
+		where: {id: parsed.data.stepId, campaignId: parsed.data.campaignId},
+		data: {
+			templateId: parsed.data.templateId,
+			delayDays: parsed.data.delayDays,
+			condition: parsed.data.condition,
+			useLeadDraft: parsed.data.useLeadDraft,
+		},
+	})
+	revalidatePath(`/kampanie/${parsed.data.campaignId}`)
+	return {ok: true}
+}
+
+// Reorder is gated to non-ACTIVE campaigns: the sending engine's cursor is gap-safe
+// (steps.find(s => s.order >= currentStep)), so moving a step across a lead's cursor
+// on an ACTIVE campaign could re-send or skip it. Field edits carry no such risk.
+export async function moveSequenceStep(stepId: string, dir: "up" | "down", campaignId: string): Promise<StepResult> {
+	const {orgId} = await requireOrg()
+	const campaign = await prisma.campaign.findFirst({where: {id: campaignId, organizationId: orgId}, select: {status: true}})
+	if (!campaign) return {ok: false, error: "Nie znaleziono kampanii"}
+	if (campaign.status === "ACTIVE") return {ok: false, error: "Wstrzymaj kampanię, aby zmienić kolejność"}
+
+	const steps = await prisma.sequenceStep.findMany({where: {campaignId}, select: {id: true, order: true}})
+	const plan = planSwap(steps, stepId, dir)
+	if (!plan) return {ok: false, error: "Nie można przesunąć kroku"}
+
+	// @@unique([campaignId, order]) forbids a direct two-row swap - park one row on -1 first.
+	await prisma.$transaction([
+		prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: -1}}),
+		prisma.sequenceStep.update({where: {id: plan.b.id}, data: {order: plan.b.order}}),
+		prisma.sequenceStep.update({where: {id: plan.a.id}, data: {order: plan.a.order}}),
+	])
 	revalidatePath(`/kampanie/${campaignId}`)
 	return {ok: true}
 }
