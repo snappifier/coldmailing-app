@@ -3,28 +3,30 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-	--bg: #fbfbfc; --bg-glow: #f2f5fb;
+	--bg: #fbfbfc;
 	--surface-1: #ffffff; --surface-2: #f6f6f7; --surface-3: #efeff1;
-	--border: rgba(9,9,11,.09); --border-strong: rgba(9,9,11,.16);
+	--border: rgba(9,9,11,.09); --border-strong: rgba(9,9,11,.16); --border-focus: rgba(9,9,11,.45);
 	--text: #18181b; --text-muted: #56565e; --text-faint: #9b9ba3;
-	--accent: #4f56c6; --accent-quiet: rgba(79,86,198,.11);
+	--accent: #5e6ad2; --accent-quiet: rgba(94,106,210,.10);
 	--primary-bg: #18181b; --primary-fg: #fafafa;
 	--success: #16a34a; --success-quiet: rgba(22,163,74,.10);
 	--danger: #dc2626; --danger-quiet: rgba(220,38,38,.09);
 	--warning: #b45309; --warning-quiet: rgba(180,83,9,.10);
-	--ring: rgba(79,86,198,.42);
+	--ring: rgba(94,106,210,.45);
+	--selection: rgba(9,9,11,.12);
 }
 [data-theme="dark"] {
-	--bg: #08090a; --bg-glow: #0e1014;
+	--bg: #08090a;
 	--surface-1: #131316; --surface-2: #1a1a1f; --surface-3: #212127;
-	--border: rgba(255,255,255,.08); --border-strong: rgba(255,255,255,.15);
+	--border: rgba(255,255,255,.08); --border-strong: rgba(255,255,255,.15); --border-focus: rgba(255,255,255,.55);
 	--text: #f3f3f4; --text-muted: #9a9aa3; --text-faint: #66666f;
-	--accent: #7c86dd; --accent-quiet: rgba(124,134,221,.15);
+	--accent: #828fff; --accent-quiet: rgba(130,143,255,.14);
 	--primary-bg: #fafafa; --primary-fg: #0a0a0b;
 	--success: #3ddc97; --success-quiet: rgba(61,220,151,.13);
 	--danger: #ff6b6b; --danger-quiet: rgba(255,107,107,.13);
 	--warning: #f5c451; --warning-quiet: rgba(245,196,81,.13);
-	--ring: rgba(124,134,221,.55);
+	--ring: rgba(130,143,255,.60);
+	--selection: rgba(255,255,255,.16);
 }
 
 @theme inline {
@@ -48,6 +50,10 @@
 	--color-warning: var(--warning);
 	--color-warning-quiet: var(--warning-quiet);
 	--color-ring: var(--ring);
+	--color-border-focus: var(--border-focus);
+	--shadow-card: 0 1px 2px rgba(9,9,11,.04);
+	--shadow-pop: 0 8px 24px -12px rgba(0,0,0,.35);
+	--shadow-modal: 0 16px 48px -16px rgba(0,0,0,.5);
 	--radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;
 	--ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
 	--ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -57,10 +63,11 @@
 
 @layer base {
 	body { background: var(--bg); color: var(--text); letter-spacing: -0.006em; }
-	::selection { background: var(--accent-quiet); }
+	::selection { background: var(--selection); }
 	:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
 	@media (prefers-reduced-motion: reduce) {
 		*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 	}
 	@keyframes toastIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+	@keyframes confirmIn { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: none; } }
 }
