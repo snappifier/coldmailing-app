@@ -12,3 +12,7 @@ export const templateSchema = z.object({
 })
 
 export type TemplateInput = z.infer<typeof templateSchema>
+
+export const templateUpdateSchema = templateSchema.extend({
+	templateId: z.string().trim().min(1),
+})
