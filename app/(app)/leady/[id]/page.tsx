@@ -7,7 +7,6 @@ import {getLeadTimeline} from "@/features/pipeline/queries"
 import {STAGE_LABEL} from "@/features/pipeline/types"
 import {listResearchTypes} from "@/features/research-types/queries"
 import {Badge} from "@/components/ui/badge"
-import {Card, CardBody} from "@/components/ui/card"
 import {LeadEditForm} from "./lead-edit-form"
 import {LeadTimeline} from "./timeline"
 import {ActivityForm} from "./activity-form"
@@ -49,28 +48,24 @@ export default async function LeadEditPage({params}: {params: Promise<{id: strin
 				<div className="flex flex-col gap-6">
 					<div>
 						<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Dane</div>
-						<Card>
-							<CardBody>
-								<LeadEditForm
-									lead={{
-										id: lead.id,
-										organizationName: lead.organizationName,
-										email: lead.email,
-										website: lead.website,
-										contactPersonName: lead.contactPersonName,
-										contactRole: lead.contactRole,
-										city: lead.city,
-										honorific: lead.honorific,
-										score: lead.score,
-										priority: lead.priority,
-										siteQuality: lead.siteQuality,
-										aiHook: lead.aiHook,
-										aiNotes: lead.aiNotes,
-									}}
-									customFields={customFields}
-								/>
-							</CardBody>
-						</Card>
+						<LeadEditForm
+							lead={{
+								id: lead.id,
+								organizationName: lead.organizationName,
+								email: lead.email,
+								website: lead.website,
+								contactPersonName: lead.contactPersonName,
+								contactRole: lead.contactRole,
+								city: lead.city,
+								honorific: lead.honorific,
+								score: lead.score,
+								priority: lead.priority,
+								siteQuality: lead.siteQuality,
+								aiHook: lead.aiHook,
+								aiNotes: lead.aiNotes,
+							}}
+							customFields={customFields}
+						/>
 					</div>
 
 					<div>

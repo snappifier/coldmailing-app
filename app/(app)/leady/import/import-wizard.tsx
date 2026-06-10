@@ -32,7 +32,8 @@ const FIELDS: {key: LeadFieldKey; label: string}[] = [
 
 type Target = {kind: "ignore"} | {kind: "field"; field: LeadFieldKey} | {kind: "custom"; key: string}
 
-const connectAnchorClass = "inline-flex items-center gap-2 rounded-md font-medium tracking-[-0.01em] transition-[transform,background,border-color,opacity] duration-150 ease-out active:scale-[.97] h-8 px-3 text-sm bg-primary text-primary-fg hover:opacity-90"
+// Button-primary classes for link elements (mirrors components/ui/button.tsx base + md size + primary variant).
+const primaryLinkClass = "inline-flex items-center gap-2 rounded-md font-medium tracking-[-0.01em] transition-[transform,background,border-color,opacity] duration-150 ease-out active:scale-[.97] h-8 px-3 text-sm bg-primary text-primary-fg hover:opacity-90"
 
 export function ImportWizard({offeringLines}: {offeringLines: {id: string; name: string}[]}) {
 	const [text, setText] = useState("")
@@ -154,8 +155,8 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 						</div>
 					</div>
 					<div className="flex items-center gap-3">
-						<Button className="" type="button" onClick={resetAll}>Importuj kolejne</Button>
-						<Link className={connectAnchorClass} href="/leady">Przejdź do leadów</Link>
+						<Button type="button" onClick={resetAll}>Importuj kolejne</Button>
+						<Link className={primaryLinkClass} href="/leady">Przejdź do leadów</Link>
 					</div>
 				</div>
 			) : (
@@ -182,7 +183,6 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 						<div className="flex items-center justify-between gap-3">
 							<Link className="text-sm text-accent hover:underline" href="/leady">Anuluj</Link>
 							<Button
-								className=""
 								variant="primary"
 								type="button"
 								disabled={allRows.length === 0}
