@@ -5,6 +5,7 @@ import {getPipelineLeads} from "@/features/pipeline/queries"
 import {groupLeadsByStage} from "@/features/pipeline/group"
 import {Select} from "@/components/ui/select"
 import {Button} from "@/components/ui/button"
+import {PageHeader} from "@/components/ui/page-header"
 import {PipelineBoard} from "./board"
 
 export default async function PipelinePage({searchParams}: {searchParams: Promise<{line?: string}>}) {
@@ -18,7 +19,11 @@ export default async function PipelinePage({searchParams}: {searchParams: Promis
 
 	return (
 		<section className="flex flex-col gap-4">
-			<h1 className="text-lg font-semibold">Pipeline ({leads.length})</h1>
+			<PageHeader
+				title="Pipeline"
+				description="Etapy dealowe przeciągane na tablicy."
+				meta={`${leads.length} leadów na tablicy`}
+			/>
 			<form className="flex items-center gap-2">
 				<Select name="line" defaultValue={line ?? ""}>
 					<option value="">— wszystkie linie —</option>

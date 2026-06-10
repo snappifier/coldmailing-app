@@ -35,7 +35,7 @@ export default async function PlaceholdersPage() {
 						if (p.source) metaParts.push(`source: ${p.source}`)
 						const metaLine = metaParts.join(" · ")
 						return (
-							<Card key={p.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+							<Card key={p.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 								<div className="min-w-0">
 									<div className="flex items-center gap-2 text-sm font-semibold text-fg">
 										<code className="shrink-0">{`{{${p.key}}}`}</code>

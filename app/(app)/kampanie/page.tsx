@@ -37,7 +37,7 @@ export default async function CampaignsPage() {
 			) : (
 				<div className="flex flex-col gap-2">
 					{campaigns.map((c) => (
-						<Card key={c.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+						<Card key={c.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 							<div className="min-w-0">
 								<div className="flex items-center gap-2 text-sm font-semibold text-fg">
 									<Link className="truncate hover:text-accent" href={`/kampanie/${c.id}`}>{c.name}</Link>

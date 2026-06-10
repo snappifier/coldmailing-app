@@ -8,6 +8,7 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {PageHeader} from "@/components/ui/page-header"
 import {RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
 
 export default async function ResearchTypesPage() {
@@ -16,15 +17,12 @@ export default async function ResearchTypesPage() {
 
 	return (
 		<section className="flex flex-col gap-4">
-			<div className="flex items-center justify-between">
-				<h1 className="text-lg font-semibold">Badania</h1>
-				<Link className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg" href="/badania/nowy">
-					Nowy typ
-				</Link>
-			</div>
-			<p className="text-sm text-fg-muted">
-				Typy badań definiują prompt i pola wyjściowe mapowane na pola leada. Silnik (Faza 2b) uruchomi je per lead.
-			</p>
+			<PageHeader
+				title="Badania AI"
+				description="Typy badań, ocen i treści generowanych przez AI."
+				meta={`${types.length} typów · ${batches.length} ostatnich badań zbiorczych`}
+				action={<Link className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg" href="/badania/nowy">Nowy typ</Link>}
+			/>
 
 			{types.length === 0 ? (
 				<EmptyState
@@ -41,7 +39,7 @@ export default async function ResearchTypesPage() {
 					{types.map((t) => {
 						const count = Array.isArray(t.outputFields) ? t.outputFields.length : 0
 						return (
-							<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+							<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 								<div className="min-w-0">
 									<div className="flex items-center gap-2 text-sm font-semibold text-fg">
 										<Link className="truncate hover:text-accent" href={`/badania/${t.id}`}>{t.name}</Link>
@@ -68,7 +66,7 @@ export default async function ResearchTypesPage() {
 				) : (
 					<div className="flex flex-col gap-2">
 						{batches.map((b) => (
-							<Card key={b.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+							<Card key={b.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 								<div className="min-w-0">
 									<div className="flex items-center gap-2 text-sm font-semibold text-fg">
 										<Link className="truncate hover:text-accent" href={`/badania/batches/${b.id}`}>{b.researchTypeName}</Link>

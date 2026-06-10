@@ -25,7 +25,7 @@ export default async function SuppressionPage() {
 			) : (
 				<div className="flex flex-col gap-2">
 					{entries.map((e) => (
-						<Card key={e.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+						<Card key={e.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 							<div className="min-w-0">
 								<div className="truncate text-sm font-semibold text-fg">{e.email}</div>
 								<p className="mt-0.5 text-[12px] text-fg-faint">

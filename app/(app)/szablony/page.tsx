@@ -7,6 +7,7 @@ import {resolveSenderName} from "@/features/templates/sender"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {PageHeader} from "@/components/ui/page-header"
 import {TemplateEditor} from "./template-editor"
 import type {RenderLead} from "@/features/templates/render"
 
@@ -40,16 +41,23 @@ export default async function TemplatesPage() {
 
 	return (
 		<section className="flex flex-col gap-6">
-			<h1 className="text-lg font-semibold">Szablony</h1>
-			<TemplateEditor
-				offeringLines={offeringLines}
-				customPlaceholders={placeholders.map((p) => ({key: p.key, source: p.source, fallback: p.fallback}))}
-				customKeys={placeholders.map((p) => p.key)}
-				sampleLead={sampleLead}
-				senderName={senderName}
-				signatureSet={senderSignature.trim() !== ""}
-				previewMailboxName={previewMailboxName}
+			<PageHeader
+				title="Szablony"
+				description="Treści maili z placeholderami i podglądem."
+				meta={`${templates.length} szablonów`}
+				action={<a className="text-sm text-accent hover:underline" href="#edytor">Nowy szablon</a>}
 			/>
+			<div id="edytor">
+				<TemplateEditor
+					offeringLines={offeringLines}
+					customPlaceholders={placeholders.map((p) => ({key: p.key, source: p.source, fallback: p.fallback}))}
+					customKeys={placeholders.map((p) => p.key)}
+					sampleLead={sampleLead}
+					senderName={senderName}
+					signatureSet={senderSignature.trim() !== ""}
+					previewMailboxName={previewMailboxName}
+				/>
+			</div>
 
 			<div>
 				<h2 className="mb-2 text-sm font-semibold text-fg">Biblioteka ({templates.length})</h2>
@@ -63,7 +71,7 @@ export default async function TemplatesPage() {
 							if (t.offeringLine) metaParts.push(t.offeringLine.name)
 							const metaLine = metaParts.join(" · ")
 							return (
-								<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3">
+								<Card key={t.id} className="flex items-center justify-between gap-3 px-3.5 py-3 transition-colors hover:border-border-strong">
 									<div className="min-w-0">
 										<div className="flex items-center gap-2 text-sm font-semibold text-fg">
 											<span className="truncate">{t.name}</span>
