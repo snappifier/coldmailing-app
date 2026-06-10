@@ -8,8 +8,12 @@ import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {getCampaignMetrics} from "@/features/metrics/queries"
 import {formatPct, formatInt} from "@/features/metrics/compute"
 import {Badge} from "@/components/ui/badge"
+import {Card} from "@/components/ui/card"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
-import {SequenceAndLeads} from "./sequence-and-leads"
+import {CampaignTabs} from "./campaign-tabs"
+import {CampaignHeaderActions} from "./campaign-header-actions"
+import {SequenceSteps} from "./sequence-steps"
+import {AssignLeadsForm} from "./assign-leads-form"
 import {SendingControls} from "./sending-controls"
 import {LeadInbox} from "./lead-inbox"
 import {MetricStat} from "../../dashboard-parts"
@@ -46,57 +50,67 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 		listEmailAccounts(orgId),
 	])
 
+	const canManageSending = hasRole(role, "ADMIN")
+
 	return (
 		<section className="flex flex-col gap-4">
 			<Link className="text-sm text-fg-muted hover:text-fg hover:underline underline-offset-2" href="/kampanie">
 				← Kampanie
 			</Link>
-			<h1 className="text-lg font-semibold">
-				{campaign.name}{" "}
-				<Badge variant={CAMPAIGN_STATUS_VARIANT[campaign.status]}>{CAMPAIGN_STATUS_LABEL[campaign.status]}</Badge>{" "}
-				<span className="text-sm font-normal text-fg-faint">· {campaign._count.campaignLeads} leadów</span>
-			</h1>
-			{metrics ? (
-				<div className="flex flex-wrap gap-5 rounded-lg border border-border bg-surface-1 p-3.5">
-					<MetricStat label="Wysłane maile" value={formatInt(metrics.mailsSent)} />
-					<MetricStat label="Skontaktowani" value={formatInt(metrics.rates.contacted)} />
-					<MetricStat label="Odpowiedzi" value={`${formatInt(metrics.breakdown.replied)} · ${formatPct(metrics.rates.replyRate)}`} />
-					<MetricStat label="Odbicia" value={`${formatInt(metrics.breakdown.bounced)} · ${formatPct(metrics.rates.bounceRate)}`} />
-					<MetricStat label="Rezygnacje" value={`${formatInt(metrics.breakdown.unsubscribed)} · ${formatPct(metrics.rates.unsubRate)}`} />
-					<MetricStat label="Błędy" value={formatInt(metrics.breakdown.failed)} />
-				</div>
-			) : null}
-			<SendingControls
-				campaignId={campaign.id}
-				mailboxes={mailboxes.map((m) => ({id: m.id, email: m.email}))}
-				currentMailboxId={campaign.sendingEmailAccountId}
-				canManageSending={hasRole(role, "ADMIN")}
-			/>
-			<SequenceAndLeads
-				campaignId={campaign.id}
-				templates={templates}
-				offeringLines={offeringLines}
-				steps={campaign.steps.map((s) => ({
-					id: s.id,
-					order: s.order,
-					delayDays: s.delayDays,
-					condition: s.condition,
-					templateName: s.template.name,
-					useLeadDraft: s.useLeadDraft,
-				}))}
-			/>
-			<div>
-				<h2 className="mb-2 text-sm font-semibold text-fg">Przychodzące</h2>
-				<LeadInbox
-					rows={leads.map((l) => ({
-						id: l.id,
-						org: l.lead.organizationName,
-						status: l.status,
-						inboundKind: l.messages[0]?.inboundKind ?? null,
-						snippet: l.messages[0]?.body ?? null,
-					}))}
-				/>
+			<div className="flex flex-wrap items-center justify-between gap-3">
+				<h1 className="text-lg font-semibold">
+					{campaign.name}{" "}
+					<Badge variant={CAMPAIGN_STATUS_VARIANT[campaign.status]}>{CAMPAIGN_STATUS_LABEL[campaign.status]}</Badge>{" "}
+					<span className="text-sm font-normal text-fg-faint">· {campaign._count.campaignLeads} leadów</span>
+				</h1>
+				<CampaignHeaderActions campaignId={campaign.id} status={campaign.status} canManageSending={canManageSending} hasMailbox={Boolean(campaign.sendingEmailAccountId)} />
 			</div>
+			{metrics ? (
+				<Card className="flex flex-wrap divide-x divide-border">
+					<div className="px-4 py-3"><MetricStat label="Wysłane maile" value={formatInt(metrics.mailsSent)} /></div>
+					<div className="px-4 py-3"><MetricStat label="Skontaktowani" value={formatInt(metrics.rates.contacted)} /></div>
+					<div className="px-4 py-3"><MetricStat label="Odpowiedzi" value={`${formatInt(metrics.breakdown.replied)} · ${formatPct(metrics.rates.replyRate)}`} /></div>
+					<div className="px-4 py-3"><MetricStat label="Odbicia" value={`${formatInt(metrics.breakdown.bounced)} · ${formatPct(metrics.rates.bounceRate)}`} /></div>
+					<div className="px-4 py-3"><MetricStat label="Rezygnacje" value={`${formatInt(metrics.breakdown.unsubscribed)} · ${formatPct(metrics.rates.unsubRate)}`} /></div>
+					<div className="px-4 py-3"><MetricStat label="Błędy" value={formatInt(metrics.breakdown.failed)} /></div>
+				</Card>
+			) : null}
+			<CampaignTabs
+				inboundCount={leads.length}
+				sekwencja={
+					<SequenceSteps
+						campaignId={campaign.id}
+						templates={templates}
+						campaignActive={campaign.status === "ACTIVE"}
+						steps={campaign.steps.map((s) => ({
+							id: s.id,
+							order: s.order,
+							delayDays: s.delayDays,
+							condition: s.condition,
+							templateId: s.templateId,
+							templateName: s.template.name,
+							useLeadDraft: s.useLeadDraft,
+						}))}
+					/>
+				}
+				leady={
+					<div className="flex flex-col gap-6">
+						<SendingControls campaignId={campaign.id} mailboxes={mailboxes.map((m) => ({id: m.id, email: m.email}))} currentMailboxId={campaign.sendingEmailAccountId} canManageSending={canManageSending} />
+						<AssignLeadsForm campaignId={campaign.id} offeringLines={offeringLines} />
+					</div>
+				}
+				przychodzace={
+					<LeadInbox
+						rows={leads.map((l) => ({
+							id: l.id,
+							org: l.lead.organizationName,
+							status: l.status,
+							inboundKind: l.messages[0]?.inboundKind ?? null,
+							snippet: l.messages[0]?.body ?? null,
+						}))}
+					/>
+				}
+			/>
 		</section>
 	)
 }
