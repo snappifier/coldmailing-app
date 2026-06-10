@@ -94,7 +94,7 @@ export function UruchomResearch({leadId, types}: {leadId: string; types: TypeOpt
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
 					Brak typów badań. Dodaj w{" "}
-					<Link className="underline" href="/badania">
+					<Link className="text-fg underline underline-offset-2" href="/badania">
 						Badania
 					</Link>
 					.

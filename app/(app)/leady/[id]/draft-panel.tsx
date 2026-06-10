@@ -82,7 +82,7 @@ export function DraftPanel({leadId, types, initial}: {leadId: string; types: Typ
 			{types.length === 0 ? (
 				<p className="text-sm text-fg-muted">
 					Brak typów draftu. Dodaj typ &bdquo;Draft&rdquo; w{" "}
-					<Link className="underline" href="/badania">
+					<Link className="text-fg underline underline-offset-2" href="/badania">
 						Badania
 					</Link>
 					.
