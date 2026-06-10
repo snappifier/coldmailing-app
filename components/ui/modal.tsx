@@ -10,9 +10,13 @@ const EASE_OUT_QUART: [number, number, number, number] = [0.165, 0.84, 0.44, 1]
 // layout morph spring visualDuration .25 bounce 0). Reduced motion snaps everything.
 export function Modal({open, onClose, title, children, footer, width = 420}: {open: boolean; onClose: () => void; title: string; children: React.ReactNode; footer?: React.ReactNode; width?: number}) {
 	const ref = useRef<HTMLDialogElement>(null)
+	// Latest open value for onExitComplete: a rapid close->reopen must not let the stale
+	// exit callback close the freshly reopened dialog.
+	const openRef = useRef(open)
 	const reduce = useReducedMotion()
 
 	useEffect(() => {
+		openRef.current = open
 		const dialog = ref.current
 		if (!dialog) return
 		if (open && !dialog.open) dialog.showModal()
@@ -32,7 +36,7 @@ export function Modal({open, onClose, title, children, footer, width = 420}: {op
 				if (e.target === ref.current) onClose()
 			}}
 		>
-			<AnimatePresence onExitComplete={() => ref.current?.close()}>
+			<AnimatePresence onExitComplete={() => {if (!openRef.current) ref.current?.close()}}>
 				{open ? (
 					<motion.div
 						className="overflow-hidden rounded-lg border border-border-strong bg-surface-1 text-fg shadow-[0_24px_64px_-24px_rgba(0,0,0,.8)]"

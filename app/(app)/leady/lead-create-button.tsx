@@ -72,7 +72,7 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 
 	return (
 		<>
-			<Button className="" variant={variant} type="button" onClick={() => setOpen(true)}>+ Dodaj leada</Button>
+			<Button variant={variant} type="button" onClick={() => setOpen(true)}>+ Dodaj leada</Button>
 			<Modal
 				open={open}
 				onClose={close}
@@ -86,12 +86,12 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 							{step === 0 ? (
 								<>
 									<Button type="button" onClick={close}>Anuluj</Button>
-									<Button className="" variant="primary" type="button" onClick={next}>Dalej</Button>
+									<Button variant="primary" type="button" onClick={next}>Dalej</Button>
 								</>
 							) : (
 								<>
 									<Button type="button" onClick={() => setStep(0)}>Wstecz</Button>
-									<Button className="" variant="primary" type="submit" form="lead-wizard-form" disabled={pending}>Dodaj leada</Button>
+									<Button variant="primary" type="submit" form="lead-wizard-form" disabled={pending}>Dodaj leada</Button>
 								</>
 							)}
 						</span>
@@ -115,7 +115,7 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 					<div
 						ref={step0Ref}
 						hidden={step !== 0}
-						className={step === 0 ? "flex flex-col gap-3" : "flex flex-col gap-3"}
+						className="flex flex-col gap-3"
 					>
 						<Field label="Nazwa organizacji">
 							<Input name="organizationName" placeholder="np. LO im. Kopernika, Warszawa" required />
