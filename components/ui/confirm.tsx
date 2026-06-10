@@ -30,7 +30,7 @@ export function ConfirmProvider({children}: {children: React.ReactNode}) {
 			<dialog
 				ref={dialogRef}
 				onCancel={(e) => {e.preventDefault(); settle(false)}}
-				className="m-auto w-[380px] max-w-[calc(100vw-32px)] rounded-lg border border-border-strong bg-surface-1 p-[18px] text-fg backdrop:bg-black/50 backdrop:backdrop-blur-[2px]"
+				className="m-auto w-[380px] max-w-[calc(100vw-32px)] rounded-lg border border-border-strong bg-surface-1 p-[18px] text-fg shadow-modal open:[animation:confirmIn_.2s_var(--ease-out-quart)] backdrop:bg-black/50 backdrop:backdrop-blur-[2px]"
 			>
 				{opts ? (
 					<>
