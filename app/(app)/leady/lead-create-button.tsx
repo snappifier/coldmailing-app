@@ -102,7 +102,7 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 					<p className="text-[11px] text-fg-faint">Krok {step + 1} z 2 · {STEPS[step]}</p>
 					<div className="mt-1.5 h-[2px] overflow-hidden rounded-full bg-surface-3">
 						<motion.div
-							className="h-full rounded-full bg-accent"
+							className="h-full rounded-full bg-fg"
 							initial={false}
 							animate={{width: step === 0 ? "50%" : "100%"}}
 							transition={reduce ? {duration: 0} : {type: "spring", visualDuration: 0.25, bounce: 0}}

@@ -49,7 +49,7 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 								<span className="text-sm font-semibold">{a.email}</span>
 								<Badge variant={EMAIL_ACCOUNT_STATUS_VARIANT[a.status]}>{EMAIL_ACCOUNT_STATUS_LABEL[a.status]}</Badge>
 								{a.scope?.includes("gmail.readonly") ? (
-									<span className="rounded-full bg-accent-quiet px-2 py-0.5 text-xs text-accent">odpowiedzi: on</span>
+									<span className="rounded-full bg-surface-3 px-2 py-0.5 text-xs text-fg-muted">odpowiedzi: on</span>
 								) : (
 									<span className="rounded-full bg-warning-quiet px-2 py-0.5 text-xs text-warning">odpowiedzi: off (przepnij skrzynkę)</span>
 								)}

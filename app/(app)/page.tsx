@@ -57,7 +57,7 @@ export default async function DashboardPage() {
 					<div className="px-5 py-4">
 						<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Lejek sprzedaży</div>
 						{m.funnel.map((f) => (
-							<FunnelRow key={f.stage} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "accent"} />
+							<FunnelRow key={f.stage} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "neutral"} />
 						))}
 					</div>
 					<div className="px-5 py-4">
@@ -96,7 +96,7 @@ export default async function DashboardPage() {
 											<span className="inline-flex items-center gap-2">
 												<span className="tabular-nums">{formatInt(c.replied)} <span className="text-fg-muted">· {formatPct(c.replyRate)}</span></span>
 												<span className="relative h-[3px] w-[52px] overflow-hidden rounded-full bg-surface-3">
-													<span className="absolute inset-y-0 left-0 rounded-full bg-accent" style={{width: `${Math.min(100, Math.round((c.replyRate ?? 0) * 1000))}%`}} />
+													<span className="absolute inset-y-0 left-0 rounded-full bg-fg" style={{width: `${Math.min(100, Math.round((c.replyRate ?? 0) * 1000))}%`}} />
 												</span>
 											</span>
 										</td>

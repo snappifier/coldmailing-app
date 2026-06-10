@@ -41,21 +41,21 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 		<svg className={className} viewBox="0 0 600 64" preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
 			<defs>
 				<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
-					<stop offset="0" stopColor="var(--accent)" stopOpacity=".22" />
-					<stop offset="1" stopColor="var(--accent)" stopOpacity="0" />
+					<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
+					<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
 				</linearGradient>
 			</defs>
 			<path d={area} fill="url(#spark-fill)" />
-			<path d={line} fill="none" stroke="var(--accent)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--accent)" /> : null}
+			<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--text)" /> : null}
 		</svg>
 	)
 }
 
-export function FunnelRow({label, count, max, tone = "accent"}: {label: string; count: number; max: number; tone?: "accent" | "won" | "lost"}) {
+export function FunnelRow({label, count, max, tone = "neutral"}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"}) {
 	const raw = max > 0 ? (count / max) * 100 : 0
 	const pct = count > 0 ? Math.max(1.5, Math.round(raw * 10) / 10) : 0
-	const fill = tone === "won" ? "bg-success" : tone === "lost" ? "bg-danger/55" : "bg-accent"
+	const fill = tone === "won" ? "bg-success" : tone === "lost" ? "bg-danger/55" : "bg-fg-muted"
 	return (
 		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
 			<span className="text-fg-muted">{label}</span>
