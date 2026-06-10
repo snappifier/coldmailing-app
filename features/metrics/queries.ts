@@ -1,7 +1,7 @@
 // features/metrics/queries.ts
 import {prisma} from "@/lib/prisma"
 import type {DealStage} from "@/generated/prisma/client"
-import {summarizeStatuses, computeRates, buildCampaignRows, orderFunnel, type StatusBreakdown, type Rates, type CampaignRow} from "@/features/metrics/compute"
+import {summarizeStatuses, computeRates, buildCampaignRows, orderFunnel, bucketDaily, type StatusBreakdown, type Rates, type CampaignRow, type DailyCount} from "@/features/metrics/compute"
 
 export interface OrgMetrics {
 	leadsTotal: number
@@ -56,4 +56,41 @@ export async function getCampaignMetrics(campaignId: string, orgId: string): Pro
 	])
 	const breakdown = summarizeStatuses(statusGroups.map((g) => ({status: g.status, count: g._count._all})))
 	return {breakdown, rates: computeRates(breakdown), mailsSent}
+}
+
+export interface RecentReply {
+	campaignLeadId: string
+	campaignId: string
+	campaignName: string
+	organizationName: string
+	at: Date
+}
+
+export async function getDailySends(orgId: string, days = 30, now = new Date()): Promise<DailyCount[]> {
+	const since = new Date(now.getTime() - days * 86_400_000)
+	const msgs = await prisma.message.findMany({
+		where: {organizationId: orgId, direction: "OUTBOUND", status: "SENT", sentAt: {gte: since}},
+		select: {sentAt: true},
+	})
+	const dates = msgs.map((m) => m.sentAt).filter((d): d is Date => d != null)
+	return bucketDaily(dates, days, now, "Europe/Warsaw")
+}
+
+export async function getRecentReplies(orgId: string, limit = 6): Promise<RecentReply[]> {
+	const msgs = await prisma.message.findMany({
+		where: {organizationId: orgId, direction: "INBOUND", inboundKind: {in: ["REPLY", "OPT_OUT_SUSPECT"]}},
+		orderBy: {createdAt: "desc"},
+		take: limit,
+		select: {
+			createdAt: true,
+			campaignLead: {select: {id: true, campaign: {select: {id: true, name: true}}, lead: {select: {organizationName: true}}}},
+		},
+	})
+	return msgs.map((m) => ({
+		campaignLeadId: m.campaignLead.id,
+		campaignId: m.campaignLead.campaign.id,
+		campaignName: m.campaignLead.campaign.name,
+		organizationName: m.campaignLead.lead.organizationName,
+		at: m.createdAt,
+	}))
 }
