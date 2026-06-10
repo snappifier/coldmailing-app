@@ -351,7 +351,7 @@ New: `<a className="text-fg underline underline-offset-2" href="/skrzynki">`
 - [ ] **Step 5: Verify no text-accent links remain**
 
 Run: `rg -n "text-accent|hover:text-accent" app`
-Expected: exactly 2 matches — `app/(app)/sidebar.tsx` (logo dot) and `app/(app)/skrzynki/mailbox-settings-form.tsx` (day chips `peer-checked:text-accent`). (After Task 9 the login dot becomes a third.)
+Expected: exactly 3 matches until Task 8 lands — `app/(app)/sidebar.tsx` (logo dot), `app/(app)/skrzynki/mailbox-settings-form.tsx` (day chips `peer-checked:text-accent`), and `app/(app)/skrzynki/page.tsx` (the "odpowiedzi: on" pill — Task 8 scope, do NOT touch it here). After Task 8 it drops to 2; after Task 9 the login dot makes it 3 again.
 
 - [ ] **Step 6: Commit**
 
