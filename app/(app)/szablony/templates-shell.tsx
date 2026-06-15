@@ -16,6 +16,7 @@ import {Switch} from "@/components/ui/switch"
 import {Button} from "@/components/ui/button"
 import {Note} from "@/components/ui/note"
 import {ConfirmButton} from "@/components/ui/confirm-button"
+import {SuccessCheck} from "@/components/ui/success-check"
 import {useConfirm} from "@/components/ui/use-confirm"
 import {useToast} from "@/components/ui/use-toast"
 
@@ -65,6 +66,7 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 	const ask = useConfirm()
 	const toast = useToast()
 	const reduce = useReducedMotion()
+	const [saved, setSaved] = useState(false)
 	const [selectedId, setSelectedId] = useState<string | null>(null)
 	const [draft, setDraft] = useState<Draft>(EMPTY)
 	const [snapshot, setSnapshot] = useState<Draft>(EMPTY)
@@ -84,6 +86,8 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 				toast("Zapisano szablon")
 				setSelectedId(res.id)
 				setSnapshot({...draft})
+				setSaved(true)
+				setTimeout(() => setSaved(false), 1400)
 			}
 			return res
 		},
@@ -95,6 +99,8 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 			if (res?.ok) {
 				toast("Zapisano zmiany")
 				setSnapshot({...draft})
+				setSaved(true)
+				setTimeout(() => setSaved(false), 1400)
 			}
 			return res
 		},
@@ -243,7 +249,7 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 					</div>
 					<div className="flex items-center justify-between gap-3 border-t border-border pt-4">
 						<Button className="w-44 justify-center" variant="primary" type="submit" disabled={pending}>
-							{effectiveId ? "Zapisz zmiany" : "Zapisz szablon"}
+							{saved ? <><SuccessCheck className="text-success" />Zapisano</> : effectiveId ? "Zapisz zmiany" : "Zapisz szablon"}
 						</Button>
 						{effectiveId ? (
 							selected?.inUse ? (
