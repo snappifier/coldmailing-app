@@ -13,6 +13,7 @@ import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 import {Field} from "@/components/ui/field"
 import {Note} from "@/components/ui/note"
+import {Checkbox} from "@/components/ui/checkbox"
 import {Table, Th, Td} from "@/components/ui/table"
 
 const STEP_LABELS = ["Wklej dane", "Mapuj kolumny", "Wynik"] as const
@@ -172,7 +173,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 							onChange={(e) => onText(e.target.value)}
 						/>
 						<label className="flex items-center gap-2 text-sm">
-							<input name="hasHeader" type="checkbox" checked={hasHeader} onChange={(e) => setHasHeader(e.target.checked)} />
+							<Checkbox name="hasHeader" checked={hasHeader} onChange={(e) => setHasHeader(e.target.checked)} />
 							Pierwszy wiersz to nagłówki
 						</label>
 						{text.trim() ? (

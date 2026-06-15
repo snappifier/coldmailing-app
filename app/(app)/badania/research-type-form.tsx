@@ -12,6 +12,7 @@ import {Select} from "@/components/ui/select"
 import {Button} from "@/components/ui/button"
 import {Badge} from "@/components/ui/badge"
 import {Switch} from "@/components/ui/switch"
+import {Checkbox} from "@/components/ui/checkbox"
 import {Field} from "@/components/ui/field"
 
 const MODEL_OPTIONS = ["claude-haiku-4-5", "claude-sonnet-4-6", "claude-opus-4-8"]
@@ -172,7 +173,7 @@ export function ResearchTypeForm({action, initial}: {action: Action; initial?: I
 										)}
 									</Field>
 									<label className="flex items-center gap-1">
-										<input type="checkbox" checked={f.required} onChange={(e) => update(i, {required: e.target.checked})} />
+										<Checkbox checked={f.required} onChange={(e) => update(i, {required: e.target.checked})} />
 										<span className="text-xs text-fg-muted">wymagane</span>
 									</label>
 									<Button className="ml-auto" variant="ghost" size="sm" type="button" onClick={() => removeField(i)}>

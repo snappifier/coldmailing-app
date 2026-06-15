@@ -10,6 +10,7 @@ import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 import {Badge} from "@/components/ui/badge"
 import {ChevronUpIcon, ChevronDownIcon} from "@/components/ui/icons"
+import {Checkbox} from "@/components/ui/checkbox"
 import {useToast} from "@/components/ui/use-toast"
 import {CONDITION_LABEL} from "@/features/enums/labels"
 import type {SequenceCondition} from "@/generated/prisma/client"
@@ -48,7 +49,7 @@ function StepFields({templates, defaults}: {templates: {id: string; name: string
 				<option value="SEND_IF_NO_REPLY">{CONDITION_LABEL["SEND_IF_NO_REPLY"]}</option>
 			</Select>
 			<label className="flex items-center gap-1.5 text-sm text-fg">
-				<input type="checkbox" name="useLeadDraft" defaultChecked={defaults?.useLeadDraft ?? false} />
+				<Checkbox name="useLeadDraft" defaultChecked={defaults?.useLeadDraft ?? false} />
 				Wyślij draft AI
 			</label>
 		</>

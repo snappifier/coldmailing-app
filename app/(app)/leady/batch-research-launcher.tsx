@@ -8,6 +8,7 @@ import {Select} from "@/components/ui/select"
 import {Button} from "@/components/ui/button"
 import {Card, CardBody} from "@/components/ui/card"
 import {Note} from "@/components/ui/note"
+import {Checkbox} from "@/components/ui/checkbox"
 
 interface TypeOption {
 	id: string
@@ -78,7 +79,7 @@ export function BatchResearchLauncher({types, criteria}: {types: TypeOption[]; c
 								<option value="MANUAL">Ręczne zatwierdzenie</option>
 							</Select>
 							<label className="flex items-center gap-1 text-xs text-fg-muted">
-								<input type="checkbox" checked={includeRecent} onChange={(e) => setIncludeRecent(e.target.checked)} />
+								<Checkbox checked={includeRecent} onChange={(e) => setIncludeRecent(e.target.checked)} />
 								badaj mimo niedawnego (30 dni)
 							</label>
 							<Button type="button" disabled={busy || !typeId} onClick={onPreview}>
