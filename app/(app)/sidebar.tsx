@@ -3,6 +3,8 @@
 import {useSyncExternalStore} from "react"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
+import {motion, useReducedMotion} from "motion/react"
+import {SPRING_SETTLE} from "@/lib/motion"
 import {cn} from "@/lib/cn"
 import {isNavActive} from "@/features/nav/active"
 import {signOutAction} from "@/features/auth/actions"
@@ -32,20 +34,25 @@ function setNavCollapsed(v: boolean) {
 	for (const l of navListeners) l()
 }
 
-function SideLink({item, active, labelCls}: {item: NavItem; active: boolean; labelCls: string}) {
+function SideLink({item, active, labelCls, reduce}: {item: NavItem; active: boolean; labelCls: string; reduce: boolean}) {
 	const {Icon} = item
 	return (
 		<Link
 			className={cn(
 				"relative flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
-				active
-					? "text-fg before:absolute before:-left-2 before:bottom-1.5 before:top-1.5 before:w-[3px] before:rounded-r before:bg-accent"
-					: "text-fg-muted hover:bg-surface-2 hover:text-fg",
+				active ? "text-fg" : "text-fg-muted hover:bg-surface-2 hover:text-fg",
 			)}
 			href={item.href}
 			title={item.label}
 			aria-current={active ? "page" : undefined}
 		>
+			{active ? (
+				reduce ? (
+					<span className="absolute -left-2 bottom-1.5 top-1.5 w-[3px] rounded-r bg-accent" />
+				) : (
+					<motion.span layoutId="nav-active" className="absolute -left-2 bottom-1.5 top-1.5 w-[3px] rounded-r bg-accent" transition={SPRING_SETTLE} />
+				)
+			) : null}
 			<Icon className="size-[18px] flex-none" />
 			<span className={cn("truncate", labelCls)}>{item.label}</span>
 		</Link>
@@ -54,6 +61,7 @@ function SideLink({item, active, labelCls}: {item: NavItem; active: boolean; lab
 
 export function Sidebar({user}: {user: SidebarUser}) {
 	const pathname = usePathname()
+	const reduce = useReducedMotion()
 	const collapsed = useSyncExternalStore(subscribeNav, readNavCollapsed, () => false)
 	const labelCls = collapsed ? "hidden" : "hidden lg:inline"
 	const initials = (user.name ?? user.email ?? "?").trim().slice(0, 2).toUpperCase()
@@ -76,7 +84,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 							<div className={cn("px-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-fg-faint", labelCls)}>{g.label}</div>
 							<div className="flex flex-col gap-0.5">
 								{visible.map((item) => (
-									<SideLink key={item.href} item={item} active={isNavActive(pathname, item.href)} labelCls={labelCls} />
+									<SideLink key={item.href} item={item} active={isNavActive(pathname, item.href)} labelCls={labelCls} reduce={!!reduce} />
 								))}
 							</div>
 						</div>
@@ -85,7 +93,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 			</nav>
 
 			<div className="flex flex-col gap-1 border-t border-border p-2">
-				{canSee(SETTINGS_ITEM) ? <SideLink item={SETTINGS_ITEM} active={isNavActive(pathname, SETTINGS_ITEM.href)} labelCls={labelCls} /> : null}
+				{canSee(SETTINGS_ITEM) ? <SideLink item={SETTINGS_ITEM} active={isNavActive(pathname, SETTINGS_ITEM.href)} labelCls={labelCls} reduce={!!reduce} /> : null}
 				<button
 					className="hidden items-center gap-3 rounded-md px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-surface-2 hover:text-fg lg:flex"
 					type="button"

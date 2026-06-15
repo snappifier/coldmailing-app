@@ -4,6 +4,8 @@
 import {useActionState, useRef, useState} from "react"
 import {createTemplate, updateTemplate, deleteTemplate, type TemplateResult} from "@/features/templates/actions"
 import {renderTemplate, type RenderLead, type RenderPlaceholder} from "@/features/templates/render"
+import {motion, useReducedMotion} from "motion/react"
+import {SPRING_SETTLE} from "@/lib/motion"
 import {cn} from "@/lib/cn"
 import {PageHeader} from "@/components/ui/page-header"
 import {Card, CardBody} from "@/components/ui/card"
@@ -62,6 +64,7 @@ function FieldLabel({children}: {children: React.ReactNode}) {
 export function TemplatesShell({templates, offeringLines, customPlaceholders, customKeys, sampleLead, senderName, signatureSet, previewMailboxName}: Props) {
 	const ask = useConfirm()
 	const toast = useToast()
+	const reduce = useReducedMotion()
 	const [selectedId, setSelectedId] = useState<string | null>(null)
 	const [draft, setDraft] = useState<Draft>(EMPTY)
 	const [snapshot, setSnapshot] = useState<Draft>(EMPTY)
@@ -153,13 +156,20 @@ export function TemplatesShell({templates, offeringLines, customPlaceholders, cu
 							<button
 								className={cn(
 									"relative rounded-md px-2.5 py-1.5 text-left text-[13px] transition-colors",
-									active ? "bg-surface-2 text-fg before:absolute before:-left-px before:top-1/2 before:h-[15px] before:w-[2.5px] before:-translate-y-1/2 before:rounded before:bg-accent" : "text-fg-muted hover:bg-surface-1 hover:text-fg",
+									active ? "bg-surface-2 text-fg" : "text-fg-muted hover:bg-surface-1 hover:text-fg",
 								)}
 								key={t.id}
 								type="button"
 								aria-current={active ? "true" : undefined}
 								onClick={() => switchTo(t.id)}
 							>
+								{active ? (
+									reduce ? (
+										<span className="absolute -left-px top-1/2 h-[15px] w-[2.5px] -translate-y-1/2 rounded bg-accent" />
+									) : (
+										<motion.span layoutId="templates-rail" className="absolute -left-px top-1/2 h-[15px] w-[2.5px] -translate-y-1/2 rounded bg-accent" transition={SPRING_SETTLE} />
+									)
+								) : null}
 								<span className="flex items-center justify-between gap-2">
 									<span className="truncate">{t.name}</span>
 									{active && dirty ? <span className="size-[5px] flex-none rounded-full bg-warning" aria-label="Niezapisane zmiany" /> : null}

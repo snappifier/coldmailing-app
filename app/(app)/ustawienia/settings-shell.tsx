@@ -2,7 +2,7 @@
 // app/(app)/ustawienia/settings-shell.tsx
 import {useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
-import {EASE_OUT_QUART} from "@/lib/motion"
+import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 import {cn} from "@/lib/cn"
 import {Card, CardBody} from "@/components/ui/card"
 
@@ -27,9 +27,16 @@ export function SettingsShell({sections}: {sections: SettingsSection[]}) {
 						onClick={() => setActive(s.id)}
 						className={cn(
 							"relative rounded-md px-2.5 py-1.5 text-left text-[13px] transition-colors duration-150",
-							s.id === active ? "bg-surface-2 text-fg before:absolute before:-left-px before:top-1/2 before:h-[15px] before:w-[2.5px] before:-translate-y-1/2 before:rounded before:bg-accent" : "text-fg-muted hover:bg-surface-1 hover:text-fg",
+							s.id === active ? "bg-surface-2 text-fg" : "text-fg-muted hover:bg-surface-1 hover:text-fg",
 						)}
 					>
+						{s.id === active ? (
+							reduce ? (
+								<span className="absolute -left-px top-1/2 h-[15px] w-[2.5px] -translate-y-1/2 rounded bg-accent" />
+							) : (
+								<motion.span layoutId="settings-rail" className="absolute -left-px top-1/2 h-[15px] w-[2.5px] -translate-y-1/2 rounded bg-accent" transition={SPRING_SETTLE} />
+							)
+						) : null}
 						{s.label}
 					</button>
 				))}

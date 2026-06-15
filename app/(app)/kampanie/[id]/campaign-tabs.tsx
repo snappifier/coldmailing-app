@@ -3,7 +3,7 @@
 
 import {useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
-import {EASE_OUT_QUART} from "@/lib/motion"
+import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 import {cn} from "@/lib/cn"
 
 const TABS = [
@@ -24,8 +24,8 @@ export function CampaignTabs({sekwencja, leady, przychodzace, inboundCount}: {se
 				{TABS.map((t) => (
 					<button
 						className={cn(
-							"-mb-px border-b-2 px-3 py-2 text-sm transition-colors",
-							t.id === active ? "border-accent text-fg" : "border-transparent text-fg-muted hover:text-fg",
+							"relative px-3 py-2 text-sm transition-colors",
+							t.id === active ? "text-fg" : "text-fg-muted hover:text-fg",
 						)}
 						key={t.id}
 						type="button"
@@ -35,6 +35,13 @@ export function CampaignTabs({sekwencja, leady, przychodzace, inboundCount}: {se
 					>
 						{t.label}
 						{t.id === "przychodzace" && inboundCount > 0 ? <span className="ml-1.5 text-[11px] text-fg-faint">{inboundCount}</span> : null}
+						{t.id === active ? (
+							reduce ? (
+								<span className="absolute inset-x-0 -bottom-px h-0.5 bg-accent" />
+							) : (
+								<motion.span layoutId="campaign-tab" className="absolute inset-x-0 -bottom-px h-0.5 bg-accent" transition={SPRING_SETTLE} />
+							)
+						) : null}
 					</button>
 				))}
 			</div>
