@@ -83,45 +83,50 @@ export function SequenceSteps({campaignId, templates, steps, campaignActive}: Pr
 	const reorderHint = campaignActive ? "Wstrzymaj kampanię, aby zmienić kolejność" : undefined
 
 	return (
-		<div className="flex flex-col gap-2">
-			{steps.map((s, i) => (
-				<Card className="px-3.5 py-2.5" key={s.id}>
-					{editingId === s.id ? (
-						<form className="flex flex-wrap items-center gap-2" action={updAction}>
-							<input type="hidden" name="campaignId" value={campaignId} />
-							<input type="hidden" name="stepId" value={s.id} />
-							<span className="grid size-[22px] flex-none place-items-center rounded-full bg-surface-3 text-[11px] font-semibold text-fg-muted">{s.order + 1}</span>
-							<StepFields templates={templates} defaults={s} />
-							<span className="ml-auto flex flex-none gap-2">
-								<Button variant="ghost" type="button" onClick={() => setEditingId(null)}>Anuluj</Button>
-								<Button variant="primary" type="submit" disabled={updPending}>Zapisz</Button>
-							</span>
-							{updState && !updState.ok ? <span className="w-full text-sm text-danger">{updState.error}</span> : null}
-						</form>
-					) : (
-						<div className="flex items-center gap-3">
-							<span className="grid size-[22px] flex-none place-items-center rounded-full bg-surface-3 text-[11px] font-semibold text-fg-muted">{s.order + 1}</span>
-							<span className="min-w-0">
-								<span className="text-sm font-medium text-fg">{s.useLeadDraft ? "draft AI" : s.templateName}</span>
-								{s.useLeadDraft ? <Badge className="ml-1.5" variant="neutral">draft</Badge> : null}
-								<span className="block text-[12px] text-fg-faint">
-									{s.delayDays === 0 ? "od razu" : `po ${s.delayDays} dniach`} · {CONDITION_LABEL[s.condition as SequenceCondition]}
-								</span>
-							</span>
-							<span className="ml-auto flex flex-none items-center gap-1">
-								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === 0} title={reorderHint ?? "Przesuń wyżej"} aria-label="Przesuń wyżej" onClick={() => move(s.id, "up")}><ChevronUpIcon className="size-3.5" /></Button>
-								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === steps.length - 1} title={reorderHint ?? "Przesuń niżej"} aria-label="Przesuń niżej" onClick={() => move(s.id, "down")}><ChevronDownIcon className="size-3.5" /></Button>
-								<Button variant="ghost" size="sm" type="button" onClick={() => setEditingId(s.id)}>Edytuj</Button>
-								<ConfirmButton action={deleteSequenceStep.bind(null, s.id, campaignId)} confirm={{title: "Usunąć krok sekwencji?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto krok">Usuń</ConfirmButton>
-							</span>
+		<div className="flex flex-col gap-3">
+			{steps.length > 0 ? (
+				<Card className="divide-y divide-border">
+					{steps.map((s, i) => (
+						<div className="px-3.5 py-2.5" key={s.id}>
+							{editingId === s.id ? (
+								<form className="flex flex-wrap items-center gap-2" action={updAction}>
+									<input type="hidden" name="campaignId" value={campaignId} />
+									<input type="hidden" name="stepId" value={s.id} />
+									<span className="grid size-[22px] flex-none place-items-center rounded-full bg-surface-3 text-[11px] font-semibold text-fg-muted">{s.order + 1}</span>
+									<StepFields templates={templates} defaults={s} />
+									<span className="ml-auto flex flex-none gap-2">
+										<Button variant="ghost" type="button" onClick={() => setEditingId(null)}>Anuluj</Button>
+										<Button variant="primary" type="submit" disabled={updPending}>Zapisz</Button>
+									</span>
+									{updState && !updState.ok ? <span className="w-full text-sm text-danger">{updState.error}</span> : null}
+								</form>
+							) : (
+								<div className="flex items-center gap-3">
+									<span className="grid size-[22px] flex-none place-items-center rounded-full bg-surface-3 text-[11px] font-semibold text-fg-muted">{s.order + 1}</span>
+									<span className="min-w-0">
+										<span className="text-sm font-medium text-fg">{s.useLeadDraft ? "draft AI" : s.templateName}</span>
+										{s.useLeadDraft ? <Badge className="ml-1.5" variant="neutral">draft</Badge> : null}
+										<span className="block text-[12px] text-fg-faint">
+											{s.delayDays === 0 ? "od razu" : `po ${s.delayDays} dniach`} · {CONDITION_LABEL[s.condition as SequenceCondition]}
+										</span>
+									</span>
+									<span className="ml-auto flex flex-none items-center gap-1">
+										<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === 0} title={reorderHint ?? "Przesuń wyżej"} aria-label="Przesuń wyżej" onClick={() => move(s.id, "up")}><ChevronUpIcon className="size-3.5" /></Button>
+										<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === steps.length - 1} title={reorderHint ?? "Przesuń niżej"} aria-label="Przesuń niżej" onClick={() => move(s.id, "down")}><ChevronDownIcon className="size-3.5" /></Button>
+										<Button variant="ghost" size="sm" type="button" onClick={() => setEditingId(s.id)}>Edytuj</Button>
+										<ConfirmButton action={deleteSequenceStep.bind(null, s.id, campaignId)} confirm={{title: "Usunąć krok sekwencji?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto krok">Usuń</ConfirmButton>
+									</span>
+								</div>
+							)}
 						</div>
-					)}
+					))}
 				</Card>
-			))}
-			{steps.length === 0 ? <p className="text-sm text-fg-muted">Brak kroków.</p> : null}
+			) : (
+				<p className="text-sm text-fg-muted">Brak kroków.</p>
+			)}
 			{moveError ? <p className="text-sm text-danger">{moveError}</p> : null}
 			{campaignActive && steps.length > 1 ? <p className="text-[11.5px] text-fg-faint">Wstrzymaj kampanię, aby zmienić kolejność kroków.</p> : null}
-			<form className="mt-2 flex flex-wrap items-center gap-2 border-t border-border pt-4" action={addAction}>
+			<form className="flex flex-wrap items-center gap-2 border-t border-border pt-4" action={addAction}>
 				<input type="hidden" name="campaignId" value={campaignId} />
 				<StepFields templates={templates} />
 				<Button variant="primary" type="submit" disabled={addPending}>Dodaj krok</Button>
