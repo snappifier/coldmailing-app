@@ -13,7 +13,7 @@ const MAP: Record<BadgeVariant, string> = {
 
 export function Badge({variant = "neutral", dot, className, children}: {variant?: BadgeVariant; dot?: boolean; className?: string; children: React.ReactNode}) {
 	return (
-		<span className={cn("inline-flex h-[21px] items-center gap-1.5 rounded-[999px] px-2 text-[11.5px] font-medium", MAP[variant], className)}>
+		<span className={cn("inline-flex h-[21px] items-center gap-1.5 rounded-sm px-2 text-[11.5px] font-medium", MAP[variant], className)}>
 			{dot ? <span className="size-[5px] rounded-full bg-current" /> : null}
 			{children}
 		</span>
