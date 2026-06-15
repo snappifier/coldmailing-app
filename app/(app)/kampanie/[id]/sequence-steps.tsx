@@ -9,6 +9,7 @@ import {Select} from "@/components/ui/select"
 import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 import {Badge} from "@/components/ui/badge"
+import {ChevronUpIcon, ChevronDownIcon} from "@/components/ui/icons"
 import {useToast} from "@/components/ui/use-toast"
 import {CONDITION_LABEL} from "@/features/enums/labels"
 import type {SequenceCondition} from "@/generated/prisma/client"
@@ -108,8 +109,8 @@ export function SequenceSteps({campaignId, templates, steps, campaignActive}: Pr
 								</span>
 							</span>
 							<span className="ml-auto flex flex-none items-center gap-1">
-								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === 0} title={reorderHint ?? "Przesuń wyżej"} aria-label="Przesuń wyżej" onClick={() => move(s.id, "up")}>▲</Button>
-								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === steps.length - 1} title={reorderHint ?? "Przesuń niżej"} aria-label="Przesuń niżej" onClick={() => move(s.id, "down")}>▼</Button>
+								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === 0} title={reorderHint ?? "Przesuń wyżej"} aria-label="Przesuń wyżej" onClick={() => move(s.id, "up")}><ChevronUpIcon className="size-3.5" /></Button>
+								<Button variant="ghost" size="sm" type="button" disabled={campaignActive || moving || i === steps.length - 1} title={reorderHint ?? "Przesuń niżej"} aria-label="Przesuń niżej" onClick={() => move(s.id, "down")}><ChevronDownIcon className="size-3.5" /></Button>
 								<Button variant="ghost" size="sm" type="button" onClick={() => setEditingId(s.id)}>Edytuj</Button>
 								<ConfirmButton action={deleteSequenceStep.bind(null, s.id, campaignId)} confirm={{title: "Usunąć krok sekwencji?", body: "Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto krok">Usuń</ConfirmButton>
 							</span>

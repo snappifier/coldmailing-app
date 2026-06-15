@@ -63,6 +63,12 @@ export function ChevronLeftIcon({className}: IconProps) {
 export function ArrowRightIcon({className}: IconProps) {
 	return <Svg className={className}><path d="M5 12h14M13 6l6 6-6 6" /></Svg>
 }
+export function ChevronUpIcon({className}: IconProps) {
+	return <Svg className={className}><path d="M6 15l6-6 6 6" /></Svg>
+}
+export function ChevronDownIcon({className}: IconProps) {
+	return <Svg className={className}><path d="M6 9l6 6 6-6" /></Svg>
+}
 export function LogOutIcon({className}: IconProps) {
 	return <Svg className={className}><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><path d="M16 17l5-5-5-5M21 12H9" /></Svg>
 }
