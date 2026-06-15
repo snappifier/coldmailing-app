@@ -10,6 +10,7 @@ import {Button} from "@/components/ui/button"
 import {Badge} from "@/components/ui/badge"
 import {Table, Th, Td} from "@/components/ui/table"
 import {EmptyState} from "@/components/ui/empty-state"
+import {ArrowRightIcon} from "@/components/ui/icons"
 import {RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
 
 type Batch = NonNullable<Awaited<ReturnType<typeof getBatch>>>
@@ -146,11 +147,14 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 					</thead>
 					<tbody>
 						{batch.rows.map((r) => (
-							<tr key={r.runId}>
+							<tr className="group" key={r.runId}>
 								<Td>
-									<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${r.leadId}`}>
-										{r.leadName}
-									</a>
+									<span className="inline-flex items-center gap-1.5">
+										<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${r.leadId}`}>
+											{r.leadName}
+										</a>
+										<ArrowRightIcon className="size-3.5 flex-none -translate-x-0.5 text-fg-faint opacity-0 transition-[opacity,transform] duration-150 ease-out group-hover:translate-x-0.5 group-hover:text-fg group-hover:opacity-100" />
+									</span>
 								</Td>
 								<Td>
 									<Badge variant={RESEARCH_STATUS_VARIANT[r.status] ?? "neutral"}>{RESEARCH_STATUS_LABEL[r.status] ?? r.status}</Badge>

@@ -14,6 +14,7 @@ import {Table, Th, Td} from "@/components/ui/table"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
 import {PageHeader} from "@/components/ui/page-header"
+import {ArrowRightIcon} from "@/components/ui/icons"
 import {LeadCreateButton} from "./lead-create-button"
 import {BatchResearchLauncher} from "./batch-research-launcher"
 
@@ -101,11 +102,14 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 					</thead>
 					<tbody>
 						{leads.map((lead) => (
-							<tr key={lead.id}>
+							<tr className="group" key={lead.id}>
 								<Td>
-									<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${lead.id}`}>
-										{lead.organizationName}
-									</a>
+									<span className="inline-flex items-center gap-1.5">
+										<a className="text-fg font-medium hover:underline underline-offset-2" href={`/leady/${lead.id}`}>
+											{lead.organizationName}
+										</a>
+										<ArrowRightIcon className="size-3.5 flex-none -translate-x-0.5 text-fg-faint opacity-0 transition-[opacity,transform] duration-150 ease-out group-hover:translate-x-0.5 group-hover:text-fg group-hover:opacity-100" />
+									</span>
 								</Td>
 								<Td>{lead.email ?? "—"}</Td>
 								<Td>{lead.city ?? "—"}</Td>
