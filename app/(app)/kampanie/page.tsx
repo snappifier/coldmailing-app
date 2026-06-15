@@ -7,6 +7,7 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {EmptyIllustration} from "@/components/ui/empty-illustration"
 import {PageHeader} from "@/components/ui/page-header"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
 import {KampaniaCreateButton} from "./kampania-create-button"
@@ -33,7 +34,7 @@ export default async function CampaignsPage() {
 				action={<KampaniaCreateButton offeringLines={offeringLines} />}
 			/>
 			{campaigns.length === 0 ? (
-				<EmptyState title="Brak kampanii" description="Utwórz pierwszą kampanię." action={<KampaniaCreateButton offeringLines={offeringLines} variant="secondary" />} />
+				<EmptyState illustration={<EmptyIllustration />} title="Brak kampanii" description="Utwórz pierwszą kampanię." action={<KampaniaCreateButton offeringLines={offeringLines} variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{campaigns.map((c) => (

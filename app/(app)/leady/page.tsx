@@ -13,6 +13,7 @@ import {Button} from "@/components/ui/button"
 import {Table, Th, Td} from "@/components/ui/table"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {EmptyIllustration} from "@/components/ui/empty-illustration"
 import {PageHeader} from "@/components/ui/page-header"
 import {ArrowRightIcon} from "@/components/ui/icons"
 import {LeadCreateButton} from "./lead-create-button"
@@ -83,6 +84,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 
 			{leads.length === 0 ? (
 				<EmptyState
+					illustration={<EmptyIllustration />}
 					title="Brak leadów"
 					description="Dodaj pierwszego leada lub zmień kryteria filtra."
 					action={<LeadCreateButton offeringLines={offeringLines} variant="secondary" />}

@@ -8,6 +8,7 @@ import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {EmptyState} from "@/components/ui/empty-state"
+import {EmptyIllustration} from "@/components/ui/empty-illustration"
 import {PageHeader} from "@/components/ui/page-header"
 import {RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
 
@@ -26,6 +27,7 @@ export default async function ResearchTypesPage() {
 
 			{types.length === 0 ? (
 				<EmptyState
+					illustration={<EmptyIllustration />}
 					title="Brak typów badań"
 					description="Utwórz pierwszy typ badania."
 					action={

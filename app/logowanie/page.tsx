@@ -9,7 +9,8 @@ export default async function LoginPage() {
 	if (session?.user) redirect("/leady")
 
 	return (
-		<main className="mx-auto flex min-h-screen w-full max-w-[360px] flex-col justify-center gap-5 p-6">
+		<main className="relative isolate mx-auto flex min-h-screen w-full max-w-[360px] flex-col justify-center gap-5 p-6">
+			<div className="pointer-events-none absolute inset-0 -z-10" style={{background: "radial-gradient(120% 80% at 50% 0%, var(--accent-quiet), transparent 60%)"}} />
 			<div className="flex items-center gap-2 text-[15px] font-bold tracking-[-0.02em]">
 				<span className="text-[9px] text-accent">●</span> cold·mail
 			</div>
