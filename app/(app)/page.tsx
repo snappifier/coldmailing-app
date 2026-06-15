@@ -8,7 +8,8 @@ import {Card} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
 import type {CampaignStatus} from "@/generated/prisma/client"
-import {HeroStat, HealthStat, Sparkline, FunnelRow, ReplyRow} from "./dashboard-parts"
+import {HeroStat, HealthStat, ReplyRow} from "./dashboard-parts"
+import {Sparkline, FunnelRow} from "./dashboard-charts"
 
 export default async function DashboardPage() {
 	const {orgId} = await requireOrg()

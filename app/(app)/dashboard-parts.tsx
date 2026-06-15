@@ -3,7 +3,7 @@ import Link from "next/link"
 import {cn} from "@/lib/cn"
 import {ArrowRightIcon} from "@/components/ui/icons"
 import {CountUp} from "@/components/ui/count-up"
-import {buildSparklinePath, relativeTimePl, type DailyCount} from "@/features/metrics/compute"
+import {relativeTimePl} from "@/features/metrics/compute"
 import type {RecentReply} from "@/features/metrics/queries"
 
 export function MetricStat({label, value}: {label: string; value: string}) {
@@ -31,41 +31,6 @@ export function HealthStat({color, label, value}: {color: string; label: string;
 			<span className={cn("size-[5px] rounded-full", color)} />
 			{label} <span className="tabular-nums text-fg">{value}</span>
 		</span>
-	)
-}
-
-// Server-rendered area sparkline; the slight x-stretch of the end dot under
-// preserveAspectRatio="none" is accepted (matches the approved mock).
-export function Sparkline({className, daily}: {className?: string; daily: DailyCount[]}) {
-	const {line, area, end} = buildSparklinePath(daily.map((d) => d.count), 600, 64)
-	if (!line) return null
-	return (
-		<svg className={className} viewBox="0 0 600 64" preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
-			<defs>
-				<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
-					<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
-					<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
-				</linearGradient>
-			</defs>
-			<path d={area} fill="url(#spark-fill)" />
-			<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--text)" /> : null}
-		</svg>
-	)
-}
-
-export function FunnelRow({label, count, max, tone = "neutral"}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"}) {
-	const raw = max > 0 ? (count / max) * 100 : 0
-	const pct = count > 0 ? Math.max(1.5, Math.round(raw * 10) / 10) : 0
-	const fill = tone === "won" ? "bg-success" : tone === "lost" ? "bg-danger/55" : "bg-fg-muted"
-	return (
-		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
-			<span className="text-fg-muted">{label}</span>
-			<span className="relative h-[3px] overflow-hidden rounded-full bg-surface-3">
-				<span className={cn("absolute inset-y-0 left-0 rounded-full", fill)} style={{width: `${pct}%`}} />
-			</span>
-			<span className="text-right text-xs tabular-nums text-fg">{count}</span>
-		</div>
 	)
 }
 
