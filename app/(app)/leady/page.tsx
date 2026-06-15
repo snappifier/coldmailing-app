@@ -98,7 +98,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 							<Th>Miasto</Th>
 							<Th>Linia</Th>
 							<Th>Etap</Th>
-							<Th>Score</Th>
+							<Th className="text-right">Score</Th>
 							<Th>{""}</Th>
 						</tr>
 					</thead>
@@ -119,7 +119,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 								<Td>
 									<Badge>{STAGE_LABEL[lead.dealStage]}</Badge>
 								</Td>
-								<Td>{lead.score ?? "—"}</Td>
+								<Td className="text-right tabular-nums">{lead.score ?? "—"}</Td>
 								<Td className="text-right">
 									<ConfirmButton action={deleteLead.bind(null, lead.id)} confirm={{title: "Usunąć leada?", body: "Lead i jego dane zostaną usunięte. Tej operacji nie można cofnąć.", confirmLabel: "Usuń", danger: true}} toast="Usunięto leada">Usuń</ConfirmButton>
 								</Td>

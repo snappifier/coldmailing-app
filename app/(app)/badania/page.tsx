@@ -12,6 +12,9 @@ import {EmptyIllustration} from "@/components/ui/empty-illustration"
 import {PageHeader} from "@/components/ui/page-header"
 import {RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT} from "@/features/enums/labels"
 
+// Primary CTA rendered as a route Link - the canonical Button class vocabulary (mirrors skrzynki connectAnchorClass).
+const newTypeLinkClass = "inline-flex items-center gap-2 rounded-md font-medium tracking-[-0.01em] transition-[transform,background,border-color,opacity] duration-150 ease-out active:scale-[.97] h-8 px-3 text-sm bg-primary text-primary-fg hover:opacity-90"
+
 export default async function ResearchTypesPage() {
 	const {orgId} = await requireOrg()
 	const [types, batches] = await Promise.all([listResearchTypes(orgId), listResearchBatches(orgId)])
@@ -22,7 +25,7 @@ export default async function ResearchTypesPage() {
 				title="Badania AI"
 				description="Typy badań, ocen i treści generowanych przez AI."
 				meta={`${types.length} typów · ${batches.length} ostatnich badań zbiorczych`}
-				action={<Link className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg" href="/badania/nowy">Nowy typ</Link>}
+				action={<Link className={newTypeLinkClass} href="/badania/nowy">Nowy typ</Link>}
 			/>
 
 			{types.length === 0 ? (
@@ -31,7 +34,7 @@ export default async function ResearchTypesPage() {
 					title="Brak typów badań"
 					description="Utwórz pierwszy typ badania."
 					action={
-						<Link className="rounded bg-primary px-3 py-1.5 text-sm text-primary-fg" href="/badania/nowy">
+						<Link className={newTypeLinkClass} href="/badania/nowy">
 							Nowy typ
 						</Link>
 					}

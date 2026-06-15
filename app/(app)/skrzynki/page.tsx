@@ -49,9 +49,9 @@ export default async function SkrzynkiPage({searchParams}: {searchParams: Promis
 								<span className="text-sm font-semibold">{a.email}</span>
 								<Badge variant={EMAIL_ACCOUNT_STATUS_VARIANT[a.status]}>{EMAIL_ACCOUNT_STATUS_LABEL[a.status]}</Badge>
 								{a.scope?.includes("gmail.readonly") ? (
-									<span className="rounded-full bg-surface-3 px-2 py-0.5 text-xs text-fg-muted">odpowiedzi: on</span>
+									<span className="rounded-sm bg-surface-3 px-2 py-0.5 text-xs text-fg-muted">odpowiedzi: on</span>
 								) : (
-									<span className="rounded-full bg-warning-quiet px-2 py-0.5 text-xs text-warning">odpowiedzi: off (przepnij skrzynkę)</span>
+									<span className="rounded-sm bg-warning-quiet px-2 py-0.5 text-xs text-warning">odpowiedzi: off (przepnij skrzynkę)</span>
 								)}
 								<span className="flex-1" />
 								<ConfirmButton action={disconnectEmailAccount.bind(null, a.id)} confirm={{title: "Odłączyć skrzynkę?", body: "Odłączenie usuwa też historię wiadomości tej skrzynki i wyłącza wykrywanie odpowiedzi. Tej operacji nie można cofnąć.", confirmLabel: "Odłącz", danger: true}} toast="Odłączono skrzynkę">

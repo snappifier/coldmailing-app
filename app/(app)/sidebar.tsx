@@ -123,7 +123,7 @@ export function Sidebar({user}: {user: SidebarUser}) {
 						</div>
 						<div className="flex items-center justify-between gap-2 border-t border-border px-2 py-1.5">
 							<span className="truncate text-xs text-fg-muted">{user.orgName}</span>
-							<span className="flex-none rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-semibold text-fg-muted">{roleLabel}</span>
+							<span className="flex-none rounded-sm border border-border-strong px-2 py-0.5 text-[10px] font-semibold text-fg-muted">{roleLabel}</span>
 						</div>
 						<form className="border-t border-border pt-1" action={signOutAction}>
 							<button className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm text-fg-muted transition-colors hover:bg-surface-2 hover:text-fg" type="submit">

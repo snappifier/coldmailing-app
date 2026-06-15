@@ -107,7 +107,7 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 				<span className="text-xs text-fg-muted">{batch.mode === "MANUAL" ? "Ręczne zatwierdzenie" : "Auto"}</span>
 			</div>
 
-			<p className="text-sm text-fg-muted">
+			<p className="text-sm tabular-nums text-fg-muted">
 				Łącznie {batch.total} · Gotowe {c.DONE} · w toku {c.RUNNING} · w kolejce {c.QUEUED} · błędy {c.FAILED}
 				{c.CANCELLED ? ` · anulowane ${c.CANCELLED}` : ""}
 			</p>
@@ -139,8 +139,8 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 						<tr>
 							<Th>Lead</Th>
 							<Th>Status</Th>
-							<Th>Zastosowane</Th>
-							<Th>Propozycje</Th>
+							<Th className="text-right">Zastosowane</Th>
+							<Th className="text-right">Propozycje</Th>
 							<Th>Błąd</Th>
 							<Th>{""}</Th>
 						</tr>
@@ -159,8 +159,8 @@ export function BatchView({batchId, initial}: {batchId: string; initial: Batch})
 								<Td>
 									<Badge variant={RESEARCH_STATUS_VARIANT[r.status] ?? "neutral"}>{RESEARCH_STATUS_LABEL[r.status] ?? r.status}</Badge>
 								</Td>
-								<Td>{r.applied}</Td>
-								<Td>{r.proposed}</Td>
+								<Td className="text-right tabular-nums">{r.applied}</Td>
+								<Td className="text-right tabular-nums">{r.proposed}</Td>
 								<Td className="text-danger">{r.error ?? ""}</Td>
 								<Td className="text-right">
 									{batch.mode === "MANUAL" && r.status === "DONE" && r.proposed > 0 ? (

@@ -7,6 +7,7 @@ import type {DealStage} from "@/generated/prisma/client"
 import {STAGE_LABEL, type PipelineLead} from "@/features/pipeline/types"
 import {moveLeadStage} from "@/features/pipeline/actions"
 import {Button} from "@/components/ui/button"
+import {ChevronUpIcon, ChevronDownIcon} from "@/components/ui/icons"
 import {LeadCard} from "./card"
 
 const CAP = 60
@@ -54,12 +55,13 @@ function Column({stage, leads, onDropLead}: {stage: DealStage; leads: PipelineLe
 			<button
 				type="button"
 				onClick={() => collapsible && setOpen(!open)}
+				aria-label={collapsible ? (open ? `Zwiń kolumnę ${STAGE_LABEL[stage]}` : `Rozwiń kolumnę ${STAGE_LABEL[stage]}`) : undefined}
 				className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-fg-muted"
 			>
 				<span>
 					{STAGE_LABEL[stage]} · {leads.length}
 				</span>
-				{collapsible ? <span>{open ? "−" : "+"}</span> : null}
+				{collapsible ? (open ? <ChevronUpIcon className="size-3.5" /> : <ChevronDownIcon className="size-3.5" />) : null}
 			</button>
 			{open ? (
 				<>
