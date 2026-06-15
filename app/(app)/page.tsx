@@ -57,8 +57,8 @@ export default async function DashboardPage() {
 				<div className="grid divide-y divide-border lg:grid-cols-2 lg:divide-x lg:divide-y-0">
 					<div className="px-5 py-4">
 						<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Lejek sprzedaży</div>
-						{m.funnel.map((f) => (
-							<FunnelRow key={f.stage} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "neutral"} />
+						{m.funnel.map((f, i) => (
+							<FunnelRow key={f.stage} index={i} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "neutral"} />
 						))}
 					</div>
 					<div className="px-5 py-4">

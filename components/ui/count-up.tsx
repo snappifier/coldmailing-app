@@ -21,7 +21,7 @@ export function CountUp({value}: {value: number}) {
 			return
 		}
 		done.current = true
-		const controls = animate(mv, value, {duration: 0.5, ease: EASE_OUT_QUART})
+		const controls = animate(mv, value, {duration: 0.8, ease: EASE_OUT_QUART})
 		return () => controls.stop()
 	}, [value, reduce, mv])
 	return <motion.span>{text}</motion.span>

@@ -18,14 +18,14 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 					<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
 				</linearGradient>
 			</defs>
-			<motion.path d={area} fill="url(#spark-fill)" initial={reduce ? false : {opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.6, delay: 0.12, ease: "easeOut"}} />
-			<motion.path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" initial={reduce ? false : {pathLength: 0}} animate={{pathLength: 1}} transition={{duration: 0.6, ease: EASE_OUT_QUART}} />
+			<motion.path d={area} fill="url(#spark-fill)" initial={reduce ? false : {opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.9, delay: 0.45, ease: "easeOut"}} />
+			<motion.path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" initial={reduce ? false : {pathLength: 0}} animate={{pathLength: 1}} transition={{duration: 1.15, ease: EASE_OUT_QUART}} />
 			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--text)" /> : null}
 		</svg>
 	)
 }
 
-export function FunnelRow({label, count, max, tone = "neutral"}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"}) {
+export function FunnelRow({label, count, max, tone = "neutral", index = 0}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"; index?: number}) {
 	const reduce = useReducedMotion()
 	const raw = max > 0 ? (count / max) * 100 : 0
 	const pct = count > 0 ? Math.max(1.5, Math.round(raw * 10) / 10) : 0
@@ -34,7 +34,7 @@ export function FunnelRow({label, count, max, tone = "neutral"}: {label: string;
 		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
 			<span className="text-fg-muted">{label}</span>
 			<span className="relative h-[3px] overflow-hidden rounded-full bg-surface-3">
-				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.5, ease: EASE_OUT_QUART}} />
+				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: index * 0.09, ease: EASE_OUT_QUART}} />
 			</span>
 			<span className="text-right text-xs tabular-nums text-fg">{count}</span>
 		</div>
