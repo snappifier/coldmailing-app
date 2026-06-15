@@ -2,6 +2,7 @@
 import Link from "next/link"
 import {cn} from "@/lib/cn"
 import {ArrowRightIcon} from "@/components/ui/icons"
+import {CountUp} from "@/components/ui/count-up"
 import {buildSparklinePath, relativeTimePl, type DailyCount} from "@/features/metrics/compute"
 import type {RecentReply} from "@/features/metrics/queries"
 
@@ -14,11 +15,11 @@ export function MetricStat({label, value}: {label: string; value: string}) {
 	)
 }
 
-export function HeroStat({label, value, sub}: {label: string; value: string; sub?: React.ReactNode}) {
+export function HeroStat({label, value, sub, countUp}: {label: string; value: string; sub?: React.ReactNode; countUp?: number}) {
 	return (
 		<div className="flex flex-col px-5 py-4">
 			<span className="text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">{label}</span>
-			<span className="mt-1 text-[26px] font-semibold leading-tight tracking-[-0.03em] tabular-nums">{value}</span>
+			<span className="mt-1 text-[26px] font-semibold leading-tight tracking-[-0.03em] tabular-nums">{countUp === undefined ? value : <CountUp value={countUp} />}</span>
 			{sub ? <span className="mt-0.5 text-[11px] text-fg-faint">{sub}</span> : null}
 		</div>
 	)

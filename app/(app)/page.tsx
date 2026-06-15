@@ -35,10 +35,10 @@ export default async function DashboardPage() {
 
 			<Card className="divide-y divide-border">
 				<div className="grid grid-cols-2 divide-x divide-border sm:grid-cols-4">
-					<HeroStat label="Leady" value={formatInt(m.leadsTotal)} sub={`w ${m.campaignsTotal} kampaniach`} />
-					<HeroStat label="Wysłane" value={formatInt(m.mailsSent)} sub={`do ${formatInt(m.rates.contacted)} leadów`} />
-					<HeroStat label="Odpowiedzi" value={formatInt(m.breakdown.replied)} sub={<><span className="font-medium text-success">{formatPct(m.rates.replyRate)}</span> wskaźnik</>} />
-					<HeroStat label="Wygrane" value={formatInt(wonCount)} sub="lejek: Wygrany" />
+					<HeroStat label="Leady" value={formatInt(m.leadsTotal)} countUp={m.leadsTotal} sub={`w ${m.campaignsTotal} kampaniach`} />
+					<HeroStat label="Wysłane" value={formatInt(m.mailsSent)} countUp={m.mailsSent} sub={`do ${formatInt(m.rates.contacted)} leadów`} />
+					<HeroStat label="Odpowiedzi" value={formatInt(m.breakdown.replied)} countUp={m.breakdown.replied} sub={<><span className="font-medium text-success">{formatPct(m.rates.replyRate)}</span> wskaźnik</>} />
+					<HeroStat label="Wygrane" value={formatInt(wonCount)} countUp={wonCount} sub="lejek: Wygrany" />
 				</div>
 
 				<div className="px-5 py-4">
