@@ -3,6 +3,7 @@
 import {useActionState, useEffect, useRef, useState} from "react"
 import Link from "next/link"
 import {animate, motion, useReducedMotion} from "motion/react"
+import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 import {createLead, type LeadActionResult} from "@/features/leads/actions"
 import {Modal} from "@/components/ui/modal"
 import {Button} from "@/components/ui/button"
@@ -11,7 +12,6 @@ import {Select} from "@/components/ui/select"
 import {Field} from "@/components/ui/field"
 import {useToast} from "@/components/ui/use-toast"
 
-const EASE_OUT_QUART = [0.165, 0.84, 0.44, 1] as const
 const STEPS = ["Organizacja", "Kontakt"] as const
 
 export function LeadCreateButton({offeringLines, variant = "primary"}: {offeringLines: {id: string; name: string}[]; variant?: "primary" | "secondary"}) {
@@ -105,7 +105,7 @@ export function LeadCreateButton({offeringLines, variant = "primary"}: {offering
 							className="h-full rounded-full bg-fg"
 							initial={false}
 							animate={{width: step === 0 ? "50%" : "100%"}}
-							transition={reduce ? {duration: 0} : {type: "spring", visualDuration: 0.25, bounce: 0}}
+							transition={reduce ? {duration: 0} : SPRING_SETTLE}
 						/>
 					</div>
 				</div>

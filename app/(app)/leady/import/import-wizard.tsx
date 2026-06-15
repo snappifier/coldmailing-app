@@ -4,6 +4,7 @@
 import {useMemo, useState, useActionState, useEffect, useRef} from "react"
 import Link from "next/link"
 import {animate, motion, useReducedMotion} from "motion/react"
+import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 import {parseTable, defaultCustomKey, type LeadFieldKey} from "@/features/leads/import"
 import {importLeads, type ImportResult} from "@/features/leads/actions"
 import {Textarea} from "@/components/ui/textarea"
@@ -14,7 +15,6 @@ import {Field} from "@/components/ui/field"
 import {Note} from "@/components/ui/note"
 import {Table, Th, Td} from "@/components/ui/table"
 
-const EASE_OUT_QUART = [0.165, 0.84, 0.44, 1] as const
 const STEP_LABELS = ["Wklej dane", "Mapuj kolumny", "Wynik"] as const
 
 const FIELDS: {key: LeadFieldKey; label: string}[] = [
@@ -128,7 +128,7 @@ export function ImportWizard({offeringLines}: {offeringLines: {id: string; name:
 						className="h-full rounded-full bg-fg"
 						initial={false}
 						animate={{width: `${progressPct}%`}}
-						transition={reduce ? {duration: 0} : {type: "spring", visualDuration: 0.25, bounce: 0}}
+						transition={reduce ? {duration: 0} : SPRING_SETTLE}
 					/>
 				</div>
 			</div>

@@ -2,8 +2,7 @@
 // components/ui/modal.tsx
 import {useEffect, useRef} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
-
-const EASE_OUT_QUART: [number, number, number, number] = [0.165, 0.84, 0.44, 1]
+import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 
 // Native <dialog> shell (ESC + focus handled by the platform); the visual panel is a Motion child
 // implementing the binding animation spec (enter 200ms ease-out-quart from scale .96, exit 160ms,
@@ -44,7 +43,7 @@ export function Modal({open, onClose, title, children, footer, width = 420}: {op
 						initial={reduce ? false : {opacity: 0, scale: 0.96, y: 8}}
 						animate={{opacity: 1, scale: 1, y: 0}}
 						exit={reduce ? {opacity: 0, transition: {duration: 0}} : {opacity: 0, scale: 0.97, transition: {duration: 0.16, ease: EASE_OUT_QUART}}}
-						transition={{duration: 0.2, ease: EASE_OUT_QUART, layout: reduce ? {duration: 0} : {type: "spring", visualDuration: 0.25, bounce: 0}}}
+						transition={{duration: 0.2, ease: EASE_OUT_QUART, layout: reduce ? {duration: 0} : SPRING_SETTLE}}
 					>
 						<motion.div layout="position">
 							<div className="px-[18px] pt-4">

@@ -2,6 +2,7 @@
 // app/(app)/ustawienia/settings-shell.tsx
 import {useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
+import {EASE_OUT_QUART} from "@/lib/motion"
 import {cn} from "@/lib/cn"
 import {Card, CardBody} from "@/components/ui/card"
 
@@ -40,7 +41,7 @@ export function SettingsShell({sections}: {sections: SettingsSection[]}) {
 						initial={reduce ? false : {opacity: 0, y: 8}}
 						animate={{opacity: 1, y: 0}}
 						exit={reduce ? {opacity: 0} : {opacity: 0, y: -4}}
-						transition={{duration: 0.24, ease: [0.165, 0.84, 0.44, 1]}}
+						transition={{duration: 0.24, ease: EASE_OUT_QUART}}
 					>
 						<h2 className="text-[15px] font-semibold tracking-[-0.02em]">{current?.label}</h2>
 						<Card className="mt-4"><CardBody>{current?.content}</CardBody></Card>
