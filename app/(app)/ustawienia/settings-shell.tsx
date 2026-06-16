@@ -41,11 +41,10 @@ export function SettingsShell({sections}: {sections: SettingsSection[]}) {
 					</button>
 				))}
 			</nav>
-			<motion.div className="relative min-h-[300px]" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
-				<AnimatePresence mode="popLayout" initial={false}>
+			<div className="min-h-[300px]">
+				<AnimatePresence mode="wait" initial={false}>
 					<motion.div
 						key={current?.id}
-						layout={reduce ? false : "position"}
 						initial={reduce ? false : {opacity: 0}}
 						animate={{opacity: 1}}
 						exit={{opacity: 0}}
@@ -55,7 +54,7 @@ export function SettingsShell({sections}: {sections: SettingsSection[]}) {
 						<Card className="mt-4"><CardBody>{current?.content}</CardBody></Card>
 					</motion.div>
 				</AnimatePresence>
-			</motion.div>
+			</div>
 		</div>
 	)
 }
