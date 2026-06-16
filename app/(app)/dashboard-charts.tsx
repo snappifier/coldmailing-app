@@ -5,23 +5,34 @@ import {cn} from "@/lib/cn"
 import {buildSparklinePath, type DailyCount} from "@/features/metrics/compute"
 import {EASE_OUT_QUART} from "@/lib/motion"
 
-// Sparkline: the line draws in once via pathLength; the area fades in. Static after mount.
+// Sparkline: line + gradient reveal together once via a single clip-path wipe (left -> right),
+// then static. clip-path animates on the compositor (cheaper than the per-frame stroke-dashoffset
+// repaint); reduced motion renders the final, unclipped state.
 export function Sparkline({className, daily}: {className?: string; daily: DailyCount[]}) {
 	const reduce = useReducedMotion()
 	const {line, area, end} = buildSparklinePath(daily.map((d) => d.count), 600, 64)
 	if (!line) return null
 	return (
-		<svg className={className} viewBox="0 0 600 64" preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
+		<motion.svg
+			className={className}
+			viewBox="0 0 600 64"
+			preserveAspectRatio="none"
+			role="img"
+			aria-label="Wysłane maile dziennie, ostatnie 30 dni"
+			initial={reduce ? false : {clipPath: "inset(0px 100% 0px 0px)"}}
+			animate={{clipPath: "inset(0px 0% 0px 0px)"}}
+			transition={{duration: 1.4, ease: EASE_OUT_QUART}}
+		>
 			<defs>
 				<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
 					<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
 					<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
 				</linearGradient>
 			</defs>
-			<motion.path d={area} fill="url(#spark-fill)" initial={reduce ? false : {opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.9, delay: 0.45, ease: "easeOut"}} />
-			<motion.path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" initial={reduce ? false : {pathLength: 0}} animate={{pathLength: 1}} transition={{duration: 1.15, ease: EASE_OUT_QUART}} />
+			<path d={area} fill="url(#spark-fill)" />
+			<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
 			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--text)" /> : null}
-		</svg>
+		</motion.svg>
 	)
 }
 
