@@ -45,19 +45,20 @@ export function CampaignTabs({sekwencja, leady, przychodzace, inboundCount}: {se
 					</button>
 				))}
 			</div>
-			<div className="pt-4">
-				<AnimatePresence mode="wait">
+			<motion.div className="pt-4" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
+				<AnimatePresence mode="wait" initial={false}>
 					<motion.div
 						key={active}
-						initial={reduce ? false : {opacity: 0, y: 8}}
-						animate={{opacity: 1, y: 0}}
-						exit={reduce ? {opacity: 0} : {opacity: 0, y: -4}}
-						transition={{duration: 0.24, ease: EASE_OUT_QUART}}
+						layout={reduce ? false : "position"}
+						initial={reduce ? false : {opacity: 0}}
+						animate={{opacity: 1}}
+						exit={{opacity: 0}}
+						transition={{duration: reduce ? 0 : 0.13, ease: EASE_OUT_QUART}}
 					>
 						{content[active]}
 					</motion.div>
 				</AnimatePresence>
-			</div>
+			</motion.div>
 		</div>
 	)
 }
