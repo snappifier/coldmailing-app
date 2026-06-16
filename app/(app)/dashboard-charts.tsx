@@ -21,7 +21,7 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 			aria-label="Wysłane maile dziennie, ostatnie 30 dni"
 			initial={reduce ? false : {clipPath: "inset(0px 100% 0px 0px)"}}
 			animate={{clipPath: "inset(0px 0% 0px 0px)"}}
-			transition={{duration: 1.4, ease: EASE_OUT_QUART}}
+			transition={{duration: 1.25, ease: EASE_OUT_QUART}}
 		>
 			<defs>
 				<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
