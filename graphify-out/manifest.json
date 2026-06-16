@@ -1355,8 +1355,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\ustawienia\\settings-shell.tsx": {
-    "mtime": 1781596712.0644553,
-    "ast_hash": "46e2d0bcfb591d54ccfa035e42af3cb7",
+    "mtime": 1781599103.508879,
+    "ast_hash": "20edab7e4131c7cb68b480d3badf911d",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\badge.tsx": {
@@ -1925,8 +1925,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\kampanie\\[id]\\campaign-tabs.tsx": {
-    "mtime": 1781596705.880165,
-    "ast_hash": "fb5a405fa51e177f5e1a2838a2f8d620",
+    "mtime": 1781599071.708329,
+    "ast_hash": "7855fca886243d9a6a228da040aae676",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\kampanie\\[id]\\sequence-steps.tsx": {
@@ -2000,8 +2000,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\dashboard-charts.tsx": {
-    "mtime": 1781594685.0375938,
-    "ast_hash": "01d1bc3d5fd1470121bd927f9e1b69fc",
+    "mtime": 1781600032.7551565,
+    "ast_hash": "371e7030a98da55d532ac76bd78ec55c",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\count-up.tsx": {
@@ -2017,6 +2017,11 @@
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\success-check.tsx": {
     "mtime": 1781560537.4912817,
     "ast_hash": "900406dacc1b7bde673783adee881c20",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\template.tsx": {
+    "mtime": 1781601105.3187354,
+    "ast_hash": "508eac2ee650a6223bdf4ecee4c3f550",
     "semantic_hash": ""
   }
 }
