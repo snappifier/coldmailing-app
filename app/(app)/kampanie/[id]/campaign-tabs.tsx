@@ -45,8 +45,8 @@ export function CampaignTabs({sekwencja, leady, przychodzace, inboundCount}: {se
 					</button>
 				))}
 			</div>
-			<motion.div className="pt-4" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
-				<AnimatePresence mode="wait" initial={false}>
+			<motion.div className="relative pt-4" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
+				<AnimatePresence mode="popLayout" initial={false}>
 					<motion.div
 						key={active}
 						layout={reduce ? false : "position"}

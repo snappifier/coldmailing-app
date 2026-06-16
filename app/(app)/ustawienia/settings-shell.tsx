@@ -41,8 +41,8 @@ export function SettingsShell({sections}: {sections: SettingsSection[]}) {
 					</button>
 				))}
 			</nav>
-			<motion.div className="min-h-[300px]" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
-				<AnimatePresence mode="wait" initial={false}>
+			<motion.div className="relative min-h-[300px]" layout={reduce ? false : "size"} transition={SPRING_SETTLE}>
+				<AnimatePresence mode="popLayout" initial={false}>
 					<motion.div
 						key={current?.id}
 						layout={reduce ? false : "position"}
