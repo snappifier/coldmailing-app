@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\layout.tsx": {
-    "mtime": 1787150902.719806,
-    "ast_hash": "92820f83f030094e51c0d39700970805",
+    "mtime": 1787158524.2188869,
+    "ast_hash": "53941f80891b31d76588b6b0bf5f292d",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\kampanie\\campaign-form.tsx": {
@@ -1415,8 +1415,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\icons.tsx": {
-    "mtime": 1787150902.7557895,
-    "ast_hash": "744df46ab581ffdd2c8b15abeeb1d83b",
+    "mtime": 1787158515.3735576,
+    "ast_hash": "7a22225964948b4c5095f6c91bfaedcb",
     "semantic_hash": ""
   },
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\input.tsx": {
@@ -2037,6 +2037,21 @@
   "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\components\\ui\\number-input.tsx": {
     "mtime": 1787157527.8006709,
     "ast_hash": "a2b8dec33ead0c1f70055922b50035bd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\app\\(app)\\dev-seed.tsx": {
+    "mtime": 1787158511.265249,
+    "ast_hash": "111641f07661d13ecbb1032a77f03c3b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\demo\\actions.ts": {
+    "mtime": 1787158549.2501442,
+    "ast_hash": "fcd90a0ff7d6d4ecbb546f0190c9f87d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Nzzhr\\Desktop\\projects\\coldmailing-app\\features\\demo\\seed-data.ts": {
+    "mtime": 1787158602.6467276,
+    "ast_hash": "a7f0c3e38edb7cac625f190a76a25787",
     "semantic_hash": ""
   }
 }

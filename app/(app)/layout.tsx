@@ -5,11 +5,15 @@ import {ToastProvider} from "@/components/ui/toast-provider"
 import {ConfirmProvider} from "@/components/ui/confirm"
 import {Container} from "@/components/ui/container"
 import {Sidebar} from "./sidebar"
+import {DevSeed} from "./dev-seed"
+import {DEMO_EMAIL_SUFFIX} from "@/features/demo/seed-data"
 
 export default async function AppLayout({children}: {children: React.ReactNode}) {
 	const session = await auth()
 	if (!session?.user) redirect("/logowanie")
 	const org = session.user.orgId ? await prisma.organization.findUnique({where: {id: session.user.orgId}, select: {name: true}}) : null
+	const devMode = process.env.NODE_ENV === "development"
+	const demoSeeded = devMode && session.user.orgId ? (await prisma.lead.count({where: {organizationId: session.user.orgId, email: {endsWith: DEMO_EMAIL_SUFFIX}}})) > 0 : false
 
 	return (
 		<ToastProvider>
@@ -21,6 +25,7 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 						<Container className="py-8">{children}</Container>
 					</main>
 				</div>
+				{devMode && <DevSeed seeded={demoSeeded} />}
 			</ConfirmProvider>
 		</ToastProvider>
 	)
