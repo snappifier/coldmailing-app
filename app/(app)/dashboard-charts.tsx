@@ -1,5 +1,5 @@
 "use client"
-import {useEffect, useRef, useState} from "react"
+import {useEffect, useId, useRef, useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
 import {cn} from "@/lib/cn"
 import {buildSparklinePath, formatInt, type DailyCount} from "@/features/metrics/compute"
@@ -11,6 +11,14 @@ const WEEKDAY_LABEL = new Intl.DateTimeFormat("pl-PL", {weekday: "short"})
 function dayLabel(iso: string): string {
 	const d = new Date(`${iso}T12:00:00`)
 	return `${DAY_LABEL.format(d)} · ${WEEKDAY_LABEL.format(d)}`
+}
+
+// Weekly bucket label: "3–9 sie" within a month, "28 lip – 3 sie" across months.
+function weekLabel(iso: string): string {
+	const start = new Date(`${iso}T12:00:00`)
+	const end = new Date(start.getTime() + 6 * 86_400_000)
+	if (start.getMonth() === end.getMonth()) return `${start.getDate()}–${DAY_LABEL.format(end)}`
+	return `${DAY_LABEL.format(start)} – ${DAY_LABEL.format(end)}`
 }
 
 // Sparkline reveal: a clip-path spring wipe on the WRAPPER, so line, gradient area and end dot
@@ -29,8 +37,9 @@ function dayLabel(iso: string): string {
 const SPARK_H = 64
 const MORPH = {duration: 0.5, ease: EASE_OUT_QUART} as const
 
-export function Sparkline({className, daily}: {className?: string; daily: DailyCount[]}) {
+export function Sparkline({className, daily, mode = "day"}: {className?: string; daily: DailyCount[]; mode?: "day" | "week"}) {
 	const reduce = useReducedMotion()
+	const gid = useId()
 	const ref = useRef<HTMLDivElement>(null)
 	const [width, setWidth] = useState(0)
 	const [hover, setHover] = useState<number | null>(null)
@@ -63,14 +72,14 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 		<div className={cn("relative", className)} ref={ref} onPointerMove={onPointerMove} onPointerLeave={() => setHover(null)}>
 			<div className={cn("h-full w-full", line && "spark-wipe")}>
 				{line ? (
-					<svg className="h-full w-full" viewBox={`0 0 ${width} ${SPARK_H}`} preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
+					<svg className="h-full w-full" viewBox={`0 0 ${width} ${SPARK_H}`} preserveAspectRatio="none" role="img" aria-label={mode === "week" ? "Wysłane maile tygodniowo" : "Wysłane maile dziennie, ostatnie 30 dni"}>
 						<defs>
-							<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
+							<linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
 								<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
 								<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
 							</linearGradient>
 						</defs>
-						<motion.path initial={false} animate={{d: area}} transition={reduce ? {duration: 0} : MORPH} fill="url(#spark-fill)" />
+						<motion.path initial={false} animate={{d: area}} transition={reduce ? {duration: 0} : MORPH} fill={`url(#${gid})`} />
 						<motion.path initial={false} animate={{d: line}} transition={reduce ? {duration: 0} : MORPH} fill="none" stroke="var(--text)" strokeWidth="1.5" />
 					</svg>
 				) : null}
@@ -104,7 +113,7 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 								<span className="size-[5px] rounded-full bg-fg" />
 								Wysłane <span className="font-semibold tabular-nums text-fg">{formatInt(hovered.day.count)}</span>
 							</div>
-							<div className="mt-0.5 text-[10.5px] text-fg-faint">{dayLabel(hovered.day.date)}</div>
+							<div className="mt-0.5 text-[10.5px] text-fg-faint">{mode === "week" ? weekLabel(hovered.day.date) : dayLabel(hovered.day.date)}</div>
 						</motion.div>
 					</motion.div>
 				) : null}

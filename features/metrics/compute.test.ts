@@ -1,5 +1,5 @@
 import {describe, it, expect} from "vitest"
-import {summarizeStatuses, contacted, rate, computeRates, formatPct, formatInt, buildCampaignRows, orderFunnel, bucketDaily, relativeTimePl, buildSparklinePath} from "@/features/metrics/compute"
+import {summarizeStatuses, contacted, rate, computeRates, formatPct, formatInt, buildCampaignRows, orderFunnel, bucketDaily, relativeTimePl, buildSparklinePath, groupWeekly} from "@/features/metrics/compute"
 
 describe("summarizeStatuses", () => {
 	it("buckets counts, defaults missing to 0, sums total", () => {
@@ -100,6 +100,32 @@ describe("relativeTimePl", () => {
 	})
 	it("clamps future dates to teraz", () => {
 		expect(relativeTimePl(new Date("2026-06-10T13:00:00Z"), now)).toBe("teraz")
+	})
+})
+
+describe("groupWeekly", () => {
+	it("groups by Monday-based weeks, drops the leading partial week, keeps the trailing one", () => {
+		// 2026-08-01 is a Saturday; 2026-08-03 the first Monday.
+		const daily = [
+			{date: "2026-08-01", count: 1},
+			{date: "2026-08-02", count: 1},
+			{date: "2026-08-03", count: 2},
+			{date: "2026-08-04", count: 3},
+			{date: "2026-08-05", count: 0},
+			{date: "2026-08-06", count: 1},
+			{date: "2026-08-07", count: 0},
+			{date: "2026-08-08", count: 0},
+			{date: "2026-08-09", count: 4},
+			{date: "2026-08-10", count: 5},
+			{date: "2026-08-11", count: 1},
+		]
+		expect(groupWeekly(daily)).toEqual([
+			{date: "2026-08-03", count: 10},
+			{date: "2026-08-10", count: 6},
+		])
+	})
+	it("returns empty when no Monday is present", () => {
+		expect(groupWeekly([{date: "2026-08-01", count: 5}])).toEqual([])
 	})
 })
 

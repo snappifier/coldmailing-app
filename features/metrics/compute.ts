@@ -99,6 +99,23 @@ export function bucketDaily(dates: Date[], days: number, now: Date, tz: string):
 	return out
 }
 
+// Groups zero-filled daily buckets into Monday-based calendar weeks (the ISO date string parses
+// as UTC midnight, so getUTCDay is exact). A leading partial week is dropped; the trailing
+// (current) partial week stays. Each bucket is keyed by its Monday.
+export function groupWeekly(daily: DailyCount[]): DailyCount[] {
+	const out: DailyCount[] = []
+	let current: DailyCount | null = null
+	for (const d of daily) {
+		if (new Date(d.date).getUTCDay() === 1) {
+			current = {date: d.date, count: d.count}
+			out.push(current)
+		} else if (current) {
+			current.count += d.count
+		}
+	}
+	return out
+}
+
 export function relativeTimePl(date: Date, now: Date): string {
 	const diffMin = Math.max(0, Math.floor((now.getTime() - date.getTime()) / 60_000))
 	if (diffMin < 1) return "teraz"

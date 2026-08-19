@@ -115,7 +115,7 @@ export async function seedDemoData(): Promise<DemoResult> {
 					})
 					const contacted = cls.filter((c) => c.status !== "PENDING")
 					const sendCounts = new Map<string, number>()
-					const plan = buildSendPlan(30)
+					const plan = buildSendPlan(84)
 					const msgRows = plan.map((day, i) => {
 						const cl = contacted[i % contacted.length]
 						const nth = sendCounts.get(cl.id) ?? 0

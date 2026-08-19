@@ -15,6 +15,8 @@ import {LiveRefresh} from "./live-refresh"
 export default async function DashboardPage() {
 	const {orgId} = await requireOrg()
 	const now = new Date()
+	// The pulpit keeps ONE glanceable 30-day chart (consistent with the "ostatnie 30 dni" header);
+	// deeper ranges/metrics live on /analytics.
 	const [m, daily, replies] = await Promise.all([getOrgMetrics(orgId), getDailySends(orgId, 30, now), getRecentReplies(orgId, 6)])
 	const wonCount = m.funnel.find((f) => f.stage === "WON")?.count ?? 0
 	const funnelMax = Math.max(1, ...m.funnel.map((f) => f.count))
