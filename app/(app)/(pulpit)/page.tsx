@@ -47,7 +47,8 @@ export default async function DashboardPage() {
 				<div className="px-5 py-4">
 					<div className="mb-2.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
 						<span className="text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Wysłane maile · dziennie</span>
-						<span className="flex flex-wrap gap-4">
+						{/* Enters LAST, only after the hero count-ups perceptually finish (last stat: .34s start + 1.2s spring) - showing the bounce/unsub percentages earlier would spoil the story the chart is still drawing. */}
+						<span className="flex flex-wrap gap-4 [animation:fadeIn_.6s_var(--ease-out)_1.55s_both]">
 							<HealthStat color="bg-danger" label="odbicia" value={`${formatInt(m.breakdown.bounced)} · ${formatPct(m.rates.bounceRate)}`} />
 							<HealthStat color="bg-warning" label="rezygnacje" value={`${formatInt(m.breakdown.unsubscribed)} · ${formatPct(m.rates.unsubRate)}`} />
 							<HealthStat color="bg-fg-faint" label="błędy" value={formatInt(m.breakdown.failed)} />
@@ -56,14 +57,15 @@ export default async function DashboardPage() {
 					<Sparkline className="h-16 w-full" daily={daily} />
 				</div>
 
+				{/* Wave 2 (~.55s): enters while the hero and the wipe settle; wave 3 (~.95s) is the table below. */}
 				<div className="grid divide-y divide-border lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-					<div className="px-5 py-4">
+					<div className="px-5 py-4 [animation:pageIn_.65s_var(--ease-out)_.55s_both]">
 						<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Lejek sprzedaży</div>
 						{m.funnel.map((f, i) => (
-							<FunnelRow key={f.stage} index={i} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "neutral"} />
+							<FunnelRow key={f.stage} index={i} delay={0.6} label={STAGE_LABEL[f.stage]} count={f.count} max={funnelMax} tone={f.stage === "WON" ? "won" : f.stage === "LOST" ? "lost" : "neutral"} />
 						))}
 					</div>
-					<div className="px-5 py-4">
+					<div className="px-5 py-4 [animation:pageIn_.65s_var(--ease-out)_.62s_both]">
 						<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Ostatnie odpowiedzi</div>
 						{replies.length === 0 ? (
 							<p className="text-sm text-fg-muted">Brak odpowiedzi.</p>
@@ -73,7 +75,7 @@ export default async function DashboardPage() {
 					</div>
 				</div>
 
-				<div className="px-5 py-4">
+				<div className="px-5 py-4 [animation:pageIn_.65s_var(--ease-out)_.95s_both]">
 					<div className="mb-2 text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">Kampanie</div>
 					{m.campaigns.length === 0 ? (
 						<p className="text-sm text-fg-muted">Brak kampanii.</p>

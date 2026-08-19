@@ -113,7 +113,7 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 	)
 }
 
-export function FunnelRow({label, count, max, tone = "neutral", index = 0}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"; index?: number}) {
+export function FunnelRow({label, count, max, tone = "neutral", index = 0, delay = 0}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"; index?: number; delay?: number}) {
 	const reduce = useReducedMotion()
 	const raw = max > 0 ? (count / max) * 100 : 0
 	const pct = count > 0 ? Math.max(1.5, Math.round(raw * 10) / 10) : 0
@@ -122,7 +122,7 @@ export function FunnelRow({label, count, max, tone = "neutral", index = 0}: {lab
 		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
 			<span className="text-fg-muted">{label}</span>
 			<span className="relative h-[3px] overflow-hidden rounded-full bg-surface-3">
-				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full transition-[width] duration-500 ease-out", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: index * 0.09, ease: EASE_OUT_QUART}} />
+				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full transition-[width] duration-500 ease-out", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: delay + index * 0.09, ease: EASE_OUT_QUART}} />
 			</span>
 			<span className="text-right text-xs tabular-nums text-fg">{count}</span>
 		</div>
