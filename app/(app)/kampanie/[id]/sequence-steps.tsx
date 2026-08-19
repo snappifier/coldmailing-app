@@ -5,7 +5,7 @@ import {addSequenceStep, updateSequenceStep, moveSequenceStep, deleteSequenceSte
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {Card} from "@/components/ui/card"
 import {Select} from "@/components/ui/select"
-import {Input} from "@/components/ui/input"
+import {NumberInput} from "@/components/ui/number-input"
 import {Button} from "@/components/ui/button"
 import {Badge} from "@/components/ui/badge"
 import {ChevronUpIcon, ChevronDownIcon} from "@/components/ui/icons"
@@ -42,7 +42,7 @@ function StepFields({templates, defaults}: {templates: {id: string; name: string
 					</option>
 				))}
 			</Select>
-			<Input className="w-24" name="delayDays" type="number" min={0} defaultValue={defaults?.delayDays ?? 0} aria-label="Dni opóźnienia" />
+			<NumberInput className="w-24" name="delayDays" min={0} defaultValue={defaults?.delayDays ?? 0} aria-label="Dni opóźnienia" />
 			<Select className="w-52" name="condition" defaultValue={defaults?.condition ?? "SEND_IF_NO_REPLY"}>
 				<option value="ALWAYS">{CONDITION_LABEL["ALWAYS"]}</option>
 				<option value="SEND_IF_NO_REPLY">{CONDITION_LABEL["SEND_IF_NO_REPLY"]}</option>

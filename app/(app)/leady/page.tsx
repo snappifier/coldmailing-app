@@ -7,6 +7,7 @@ import {STAGE_LABEL} from "@/features/pipeline/types"
 import {ConfirmButton} from "@/components/ui/confirm-button"
 import {listResearchTypes} from "@/features/research-types/queries"
 import {Input} from "@/components/ui/input"
+import {NumberInput} from "@/components/ui/number-input"
 import {Select} from "@/components/ui/select"
 import {Button} from "@/components/ui/button"
 import {Table, Th, Td} from "@/components/ui/table"
@@ -63,7 +64,7 @@ export default async function LeadsPage({searchParams}: {searchParams: Promise<{
 
 			<form className="flex flex-wrap gap-2 text-sm">
 				<Input name="q" placeholder="Szukaj..." defaultValue={q ?? ""} />
-				<Input className="w-28" name="minScore" type="number" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
+				<NumberInput className="w-28" name="minScore" min={0} max={100} placeholder="min score" defaultValue={minScore ?? ""} />
 				<Select name="line" defaultValue={line ?? ""}>
 					<option value="">— wszystkie linie —</option>
 					{offeringLines.map((l) => (

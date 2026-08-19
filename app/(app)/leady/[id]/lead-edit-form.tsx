@@ -3,6 +3,7 @@
 import {useActionState, useState} from "react"
 import {updateLead, type LeadActionResult} from "@/features/leads/actions"
 import {Input} from "@/components/ui/input"
+import {NumberInput} from "@/components/ui/number-input"
 import {Select} from "@/components/ui/select"
 import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
@@ -66,10 +67,10 @@ export function LeadEditForm({lead, customFields}: Props) {
 					<Input className="w-24" name="score" type="number" min={0} max={100} defaultValue={lead.score ?? ""} />
 				</Field>
 				<Field label="Priorytet (1-5)">
-					<Input className="w-20" name="priority" type="number" min={1} max={5} defaultValue={lead.priority ?? ""} />
+					<NumberInput className="w-20" name="priority" min={1} max={5} defaultValue={lead.priority ?? ""} />
 				</Field>
 				<Field label="Jakość strony (1-5)">
-					<Input className="w-24" name="siteQuality" type="number" min={1} max={5} defaultValue={lead.siteQuality ?? ""} />
+					<NumberInput className="w-24" name="siteQuality" min={1} max={5} defaultValue={lead.siteQuality ?? ""} />
 				</Field>
 			</div>
 			<Field label="Hook AI">

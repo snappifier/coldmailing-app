@@ -67,6 +67,9 @@
 @layer base {
 	body { background: var(--bg); color: var(--text); letter-spacing: -0.006em; }
 	::selection { background: var(--selection); }
+	input[type="number"] { appearance: textfield; }
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button { appearance: none; margin: 0; }
 	:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
 	@media (prefers-reduced-motion: reduce) {
 		*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
