@@ -1,6 +1,7 @@
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {resolveSenderName} from "@/features/templates/sender"
+import {WIZARD_FOLDER} from "@/features/campaigns/wizard"
 import {TemplatesShell} from "./templates-shell"
 import type {RenderLead} from "@/features/templates/render"
 
@@ -8,7 +9,8 @@ export default async function TemplatesPage() {
 	const {orgId} = await requireOrg()
 
 	const [templates, offeringLines, placeholders, lead, org, mailbox] = await Promise.all([
-		prisma.template.findMany({where: {organizationId: orgId}, orderBy: {createdAt: "desc"}, include: {offeringLine: {select: {name: true}}, _count: {select: {sequenceSteps: true}}}}),
+		// Wizard-created templates are campaign-private: {folder: {not: X}} would drop folder=null rows, hence the explicit OR.
+		prisma.template.findMany({where: {organizationId: orgId, OR: [{folder: null}, {folder: {not: WIZARD_FOLDER}}]}, orderBy: {createdAt: "desc"}, include: {offeringLine: {select: {name: true}}, _count: {select: {sequenceSteps: true}}}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		prisma.placeholder.findMany({where: {organizationId: orgId}, orderBy: {key: "asc"}}),
 		prisma.lead.findMany({where: {organizationId: orgId}, orderBy: {createdAt: "asc"}, take: 1}),

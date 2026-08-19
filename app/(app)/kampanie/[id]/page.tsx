@@ -5,6 +5,7 @@ import {requireOrg} from "@/lib/org"
 import {hasRole} from "@/features/team/roles"
 import {listEmailAccounts} from "@/features/email-accounts/queries"
 import {getCampaignMetrics} from "@/features/metrics/queries"
+import {WIZARD_FOLDER} from "@/features/campaigns/wizard"
 import {formatPct, formatInt} from "@/features/metrics/compute"
 import {Badge} from "@/components/ui/badge"
 import {Card} from "@/components/ui/card"
@@ -44,7 +45,8 @@ export default async function CampaignDetailPage({params}: {params: Promise<{id:
 	})
 
 	const [templates, offeringLines, mailboxes] = await Promise.all([
-		prisma.template.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
+		// Wizard-created templates stay out of the picker: {folder: {not: X}} would drop folder=null rows, hence the explicit OR.
+		prisma.template.findMany({where: {organizationId: orgId, OR: [{folder: null}, {folder: {not: WIZARD_FOLDER}}]}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
 		listEmailAccounts(orgId),
 	])
