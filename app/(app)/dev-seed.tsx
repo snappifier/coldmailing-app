@@ -2,6 +2,7 @@
 import {useEffect, useState, useTransition} from "react"
 import {useRouter} from "next/navigation"
 import {seedDemoData, clearDemoData, simulateDemoTick} from "@/features/demo/actions"
+import {toggleSkeletonPreview, useSkeletonPreview} from "./dev-skeleton"
 import {cn} from "@/lib/cn"
 import {useToast} from "@/components/ui/use-toast"
 import {useConfirm} from "@/components/ui/use-confirm"
@@ -56,8 +57,20 @@ export function DevSeed({seeded}: {seeded: boolean}) {
 		})
 	}
 
+	const skeletons = useSkeletonPreview()
 	return (
 		<div className="fixed bottom-[18px] right-[18px] z-50 flex items-center gap-1.5">
+			<button
+				className={cn(
+					"flex items-center gap-1.5 rounded-md border border-border bg-surface-1 px-2.5 py-1.5 text-xs shadow-pop transition-colors duration-150 hover:border-border-strong",
+					skeletons ? "text-fg" : "text-fg-muted",
+				)}
+				type="button"
+				onClick={toggleSkeletonPreview}
+			>
+				<span className={cn("size-[5px] rounded-full", skeletons ? "animate-pulse bg-warning" : "bg-fg-faint")} />
+				{skeletons ? "Skeletony: podgląd" : "Skeletony"}
+			</button>
 			{seeded && (
 				<button
 					className={cn(

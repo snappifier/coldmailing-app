@@ -6,6 +6,7 @@ import {ConfirmProvider} from "@/components/ui/confirm"
 import {Container} from "@/components/ui/container"
 import {Sidebar} from "./sidebar"
 import {DevSeed} from "./dev-seed"
+import {DevSkeletonGate} from "./dev-skeleton"
 import {DEMO_EMAIL_SUFFIX} from "@/features/demo/seed-data"
 
 export default async function AppLayout({children}: {children: React.ReactNode}) {
@@ -22,7 +23,7 @@ export default async function AppLayout({children}: {children: React.ReactNode})
 				<div className="flex min-h-screen">
 					<Sidebar user={{name: session.user.name ?? null, email: session.user.email ?? null, role: String(session.user.role ?? ""), orgName: org?.name ?? ""}} />
 					<main id="main" className="min-w-0 flex-1">
-						<Container className="py-8">{children}</Container>
+						<Container className="py-8">{devMode ? <DevSkeletonGate>{children}</DevSkeletonGate> : children}</Container>
 					</main>
 				</div>
 				{devMode && <DevSeed seeded={demoSeeded} />}
