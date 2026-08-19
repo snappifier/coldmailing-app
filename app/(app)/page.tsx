@@ -1,4 +1,3 @@
-// app/(app)/page.tsx
 import Link from "next/link"
 import {requireOrg} from "@/lib/org"
 import {getOrgMetrics, getDailySends, getRecentReplies} from "@/features/metrics/queries"

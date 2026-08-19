@@ -1,4 +1,3 @@
-// components/ui/button.tsx
 import {forwardRef, type ButtonHTMLAttributes} from "react"
 import {cn} from "@/lib/cn"
 import {buttonVariant, type ButtonVariant} from "@/components/ui/button-variants"
