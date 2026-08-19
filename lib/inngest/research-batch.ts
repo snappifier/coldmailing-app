@@ -1,4 +1,3 @@
-// lib/inngest/research-batch.ts
 import {inngest} from "@/lib/inngest/client"
 import {prisma} from "@/lib/prisma"
 import {buildLeadWhere, type BatchCriteria} from "@/features/research/batch-select"

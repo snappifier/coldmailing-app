@@ -1,4 +1,3 @@
-// components/ui/confirm-state.test.ts
 import {describe, it, expect} from "vitest"
 import {defaultConfirmOptions} from "@/components/ui/confirm-state"
 

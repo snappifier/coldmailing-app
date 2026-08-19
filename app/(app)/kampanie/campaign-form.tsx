@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/campaign-form.tsx
 
 import {useActionState, useRef} from "react"
 import {createCampaign, type CampaignResult} from "@/features/campaigns/actions"

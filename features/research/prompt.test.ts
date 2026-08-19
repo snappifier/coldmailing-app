@@ -1,4 +1,3 @@
-// features/research/prompt.test.ts
 import {describe, it, expect} from "vitest"
 import {buildResearchPrompt, leadToRenderContext} from "@/features/research/prompt"
 

@@ -1,4 +1,3 @@
-// features/research/lead-context.test.ts
 import {describe, it, expect} from "vitest"
 import {buildLeadContextBlock} from "@/features/research/lead-context"
 

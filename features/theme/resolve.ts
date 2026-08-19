@@ -1,4 +1,3 @@
-// features/theme/resolve.ts
 export type Theme = "light" | "dark"
 
 // Default DARK: the dark-ready token migration is complete, so every page renders

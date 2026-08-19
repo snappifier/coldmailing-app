@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/[id]/draft-panel.tsx
 
 import {useEffect, useRef, useState} from "react"
 import Link from "next/link"

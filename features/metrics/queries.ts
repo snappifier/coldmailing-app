@@ -1,4 +1,3 @@
-// features/metrics/queries.ts
 import {prisma} from "@/lib/prisma"
 import type {DealStage} from "@/generated/prisma/client"
 import {summarizeStatuses, computeRates, buildCampaignRows, orderFunnel, bucketDaily, type StatusBreakdown, type Rates, type CampaignRow, type DailyCount} from "@/features/metrics/compute"

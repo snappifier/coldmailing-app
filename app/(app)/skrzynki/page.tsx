@@ -1,4 +1,3 @@
-// app/(app)/skrzynki/page.tsx
 import {requireOrg, currentRole} from "@/lib/org"
 import {hasRole} from "@/features/team/roles"
 import {redirect} from "next/navigation"

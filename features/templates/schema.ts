@@ -1,4 +1,3 @@
-// features/templates/schema.ts
 import {z} from "zod"
 
 export const templateSchema = z.object({

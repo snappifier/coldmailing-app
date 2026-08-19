@@ -1,5 +1,4 @@
 "use client"
-// components/ui/confirm-button.tsx
 import {useTransition} from "react"
 import {Button} from "@/components/ui/button"
 import {Spinner} from "@/components/ui/spinner"

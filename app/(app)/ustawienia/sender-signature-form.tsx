@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/sender-signature-form.tsx
 import {useActionState, useEffect, useState} from "react"
 import {setSenderSignature} from "@/features/org/settings"
 import {Field} from "@/components/ui/field"

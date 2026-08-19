@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/suppression/suppression-form.tsx
 
 import {useActionState, useRef} from "react"
 import {addSuppression, type SuppressionResult} from "@/features/suppression/actions"

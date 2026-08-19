@@ -1,4 +1,3 @@
-// features/enums/labels.ts
 import type {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus, EmailAccountStatus} from "@/generated/prisma/client"
 import type {BadgeVariant} from "@/components/ui/badge"
 

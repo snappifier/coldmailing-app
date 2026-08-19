@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/settings-shell.tsx
 import {useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
 import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"

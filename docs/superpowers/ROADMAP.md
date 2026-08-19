@@ -28,10 +28,10 @@ Verified end-to-end on Neon: auth (User/Account/Membership OWNER), import (dedup
 
 ## Standing rules (enforced; see CLAUDE.md / AGENTS.md)
 
-- Conventions: tabs, no semicolons, path comment line 1 (or line 2 after a `"use client"`/`"use server"` directive), `className` first, `import {x}` no inner spaces, NO emoji anywhere.
+- Conventions: tabs, no semicolons, `className` first, `import {x}` no inner spaces, NO emoji anywhere. **NO file-path comments** — the old "path comment on line 1" rule was inherited from an earlier project via the Phase 0/1 plan and was RETIRED by the user on 2026-08-19; it was stripped from all 248 TS/TSX files. Historical specs/plans still quote it; they are records, not rules.
 - Verify current library versions + best practices in the official docs before writing code that uses them.
 - Persist knowledge to graphify + Obsidian: `graphify update .` after code changes; `graphify . --obsidian` after doc changes.
-- Git: work on `master`; Claude/subagents may commit (no emoji in messages); the USER pushes. Never `git push`.
+- Git: work on `main`; Claude/subagents may commit; the USER pushes. Never `git push`. **Commit convention (set 2026-08-19, supersedes the conventional-commits style of the first 369 commits):** `scope: lowercase one-line description`, English, NO `feat`/`fix`/`chore`/`docs` prefix, no body unless something needs explaining, NO `Co-Authored-By` trailer, no emoji. **One commit per finished, gate-passing chunk** — review fixes, ROADMAP edits and `graphify update` output are `--amend`ed into the commit they belong to, never shipped separately (the old per-task discipline produced 91/86/60 commits in single days).
 - Dev server: the USER runs `npm run dev` on :3000. Coordinate `next build` (needs dev OFF) vs live verification (needs dev ON).
 
 ## Test data currently in Neon (sample — can be wiped for a clean slate)

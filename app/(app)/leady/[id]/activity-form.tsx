@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/[id]/activity-form.tsx
 
 import {useActionState} from "react"
 import {addLeadActivity, type PipelineActionResult} from "@/features/pipeline/actions"

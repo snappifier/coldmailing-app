@@ -1,4 +1,3 @@
-// app/(app)/dashboard-parts.tsx
 import Link from "next/link"
 import {cn} from "@/lib/cn"
 import {ArrowRightIcon} from "@/components/ui/icons"

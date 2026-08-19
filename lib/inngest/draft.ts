@@ -1,4 +1,3 @@
-// lib/inngest/draft.ts
 import {inngest} from "@/lib/inngest/client"
 import {prisma} from "@/lib/prisma"
 import {buildResearchPrompt, leadToRenderContext} from "@/features/research/prompt"

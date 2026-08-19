@@ -1,4 +1,3 @@
-// features/pipeline/queries.ts
 import {prisma} from "@/lib/prisma"
 import type {PipelineLead, TimelineItem} from "./types"
 import {buildTimeline} from "./timeline"

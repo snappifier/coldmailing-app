@@ -1,4 +1,3 @@
-// app/(app)/loading.tsx
 import {Skeleton} from "@/components/ui/skeleton"
 
 // Shown instantly on navigation while the page's server component streams in (so a click swaps the

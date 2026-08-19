@@ -1,4 +1,3 @@
-// features/offering-lines/schema.ts
 import {z} from "zod"
 
 export const offeringLineSchema = z.object({

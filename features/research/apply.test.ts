@@ -1,4 +1,3 @@
-// features/research/apply.test.ts
 import {describe, it, expect} from "vitest"
 import {computeApply, toLeadUpdate} from "@/features/research/apply"
 

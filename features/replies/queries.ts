@@ -1,4 +1,3 @@
-// features/replies/queries.ts
 import {prisma} from "@/lib/prisma"
 import type {InboundKind} from "@/generated/prisma/client"
 

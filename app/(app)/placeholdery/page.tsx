@@ -1,4 +1,3 @@
-// app/(app)/placeholdery/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deletePlaceholder} from "@/features/placeholders/actions"

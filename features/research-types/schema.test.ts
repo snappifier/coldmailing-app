@@ -1,4 +1,3 @@
-// features/research-types/schema.test.ts
 import {describe, it, expect} from "vitest"
 import {researchTypeSchema} from "@/features/research-types/schema"
 

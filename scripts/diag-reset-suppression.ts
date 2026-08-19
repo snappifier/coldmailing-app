@@ -1,4 +1,4 @@
-// scripts/diag-reset-suppression.ts — temporary: remove the lead5b suppression so a fresh
+// temporary: remove the lead5b suppression so a fresh
 // send can go out (seed-test-campaign does NOT clear suppressions).
 import "dotenv/config"
 import {PrismaClient} from "../generated/prisma/client"

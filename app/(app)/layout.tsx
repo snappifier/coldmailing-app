@@ -1,4 +1,3 @@
-// app/(app)/layout.tsx
 import {auth} from "@/lib/auth"
 import {redirect} from "next/navigation"
 import {prisma} from "@/lib/prisma"

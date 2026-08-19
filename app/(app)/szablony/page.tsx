@@ -1,4 +1,3 @@
-// app/(app)/szablony/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {resolveSenderName} from "@/features/templates/sender"

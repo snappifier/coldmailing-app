@@ -1,4 +1,3 @@
-// features/pipeline/validation.test.ts
 import {describe, it, expect} from "vitest"
 import {addActivitySchema} from "./validation"
 

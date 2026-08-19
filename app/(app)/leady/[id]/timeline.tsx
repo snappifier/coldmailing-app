@@ -1,4 +1,3 @@
-// app/(app)/leady/[id]/timeline.tsx
 import type {TimelineItem} from "@/features/pipeline/types"
 import {deleteLeadActivity} from "@/features/pipeline/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"

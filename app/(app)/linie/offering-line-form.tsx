@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/linie/offering-line-form.tsx
 
 import {useActionState, useRef} from "react"
 import {createOfferingLine, type ActionResult} from "@/features/offering-lines/actions"

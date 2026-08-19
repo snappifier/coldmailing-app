@@ -1,4 +1,3 @@
-// scripts/seed-test-campaign.ts
 // Idempotently create a ready-to-test 2-step campaign ("Test 5b") wired to the connected
 // mailbox, with one PENDING lead. Re-run any time to reset to a clean PENDING state.
 // Run: npx tsx scripts/seed-test-campaign.ts

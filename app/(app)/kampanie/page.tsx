@@ -1,4 +1,3 @@
-// app/(app)/kampanie/page.tsx
 import Link from "next/link"
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"

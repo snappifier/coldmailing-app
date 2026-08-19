@@ -1,4 +1,3 @@
-// features/team/join.ts
 import type {Role} from "@/generated/prisma/client"
 
 export interface JoinInput {

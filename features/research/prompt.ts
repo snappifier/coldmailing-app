@@ -1,4 +1,3 @@
-// features/research/prompt.ts
 import {renderTemplate, type RenderContext, type RenderLead, type RenderPlaceholder} from "@/features/templates/render"
 
 interface PromptLead {

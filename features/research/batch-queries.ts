@@ -1,4 +1,3 @@
-// features/research/batch-queries.ts
 import {prisma} from "@/lib/prisma"
 
 export function listResearchBatches(orgId: string) {

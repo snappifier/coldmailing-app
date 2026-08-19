@@ -1,4 +1,3 @@
-// app/(app)/badania/batches/[id]/page.tsx
 import Link from "next/link"
 import {notFound} from "next/navigation"
 import {getBatch} from "@/features/research/batch-actions"

@@ -1,5 +1,4 @@
 "use client"
-// components/ui/modal.tsx
 import {useEffect, useRef} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"
 import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"

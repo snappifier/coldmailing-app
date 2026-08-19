@@ -1,4 +1,3 @@
-// features/pipeline/group.test.ts
 import {describe, it, expect} from "vitest"
 import type {DealStage} from "@/generated/prisma/client"
 import {groupLeadsByStage} from "./group"

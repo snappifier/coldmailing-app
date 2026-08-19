@@ -1,4 +1,3 @@
-// features/templates/sender.test.ts
 import {describe, it, expect} from "vitest"
 import {resolveSenderName, sanitizeSignature, MAX_SIGNATURE_LEN} from "@/features/templates/sender"
 

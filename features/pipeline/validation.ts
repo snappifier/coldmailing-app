@@ -1,4 +1,3 @@
-// features/pipeline/validation.ts
 import {z} from "zod"
 
 export const MANUAL_ACTIVITY_KINDS = ["NOTE", "CALL", "MEETING", "OFFER_SENT"] as const

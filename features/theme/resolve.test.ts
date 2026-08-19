@@ -1,4 +1,3 @@
-// features/theme/resolve.test.ts
 import {describe, it, expect} from "vitest"
 import {resolveInitialTheme} from "@/features/theme/resolve"
 

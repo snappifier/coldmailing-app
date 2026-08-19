@@ -1,4 +1,3 @@
-// app/(app)/suppression/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {removeSuppression} from "@/features/suppression/actions"

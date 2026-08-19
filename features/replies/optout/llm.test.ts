@@ -1,4 +1,3 @@
-// features/replies/optout/llm.test.ts
 import {describe, it, expect, vi, beforeEach} from "vitest"
 
 const {create} = vi.hoisted(() => ({create: vi.fn()}))

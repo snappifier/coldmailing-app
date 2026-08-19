@@ -1,4 +1,3 @@
-// app/api/mailbox/google/connect/route.ts
 import {NextResponse} from "next/server"
 import {requireRole} from "@/lib/org"
 import {buildConsentUrl, signState} from "@/features/email-accounts/google-oauth"

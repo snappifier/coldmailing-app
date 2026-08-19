@@ -1,4 +1,3 @@
-// features/research/batch-select.ts
 import type {Prisma} from "@/generated/prisma/client"
 
 export interface BatchCriteria {

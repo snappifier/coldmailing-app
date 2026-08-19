@@ -1,4 +1,3 @@
-// lib/inngest/research.ts
 import {inngest} from "@/lib/inngest/client"
 import {prisma} from "@/lib/prisma"
 import {buildFindingsSchema} from "@/features/research/schema-build"

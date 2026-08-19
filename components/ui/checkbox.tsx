@@ -1,4 +1,3 @@
-// components/ui/checkbox.tsx
 import {forwardRef, type InputHTMLAttributes} from "react"
 import {cn} from "@/lib/cn"
 import {CheckIcon} from "@/components/ui/icons"

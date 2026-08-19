@@ -1,4 +1,3 @@
-// features/templates/render.test.ts
 import {describe, it, expect} from "vitest"
 import {renderTemplate, type RenderContext} from "@/features/templates/render"
 

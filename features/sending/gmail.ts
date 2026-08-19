@@ -1,4 +1,3 @@
-// features/sending/gmail.ts
 import {google} from "googleapis"
 import type {Prisma} from "@/generated/prisma/client"
 import {prisma} from "@/lib/prisma"

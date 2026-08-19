@@ -1,4 +1,3 @@
-// components/ui/icons.tsx
 type IconProps = {className?: string}
 
 function Svg({className, children}: {className?: string; children: React.ReactNode}) {

@@ -1,4 +1,3 @@
-// components/ui/skeleton.tsx
 import {cn} from "@/lib/cn"
 
 // Pulsing placeholder block for loading states. CSS animation (animate-pulse) so it runs reliably;

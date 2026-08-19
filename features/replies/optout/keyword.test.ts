@@ -1,4 +1,3 @@
-// features/replies/optout/keyword.test.ts
 import {describe, it, expect} from "vitest"
 import {keywordDetector} from "@/features/replies/optout/keyword"
 

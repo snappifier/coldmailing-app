@@ -1,4 +1,4 @@
-// scripts/diag-inbox.ts — temporary: list recent messages in the connected mailbox (read-only)
+// temporary: list recent messages in the connected mailbox (read-only)
 import "dotenv/config"
 import {google} from "googleapis"
 import {PrismaClient} from "../generated/prisma/client"

@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/lead-create-button.tsx
 import {useActionState, useEffect, useRef, useState} from "react"
 import Link from "next/link"
 import {animate, motion, useReducedMotion} from "motion/react"

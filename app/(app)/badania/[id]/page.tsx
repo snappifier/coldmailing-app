@@ -1,4 +1,3 @@
-// app/(app)/badania/[id]/page.tsx
 import {notFound} from "next/navigation"
 import {requireOrg} from "@/lib/org"
 import {getResearchType} from "@/features/research-types/queries"

@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/sequence-steps.tsx
 
 import {useActionState, useState, useTransition} from "react"
 import {addSequenceStep, updateSequenceStep, moveSequenceStep, deleteSequenceStep, type StepResult} from "@/features/campaigns/actions"

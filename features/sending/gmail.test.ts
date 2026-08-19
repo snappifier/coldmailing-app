@@ -1,4 +1,3 @@
-// features/sending/gmail.test.ts
 import {describe, it, expect, vi, beforeAll} from "vitest"
 
 interface SendArg {

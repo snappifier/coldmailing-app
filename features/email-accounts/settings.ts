@@ -1,4 +1,3 @@
-// features/email-accounts/settings.ts
 export const TIMEZONES = [
 	"Europe/Warsaw",
 	"Europe/London",

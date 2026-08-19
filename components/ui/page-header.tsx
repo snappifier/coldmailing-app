@@ -1,4 +1,3 @@
-// components/ui/page-header.tsx
 export function PageHeader({title, description, meta, action}: {title: string; description?: string; meta?: React.ReactNode; action?: React.ReactNode}) {
 	return (
 		<div className="flex items-start justify-between gap-4 border-b border-border pb-4">

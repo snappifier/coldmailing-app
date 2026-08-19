@@ -1,4 +1,3 @@
-// features/research/draft.ts
 export interface DraftSchema {
 	type: "object"
 	additionalProperties: false

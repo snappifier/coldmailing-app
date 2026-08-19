@@ -1,4 +1,3 @@
-// scripts/reset-campaign.ts
 // Reset every CampaignLead of a named campaign to a clean PENDING state and delete their
 // Messages (clean Gmail threads), so the sequence can be re-run from step 0.
 // Run: npx tsx scripts/reset-campaign.ts "Kampania LO Q2"

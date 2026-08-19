@@ -1,4 +1,3 @@
-// features/sending/mime.ts
 export interface MailInput {
 	from: string
 	to: string

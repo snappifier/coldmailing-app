@@ -1,5 +1,4 @@
 "use server"
-// features/research/batch-actions.ts
 
 import {revalidatePath} from "next/cache"
 import type {Prisma} from "@/generated/prisma/client"

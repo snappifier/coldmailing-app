@@ -1,4 +1,3 @@
-// features/team/queries.ts
 import {prisma} from "@/lib/prisma"
 import type {Role} from "@/generated/prisma/client"
 

@@ -1,4 +1,3 @@
-// features/templates/sender.ts
 
 export const MAX_SIGNATURE_LEN = 2000
 

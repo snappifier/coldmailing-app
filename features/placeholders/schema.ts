@@ -1,4 +1,3 @@
-// features/placeholders/schema.ts
 import {z} from "zod"
 
 const RESERVED_KEYS = new Set(["nazwaPlacowki", "osoba", "miasto", "www", "hookAI", "zwrot", "podpisNadawcy"])

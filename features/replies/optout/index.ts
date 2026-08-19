@@ -1,4 +1,3 @@
-// features/replies/optout/index.ts
 import type {OptOutDetector} from "@/features/replies/optout/types"
 import {keywordDetector} from "@/features/replies/optout/keyword"
 import {llmDetector} from "@/features/replies/optout/llm"

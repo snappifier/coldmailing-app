@@ -1,4 +1,3 @@
-// features/leads/score-fields.test.ts
 import {describe, it, expect} from "vitest"
 import {parseScoreFields} from "@/features/leads/score-fields"
 

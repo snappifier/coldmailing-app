@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/pipeline/board.tsx
 
 import {useRouter} from "next/navigation"
 import {useState} from "react"

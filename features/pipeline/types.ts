@@ -1,4 +1,3 @@
-// features/pipeline/types.ts
 import type {CampaignLeadStatus, DealStage} from "@/generated/prisma/client"
 
 export const STAGE_ORDER: DealStage[] = ["NEW", "AUDIT", "PROPOSAL", "MEETING", "OFFER", "WON", "LOST"]

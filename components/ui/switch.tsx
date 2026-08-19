@@ -1,5 +1,4 @@
 "use client"
-// components/ui/switch.tsx
 import {cn} from "@/lib/cn"
 export function Switch({checked, onChange, className, "aria-label": ariaLabel}: {checked: boolean; onChange: (v: boolean) => void; className?: string; "aria-label"?: string}) {
 	return (

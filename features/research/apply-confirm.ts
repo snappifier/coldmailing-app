@@ -1,4 +1,3 @@
-// features/research/apply-confirm.ts
 import {prisma} from "@/lib/prisma"
 import {toLeadUpdate} from "@/features/research/apply"
 import type {ProposedField} from "@/features/research/types"

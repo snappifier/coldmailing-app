@@ -1,4 +1,3 @@
-// features/email-accounts/google-oauth.test.ts
 import {describe, it, expect, beforeAll} from "vitest"
 import {signState, verifyState} from "@/features/email-accounts/google-oauth"
 

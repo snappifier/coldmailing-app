@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/linie/linia-create-button.tsx
 
 import {useState} from "react"
 import {Button} from "@/components/ui/button"

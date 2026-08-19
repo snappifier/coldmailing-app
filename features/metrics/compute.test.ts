@@ -1,4 +1,3 @@
-// features/metrics/compute.test.ts
 import {describe, it, expect} from "vitest"
 import {summarizeStatuses, contacted, rate, computeRates, formatPct, formatInt, buildCampaignRows, orderFunnel, bucketDaily, relativeTimePl, buildSparklinePath} from "@/features/metrics/compute"
 

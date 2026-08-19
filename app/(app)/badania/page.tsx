@@ -1,4 +1,3 @@
-// app/(app)/badania/page.tsx
 import Link from "next/link"
 import {requireOrg} from "@/lib/org"
 import {listResearchTypes} from "@/features/research-types/queries"

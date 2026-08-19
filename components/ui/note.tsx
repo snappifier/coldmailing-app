@@ -1,4 +1,3 @@
-// components/ui/note.tsx
 import {cn} from "@/lib/cn"
 
 const MAP = {

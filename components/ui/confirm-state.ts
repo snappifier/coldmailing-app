@@ -1,4 +1,3 @@
-// components/ui/confirm-state.ts
 export interface ConfirmOptions {
 	title: string
 	body?: string

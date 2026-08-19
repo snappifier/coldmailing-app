@@ -1,4 +1,3 @@
-// app/(app)/ustawienia/team-section.tsx
 import type {TeamMember, PendingInvitation} from "@/features/team/queries"
 import {InviteForm} from "./invite-form"
 import {TeamTable} from "./team-table"

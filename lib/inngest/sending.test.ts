@@ -1,4 +1,3 @@
-// lib/inngest/sending.test.ts
 import {describe, it, expect, vi, beforeEach} from "vitest"
 
 const h = vi.hoisted(() => ({

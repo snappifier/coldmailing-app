@@ -1,4 +1,3 @@
-// components/ui/badge.tsx
 import {cn} from "@/lib/cn"
 
 export type BadgeVariant = "neutral" | "ok" | "warn" | "bad" | "info"

@@ -1,5 +1,4 @@
 "use client"
-// components/ui/toast-provider.tsx
 import {useCallback, useReducer, useRef} from "react"
 import {toastReducer} from "@/components/ui/toast-reducer"
 import {ToastContext, type ToastFn} from "@/components/ui/use-toast"

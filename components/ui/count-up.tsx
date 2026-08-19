@@ -1,5 +1,4 @@
 "use client"
-// components/ui/count-up.tsx
 import {useEffect, useRef} from "react"
 import {animate, motion, useMotionValue, useReducedMotion, useTransform} from "motion/react"
 import {EASE_OUT_QUART} from "@/lib/motion"

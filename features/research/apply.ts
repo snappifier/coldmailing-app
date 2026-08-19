@@ -1,4 +1,3 @@
-// features/research/apply.ts
 import type {OutputField} from "@/features/research-types/schema"
 import type {AppliedField, ProposedField, ResearchDiff, SkippedField} from "@/features/research/types"
 

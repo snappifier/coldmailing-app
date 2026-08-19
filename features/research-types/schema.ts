@@ -1,4 +1,3 @@
-// features/research-types/schema.ts
 import {z} from "zod"
 import {CUSTOM_TYPES, RESERVED_KEYS, TARGET_OPTIONS, derivedTypeForTarget, type Target} from "@/features/research-types/targets"
 

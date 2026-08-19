@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/skrzynki/mailbox-settings-form.tsx
 import {useActionState, useEffect} from "react"
 import {updateEmailAccountSettings, type EmailAccountSettingsResult} from "@/features/email-accounts/actions"
 import {formatTime, maskToDays} from "@/features/email-accounts/settings"

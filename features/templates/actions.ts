@@ -1,5 +1,4 @@
 "use server"
-// features/templates/actions.ts
 
 import {revalidatePath} from "next/cache"
 import {prisma} from "@/lib/prisma"

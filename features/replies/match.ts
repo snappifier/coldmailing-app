@@ -1,4 +1,3 @@
-// features/replies/match.ts
 export interface AddedMessage {
 	gmailMessageId: string
 	threadId: string

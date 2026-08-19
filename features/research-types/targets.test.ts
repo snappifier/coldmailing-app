@@ -1,4 +1,3 @@
-// features/research-types/targets.test.ts
 import {describe, it, expect} from "vitest"
 import {derivedTypeForTarget, CUSTOM_TYPES, TARGET_OPTIONS, LEAD_TARGETS} from "@/features/research-types/targets"
 

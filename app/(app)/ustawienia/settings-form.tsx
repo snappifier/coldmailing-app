@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/settings-form.tsx
 import {useActionState, useEffect} from "react"
 import {setOrgInboundSettings} from "@/features/org/settings"
 import {Field} from "@/components/ui/field"

@@ -1,4 +1,3 @@
-// scripts/test-ids.ts
 // Read-only: print campaign / lead / mailbox ids + state for manual sending tests.
 // Run: npx tsx scripts/test-ids.ts
 import "dotenv/config"

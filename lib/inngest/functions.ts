@@ -1,4 +1,3 @@
-// lib/inngest/functions.ts
 import {inngest} from "@/lib/inngest/client"
 
 export const helloWorld = inngest.createFunction(

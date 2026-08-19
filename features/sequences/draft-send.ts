@@ -1,4 +1,3 @@
-// features/sequences/draft-send.ts
 
 export type DraftDecision = "template" | "draft" | "wait"
 

@@ -1,4 +1,3 @@
-// features/research-types/targets.ts
 
 // Lead columns a research output field may write to; the value type is derived from the column.
 export const LEAD_TARGETS = {

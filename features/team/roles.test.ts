@@ -1,4 +1,3 @@
-// features/team/roles.test.ts
 import {describe, it, expect} from "vitest"
 import {Role} from "@/generated/prisma/client"
 import {ROLE_ORDER, hasRole} from "@/features/team/roles"

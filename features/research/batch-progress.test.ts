@@ -1,4 +1,3 @@
-// features/research/batch-progress.test.ts
 import {describe, it, expect} from "vitest"
 import {deriveBatchStatus, type RunStatusCounts} from "@/features/research/batch-progress"
 

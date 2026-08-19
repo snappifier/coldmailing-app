@@ -1,4 +1,3 @@
-// features/campaigns/activation.test.ts
 import {describe, it, expect} from "vitest"
 import {validateActivation} from "@/features/campaigns/activation"
 

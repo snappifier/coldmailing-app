@@ -1,4 +1,3 @@
-// features/offering-lines/schema.test.ts
 import {describe, it, expect} from "vitest"
 import {offeringLineSchema} from "@/features/offering-lines/schema"
 

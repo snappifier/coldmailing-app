@@ -1,4 +1,3 @@
-// app/(app)/pipeline/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {getPipelineLeads} from "@/features/pipeline/queries"

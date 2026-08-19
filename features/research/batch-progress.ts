@@ -1,4 +1,3 @@
-// features/research/batch-progress.ts
 import type {ResearchBatchStatus} from "@/generated/prisma/client"
 
 export interface RunStatusCounts {

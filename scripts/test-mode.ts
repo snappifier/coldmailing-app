@@ -1,4 +1,3 @@
-// scripts/test-mode.ts
 // Toggle every EmailAccount between a fast test profile (24/7 window, 5-10s gap) and the
 // conservative production profile (Mon-Fri 08-16, 180-600s gap).
 // Run: npx tsx scripts/test-mode.ts on   (fast testing)

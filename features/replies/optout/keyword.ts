@@ -1,4 +1,3 @@
-// features/replies/optout/keyword.ts
 import type {OptOutDetector, OptOutResult} from "@/features/replies/optout/types"
 
 // NOTE: substring match with no negation parsing -- e.g. "prosze nie pisac po angielsku" falsely

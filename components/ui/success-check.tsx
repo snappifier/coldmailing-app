@@ -1,5 +1,4 @@
 "use client"
-// components/ui/success-check.tsx
 import {motion, useReducedMotion} from "motion/react"
 import {EASE_OUT_QUART, SPRING_SETTLE} from "@/lib/motion"
 

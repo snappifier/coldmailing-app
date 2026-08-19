@@ -1,5 +1,4 @@
 "use client"
-// components/ui/confirm.tsx
 import {useCallback, useRef, useState} from "react"
 import {defaultConfirmOptions, type ConfirmOptions, type ResolvedConfirm} from "@/components/ui/confirm-state"
 import {ConfirmContext, type ConfirmFn} from "@/components/ui/use-confirm"

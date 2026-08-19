@@ -1,4 +1,3 @@
-// features/research/apply-confirm.test.ts
 import {describe, it, expect, vi, beforeEach} from "vitest"
 
 const h = vi.hoisted(() => ({

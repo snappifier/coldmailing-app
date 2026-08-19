@@ -1,4 +1,3 @@
-// components/ui/input.tsx
 import {forwardRef, type InputHTMLAttributes} from "react"
 import {cn} from "@/lib/cn"
 

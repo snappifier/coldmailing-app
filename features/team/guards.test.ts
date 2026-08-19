@@ -1,4 +1,3 @@
-// features/team/guards.test.ts
 import {describe, it, expect} from "vitest"
 import {ownerCount, canChangeRole, canRemoveMember} from "@/features/team/guards"
 

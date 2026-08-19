@@ -1,4 +1,3 @@
-// components/ui/button-variants.test.ts
 import {describe, it, expect} from "vitest"
 import {buttonVariant} from "@/components/ui/button-variants"
 

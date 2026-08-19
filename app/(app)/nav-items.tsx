@@ -1,4 +1,3 @@
-// app/(app)/nav-items.tsx
 import type {Role} from "@/generated/prisma/client"
 import {HomeIcon, UsersIcon, ColumnsIcon, LayersIcon, FileTextIcon, BracesIcon, SearchIcon, SendIcon, InboxIcon, BanIcon, SettingsIcon} from "@/components/ui/icons"
 

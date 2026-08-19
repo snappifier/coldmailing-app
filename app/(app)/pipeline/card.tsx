@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/pipeline/card.tsx
 
 import {useRouter} from "next/navigation"
 import type {PipelineLead} from "@/features/pipeline/types"

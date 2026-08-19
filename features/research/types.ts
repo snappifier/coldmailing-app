@@ -1,4 +1,3 @@
-// features/research/types.ts
 export type ResearchFindings = Record<string, unknown>
 
 export interface AppliedField {

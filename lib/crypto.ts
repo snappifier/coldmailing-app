@@ -1,4 +1,3 @@
-// lib/crypto.ts
 import {randomBytes, createCipheriv, createDecipheriv} from "node:crypto"
 
 function key(): Buffer {

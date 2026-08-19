@@ -1,4 +1,3 @@
-// features/leads/import.ts
 import type {Honorific} from "@/generated/prisma/client"
 
 export type LeadFieldKey =

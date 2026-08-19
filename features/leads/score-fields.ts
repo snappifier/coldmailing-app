@@ -1,4 +1,3 @@
-// features/leads/score-fields.ts
 export interface ScoreFields {
 	score: number | null
 	priority: number | null

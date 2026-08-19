@@ -1,4 +1,3 @@
-// features/enums/labels.test.ts
 import {describe, it, expect} from "vitest"
 import {CampaignStatus, CampaignLeadStatus, SequenceCondition, InboundKind, ResearchTypeKind, PlaceholderType, Role, ResearchRunStatus, ResearchBatchStatus, EmailAccountStatus} from "@/generated/prisma/client"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT, LEAD_STATUS_LABEL, LEAD_STATUS_VARIANT, CONDITION_LABEL, INBOUND_KIND_LABEL, INBOUND_KIND_VARIANT, RESEARCH_KIND_LABEL, RESEARCH_KIND_VARIANT, PLACEHOLDER_TYPE_LABEL, ROLE_LABEL, RESEARCH_STATUS_LABEL, RESEARCH_STATUS_VARIANT, EMAIL_ACCOUNT_STATUS_LABEL, EMAIL_ACCOUNT_STATUS_VARIANT} from "@/features/enums/labels"

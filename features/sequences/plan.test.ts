@@ -1,4 +1,3 @@
-// features/sequences/plan.test.ts
 import {describe, it, expect} from "vitest"
 import {decideStep, planNext, type StepDef} from "@/features/sequences/plan"
 

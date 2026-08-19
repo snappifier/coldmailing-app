@@ -1,4 +1,3 @@
-// features/pipeline/timeline.ts
 import type {DealStage, InboundKind, LeadActivityKind, MessageDirection} from "@/generated/prisma/client"
 import type {TimelineItem} from "./types"
 import {STAGE_LABEL} from "./types"

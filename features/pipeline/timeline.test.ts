@@ -1,4 +1,3 @@
-// features/pipeline/timeline.test.ts
 import {describe, it, expect} from "vitest"
 import {activityToTimelineItem, buildTimeline, messageToTimelineItem} from "./timeline"
 

@@ -1,4 +1,3 @@
-// features/replies/optout/llm.ts
 import Anthropic from "@anthropic-ai/sdk"
 import type {OptOutDetector, OptOutResult} from "@/features/replies/optout/types"
 

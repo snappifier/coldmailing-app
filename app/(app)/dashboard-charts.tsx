@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/dashboard-charts.tsx
 import {motion, useReducedMotion} from "motion/react"
 import {cn} from "@/lib/cn"
 import {buildSparklinePath, type DailyCount} from "@/features/metrics/compute"

@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/placeholdery/placeholder-form.tsx
 
 import {useActionState, useRef} from "react"
 import {createPlaceholder, type PlaceholderResult} from "@/features/placeholders/actions"

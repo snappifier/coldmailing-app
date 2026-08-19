@@ -1,4 +1,3 @@
-// app/(app)/leady/page.tsx
 import Link from "next/link"
 import type {Prisma} from "@/generated/prisma/client"
 import {prisma} from "@/lib/prisma"

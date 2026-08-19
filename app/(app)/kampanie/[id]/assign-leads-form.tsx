@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/assign-leads-form.tsx
 
 import {useActionState} from "react"
 import {assignLeads, type StepResult} from "@/features/campaigns/actions"

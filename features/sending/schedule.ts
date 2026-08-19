@@ -1,4 +1,3 @@
-// features/sending/schedule.ts
 export interface LocalParts {
 	weekdayIso: number // 1=Mon..7=Sun
 	minutes: number // minutes into the local day

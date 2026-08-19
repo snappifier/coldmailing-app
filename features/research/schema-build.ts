@@ -1,4 +1,3 @@
-// features/research/schema-build.ts
 import type {OutputField} from "@/features/research-types/schema"
 
 export interface FindingsSchema {

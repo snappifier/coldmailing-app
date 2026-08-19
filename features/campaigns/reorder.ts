@@ -1,4 +1,3 @@
-// features/campaigns/reorder.ts
 export interface OrderedStep {
 	id: string
 	order: number

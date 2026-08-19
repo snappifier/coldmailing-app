@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/campaign-tabs.tsx
 
 import {useState} from "react"
 import {AnimatePresence, motion, useReducedMotion} from "motion/react"

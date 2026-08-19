@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/badania/batches/[id]/batch-view.tsx
 
 import {useCallback, useEffect, useRef, useState} from "react"
 import {getBatch, cancelBatch, resumeFailed, applyBatch} from "@/features/research/batch-actions"

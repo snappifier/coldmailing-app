@@ -1,4 +1,3 @@
-// lib/inngest/sending.ts
 import {inngest} from "@/lib/inngest/client"
 import {prisma} from "@/lib/prisma"
 import {sendEmail} from "@/features/sending/gmail"

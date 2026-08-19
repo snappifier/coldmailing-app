@@ -1,4 +1,3 @@
-// features/sending/recipient.test.ts
 import {describe, it, expect} from "vitest"
 import {resolveRecipient} from "@/features/sending/recipient"
 

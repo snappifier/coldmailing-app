@@ -1,4 +1,3 @@
-// features/replies/gmail-history.test.ts
 import {describe, it, expect, vi, beforeAll} from "vitest"
 
 const getProfile = vi.fn(async () => ({data: {historyId: "1000"}}))

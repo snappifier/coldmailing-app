@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/sidebar.tsx
 import {useSyncExternalStore} from "react"
 import Link from "next/link"
 import {usePathname} from "next/navigation"

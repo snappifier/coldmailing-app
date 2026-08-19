@@ -1,4 +1,3 @@
-// components/ui/toast-reducer.test.ts
 import {describe, it, expect} from "vitest"
 import {toastReducer, type ToastState} from "@/components/ui/toast-reducer"
 

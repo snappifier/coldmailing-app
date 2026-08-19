@@ -1,4 +1,3 @@
-// features/research/schema-build.test.ts
 import {describe, it, expect} from "vitest"
 import {buildFindingsSchema} from "@/features/research/schema-build"
 

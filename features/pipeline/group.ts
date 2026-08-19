@@ -1,4 +1,3 @@
-// features/pipeline/group.ts
 import type {DealStage} from "@/generated/prisma/client"
 import {STAGE_ORDER} from "./types"
 

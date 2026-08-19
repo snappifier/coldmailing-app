@@ -1,4 +1,4 @@
-// scripts/diag-5c.ts — temporary 5c live-e2e diagnostic (safe, read-only)
+// temporary 5c live-e2e diagnostic (safe, read-only)
 import "dotenv/config"
 import {PrismaClient} from "../generated/prisma/client"
 import {PrismaPg} from "@prisma/adapter-pg"

@@ -1,4 +1,3 @@
-// features/research-types/queries.ts
 import {prisma} from "@/lib/prisma"
 
 export function listResearchTypes(orgId: string) {

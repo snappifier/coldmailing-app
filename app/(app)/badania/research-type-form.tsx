@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/badania/research-type-form.tsx
 
 import {useActionState, useEffect, useState} from "react"
 import {useRouter} from "next/navigation"

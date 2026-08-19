@@ -1,4 +1,3 @@
-// features/sending/mime.test.ts
 import {describe, it, expect} from "vitest"
 import {buildRawMessage} from "@/features/sending/mime"
 

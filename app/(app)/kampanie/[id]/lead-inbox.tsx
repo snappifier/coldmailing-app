@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/lead-inbox.tsx
 
 import {markDoNotContact} from "@/features/suppression/actions"
 import {ConfirmButton} from "@/components/ui/confirm-button"

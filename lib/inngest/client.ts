@@ -1,4 +1,3 @@
-// lib/inngest/client.ts
 import {Inngest} from "inngest"
 
 // Inngest SDK v4 defaults to cloud mode; enable dev mode only under `next dev`

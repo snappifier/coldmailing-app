@@ -1,4 +1,3 @@
-// components/ui/table.tsx
 import {cn} from "@/lib/cn"
 export function Table({className, children}: {className?: string; children: React.ReactNode}) {
 	return <table className={cn("w-full border-collapse text-[13px] [&_tbody_tr]:transition-colors [&_tbody_tr:hover]:bg-surface-2/50", className)}>{children}</table>

@@ -1,5 +1,4 @@
 "use client"
-// components/ui/theme-toggle.tsx
 import {SunIcon, MoonIcon} from "@/components/ui/icons"
 
 export function ThemeToggle() {

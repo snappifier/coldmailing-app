@@ -1,4 +1,4 @@
-// scripts/diag-baseline.ts — temporary: print the connected mailbox's current Gmail profile
+// temporary: print the connected mailbox's current Gmail profile
 // historyId (a safe "before the reply" cursor anchor to fall back on).
 import "dotenv/config"
 import {PrismaClient} from "../generated/prisma/client"

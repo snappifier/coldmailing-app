@@ -1,4 +1,3 @@
-// features/email-accounts/settings.test.ts
 import {describe, it, expect} from "vitest"
 import {parseTime, formatTime, maskToDays, daysToMask, isValidTimezone, validateEmailAccountSettings} from "@/features/email-accounts/settings"
 

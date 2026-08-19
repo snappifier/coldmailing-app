@@ -1,4 +1,4 @@
-// scripts/diag-set-cursor.ts — temporary: set the connected mailbox lastHistoryId to argv[2].
+// temporary: set the connected mailbox lastHistoryId to argv[2].
 import "dotenv/config"
 import {PrismaClient} from "../generated/prisma/client"
 import {PrismaPg} from "@prisma/adapter-pg"

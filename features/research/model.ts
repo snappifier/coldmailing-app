@@ -1,4 +1,3 @@
-// features/research/model.ts
 export const DEFAULT_RESEARCH_MODEL = "claude-opus-4-8"
 
 export function resolveModel(modelId: string | null | undefined): string {

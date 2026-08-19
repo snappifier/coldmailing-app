@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/suppression/suppression-create-button.tsx
 
 import {useState} from "react"
 import {Button} from "@/components/ui/button"

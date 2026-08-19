@@ -1,4 +1,3 @@
-// app/(app)/linie/page.tsx
 import {prisma} from "@/lib/prisma"
 import {requireOrg} from "@/lib/org"
 import {deleteOfferingLine} from "@/features/offering-lines/actions"

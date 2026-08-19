@@ -1,4 +1,3 @@
-// lib/crypto.test.ts
 import {describe, it, expect, beforeAll} from "vitest"
 import {encryptSecret, decryptSecret} from "@/lib/crypto"
 

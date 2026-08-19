@@ -1,4 +1,4 @@
-// scripts/diag-trigger-poll.ts — temporary: send the poll event directly to the local Inngest
+// temporary: send the poll event directly to the local Inngest
 // dev server (same event the 5-min cron fans out), so poll-mailbox-replies runs deterministically.
 import "dotenv/config"
 import {Inngest} from "inngest"

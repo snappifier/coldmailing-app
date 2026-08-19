@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/team-table.tsx
 
 import {useTransition} from "react"
 import type {TeamMember, PendingInvitation} from "@/features/team/queries"

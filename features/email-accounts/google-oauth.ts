@@ -1,4 +1,3 @@
-// features/email-accounts/google-oauth.ts
 import {createHmac, timingSafeEqual} from "node:crypto"
 import {google} from "googleapis"
 import {encryptSecret} from "@/lib/crypto"

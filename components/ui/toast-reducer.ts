@@ -1,4 +1,3 @@
-// components/ui/toast-reducer.ts
 export interface Toast {
 	id: string
 	title: string

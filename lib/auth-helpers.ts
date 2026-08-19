@@ -1,4 +1,3 @@
-// lib/auth-helpers.ts
 import {prisma} from "@/lib/prisma"
 import {resolveJoin} from "@/features/team/join"
 

@@ -1,4 +1,3 @@
-// components/ui/empty-state.tsx
 export function EmptyState({title, description, action, illustration}: {title: string; description?: string; action?: React.ReactNode; illustration?: React.ReactNode}) {
 	return (
 		<div className="px-5 py-12 text-center">

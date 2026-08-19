@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/[id]/uruchom-research.tsx
 
 import {useEffect, useRef, useState} from "react"
 import {useRouter} from "next/navigation"

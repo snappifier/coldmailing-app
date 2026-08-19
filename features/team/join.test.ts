@@ -1,4 +1,3 @@
-// features/team/join.test.ts
 import {describe, it, expect} from "vitest"
 import {resolveJoin} from "@/features/team/join"
 

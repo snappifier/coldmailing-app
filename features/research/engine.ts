@@ -1,4 +1,3 @@
-// features/research/engine.ts
 import Anthropic from "@anthropic-ai/sdk"
 import {resolveModel, tuningForModel} from "@/features/research/model"
 import type {EngineResult} from "@/features/research/types"

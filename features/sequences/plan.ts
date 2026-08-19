@@ -1,4 +1,3 @@
-// features/sequences/plan.ts
 export type SequenceCondition = "ALWAYS" | "SEND_IF_NO_REPLY"
 
 export interface StepDef {

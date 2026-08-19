@@ -1,5 +1,4 @@
 "use server"
-// features/pipeline/actions.ts
 
 import {revalidatePath} from "next/cache"
 import type {DealStage} from "@/generated/prisma/client"

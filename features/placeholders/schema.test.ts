@@ -1,4 +1,3 @@
-// features/placeholders/schema.test.ts
 import {describe, it, expect} from "vitest"
 import {placeholderSchema} from "@/features/placeholders/schema"
 

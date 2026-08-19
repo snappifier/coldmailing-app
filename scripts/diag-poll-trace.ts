@@ -1,4 +1,4 @@
-// scripts/diag-poll-trace.ts — temporary: run the REAL fetch+match pipeline with an explicit
+// temporary: run the REAL fetch+match pipeline with an explicit
 // startHistoryId and print every intermediate value to see where the reply is lost.
 import "dotenv/config"
 import {PrismaClient} from "../generated/prisma/client"

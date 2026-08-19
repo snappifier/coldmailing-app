@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/batch-research-launcher.tsx
 
 import {useState} from "react"
 import {useRouter} from "next/navigation"

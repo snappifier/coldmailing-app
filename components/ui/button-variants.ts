@@ -1,4 +1,3 @@
-// components/ui/button-variants.ts
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger"
 
 const VARIANTS: Record<ButtonVariant, string> = {

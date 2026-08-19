@@ -1,4 +1,3 @@
-// app/not-found.tsx
 import Link from "next/link"
 import {EmptyState} from "@/components/ui/empty-state"
 export default function NotFound() {

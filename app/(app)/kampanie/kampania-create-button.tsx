@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/kampania-create-button.tsx
 
 import {useState} from "react"
 import {Button} from "@/components/ui/button"

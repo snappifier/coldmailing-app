@@ -1,4 +1,3 @@
-// lib/org.ts
 import {auth} from "@/lib/auth"
 import {prisma} from "@/lib/prisma"
 import {hasRole} from "@/features/team/roles"

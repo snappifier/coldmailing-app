@@ -1,4 +1,3 @@
-// app/(app)/badania/nowy/page.tsx
 import {createResearchType} from "@/features/research-types/actions"
 import {ResearchTypeForm} from "../research-type-form"
 

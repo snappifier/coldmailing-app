@@ -1,4 +1,3 @@
-// features/sending/schedule.test.ts
 import {describe, it, expect} from "vitest"
 import {localParts, isWithinWindow, nextWindowOpen, planSchedule, scheduleFollowupSlot} from "@/features/sending/schedule"
 

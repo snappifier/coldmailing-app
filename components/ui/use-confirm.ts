@@ -1,5 +1,4 @@
 "use client"
-// components/ui/use-confirm.ts
 import {createContext, useContext} from "react"
 import type {ConfirmOptions} from "@/components/ui/confirm-state"
 

@@ -1,4 +1,3 @@
-// features/team/guards.ts
 import type {Role} from "@/generated/prisma/client"
 
 export interface TeamMemberLite {

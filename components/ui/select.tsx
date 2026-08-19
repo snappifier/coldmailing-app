@@ -1,4 +1,3 @@
-// components/ui/select.tsx
 import {forwardRef, type SelectHTMLAttributes} from "react"
 import {cn} from "@/lib/cn"
 

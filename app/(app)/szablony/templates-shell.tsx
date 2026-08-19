@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/szablony/templates-shell.tsx
 
 import {useActionState, useRef, useState} from "react"
 import {createTemplate, updateTemplate, deleteTemplate, type TemplateResult} from "@/features/templates/actions"

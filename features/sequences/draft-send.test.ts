@@ -1,4 +1,3 @@
-// features/sequences/draft-send.test.ts
 import {describe, it, expect} from "vitest"
 import {resolveDraftDecision} from "@/features/sequences/draft-send"
 

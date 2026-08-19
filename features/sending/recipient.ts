@@ -1,4 +1,3 @@
-// features/sending/recipient.ts
 export interface ResolvedRecipient {
 	to: string
 	overridden: boolean

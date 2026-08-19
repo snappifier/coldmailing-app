@@ -1,4 +1,3 @@
-// features/replies/classify.ts
 export type DeterministicKind = "REPLY" | "BOUNCE" | "AUTO_REPLY"
 
 export interface InboundFacts {

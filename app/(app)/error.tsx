@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/error.tsx
 import Link from "next/link"
 import {Card, CardBody} from "@/components/ui/card"
 import {Button} from "@/components/ui/button"

@@ -1,4 +1,3 @@
-// features/replies/gmail-history.ts
 import {google, type gmail_v1} from "googleapis"
 import {oauthClientFor, type SendableAccount} from "@/features/sending/gmail"
 import type {AddedMessage} from "@/features/replies/match"

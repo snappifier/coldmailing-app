@@ -1,4 +1,3 @@
-// features/campaigns/activation.ts
 export type ActivateResult = {ok: true} | {ok: false; error: string}
 
 export interface ActivationFacts {

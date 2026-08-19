@@ -1,4 +1,3 @@
-// features/research/draft.test.ts
 import {describe, it, expect} from "vitest"
 import {buildDraftSchema, coerceDraft} from "@/features/research/draft"
 

@@ -1,5 +1,4 @@
 "use server"
-// features/suppression/actions.ts
 
 import {revalidatePath} from "next/cache"
 import {z} from "zod"

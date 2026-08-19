@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/sending-controls.tsx
 
 import {setSendingMailbox} from "@/features/campaigns/sending-actions"
 import {Select} from "@/components/ui/select"

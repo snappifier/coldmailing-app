@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/invite-form.tsx
 
 import {useActionState} from "react"
 import {inviteMember, type TeamActionResult} from "@/features/team/actions"

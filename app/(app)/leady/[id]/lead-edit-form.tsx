@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/leady/[id]/lead-edit-form.tsx
 
 import {useActionState, useState} from "react"
 import {updateLead, type LeadActionResult} from "@/features/leads/actions"

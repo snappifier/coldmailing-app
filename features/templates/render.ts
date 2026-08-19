@@ -1,4 +1,3 @@
-// features/templates/render.ts
 export interface RenderLead {
 	organizationName: string
 	contactPersonName: string | null

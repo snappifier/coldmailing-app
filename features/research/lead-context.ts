@@ -1,4 +1,3 @@
-// features/research/lead-context.ts
 export interface LeadContextInput {
 	aiNotes: string | null
 	score: number | null

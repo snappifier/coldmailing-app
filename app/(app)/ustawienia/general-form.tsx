@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/ustawienia/general-form.tsx
 import {useActionState, useEffect} from "react"
 import {setOrgName} from "@/features/org/settings"
 import {Field} from "@/components/ui/field"

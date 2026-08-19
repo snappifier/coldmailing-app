@@ -1,5 +1,4 @@
 "use client"
-// app/(app)/kampanie/[id]/campaign-header-actions.tsx
 
 import {useActionState} from "react"
 import {activateCampaign, pauseCampaign} from "@/features/campaigns/sending-actions"
