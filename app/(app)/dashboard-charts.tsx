@@ -1,27 +1,60 @@
 "use client"
+import {useEffect, useRef, useState} from "react"
 import {motion, useReducedMotion} from "motion/react"
 import {cn} from "@/lib/cn"
 import {buildSparklinePath, type DailyCount} from "@/features/metrics/compute"
 import {EASE_OUT_QUART} from "@/lib/motion"
 
-// Sparkline: server-rendered, static. A draw-in via clip-path/pathLength animates on the main
-// thread (not compositor) and gets starved/stalled in dev (StrictMode interrupts it, leaving the
-// chart clipped + hidden), so the line + gradient render immediately with no reveal.
+// Sparkline reveal: a clip-path spring wipe on the WRAPPER, so line, gradient area and end dot
+// reveal together as one scene (.spark-wipe in globals.css - a bounce:0 spring baked into a CSS
+// linear() curve; springs start at zero velocity, which is what keeps the entrance calm where any
+// ease-out reads aggressive). Pure CSS, no JS animation: the old Motion-driven reveal ran on the
+// main thread and dev StrictMode could interrupt it leaving the chart hidden - CSS at worst
+// restarts, and the clipped state lives only inside the keyframes, so with animations unavailable
+// the chart renders complete; reduced motion finishes instantly via the global reset.
+// The path is built at the MEASURED pixel width (ResizeObserver + hidden-tab timer fallback) so
+// the viewBox maps 1:1 to screen - preserveAspectRatio="none" at non-uniform scale distorts stroke
+// and any SVG circle (the end dot stays an HTML overlay for the same reason).
+const SPARK_H = 64
+
 export function Sparkline({className, daily}: {className?: string; daily: DailyCount[]}) {
-	const {line, area, end} = buildSparklinePath(daily.map((d) => d.count), 600, 64)
-	if (!line) return null
+	const ref = useRef<HTMLDivElement>(null)
+	const [width, setWidth] = useState(0)
+	useEffect(() => {
+		const el = ref.current
+		if (!el) return
+		const ro = new ResizeObserver((entries) => setWidth(Math.round(entries[0].contentRect.width)))
+		ro.observe(el)
+		// ResizeObserver never fires in hidden documents (background tab); measure once via a timer too.
+		const t = setTimeout(() => setWidth((w) => w || Math.round(el.clientWidth)), 0)
+		return () => {
+			ro.disconnect()
+			clearTimeout(t)
+		}
+	}, [])
+	const {line, area, end} = width > 0 ? buildSparklinePath(daily.map((d) => d.count), width, SPARK_H) : {line: "", area: "", end: null}
 	return (
-		<svg className={className} viewBox="0 0 600 64" preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
-			<defs>
-				<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
-					<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
-					<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
-				</linearGradient>
-			</defs>
-			<path d={area} fill="url(#spark-fill)" />
-			<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-			{end ? <circle cx={end.x} cy={end.y} r="2.5" fill="var(--text)" /> : null}
-		</svg>
+		<div className={cn("relative", line && "spark-wipe", className)} ref={ref}>
+			{line ? (
+				<svg className="h-full w-full" viewBox={`0 0 ${width} ${SPARK_H}`} preserveAspectRatio="none" role="img" aria-label="Wysłane maile dziennie, ostatnie 30 dni">
+					<defs>
+						<linearGradient id="spark-fill" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0" stopColor="var(--text)" stopOpacity=".12" />
+							<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
+						</linearGradient>
+					</defs>
+					<path d={area} fill="url(#spark-fill)" />
+					<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" />
+				</svg>
+			) : null}
+			{end ? (
+				<span
+					className="absolute size-[5px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-fg"
+					style={{left: `${(end.x / width) * 100}%`, top: `${(end.y / SPARK_H) * 100}%`}}
+					aria-hidden
+				/>
+			) : null}
+		</div>
 	)
 }
 
