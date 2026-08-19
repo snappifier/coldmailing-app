@@ -9,6 +9,8 @@ import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/l
 import type {CampaignStatus} from "@/generated/prisma/client"
 import {HeroStat, HealthStat, ReplyRow} from "../dashboard-parts"
 import {Sparkline, FunnelRow} from "../dashboard-charts"
+import {CountUp} from "@/components/ui/count-up"
+import {LiveRefresh} from "./live-refresh"
 
 export default async function DashboardPage() {
 	const {orgId} = await requireOrg()
@@ -28,6 +30,7 @@ export default async function DashboardPage() {
 
 	return (
 		<section className="flex flex-col gap-4">
+			<LiveRefresh />
 			<div className="flex items-baseline justify-between">
 				<h1 className="text-lg font-semibold">Pulpit</h1>
 				<span className="text-[11px] text-fg-faint">ostatnie 30 dni</span>
@@ -37,7 +40,7 @@ export default async function DashboardPage() {
 				<div className="grid grid-cols-2 divide-x divide-border sm:grid-cols-4">
 					<HeroStat label="Leady" value={formatInt(m.leadsTotal)} countUp={m.leadsTotal} index={0} sub={`w ${m.campaignsTotal} kampaniach`} />
 					<HeroStat label="Wysłane" value={formatInt(m.mailsSent)} countUp={m.mailsSent} index={1} sub={`do ${formatInt(m.rates.contacted)} leadów`} />
-					<HeroStat label="Odpowiedzi" value={formatInt(m.breakdown.replied)} countUp={m.breakdown.replied} index={2} sub={<><span className="font-medium text-success">{formatPct(m.rates.replyRate)}</span> wskaźnik</>} />
+					<HeroStat label="Odpowiedzi" value={formatInt(m.breakdown.replied)} countUp={m.breakdown.replied} index={2} sub={<><span className="font-medium text-success">{m.rates.replyRate === null ? formatPct(null) : <CountUp value={m.rates.replyRate * 100} decimals={1} suffix="%" delay={0.26} />}</span> wskaźnik</>} />
 					<HeroStat label="Wygrane" value={formatInt(wonCount)} countUp={wonCount} index={3} sub="lejek: Wygrany" />
 				</div>
 

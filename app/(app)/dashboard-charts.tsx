@@ -15,9 +15,14 @@ import {EASE_OUT_QUART} from "@/lib/motion"
 // The path is built at the MEASURED pixel width (ResizeObserver + hidden-tab timer fallback) so
 // the viewBox maps 1:1 to screen - preserveAspectRatio="none" at non-uniform scale distorts stroke
 // and any SVG circle (the end dot stays an HTML overlay for the same reason).
+// LIVE updates (the pulpit refreshes every 30s): line, area and dot MORPH to the new data via
+// motion.path d-interpolation (native, since every build has the same 30-point path structure) -
+// initial={false} keeps the mount reveal to the wipe alone.
 const SPARK_H = 64
+const MORPH = {duration: 0.5, ease: EASE_OUT_QUART} as const
 
 export function Sparkline({className, daily}: {className?: string; daily: DailyCount[]}) {
+	const reduce = useReducedMotion()
 	const ref = useRef<HTMLDivElement>(null)
 	const [width, setWidth] = useState(0)
 	useEffect(() => {
@@ -43,14 +48,16 @@ export function Sparkline({className, daily}: {className?: string; daily: DailyC
 							<stop offset="1" stopColor="var(--text)" stopOpacity="0" />
 						</linearGradient>
 					</defs>
-					<path d={area} fill="url(#spark-fill)" />
-					<path d={line} fill="none" stroke="var(--text)" strokeWidth="1.5" />
+					<motion.path initial={false} animate={{d: area}} transition={reduce ? {duration: 0} : MORPH} fill="url(#spark-fill)" />
+					<motion.path initial={false} animate={{d: line}} transition={reduce ? {duration: 0} : MORPH} fill="none" stroke="var(--text)" strokeWidth="1.5" />
 				</svg>
 			) : null}
 			{end ? (
-				<span
+				<motion.span
 					className="absolute size-[5px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-fg"
-					style={{left: `${(end.x / width) * 100}%`, top: `${(end.y / SPARK_H) * 100}%`}}
+					initial={false}
+					animate={{left: `${(end.x / width) * 100}%`, top: `${(end.y / SPARK_H) * 100}%`}}
+					transition={reduce ? {duration: 0} : MORPH}
 					aria-hidden
 				/>
 			) : null}
@@ -67,7 +74,7 @@ export function FunnelRow({label, count, max, tone = "neutral", index = 0}: {lab
 		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
 			<span className="text-fg-muted">{label}</span>
 			<span className="relative h-[3px] overflow-hidden rounded-full bg-surface-3">
-				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: index * 0.09, ease: EASE_OUT_QUART}} />
+				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full transition-[width] duration-500 ease-out", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: index * 0.09, ease: EASE_OUT_QUART}} />
 			</span>
 			<span className="text-right text-xs tabular-nums text-fg">{count}</span>
 		</div>
