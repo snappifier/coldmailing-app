@@ -9,20 +9,25 @@ import {EmptyState} from "@/components/ui/empty-state"
 import {EmptyIllustration} from "@/components/ui/empty-illustration"
 import {PageHeader} from "@/components/ui/page-header"
 import {CAMPAIGN_STATUS_LABEL, CAMPAIGN_STATUS_VARIANT} from "@/features/enums/labels"
-import {KampaniaCreateButton} from "./kampania-create-button"
+import {hasRole} from "@/features/team/roles"
+import {CampaignWizardButton} from "./campaign-wizard-button"
 
 export default async function CampaignsPage() {
-	const {orgId} = await requireOrg()
-	const [campaigns, offeringLines] = await Promise.all([
+	const {orgId, role} = await requireOrg()
+	const [campaigns, offeringLines, mailboxes, placeholders] = await Promise.all([
 		prisma.campaign.findMany({
 			where: {organizationId: orgId},
 			orderBy: {createdAt: "desc"},
 			include: {_count: {select: {steps: true, campaignLeads: true}}},
 		}),
 		prisma.offeringLine.findMany({where: {organizationId: orgId}, orderBy: {name: "asc"}, select: {id: true, name: true}}),
+		prisma.emailAccount.findMany({where: {organizationId: orgId}, orderBy: {createdAt: "asc"}, select: {id: true, email: true}}),
+		prisma.placeholder.findMany({where: {organizationId: orgId}, orderBy: {key: "asc"}, select: {key: true}}),
 	])
 
 	const activeCount = campaigns.filter((c) => c.status === "ACTIVE").length
+	const placeholderKeys = placeholders.map((p) => p.key)
+	const canActivate = hasRole(role, "ADMIN")
 
 	return (
 		<section className="flex flex-col gap-4">
@@ -30,10 +35,10 @@ export default async function CampaignsPage() {
 				title="Kampanie"
 				description="Sekwencje wysyłkowe powiązane z liniami usług."
 				meta={`${campaigns.length} kampanii · ${activeCount} aktywnych`}
-				action={<KampaniaCreateButton offeringLines={offeringLines} />}
+				action={<CampaignWizardButton offeringLines={offeringLines} mailboxes={mailboxes} placeholderKeys={placeholderKeys} canActivate={canActivate} />}
 			/>
 			{campaigns.length === 0 ? (
-				<EmptyState illustration={<EmptyIllustration />} title="Brak kampanii" description="Utwórz pierwszą kampanię." action={<KampaniaCreateButton offeringLines={offeringLines} variant="secondary" />} />
+				<EmptyState illustration={<EmptyIllustration />} title="Brak kampanii" description="Utwórz pierwszą kampanię." action={<CampaignWizardButton offeringLines={offeringLines} mailboxes={mailboxes} placeholderKeys={placeholderKeys} canActivate={canActivate} variant="secondary" />} />
 			) : (
 				<div className="flex flex-col gap-2">
 					{campaigns.map((c) => (

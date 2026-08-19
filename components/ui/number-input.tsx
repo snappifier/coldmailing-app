@@ -13,6 +13,9 @@ export function NumberInput({className, disabled, ...props}: Props) {
 		if (!el) return
 		if (dir === 1) el.stepUp()
 		else el.stepDown()
+		// stepUp/stepDown mutate the DOM silently - replay it as a native input event so React's
+		// onChange fires (a controlled NumberInput would otherwise snap back on the next render).
+		el.dispatchEvent(new Event("input", {bubbles: true}))
 	}
 
 	const stepButton =
