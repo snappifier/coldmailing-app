@@ -201,3 +201,115 @@ export async function clearDemoData(): Promise<DemoResult> {
 	revalidatePath("/", "layout")
 	return {ok: true, message: "Dane demo usunięte"}
 }
+
+const STAGE_NEXT = {NEW: "AUDIT", AUDIT: "PROPOSAL", PROPOSAL: "MEETING", MEETING: "OFFER", OFFER: "WON"} as const
+const REPLY_BODIES = [
+	"Dzień dobry, proszę o więcej szczegółów i przykładowe realizacje.",
+	"Brzmi ciekawie — czy możemy umówić się na krótką rozmowę w przyszłym tygodniu?",
+	"Dziękuję za wiadomość. Jaki byłby orientacyjny koszt takiego wdrożenia?",
+	"Temat u nas wróci w przyszłym kwartale, ale proszę o przesłanie oferty.",
+]
+
+// One simulated event on the DEMO data (dev-only): an outbound send, an inbound reply, a pipeline
+// stage move or a fresh lead - so the live dashboard has something to animate without real
+// campaigns running. Touches ONLY demo-marked entities; clearDemoData removes everything it makes.
+export async function simulateDemoTick(): Promise<DemoResult> {
+	if (process.env.NODE_ENV === "production") return {ok: false, error: "Symulacja tylko w trybie deweloperskim"}
+	const {orgId, userId} = await requireOrg()
+
+	const campaign = await prisma.campaign.findFirst({
+		where: {organizationId: orgId, name: {endsWith: DEMO_NAME_SUFFIX}, status: "ACTIVE"},
+		select: {id: true, sendingEmailAccountId: true},
+	})
+	if (!campaign) return {ok: false, error: "Brak aktywnej kampanii demo — najpierw wypełnij danymi demo"}
+	const account = campaign.sendingEmailAccountId ? {id: campaign.sendingEmailAccountId} : await prisma.emailAccount.findFirst({where: {organizationId: orgId}, select: {id: true}})
+
+	const roll = Math.random()
+	const now = new Date()
+
+	try {
+		if (roll < 0.55 && account) {
+			const cl = await prisma.campaignLead.findFirst({
+				where: {campaignId: campaign.id, status: {in: ["PENDING", "ACTIVE"]}},
+				select: {id: true, status: true, currentStep: true, lead: {select: {email: true, organizationName: true}}},
+			})
+			if (!cl) return {ok: true, message: "brak leadów do wysyłki"}
+			const tpl = cl.currentStep === 0 ? DEMO_TEMPLATES[0] : DEMO_TEMPLATES[1]
+			await prisma.$transaction([
+				prisma.message.create({
+					data: {
+						organizationId: orgId,
+						campaignLeadId: cl.id,
+						emailAccountId: account.id,
+						direction: "OUTBOUND",
+						subject: tpl.subject.replace("{{nazwaFirmy}}", cl.lead.organizationName),
+						body: tpl.body.replace(/\{\{nazwaFirmy\}\}/g, cl.lead.organizationName),
+						intendedTo: cl.lead.email ?? "",
+						actualTo: cl.lead.email ?? "",
+						gmailMessageId: `demo-sym-${Date.now()}`,
+						gmailThreadId: `demo-thread-${cl.id}`,
+						status: "SENT",
+						sentAt: now,
+					},
+				}),
+				prisma.campaignLead.update({where: {id: cl.id}, data: {status: cl.currentStep >= 1 ? "DONE" : "ACTIVE", currentStep: cl.currentStep + 1}}),
+			])
+		} else if (roll < 0.8 && account) {
+			const cl = await prisma.campaignLead.findFirst({
+				where: {campaignId: campaign.id, status: {in: ["ACTIVE", "DONE"]}},
+				select: {id: true, lead: {select: {organizationName: true}}},
+			})
+			if (!cl) return {ok: true, message: "brak leadów do odpowiedzi"}
+			await prisma.$transaction([
+				prisma.message.create({
+					data: {
+						organizationId: orgId,
+						campaignLeadId: cl.id,
+						emailAccountId: account.id,
+						direction: "INBOUND",
+						inboundKind: "REPLY",
+						subject: `Re: ${DEMO_TEMPLATES[0].subject.replace("{{nazwaFirmy}}", cl.lead.organizationName)}`,
+						body: REPLY_BODIES[Math.floor(Math.random() * REPLY_BODIES.length)],
+						intendedTo: "",
+						actualTo: "",
+						gmailMessageId: `demo-sym-re-${Date.now()}`,
+						gmailThreadId: `demo-thread-${cl.id}`,
+						status: "SENT",
+						sentAt: now,
+					},
+				}),
+				prisma.campaignLead.update({where: {id: cl.id}, data: {status: "REPLIED", repliedAt: now}}),
+			])
+		} else if (roll < 0.95) {
+			const lead = await prisma.lead.findFirst({
+				where: {organizationId: orgId, email: {endsWith: DEMO_EMAIL_SUFFIX}, dealStage: {in: ["NEW", "AUDIT", "PROPOSAL", "MEETING", "OFFER"]}},
+				orderBy: {updatedAt: "asc"},
+				select: {id: true, dealStage: true},
+			})
+			if (!lead) return {ok: true, message: "brak leadów do przesunięcia"}
+			const to = STAGE_NEXT[lead.dealStage as keyof typeof STAGE_NEXT]
+			await prisma.$transaction([
+				prisma.lead.update({where: {id: lead.id}, data: {dealStage: to}}),
+				prisma.leadActivity.create({data: {organizationId: orgId, leadId: lead.id, kind: "STAGE_CHANGE", fromStage: lead.dealStage, toStage: to, authorUserId: userId}}),
+			])
+		} else {
+			const n = Math.floor(Math.random() * 90000) + 10000
+			await prisma.lead.create({
+				data: {
+					organizationId: orgId,
+					organizationName: `Nowa Firma ${n}`,
+					email: `biuro@nowa-firma-${n}${DEMO_EMAIL_SUFFIX}`,
+					city: "Kraków",
+					dealStage: "NEW",
+					score: Math.floor(Math.random() * 60) + 30,
+					source: "demo",
+				},
+			})
+		}
+	} catch (e) {
+		return {ok: false, error: `Symulacja nie powiodła się: ${e instanceof Error ? e.message : "nieznany błąd"}`}
+	}
+
+	revalidatePath("/", "layout")
+	return {ok: true, message: "tick"}
+}
