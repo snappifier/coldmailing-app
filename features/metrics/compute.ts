@@ -114,10 +114,16 @@ function round1(n: number): number {
 	return Math.round(n * 10) / 10
 }
 
-// SVG path data for a max-scaled sparkline: the stroke line, the closed area fill, and the
-// last point (for the end dot). Pure so the chart is server-rendered and unit-testable.
-export function buildSparklinePath(counts: number[], width: number, height: number, pad = 4): {line: string; area: string; end: {x: number; y: number} | null} {
-	if (counts.length === 0) return {line: "", area: "", end: null}
+// SVG path data for a max-scaled sparkline: the stroke line, the closed area fill, every point
+// (for hover checkpoints) and the last point (for the end dot). Pure so the chart is
+// server-rendered and unit-testable.
+export function buildSparklinePath(
+	counts: number[],
+	width: number,
+	height: number,
+	pad = 4,
+): {line: string; area: string; points: {x: number; y: number}[]; end: {x: number; y: number} | null} {
+	if (counts.length === 0) return {line: "", area: "", points: [], end: null}
 	const max = Math.max(1, ...counts)
 	const innerH = height - pad * 2
 	const stepX = counts.length > 1 ? width / (counts.length - 1) : 0
@@ -127,5 +133,5 @@ export function buildSparklinePath(counts: number[], width: number, height: numb
 	}))
 	const line = `M${pts.map((p) => `${p.x} ${p.y}`).join(" L")}`
 	const area = `${line} L${width} ${height} L0 ${height} Z`
-	return {line, area, end: pts[pts.length - 1] ?? null}
+	return {line, area, points: pts, end: pts[pts.length - 1] ?? null}
 }

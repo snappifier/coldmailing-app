@@ -104,15 +104,20 @@ describe("relativeTimePl", () => {
 })
 
 describe("buildSparklinePath", () => {
-	it("returns empty strings and null end for no data", () => {
-		expect(buildSparklinePath([], 600, 64)).toEqual({line: "", area: "", end: null})
+	it("returns empty strings, no points and null end for no data", () => {
+		expect(buildSparklinePath([], 600, 64)).toEqual({line: "", area: "", points: [], end: null})
 	})
 	it("scales the peak to the top padding and closes the area", () => {
-		const {line, area, end} = buildSparklinePath([0, 5, 10], 600, 64, 4)
+		const {line, area, points, end} = buildSparklinePath([0, 5, 10], 600, 64, 4)
 		expect(line.startsWith("M0 60")).toBe(true)
 		expect(line).toContain("L300 32")
 		expect(line).toContain("L600 4")
 		expect(area.endsWith("L600 64 L0 64 Z")).toBe(true)
+		expect(points).toEqual([
+			{x: 0, y: 60},
+			{x: 300, y: 32},
+			{x: 600, y: 4},
+		])
 		expect(end).toEqual({x: 600, y: 4})
 	})
 	it("renders all-zero data as a flat bottom line (max guard)", () => {
