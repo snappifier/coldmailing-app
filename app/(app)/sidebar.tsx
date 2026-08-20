@@ -16,20 +16,26 @@ import {ChevronLeftIcon, LogOutIcon} from "@/components/ui/icons"
 
 export interface SidebarUser {name: string | null; email: string | null; role: string; orgName: string}
 
-// Tiny external store for the collapse flag: reads localStorage via useSyncExternalStore so the
-// server snapshot is "expanded" (no hydration mismatch) and toggling notifies subscribers — no
-// setState-in-effect.
+// Tiny external store for the collapse flag, persisted in a COOKIE (not localStorage): the server
+// layout reads it and renders the collapsed width in the SSR HTML, so a hard reload never plays
+// the post-hydration width snap that shifted the whole content area sideways. useSyncExternalStore
+// keeps toggles reactive with no setState-in-effect; the client snapshot reads the same cookie the
+// server saw, so hydration matches by construction.
 const NAV_KEY = "nav-collapsed"
 let navListeners: (() => void)[] = []
+let navCache: boolean | null = null
 function subscribeNav(cb: () => void) {
 	navListeners = [...navListeners, cb]
 	return () => { navListeners = navListeners.filter((l) => l !== cb) }
 }
 function readNavCollapsed(): boolean {
-	try { return localStorage.getItem(NAV_KEY) === "1" } catch { return false }
+	if (navCache !== null) return navCache
+	try { navCache = document.cookie.split("; ").includes(`${NAV_KEY}=1`) } catch { navCache = false }
+	return navCache
 }
 function setNavCollapsed(v: boolean) {
-	try { localStorage.setItem(NAV_KEY, v ? "1" : "0") } catch { /* ignore */ }
+	navCache = v
+	try { document.cookie = `${NAV_KEY}=${v ? "1" : "0"}; path=/; max-age=31536000; samesite=lax` } catch { /* ignore */ }
 	for (const l of navListeners) l()
 }
 
@@ -58,10 +64,10 @@ function SideLink({item, active, labelCls, reduce}: {item: NavItem; active: bool
 	)
 }
 
-export function Sidebar({user}: {user: SidebarUser}) {
+export function Sidebar({user, defaultCollapsed = false}: {user: SidebarUser; defaultCollapsed?: boolean}) {
 	const pathname = usePathname()
 	const reduce = useReducedMotion()
-	const collapsed = useSyncExternalStore(subscribeNav, readNavCollapsed, () => false)
+	const collapsed = useSyncExternalStore(subscribeNav, readNavCollapsed, () => defaultCollapsed)
 	const labelCls = collapsed ? "hidden" : "hidden lg:inline"
 	const initials = (user.name ?? user.email ?? "?").trim().slice(0, 2).toUpperCase()
 	const canSee = (item: NavItem) => !item.minRole || hasRole(user.role as Role, item.minRole)
