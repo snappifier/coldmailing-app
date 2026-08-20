@@ -1,6 +1,6 @@
 "use client"
 import {useEffect, useRef, useState} from "react"
-import {useReducedMotion} from "motion/react"
+import {LayoutGroup, useReducedMotion} from "motion/react"
 import {AnimateNumber} from "motion-plus/react"
 import {cn} from "@/lib/cn"
 import {SPRING_REVEAL, SPRING_SETTLE} from "@/lib/motion"
@@ -34,14 +34,20 @@ export function CountUp({value, delay = 0, decimals = 0, suffix}: {value: number
 	}, [trend])
 	return (
 		<span className={cn("inline-block transition-[opacity,color] duration-300 ease-out", display === null && "opacity-0", trend === 1 && "text-success", trend === -1 && "text-danger")}>
-			<AnimateNumber
-				locales="pl-PL"
-				format={{useGrouping: true, minimumFractionDigits: decimals, maximumFractionDigits: decimals}}
-				suffix={suffix}
-				transition={{y: SPRING_REVEAL, layout: SPRING_SETTLE, opacity: {duration: 0.25}}}
-			>
-				{display ?? 0}
-			</AnimateNumber>
+			{/* inherit={false}: digit layout animations must NOT join an ambient LayoutGroup (the
+			    pulpit card's FLIP group) - every digit re-render would dirty the group and re-measure
+			    the card mid-entry, while section pageIn transforms are still live, producing a
+			    visible position "correction" jump after the entrance settles. */}
+			<LayoutGroup inherit={false}>
+				<AnimateNumber
+					locales="pl-PL"
+					format={{useGrouping: true, minimumFractionDigits: decimals, maximumFractionDigits: decimals}}
+					suffix={suffix}
+					transition={{y: SPRING_REVEAL, layout: SPRING_SETTLE, opacity: {duration: 0.25}}}
+				>
+					{display ?? 0}
+				</AnimateNumber>
+			</LayoutGroup>
 		</span>
 	)
 }

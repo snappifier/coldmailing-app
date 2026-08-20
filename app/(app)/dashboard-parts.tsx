@@ -18,7 +18,7 @@ export function HeroStat({label, value, sub, countUp, index = 0}: {label: string
 	return (
 		<div className="flex flex-col px-5 py-4">
 			<span className="text-[10px] font-semibold uppercase tracking-[.06em] text-fg-faint">{label}</span>
-			<span className="mt-1 text-[26px] font-semibold leading-tight tracking-[-0.03em] tabular-nums">{countUp === undefined ? value : <CountUp value={countUp} delay={0.1 + index * 0.08} />}</span>
+			<span className="mt-1 text-[26px] font-semibold leading-tight tracking-[-0.03em] tabular-nums">{countUp === undefined ? value : <CountUp value={countUp} delay={0.55 + index * 0.08} />}</span>
 			{sub ? <span className="mt-0.5 text-[11px] text-fg-faint">{sub}</span> : null}
 		</div>
 	)

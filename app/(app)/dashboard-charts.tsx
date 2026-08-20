@@ -122,16 +122,24 @@ export function Sparkline({className, daily, mode = "day"}: {className?: string;
 	)
 }
 
+// Entry-only stagger: the 0.6s beat-2 delay applies once per session; when a collapsed pulpit section remounts its rows, bars draw immediately instead of waiting out the entry beat.
+let funnelEntryPlayed = false
+
+// The draw-in is CSS (.funnel-grow), not a Motion `initial` entrance: the rows live inside a
+// CollapsibleSection whose AnimatePresence initial={false} would suppress a Motion initial on
+// first mount, and a Motion entrance is hydration-clocked anyway - CSS runs from first paint,
+// in step with the sections' pageIn. Reduced motion is handled by the global reset.
 export function FunnelRow({label, count, max, tone = "neutral", index = 0, delay = 0}: {label: string; count: number; max: number; tone?: "neutral" | "won" | "lost"; index?: number; delay?: number}) {
-	const reduce = useReducedMotion()
 	const raw = max > 0 ? (count / max) * 100 : 0
 	const pct = count > 0 ? Math.max(1.5, Math.round(raw * 10) / 10) : 0
 	const fill = tone === "won" ? "bg-success" : tone === "lost" ? "bg-danger/55" : "bg-fg-muted"
+	const entryPlayed = funnelEntryPlayed
+	useEffect(() => { funnelEntryPlayed = true }, [])
 	return (
 		<div className="grid grid-cols-[88px_1fr_44px] items-center gap-2.5 py-[5px] text-[12.5px]">
 			<span className="text-fg-muted">{label}</span>
 			<span className="relative h-[3px] overflow-hidden rounded-full bg-surface-3">
-				<motion.span className={cn("absolute inset-y-0 left-0 origin-left rounded-full transition-[width] duration-500 ease-out", fill)} style={{width: `${pct}%`}} initial={reduce ? false : {scaleX: 0}} animate={{scaleX: 1}} transition={{duration: 0.7, delay: delay + index * 0.09, ease: EASE_OUT_QUART}} />
+				<span className={cn("funnel-grow absolute inset-y-0 left-0 origin-left rounded-full transition-[width] duration-500 ease-out", fill)} style={{width: `${pct}%`, animationDelay: `${(entryPlayed ? 0 : delay) + index * 0.09}s`}} />
 			</span>
 			<span className="text-right text-xs tabular-nums text-fg">{count}</span>
 		</div>
